@@ -2,7 +2,7 @@
    and "No Families selected page" (node 26:10099, 1366 × 854) share this sheet. */
 
 .page--configuration { min-height: 805px; }
-.page--selection { min-height: 854px; }
+.page--selection { width: auto; min-width: 1366px; min-height: 854px; } /* stretches with the window: Figma 26:11097 shows this page at 1942 wide */
 .page--selection.has-families { min-height: 798px; } /* Figma 26:9854 is 1366 × 798 */
 
 /* Top menu logo (Figma 26:12331): 130 × 28 logo image slot + "Powered by" TCS TwinX */
@@ -157,17 +157,91 @@
 
 /* Article drill-down of one family (Figma 26:10344): replaces that family's panel */
 .fam-list.has-drilldown { height: 474px; }
-.art-view { flex: none; display: flex; flex-direction: column; gap: 16px; }
+.art-view { flex: none; }
+.art-view[data-tab="volume"] { overflow-x: auto; } /* Figma: the Volume Analysis view scrolls sideways when narrower than its table */
+.art-view__inner { display: flex; flex-direction: column; gap: 16px; }
+.art-view[data-tab="volume"] .art-view__inner { width: 1810px; }
+.art-panel { display: contents; }
+.art-view:not([data-tab="exclusions"]) [data-tab-only="exclusions"],
+.art-view:not([data-tab="exclusions"]) [data-tab-panel="exclusions"],
+.art-view:not([data-tab="volume"]) [data-tab-only="volume"],
+.art-view:not([data-tab="volume"]) [data-tab-panel="volume"] { display: none; }
+.art-view__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 20px; }
 .art-view__title { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
 .art-view__filter { display: flex; justify-content: flex-end; }
 .fam-search--soft { border-color: #bfe0f5; }
-.art-tabs { display: flex; align-items: flex-end; gap: 16px; height: 36px; padding: 0 16px; }
+.art-view__tabs-row { display: flex; align-items: center; justify-content: space-between; height: 36px; padding-left: 16px; }
+.art-tabs { display: flex; align-items: flex-end; gap: 16px; height: 36px; }
 .art-tab { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 16px 0; font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
 .art-tab::after { content: ""; width: 46px; height: 4px; border-radius: 2px 2px 0 0; }
 .art-tab[aria-selected="true"] { color: #2c2c30; }
 .art-tab[aria-selected="true"]::after { width: 100%; background: #007dc5; }
 .art-table-wrap { height: 280px; overflow-x: hidden; overflow-y: auto; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #bfe0f5; } /* Figma: 1px outside stroke */
 .art-table { width: 1359px; }
+/* Volume Analysis tab (Figma 26:11097) */
+.art-apply { display: flex; align-items: center; gap: 8px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; cursor: pointer; }
+.art-tools { display: flex; gap: 14px; }
+.art-select {
+  width: 278px; height: 32px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #727476; white-space: nowrap;
+}
+.art-select--disabled { background: #f8f9fb; font-size: 14px; letter-spacing: 0.042px; cursor: default; }
+.vol-table-wrap { position: relative; }
+.vol-table-wrap::after { content: ""; position: absolute; inset: 0; border: 1px solid #c9ccce; border-radius: 6px; pointer-events: none; } /* Figma: 1px inside stroke over the cells */
+.vol-table { table-layout: fixed; width: 1810px; border-collapse: separate; border-spacing: 0; }
+.vol-table th, .vol-table td {
+  padding: 6px 16px; background: #fff; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; /* Figma: top + right inside strokes */
+  font: 400 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: left; white-space: nowrap; vertical-align: middle;
+}
+.vol-table th { height: 65px; padding-top: 5px; padding-bottom: 5px; background: #eff9ff; font-weight: 600; white-space: normal; }
+.vol-table td { height: 60px; }
+.vol-table th.is-first { border-top-left-radius: 8px; }
+.vol-table th.is-first, .vol-table td.is-id { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 1px 0 #c9ccce; }
+.vol-table .is-num { text-align: right; }
+.vol-th { display: flex; flex-direction: column; align-items: center; }
+.vol-th > span { align-self: stretch; text-align: right; }
+.vol-table th.is-twin { background: #f9edfd; color: #a333c8; }
+.vol-table th.is-odmma { padding: 0 16px; vertical-align: top; background: #007dc5; }
+.vol-th__top { display: block; height: 19px; padding-top: 0.5px; text-align: right; color: #fff; white-space: nowrap; }
+.vol-table th .vol-input { margin-top: 7px; }
+.vol-table th.is-target { background: #007dc5; color: #fff; border-top-right-radius: 8px; }
+.vol-table th.is-rec { padding: 0; vertical-align: top; background: #f9edfd; box-shadow: none; }
+.vol-rec__title { display: flex; align-items: center; justify-content: center; height: 32px; text-align: center; color: #a333c8; }
+.vol-rec__copy { display: flex; align-items: center; justify-content: center; gap: 4px; height: 31px; font: 300 10px/15px "Noto Sans", sans-serif; color: #727476; white-space: nowrap; cursor: pointer; }
+.vol-rec__copy span { width: 115px; }
+.vol-check { width: 15px; height: 15px; flex: none; margin: 0; appearance: none; background: #fff; border: 1px solid #c9ccce; border-radius: 4px; cursor: pointer; }
+.vol-check:checked { background: #007dc5 url("../assets/icons/check.svg") no-repeat center / 11px 11px; border-color: #007dc5; }
+.vol-table td.w6 { font-weight: 600; }
+.vol-table td.is-center { text-align: center; }
+.vol-table td.twin { font-weight: 700; color: #a333c8; }
+.vol-table td.target { font-weight: 700; color: #007dc5; }
+.vol-table td.rec { font-weight: 600; color: #a333c8; }
+.vol-table td.disp { font-family: "Noto Sans Display", sans-serif; }
+.vol-table td.disp-blue { font-family: "Noto Sans Display", sans-serif; font-weight: 700; color: #007dc5; }
+.vol-table td.is-odmma { padding: 4px 16px; }
+.vol-input { display: block; width: 143px; height: 32px; padding: 0 11px; background: #fff; border: 1px solid #c9ccce; border-radius: 6px; outline: 0; font: 700 12px/20px "Noto Sans", sans-serif; letter-spacing: 0.036px; color: #007dc5; text-align: center; }
+.vol-input:focus-visible { border-color: #007dc5; }
+.vol-table .is-zebra td { background: #f2f4f6; }
+.vol-id { display: flex; align-items: center; gap: 10px; }
+.vol-id .fam-id { width: 74px; gap: 10px; } /* Figma: chevron sits 100px into the cell */
+.vol-id.is-first-row, .vol-id.is-first-row .fam-id { gap: 8px; }
+.vol-id.is-first-row .fam-id { width: 76px; }
+.vol-id.is-first-row .fam-id { font-weight: 300; color: #323436; }
+.vol-toggle { display: flex; flex: none; width: 16px; height: 16px; }
+.vol-toggle[aria-expanded="true"] img { transform: rotate(180deg); }
+.vol-table .vol-detail td { height: auto; padding: 0; background: none; box-shadow: none; }
+.trend { display: flex; flex-direction: column; gap: 16px; height: 244px; padding: 15px; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
+.trend__title { height: 28px; padding-bottom: 7px; border-bottom: 1px solid #ccdde8; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; }
+.trend__cards { display: flex; gap: 79px; height: 168px; }
+.trend-card { flex: none; display: flex; flex-direction: column; gap: 6px; width: 231px; height: 158px; padding: 11px; overflow: hidden; background: #fff; border: 1px solid #c9ccce; border-radius: 8px; }
+.trend-card__block { display: flex; flex-direction: column; gap: 4px; }
+.trend-card__month { font: 600 12px/18px "Noto Sans", sans-serif; color: #323436; }
+.trend-card__label { font: 300 12px/18px "Noto Sans", sans-serif; letter-spacing: 0.036px; color: #323436; }
+.trend-card__promo { font: 600 12px/18px "Noto Sans", sans-serif; }
+.trend-card__value { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #007dc5; }
+.trend-card__block:last-child, .trend-card__block:last-child .trend-card__value { color: #c9ccce; }
+.trend-card__block.is-promo, .trend-card__block.is-promo .trend-card__value { color: #f2711c; }
+.trend-card__line { width: 188px; height: 0; margin: 0 0 -1px; border: 0; border-top: 1px solid #f2f4f6; }
 .fam-table.art-table th { background: #fff; }
 .fam-table.art-table td { height: 60px; }
 .fam-table.art-table td.is-bold { font-weight: 600; }

@@ -146,56 +146,181 @@
 
       <!-- Article drill-down of one family (Figma 26:10344), opened by "Drill Down to Article" -->
       <template id="family-articles">
-        <section class="art-view">
-          <h3 class="art-view__title" data-family-title></h3>
-          <div class="art-view__filter">
-            <label class="fam-search fam-search--soft"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Filter articles ..." aria-label="Filter articles"></label>
-          </div>
-          <div class="art-tabs" role="tablist">
-            <button class="art-tab" type="button" role="tab" aria-selected="true">0: EXCLUSIONS</button>
-            <button class="art-tab" type="button" role="tab" aria-selected="false">1: VOLUME ANALYSIS</button>
-            <button class="art-tab" type="button" role="tab" aria-selected="false">2: PRICE ANALYSIS</button>
-          </div>
-          <div class="art-table-wrap">
-            <table class="fam-table art-table">
-              <colgroup><col style="width:176px"><col style="width:219px"><col style="width:125px"><col style="width:335px"><col style="width:126px"><col style="width:197px"><col style="width:181px"></colgroup>
-              <thead>
-                <tr>
-                  <th><label class="fam-id"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all>Article ID</label></th>
-                  <th>Article Name</th><th>Exclusion Code</th><th>Exclusion Reason</th><th>Start Date</th><th>End Date</th><th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-SUS-FIA-1002" checked>ST-SUS-FIA-1002</label></td>
-                  <td class="is-bold">Fiat Shock Absorber - Gen 3</td><td>8D</td><td>Temporary inventory constraint - GLobal stockout</td><td>2024-01-01</td><td>2024-12-31</td><td>Excluded</td>
-                </tr>
-                <tr>
-                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-SUS-FIA-1014">ST-SUS-FIA-1014</label></td>
-                  <td class="is-bold">Fiat Shock Absorber - Gen 15</td><td>9C</td><td>Pending quality audit review</td><td>2025-01-01</td><td>2025-06-30</td><td>Excluded</td>
-                </tr>
-                <tr>
-                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-FIL-PEU-1006" checked>ST-FIL-PEU-1006</label></td>
-                  <td class="is-bold">Peugeot Oil Filter - Gen 7</td><td>8D</td><td>Supplier contract renegotiation</td><td>2025-03-01</td><td>2025-05-31</td><td>Excluded</td>
-                </tr>
-                <tr>
-                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-FLU-CIT-1009" checked>ST-FLU-CIT-1009</label></td>
-                  <td class="is-bold">Citroen Coolant G12+ - Gen 10</td><td>8D</td><td>End of life cycle - No New promotions</td><td>2025-01-01</td><td>2025-12-31</td><td>Excluded</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="table-footer">
-            <p class="table-footer__summary">Showing article 1 of 10 entries</p>
-            <nav class="pagination" aria-label="Pagination">
-              <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
-              <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
-              <button class="pagination__page" type="button"><span>2</span></button>
-              <button class="pagination__page" type="button"><span>3</span></button>
-              <button class="pagination__page" type="button"><span>4</span></button>
-              <button class="pagination__page" type="button"><span>5</span></button>
-              <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
-            </nav>
+        <section class="art-view" data-tab="exclusions">
+          <div class="art-view__inner">
+            <div class="art-view__top">
+              <h3 class="art-view__title" data-family-title></h3>
+              <label class="art-apply" data-tab-only="volume"><input class="fam-check" type="checkbox" checked>Apply Same Configuration to all markets</label>
+            </div>
+            <div class="art-view__filter" data-tab-only="exclusions">
+              <label class="fam-search fam-search--soft"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Filter articles ..." aria-label="Filter articles"></label>
+            </div>
+            <div class="art-view__tabs-row">
+              <div class="art-tabs" role="tablist">
+                <button class="art-tab" type="button" role="tab" aria-selected="true" data-tab-target="exclusions">0: EXCLUSIONS</button>
+                <button class="art-tab" type="button" role="tab" aria-selected="false" data-tab-target="volume">1: VOLUME ANALYSIS</button>
+                <button class="art-tab" type="button" role="tab" aria-selected="false">2: PRICE ANALYSIS</button>
+              </div>
+              <div class="art-tools" data-tab-only="volume">
+                <button class="art-select" type="button">Select Region<img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+                <label class="fam-search fam-search--soft"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Filter articles ..." aria-label="Filter articles"></label>
+                <button class="art-select art-select--disabled" type="button" disabled>Last 3 months<img src="assets/icons/chevron-down-light.svg" width="16" height="16" alt=""></button>
+              </div>
+            </div>
+            <div class="art-panel" data-tab-panel="exclusions">
+              <div class="art-table-wrap">
+                <table class="fam-table art-table">
+                  <colgroup><col style="width:176px"><col style="width:219px"><col style="width:125px"><col style="width:335px"><col style="width:126px"><col style="width:197px"><col style="width:181px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th><label class="fam-id"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all>Article ID</label></th>
+                      <th>Article Name</th><th>Exclusion Code</th><th>Exclusion Reason</th><th>Start Date</th><th>End Date</th><th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-SUS-FIA-1002" checked>ST-SUS-FIA-1002</label></td>
+                      <td class="is-bold">Fiat Shock Absorber - Gen 3</td><td>8D</td><td>Temporary inventory constraint - GLobal stockout</td><td>2024-01-01</td><td>2024-12-31</td><td>Excluded</td>
+                    </tr>
+                    <tr>
+                      <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-SUS-FIA-1014">ST-SUS-FIA-1014</label></td>
+                      <td class="is-bold">Fiat Shock Absorber - Gen 15</td><td>9C</td><td>Pending quality audit review</td><td>2025-01-01</td><td>2025-06-30</td><td>Excluded</td>
+                    </tr>
+                    <tr>
+                      <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-FIL-PEU-1006" checked>ST-FIL-PEU-1006</label></td>
+                      <td class="is-bold">Peugeot Oil Filter - Gen 7</td><td>8D</td><td>Supplier contract renegotiation</td><td>2025-03-01</td><td>2025-05-31</td><td>Excluded</td>
+                    </tr>
+                    <tr>
+                      <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-FLU-CIT-1009" checked>ST-FLU-CIT-1009</label></td>
+                      <td class="is-bold">Citroen Coolant G12+ - Gen 10</td><td>8D</td><td>End of life cycle - No New promotions</td><td>2025-01-01</td><td>2025-12-31</td><td>Excluded</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-footer">
+                <p class="table-footer__summary">Showing article 1 of 10 entries</p>
+                <nav class="pagination" aria-label="Pagination">
+                  <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                  <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+                  <button class="pagination__page" type="button"><span>2</span></button>
+                  <button class="pagination__page" type="button"><span>3</span></button>
+                  <button class="pagination__page" type="button"><span>4</span></button>
+                  <button class="pagination__page" type="button"><span>5</span></button>
+                  <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                </nav>
+              </div>
+            </div>
+            <div class="art-panel" data-tab-panel="volume">
+              <div class="vol-table-wrap">
+                <table class="vol-table">
+                  <colgroup><col style="width:132px"><col style="width:256px"><col style="width:86px"><col style="width:113px"><col style="width:111px"><col style="width:110px"><col style="width:129px"><col style="width:129px"><col style="width:87px"><col style="width:94px"><col style="width:101px"><col style="width:175px"><col style="width:130px"><col style="width:157px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first"><label class="fam-id"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all>Article ID</label></th>
+                      <th>Article Name</th>
+                      <th class="is-num"><span class="vol-th"><span>Hist. vol.<br>(Last 3M)</span></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Total Ordered Qty.</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. Qty W/O Promo</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. Qty with Promo</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. Qty. During Promo</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. monthly  demand</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Demand Forecast</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num is-twin">Twin X Demand Forecast</th>
+                      <th class="is-num is-twin">Confidence Score</th>
+                      <th class="is-odmma"><span class="vol-th__top">ODMMA (Objective, %)</span><input class="vol-input" type="text" value="50" aria-label="ODMMA for all articles"></th>
+                      <th class="is-num is-target">Promo Volume Target (in units)</th>
+                      <th class="is-rec"><span class="vol-rec__title">Recommended Target Volumes</span><label class="vol-rec__copy"><input class="vol-check" type="checkbox"><span>Copy to Volume Targets</span></label></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="vol-row">
+                      <td class="is-id"><div class="vol-id is-first-row"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked>8845H3</label><button class="vol-toggle" type="button" aria-expanded="true" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></div></td>
+                      <td class="w6">Fiat Coolant G12+ - Gen 1</td>
+                      <td class="is-num w4">3.2</td>
+                      <td class="is-num w4">3.2</td>
+                      <td class="is-num w4">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">10</td>
+                      <td class="is-num twin">30</td>
+                      <td class="is-num w6 is-center">-</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="50" aria-label="ODMMA for 8845H3"></td>
+                      <td class="is-num target">10</td>
+                      <td class="is-num rec">10</td>
+                    </tr>
+                    <tr class="vol-detail"><td colspan="14"><div class="trend"><h4 class="trend__title">Monthly Trend Analysis</h4><div class="trend__cards">
+                      <div class="trend-card"><div class="trend-card__block"><span class="trend-card__month">OCT ‘25</span><span class="trend-card__label">Non-Promo Sales</span><span class="trend-card__value">5</span></div><hr class="trend-card__line"><div class="trend-card__block"><span class="trend-card__promo">Promo Sales</span><span class="trend-card__value">0</span></div></div>
+                      <div class="trend-card"><div class="trend-card__block"><span class="trend-card__month">NOV ‘25</span><span class="trend-card__label">Non-Promo Sales</span><span class="trend-card__value">6</span></div><hr class="trend-card__line"><div class="trend-card__block is-promo"><span class="trend-card__promo">Promo Sales</span><span class="trend-card__value">4</span></div></div>
+                      <div class="trend-card"><div class="trend-card__block"><span class="trend-card__month">DEC ‘25</span><span class="trend-card__label">Non-Promo Sales</span><span class="trend-card__value">5</span></div><hr class="trend-card__line"><div class="trend-card__block is-promo"><span class="trend-card__promo">Promo Sales</span><span class="trend-card__value">4</span></div></div>
+                      <div class="trend-card"><div class="trend-card__block"><span class="trend-card__month">JAN ‘25</span><span class="trend-card__label">Non-Promo Sales</span><span class="trend-card__value">6</span></div><hr class="trend-card__line"><div class="trend-card__block"><span class="trend-card__promo">Promo Sales</span><span class="trend-card__value">0</span></div></div>
+                      <div class="trend-card"><div class="trend-card__block"><span class="trend-card__month">FEB ‘25</span><span class="trend-card__label">Non-Promo Sales</span><span class="trend-card__value">5</span></div><hr class="trend-card__line"><div class="trend-card__block"><span class="trend-card__promo">Promo Sales</span><span class="trend-card__value">0</span></div></div>
+                      <div class="trend-card"><div class="trend-card__block"><span class="trend-card__month">MAR ‘25</span><span class="trend-card__label">Non-Promo Sales</span><span class="trend-card__value">5</span></div><hr class="trend-card__line"><div class="trend-card__block"><span class="trend-card__promo">Promo Sales</span><span class="trend-card__value">0</span></div></div>
+                    </div></div></td></tr>
+                    <tr class="vol-row">
+                      <td class="is-id"><div class="vol-id"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked>8845G7</label><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845G7" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></div></td>
+                      <td class="w4">Fiat Spark Plug Platinum - Gen 2</td>
+                      <td class="is-num disp-blue">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num disp">12</td>
+                      <td class="is-num twin">32</td>
+                      <td class="is-num twin">32</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="25" aria-label="ODMMA for 8845G7"></td>
+                      <td class="is-num target">12</td>
+                      <td class="is-num rec"></td>
+                    </tr>
+                    <tr class="vol-row is-zebra">
+                      <td class="is-id"><div class="vol-id"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G9" checked>8845G9</label><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845G9" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></div></td>
+                      <td class="w4">Fiat Shock Absorber - Gen 3</td>
+                      <td class="is-num w4">5.1</td>
+                      <td class="is-num w4">5.1</td>
+                      <td class="is-num w4">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num disp">15</td>
+                      <td class="is-num twin">45</td>
+                      <td class="is-num twin">45</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="ODMMA for 8845G9"></td>
+                      <td class="is-num target">15</td>
+                      <td class="is-num rec"></td>
+                    </tr>
+                    <tr class="vol-row">
+                      <td class="is-id"><div class="vol-id"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G9" checked>8845G9</label><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845G9" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></div></td>
+                      <td class="w4">Fiat Lower Control Arm - Gen 4</td>
+                      <td class="is-num disp-blue">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num w6">5.1</td>
+                      <td class="is-num disp">20</td>
+                      <td class="is-num twin">40</td>
+                      <td class="is-num twin">40</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="55" aria-label="ODMMA for 8845G9"></td>
+                      <td class="is-num target">20</td>
+                      <td class="is-num rec"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-footer">
+                <p class="table-footer__summary">Showing article 1 of 10 entries</p>
+                <nav class="pagination" aria-label="Pagination">
+                                  <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                                  <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+                                  <button class="pagination__page" type="button"><span>2</span></button>
+                                  <button class="pagination__page" type="button"><span>3</span></button>
+                                  <button class="pagination__page" type="button"><span>4</span></button>
+                                  <button class="pagination__page" type="button"><span>5</span></button>
+                                  <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                                </nav>
+              </div>
+            </div>
           </div>
         </section>
       </template>

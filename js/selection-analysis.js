@@ -64,12 +64,36 @@
   });
   // Article checkboxes: the header checkbox selects or clears all rows.
   list.addEventListener('change', function (e) {
-    var table = e.target.closest('.art-table');
-    if (!table) return;
+    var table = e.target.closest('.art-view table');
+    if (!table || !e.target.classList.contains('fam-check')) return;
     var checks = Array.prototype.slice.call(table.querySelectorAll('tbody .fam-check'));
     var head = table.querySelector('[data-check-all]');
     if (e.target === head) checks.forEach(function (c) { c.checked = head.checked; });
     else head.checked = checks.every(function (c) { return c.checked; });
+  });
+
+  // Article view tabs: Exclusions and Volume Analysis (Figma 26:11097); Price Analysis has no design yet.
+  list.addEventListener('click', function (e) {
+    var tab = e.target.closest('[data-tab-target]');
+    if (!tab) return;
+    var view = tab.closest('.art-view');
+    view.dataset.tab = tab.dataset.tabTarget;
+    view.querySelectorAll('.art-tab').forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
+  });
+  // Volume Analysis: each article row expands and collapses its Monthly Trend Analysis.
+  list.addEventListener('click', function (e) {
+    var toggle = e.target.closest('[data-toggle-article]');
+    if (!toggle) return;
+    var row = toggle.closest('tr');
+    var detail = row.nextElementSibling;
+    if (!detail || !detail.classList.contains('vol-detail')) {
+      detail = row.parentNode.querySelector('.vol-detail').cloneNode(true);
+      detail.hidden = true;
+      row.after(detail);
+    }
+    var expanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!expanded));
+    detail.hidden = expanded;
   });
 
   // Each family panel expands and collapses from its chevron.
