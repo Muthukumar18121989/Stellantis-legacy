@@ -85,16 +85,64 @@
       <section class="sel-summary">
         <div class="sel-summary__text">
           <h2 class="sel-summary__title">Article Selection Core</h2>
-          <p class="sel-summary__meta">0 Families | 0 Targeted SKUs</p>
+          <p class="sel-summary__meta" data-selection-meta>0 Families | 0 Targeted SKUs</p>
         </div>
         <button class="btn-icon-primary" type="button" data-open-dialog="select-family"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Manage Families</button>
       </section>
 
       <!-- Empty state (Figma 26:10328) -->
-      <section class="sel-empty">
+      <section class="sel-empty" data-empty-state>
         <img src="assets/illustrations/empty-families.svg" width="80" height="80" alt="">
         <p class="sel-empty__text">NO FAMILIES SELECTED. MANAGE FAMILIES TO PROCEES</p>
       </section>
+
+      <!-- Selected families (Figma 26:9854), filled from the Select Family dialog -->
+      <section class="fam-list" aria-label="Selected families" hidden></section>
+      <template id="family-panel">
+        <article class="fam-panel">
+          <div class="fam-panel__head">
+            <h3 class="fam-panel__title" data-family-title></h3>
+            <button class="fam-panel__toggle" type="button" aria-expanded="true" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          </div>
+          <div class="fam-panel__body">
+            <div class="fam-panel__cards"><div class="fam-panel__track">
+              <section class="an-card">
+                <img class="an-card__wave" src="assets/shapes/card-wave.svg" alt="">
+                <div class="an-card__content">
+                  <div class="an-card__head"><h4 class="an-card__title">Overview</h4></div>
+                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">No of Articles</span><span class="an-row__value">32 Active, 3 Excluded</span></div></div>
+                </div>
+                <img class="an-card__icon" src="assets/icons/file-info-large.svg" width="76" height="76" alt="">
+              </section>
+              <section class="an-card">
+                <img class="an-card__wave" src="assets/shapes/card-wave.svg" alt="">
+                <div class="an-card__content">
+                  <div class="an-card__head"><h4 class="an-card__title">Volume Analysis (12Months)</h4><span class="an-badge">12 Months</span></div>
+                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Total Historical<br>Quantity</span><span class="an-row__value">54,000</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Historical Monthly<br>Quantity without Promotion</span><span class="an-row__value">1,870</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Historical Monthly<br>Quantity with Promotion</span><span class="an-row__value">2,380</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Historical Monthly<br>Demand</span><span class="an-row__value">2,380</span></div></div>
+                </div>
+                <img class="an-card__icon" src="assets/icons/stack-3-large.svg" width="76" height="76" alt="">
+              </section>
+              <section class="an-card">
+                <img class="an-card__wave" src="assets/shapes/card-wave.svg" alt="">
+                <div class="an-card__content">
+                  <div class="an-card__head"><h4 class="an-card__title">Price Analysis</h4><span class="an-badge">Current</span></div>
+                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Commercial<br>Margin, €</span><span class="an-row__value">8.25</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Commercial Margin %</span><span class="an-row__value">87.65</span></div></div>
+                  <div class="an-row an-row--elasticity"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Promo Elasticity</span><span class="an-row__value">-1.04</span></div></div>
+                </div>
+                <img class="an-card__icon an-card__icon--tag" src="assets/icons/tag-large.svg" width="77" height="76" alt="">
+              </section>
+            </div></div>
+            <div class="fam-panel__actions">
+              <button class="btn-outline" type="button">Remove Family</button>
+              <button class="btn-next" type="button">Drill Down to Article</button>
+            </div>
+          </div>
+        </article>
+      </template>
 
       <div class="cfg-actions">
         <a class="btn-outline" href="promotion-configuration.html" data-keep-query>Back</a>
@@ -196,7 +244,7 @@
           <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
         </nav>
       </div>
-      <button class="btn-selected" type="button"><span data-selected-count>3 Selected</span><img src="assets/icons/arrow-right.svg" width="20" height="20" alt=""></button>
+      <button class="btn-selected" type="button" data-apply-selection><span data-selected-count>3 Selected</span><img src="assets/icons/arrow-right.svg" width="20" height="20" alt=""></button>
     </div>
   </form>
   <button class="fam-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>

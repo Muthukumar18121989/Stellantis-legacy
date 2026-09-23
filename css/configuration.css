@@ -3,6 +3,7 @@
 
 .page--configuration { min-height: 805px; }
 .page--selection { min-height: 854px; }
+.page--selection.has-families { min-height: 798px; } /* Figma 26:9854 is 1366 × 798 */
 
 /* Top menu logo (Figma 26:12331): 130 × 28 logo image slot + "Powered by" TCS TwinX */
 .page--configuration .top-menu__logo, .page--selection .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
@@ -115,6 +116,44 @@
   background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
 }
 .sel-empty__text { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #727476; white-space: nowrap; }
+
+/* ---------- Selected families (Figma 26:9854): one expandable panel per family ---------- */
+.fam-list {
+  height: 392px; display: flex; flex-direction: column; gap: 12px; padding: 12px; overflow-y: auto; scrollbar-width: none; /* Figma: vertical scroll, no scrollbar drawn */
+  background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 0.924px #bfe0f5;
+}
+.fam-list[hidden], .sel-empty[hidden] { display: none; }
+.fam-panel { flex: none; height: 366px; display: flex; flex-direction: column; gap: 10px; padding: 5px 11px; background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; }
+.fam-panel.is-collapsed { height: 31px; }
+.fam-panel__head { display: flex; align-items: flex-start; gap: 10px; height: 19px; }
+.fam-panel.is-collapsed .fam-panel__head { align-items: center; }
+.fam-panel__title { flex: 1; min-width: 0; height: 19px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.fam-panel__toggle { display: flex; flex: none; width: 16px; height: 16px; padding: 0; background: none; border: 0; cursor: pointer; }
+.fam-panel__toggle[aria-expanded="true"] img { transform: rotate(180deg); }
+.fam-panel__body { display: flex; flex-direction: column; gap: 10px; }
+.fam-panel.is-collapsed .fam-panel__body { display: none; }
+.fam-panel__cards { height: 276px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; } /* Figma: horizontal scroll, no scrollbar drawn */
+.fam-panel__track { display: flex; gap: 12px; width: max-content; height: 276px; filter: drop-shadow(0 4px 3px rgba(142, 142, 142, 0.1)); }
+.fam-panel__actions { display: flex; justify-content: flex-end; gap: 16px; }
+
+.an-card { position: relative; flex: none; width: 405px; height: 276px; background: #fff; border: 1px solid #bfe0f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
+.an-card__wave { position: absolute; left: -1px; bottom: -1px; width: calc(100% + 2px); height: 101px; }
+.an-card__content { position: absolute; top: -1px; left: -1px; width: 405px; display: flex; flex-direction: column; padding: 8px 16px; }
+.an-card__head { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 3px; border-bottom: 1px solid #bfe0f5; }
+.an-card__title { font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #0066a1; white-space: nowrap; }
+.an-badge { display: flex; align-items: center; height: 14px; padding: 0 4px; background: rgba(0, 125, 197, 0.08); border-radius: 4px; box-shadow: inset 0 0 0 0.5px #007dc5; font: 300 10px/15px "Poppins", sans-serif; color: #3f4047; white-space: nowrap; }
+.an-card__icon { position: absolute; right: 5px; bottom: 6px; }
+.an-card__icon--tag { right: auto; bottom: auto; left: calc(50% + 146px); top: calc(50% + 89px); transform: translate(-50%, -50%); }
+.an-row { position: relative; display: flex; align-items: center; gap: 8px; }
+.an-row::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; border-top: 0.5px dashed #ccdde8; } /* Figma: 0.5px dashed inside stroke */
+.an-row__dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: #007dc5; }
+.an-row__body { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; padding: 6px 3px; white-space: nowrap; }
+.an-row--top .an-row__body { align-items: flex-start; }
+.an-row__label { margin-right: -2px; font: 300 12px/18px "Poppins", sans-serif; color: #727476; }
+.an-row__value { font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.an-row--elasticity .an-row__dot { background: #a333c8; }
+.an-row--elasticity .an-row__body { justify-content: flex-start; gap: 215px; }
+.an-row--elasticity .an-row__label, .an-row--elasticity .an-row__value { margin: 0; font: 600 12px/18px "Noto Sans", sans-serif; letter-spacing: 0; color: #a333c8; }
 
 /* ---------- Select Family dialog (Figma 26:13500), opened by "Manage Families" ---------- */
 .fam-dialog {
