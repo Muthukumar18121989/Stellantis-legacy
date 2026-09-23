@@ -1,0 +1,88 @@
+/* Promotion Admin Dashboard — Figma "Dashboard v1" (node 3:12252), 1366 × 1257 */
+
+.page--dashboard { min-height: 1257.333px; }
+
+/* ---------- Page header ---------- */
+.page-header {
+  height: 101px; display: flex; align-items: center;
+  padding: 12px 16px 11px;
+  background: #fff; border-bottom: 1px solid #bfe0f5;
+}
+.page-header__inner { display: flex; flex-direction: column; gap: 4px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; }
+.breadcrumb__sep { font: 400 14px/normal "Poppins", sans-serif; letter-spacing: 0.056px; color: #3c4572; }
+.breadcrumb__current { font: 400 12px/18px "Open Sans", sans-serif; letter-spacing: 0.4px; color: #323436; }
+.page-header__title { font: 600 24px/normal "Open Sans", sans-serif; letter-spacing: -0.44px; color: #196c9b; }
+.page-header__subtitle { font: 400 14px/normal "Open Sans", sans-serif; letter-spacing: -0.44px; color: #727476; }
+
+/* ---------- Content ---------- */
+.content { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
+
+.page--dashboard .field { width: 340px; }
+
+/* Region tabs */
+.tabs { height: 36px; display: flex; align-items: stretch; gap: 16px; padding: 0 16px; }
+.tabs__list { display: flex; align-items: flex-end; gap: 16px; }
+.tab { display: flex; flex-direction: column; padding: 8px 16px 0; }
+.tab__inner { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.tab__label { font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #c9ccce; text-align: center; white-space: nowrap; }
+.tab__bar { height: 4px; width: 46px; border-radius: 2px 2px 0 0; }
+.tab--active .tab__label { color: #2c2c30; }
+.tab--active .tab__bar { width: 100%; background: #007dc5; }
+
+/* NSC / Importers switch */
+.segments { height: 36px; display: flex; align-items: stretch; gap: 16px; padding: 0 16px; }
+.segments__list { display: flex; align-items: flex-end; gap: 16px; }
+.segment { padding: 8px 16px; border-radius: 1000px; font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; text-align: center; white-space: nowrap; }
+.segment--active { background: #007dc5; color: #fff; }
+
+/* Chart cards */
+.charts { display: flex; gap: 16px; height: 402.333px; }
+.card {
+  flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 16px; padding: 15px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.card__head {
+  display: flex; align-items: center; padding-bottom: 8px;
+  /* Figma: 1px bottom stroke, dash pattern 4/2 */
+  background: linear-gradient(to right, #bfe0f5 4px, transparent 4px) left bottom / 6px 1px repeat-x;
+}
+.card__title {
+  display: flex; align-items: center; gap: 4px; padding: 0 12px;
+  /* Figma: 4px inside left stroke, vertical gradient, not included in layout */
+  background: linear-gradient(to bottom, #47b796, #01a1fe) left top / 4px 100% no-repeat; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.chart {
+  height: 326.333px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  padding: 7.08px 23.08px 11.08px;
+  background: #fff; border: 0.92px solid #eff0f6; border-radius: 8px;
+}
+.chart__pie { width: 228.285px; height: 228.297px; flex: none; }
+.chart__pie img { width: 100%; height: 100%; }
+.legend { display: flex; align-items: flex-start; gap: 17px; }
+.legend__col { display: flex; flex-direction: column; gap: 8px; }
+.legend__item { display: flex; align-items: center; gap: 6px; }
+.legend__dot { width: 8px; height: 8px; border-radius: 40px; flex: none; }
+.legend__name { font: 500 11px/16px "Inter", sans-serif; color: #1e1b39; white-space: nowrap; }
+.legend__value { width: 33px; font: 400 11px/16px "Inter", sans-serif; color: #615e83; }
+
+/* Stat cards */
+.stats { display: flex; gap: 16px; height: 74px; }
+.stat {
+  flex: 1; min-width: 0; height: 74px; display: flex; align-items: center; gap: 14px; padding: 11px; overflow: hidden;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px;
+}
+.stat__icon { position: relative; width: 36px; height: 36px; flex: none; background: #eff9ff; border: 1px solid #fff; border-radius: 10px; }
+.stat__icon img { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.stat__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.stat__label { font: 500 12px/18px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.stat__value { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
+
+/* Requests table */
+.table-card { height: 344px; padding: 11.076px; overflow: hidden; background: #fff; border: 0.924px solid #bfe0f5; border-radius: 12px; }
+.table-card__inner { width: 1234px; display: flex; flex-direction: column; gap: 16px; }
+.requests { table-layout: fixed; width: 1242px; }
+.requests th, .requests td { border-bottom: 1px solid #ccdde8; padding: 6px 16px; font-size: 12px; line-height: 18px; color: #323436; white-space: nowrap; }
+.requests th { height: 40px; background: #f4f9fc; font-family: "Poppins", sans-serif; font-weight: 600; }
+.requests td { height: 48px; background: #fff; font-family: "Poppins", sans-serif; font-weight: 400; }
+.requests td.is-light { font-weight: 300; }
+.requests td.is-bold { font-weight: 600; }

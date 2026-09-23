@@ -3,28 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=1366">
-  <title>Promotion Admin Dashboard</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Promotool — Experiments</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/experiment.css">
 </head>
 <body>
-<div class="page">
+<div class="page page--experiment">
 
-  <!-- Left menu bar (Figma 3:12254) -->
+  <!-- Left menu bar (Figma 26:5898) -->
   <nav class="left-bar" aria-label="Primary">
     <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
     <div class="left-bar__menus">
-      <a class="left-bar__item left-bar__item--active" href="#" aria-label="Home" aria-current="page"><img src="assets/icons/home.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="#" aria-label="Tools"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="#" aria-label="Users"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="#" aria-label="Hierarchy"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="#" aria-label="Overview"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="index.html" aria-label="Experiments" aria-current="page"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="dashboard.html" aria-label="Promotion Admin Dashboard"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
     </div>
   </nav>
 
   <div class="main">
 
-    <!-- Top menu (Figma 3:12272) -->
+    <!-- Top menu (Figma 26:5915) -->
     <header class="top-menu">
-      <div class="top-menu__logo"></div>
+      <div class="top-menu__logo">
+        <div class="brand">
+          <div class="brand__row">
+            <div class="brand__mark"></div>
+            <div class="brand__name-box"><p class="brand__name">Promotool</p></div>
+          </div>
+        </div>
+      </div>
       <div class="top-menu__right">
         <button class="notif" aria-label="Notifications (5)">
           <img src="assets/icons/bell.svg" width="24" height="24" alt="">
@@ -39,45 +46,72 @@
           </span>
         </button>
         <button class="profile">
-          <span class="profile__name">Kristen</span>
-          <span class="profile__role">Promotool Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
         </button>
       </div>
     </header>
 
-    <!-- Page header (Figma 3:12307) -->
-    <section class="page-header">
-      <div class="page-header__inner">
-        <div class="breadcrumb">
-          <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current">Promotool Admin Dashboard</span>
-        </div>
-        <div>
-          <h1 class="page-header__title">Promotion Admin Dashboard</h1>
-          <p class="page-header__subtitle">Real-time metrics and activity across all promotion pipelines.</p>
-        </div>
+    <main class="exp-body">
+
+      <!-- Products / Network (Figma 26:5939) -->
+      <div class="config-cards">
+        <section class="config-card">
+          <div class="config-card__main">
+            <span class="config-card__icon"><img src="assets/shapes/icon-circle.svg" width="42" height="42" alt=""><img src="assets/icons/package.svg" alt=""></span>
+            <h2 class="config-card__label">Products ​</h2>
+          </div>
+          <div class="config-card__types">
+            <div class="types">
+              <p class="types__title" style="width:85px">Types</p>
+              <div class="types__list">
+                <span class="types__item"><img src="assets/shapes/dot-sky.svg" width="9" height="9" alt="">OE</span>
+                <span class="types__item"><img src="assets/shapes/dot-sky.svg" width="9" height="9" alt="">EUROREPAR</span>
+                <span class="types__item"><img src="assets/shapes/dot-sky.svg" width="9" height="9" alt="">WSP</span>
+              </div>
+            </div>
+          </div>
+          <img class="config-card__decor config-card__decor--box" src="assets/illustrations/products-box.svg" width="76" height="114" alt="">
+          <img class="config-card__decor config-card__decor--arc" src="assets/illustrations/card-arc.svg" width="85" height="57" alt="">
+        </section>
+
+        <section class="config-card">
+          <div class="config-card__main">
+            <span class="config-card__icon"><img src="assets/shapes/icon-circle.svg" width="42" height="42" alt=""><img src="assets/icons/chart-pie-2.svg" alt=""></span>
+            <h2 class="config-card__label">Network</h2>
+          </div>
+          <div class="config-card__types config-card__types--grow">
+            <div class="types">
+              <p class="types__title" style="width:76px">Types</p>
+              <div class="types__list">
+                <span class="types__item"><img src="assets/shapes/dot-sky-faded.svg" width="9" height="9" alt="">NSCs</span>
+                <span class="types__item types__item--top"><img src="assets/shapes/dot-sky-faded.svg" width="9" height="9" alt=""><span style="width:171px">Importers</span></span>
+              </div>
+            </div>
+          </div>
+          <img class="config-card__decor config-card__decor--arc" src="assets/illustrations/card-arc.svg" width="85" height="57" alt="">
+          <img class="config-card__decor config-card__decor--pie" src="assets/illustrations/network-pie.svg" width="73" height="81" alt="">
+        </section>
       </div>
-    </section>
 
-    <main class="content">
-
-      <!-- Filters (Figma 3:12446) -->
+      <!-- Filters (Figma 26:6028) -->
       <section class="filters">
         <div class="filters__fields">
           <button class="field">
-            <span class="field__label">Start</span>
-            <span class="field__control">
-              <span class="field__value field__value--noto">mm/dd/yyy</span>
-              <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-            </span>
+            <span class="field__label">Promotion Status</span>
+            <span class="field__control"><span class="field__value field__value--noto">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
           </button>
           <button class="field">
-            <span class="field__label">End</span>
-            <span class="field__control">
-              <span class="field__value field__value--poppins">mm/dd/yyyy</span>
-              <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-            </span>
+            <span class="field__label">Region</span>
+            <span class="field__control"><span class="field__value field__value--noto">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+          </button>
+          <button class="field">
+            <span class="field__label">Involved Families</span>
+            <span class="field__control"><span class="field__value field__value--poppins">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+          </button>
+          <button class="field">
+            <span class="field__label">Period</span>
+            <span class="field__control"><span class="field__value field__value--noto">Choose Date Range</span><img src="assets/icons/eye.svg" width="16" height="16" alt=""></span>
           </button>
         </div>
         <div class="filters__actions">
@@ -89,139 +123,134 @@
         </div>
       </section>
 
-      <!-- Region tabs (Figma 3:12470) -->
-      <div class="tabs">
-        <div class="tabs__list" role="tablist">
-          <button class="tab tab--active" role="tab" aria-selected="true"><span class="tab__inner"><span class="tab__label">EE</span><span class="tab__bar"></span></span></button>
-          <button class="tab" role="tab" aria-selected="false"><span class="tab__inner"><span class="tab__label">MEA</span><span class="tab__bar"></span></span></button>
-          <button class="tab" role="tab" aria-selected="false"><span class="tab__inner"><span class="tab__label">IAP</span><span class="tab__bar"></span></span></button>
-          <button class="tab" role="tab" aria-selected="false"><span class="tab__inner"><span class="tab__label">SA</span><span class="tab__bar"></span></span></button>
-        </div>
-      </div>
+      <!-- My Projects + Promotion Optimization (Figma 26:6052) -->
+      <section class="projects-card">
+        <div class="projects-card__inner">
 
-      <!-- NSC / Importers (Figma 3:12480) -->
-      <div class="segments">
-        <div class="segments__list">
-          <button class="segment segment--active">NSC</button>
-          <button class="segment">Importers</button>
-        </div>
-      </div>
+          <aside class="projects">
+            <div class="projects__head">
+              <h2 class="projects__title">My Projects / <span class="projects__count">02</span></h2>
+              <button class="btn-square" aria-label="New project"><img src="assets/icons/plus.svg" width="16" height="16" alt=""></button>
+            </div>
+            <div class="projects__list">
+              <button class="project project--active">
+                <span class="project__text"><span class="project__name">Nov 2025_Promo</span><span class="project__date">Sat, 23 Nov, 2025 11:03 AM</span></span>
+                <img class="project__lock" src="assets/icons/lock.svg" width="16" height="16" alt="Locked">
+              </button>
+              <button class="project">
+                <span class="project__text"><span class="project__name">Oct 2025_Promo​</span><span class="project__date">Sat, 23 Oct, 2025 11:03 AM</span></span>
+                <img class="project__lock" src="assets/icons/lock-open.svg" width="16" height="16" alt="Unlocked">
+              </button>
+            </div>
+          </aside>
 
-      <!-- Charts (Figma 3:12488) -->
-      <div class="charts">
-        <section class="card">
-          <div class="card__head"><h2 class="card__title">Pending by Market</h2></div>
-          <div class="chart">
-            <div class="chart__pie"><img src="assets/charts/pending-by-market.svg" width="229" height="229" alt="Pending by Market donut chart"></div>
-            <div class="legend">
-              <div class="legend__col">
-                <div class="legend__item"><span class="legend__dot" style="background:#4ec6de"></span><span class="legend__name">Austria</span><span class="legend__value">32%</span></div>
-                <div class="legend__item"><span class="legend__dot" style="background:#69ad6c"></span><span class="legend__name">Italy</span><span class="legend__value">32%</span></div>
-              </div>
-              <div class="legend__col">
-                <div class="legend__item"><span class="legend__dot" style="background:#d57eb2"></span><span class="legend__name">Belgium</span><span class="legend__value">32%</span></div>
-                <div class="legend__item"><span class="legend__dot" style="background:#a99e67"></span><span class="legend__name">Netherlands</span><span class="legend__value">32%</span></div>
-              </div>
-              <div class="legend__col">
-                <div class="legend__item"><span class="legend__dot" style="background:#8069ad"></span><span class="legend__name">France</span><span class="legend__value">32%</span></div>
-                <div class="legend__item"><span class="legend__dot" style="background:#698ead"></span><span class="legend__name">Portugal</span><span class="legend__value">32%</span></div>
-              </div>
-              <div class="legend__col">
-                <div class="legend__item"><span class="legend__dot" style="background:#d98086"></span><span class="legend__name">Germany</span><span class="legend__value">32%</span></div>
-                <div class="legend__item"><span class="legend__dot" style="background:#7ca5d6"></span><span class="legend__name">Spain</span><span class="legend__value">32%</span></div>
-              </div>
-              <div class="legend__col">
-                <div class="legend__item"><span class="legend__dot" style="background:#7ed5af"></span><span class="legend__name">UK</span><span class="legend__value">32%</span></div>
+          <div class="optimization">
+            <div class="optimization__head">
+              <h2 class="optimization__title">Promotion Optimization</h2>
+              <div class="optimization__actions">
+                <label class="search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Request, Status" aria-label="Search by Request, Status"></label>
+                <button class="btn-primary">Create New Promo​</button>
+                <button class="btn-primary">Compare</button>
               </div>
             </div>
-          </div>
-        </section>
 
-        <section class="card">
-          <div class="card__head"><h2 class="card__title">Pending by Violation Market</h2></div>
-          <div class="chart">
-            <div class="chart__pie"><img src="assets/charts/pending-by-violation-market.svg" width="229" height="229" alt="Pending by Violation Market donut chart"></div>
-            <div class="legend">
-              <div class="legend__col">
-                <div class="legend__item"><span class="legend__dot" style="background:#98d1a8"></span><span class="legend__name">Article negative margin</span><span class="legend__value">32%</span></div>
-                <div class="legend__item"><span class="legend__dot" style="background:#ffd863"></span><span class="legend__name">Financial Impact</span><span class="legend__value">32%</span></div>
-              </div>
-              <div class="legend__col">
-                <div class="legend__item"><span class="legend__dot" style="background:#fd9a7e"></span><span class="legend__name">Family cluster margin</span><span class="legend__value">32%</span></div>
-                <div class="legend__item"><span class="legend__dot" style="background:#dfee7c"></span><span class="legend__name">Promotion budget</span><span class="legend__value">32%</span></div>
-              </div>
+            <div class="table-wrap">
+              <table class="promos">
+                <colgroup>
+                  <col style="width:86px"><col style="width:183px"><col style="width:77px"><col style="width:92px"><col style="width:92px"><col style="width:120px"><col style="width:162px"><col style="width:86px"><col style="width:1px"><col style="width:120px">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select all">ID</span></th>
+                    <th>Promotion Name</th><th>Region</th><th>Start Date</th><th>End Date</th><th>No. of Families</th><th>Experiment Status</th><th>Iteration</th>
+                    <th class="is-center">xperim</th>
+                    <th class="is-center">Actions <br>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2724">2724</span></td>
+                      <td class="is-bold">Thanks-giving Promotion</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>10</td>
+                      <td><span class="badge badge--progress" style="width:47px"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">Draft</span></span></td>
+                      <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+                      <td class="promos__actions" colspan="2">
+                        <span class="promos__actions-inner">
+                          <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--edit" aria-label="Edit experiment" disabled><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2705">2705</span></td>
+                      <td class="is-bold">Holiday Promotion</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
+                      <td><span class="badge badge--pending"><img src="assets/shapes/dot-yellow.svg" width="8" height="8" alt=""><span class="badge__text">Planned</span></span></td>
+                      <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+                      <td class="promos__actions" colspan="2">
+                        <span class="promos__actions-inner">
+                          <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--edit" aria-label="Edit experiment" disabled><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2701">2701</span></td>
+                      <td class="is-bold">February Promotion</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
+                      <td><span class="badge badge--pending"><img src="assets/shapes/dot-yellow.svg" width="8" height="8" alt=""><span class="badge__text">Submitted for Logistics Review​</span></span></td>
+                      <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+                      <td class="promos__actions" colspan="2">
+                        <span class="promos__actions-inner">
+                          <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--edit" aria-label="Edit experiment" disabled><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2698">2698</span></td>
+                      <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
+                      <td><span class="badge badge--progress"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">Active</span></span></td>
+                      <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+                      <td class="promos__actions" colspan="2">
+                        <span class="promos__actions-inner">
+                          <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--edit" aria-label="Edit experiment" disabled><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2699">2699</span></td>
+                      <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
+                      <td><span class="badge badge--progress" style="width:135px"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">Analysis Completed​</span></span></td>
+                      <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+                      <td class="promos__actions" colspan="2">
+                        <span class="promos__actions-inner">
+                          <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+                          <button class="action action--edit" aria-label="Edit experiment" disabled><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+                        </span>
+                      </td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="table-footer">
+              <p class="table-footer__summary">Showing 1 to 8 of 600 entries</p>
+              <nav class="pagination" aria-label="Pagination">
+                <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+                <button class="pagination__page"><span>2</span></button>
+                <button class="pagination__page"><span>3</span></button>
+                <button class="pagination__page"><span>4</span></button>
+                <button class="pagination__page"><span>5</span></button>
+                <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+              </nav>
             </div>
           </div>
-        </section>
-      </div>
 
-      <!-- Stat cards (Figma 3:13555) -->
-      <div class="stats">
-        <div class="stat">
-          <span class="stat__icon"><img src="assets/icons/notes.svg" width="24" height="24" alt=""></span>
-          <div class="stat__body"><p class="stat__label">Total Requests</p><p class="stat__value">16</p></div>
-        </div>
-        <div class="stat">
-          <span class="stat__icon"><img src="assets/icons/clock.svg" width="24" height="24" alt=""></span>
-          <div class="stat__body"><p class="stat__label">Pending Approvals</p><p class="stat__value">13</p></div>
-        </div>
-        <div class="stat">
-          <span class="stat__icon"><img src="assets/icons/alert-circle.svg" width="24" height="24" alt=""></span>
-          <div class="stat__body"><p class="stat__label">Returned for Work</p><p class="stat__value">2</p></div>
-        </div>
-        <div class="stat">
-          <span class="stat__icon"><img src="assets/icons/alert-circle.svg" width="24" height="24" alt=""></span>
-          <div class="stat__body"><p class="stat__label">Closed Today</p><p class="stat__value">7</p></div>
-        </div>
-      </div>
-
-      <!-- Requests table (Figma 3:13666) -->
-      <section class="table-card">
-        <div class="table-card__inner">
-          <div class="table-wrap">
-            <table class="requests">
-              <colgroup>
-                <col style="width:123px"><col style="width:121px"><col style="width:120px"><col style="width:92px"><col style="width:124px"><col style="width:172px"><col style="width:172px"><col style="width:156px"><col style="width:162px">
-              </colgroup>
-              <thead>
-                <tr><th>Request ID</th><th>Promotion ID</th><th>Promo Name</th><th>Market</th><th>Approval Level</th><th>Approval Parameter</th><th>Promotion Pilot</th><th>Current Lane</th><th>Request Status</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="is-light">RQ123456</td><td class="is-bold">PR890123</td><td class="is-bold">Spring Promo</td><td>France</td><td>L1.2</td><td>Family cluster margin</td><td>Submuefant</td><td>Finance Team</td>
-                  <td><span class="badge badge--progress"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">In Progress</span></span></td>
-                </tr>
-                <tr>
-                  <td class="is-light">RQ1002</td><td class="is-bold">PR1002</td><td class="is-bold">Brake Promo</td><td>Italy</td><td>L1.1</td><td>Article negative margin</td><td>Mary Miller</td><td>Marketing Team</td>
-                  <td><span class="badge badge--pending"><img src="assets/shapes/dot-yellow.svg" width="8" height="8" alt=""><span class="badge__text">Pending</span></span></td>
-                </tr>
-                <tr>
-                  <td class="is-light">RQ1003</td><td class="is-bold">PR1003</td><td class="is-bold">Summer Sale</td><td>Germany</td><td>L2.1</td><td>Promotion budget</td><td>Sarah Jenkins</td><td>Marketing Team</td>
-                  <td><span class="badge badge--progress"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">In Progress</span></span></td>
-                </tr>
-                <tr>
-                  <td class="is-light">RQ1004</td><td class="is-bold">PR1004</td><td class="is-bold">Winter Clearance</td><td>UK</td><td>L2.2</td><td>Family cluster margin</td><td>David Miller</td><td>Finance Team</td>
-                  <td><span class="badge badge--pending"><img src="assets/shapes/dot-yellow.svg" width="8" height="8" alt=""><span class="badge__text">Pending</span></span></td>
-                </tr>
-                <tr>
-                  <td class="is-light">RQ1005</td><td class="is-bold">PR1005</td><td class="is-bold">Easter Special</td><td>Spain</td><td>L2.1</td><td>Article negative margin</td><td>John Doe</td><td>Marketing Team</td>
-                  <td><span class="badge badge--pending"><img src="assets/shapes/dot-yellow.svg" width="8" height="8" alt=""><span class="badge__text">Returned for rework</span></span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="table-footer">
-            <p class="table-footer__summary">Showing 1 of 10 entries</p>
-            <nav class="pagination" aria-label="Pagination">
-              <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
-              <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
-              <button class="pagination__page"><span>2</span></button>
-              <button class="pagination__page"><span>3</span></button>
-              <button class="pagination__page"><span>4</span></button>
-              <button class="pagination__page"><span>5</span></button>
-              <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
-            </nav>
-          </div>
         </div>
       </section>
 
