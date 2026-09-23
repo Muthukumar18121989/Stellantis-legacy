@@ -24,4 +24,12 @@
     rows.forEach(function (c) { c.checked = all.checked; });
     update();
   });
+
+  // "Upload" switches the dialog to its file-upload state; closing it returns to the family list.
+  dialog.querySelector('[data-show-upload]').addEventListener('click', function () { dialog.dataset.state = 'upload'; });
+  dialog.addEventListener('close', function () { delete dialog.dataset.state; });
+  var file = dialog.querySelector('#fam-file');
+  file.addEventListener('change', function () {
+    if (file.files.length) dialog.querySelector('[data-file-name]').textContent = file.files[0].name;
+  });
 })();
