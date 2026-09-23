@@ -115,3 +115,51 @@
   background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
 }
 .sel-empty__text { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #727476; white-space: nowrap; }
+
+/* ---------- Select Family dialog (Figma 26:13500), opened by "Manage Families" ---------- */
+.fam-dialog {
+  position: fixed; inset: 0; margin: auto; width: 982px; height: fit-content; max-width: none; max-height: none;
+  padding: 18px 24px 24px; overflow: visible; color: #323436;
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.fam-dialog::backdrop { background: transparent; } /* Figma shows no backdrop */
+.fam-dialog__close { position: absolute; left: 950px; top: 10px; width: 24px; height: 24px; }
+.fam-dialog__body { display: flex; flex-direction: column; gap: 24px; }
+.fam-dialog__title { font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.fam-dialog__main { display: flex; flex-direction: column; gap: 16px; }
+.fam-toolbar { display: flex; align-items: center; justify-content: space-between; height: 32px; }
+.fam-toolbar__search { display: flex; gap: 16px; }
+.fam-search {
+  width: 278px; height: 32px; display: flex; align-items: center; gap: 10px; padding: 5px 11px;
+  background: #fff; border: 1px solid #c9ccce; border-radius: 6px;
+}
+.fam-search input {
+  flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none; appearance: none;
+  font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436;
+}
+.fam-search input::placeholder { color: #727476; opacity: 1; }
+.fam-search input::-webkit-search-decoration, .fam-search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.btn-outline-icon { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 5px 11px; background: #fff; border: 1px solid #727476; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+
+.fam-table-wrap { height: 328px; overflow: hidden; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #c9ccce; } /* Figma: 1px outside stroke, content clipped */
+.fam-table { table-layout: fixed; width: 952px; border-collapse: collapse; }
+.fam-table th, .fam-table td { padding: 6px 16px; border-bottom: 1px solid #c9ccce; overflow: hidden; white-space: nowrap; text-align: left; font-size: 12px; line-height: 18px; color: #323436; }
+.fam-table th { height: 40px; padding-bottom: 5px; background: #eff9ff; font: 600 12px/18px "Poppins", sans-serif; }
+.fam-table td { height: 48px; padding-bottom: 5px; background: #fff; font-family: "Poppins", sans-serif; font-weight: 400; }
+.fam-table td.is-light { font-weight: 300; }
+.fam-table td.is-soft-line { border-bottom-color: #ccdde8; }
+.fam-id { display: flex; align-items: center; gap: 8px; }
+th .fam-id { gap: 10px; }
+.fam-check { width: 20px; height: 20px; flex: none; margin: 0; appearance: none; border: 1px solid #c9ccce; border-radius: 4px; background: #fff; cursor: pointer; }
+.fam-check:checked { border: 0; background: #007dc5 url("../assets/icons/check.svg") no-repeat 2px 2px / 16px 16px; }
+
+.badge--level { height: 14px; padding: 1px 4px; }
+.badge--level .badge__text { line-height: 1.5; text-align: right; }
+.badge--high { box-shadow: inset 0 0 0 0.5px #d20e0e; background: rgba(210, 14, 14, 0.08); }
+.badge--medium { box-shadow: inset 0 0 0 0.5px #fbbd08; background: rgba(251, 189, 8, 0.08); }
+.badge--captive { box-shadow: inset 0 0 0 0.5px #b5cc18; background: rgba(181, 204, 24, 0.08); }
+
+.fam-footer { display: flex; align-items: center; justify-content: space-between; height: 36px; }
+.btn-selected { display: flex; align-items: center; justify-content: center; gap: 8px; height: 36px; padding: 8px 16px; background: #007dc5; border-radius: 8px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
+.fam-table td > .badge { display: flex; width: fit-content; }
