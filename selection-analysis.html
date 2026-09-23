@@ -150,7 +150,7 @@
           <div class="art-view__inner">
             <div class="art-view__top">
               <h3 class="art-view__title" data-family-title></h3>
-              <label class="art-apply" data-tab-only="volume"><input class="fam-check" type="checkbox" checked>Apply Same Configuration to all markets</label>
+              <label class="art-apply" data-tab-only="volume price"><input class="fam-check" type="checkbox" checked>Apply Same Configuration to all markets</label>
             </div>
             <div class="art-view__filter" data-tab-only="exclusions">
               <label class="fam-search fam-search--soft"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Filter articles ..." aria-label="Filter articles"></label>
@@ -159,9 +159,9 @@
               <div class="art-tabs" role="tablist">
                 <button class="art-tab" type="button" role="tab" aria-selected="true" data-tab-target="exclusions">0: EXCLUSIONS</button>
                 <button class="art-tab" type="button" role="tab" aria-selected="false" data-tab-target="volume">1: VOLUME ANALYSIS</button>
-                <button class="art-tab" type="button" role="tab" aria-selected="false">2: PRICE ANALYSIS</button>
+                <button class="art-tab" type="button" role="tab" aria-selected="false" data-tab-target="price">2: PRICE ANALYSIS</button>
               </div>
-              <div class="art-tools" data-tab-only="volume">
+              <div class="art-tools" data-tab-only="volume price">
                 <button class="art-select" type="button">Select Region<img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
                 <label class="fam-search fam-search--soft"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Filter articles ..." aria-label="Filter articles"></label>
                 <button class="art-select art-select--disabled" type="button" disabled>Last 3 months<img src="assets/icons/chevron-down-light.svg" width="16" height="16" alt=""></button>
@@ -321,13 +321,125 @@
                                 </nav>
               </div>
             </div>
+            <div class="art-panel" data-tab-panel="price">
+              <div class="vol-table-wrap pr-table-wrap">
+                <table class="vol-table pr-table">
+                  <colgroup><col style="width:109px"><col style="width:223px"><col style="width:124px"><col style="width:216px"><col style="width:157px"><col style="width:157px"><col style="width:126px"><col style="width:214px"><col style="width:86px"><col style="width:114px"><col style="width:122px"><col style="width:41px"><col style="width:90px"><col style="width:68px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first" rowspan="2">Article ID</th>
+                      <th rowspan="2">Article Name</th>
+                      <th class="pr-group" colspan="2">Before Promo</th>
+                      <th class="pr-discount" rowspan="2"><span class="pr-discount__title">Discount % (RPA)</span><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for all articles"></th>
+                      <th class="is-rec" rowspan="2"><span class="vol-rec__title">Twin X Recommended</span><label class="vol-rec__copy"><input class="vol-check" type="checkbox"><span>Copy to Discount % (RPA)</span></label></th>
+                      <th class="pr-group is-after" colspan="2">After Promo</th>
+                      <th class="is-twin is-center" rowspan="2">Elasticity</th>
+                      <th class="is-twin is-bottom" rowspan="2">Confidence</th>
+                      <th class="is-twin is-bottom" rowspan="2">Price Sensitivity</th>
+                      <th class="pr-threshold" colspan="3" rowspan="2">
+                        <span class="pr-threshold__title">Threshold Quantity</span>
+                        <span class="pr-threshold__bar">
+                          <span class="pr-threshold__check"><input class="fam-check" type="checkbox" aria-label="Select all thresholds" data-threshold-all></span>
+                          <span class="pr-threshold__value"><input class="vol-input" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for selected articles" data-threshold-bulk></span>
+                          <span class="pr-threshold__action"><button class="pr-validate" type="button" data-threshold-validate>Validate</button></span>
+                        </span>
+                      </th>
+                    </tr>
+                    <tr>
+                      <th class="pr-sub is-num">Selling Price (€)</th>
+                      <th class="pr-sub is-num">Commercial margin in % (MCP)</th>
+                      <th class="pr-sub is-after">Promo Price (€)</th>
+                      <th class="pr-sub is-after">Commercial margin in % (MCP)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="pr-row" data-status="error">
+                      <td class="is-id"><div class="vol-id is-first-row"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked>8845H3</label></div></td>
+                      <td class="pr-name w6">Fiat Coolant G12+ - Gen 1</td>
+                      <td class="is-num">8.20</td>
+                      <td class="is-num">83.89</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845H3"></td>
+                      <td class="is-num rec">17</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">81.08</td>
+                      <td class="is-num rec">-1.08</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--green">High (0.82)</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Balanced - Tier 3</span></td>
+                      <td class="pr-th-check"><input class="fam-check pr-status" type="checkbox" aria-label="Select threshold for 8845H3"></td>
+                      <td class="pr-th-value"><input class="vol-input pr-status" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845H3"></td>
+                      <td class="pr-th-icon"><img src="assets/icons/alert-circle-red.svg" width="20" height="20" alt=""></td>
+                    </tr>
+                    <tr class="pr-row" data-status="none">
+                      <td class="is-id"><div class="vol-id"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked>8845G7</label></div></td>
+                      <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
+                      <td class="is-num">8.71</td>
+                      <td class="is-num">87.68</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845G7"></td>
+                      <td class="is-num rec">10</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">85.55</td>
+                      <td class="is-num rec">1.03</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--red">Low (0.12)</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--red pr-badge--wrap">Highly<br>Sensitive - Tier 5</span></td>
+                      <td class="pr-th-check"><input class="fam-check pr-status" type="checkbox" aria-label="Select threshold for 8845G7"></td>
+                      <td class="pr-th-value"><input class="vol-input pr-status" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845G7"></td>
+                      <td class="pr-th-icon"></td>
+                    </tr>
+                    <tr class="pr-row is-zebra" data-status="warning">
+                      <td class="is-id"><div class="vol-id"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G9" checked>8845G9</label></div></td>
+                      <td class="pr-name">Fiat Shock Absorber - Gen 3</td>
+                      <td class="is-num">7.03</td>
+                      <td class="is-num">69.64</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845G9"></td>
+                      <td class="is-num rec">17</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">64.34</td>
+                      <td class="is-num rec">-0.85</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Medium (0.43)</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Balanced - Tier 3</span></td>
+                      <td class="pr-th-check"><input class="fam-check pr-status" type="checkbox" aria-label="Select threshold for 8845G9"></td>
+                      <td class="pr-th-value"><input class="vol-input pr-status" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845G9"></td>
+                      <td class="pr-th-icon"><img src="assets/icons/alert-circle-yellow.svg" width="20" height="20" alt=""></td>
+                    </tr>
+                    <tr class="pr-row" data-status="info">
+                      <td class="is-id"><div class="vol-id"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G9" checked>8845G9</label></div></td>
+                      <td class="pr-name">Fiat Lower Control Arm - Gen 4</td>
+                      <td class="is-num">8.20</td>
+                      <td class="is-num">69.64</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845G9"></td>
+                      <td class="is-num rec">17</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">64.34</td>
+                      <td class="is-num rec">-1.85</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--green">High (0.82)</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--green">Low Sensitive - Tier 1</span></td>
+                      <td class="pr-th-check"><input class="fam-check pr-status" type="checkbox" aria-label="Select threshold for 8845G9"></td>
+                      <td class="pr-th-value"><input class="vol-input pr-status" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845G9"></td>
+                      <td class="pr-th-icon"><img src="assets/icons/file-x.svg" width="20" height="20" alt=""></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-footer">
+                <p class="table-footer__summary">Showing article 1 of 10 entries</p>
+                <nav class="pagination" aria-label="Pagination">
+                  <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                  <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+                  <button class="pagination__page" type="button"><span>2</span></button>
+                  <button class="pagination__page" type="button"><span>3</span></button>
+                  <button class="pagination__page" type="button"><span>4</span></button>
+                  <button class="pagination__page" type="button"><span>5</span></button>
+                  <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                </nav>
+              </div>
+            </div>
           </div>
         </section>
       </template>
 
       <div class="cfg-actions">
         <a class="btn-outline" href="promotion-configuration.html" data-keep-query>Back</a>
-        <button class="btn-next" type="button">Next</button>
+        <button class="btn-next" type="button" data-page-next>Next</button>
       </div>
     </main>
   </div>

@@ -43,6 +43,7 @@
     document.querySelector('[data-empty-state]').hidden = !!chosen.length;
     document.querySelector('.page--selection').classList.toggle('has-families', !!chosen.length);
     list.classList.remove('has-drilldown');
+    document.querySelector('[data-page-next]').textContent = 'Next';
     document.querySelector('[data-selection-meta]').textContent = chosen.length
       ? chosen.length + (chosen.length === 1 ? ' Family' : ' Families') + ' | 296 Targeted SKUs'
       : '0 Families | 0 Targeted SKUs';
@@ -60,14 +61,16 @@
     view.setAttribute('aria-label', title + ' articles');
     panel.replaceWith(view);
     list.classList.add('has-drilldown');
+    list.dataset.drillTab = 'exclusions';
     list.scrollTop = 0;
   });
   // Article checkboxes: the header checkbox selects or clears all rows.
   list.addEventListener('change', function (e) {
     var table = e.target.closest('.art-view table');
-    if (!table || !e.target.classList.contains('fam-check')) return;
-    var checks = Array.prototype.slice.call(table.querySelectorAll('tbody .fam-check'));
+    if (!table || !e.target.classList.contains('fam-check') || e.target.closest('.pr-th-check, .pr-threshold')) return;
+    var checks = Array.prototype.slice.call(table.querySelectorAll('tbody .fam-id .fam-check'));
     var head = table.querySelector('[data-check-all]');
+    if (!head) return;
     if (e.target === head) checks.forEach(function (c) { c.checked = head.checked; });
     else head.checked = checks.every(function (c) { return c.checked; });
   });
@@ -79,6 +82,24 @@
     var view = tab.closest('.art-view');
     view.dataset.tab = tab.dataset.tabTarget;
     view.querySelectorAll('.art-tab').forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
+    list.dataset.drillTab = view.dataset.tab;
+    // Figma 26:11622: on Price Analysis the page's Next button reads "Simulate".
+    document.querySelector('[data-page-next]').textContent = view.dataset.tab === 'price' ? 'Simulate' : 'Next';
+  });
+  // Price Analysis, Threshold Quantity: the header checkbox ticks every row, and Validate
+  // copies the header quantity into the ticked rows (row inputs can also be edited directly).
+  list.addEventListener('change', function (e) {
+    if (!e.target.matches('[data-threshold-all]')) return;
+    e.target.closest('table').querySelectorAll('.pr-th-check .fam-check').forEach(function (c) { c.checked = e.target.checked; });
+  });
+  list.addEventListener('click', function (e) {
+    var validate = e.target.closest('[data-threshold-validate]');
+    if (!validate) return;
+    var table = validate.closest('table');
+    var value = table.querySelector('[data-threshold-bulk]').value.trim();
+    table.querySelectorAll('.pr-row').forEach(function (row) {
+      if (row.querySelector('.pr-th-check .fam-check').checked) row.querySelector('.pr-th-value .vol-input').value = value;
+    });
   });
   // Volume Analysis: each article row expands and collapses its Monthly Trend Analysis.
   list.addEventListener('click', function (e) {
