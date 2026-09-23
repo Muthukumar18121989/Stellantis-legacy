@@ -155,6 +155,23 @@
 .an-row--elasticity .an-row__body { justify-content: flex-start; gap: 215px; }
 .an-row--elasticity .an-row__label, .an-row--elasticity .an-row__value { margin: 0; font: 600 12px/18px "Noto Sans", sans-serif; letter-spacing: 0; color: #a333c8; }
 
+/* Article drill-down of one family (Figma 26:10344): replaces that family's panel */
+.fam-list.has-drilldown { height: 474px; }
+.art-view { flex: none; display: flex; flex-direction: column; gap: 16px; }
+.art-view__title { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.art-view__filter { display: flex; justify-content: flex-end; }
+.fam-search--soft { border-color: #bfe0f5; }
+.art-tabs { display: flex; align-items: flex-end; gap: 16px; height: 36px; padding: 0 16px; }
+.art-tab { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 16px 0; font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
+.art-tab::after { content: ""; width: 46px; height: 4px; border-radius: 2px 2px 0 0; }
+.art-tab[aria-selected="true"] { color: #2c2c30; }
+.art-tab[aria-selected="true"]::after { width: 100%; background: #007dc5; }
+.art-table-wrap { height: 280px; overflow-x: hidden; overflow-y: auto; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #bfe0f5; } /* Figma: 1px outside stroke */
+.art-table { width: 1359px; }
+.fam-table.art-table th { background: #fff; }
+.fam-table.art-table td { height: 60px; }
+.fam-table.art-table td.is-bold { font-weight: 600; }
+
 /* ---------- Select Family dialog (Figma 26:13500), opened by "Manage Families" ---------- */
 .fam-dialog {
   position: fixed; inset: 0; margin: auto; width: 982px; height: fit-content; max-width: none; max-height: none;

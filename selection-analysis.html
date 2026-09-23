@@ -138,10 +138,66 @@
             </div></div>
             <div class="fam-panel__actions">
               <button class="btn-outline" type="button">Remove Family</button>
-              <button class="btn-next" type="button">Drill Down to Article</button>
+              <button class="btn-next" type="button" data-drill-down>Drill Down to Article</button>
             </div>
           </div>
         </article>
+      </template>
+
+      <!-- Article drill-down of one family (Figma 26:10344), opened by "Drill Down to Article" -->
+      <template id="family-articles">
+        <section class="art-view">
+          <h3 class="art-view__title" data-family-title></h3>
+          <div class="art-view__filter">
+            <label class="fam-search fam-search--soft"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Filter articles ..." aria-label="Filter articles"></label>
+          </div>
+          <div class="art-tabs" role="tablist">
+            <button class="art-tab" type="button" role="tab" aria-selected="true">0: EXCLUSIONS</button>
+            <button class="art-tab" type="button" role="tab" aria-selected="false">1: VOLUME ANALYSIS</button>
+            <button class="art-tab" type="button" role="tab" aria-selected="false">2: PRICE ANALYSIS</button>
+          </div>
+          <div class="art-table-wrap">
+            <table class="fam-table art-table">
+              <colgroup><col style="width:176px"><col style="width:219px"><col style="width:125px"><col style="width:335px"><col style="width:126px"><col style="width:197px"><col style="width:181px"></colgroup>
+              <thead>
+                <tr>
+                  <th><label class="fam-id"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all>Article ID</label></th>
+                  <th>Article Name</th><th>Exclusion Code</th><th>Exclusion Reason</th><th>Start Date</th><th>End Date</th><th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-SUS-FIA-1002" checked>ST-SUS-FIA-1002</label></td>
+                  <td class="is-bold">Fiat Shock Absorber - Gen 3</td><td>8D</td><td>Temporary inventory constraint - GLobal stockout</td><td>2024-01-01</td><td>2024-12-31</td><td>Excluded</td>
+                </tr>
+                <tr>
+                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-SUS-FIA-1014">ST-SUS-FIA-1014</label></td>
+                  <td class="is-bold">Fiat Shock Absorber - Gen 15</td><td>9C</td><td>Pending quality audit review</td><td>2025-01-01</td><td>2025-06-30</td><td>Excluded</td>
+                </tr>
+                <tr>
+                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-FIL-PEU-1006" checked>ST-FIL-PEU-1006</label></td>
+                  <td class="is-bold">Peugeot Oil Filter - Gen 7</td><td>8D</td><td>Supplier contract renegotiation</td><td>2025-03-01</td><td>2025-05-31</td><td>Excluded</td>
+                </tr>
+                <tr>
+                  <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="ST-FLU-CIT-1009" checked>ST-FLU-CIT-1009</label></td>
+                  <td class="is-bold">Citroen Coolant G12+ - Gen 10</td><td>8D</td><td>End of life cycle - No New promotions</td><td>2025-01-01</td><td>2025-12-31</td><td>Excluded</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <p class="table-footer__summary">Showing article 1 of 10 entries</p>
+            <nav class="pagination" aria-label="Pagination">
+              <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+              <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+              <button class="pagination__page" type="button"><span>2</span></button>
+              <button class="pagination__page" type="button"><span>3</span></button>
+              <button class="pagination__page" type="button"><span>4</span></button>
+              <button class="pagination__page" type="button"><span>5</span></button>
+              <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            </nav>
+          </div>
+        </section>
       </template>
 
       <div class="cfg-actions">
