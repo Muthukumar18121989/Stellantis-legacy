@@ -107,6 +107,24 @@
 <dialog class="fam-dialog" id="select-family" aria-labelledby="select-family-title">
   <form class="fam-dialog__body" method="dialog" onsubmit="return false">
     <h2 class="fam-dialog__title" id="select-family-title">Select Family</h2>
+    <!-- Upload state (Figma 26:13985) -->
+    <div class="fam-upload">
+      <div class="fam-upload__field">
+        <div class="fam-upload__head">
+          <span class="fam-upload__label" id="fam-file-label">Choose File</span>
+          <a class="fam-upload__template" href="#">Download Template</a>
+        </div>
+        <label class="file-input">
+          <input type="file" id="fam-file" aria-labelledby="fam-file-label" accept=".xlsx,.xls,.csv">
+          <span class="file-input__button"><img src="assets/icons/upload.svg" width="16" height="16" alt="">Choose File</span>
+          <span class="file-input__name" data-file-name>promo_selection.xlxx</span>
+        </label>
+      </div>
+      <button class="btn-validate" type="button" data-validate>Validate<img src="assets/icons/refresh-white.svg" width="20" height="20" alt=""></button>
+    </div>
+    <!-- Validated state (Figma 26:14014): upload row + result banners above the family table -->
+    <p class="fam-alert fam-alert--success"><img src="assets/icons/check-green.svg" width="16" height="16" alt="">promo_selection.xlsx - 1 family, 102 articles matched</p>
+    <p class="fam-alert fam-alert--error"><img src="assets/icons/alert-triangle.svg" width="16" height="16" alt="">3 article IDs not found</p>
     <div class="fam-dialog__main">
       <div class="fam-toolbar">
         <div class="fam-toolbar__search">
@@ -164,21 +182,6 @@
           </tbody>
         </table>
       </div>
-    </div>
-    <!-- Upload state (Figma 26:13985) -->
-    <div class="fam-upload">
-      <div class="fam-upload__field">
-        <div class="fam-upload__head">
-          <span class="fam-upload__label" id="fam-file-label">Choose File</span>
-          <a class="fam-upload__template" href="#">Download Template</a>
-        </div>
-        <label class="file-input">
-          <input type="file" id="fam-file" aria-labelledby="fam-file-label" accept=".xlsx,.xls,.csv">
-          <span class="file-input__button"><img src="assets/icons/upload.svg" width="16" height="16" alt="">Choose File</span>
-          <span class="file-input__name" data-file-name>promo_selection.xlxx</span>
-        </label>
-      </div>
-      <button class="btn-validate" type="button">Validate<img src="assets/icons/refresh-white.svg" width="20" height="20" alt=""></button>
     </div>
     <div class="fam-footer">
       <div class="table-footer">

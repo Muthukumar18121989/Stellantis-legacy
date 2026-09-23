@@ -27,7 +27,17 @@
 
   // "Upload" switches the dialog to its file-upload state; closing it returns to the family list.
   dialog.querySelector('[data-show-upload]').addEventListener('click', function () { dialog.dataset.state = 'upload'; });
-  dialog.addEventListener('close', function () { delete dialog.dataset.state; });
+  // "Validate" shows the validation result above the family table.
+  var validate = dialog.querySelector('[data-validate]');
+  var validateIcon = validate.querySelector('img');
+  validate.addEventListener('click', function () {
+    dialog.dataset.state = 'validated';
+    validateIcon.src = 'assets/icons/refresh-dark.svg';
+  });
+  dialog.addEventListener('close', function () {
+    delete dialog.dataset.state;
+    validateIcon.src = 'assets/icons/refresh-white.svg';
+  });
   var file = dialog.querySelector('#fam-file');
   file.addEventListener('change', function () {
     if (file.files.length) dialog.querySelector('[data-file-name]').textContent = file.files[0].name;

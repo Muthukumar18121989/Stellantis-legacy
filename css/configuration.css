@@ -167,7 +167,9 @@ th .fam-id { gap: 10px; }
 /* Upload state (Figma 26:13985): "Upload" swaps the table for the file picker */
 .fam-dialog[data-state="upload"] .fam-dialog__main,
 .fam-dialog[data-state="upload"] .fam-footer,
-.fam-dialog:not([data-state="upload"]) .fam-upload { display: none; }
+.fam-dialog:not([data-state]) .fam-upload,
+.fam-dialog:not([data-state="validated"]) .fam-alert,
+.fam-dialog[data-state="validated"] .fam-toolbar { display: none; }
 .fam-upload { display: flex; align-items: flex-end; gap: 16px; }
 .fam-upload__field { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .fam-upload__head { display: flex; justify-content: space-between; font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; white-space: nowrap; }
@@ -182,3 +184,9 @@ th .fam-id { gap: 10px; }
 .file-input input:focus-visible + .file-input__button { outline: 2px solid #007dc5; outline-offset: -2px; }
 .file-input__name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #007dc5; }
 .btn-validate { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 8px 16px; flex: none; background: #007dc5; border-radius: 8px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
+/* Validated state (Figma 26:14014): Validate turns into an outline button; result banners above the table */
+.fam-dialog[data-state="validated"] .btn-validate { padding: 7px 15px; background: #fff; border: 1px solid #727476; color: #323436; }
+.fam-alert { display: flex; align-items: center; gap: 10px; height: 26px; padding: 4px 8px; margin: 0; border-radius: 6px; font: 12px/18px "Montserrat", sans-serif; letter-spacing: 0.036px; }
+.fam-alert img { flex: none; }
+.fam-alert--success { background: #d7f6de; font-weight: 400; color: #318500; }
+.fam-alert--error { background: #f6d7d7; font-weight: 300; color: #ec0047; }
