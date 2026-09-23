@@ -149,7 +149,7 @@
               <h2 class="optimization__title">Promotion Optimization</h2>
               <div class="optimization__actions">
                 <label class="search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Request, Status" aria-label="Search by Request, Status"></label>
-                <button class="btn-primary">Create New Promo​</button>
+                <button class="btn-primary" type="button" data-open-dialog="new-promo">Create New Promo​</button>
                 <button class="btn-primary">Compare</button>
               </div>
             </div>
@@ -257,5 +257,49 @@
     </main>
   </div>
 </div>
+<!-- New Promotion dialog (Figma 26:19996) -->
+<dialog class="new-promo" id="new-promo" aria-labelledby="new-promo-title">
+  <form class="new-promo__body" method="dialog" onsubmit="return false">
+    <h2 class="new-promo__title" id="new-promo-title">New Promotion</h2>
+
+    <div class="new-promo__row">
+      <span class="new-promo__label" id="sim-type-label">Simulation Type</span>
+      <div class="new-promo__radios" role="radiogroup" aria-labelledby="sim-type-label">
+        <label class="radio"><input type="radio" name="simulation-type" value="what-if" checked>What-If</label>
+        <label class="radio radio--disabled"><input type="radio" name="simulation-type" value="if-what" disabled>If-What</label>
+      </div>
+    </div>
+
+    <div class="new-promo__row">
+      <span class="new-promo__label" id="promo-type-label">Promotion Type</span>
+      <div class="select" data-select>
+        <button class="select__trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="promo-type-label promo-type-value">
+          <span class="select__value" id="promo-type-value">Discount on MSRP at article level, for the NSC/ importer’s, with/without threshold</span>
+          <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+        </button>
+        <ul class="select__list" role="listbox" aria-labelledby="promo-type-label" tabindex="-1" hidden>
+              <li class="select__option" id="promo-type-1" role="option" aria-selected="true" title="Discount on MSRP at article level, for the NSC/ importer’s, with/without threshold">Discount on MSRP at article level, for the NSC/ importer’s, with/without threshold</li>
+              <li class="select__option" id="promo-type-2" role="option" aria-selected="false" title="Discount on MSRP at family level, for the NSC/ importer’s, with/without threshold">Discount on MSRP at family level, for the NSC/ importer’s, with/without threshold</li>
+              <li class="select__option" id="promo-type-3" role="option" aria-selected="false" title="Net Special Price (PNS), with/without thresholds">Net Special Price (PNS), with/without thresholds</li>
+              <li class="select__option" id="promo-type-4" role="option" aria-selected="false" title="Free Quantity of Same Article, with/without thresholds">Free Quantity of Same Article, with/without thresholds</li>
+              <li class="select__option" id="promo-type-5" role="option" aria-selected="false" title="Free quantity of another article, with/without thresholds">Free quantity of another article, with/without thresholds</li>
+              <li class="select__option" id="promo-type-6" role="option" aria-selected="false" title="Turnover Target of Same Part">Turnover Target of Same Part</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="new-promo__row">
+      <label class="new-promo__label new-promo__label--wide" for="promo-title">Promotion Title</label>
+      <input class="text-input" id="promo-title" type="text" placeholder="Enter Promotion TItle">
+    </div>
+
+    <div class="new-promo__footer">
+      <button class="btn-create" type="button">Create Promotion</button>
+    </div>
+  </form>
+  <button class="new-promo__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+</dialog>
+
+<script src="js/new-promotion.js"></script>
 </body>
 </html>
