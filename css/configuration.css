@@ -1,9 +1,11 @@
-/* Promotion Configuration — Figma "Promotion Creation Page - Promotion type 1" (node 26:12311), 1366 × 805 */
+/* Promotion Configuration flow — Figma "Promotion Creation Page - Promotion type 1" (node 26:12311, 1366 × 805)
+   and "No Families selected page" (node 26:10099, 1366 × 854) share this sheet. */
 
 .page--configuration { min-height: 805px; }
+.page--selection { min-height: 854px; }
 
 /* Top menu logo (Figma 26:12331): 130 × 28 logo image slot + "Powered by" TCS TwinX */
-.page--configuration .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.page--configuration .top-menu__logo, .page--selection .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
 .cfg-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
 .cfg-brand__mark { width: 130px; height: 28px; }
 .cfg-brand__powered { display: flex; align-items: center; gap: 2px; height: 12px; }
@@ -98,3 +100,18 @@
 .btn-outline, .btn-next { display: flex; align-items: center; justify-content: center; height: 32px; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; white-space: nowrap; }
 .btn-outline { padding: 5px 11px; background: #fff; border: 1px solid #727476; color: #323436; }
 .btn-next { padding: 6px 12px; background: #007dc5; color: #fff; }
+
+/* ---------- Selection & Analysis step (Figma 26:10321, 26:10328) ---------- */
+.sel-summary {
+  height: 92px; display: flex; align-items: center; justify-content: space-between; padding: 3px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.sel-summary__text { display: flex; flex-direction: column; gap: 8px; white-space: nowrap; }
+.sel-summary__title { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
+.sel-summary__meta { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
+.btn-icon-primary { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 6px 12px; background: #007dc5; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
+.sel-empty {
+  height: 448px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 3px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.sel-empty__text { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #727476; white-space: nowrap; }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Selection &amp; Analysis</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+</head>
+<body>
+<div class="page page--selection">
+  <!-- Left menu bar (Figma 26:10101) -->
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="#" aria-label="Overview"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="index.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="dashboard.html" aria-label="Promotion Admin Dashboard"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+  <div class="main">
+    <!-- Top menu (Figma 26:10118) -->
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <div class="cfg-brand__mark"></div>
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Breadcrumb + title (Figma 26:10158) -->
+    <section class="cfg-header">
+      <div class="cfg-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
+          <span class="breadcrumb__sep">/</span>
+          <a class="breadcrumb__link" href="index.html">Dashboard</a>
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current" aria-current="page">Configuration</span>
+        </nav>
+        <h1 class="cfg-header__title">Promotion Configuration</h1>
+      </div>
+    </section>
+
+    <main class="cfg-body">
+      <!-- Process steps (Figma 26:10295) -->
+      <ol class="steps" aria-label="Progress">
+        <li class="steps__inner">
+          <img class="steps__dash" src="assets/shapes/step-dash.svg" width="208" height="2" alt="">
+          <span class="steps__blue"></span>
+          <div class="step">
+            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
+            <span class="step__label">Configure Parameters</span>
+          </div>
+          <div class="step" aria-current="step">
+            <img src="assets/shapes/step-current.svg" width="20" height="20" alt="">
+            <span class="step__label">Selection &amp; Analysis</span>
+          </div>
+        </li>
+      </ol>
+
+      <!-- Article selection summary (Figma 26:10321) -->
+      <section class="sel-summary">
+        <div class="sel-summary__text">
+          <h2 class="sel-summary__title">Article Selection Core</h2>
+          <p class="sel-summary__meta">0 Families | 0 Targeted SKUs</p>
+        </div>
+        <button class="btn-icon-primary" type="button"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Manage Families</button>
+      </section>
+
+      <!-- Empty state (Figma 26:10328) -->
+      <section class="sel-empty">
+        <img src="assets/illustrations/empty-families.svg" width="80" height="80" alt="">
+        <p class="sel-empty__text">NO FAMILIES SELECTED. MANAGE FAMILIES TO PROCEES</p>
+      </section>
+
+      <div class="cfg-actions">
+        <a class="btn-outline" href="promotion-configuration.html" data-keep-query>Back</a>
+        <button class="btn-next" type="button">Next</button>
+      </div>
+    </main>
+  </div>
+</div>
+<script>
+  // Keep the chosen promotion type and title when going back to the configuration step.
+  document.querySelectorAll('[data-keep-query]').forEach(function (a) { a.href += location.search; });
+</script>
+</body>
+</html>
