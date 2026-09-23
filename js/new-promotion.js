@@ -44,4 +44,16 @@
       if (!list.hidden && !select.contains(e.target)) setOpen(false);
     });
   });
+
+  // Create Promotion opens the Promotion Configuration page with the chosen type and title.
+  document.querySelectorAll('[data-create-promotion]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var dialog = btn.closest('dialog');
+      var params = new URLSearchParams();
+      params.set('type', dialog.querySelector('.select__value').textContent);
+      var title = dialog.querySelector('#promo-title').value.trim();
+      if (title) params.set('title', title);
+      location.href = 'promotion-configuration.html?' + params.toString();
+    });
+  });
 })();

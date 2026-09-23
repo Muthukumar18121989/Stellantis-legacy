@@ -1,0 +1,100 @@
+/* Promotion Configuration — Figma "Promotion Creation Page - Promotion type 1" (node 26:12311), 1366 × 805 */
+
+.page--configuration { min-height: 805px; }
+
+/* Top menu logo (Figma 26:12331): 130 × 28 logo image slot + "Powered by" TCS TwinX */
+.page--configuration .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.cfg-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+.cfg-brand__mark { width: 130px; height: 28px; }
+.cfg-brand__powered { display: flex; align-items: center; gap: 2px; height: 12px; }
+.cfg-brand__powered-text {
+  width: 43px; height: 9px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font: 300 8px/9px "Open Sans", sans-serif; letter-spacing: 0.024px; color: #323436;
+}
+
+/* ---------- Breadcrumb + title (Figma 26:12370) ---------- */
+.cfg-header {
+  height: 82px; display: flex; align-items: center; padding: 11px 16px;
+  background: #fff; border-top: 1px solid #c9ccce; border-bottom: 1px solid #c9ccce;
+}
+.cfg-header__inner { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; }
+.breadcrumb__sep { font: 400 14px/normal "Poppins", sans-serif; letter-spacing: 0.056px; color: #3c4572; }
+.breadcrumb__link, .breadcrumb__current { font: 400 12px/18px "Open Sans", sans-serif; letter-spacing: 0.4px; }
+.breadcrumb__link { color: #006bc5; }
+.breadcrumb__current { color: #323436; }
+.cfg-header__title { font: 600 24px/normal "Open Sans", sans-serif; letter-spacing: -0.44px; color: #196c9b; white-space: nowrap; }
+
+.cfg-body { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
+
+/* ---------- Process steps (Figma 26:12507) ---------- */
+.steps { margin: 0; padding: 0; list-style: none; display: flex; justify-content: center; height: 48px; }
+.steps__inner { position: relative; display: flex; align-items: flex-start; gap: 64px; }
+.steps__dash { position: absolute; left: 73.5px; top: 9px; }
+.steps__blue { position: absolute; left: 79px; top: 11px; width: 2px; height: 2px; background: #007dc5; }
+.step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.step__label { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; text-align: center; white-space: nowrap; }
+
+/* ---------- Configuration card (Figma 26:12534) ---------- */
+.cfg-card { padding: 15px; background: #fff; border: 1px solid #bfe0f5; border-radius: 12px; }
+.cfg-table { position: relative; border-radius: 8px; }
+.cfg-table::before { /* Figma: 1px outside stroke on top, left and right */
+  content: ""; position: absolute; inset: -1px -1px 0; border: 1px solid #c9ccce; border-bottom: 0; border-radius: 9px; pointer-events: none;
+}
+.cfg-row { display: flex; height: 64px; }
+.cfg-row--short { height: 52px; }
+.cfg-row--tall { height: 88px; }
+.cfg-row__label {
+  width: 260px; flex: none; display: flex; align-items: center; padding: 16px 15px 15px 16px;
+  background: #fff; border-right: 1px solid #c9ccce; border-bottom: 1px solid #c9ccce;
+  font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.cfg-row:first-child .cfg-row__label { border-top-left-radius: 8px; }
+.cfg-row:last-child .cfg-row__label { border-bottom-left-radius: 8px; }
+.cfg-row__details { flex: 1; min-width: 0; display: flex; align-items: center; gap: 16px; padding: 16px 16px 15px; border-bottom: 1px solid #ccdde8; }
+.cfg-row:last-child .cfg-row__details { border-bottom-color: #c9ccce; }
+.cfg-note { font: 300 10px/1.5 "Noto Sans", sans-serif; color: #3f4047; }
+
+/* Inputs */
+.cfg-input {
+  width: 303.33px; height: 32px; flex: none; padding: 5px 11px; outline: 0;
+  background: #fff; border: 1px solid #c9ccce; border-radius: 6px;
+  font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.cfg-input:disabled { background: #f8f9fb; color: #727476; -webkit-text-fill-color: #727476; opacity: 1; }
+.cfg-select {
+  width: 303.33px; height: 32px; flex: none; display: flex; align-items: center; gap: 8px; padding: 5px 11px; text-align: left;
+  background: #fff; border: 1px solid #c9ccce; border-radius: 6px;
+}
+.cfg-select:disabled { background: #f8f9fb; cursor: default; }
+.cfg-select__value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.cfg-select:disabled .cfg-select__value { color: #727476; }
+.cfg-iteration { width: 54px; flex: none; display: flex; justify-content: center; }
+.badge--info {
+  gap: 4px; padding: 1px 4px;
+  box-shadow: inset 0 0 0 0.5px #007dc5; background: rgba(0, 125, 197, 0.08);
+}
+.badge--info .badge__text { font: 300 10px/1.5 "Noto Sans", sans-serif; text-align: right; }
+
+.cfg-check { display: flex; align-items: center; gap: 8px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; cursor: pointer; }
+.cfg-check input { position: absolute; opacity: 0; width: 0; height: 0; margin: 0; }
+.cfg-check__box { width: 20px; height: 20px; flex: none; display: flex; padding: 2px; border-radius: 4px; background: #007dc5; }
+.cfg-check input:not(:checked) + .cfg-check__box { padding: 1px; background: #fff; border: 1px solid #c9ccce; }
+.cfg-check input:not(:checked) + .cfg-check__box img { visibility: hidden; }
+
+.cfg-radio { display: flex; align-items: center; gap: 8px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.cfg-radio input { width: 16px; height: 16px; flex: none; margin: 0; appearance: none; border-radius: 100px; background: #fff; border: 1px solid #bfe0f5; }
+.cfg-radio input:checked { border: 0; background: radial-gradient(circle, #fff 0 3px, #007dc5 3px); }
+
+.cfg-window { flex: 1; min-width: 0; display: flex; align-items: flex-start; gap: 12px; }
+.cfg-date { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.cfg-date__label { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.cfg-date__label--noto { font: 400 14px/20px "Noto Sans", sans-serif; }
+.cfg-date .cfg-select { width: auto; gap: 10px; }
+.cfg-date .cfg-select:disabled .cfg-select__value { color: #727476; }
+
+/* Back / Next (Figma 26:13495) */
+.cfg-actions { display: flex; justify-content: flex-end; align-items: center; gap: 16px; }
+.btn-outline, .btn-next { display: flex; align-items: center; justify-content: center; height: 32px; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; white-space: nowrap; }
+.btn-outline { padding: 5px 11px; background: #fff; border: 1px solid #727476; color: #323436; }
+.btn-next { padding: 6px 12px; background: #007dc5; color: #fff; }

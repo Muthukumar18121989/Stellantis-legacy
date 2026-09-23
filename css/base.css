@@ -4,9 +4,11 @@
 @font-face { font-family: "Poppins"; font-weight: 400; src: url("../fonts/poppins-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Poppins"; font-weight: 500; src: url("../fonts/poppins-latin-500-normal.woff2") format("woff2"); }
 @font-face { font-family: "Poppins"; font-weight: 600; src: url("../fonts/poppins-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Noto Sans"; font-weight: 300; src: url("../fonts/noto-sans-latin-300-normal.woff2") format("woff2"); }
 @font-face { font-family: "Noto Sans"; font-weight: 400; src: url("../fonts/noto-sans-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Noto Sans"; font-weight: 500; src: url("../fonts/noto-sans-latin-500-normal.woff2") format("woff2"); }
 @font-face { font-family: "Noto Sans"; font-weight: 600; src: url("../fonts/noto-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Open Sans"; font-weight: 300; src: url("../fonts/open-sans-latin-300-normal.woff2") format("woff2"); }
 @font-face { font-family: "Open Sans"; font-weight: 400; src: url("../fonts/open-sans-latin-400-normal.woff2") format("woff2"); }
 @font-face { font-family: "Open Sans"; font-weight: 600; src: url("../fonts/open-sans-latin-600-normal.woff2") format("woff2"); }
 @font-face { font-family: "Inter"; font-weight: 400; src: url("../fonts/inter-latin-400-normal.woff2") format("woff2"); }
@@ -107,6 +109,11 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
 .badge__text { font: 300 10px/1.2 "Poppins", sans-serif; color: #3f4047; text-align: center; white-space: nowrap; }
 .badge--progress { box-shadow: inset 0 0 0 0.5px #00b5ad; background: rgba(0, 181, 173, 0.08); }
 .badge--pending { box-shadow: inset 0 0 0 0.5px #fbbd08; background: rgba(251, 189, 8, 0.08); }
+.badge--iteration {
+  height: 14px; padding: 1px 4px; gap: 4px;
+  box-shadow: inset 0 0 0 0.5px #007dc5; background: rgba(0, 125, 197, 0.08);
+}
+.badge--iteration .badge__text { line-height: 1.5; text-align: right; }
 
 
 .table-footer { display: flex; align-items: center; gap: 6px; padding: 0 16px; }

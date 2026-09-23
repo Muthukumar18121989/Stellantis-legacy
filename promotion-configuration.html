@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Promotion Configuration</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+</head>
+<body>
+<div class="page page--configuration">
+  <!-- Left menu bar (Figma 26:12313) -->
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="#" aria-label="Overview"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="index.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="dashboard.html" aria-label="Promotion Admin Dashboard"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+  <div class="main">
+    <!-- Top menu (Figma 26:12330) -->
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <div class="cfg-brand__mark"></div>
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Breadcrumb + title (Figma 26:12370) -->
+    <section class="cfg-header">
+      <div class="cfg-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
+          <span class="breadcrumb__sep">/</span>
+          <a class="breadcrumb__link" href="index.html">Dashboard</a>
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current" aria-current="page">Configuration</span>
+        </nav>
+        <h1 class="cfg-header__title">Promotion Configuration</h1>
+      </div>
+    </section>
+
+    <main class="cfg-body">
+      <!-- Process steps (Figma 26:12507) -->
+      <ol class="steps" aria-label="Progress">
+        <li class="steps__inner">
+          <img class="steps__dash" src="assets/shapes/step-dash.svg" width="208" height="2" alt="">
+          <span class="steps__blue"></span>
+          <div class="step" aria-current="step">
+            <img src="assets/shapes/step-current.svg" width="20" height="20" alt="">
+            <span class="step__label">Configure Parameters</span>
+          </div>
+          <div class="step">
+            <img src="assets/shapes/step-disabled.svg" width="20" height="20" alt="">
+            <span class="step__label">Selection &amp; Analysis</span>
+          </div>
+        </li>
+      </ol>
+
+      <!-- Configuration table (Figma 26:12534) -->
+      <form class="cfg-card" onsubmit="return false">
+        <div class="cfg-table">
+          <div class="cfg-row">
+            <label class="cfg-row__label" for="cfg-name">Enter Name of Promotion *</label>
+            <div class="cfg-row__details">
+              <input class="cfg-input" id="cfg-name" type="text" value="Spring Promotion">
+              <span class="cfg-iteration"><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></span>
+            </div>
+          </div>
+          <div class="cfg-row">
+            <label class="cfg-row__label" for="cfg-id">Promotion ID *</label>
+            <div class="cfg-row__details">
+              <input class="cfg-input" id="cfg-id" type="text" value="234567" disabled>
+            </div>
+          </div>
+          <div class="cfg-row">
+            <span class="cfg-row__label" id="cfg-type-label">Promotion Type *</span>
+            <div class="cfg-row__details">
+              <button class="cfg-select" type="button" disabled aria-labelledby="cfg-type-label cfg-type">
+                <span class="cfg-select__value" id="cfg-type">Discount on MSRP at article level, for the NSC/ importer’s, with/without threshold</span>
+                <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+              </button>
+              <span class="badge badge--info"><img src="assets/icons/circle-check.svg" width="12" height="12" alt=""><span class="badge__text">This type is applicable for PLPR, CSPS</span></span>
+            </div>
+          </div>
+          <div class="cfg-row">
+            <span class="cfg-row__label" id="cfg-market-label">Select Market *</span>
+            <div class="cfg-row__details">
+              <button class="cfg-select" type="button" aria-labelledby="cfg-market-label"><span class="cfg-select__value">Select Market</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+              <label class="cfg-check"><input type="checkbox" checked><span class="cfg-check__box"><img src="assets/icons/check.svg" width="16" height="16" alt=""></span>Apply Same Configuration to all markets</label>
+            </div>
+          </div>
+          <div class="cfg-row cfg-row--short">
+            <span class="cfg-row__label" id="cfg-applicability-label">Promo Applicability *</span>
+            <div class="cfg-row__details" role="radiogroup" aria-labelledby="cfg-applicability-label">
+              <label class="cfg-radio"><input type="radio" name="applicability" value="xP" checked>xP</label>
+              <label class="cfg-radio"><input type="radio" name="applicability" value="xF">xF</label>
+            </div>
+          </div>
+          <div class="cfg-row">
+            <span class="cfg-row__label" id="cfg-brand-label">Stellantis Brand</span>
+            <div class="cfg-row__details">
+              <button class="cfg-select" type="button" aria-labelledby="cfg-brand-label"><span class="cfg-select__value">Select Brand</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+            </div>
+          </div>
+          <div class="cfg-row cfg-row--tall">
+            <span class="cfg-row__label">Execution Window *</span>
+            <div class="cfg-row__details">
+              <div class="cfg-window">
+                <div class="cfg-date">
+                  <span class="cfg-date__label">Start Date</span>
+                  <button class="cfg-select" type="button"><span class="cfg-select__value">Choose Start Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+                </div>
+                <div class="cfg-date">
+                  <span class="cfg-date__label">End Date</span>
+                  <button class="cfg-select" type="button"><span class="cfg-select__value">Choose End Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+                </div>
+                <div class="cfg-date">
+                  <span class="cfg-date__label cfg-date__label--noto">Duration</span>
+                  <button class="cfg-select" type="button" disabled><span class="cfg-select__value">...</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="cfg-note">*Note: All customer codes are applicable for this promotion</p>
+      </form>
+
+      <div class="cfg-actions">
+        <a class="btn-outline" href="index.html">Back</a>
+        <button class="btn-next" type="button">Next</button>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/configuration.js"></script>
+</body>
+</html>
