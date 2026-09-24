@@ -1,0 +1,119 @@
+/* Workflow Tracker — Figma "Workflow Tracker_Before Logistics approval" (node 55:37135, 1342 × 1303).
+   Reuses the header from css/result.css and the buttons from css/configuration.css. */
+
+.page--workflow { width: 1342px; min-height: 1303px; }
+.page--workflow .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wf-body { display: flex; flex-direction: column; gap: 24px; padding: 24px 17px 24px 24px; } /* Figma leaves 17px on the right */
+.wf-body > * { flex: none; }
+
+/* ---------- Promotion summary (Figma 55:37333) ---------- */
+.wf-summary {
+  height: 70px; display: flex; align-items: center; gap: 20px; padding: 14px 15px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.wf-summary__facts { width: 1163px; flex: none; display: flex; align-items: center; gap: 36px; margin: 0; }
+.wf-fact { flex: none; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.wf-fact dd { margin: 0; font-weight: 600; white-space: nowrap; }
+
+/* ---------- Body panel holding the three cards (Figma 55:37360) ---------- */
+.wf-panel {
+  width: 1240px; display: flex; flex-direction: column; gap: 16px; padding: 15px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.wf-card {
+  display: flex; flex-direction: column; gap: 16px; padding: 15px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.wf-panel > *, .wf-card > * { flex: none; }
+.wf-card--lifecycle { height: 277px; }
+.wf-card--targets { height: 168px; }
+.wf-card--validation { height: 412px; }
+
+/* Card titles: 4px gradient bar on the left, 1px dashed (4, 2) rule underneath */
+.wf-title {
+  display: flex; padding-bottom: 8px;
+  background: linear-gradient(90deg, #bfe0f5 4px, transparent 0) 0 100% / 6px 1px repeat-x;
+}
+.wf-title--wide { width: 1190px; margin-left: -7px; } /* Figma 55:38741 is 1190 wide, centred on the 1176 card */
+.wf-bar { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 0 12px; }
+.wf-bar::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #47b796, #01a1fe); }
+.wf-title__text { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.wf-title__desc { display: flex; align-items: center; gap: 4px; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
+
+/* ---------- Lifecycle stages (Figma 55:37912) ---------- */
+.wf-stages { width: 1176px; height: 178px; overflow-x: auto; scrollbar-width: none; }
+.wf-stages::-webkit-scrollbar { display: none; }
+.wf-stages__row { width: max-content; height: 178px; display: flex; align-items: center; gap: 20px; }
+.wf-arrow { flex: none; }
+.wf-stage {
+  width: 267px; height: 178px; flex: none; display: flex; flex-direction: column; gap: 16px; padding: 15px;
+  background: #fff; border: 1px solid #ccdde8; border-radius: 12px;
+}
+.wf-stage__title {
+  height: 28px; flex: none; padding-bottom: 8px;
+  background: linear-gradient(90deg, #bfe0f5 4px, transparent 0) 0 100% / 6px 1px repeat-x;
+}
+.wf-stage__title .wf-bar { display: inline-block; height: 20px; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.wf-steps { display: flex; flex-direction: column; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.wf-step { height: 40px; display: flex; align-items: center; gap: 10px; }
+.wf-dot { width: 32px; height: 32px; flex: none; display: flex; align-items: center; justify-content: center; background: #c9ccce; border-radius: 16px; }
+.wf-dot--active { background: #007dc5; }
+.wf-dot--done { width: 28px; height: 28px; background: #0db134; }
+.wf-step__text { display: flex; flex-direction: column; white-space: nowrap; }
+.wf-step__name { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
+.wf-step--done .wf-step__name { color: #0db134; }
+.wf-step--active .wf-step__name { color: #007dc5; }
+.wf-step--waiting .wf-step__name { color: #727476; }
+.wf-step__note { font: 500 10px/12px "Montserrat", sans-serif; color: #727476; }
+
+.wf-golive { width: 193px; flex: none; display: flex; align-items: center; }
+.wf-golive__card {
+  width: 201px; height: 56px; flex: none; display: flex; align-items: center; gap: 4px; margin: 0; padding: 11px 15px;
+  background: #fff; border: 1px solid #ccdde8; border-radius: 12px;
+}
+.wf-golive__text { font: 600 15px/28px "Noto Sans", sans-serif; letter-spacing: 0.0225px; color: #323436; white-space: nowrap; }
+
+/* ---------- High level targets (Figma 55:38410) ---------- */
+.wf-tiles { display: flex; gap: 16px; }
+.wf-tile {
+  width: 285px; height: 92px; flex: none; display: flex; flex-direction: column; justify-content: center; padding: 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; overflow: hidden;
+}
+.wf-tile__label { height: 28px; display: flex; align-items: flex-end; font: 700 15px/28px "Noto Sans", sans-serif; letter-spacing: 0.0225px; color: #727476; white-space: nowrap; }
+.wf-tile__value { height: 34px; font: 700 28px/34px "Montserrat", sans-serif; color: #323436; white-space: nowrap; }
+.wf-tile__value--green { color: #0db134; }
+.wf-tile__value--blue { color: #007dc5; }
+
+/* ---------- Validation table (Figma 55:38749): cells carry a top and right rule, the table a 1px frame ---------- */
+.wf-table-wrap {
+  position: relative; width: 1184px; overflow: hidden; border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
+}
+.wf-table-wrap::after { content: ""; position: absolute; inset: 0; border-radius: 6px; box-shadow: inset 0 0 0 1px #c9ccce; pointer-events: none; }
+.wf-table { table-layout: fixed; width: 1184px; border-collapse: separate; border-spacing: 0; }
+.wf-table th, .wf-table td { padding: 6px 16px; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; white-space: nowrap; }
+.wf-table th { height: 32px; background: #eff9ff; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: left; }
+.wf-table th[rowspan] { height: 64px; }
+.wf-table th.wf-c-margin { text-align: center; }
+.wf-table th.wf-c-fin { text-align: right; color: #7a7c7e; }
+.wf-table th.wf-h-group { background: #007dc5; color: #fff; text-align: center; border-top-right-radius: 8px; }
+.wf-table th.wf-h-month { background: #007dc5; color: #fff; text-align: right; }
+.wf-table th.wf-h-total { background: #f2f4f6; color: #7a7c7e; text-align: right; }
+
+.wf-table td { height: 68px; background: #fff; vertical-align: middle; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: right; }
+.wf-toggle { display: flex; width: 16px; height: 16px; }
+.wf-table td.wf-c-family { padding: 0 16px 0 18.9px; text-align: left; } /* the 58.9px block overflows the 6px cell padding in Figma */
+.wf-family { height: 58.9px; display: flex; flex-direction: column; }
+.wf-family b { height: 20px; font: 700 12px/20px "Noto Sans", sans-serif; color: #323436; }
+.wf-family > span { font: 300 12px/18px "Poppins", sans-serif; color: #323436; }
+.wf-family > span.wf-family__meta { height: 18px; display: flex; align-items: center; gap: 8px; font-size: 10px; }
+.wf-badge {
+  height: 14px; display: flex; align-items: center; padding: 1px 4px; border-radius: 4px;
+  background: rgba(210, 14, 14, 0.08); box-shadow: inset 0 0 0 0.5px #d20e0e;
+  font: 300 10px/15px "Poppins", sans-serif; color: #3f4047;
+}
+.wf-table td.wf-c-margin { text-align: center; font: 500 10px/15px "Noto Sans", sans-serif; color: #005929; }
+.wf-table td.wf-c-month { font: 400 12px/18px "Noto Sans Display", sans-serif; }
+.wf-table td.wf-c-total { color: #007dc5; }
