@@ -1,0 +1,129 @@
+/* Promotion Validation / Logistics Volume Split — Figma "Split Page Family" (node 55:40381, 1366 × 850) and its
+   article drilldown (node 55:44872, 1366 × 899). Reuses the header and card title from css/result.css. */
+
+.page--validation { min-height: 850px; }
+.page--validation.is-drilldown { min-height: 899px; }
+.page--validation .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.vs-body { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
+
+/* ---------- Promotion summary (Figma 55:40581) ---------- */
+.vs-summary {
+  height: 70px; display: flex; align-items: center; gap: 20px; padding: 11px 15px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.vs-summary__facts { width: 1175px; flex: none; display: flex; align-items: center; gap: 36px; margin: 0; }
+.vs-fact { flex: none; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.vs-fact dd { margin: 0; font-weight: 600; white-space: nowrap; }
+.vs-fact dd.is-wrap { white-space: normal; }
+
+/* ---------- Volume split card (Figma 55:40608) ---------- */
+.vs-card {
+  width: 1258px; display: flex; flex-direction: column; gap: 16px; padding: 12px;
+  background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 0.924px #bfe0f5;
+}
+.vs-card__title { height: 28px; }
+.vs-card__title .res-card__title-inner { height: 20px; }
+
+.vs-filters { display: flex; gap: 12px; }
+.vs-field {
+  height: 32px; flex: none; display: flex; align-items: center; gap: 8px; padding: 5px 11px;
+  background: #fff; border: 1px solid #ccdde8; border-radius: 6px; outline: 0;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.vs-field--soft { border-color: #bfe0f5; }
+.vs-field--text::placeholder { color: #323436; opacity: 1; }
+.vs-field__value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+
+.vs-split { width: 1228px; display: flex; flex-direction: column; padding-bottom: 24px; border-radius: 8px; }
+.vs-band {
+  height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 4px 24px;
+  background: #eff9ff; border-radius: 8px 8px 0 0;
+}
+.vs-band__text { padding-bottom: 8px; }
+.vs-band__title { font: 600 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; }
+.vs-band__meta { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
+.vs-band__actions { display: flex; align-items: center; gap: 8px; }
+.vs-apply {
+  height: 24px; padding: 2px 12px 2px 8px; border-radius: 4px;
+  background: rgba(0, 125, 197, 0.08); box-shadow: inset 0 0 0 0.5px #007dc5;
+  font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap;
+}
+.vs-refresh { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #727476; border-radius: 6px; }
+
+/* ---------- Split table (Figma 55:40674): first three columns and Row Total stay put, months scroll ---------- */
+.vs-table-wrap { overflow-x: auto; scrollbar-width: none; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
+.vs-table-wrap::-webkit-scrollbar { display: none; }
+.vs-table { table-layout: fixed; width: 1475px; border-collapse: separate; border-spacing: 0; background: #fff; }
+.vs-table th, .vs-table td { padding: 0; background: #fff; box-shadow: inset 0 1px #c9ccce; white-space: nowrap; }
+.vs-c1, .vs-c2, .vs-c3, .vs-total { position: sticky; z-index: 1; }
+.vs-c1 { left: 0; }
+.vs-c2 { left: 44px; }
+.vs-c3 { left: 144px; }
+.vs-total { right: 0; }
+
+.vs-table th { height: 54px; background: #f9fbfd; box-shadow: inset 0 1px #dfdee3; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; }
+.vs-table th.vs-c1 { box-shadow: inset 0 1px #dfdee3, inset 1px 0 #dfdee3, inset -1px 0 #dfdee3; }
+.vs-table th.vs-c2, .vs-table th.vs-c3 { padding-left: 16px; text-align: left; }
+.vs-hwrap { display: inline-block; vertical-align: middle; white-space: normal; }
+.vs-table th.vs-mh { text-align: center; }
+.vs-table th.is-next-year { background: #eff9ff; box-shadow: inset 0 1px #c9ccce; }
+.vs-table th.vs-total { text-align: center; background: #fcfeff; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
+.vs-total-head { display: inline-block; vertical-align: middle; font: 400 10px/11px "Noto Sans", sans-serif; color: #727476; }
+.vs-total-head b { font-size: 12px; font-weight: 600; }
+
+.vs-table td { height: 74px; vertical-align: middle; }
+.vs-table td.vs-c1 { padding-left: 16px; box-shadow: inset 0 1px #c9ccce, inset 1px 0 #c9ccce, inset -1px 0 #c9ccce; }
+.vs-table td.vs-total { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
+.vs-table tbody tr:last-child td { box-shadow: inset 0 1px #c9ccce, inset 0 -1px #c9ccce; }
+.vs-table tbody tr:last-child td.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset 1px 0 #c9ccce, inset -1px 0 #c9ccce, inset 0 -1px #c9ccce; }
+.vs-table tbody tr:last-child td.vs-total { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 0 -1px #c9ccce; }
+.vs-toggle { display: flex; width: 16px; height: 16px; }
+.vs-toggle[aria-expanded="true"] img { transform: rotate(180deg); } /* Figma 24/chevron-up */
+.vs-table td.vs-c2 { padding-left: 6px; }
+.vs-name { display: flex; flex-direction: column; }
+.vs-name b { font: 700 12px/20px "Noto Sans", sans-serif; color: #323436; }
+.vs-name span { font: 300 12px/18px "Poppins", sans-serif; color: #323436; }
+.vs-table td.vs-c3 { padding-left: 16px; }
+.vs-volume { font: 400 10px/18px "Noto Sans", sans-serif; color: #727476; }
+.vs-volume b { font-size: 12px; font-weight: 600; }
+.vs-volume small { font-size: 10px; }
+
+.vs-table td.vs-month { vertical-align: top; padding: 8px 0 0 16px; }
+.vs-pct { display: flex; align-items: center; gap: 2px; height: 24px; font: 400 10px/15px "Lato", sans-serif; letter-spacing: 0.4px; color: #323436; }
+.vs-input {
+  width: 41px; height: 24px; flex: none; padding: 0; margin: 0; outline: 0; text-align: center;
+  background: #fff; border: 1px solid #c9ccce; border-radius: 6px;
+  font: 600 12px/18px "Noto Sans", sans-serif; color: #323436;
+}
+.vs-input:focus { border-color: #007dc5; }
+.vs-units { display: block; height: 18px; margin-bottom: -2px; font: 500 10px/18px "Noto Sans", sans-serif; color: #727476; }
+.vs-units small { font-size: 8px; font-weight: 400; }
+.vs-rec { display: block; font: 400 10px/18px "Lato", sans-serif; letter-spacing: 0.4px; text-transform: uppercase; color: #a333c8; }
+
+.vs-table td.vs-total { vertical-align: top; padding: 6.5px 8px 0; }
+.vs-chip { width: 78px; height: 61px; display: flex; align-items: center; justify-content: center; padding: 8px 5px; border-radius: 8px; }
+.vs-chip--ok { background: linear-gradient(rgba(61, 166, 0, 0.2), rgba(61, 166, 0, 0.2)), #fff; color: #318500; }
+.vs-chip--over { background: linear-gradient(rgba(236, 0, 71, 0.1), rgba(236, 0, 71, 0.1)), #fff; color: #d40040; }
+.vs-chip--under { background: #fff5f2; color: #f15a29; }
+.vs-chip__inner { width: 68px; height: 48px; flex: none; display: flex; flex-direction: column; align-items: center; text-shadow: 0 4px 6px rgba(142, 142, 142, 0.1); font-family: "Noto Sans", sans-serif; }
+.vs-chip__label { font: 400 12px/16px "Noto Sans", sans-serif; letter-spacing: 0.036px; }
+.vs-chip__pct { font: 700 14px/16px "Noto Sans", sans-serif; letter-spacing: 0.042px; }
+.vs-chip__units { font: 400 10px/16px "Noto Sans", sans-serif; letter-spacing: 0.03px; }
+
+.vs-footer { height: 32px; display: flex; align-items: center; justify-content: space-between; }
+.vs-pager { display: flex; align-items: center; gap: 6px; padding: 0 16px; }
+.vs-pager__summary { font: 600 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+
+/* ---------- Article drilldown (Figma 55:44872) ---------- */
+.is-drilldown .vs-split { padding-bottom: 0; }
+.is-drilldown .vs-table-wrap { border-radius: 0; }
+.is-drilldown .vs-table th { height: 72px; background: #fdfeff; box-shadow: inset 0 1px #c9ccce; }
+.is-drilldown .vs-table th.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
+.is-drilldown .vs-table th.is-next-year { background: #eff9ff; }
+.is-drilldown .vs-table th.vs-total { background: #fdfeff; }
+.is-drilldown .vs-table td.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
+.is-drilldown .vs-table tbody tr:last-child td.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 0 -1px #c9ccce; }
+.is-drilldown .vs-footer { margin-top: 4px; justify-content: flex-end; }
+.is-drilldown .vs-pager { display: none; }
