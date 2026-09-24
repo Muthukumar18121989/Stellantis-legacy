@@ -139,6 +139,15 @@
     delete dialog.dataset.state;
     validateIcon.src = 'assets/icons/refresh-white.svg';
   });
+  // Simulate (Price Analysis tab) returns to the experiment page, which runs the analysis and then opens the results.
+  document.querySelector('[data-page-next]').addEventListener('click', function () {
+    if (this.textContent !== 'Simulate') return;
+    var params = new URLSearchParams(location.search);
+    params.set('families', list.children.length);
+    params.set('simulate', '1');
+    location.href = 'index.html?' + params.toString();
+  });
+
   var file = dialog.querySelector('#fam-file');
   file.addEventListener('change', function () {
     if (file.files.length) dialog.querySelector('[data-file-name]').textContent = file.files[0].name;

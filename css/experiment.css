@@ -152,3 +152,10 @@ td .promos__id { gap: 8px; }
 }
 .select__option:first-child { padding-top: 6px; border-top: 0; }
 .select__option[aria-selected="true"] { background: #e3f4ff; } /* Figma Menu Row "Selected" */
+
+/* Analysis progress in the Experiment Status column after Simulate (Figma progress indicator 26:14887:
+   8px pill track #c9ccce, blue fill, percentage in Poppins Light 14; the track shrinks to fit the 162px column) */
+.progress { display: flex; align-items: center; gap: 8px; }
+.progress__track { flex: 1; min-width: 0; height: 8px; overflow: hidden; background: #c9ccce; border-radius: 1000px; }
+.progress__fill { display: block; width: 0; height: 100%; background: #007dc5; border-radius: 1000px; }
+.progress__value { width: 36px; flex: none; font: 300 14px/20px "Poppins", sans-serif; color: #727476; white-space: nowrap; }

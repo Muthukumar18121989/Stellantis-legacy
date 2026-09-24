@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Simulation Results</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+<div class="page page--result">
+  <!-- Left menu bar (Figma 26:14505) -->
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="#" aria-label="Overview"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="index.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="dashboard.html" aria-label="Promotion Admin Dashboard"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+  <div class="main">
+    <!-- Top menu (Figma 26:14522) -->
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <div class="cfg-brand__mark"></div>
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Breadcrumb + title + iteration (Figma 26:14563) -->
+    <section class="res-header">
+      <div class="cfg-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
+          <span class="breadcrumb__sep">/</span>
+          <a class="breadcrumb__link" href="index.html">Dashboard</a>
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current" aria-current="page">Configuration</span>
+        </nav>
+        <h1 class="cfg-header__title">Promotion Configuration</h1>
+      </div>
+      <div class="res-header__actions">
+        <button class="iteration" type="button"><span class="iteration__value">Iteration 1</span><img src="assets/icons/chevron-down-white.svg" width="16" height="16" alt=""></button>
+        <button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+      </div>
+    </section>
+
+    <main class="res-body">
+      <!-- Process steps (Figma 26:14703): all three steps done -->
+      <ol class="steps" aria-label="Progress">
+        <li class="steps__inner">
+          <img class="steps__dash" src="assets/shapes/step-dash-long.svg" width="397" height="2" alt="">
+          <span class="steps__blue"></span>
+          <div class="step">
+            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
+            <span class="step__label">Configure Parameters</span>
+          </div>
+          <div class="step">
+            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
+            <span class="step__label">Selection &amp; Analysis</span>
+          </div>
+          <div class="step" aria-current="step">
+            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
+            <span class="step__label">Simulation Results</span>
+          </div>
+        </li>
+      </ol>
+
+      <!-- Promotion summary (Figma 26:14729) -->
+      <section class="res-summary">
+        <dl class="res-summary__facts">
+          <div class="res-fact res-fact--countries"><dt>Selected Countries:</dt> <dd>France</dd></div>
+          <div class="res-fact res-fact--brands"><dt>Target Brands:</dt> <dd>Fiat</dd></div>
+          <div class="res-fact res-fact--window"><dt>Execution window:</dt> <dd>2026-04-20 → 2026-04-29 (10 days)</dd></div>
+          <div class="res-fact res-fact--logic"><dt>Promotion Logic:</dt> <dd>Discount on MSRP at family or article level</dd></div>
+        </dl>
+        <span class="res-chip"><img src="assets/icons/stack.svg" width="24" height="24" alt="">Without Threshold</span>
+      </section>
+
+      <div class="res-section">
+        <!-- Filters (Figma 26:15102) -->
+        <div class="res-filters">
+          <button class="res-select" type="button"><span class="res-select__value">1109Z5 - Filters</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="res-select" type="button"><span class="res-select__value">All Articles</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+        </div>
+
+        <!-- Promotion Financial Outcome Summary (Figma 26:15105) -->
+        <section class="res-card res-card--summary">
+          <h2 class="res-card__title"><span class="res-card__title-inner"><img src="assets/icons/report-money.svg" width="24" height="24" alt="">Promotion Financial Outcome Summary</span></h2>
+          <div class="kpis">
+            <article class="kpi">
+              <div class="kpi__body">
+                <p class="kpi__label">Unit Margin (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
+                <div class="kpi__row">
+                  <p class="kpi__value">48.5M</p>
+                  <span class="kpi__change kpi__change--up"><img src="assets/icons/arrow-up-green.svg" width="12" height="12" alt="">€1.4M</span>
+                </div>
+                <p class="kpi__before">Before 50M</p>
+              </div>
+            </article>
+            <article class="kpi">
+              <div class="kpi__body">
+                <p class="kpi__label">Margin % (vs. D3NP) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
+                <div class="kpi__row">
+                  <p class="kpi__value">60.5%</p>
+                  <span class="kpi__change kpi__change--up"><img src="assets/icons/arrow-up-green.svg" width="12" height="12" alt="">+5.5 pp</span>
+                </div>
+                <p class="kpi__before">Before <b>62.7%</b></p>
+              </div>
+            </article>
+            <article class="kpi">
+              <div class="kpi__body">
+                <p class="kpi__label">Total Promo Discount (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
+                <div class="kpi__row">
+                  <p class="kpi__value">126.05</p>
+                  <span class="kpi__change kpi__change--down"><img src="assets/icons/arrow-up-red.svg" width="12" height="12" alt="">100%</span>
+                </div>
+                <p class="kpi__before">Before 0</p>
+              </div>
+            </article>
+            <article class="kpi">
+              <div class="kpi__body">
+                <p class="kpi__label">Sales Quantity <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
+                <div class="kpi__row">
+                  <p class="kpi__value">2,655</p>
+                  <span class="kpi__change kpi__change--up"><img src="assets/icons/arrow-up-green.svg" width="12" height="12" alt="">+33.5%</span>
+                </div>
+                <p class="kpi__before">Before <b>2,000</b></p>
+              </div>
+            </article>
+          </div>
+          <div class="mc-wrap">
+            <table class="mc">
+              <colgroup><col style="width:294px"><col style="width:155px"><col style="width:156px"><col style="width:155px"><col style="width:109px"><col style="width:105px"><col style="width:251px"></colgroup>
+              <thead>
+                <tr class="mc__groups">
+                  <th class="mc__corner" rowspan="3" scope="col">Metric Comparison</th>
+                  <th class="mc__group" colspan="3" scope="colgroup"><span class="mc__group-title"><img src="assets/icons/user-grey.svg" width="24" height="24" alt="">Simulated based on User Input​</span></th>
+                  <th class="mc__group is-twin" colspan="3" scope="colgroup"><span class="mc__group-title"><img src="assets/icons/product-recommendation.svg" width="24" height="24" alt="">TwinX Recommended</span></th>
+                </tr>
+                <tr class="mc__targets">
+                  <th class="mc__group" colspan="3"><span class="mc__target"><span>Average Discount Target (%) - 10<br>Total Volume Target (units) - 35,000</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                  <th class="mc__group is-twin" colspan="3"><span class="mc__target"><span>Average Discount Target (%) - 15<br>Total Volume Target (units) - 55,000</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                </tr>
+                <tr class="mc__subs">
+                  <th scope="col">Break-even</th><th scope="col">Objective</th><th class="is-last" scope="col">Uplift of User Input</th>
+                  <th class="is-twin" scope="col">Break-even</th><th class="is-twin" scope="col">Objective</th><th class="is-twin is-last" scope="col">Uplift of TwinX Recommendation</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row"><span class="mc-label"><span class="mc-label__text">Volume</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <td>52,506</td><td>52,506</td><td class="is-user">86,271</td><td>52,506</td><td>52,506</td><td class="is-twin">72,506</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="mc-label"><span class="mc-label__text">Turnover in k€​</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <td>514.660</td><td>514.660</td><td class="is-user">845.641</td><td>514.660</td><td>514.660</td><td class="is-twin">614.660</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="mc-label"><span class="mc-label__text">Commercial margin in k€</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <td>433.770</td><td>433.770</td><td class="is-user">712.758</td><td>433.770</td><td>433.770</td><td class="is-twin">512.758</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="mc-label"><span class="mc-label__text">Variable commercial means in k€</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <td>77.199</td><td>77.199</td><td class="is-user">127.165</td><td>77.199</td><td>77.199</td><td class="is-twin">107.165</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="mc-label"><span class="mc-label__text">Variable margin in kc</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <td>356.571</td><td>-</td><td class="is-user">585.593</td><td>356.571</td><td>356.571</td><td class="is-twin">485.593</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="mc-label"><span class="mc-label__text">Fixed commercial means in k€</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <td>-</td><td>10.000</td><td class="is-user">-</td><td>-</td><td>-</td><td class="is-twin">10</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="mc-label"><span class="mc-label__text">Gross Operational result after dispatch  of fixed commercial means in k€</span><img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <td>-</td><td class="is-bold">575.593</td><td class="is-user">-</td><td>-</td><td>-</td><td class="is-twin">375.593</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- Promotion Drilldown (Family & Article Level) (Figma 26:16835) -->
+      <section class="res-card res-card--drilldown">
+        <h2 class="res-card__title"><span class="res-card__title-inner"><img src="assets/icons/table-options.svg" width="24" height="24" alt="">Promotion Drilldown (Family &amp; Article Level)</span></h2>
+        <div class="dd-wrap">
+          <table class="dd">
+            <colgroup><col style="width:183px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"></colgroup>
+            <thead>
+              <tr>
+                <th class="dd__corner" rowspan="2" scope="col">Family / Article</th>
+                <th class="dd__group" colspan="6" scope="colgroup"><span class="dd__group-title"><img src="assets/icons/user-grey.svg" width="24" height="24" alt="">User Input</span></th>
+                <th class="dd__group is-rec" colspan="7" scope="colgroup"><span class="dd__group-title"><img src="assets/icons/product-recommendation.svg" width="24" height="24" alt="">Recommendations</span></th>
+              </tr>
+              <tr class="dd__subs">
+                <th><span class="dd-sub">Discount / Unit (%)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th><span class="dd-sub">Discount / unit (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th><span class="dd-sub">Total Promo Discount (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th><span class="dd-sub">Target Volume (units)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th><span class="dd-sub">Unit Margin (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th><span class="dd-sub">Uplift vs Breakeven (Units)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                <th class="is-rec"><span class="dd-sub">Elasticity<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-rec"><span class="dd-sub">Discount / Unit (%)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-rec"><span class="dd-sub">Discount / unit (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-rec"><span class="dd-sub">Total Promo Discount (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-rec"><span class="dd-sub">Target Volume (units)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-rec"><span class="dd-sub">Unit Margin (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-rec"><span class="dd-sub">Uplift vs Breakeven (Units)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><span class="dd-name"><img src="assets/icons/chevron-down.svg" width="20" height="20" alt="">Filters</span></th>
+                <td>10</td><td>12.45</td><td>512.45</td><td>1000</td><td>13,500.40</td><td>+450</td>
+                <td class="is-rec">-1.4</td><td class="is-rec">10</td><td class="is-rec">12.45</td><td class="is-rec">512.45</td><td class="is-rec">1000</td><td class="is-rec">13,500.40</td><td class="is-rec">+450</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="dd-name"><img src="assets/icons/chevron-down.svg" width="20" height="20" alt="">A/C Components<img src="assets/icons/alert-triangle-red.svg" width="16" height="16" alt="Warning"></span></th>
+                <td>10</td><td>12.45</td><td>512.45</td><td>1000</td><td class="is-alert">13,500.40</td><td>+450</td>
+                <td class="is-rec">-1.2</td><td class="is-rec">10</td><td class="is-rec">12.45</td><td class="is-rec">512.45</td><td class="is-rec">1000</td><td class="is-rec">13,500.40</td><td class="is-rec">+450</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="dd-name"><img src="assets/icons/chevron-down.svg" width="20" height="20" alt="">A/C Components</span></th>
+                <td>10</td><td>12.45</td><td>512.45</td><td>1000</td><td>13,500.40</td><td>+450</td>
+                <td class="is-rec">-1.0</td><td class="is-rec">10</td><td class="is-rec">12.45</td><td class="is-rec">512.45</td><td class="is-rec">1000</td><td class="is-rec">13,500.40</td><td class="is-rec">+450</td>
+              </tr>
+              <tr>
+                <th scope="row"><span class="dd-name"><img src="assets/icons/chevron-down.svg" width="20" height="20" alt="">A/C Components</span></th>
+                <td>10</td><td>12.45</td><td>512.45</td><td>1000</td><td>13,500.40</td><td>+450</td>
+                <td class="is-rec">-2.7</td><td class="is-rec">10</td><td class="is-rec">12.45</td><td class="is-rec">512.45</td><td class="is-rec">1000</td><td class="is-rec">13,500.40</td><td class="is-rec">+450</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Top Performing / Low Response Articles (Figma 26:17812) -->
+      <div class="res-pair">
+        <section class="res-card res-card--half">
+          <h2 class="res-card__title res-card__title--solid"><span class="res-card__title-inner"><img src="assets/icons/trophy.svg" width="24" height="24" alt="">Top Performing Articles</span></h2>
+          <div class="art-wrap">
+            <table class="art-list">
+              <colgroup><col style="width:118px"><col style="width:116px"><col style="width:162px"><col style="width:193px"><col style="width:131px"><col style="width:130px"><col style="width:210px"><col style="width:210px"></colgroup>
+              <thead>
+                <tr>
+                  <th>Article ID</th><th>Article Name</th><th class="is-num"><span class="th-icon">Unit Margin (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th><span class="th-icon">Volume Uplift<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-num">Uplift %</th><th class="is-num">Margin %</th><th class="is-num">Estimated Revenue</th><th class="is-num">Inventory Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="is-light">9863013680</td><td class="is-light">SPARK-PLUG</td><td class="is-num">13,500.40</td><td class="is-center"><span class="uplift uplift--up">65,000</span></td><td class="is-num">+30.7%</td><td class="is-num">22.4%</td><td class="is-num">€145,000</td><td class="is-num">45k→ 29k</td>
+                </tr>
+                <tr>
+                  <td class="is-light">9863013680</td><td class="is-light">SPARK-PLUG</td><td class="is-num">13,500.40</td><td class="is-center"><span class="uplift uplift--up">52,000</span></td><td class="is-num">+26.8%</td><td class="is-num">24.1%</td><td class="is-num">€112,000</td><td class="is-num">22k→ 14k</td>
+                </tr>
+                <tr>
+                  <td class="is-light">9863013680</td><td class="is-light">SPARK-PLUG</td><td class="is-num">13,500.40</td><td class="is-center"><span class="uplift uplift--up">80,000</span></td><td class="is-num">+10.9%</td><td class="is-num">28.5%</td><td class="is-num">€85,000</td><td class="is-num">18k→ 12k</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="res-card res-card--half">
+          <h2 class="res-card__title res-card__title--solid"><span class="res-card__title-inner"><img src="assets/icons/alert-triangle-large.svg" width="24" height="24" alt="">Low Response Articles</span></h2>
+          <div class="art-wrap">
+            <table class="art-list">
+              <colgroup><col style="width:112px"><col style="width:123px"><col style="width:162px"><col style="width:192px"><col style="width:131px"><col style="width:130px"><col style="width:210px"><col style="width:210px"></colgroup>
+              <thead>
+                <tr>
+                  <th>Article ID</th><th>Article Name</th><th class="is-num"><span class="th-icon">Unit Margin (€)<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th><span class="th-icon">Volume Uplift<img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></span></th><th class="is-num">Uplift %</th><th class="is-num">Margin %</th><th class="is-num">Estimated Revenue</th><th class="is-num">Inventory Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="is-light">9863013680</td><td class="is-light">SPARK-PLUG</td><td class="is-num">13,500.40</td><td class="is-center"><span class="uplift uplift--down">708</span></td><td class="is-num">+30.7%</td><td class="is-num">22.4%</td><td class="is-num">€145,000</td><td class="is-num">45k→ 29k</td>
+                </tr>
+                <tr>
+                  <td class="is-light">9863013680</td><td class="is-light">SPARK-PLUG</td><td class="is-num">13,500.40</td><td class="is-center"><span class="uplift uplift--down">113</span></td><td class="is-num">+26.8%</td><td class="is-num">24.1%</td><td class="is-num">€112,000</td><td class="is-num">22k→ 14k</td>
+                </tr>
+                <tr>
+                  <td class="is-light">9863013680</td><td class="is-light">SPARK-PLUG</td><td class="is-num">13,500.40</td><td class="is-center"><span class="uplift uplift--down">22</span></td><td class="is-num">+10.9%</td><td class="is-num">28.5%</td><td class="is-num">€85,000</td><td class="is-num">18k→ 12k</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <!-- Page actions (Figma 26:19990) -->
+      <div class="cfg-actions">
+        <a class="btn-outline" href="index.html">Close</a>
+        <a class="btn-outline" href="promotion-configuration.html" data-keep-query>View/Edit Configuration</a>
+        <button class="btn-next" type="button">Submit for approval</button>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/result.js"></script>
+</body>
+</html>
