@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Report Hub</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/reports.css">
+</head>
+<body>
+<div class="page page--reports">
+  <!-- Left menu bar (Figma 55:51174) -->
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="dashboard.html" aria-label="Promotion Admin Dashboard"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="index.html" aria-label="Experiments"><img src="assets/icons/route-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="reports.html" aria-label="Reports" aria-current="page"><img src="assets/icons/report-analytics-active.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+  <div class="main">
+    <!-- Top menu (Figma 55:51191) -->
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <div class="cfg-brand__mark"></div>
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Breadcrumb + title + Download (Figma 55:51225) -->
+    <section class="rp-header">
+      <div class="rp-header__text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/report-search.svg" width="24" height="24" alt="">
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current" aria-current="page">Reports</span>
+        </nav>
+        <h1 class="cfg-header__title rp-header__title">Report Hub</h1>
+      </div>
+      <button class="rp-btn rp-btn--download" type="button"><img src="assets/icons/download-white.svg" width="16" height="16" alt="">Download</button>
+    </section>
+
+    <main class="rp-body">
+      <!-- Tabs (Figma 13313:64989) -->
+      <div class="rp-tabs" role="tablist">
+        <button class="rp-tab is-active" type="button" role="tab" aria-selected="true">Promotions</button>
+        <button class="rp-tab" type="button" role="tab" aria-selected="false">Advanced Analytics</button>
+      </div>
+
+      <!-- Filters (Figma 13313:64998) -->
+      <section class="rp-filters" aria-label="Filters">
+        <div class="rp-filters__row">
+          <button class="rp-select rp-select--soft" type="button" style="width:299px"><span class="rp-select__value">Market</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="rp-select" type="button" style="width:298px"><span class="rp-select__value">All Product Family</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="rp-select" type="button" style="width:298px"><span class="rp-select__value">All Parts</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="rp-select" type="button" style="width:298px"><span class="rp-select__value">Promotion Status</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+        </div>
+        <div class="rp-filters__row">
+          <div class="rp-filters__dates">
+            <button class="rp-select" type="button" style="width:298px"><span class="rp-select__value">Choose Start Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+            <button class="rp-select" type="button" style="width:298px"><span class="rp-select__value">Choose End Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+          </div>
+          <div class="rp-filters__actions">
+            <button class="icon-btn" type="button" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
+            <button class="rp-btn" type="button">Apply</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Promotion Stage Tracker (Figma 13313:65011) -->
+      <section class="rp-card rp-card--stages">
+        <h2 class="rp-title"><span class="rp-title__text">Promotion Stage Tracker</span><span class="rp-title__note">Total Pipeline: 41 Promotions</span></h2>
+        <div class="rp-stages">
+          <ol class="rp-steps">
+              <li class="rp-step rp-step--edit" style="width:97px"><span class="rp-step__dot"><img src="assets/icons/step-edit.svg" width="24" height="24" alt=""></span><span class="rp-step__text">0<br>Created /Draft</span></li>
+              <li class="rp-step rp-step--clock" style="width:120px"><span class="rp-step__dot"><img src="assets/icons/step-clock.svg" width="24" height="24" alt=""></span><span class="rp-step__text">3<br>Pending Approval</span></li>
+              <li class="rp-step rp-step--checkbox" style="width:133px"><span class="rp-step__dot"><img src="assets/icons/step-checkbox.svg" width="24" height="24" alt=""></span><span class="rp-step__text">18<br>Planned / Approved</span></li>
+              <li class="rp-step rp-step--chart-line" style="width:108px"><span class="rp-step__dot"><img src="assets/icons/step-chart-line.svg" width="24" height="24" alt=""></span><span class="rp-step__text">4<br>Active Currently</span></li>
+              <li class="rp-step rp-step--circle-check" style="width:74px"><span class="rp-step__dot"><img src="assets/icons/step-circle-check.svg" width="24" height="24" alt=""></span><span class="rp-step__text">16<br>Completed</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Promotion Performance Summary (Figma 13313:66007) -->
+      <section class="rp-card rp-card--summary">
+        <h2 class="rp-title"><span class="rp-title__text">Promotion Performance Summary</span><span class="rp-title__note">Across 20 active/completed</span></h2>
+        <div class="rp-tiles">
+          <div class="rp-tile"><span class="rp-tile__label">Planned Revenue</span><span class="rp-tile__value">€6,060,000.00</span></div>
+          <div class="rp-tile"><span class="rp-tile__label">Registered Revenue</span><span class="rp-tile__value">€2,305.27</span></div>
+          <div class="rp-tile"><span class="rp-tile__label">Total Estimated Cost</span><span class="rp-tile__value">€1,134,000.00</span></div>
+          <div class="rp-tile rp-tile--uplift">
+            <span class="rp-tile__label">Sales Uplift</span>
+            <span class="rp-uplift" role="img" aria-label="Sales uplift: break-even 18,000, current 25,000, planned 52,500">
+              <span class="rp-uplift__track"></span><span class="rp-uplift__range"></span><span class="rp-uplift__marker"></span>
+              <span class="rp-uplift__label" style="left:46.5px;width:61px">18,000<br>Break-even</span>
+              <span class="rp-uplift__label" style="left:116.5px;width:61px">25,000<br>Current</span>
+              <span class="rp-uplift__label" style="left:232.5px;width:42px">52,500<br>Planned</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Promotion Tracking (Figma 13297:95390) -->
+      <section class="rp-card rp-card--tracking">
+        <div class="rp-title rp-title--tools">
+          <h2 class="rp-title__text">Promotion Tracking</h2>
+          <div class="rp-aggregate">
+            <span class="rp-aggregate__label">Aggregate By:</span>
+            <button class="rp-select rp-select--soft" type="button" style="width:203px"><span class="rp-select__value">Individual Promotions</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          </div>
+        </div>
+        <div class="rp-tracking">
+          <div class="rp-table-wrap">
+            <table class="rp-table">
+              <colgroup><col style="width:70px"><col style="width:256px"><col style="width:168px"><col style="width:169px"><col style="width:134px"><col style="width:133px"><col style="width:156px"><col style="width:156px"></colgroup>
+              <thead>
+                <tr>
+                  <th class="rp-c-select" scope="col"><input class="rp-checkbox" type="checkbox" aria-label="Select all"></th>
+                  <th scope="col">Promotion Name</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Markets</th>
+                  <th class="rp-num" scope="col">Order Intake (Volume)</th>
+                  <th class="rp-num" scope="col">Sales / Invoicing (Volume)</th>
+                  <th class="rp-num" scope="col">Order Intake (Revenue)</th>
+                  <th class="rp-num" scope="col">Sales / Invoicing (Revenue)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="rp-c-select"><span class="rp-select-cell"><input class="rp-checkbox" type="checkbox" checked aria-label="Select Spring Promotion 1"><button class="rp-toggle" type="button" aria-label="Show details"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></span></td>
+                  <td class="rp-c-name">Spring Promotion</td>
+                  <td><span class="rp-badge rp-badge--done">Completed</span></td>
+                  <td><span class="rp-badges"><span class="rp-badge">France</span><span class="rp-badge">Italy</span></span></td>
+                  <td class="rp-num rp-num--light">3,500</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value">2,782</span><span class="rp-bar"><span class="rp-bar__fill" style="width:56px"></span></span></td>
+                  <td class="rp-num">€150,000</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value">€158,000</span><span class="rp-bar"><span class="rp-bar__fill" style="width:56px"></span></span></td>
+                </tr>
+                <tr>
+                  <td class="rp-c-select"><span class="rp-select-cell"><input class="rp-checkbox" type="checkbox" checked aria-label="Select Spring Promotion 2"><button class="rp-toggle" type="button" aria-label="Show details"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></span></td>
+                  <td class="rp-c-name">Spring Promotion</td>
+                  <td><span class="rp-badge rp-badge--done">Completed</span></td>
+                  <td><span class="rp-badges"><span class="rp-badge">France</span><span class="rp-badge">Italy</span></span></td>
+                  <td class="rp-num rp-num--light">3,500</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value is-ahead">3,782</span><span class="rp-bar"><span class="rp-bar__fill is-ahead" style="width:101px"></span></span></td>
+                  <td class="rp-num">€150,000</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value is-ahead">€158,000</span><span class="rp-bar"><span class="rp-bar__fill is-ahead" style="width:123px"></span></span></td>
+                </tr>
+                <tr>
+                  <td class="rp-c-select"><span class="rp-select-cell"><input class="rp-checkbox" type="checkbox" checked aria-label="Select Spring Promotion 3"><button class="rp-toggle" type="button" aria-label="Show details"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></span></td>
+                  <td class="rp-c-name">Spring Promotion</td>
+                  <td><span class="rp-badge rp-badge--done">Completed</span></td>
+                  <td><span class="rp-badges"><span class="rp-badge">France</span><span class="rp-badge">Italy</span></span></td>
+                  <td class="rp-num rp-num--light">3,500</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value">2,782</span><span class="rp-bar"><span class="rp-bar__fill" style="width:56px"></span></span></td>
+                  <td class="rp-num">€150,000</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value">€158,000</span><span class="rp-bar"><span class="rp-bar__fill" style="width:56px"></span></span></td>
+                </tr>
+                <tr>
+                  <td class="rp-c-select"><span class="rp-select-cell"><input class="rp-checkbox" type="checkbox" checked aria-label="Select Spring Promotion 4"><button class="rp-toggle" type="button" aria-label="Show details"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></span></td>
+                  <td class="rp-c-name">Spring Promotion</td>
+                  <td><span class="rp-badge rp-badge--done">Completed</span></td>
+                  <td><span class="rp-badges"><span class="rp-badge">France</span><span class="rp-badge">Italy</span></span></td>
+                  <td class="rp-num rp-num--light">3,500</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value is-ahead">4,782</span><span class="rp-bar"><span class="rp-bar__fill is-ahead" style="width:101px"></span></span></td>
+                  <td class="rp-num">€150,000</td>
+                  <td class="rp-num rp-num--bar"><span class="rp-value is-ahead">€158,000</span><span class="rp-bar"><span class="rp-bar__fill is-ahead" style="width:123px"></span></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="rp-pager">
+            <p class="rp-pager__summary">Showing article 1 of 10 entries</p>
+            <nav class="pagination" aria-label="Pagination">
+              <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+              <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+              <button class="pagination__page"><span>2</span></button>
+              <button class="pagination__page"><span>3</span></button>
+              <button class="pagination__page"><span>4</span></button>
+              <button class="pagination__page"><span>5</span></button>
+              <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            </nav>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

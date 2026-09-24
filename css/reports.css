@@ -1,0 +1,135 @@
+/* Report Hub — Figma "Reports" (node 55:51173, 1366 × 1128), opened from the report-analytics left-menu icon.
+   Reuses the breadcrumb and title from css/configuration.css and the pagination from css/base.css. */
+
+.page--reports { min-height: 1128px; }
+.page--reports .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+
+/* ---------- Breadcrumb + title + Download (Figma 55:51225) ---------- */
+.rp-header {
+  height: 78px; display: flex; align-items: flex-start; justify-content: space-between; padding: 12px 16px;
+  background: #eff9ff; border-bottom: 1px solid #bfe0f5;
+}
+.rp-header__text { position: relative; height: 54px; }
+.rp-header__title { position: absolute; left: 0; top: 21px; }
+.rp-btn {
+  height: 32px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 6px;
+  background: #007dc5; font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap;
+}
+.rp-btn--download { margin-top: 11px; }
+
+.rp-body { display: flex; flex-direction: column; gap: 16px; padding: 16px; }
+.rp-body > * { flex: none; }
+
+/* ---------- Tabs (Figma 13313:64989) ---------- */
+.rp-tabs { height: 36px; display: flex; gap: 16px; padding: 0 16px; }
+.rp-tab { height: 36px; padding: 8px 16px; border-radius: 1000px; font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
+.rp-tab.is-active { background: #007dc5; color: #fff; }
+
+/* ---------- Filters (Figma 13313:64998) ---------- */
+.rp-filters {
+  height: 104px; display: flex; flex-direction: column; gap: 16px; padding: 11px 11px 11px 12px; /* Figma rows sit 13px in */
+  background: #f6fcff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.rp-filters__row { width: 1249px; display: flex; gap: 16px; justify-content: space-between; }
+.rp-filters__row:first-child { justify-content: flex-start; }
+.rp-filters__dates, .rp-filters__actions { display: flex; gap: 16px; }
+.rp-select {
+  height: 32px; flex: none; display: flex; align-items: center; gap: 8px; padding: 5px 11px;
+  background: #fff; border: 1px solid #ccdde8; border-radius: 6px;
+}
+.rp-select--soft { border-color: #bfe0f5; }
+.rp-select__value {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+
+/* ---------- Cards and titles (4px gradient bar, solid rule underneath) ---------- */
+.rp-card { display: flex; flex-direction: column; gap: 16px; padding: 15px; background: #fff; border: 1px solid #bfe0f5; border-radius: 12px; }
+.rp-card > * { flex: none; }
+.rp-card--stages { height: 170px; }
+.rp-card--summary { height: 162px; }
+.rp-card--tracking { height: 426px; gap: 8px; }
+.rp-title { height: 28px; padding-bottom: 8px; border-bottom: 1px solid #bfe0f5; }
+.rp-title:not(.rp-title--tools) {
+  position: relative; display: flex; align-items: flex-start; justify-content: space-between; padding: 0 12px 8px;
+}
+.rp-title:not(.rp-title--tools)::before, .rp-title--tools .rp-title__text::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 20px; background: linear-gradient(180deg, #47b796, #01a1fe);
+}
+.rp-title__text { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.rp-title__note { font: 400 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
+.rp-title--tools { height: 40px; display: flex; align-items: flex-start; justify-content: space-between; }
+.rp-title--tools .rp-title__text { position: relative; height: 20px; margin-top: 6px; padding: 0 12px; }
+.rp-aggregate { display: flex; align-items: center; gap: 5px; }
+.rp-aggregate__label { width: 126px; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+
+/* ---------- Promotion Stage Tracker (Figma 13313:65287) ---------- */
+.rp-stages { height: 94px; display: flex; justify-content: center; }
+.rp-steps { position: relative; width: 788px; display: flex; gap: 64px; margin: 0; padding: 0; list-style: none; }
+.rp-steps::before { /* grey 2px dashed (4, 4) connector behind the circles */
+  content: ""; position: absolute; left: 39.5px; top: 21px; width: 709px; height: 2px;
+  background: linear-gradient(90deg, #c9ccce 4px, transparent 0) 0 0 / 8px 2px repeat-x;
+}
+.rp-step { position: relative; flex: none; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.rp-step__dot { position: relative; width: 46px; height: 46px; border-radius: 50%; }
+.rp-step__dot img { position: absolute; left: 10px; top: 11px; }
+.rp-step--edit .rp-step__dot { background: #f2f4f6; box-shadow: 0 0 0 0.5px #727476, inset 0 0 0 0.5px #727476; }
+.rp-step--clock .rp-step__dot { background: #fce8e0; box-shadow: 0 0 0 0.5px #f2711c, inset 0 0 0 0.5px #f2711c; }
+.rp-step--checkbox .rp-step__dot { background: #e0ecfc; box-shadow: 0 0 0 0.5px #007dc5, inset 0 0 0 0.5px #007dc5; }
+.rp-step--chart-line .rp-step__dot { background: #e8e0fc; box-shadow: 0 0 0 0.5px #6435c9, inset 0 0 0 0.5px #6435c9; }
+.rp-step--circle-check .rp-step__dot { background: #e0fce0; box-shadow: 0 0 0 0.5px #0db134, inset 0 0 0 0.5px #0db134; }
+.rp-step__text { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; text-align: center; white-space: nowrap; }
+
+/* ---------- Promotion Performance Summary (Figma 13313:66283) ---------- */
+.rp-tiles { display: flex; gap: 16px; }
+.rp-tile {
+  width: 298.5px; height: 86px; flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; overflow: hidden;
+}
+.rp-tile__label { font: 500 12px/18px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.rp-tile__value { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #007dc5; white-space: nowrap; }
+.rp-tile--uplift { align-items: flex-start; }
+.rp-uplift { position: relative; display: block; width: 274px; height: 40px; }
+.rp-uplift__track, .rp-uplift__range { position: absolute; top: 0; height: 12px; border-radius: 15px; }
+.rp-uplift__track { left: 0; width: 274px; background: #c9ccce; }
+.rp-uplift__range { left: 0.5px; width: 147px; background: #d20e0e; }
+.rp-uplift__marker { /* 1px dashed (2, 2) marker at the current value */
+  position: absolute; left: 77px; top: -3px; width: 1px; height: 17px;
+  background: linear-gradient(#323436 2px, transparent 0) 0 0 / 1px 4px repeat-y;
+}
+.rp-uplift__label { position: absolute; top: 18px; font: 600 10px/15px "Poppins", sans-serif; color: #727476; text-align: center; white-space: nowrap; }
+
+/* ---------- Promotion Tracking table (Figma 13331:65953): cells carry a top and right rule ---------- */
+.rp-tracking { display: flex; flex-direction: column; gap: 16px; }
+.rp-table-wrap {
+  position: relative; height: 306px; overflow: hidden; border-radius: 8px; background: #fff;
+  box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
+}
+.rp-table-wrap::after { content: ""; position: absolute; inset: 0; border-radius: 8px; box-shadow: inset 0 0 0 1px #c9ccce; pointer-events: none; }
+.rp-table { table-layout: fixed; width: 1242px; border-collapse: separate; border-spacing: 0; }
+.rp-table th, .rp-table td { padding: 6px 16px; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; vertical-align: middle; }
+.rp-table th { height: 65px; background: #eff9ff; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: left; }
+.rp-table td { height: 60px; background: #fff; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; white-space: nowrap; }
+.rp-table .rp-c-select { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 1px 0 #c9ccce; }
+.rp-table .rp-num { text-align: right; }
+.rp-table td.rp-num--light { font-weight: 400; }
+.rp-checkbox { display: block; width: 20px; height: 20px; flex: none; margin: 0; appearance: none; background: #fff; border: 1px solid #c9ccce; border-radius: 4px; cursor: pointer; }
+.rp-checkbox:checked { background: #007dc5 url("../assets/icons/check-white-16.svg") center / 16px no-repeat; border-color: #007dc5; }
+.rp-select-cell { display: flex; align-items: center; gap: 8px; }
+.rp-toggle { display: flex; width: 16px; height: 16px; }
+.rp-badges { display: flex; gap: 10px; }
+.rp-badge {
+  display: inline-flex; align-items: center; height: 24px; padding: 4px 8px; border-radius: 6px;
+  background: #f8f9fb; box-shadow: inset 0 0 0 1px #bfe0f5;
+  font: 500 10px/15px "Noto Sans", sans-serif; color: #3f4047;
+}
+.rp-badge--done { background: #d6ffe1; box-shadow: inset 0 0 0 1px #0db134; color: #005929; }
+.rp-table td.rp-num--bar { padding-top: 12px; padding-bottom: 12px; }
+.rp-value { display: block; height: 18px; }
+.rp-value.is-ahead { color: #0db134; }
+.rp-bar { display: block; height: 8px; margin-top: 10px; border-radius: 1000px; background: #f2f4f6; box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25); }
+.rp-bar__fill { display: block; height: 8px; border-radius: 1000px; background: #c9ccce; box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25); }
+.rp-bar__fill.is-ahead { background: #0db134; }
+
+.rp-pager { height: 24px; display: flex; align-items: center; gap: 6px; padding: 0 16px; }
+.rp-pager__summary { font: 600 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
