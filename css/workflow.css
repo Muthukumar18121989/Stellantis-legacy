@@ -117,3 +117,33 @@
 .wf-table td.wf-c-margin { text-align: center; font: 500 10px/15px "Noto Sans", sans-serif; color: #005929; }
 .wf-table td.wf-c-month { font: 400 12px/18px "Noto Sans Display", sans-serif; }
 .wf-table td.wf-c-total { color: #007dc5; }
+.wf-dot[data-open-dialog] { padding: 0; }
+
+/* ---------- Validator Comments overlay (Figma 55:58362), opened from the L1.1 Local Marketing icon ---------- */
+.wf-comments {
+  position: fixed; inset: 0; margin: auto; width: 558px; height: fit-content; max-width: none; max-height: none;
+  padding: 18px 24px 24px; overflow: visible; color: #323436;
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.wf-comments::backdrop { background: rgba(0, 0, 0, 0.3); } /* Figma prototype overlay background */
+.wf-comments__close { position: absolute; left: 526px; top: 10px; width: 24px; height: 24px; }
+.wf-comments__body { width: 522px; display: flex; flex-direction: column; gap: 14px; } /* Figma 55:58363 is 522 wide, 12px short of the right padding */
+.wf-comments__head { display: flex; flex-direction: column; gap: 6px; }
+.wf-comments__title { font: 700 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.wf-comments__stage { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.wf-comment { display: flex; flex-direction: column; gap: 16px; padding: 15px; border: 1px solid #ccdde8; border-radius: 12px; }
+.wf-comment__row { height: 41px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.wf-comment__who { display: flex; align-items: center; gap: 12px; }
+.wf-avatar { position: relative; width: 28px; height: 28px; flex: none; background: #cbeefd; border-radius: 16px; }
+.wf-avatar img { position: absolute; left: 1.3px; top: 2px; }
+.wf-comment__person { display: flex; flex-direction: column; white-space: nowrap; }
+.wf-comment__name { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
+.wf-comment__role, .wf-comment__date { font: 500 11px/13px "Montserrat", sans-serif; color: #323436; white-space: nowrap; }
+.wf-comment__meta { width: 90px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.wf-comment__badge {
+  height: 17px; display: flex; align-items: center; padding: 1px 4px; border-radius: 4px;
+  background: #aefeb6; box-shadow: inset 0 0 0 0.5px #0db134;
+  font: 700 10px/15px "Poppins", sans-serif; color: #0db134;
+}
+.wf-comment__text { font: italic 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }

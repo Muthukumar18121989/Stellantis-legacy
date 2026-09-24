@@ -93,7 +93,7 @@
           <section class="wf-stage">
             <h3 class="wf-stage__title"><span class="wf-bar">LOCAL REVIEW</span></h3>
             <ol class="wf-steps">
-              <li class="wf-step wf-step--done"><span class="wf-dot wf-dot--done"><img src="assets/icons/check-white.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.1 Local Marketing</span><span class="wf-step__note">Approved</span></span></li>
+              <li class="wf-step wf-step--done"><button class="wf-dot wf-dot--done" type="button" aria-label="Validator comments for L1.1 Local Marketing" data-open-dialog="validator-comments"><img src="assets/icons/check-white.svg" width="24" height="24" alt=""></button><span class="wf-step__text"><span class="wf-step__name">L1.1 Local Marketing</span><span class="wf-step__note">Approved</span></span></li>
               <li class="wf-step wf-step--done"><span class="wf-dot wf-dot--done"><img src="assets/icons/check-white.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.2 Local Finance</span><span class="wf-step__note">Approved</span></span></li>
             </ol>
           </section>
@@ -215,6 +215,26 @@
     </main>
   </div>
 </div>
+<!-- Validator Comments (Figma 55:58362): centred overlay on a 30% black backdrop, closes on X or a click outside -->
+<dialog class="wf-comments" id="validator-comments" aria-labelledby="wf-comments-title">
+  <button class="wf-comments__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <div class="wf-comments__body">
+    <div class="wf-comments__head">
+      <h2 class="wf-comments__title" id="wf-comments-title">VALIDATOR COMMENTS</h2>
+      <p class="wf-comments__stage">STAGE: L1.1</p>
+    </div>
+    <article class="wf-comment">
+      <div class="wf-comment__row">
+        <div class="wf-comment__who">
+          <span class="wf-avatar"><img src="assets/icons/letter-j.svg" width="24" height="24" alt=""></span>
+          <span class="wf-comment__person"><span class="wf-comment__name">Jean-Pierre</span><span class="wf-comment__role">LOCAL MARKETING MANAGER</span></span>
+        </div>
+        <div class="wf-comment__meta"><span class="wf-comment__badge">APPROVED</span><span class="wf-comment__date">22 MAR, 10:15:00</span></div>
+      </div>
+      <p class="wf-comment__text">“Volume projections look realistic for the Spring season. Margin is slightly tighter than usual but offset by incremental gains.”</p>
+    </article>
+  </div>
+</dialog>
 <script src="js/workflow.js"></script>
 </body>
 </html>
