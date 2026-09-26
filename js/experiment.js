@@ -46,3 +46,21 @@
   }
   requestAnimationFrame(step);
 })();
+
+// Compare opens the Experiment Compare page (Figma 55:52531) when two or three promotions are ticked; with any other
+// number ticked it does nothing.
+(function () {
+  document.querySelector('[data-compare]').addEventListener('click', function () {
+    var rows = Array.prototype.filter.call(document.querySelectorAll('.promos tbody tr'), function (row) {
+      return row.querySelector('.checkbox').checked;
+    });
+    if (rows.length < 2 || rows.length > 3) return;
+    var query = rows.map(function (row) {
+      var id = row.querySelector('.promos__id').textContent.trim();
+      var iteration = row.querySelector('.badge--iteration .badge__text');
+      var pick = [id, row.cells[1].textContent.trim(), iteration ? iteration.textContent.trim() : ''].join('|');
+      return 'c=' + encodeURIComponent(pick);
+    }).join('&');
+    location.href = 'compare.html?' + query;
+  });
+})();

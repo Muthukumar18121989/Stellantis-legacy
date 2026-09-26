@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1083">
+  <title>Promotool — Experiment Compare</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/reports.css">
+  <link rel="stylesheet" href="css/compare.css">
+</head>
+<body>
+<div class="page page--compare">
+  <!-- Left menu bar (Figma 55:52532) -->
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="dashboard.html" aria-label="Promotion Admin Dashboard"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="index.html" aria-label="Experiments"><img src="assets/icons/route-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics-active.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+  <div class="main">
+    <!-- Top menu (Figma 55:52549) -->
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <div class="cfg-brand__mark"></div>
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Breadcrumb + title + Download (Figma 55:52583) -->
+    <section class="rp-header">
+      <div class="rp-header__text">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/report-search.svg" width="24" height="24" alt="">
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current" aria-current="page">Experiment Compare</span>
+        </nav>
+        <h1 class="cfg-header__title rp-header__title">Experiment Compare</h1>
+      </div>
+      <button class="rp-btn rp-btn--download" type="button"><img src="assets/icons/download-white.svg" width="16" height="16" alt="">Download</button>
+    </section>
+
+    <main class="cmp-body">
+      <!-- Configuration Summary (Figma 55:53211) -->
+      <section class="rp-card cmp-card cmp-card--config">
+        <h2 class="rp-title"><span class="rp-title__text">Configuration Summary</span></h2>
+        <div class="cmp-scroll">
+          <table class="cmp-config">
+            <colgroup><col style="width:260px"><col class="cmp-config__col" style="width:350px"><col class="cmp-config__col" style="width:351px"></colgroup>
+            <tbody>
+              <tr>
+                <th class="cmp-config__label" scope="row">Promotion ID</th>
+                <td class="cmp-config__detail" data-col="0"><span class="cmp-config__content"><span class="cmp-value" data-field="id">2387</span><span class="cmp-badge-slot"><span class="cmp-badge" data-field="iteration">Iteration 2</span></span></span></td>
+                <td class="cmp-config__detail" data-col="1"><span class="cmp-config__content"><span class="cmp-value" data-field="id">2388</span><span class="cmp-badge-slot"><span class="cmp-badge" data-field="iteration">Iteration 1</span></span></span></td>
+              </tr>
+              <tr>
+                <th class="cmp-config__label" scope="row">Promotion Name</th>
+                <td class="cmp-config__detail" data-col="0"><span class="cmp-config__content"><span class="cmp-value" data-field="name">Spring Promotion</span></span></td>
+                <td class="cmp-config__detail" data-col="1"><span class="cmp-config__content"><span class="cmp-value" data-field="name">Q1 Braking Efficiency</span></span></td>
+              </tr>
+              <tr>
+                <th class="cmp-config__label" scope="row">Promotion Type</th>
+                <td class="cmp-config__detail" data-col="0"><span class="cmp-config__content"><span class="cmp-value">Discount on MSRP</span></span></td>
+                <td class="cmp-config__detail" data-col="1"><span class="cmp-config__content"><span class="cmp-value">Discount on MSRP</span></span></td>
+              </tr>
+              <tr>
+                <th class="cmp-config__label" scope="row">Markets</th>
+                <td class="cmp-config__detail" data-col="0"><span class="cmp-config__content"><span class="cmp-value">France, Italy</span></span></td>
+                <td class="cmp-config__detail" data-col="1"><span class="cmp-config__content"><span class="cmp-value">France</span></span></td>
+              </tr>
+              <tr>
+                <th class="cmp-config__label" scope="row">Duration</th>
+                <td class="cmp-config__detail" data-col="0"><span class="cmp-config__content"><span class="cmp-value">4 weeks (03/01/2025 - 03/31/2025)</span></span></td>
+                <td class="cmp-config__detail" data-col="1"><span class="cmp-config__content"><span class="cmp-value">4 weeks (03/01/2025 - 03/31/2025)</span></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Configure Product and Pricing (Figma 55:55306) -->
+      <section class="rp-card cmp-card cmp-card--pricing">
+        <h2 class="rp-title cmp-title--wide"><span class="rp-title__text">Configure Product and Pricing</span></h2>
+        <div class="cmp-articles">
+          <button class="cmp-article" type="button"><span class="cmp-article__name">1109Z5 - Filters</span><span class="cmp-article__class">Competitive Class: High</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="cmp-article" type="button"><span class="cmp-article__name">1109Z5 - Brake System</span><span class="cmp-article__class">Competitive Class: High</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+        </div>
+      </section>
+
+      <!-- Output Summary (Figma 55:56536) -->
+      <section class="rp-card cmp-card cmp-card--output">
+        <div class="cmp-output-head">
+          <h2 class="rp-title cmp-title--wide"><span class="rp-title__text">Output Summary</span></h2>
+          <div class="cmp-filters">
+            <div class="cmp-filters__selects">
+              <button class="rp-select rp-select--soft" type="button" style="width:253px"><span class="rp-select__value">1109Z5 - Filters</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+              <button class="rp-select rp-select--soft" type="button" style="width:253px"><span class="rp-select__value">All Articles</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+            </div>
+            <div class="cmp-filters__actions">
+              <button class="icon-btn" type="button" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
+              <button class="rp-btn" type="button">Apply</button>
+              <button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+            </div>
+          </div>
+        </div>
+        <div class="cmp-metrics-wrap">
+          <div class="cmp-metrics" role="table" aria-label="Metric comparison">
+            <div class="cmp-metrics__head" role="row">
+              <span class="cmp-metrics__corner" role="columnheader">Metric Comparison</span>
+              <span class="cmp-metrics__promo" role="columnheader" data-col="0" data-field="promo">Promo ID, Promo Name</span>
+              <span class="cmp-metrics__kind" role="columnheader" data-col="0">Break-even (User Input)</span>
+              <span class="cmp-metrics__kind" role="columnheader" data-col="0">Objective (User Input)</span>
+              <span class="cmp-metrics__promo" role="columnheader" data-col="1" data-field="promo">Promo ID, Promo Name</span>
+              <span class="cmp-metrics__kind" role="columnheader" data-col="1">Break-even (User Input)</span>
+              <span class="cmp-metrics__kind" role="columnheader" data-col="1">Objective (User Input)</span>
+            </div>
+              <div class="cmp-metrics__row" role="row">
+                <span class="cmp-metrics__label" role="rowheader" title="Volume">Volume</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="0">691</span><span class="cmp-metrics__cell" role="cell" data-col="0">2,877</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="1">691</span><span class="cmp-metrics__cell" role="cell" data-col="1">2,877</span>
+              </div>
+              <div class="cmp-metrics__row" role="row">
+                <span class="cmp-metrics__label" role="rowheader" title="Turnover in k€">Turnover in k€​</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="0">47.86</span><span class="cmp-metrics__cell" role="cell" data-col="0">195.5</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="1">47.86</span><span class="cmp-metrics__cell" role="cell" data-col="1">195.5</span>
+              </div>
+              <div class="cmp-metrics__row" role="row">
+                <span class="cmp-metrics__label" role="rowheader" title="Commercial margin in k€">Commercial margin in k€</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="0">23,921.49</span><span class="cmp-metrics__cell" role="cell" data-col="0">96.44</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="1">23,921.49</span><span class="cmp-metrics__cell" role="cell" data-col="1">96.44</span>
+              </div>
+              <div class="cmp-metrics__row" role="row">
+                <span class="cmp-metrics__label" role="rowheader" title="Variable commercial means in k€">Variable commercial means in k€</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="0">4.79</span><span class="cmp-metrics__cell" role="cell" data-col="0">19.55</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="1">4.79</span><span class="cmp-metrics__cell" role="cell" data-col="1">19.55</span>
+              </div>
+              <div class="cmp-metrics__row" role="row">
+                <span class="cmp-metrics__label" role="rowheader" title="Variable margin in k€">Variable margin in k€</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="0">43.05</span><span class="cmp-metrics__cell" role="cell" data-col="0">-</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="1">43.05</span><span class="cmp-metrics__cell" role="cell" data-col="1">-</span>
+              </div>
+              <div class="cmp-metrics__row" role="row">
+                <span class="cmp-metrics__label" role="rowheader" title="Fixed commercial means in k€">Fixed commercial means in k€</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="0">-</span><span class="cmp-metrics__cell" role="cell" data-col="0">10</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="1">-</span><span class="cmp-metrics__cell" role="cell" data-col="1">10</span>
+              </div>
+              <div class="cmp-metrics__row" role="row">
+                <span class="cmp-metrics__label" role="rowheader" title="Gross Operational result after dispatch  of fixed commercial means in k€">Gross Operational result after dispatch  of fixed commercial means in k€</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="0">-</span><span class="cmp-metrics__cell is-bold" role="cell" data-col="0">68.89</span>
+                <span class="cmp-metrics__cell" role="cell" data-col="1">-</span><span class="cmp-metrics__cell is-bold" role="cell" data-col="1">68.89</span>
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="js/compare.js"></script>
+</body>
+</html>
