@@ -133,3 +133,30 @@
 
 .rp-pager { height: 24px; display: flex; align-items: center; gap: 6px; padding: 0 16px; }
 .rp-pager__summary { font: 600 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+
+/* ---------- Customize Your Report overlay (Figma 55:58411, 669 × 604), opened from Download ---------- */
+.rp-download {
+  position: fixed; inset: 0; margin: auto; width: 669px; height: 604px; max-width: none; max-height: none;
+  padding: 18px 18px 16px 24px; overflow: visible; color: #323436; /* content is 627 wide at x 24; buttons end 16px above the bottom */
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.rp-download::backdrop { background: rgba(0, 0, 0, 0.3); } /* Figma prototype overlay background */
+.rp-download__close { position: absolute; left: 637px; top: 10px; width: 24px; height: 24px; }
+.rp-download__head { display: flex; flex-direction: column; gap: 8px; }
+.rp-download__title { font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.rp-download__text { width: 595px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
+.rp-dl { width: 627px; margin-top: 24px; overflow: hidden; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #ccdde8; }
+.rp-dl__table { table-layout: fixed; width: 627px; border-collapse: separate; border-spacing: 0; font: 300 12px/18px "Poppins", sans-serif; color: #323436; }
+.rp-dl__cell { height: 48px; padding: 6px 16px; box-shadow: inset 0 -1px #ccdde8; vertical-align: middle; text-align: left; white-space: nowrap; }
+.rp-dl thead .rp-dl__cell { height: 40px; background: #f4f9fc; font-weight: 600; }
+.rp-dl__cell--all, .rp-dl__cell:first-child { padding: 6px 5px 6px 6px; }
+.rp-dl__cell--sub { padding-left: 43px; }
+.rp-dl__option { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.rp-download__actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.rp-download__btn {
+  height: 40px; padding: 7px 15px; background: #fff; border: 1px solid #727476; border-radius: 8px;
+  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap;
+}
+.rp-download__btn:first-child { width: 171px; } /* Figma button widths; Chrome sets the labels about half a pixel narrower */
+.rp-download__btn:last-child { width: 175px; }

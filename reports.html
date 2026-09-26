@@ -61,7 +61,7 @@
         </nav>
         <h1 class="cfg-header__title rp-header__title">Report Hub</h1>
       </div>
-      <button class="rp-btn rp-btn--download" type="button"><img src="assets/icons/download-white.svg" width="16" height="16" alt="">Download</button>
+      <button class="rp-btn rp-btn--download" type="button" data-open-dialog="report-download"><img src="assets/icons/download-white.svg" width="16" height="16" alt="">Download</button>
     </section>
 
     <main class="rp-body">
@@ -210,5 +210,35 @@
     </main>
   </div>
 </div>
+<dialog class="rp-download" id="report-download" aria-labelledby="rp-download-title">
+  <button class="rp-download__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <div class="rp-download__head">
+    <h2 class="rp-download__title" id="rp-download-title">Customize Your Report</h2>
+    <p class="rp-download__text">Select Sections and details to include. The download will reflect the current filter selection.</p>
+  </div>
+  <div class="rp-dl">
+    <table class="rp-dl__table">
+      <colgroup><col style="width:31px"><col style="width:298px"><col style="width:298px"></colgroup>
+      <thead>
+        <tr><th class="rp-dl__cell rp-dl__cell--all" scope="col"><input class="rp-checkbox" type="checkbox" aria-label="Select all sections"></th><th class="rp-dl__cell" scope="col">Promotions</th><th class="rp-dl__cell" scope="col">Advanced Analytics</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Promotion Stage Tracker</span></label></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Trend Analysis</span></label></td></tr>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Promotion Performance Summary</span></label></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Price Elasticity</span></label></td></tr>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Promotion Tracking by Individual Promos</span></label></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Seasonality Analysis</span></label></td></tr>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Promotion Tracking by Family</span></label></td><td class="rp-dl__cell"></td></tr>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Promotion Tracking Details</span></label></td><td class="rp-dl__cell"></td></tr>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell rp-dl__cell--sub"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Overview</span></label></td><td class="rp-dl__cell"></td></tr>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell rp-dl__cell--sub"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Family &amp; Parts Performance</span></label></td><td class="rp-dl__cell"></td></tr>
+        <tr><td class="rp-dl__cell"></td><td class="rp-dl__cell rp-dl__cell--sub"><label class="rp-dl__option"><input class="rp-checkbox" type="checkbox"><span>Dealer Participants</span></label></td><td class="rp-dl__cell"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="rp-download__actions">
+    <button class="rp-download__btn" type="button">Download as PDF</button>
+    <button class="rp-download__btn" type="button">Download as CSV</button>
+  </div>
+</dialog>
+<script src="js/reports.js"></script>
 </body>
 </html>
