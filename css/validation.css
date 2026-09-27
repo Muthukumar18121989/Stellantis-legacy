@@ -1,9 +1,8 @@
 /* Promotion Validation / Logistics Volume Split — Figma "Split Page Family" (node 55:40381, 1366 × 850) and its
    article drilldown (node 55:44872, 1366 × 899). Reuses the header and card title from css/result.css. */
 
-.page--validation { min-height: 850px; }
-.page--validation.is-drilldown { min-height: 899px; }
-.page--validation .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.page--validation { min-height: max(850px, 100vh); }
+.page--validation.is-drilldown { min-height: max(899px, 100vh); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .vs-body { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
@@ -13,14 +12,14 @@
   height: 70px; display: flex; align-items: center; gap: 20px; padding: 11px 15px;
   background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
 }
-.vs-summary__facts { width: 1175px; flex: none; display: flex; align-items: center; gap: 36px; margin: 0; }
+.vs-summary__facts { flex: 1; min-width: 0; display: flex; align-items: center; gap: clamp(12px, calc(100vw - 1330px), 36px); margin: 0; } /* Figma gap at 1366 and up, tighter below */
 .vs-fact { flex: none; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
 .vs-fact dd { margin: 0; font-weight: 600; white-space: nowrap; }
 .vs-fact dd.is-wrap { white-space: normal; }
 
 /* ---------- Volume split card (Figma 55:40608) ---------- */
 .vs-card {
-  width: 1258px; display: flex; flex-direction: column; gap: 16px; padding: 12px;
+  display: flex; flex-direction: column; gap: 16px; padding: 12px;
   background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 0.924px #bfe0f5;
 }
 .vs-card__title { height: 28px; }
@@ -33,10 +32,11 @@
   font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
 }
 .vs-field--soft { border-color: #bfe0f5; }
+.vs-filters > .vs-field { flex: 1 1 auto; min-width: 0; } /* inline widths are the Figma sizes; they fill the row exactly at 1366 */
 .vs-field--text::placeholder { color: #323436; opacity: 1; }
 .vs-field__value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
 
-.vs-split { width: 1228px; display: flex; flex-direction: column; padding-bottom: 24px; border-radius: 8px; }
+.vs-split { margin-right: 6px; display: flex; flex-direction: column; padding-bottom: 24px; border-radius: 8px; }
 .vs-band {
   height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 4px 24px;
   background: #eff9ff; border-radius: 8px 8px 0 0;
@@ -55,7 +55,7 @@
 /* ---------- Split table (Figma 55:40674): first three columns and Row Total stay put, months scroll ---------- */
 .vs-table-wrap { overflow-x: auto; scrollbar-width: none; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
 .vs-table-wrap::-webkit-scrollbar { display: none; }
-.vs-table { table-layout: fixed; width: 1475px; border-collapse: separate; border-spacing: 0; background: #fff; }
+.vs-table { table-layout: fixed; width: 100%; min-width: 1475px; border-collapse: separate; border-spacing: 0; background: #fff; }
 .vs-table th, .vs-table td { padding: 0; background: #fff; box-shadow: inset 0 1px #c9ccce; white-space: nowrap; }
 .vs-c1, .vs-c2, .vs-c3, .vs-total { position: sticky; z-index: 1; }
 .vs-c1 { left: 0; }

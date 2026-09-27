@@ -38,7 +38,7 @@ img { display: block; }
 table { border-collapse: separate; border-spacing: 0; }
 th, td { padding: 0; font-weight: inherit; text-align: left; }
 
-.page { display: flex; width: 1366px; background: #d4edfd; }
+.page { display: flex; width: 100%; min-width: 1280px; min-height: 100vh; background: #d4edfd; }
 
 /* ---------- Left menu bar ---------- */
 .left-bar {
@@ -75,7 +75,10 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
   background: #fff;
   filter: drop-shadow(0 4px 4px rgba(142, 142, 142, 0.16));
 }
-.top-menu__logo { flex: 1; align-self: stretch; }
+.top-menu__logo { flex: 1; align-self: stretch; display: flex; align-items: center; }
+/* Brand mark: the Experiments page logo, used on every page */
+.brand { width: 263px; height: 44px; flex: none; display: flex; flex-direction: column; justify-content: center; }
+.brand__logo { display: block; width: 190px; height: 28px; }
 .top-menu__right { display: flex; align-items: center; gap: 24px; }
 .notif { position: relative; width: 24px; height: 24px; }
 .notif__badge { position: absolute; left: 10px; top: -4px; width: 16px; height: 16px; }
@@ -106,7 +109,7 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
 .field__value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; line-height: 20px; letter-spacing: 0.042px; color: #323436; }
 .field__value--noto { font-family: "Noto Sans", sans-serif; font-weight: 400; }
 .field__value--poppins { font-family: "Poppins", sans-serif; font-weight: 300; }
-.filters__actions { position: absolute; left: 1084px; top: 35px; /* Figma: x 1073, y 24 inside the 12px padding, measured from the outer edge */ display: flex; align-items: flex-start; gap: 16px; }
+.filters__actions { position: absolute; right: 11.2px; top: 35px; /* Figma: 12px in from the right edge, y 24 inside the 12px padding */ display: flex; align-items: flex-start; gap: 16px; }
 .filters__primary { display: flex; align-items: center; gap: 16px; }
 .icon-btn { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 7px; background: #fff; border: 1px solid #727476; border-radius: 6px; }
 .btn-primary { display: flex; align-items: center; justify-content: center; padding: 6px 12px; background: #007dc5; border-radius: 6px; font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #fff; }
@@ -117,6 +120,8 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
   background: #fff; border: 1px solid #ccdde8; border-radius: 8px;
 }
 .table-wrap::-webkit-scrollbar { display: none; }
+/* Wide tables scroll sideways inside their frame on narrower windows (scrollbar hidden, as in Figma) */
+.rp-table-wrap::-webkit-scrollbar, .rp-aa-wrap::-webkit-scrollbar, .wf-table-wrap::-webkit-scrollbar, .mc-wrap::-webkit-scrollbar { display: none; }
 
 .badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 4px; vertical-align: middle; }  /* 0.5px inside stroke drawn as inset shadow: CSS rounds a 0.5px border up to 1px */
 .badge__text { font: 300 10px/1.2 "Poppins", sans-serif; color: #3f4047; text-align: center; white-space: nowrap; }
@@ -139,4 +144,3 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
 .pagination__page span { display: block; width: 18px; height: 18px; font: 300 12px/18px "Poppins", sans-serif; letter-spacing: 0.036px; color: #727476; text-align: center; }
 .pagination__page--current { padding: 1px 2px; background: #f4f9fc; border: 1px solid #bfe0f5; border-radius: 6px; }
 .pagination__page--current span { height: 20px; font-weight: 600; color: #007dc5; }
-.top-menu__logo-img { display: block; width: 190px; height: 28px; }

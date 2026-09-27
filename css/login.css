@@ -1,12 +1,12 @@
 /* Sign in — Figma "Telia_Forgot_Login_Phase-2" (node 88:41766, 1366 × 657): logo on white, form on the blue slanted panel. */
 
 .login-body { background: #fff; }
-.login { position: relative; width: 1366px; height: 657px; overflow: hidden; background: #fff; }
-.login__backdrop { position: absolute; left: 533px; top: 0; }
+.login { position: relative; min-width: 1280px; height: 100vh; min-height: 657px; overflow: hidden; background: #fff; }
+/* Fills the window: the slanted panel stretches with it; the form keeps its Figma place from the right edge */
+.login__backdrop { position: absolute; left: 39.02%; right: 0; top: 0; width: 60.98%; height: 100%; } /* Figma: starts 533px into the 1366 frame */
 .login__brand { position: absolute; left: 24px; top: 24px; }
-.login__logo { position: absolute; left: 152px; top: 258px; }
 
-.login__form { position: absolute; left: 950px; top: 164px; width: 244px; display: flex; flex-direction: column; gap: 16px; }
+.login__form { position: absolute; right: 172px; top: calc(50% - 164.5px); width: 244px; display: flex; flex-direction: column; gap: 16px; }
 .login__title { width: 240px; font: 300 32px/40px "Noto Sans", sans-serif; color: #fff; text-align: center; }
 .login__field { display: flex; flex-direction: column; gap: 4px; }
 .login__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; }

@@ -145,7 +145,7 @@
     var params = new URLSearchParams(location.search);
     params.set('families', list.children.length);
     params.set('simulate', '1');
-    location.href = 'index.html?' + params.toString();
+    location.href = 'experiments.html?' + params.toString();
   });
 
   var file = dialog.querySelector('#fam-file');

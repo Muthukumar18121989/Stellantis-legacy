@@ -1,19 +1,11 @@
 /* Promotion Configuration flow — Figma "Promotion Creation Page - Promotion type 1" (node 26:12311, 1366 × 805)
    and "No Families selected page" (node 26:10099, 1366 × 854) share this sheet. */
 
-.page--configuration { min-height: 805px; }
-.page--selection { width: auto; min-width: 1366px; min-height: 854px; } /* stretches with the window: Figma 26:11097 shows this page at 1942 wide */
-.page--selection.has-families { min-height: 798px; } /* Figma 26:9854 is 1366 × 798 */
+.page--configuration { min-height: max(805px, 100vh); }
+.page--selection { min-height: max(854px, 100vh); }
+.page--selection.has-families { min-height: max(798px, 100vh); } /* Figma 26:9854 is 1366 × 798 */
 
 /* Top menu logo (Figma 26:12331): 130 × 28 logo image slot + "Powered by" TCS TwinX */
-.page--configuration .top-menu__logo, .page--selection .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
-.cfg-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
-.cfg-brand__mark { display: block; width: 190px; height: 28px; }
-.cfg-brand__powered { display: flex; align-items: center; gap: 2px; height: 12px; }
-.cfg-brand__powered-text {
-  width: 43px; height: 9px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  font: 300 8px/9px "Open Sans", sans-serif; letter-spacing: 0.024px; color: #323436;
-}
 
 /* ---------- Breadcrumb + title (Figma 26:12370) ---------- */
 .cfg-header {

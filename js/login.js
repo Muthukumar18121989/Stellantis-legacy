@@ -2,7 +2,7 @@
 // Marcus Weber lands on the Experiments page; Kristen lands on the experiment status page.
 (function () {
   var USERS = {
-    'marcus weber': { password: 'user123', home: 'index.html' },
+    'marcus weber': { password: 'user123', home: 'experiments.html' },
     'kristen': { password: 'admin123', home: 'experiment-status.html' }
   };
   var form = document.getElementById('login-form');

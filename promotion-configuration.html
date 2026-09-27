@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=1366">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Promotool — Promotion Configuration</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/configuration.css">
@@ -14,7 +14,7 @@
     <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
     <div class="left-bar__menus">
       <a class="left-bar__item" href="promotool-dashboard.html" aria-label="Promotool Dashboard"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item left-bar__item--active" href="index.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="experiments.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
       <a class="left-bar__item" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
     </div>
   </nav>
@@ -22,12 +22,8 @@
     <!-- Top menu (Figma 26:12330) -->
     <header class="top-menu">
       <div class="top-menu__logo">
-        <div class="cfg-brand">
-          <img class="cfg-brand__mark" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-          <div class="cfg-brand__powered">
-            <span class="cfg-brand__powered-text">Powered by</span>
-            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
-          </div>
+        <div class="brand">
+          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
         </div>
       </div>
       <div class="top-menu__right">
@@ -54,9 +50,9 @@
     <section class="cfg-header">
       <div class="cfg-header__inner">
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
+          <a href="experiments.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
           <span class="breadcrumb__sep">/</span>
-          <a class="breadcrumb__link" href="index.html">Dashboard</a>
+          <a class="breadcrumb__link" href="experiments.html">Dashboard</a>
           <span class="breadcrumb__sep">/</span>
           <span class="breadcrumb__current" aria-current="page">Configuration</span>
         </nav>
@@ -151,7 +147,7 @@
       </form>
 
       <div class="cfg-actions">
-        <a class="btn-outline" href="index.html">Back</a>
+        <a class="btn-outline" href="experiments.html">Back</a>
         <a class="btn-next" href="selection-analysis.html" data-keep-query>Next</a>
       </div>
     </main>

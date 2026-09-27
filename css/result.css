@@ -1,8 +1,7 @@
 /* Simulation Results page — Figma "Result Page_New" (node 26:14503, 1366 × 1492).
    Shares the breadcrumb, steps and buttons with css/configuration.css. */
 
-.page--result { min-height: 1522px; } /* Figma frame is 1492 tall and cuts the bottom buttons; the page grows to show them */
-.page--result .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.page--result { min-height: max(1522px, 100vh); } /* Figma frame is 1492 tall and cuts the bottom buttons; the page grows to show them */
 
 /* ---------- Breadcrumb + title + iteration (Figma 26:14563) ---------- */
 .res-header {
@@ -27,7 +26,7 @@
   border: 3px solid transparent; border-radius: 12px;
   background: linear-gradient(#f6fcff, #f6fcff) padding-box, linear-gradient(180deg, #46b696, #01a0fe) border-box;
 }
-.res-summary__facts { width: 1015px; display: flex; gap: 23px; margin: 0; }
+.res-summary__facts { flex: 1; min-width: 0; display: flex; gap: clamp(8px, calc(100vw - 1343px), 23px); margin: 0; } /* Figma gap at 1366 and up, tighter below */
 .res-fact { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
 .res-fact dt { font-weight: 400; }
 .res-fact dd { margin: 0; font-weight: 600; white-space: nowrap; }
@@ -56,9 +55,9 @@
 
 /* ---------- Cards ---------- */
 .res-card { display: flex; flex-direction: column; gap: 16px; padding: 15px; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
-.res-card--summary { width: 1257px; }
+.res-card--summary { margin-right: 1px; } /* Figma: 1257 wide, 1px short of the column */
 .res-card--drilldown { height: 327px; }
-.res-card--half { width: 621px; height: 264px; }
+.res-card--half { flex: 1; min-width: 0; height: 264px; }
 .res-card__title { /* 1px dashed (4, 2) bottom stroke */
   height: 32px; padding-bottom: 8px;
   background: linear-gradient(90deg, #bfe0f5 4px, transparent 0) 0 100% / 6px 1px repeat-x;
@@ -87,8 +86,8 @@
 .kpi__before b { font-family: "Noto Sans Display", sans-serif; font-weight: 700; }
 
 /* ---------- Metric comparison (Figma 26:15253) ---------- */
-.mc-wrap { overflow: hidden; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; } /* Figma: 1px outside stroke, content clipped */
-.mc { table-layout: fixed; width: 1225px; border-collapse: separate; border-spacing: 0; background: #fff; }
+.mc-wrap { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; } /* Figma: 1px outside stroke, content clipped */
+.mc { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; }
 .mc th, .mc td { padding: 0; font: 400 12px/18px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
 .mc thead th { background: #eff9ff; }
 .mc thead th.is-twin { background: #f9edfd; color: #a333c8; }
@@ -138,7 +137,7 @@
 .res-pair { display: flex; gap: 16px; }
 .art-wrap { height: 184px; overflow: auto; scrollbar-width: none; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; } /* Figma: 1px outside stroke, content clipped */
 .art-wrap::-webkit-scrollbar { display: none; }
-.art-list { table-layout: fixed; width: 1270px; border-collapse: separate; border-spacing: 0; background: #fff; }
+.art-list { table-layout: fixed; width: 100%; min-width: 1270px; border-collapse: separate; border-spacing: 0; background: #fff; }
 .art-list th, .art-list td { padding: 6px 16px; font: 400 12px/18px "Poppins", sans-serif; color: #323436; white-space: nowrap; text-align: left; box-shadow: inset 1px -1px 0 #ccdde8; }
 .art-list th { height: 40px; background: #eff9ff; font-weight: 600; }
 .art-list td { height: 48px; }

@@ -1,11 +1,8 @@
 /* Experiment page — Figma "Experiment Page" (node 26:5896), 1366 × 778 */
 
-.page--experiment { min-height: 778px; }
+.page--experiment { min-height: max(778px, 100vh); }
 
 /* Top menu logo (Figma 26:5916) */
-.page--experiment .top-menu__logo { display: flex; align-items: center; }
-.brand { width: 263px; height: 44px; flex: none; display: flex; flex-direction: column; justify-content: center; }
-.brand__logo { display: block; width: 190px; height: 28px; }
 
 .exp-body { display: flex; flex-direction: column; gap: 24px; padding: 24px; }
 
@@ -78,7 +75,7 @@
 .search input::-webkit-search-decoration, .search input::-webkit-search-cancel-button { -webkit-appearance: none; }
 .search input::placeholder { color: #727476; opacity: 1; }
 
-.promos { table-layout: fixed; width: 1019px; }
+.promos { table-layout: fixed; width: calc(100% + 37px); } /* Figma: 1019 wide, 37px past the column */
 .promos th, .promos td { overflow: hidden; border-bottom: 1px solid #ccdde8; padding: 6px 16px; font-size: 12px; line-height: 18px; color: #323436; white-space: nowrap; }
 .promos th { height: 40px; padding-top: 0; padding-bottom: 0; background: #f4f9fc; font-family: "Poppins", sans-serif; font-weight: 600; }
 .promos th.is-center { text-align: center; }
