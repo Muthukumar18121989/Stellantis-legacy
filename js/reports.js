@@ -1,6 +1,20 @@
 // Report Hub: Download opens the Customize Your Report overlay (closes on X or a click on the backdrop, as in the
-// Figma prototype). The header checkbox ticks or clears every section.
+// Figma prototype). The header checkbox ticks or clears every section. The tabs switch between the Promotions and
+// Advanced Analytics panels.
 (function () {
+  var tabs = document.querySelectorAll('.rp-tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      document.querySelector('.page--reports').classList.toggle('is-advanced', tab.getAttribute('aria-controls') === 'rp-panel-advanced');
+    });
+  });
+
   document.querySelectorAll('[data-open-dialog]').forEach(function (btn) {
     btn.addEventListener('click', function () { document.getElementById(btn.dataset.openDialog).showModal(); });
   });

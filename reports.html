@@ -67,9 +67,11 @@
     <main class="rp-body">
       <!-- Tabs (Figma 13313:64989) -->
       <div class="rp-tabs" role="tablist">
-        <button class="rp-tab is-active" type="button" role="tab" aria-selected="true">Promotions</button>
-        <button class="rp-tab" type="button" role="tab" aria-selected="false">Advanced Analytics</button>
+        <button class="rp-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="rp-panel-promotions">Promotions</button>
+        <button class="rp-tab" type="button" role="tab" aria-selected="false" aria-controls="rp-panel-advanced">Advanced Analytics</button>
       </div>
+
+      <div class="rp-panel" id="rp-panel-promotions" role="tabpanel">
 
       <!-- Filters (Figma 13313:64998) -->
       <section class="rp-filters" aria-label="Filters">
@@ -207,6 +209,101 @@
           </div>
         </div>
       </section>
+      </div>
+
+      <div class="rp-panel" id="rp-panel-advanced" role="tabpanel" hidden>
+      <!-- Filters (Figma 13336:70526) -->
+      <section class="rp-filters rp-filters--aa" aria-label="Filters">
+        <div class="rp-filters__row">
+          <button class="rp-select rp-select--soft" type="button" style="width:405.67px"><span class="rp-select__value">Market</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="rp-select" type="button" style="width:405.67px"><span class="rp-select__value">All Product Family</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="rp-select" type="button" style="width:405.67px"><span class="rp-select__value">All Parts</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+        </div>
+        <div class="rp-filters__row">
+          <div class="rp-filters__dates">
+            <button class="rp-select" type="button" style="width:405.67px"><span class="rp-select__value">Choose Start Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+            <button class="rp-select" type="button" style="width:405.67px"><span class="rp-select__value">Choose End Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+          </div>
+          <div class="rp-filters__actions">
+            <button class="icon-btn" type="button" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
+            <button class="rp-btn" type="button">Apply</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Price Elasticity (Figma 13283:140463) -->
+      <section class="rp-card rp-card--elasticity">
+        <div class="rp-title rp-title--desc">
+          <h2 class="rp-title__text">Price Elasticity (Price vs Volume)</h2>
+          <p class="rp-title__desc"><span>Comparison of Elasticity between Promotional vs Non Promotional periods.</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></p>
+        </div>
+        <div class="rp-el" role="img" aria-label="Price change % against volume change % for organic and promo sales">
+          <svg class="rp-el__lines" width="1242" height="315" viewBox="0 0 1242 315" fill="none" aria-hidden="true">
+            <rect x="65.5" y="55.5" width="309" height="206" fill="#F2F2F2" stroke="#D6D4D4" stroke-dasharray="8 8"/>
+            <rect x="63" y="55" width="1171" height="1" fill="#D9D9D9"/>
+            <rect x="63" y="105" width="1171" height="1" fill="#D9D9D9"/>
+            <rect x="63" y="157" width="1171" height="1" fill="#D9D9D9"/>
+            <rect x="63" y="208" width="1171" height="0.9" fill="#D9D9D9"/>
+            <rect x="63" y="260.2" width="1171" height="1.8" fill="#D9D9D9"/>
+            <path transform="translate(65 66)" d="M0 1H304.911L450.346 11.029L769.801 91.2609L1171 174" stroke="#4D2F9E" stroke-width="2"/>
+            <path transform="translate(65 98)" d="M0 1H309.028L447.264 14L776.326 62L1171 122" stroke="#1ACFCF" stroke-width="2"/>
+            <path transform="translate(845 54.5)" d="M0.5 207.5V0" stroke="#BCBABA" stroke-dasharray="10 10"/>
+            <circle cx="516.5" cy="76.5" r="4.5" fill="#4D2F9E"/>
+          </svg>
+          <ul class="rp-el__legend">
+            <li><span class="rp-el__key rp-el__key--organic"></span>Organic</li>
+            <li><span class="rp-el__key rp-el__key--promo"></span>Promo</li>
+            <li><span class="rp-el__key rp-el__key--flat"></span>Response flattens</li>
+          </ul>
+            <span class="rp-el__y" style="top:44px">40%</span>
+            <span class="rp-el__y" style="top:96px">20%</span>
+            <span class="rp-el__y" style="top:148px">0%</span>
+            <span class="rp-el__y" style="top:200px">-20%</span>
+            <span class="rp-el__y" style="top:252px">-40%</span>
+            <span class="rp-el__x" style="left:57px">-40%</span>
+            <span class="rp-el__x" style="left:249.5px">-30%</span>
+            <span class="rp-el__x" style="left:442px">-20%</span>
+            <span class="rp-el__x" style="left:634.5px">-10%</span>
+            <span class="rp-el__x" style="left:827px">0%</span>
+            <span class="rp-el__x" style="left:1019.5px">10%</span>
+            <span class="rp-el__x" style="left:1212px">20%</span>
+          <span class="rp-el__axis rp-el__axis--y">Volume Change %</span>
+          <span class="rp-el__axis rp-el__axis--x">Price change %</span>
+          <span class="rp-el__note" style="left:475px;top:57px;width:83.5px">Saturation -15%</span>
+          <span class="rp-el__note" style="left:66px;top:53px;width:69.5px">Beyond -22%</span>
+        </div>
+      </section>
+
+      <!-- Part elasticity across markets (Figma 16382:65995) -->
+      <section class="rp-card rp-card--markets">
+        <div class="rp-title rp-title--badge">
+          <h2 class="rp-title__text">OF-10492 Oil Filter Spin-On - across markets</h2>
+          <span class="rp-badge">Compare across family</span>
+        </div>
+        <div class="rp-aa-wrap">
+          <table class="rp-aa-table">
+            <colgroup><col style="width:177px"><col style="width:178px"><col style="width:177px"><col style="width:178px"><col style="width:177px"><col style="width:178px"><col style="width:177px"></colgroup>
+            <thead>
+              <tr>
+                  <th scope="col"><span class="rp-aa-th">Market<img src="assets/icons/arrows-down-up.svg" width="16" height="16" alt=""></span></th>
+                  <th scope="col"><span class="rp-aa-th">Volume (Units)<img src="assets/icons/arrows-down-up.svg" width="16" height="16" alt=""></span></th>
+                  <th scope="col"><span class="rp-aa-th">Organic Elasticity<img src="assets/icons/arrows-down-up.svg" width="16" height="16" alt=""></span></th>
+                  <th scope="col"><span class="rp-aa-th">Promo Elasticity<img src="assets/icons/arrows-down-up.svg" width="16" height="16" alt=""></span></th>
+                  <th scope="col"><span class="rp-aa-th">&Delta; (Org - Promo)<img src="assets/icons/arrows-down-up.svg" width="16" height="16" alt=""></span></th>
+                  <th scope="col"><span class="rp-aa-th">Saturates at<img src="assets/icons/arrows-down-up.svg" width="16" height="16" alt=""></span></th>
+                  <th scope="col"><span class="rp-aa-th">Sensitivity</span></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr><td>Germany</td><td class="rp-num">7,200</td><td class="rp-num">-2.85</td><td class="rp-num">-1.95</td><td class="rp-num">-0.90</td><td class="rp-num">-15%</td><td><span class="rp-badge rp-badge--medium">Medium</span></td></tr>
+                <tr><td>France</td><td class="rp-num">6,100</td><td class="rp-num">-2.70</td><td class="rp-num">-1.85</td><td class="rp-num">-0.85</td><td class="rp-num">-15%</td><td><span class="rp-badge rp-badge--medium">Medium</span></td></tr>
+                <tr><td>Italy</td><td class="rp-num">3,400</td><td class="rp-num">-1.95</td><td class="rp-num">-1.30</td><td class="rp-num">-0.65</td><td class="rp-num">-14%</td><td><span class="rp-badge rp-badge--medium">Medium</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="rp-aa-legend">High: steeper than -3.0 | Medium: -1.5 to -3.0 | Low: flatter than -1.5</p>
+      </section>
+      </div>
     </main>
   </div>
 </div>

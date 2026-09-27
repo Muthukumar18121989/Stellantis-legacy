@@ -24,6 +24,8 @@
 .rp-tabs { height: 36px; display: flex; gap: 16px; padding: 0 16px; }
 .rp-tab { height: 36px; padding: 8px 16px; border-radius: 1000px; font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
 .rp-tab.is-active { background: #007dc5; color: #fff; }
+.rp-tab:first-child { width: 112px; } /* Figma tab widths; Chrome sets the labels about a pixel narrower */
+.rp-tab:last-child { width: 166px; }
 
 /* ---------- Filters (Figma 13313:64998) ---------- */
 .rp-filters {
@@ -160,3 +162,63 @@
 }
 .rp-download__btn:first-child { width: 171px; } /* Figma button widths; Chrome sets the labels about half a pixel narrower */
 .rp-download__btn:last-child { width: 175px; }
+
+/* ---------- Tabs switch between the Promotions and Advanced Analytics panels ---------- */
+.rp-panel { display: flex; flex-direction: column; gap: 16px; }
+.rp-panel[hidden] { display: none; }
+.rp-panel > * { flex: none; }
+.page--reports.is-advanced { min-height: 1061px; } /* Figma 55:51852 frame height */
+
+/* ---------- Advanced Analytics (Figma 55:51852) ---------- */
+.rp-filters--aa .rp-filters__row { width: 1249px; } /* selects are 405.67px, as in Figma */
+.rp-filters--aa .rp-btn { width: 65px; }
+
+.rp-card--elasticity { height: 407px; gap: 8px; }
+.rp-card--markets { height: 300px; gap: 14px; }
+.rp-title.rp-title--desc { height: 52px; flex-direction: column; justify-content: flex-start; gap: 4px; }
+.rp-title.rp-title--desc::before { height: 44px; }
+.rp-title__desc { display: flex; align-items: center; gap: 4px; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
+.rp-title__desc span { width: 445px; }
+.rp-title.rp-title--badge { height: 32px; margin-bottom: 4px; align-items: center; padding-right: 0; padding-bottom: 7px; } /* Figma draws the rule inside the 8px */
+.rp-title.rp-title--badge::before { top: 2px; }
+.rp-title--badge .rp-badge { width: 125px; }
+
+/* Price Elasticity chart: grid, shaded "response flattens" range and curves drawn as one SVG, labels in HTML */
+.rp-el { position: relative; width: 1242px; height: 315px; }
+.rp-el__lines { position: absolute; left: 0; top: 0; }
+.rp-el__legend { position: absolute; left: 962px; top: 16px; display: flex; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.rp-el__legend li { display: flex; align-items: center; gap: 4px; font: 400 12px/15px "Inter", sans-serif; color: #4f4f4f; white-space: nowrap; }
+.rp-el__legend li:nth-child(1) { width: 70px; } /* Figma item widths; Inter sets about half a pixel narrower here */
+.rp-el__legend li:nth-child(2) { width: 62px; }
+.rp-el__legend li:nth-child(3) { width: 120px; }
+.rp-el__key { width: 21px; height: 2px; }
+.rp-el__key--organic { background: #4d2f9e; }
+.rp-el__key--promo { background: #1acfcf; }
+.rp-el__key--flat { /* 14px swatch, 1px dashed (4, 4) border */
+  width: 14px; height: 14px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Crect x='.5' y='.5' width='13' height='13' fill='%23F2F2F2' stroke='%23D6D4D4' stroke-dasharray='4 4'/%3E%3C/svg%3E");
+}
+.rp-el__y, .rp-el__x, .rp-el__axis, .rp-el__note { position: absolute; font: 300 10px/15px "Poppins", sans-serif; letter-spacing: 0.5px; white-space: nowrap; }
+.rp-el__y, .rp-el__x, .rp-el__note { color: #727476; }
+.rp-el__y { right: 1188.5px; text-align: right; } /* right-aligned labels sit 0.5px right: Chrome adds letter-spacing after the last glyph */
+.rp-el__x { top: 267px; width: 31px; text-align: center; }
+.rp-el__note { text-align: right; }
+.rp-el__axis { color: #333333; }
+.rp-el__axis--y { /* reads bottom to top */
+  left: -7px; top: 111px; width: 15px; height: 99px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: right;
+}
+.rp-el__axis--x { left: 612px; top: 300px; width: 76.5px; white-space: normal; text-align: right; } /* wraps "%" onto a second line, as in Figma */
+
+/* OF-10492 across markets table (Figma 16382:66405): header and rows only; 1px outer rule */
+.rp-aa-wrap { width: 1242px; height: 184px; overflow: hidden; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #ccdde8; }
+.rp-aa-table { table-layout: fixed; width: 1242px; border-collapse: separate; border-spacing: 0; }
+.rp-aa-table th, .rp-aa-table td { padding: 6px 16px; box-shadow: inset 0 -1px #ccdde8; vertical-align: middle; white-space: nowrap; text-align: right; }
+.rp-aa-table th:nth-child(-n+3), .rp-aa-table td:nth-child(-n+3) { box-shadow: inset 0 -1px #ccdde8, inset 1px 0 #ccdde8; }
+.rp-aa-table th:first-child, .rp-aa-table td:first-child, .rp-aa-table th:last-child, .rp-aa-table td:last-child { text-align: left; }
+.rp-aa-table td:last-child { box-shadow: inset 0 -1px #c9ccce; }
+.rp-aa-table th { height: 40px; background: #eff9ff; font: 600 12px/18px "Poppins", sans-serif; color: #323436; }
+.rp-aa-table td { height: 48px; background: #fff; font: 400 12px/18px "Poppins", sans-serif; color: #323436; }
+.rp-aa-table td:first-child { font-weight: 300; }
+.rp-aa-th { display: inline-flex; align-items: center; gap: 10px; vertical-align: top; }
+.rp-badge--medium { width: 56px; background: #ffffe7; box-shadow: inset 0 0 0 1px #fbbd08; color: #7d4211; }
+.rp-aa-legend { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
