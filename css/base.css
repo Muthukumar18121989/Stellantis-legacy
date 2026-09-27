@@ -99,7 +99,8 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
   position: relative; height: 80px; padding: 11px;
   background: #f6fcff; border: 1px solid #bfe0f5; border-radius: 12px;
 }
-.filters__fields { display: flex; gap: 16px; }
+.filters__fields { display: flex; gap: 16px; margin-right: 178px; } /* fields stretch up to 17px short of the action buttons (Figma gap at 1366) */
+.filters__fields > .field { flex: 1 1 auto; min-width: 0; } /* page/inline Figma width is the basis */
 .field { display: flex; flex-direction: column; gap: 4px; }
 .field__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; }
 .field__control {

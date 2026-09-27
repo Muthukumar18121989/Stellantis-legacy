@@ -4,6 +4,7 @@
 .page--status { min-height: max(815px, 100vh); }
 .page--status .exp-body { padding-bottom: 23px; } /* the card below overhangs its row by 1px in Figma; keeps the page at 815 */
 .page--status .filters__actions { right: 20px; } /* Figma: 21px in from the right edge */
+.page--status .filters__fields { margin-right: 187px; }
 .page--status .btn-primary { width: 65px; } /* Figma button widths; Chrome sets the labels a fraction narrower */
 
 /* ---------- Promotion Approval Dashboard card (Figma 88:17858): 3px wider than the rows above, as in Figma ---------- */

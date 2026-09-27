@@ -31,11 +31,11 @@
 .types__item--top { align-items: flex-start; }
 .config-card__decor { position: absolute; pointer-events: none; }
 .config-card__decor--arc { left: 0; top: 0; }
-.config-card__decor--box { left: 545px; top: 24px; }
-.config-card__decor--pie { left: 548.19px; top: 45.19px; }
+.config-card__decor--box { right: 0; top: 24px; } /* Figma: flush with the card's right edge */
+.config-card__decor--pie { right: -0.19px; top: 45.19px; } /* Figma: flush with the card's right edge */
 
 /* ---------- Filters (Figma 26:6028) ---------- */
-.page--experiment .field { width: 252px; }
+.page--experiment .field { width: 252px; } /* Figma width at 1366; the fields grow to fill the bar on wider screens */
 
 /* ---------- Projects + promotion table (Figma 26:6052) ---------- */
 .projects-card { height: 408px; padding: 15px; overflow: hidden; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }

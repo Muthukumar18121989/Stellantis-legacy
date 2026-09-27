@@ -178,6 +178,8 @@
 .ue-rows { height: 224px; overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
 .ue-row { display: flex; gap: 16px; }
 .ue-row--id { height: 64px; flex: none; padding-bottom: 7px; border-bottom: 1px solid #bfe0f5; }
+.ue-rows .ue-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); } /* the user fields share four equal columns that fill the card */
+.ue-rows .ue-field { width: auto !important; } /* overrides the inline Figma widths (292-294.5px at 1366) */
 .ue-row--names { height: 72px; flex: none; padding-bottom: 15px; border-bottom: 1px solid #bfe0f5; }
 .ue-field { flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
 .ue-field__label { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
@@ -307,7 +309,7 @@
 .rf-select--noto .rf-select__value { font: 400 14px/20px "Noto Sans", sans-serif; }
 .rf-apply { width: 65px; height: 32px; flex: none; }
 .rf-filters .icon-btn, .rf-panel__filters .icon-btn { flex: none; }
-.rf-filters > .rf-select { flex: 0 1 auto; min-width: 0; } /* the three selects give way on narrow windows */
+.rf-filters > .rf-select { flex: 1 1 auto; min-width: 0; } /* the three selects share the bar's width (Figma widths are the basis) */
 
 .rf-tabs { height: 36px; display: flex; gap: 16px; margin-top: 24px; padding: 0 16px; } /* Figma: 40px below the filters */
 .rf-tab { height: 36px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 16px 0; }
