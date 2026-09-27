@@ -1,0 +1,36 @@
+/* Sign in — Figma "Telia_Forgot_Login_Phase-2" (node 88:41766, 1366 × 657): logo on white, form on the blue slanted panel. */
+
+.login-body { background: #fff; }
+.login { position: relative; width: 1366px; height: 657px; overflow: hidden; background: #fff; }
+.login__backdrop { position: absolute; left: 533px; top: 0; }
+.login__logo { position: absolute; left: 152px; top: 258px; }
+
+.login__form { position: absolute; left: 950px; top: 164px; width: 244px; display: flex; flex-direction: column; gap: 16px; }
+.login__title { width: 240px; font: 300 32px/40px "Noto Sans", sans-serif; color: #fff; text-align: center; }
+.login__field { display: flex; flex-direction: column; gap: 4px; }
+.login__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; }
+.login__input {
+  height: 40px; display: flex; align-items: center; gap: 10px; padding: 7px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; overflow: hidden;
+}
+.login__input input {
+  flex: 1; min-width: 0; height: 24px; margin: 0; padding: 4px 0 0; border: 0; outline: 0; background: none; /* Figma sets the 20px line at the bottom of a 24px box */
+  font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.login__input input::placeholder { color: #727476; opacity: 1; }
+.login__input:focus-within { border-color: #007dc5; }
+.login__eye { display: flex; width: 16px; height: 16px; flex: none; }
+.login__forgot {
+  width: 240px; font: 500 14px/21px "Poppins", sans-serif; color: #fff;
+  text-decoration: underline; text-decoration-skip-ink: none;
+}
+.login__submit {
+  height: 40px; display: flex; align-items: center; justify-content: center; padding: 8px 16px; border-radius: 8px;
+  background: #0066a1; font: 500 16px/24px "Noto Sans", sans-serif; letter-spacing: 0.032px; color: #fff; text-align: center;
+}
+.login__signup { display: flex; align-items: center; gap: 10px; height: 20px; }
+.login__signup span { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
+.login__signup a {
+  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #fff; white-space: nowrap;
+  text-decoration: underline; text-decoration-skip-ink: none;
+}
