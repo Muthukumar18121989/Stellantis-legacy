@@ -126,3 +126,32 @@
 .is-drilldown .vs-table tbody tr:last-child td.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 0 -1px #c9ccce; }
 .is-drilldown .vs-footer { margin-top: 4px; justify-content: flex-end; }
 .is-drilldown .vs-pager { display: none; }
+
+/* ---------- Submit Promotion for Approval (Figma 128:57162): centred overlay, 30% black backdrop ---------- */
+.sa-dialog {
+  position: fixed; inset: 0; margin: auto; width: 741px; height: 388px; max-width: none; max-height: none;
+  padding: 18px 24px 24px; color: #323436; /* 24px from the outer edge; the 6px top rule sits inside it */
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.sa-dialog[open] { display: flex; flex-direction: column; gap: 32px; }
+.sa-dialog::backdrop { background: rgba(0, 0, 0, 0.3); }
+.sa-dialog__close { position: absolute; right: 24px; top: 10px; display: flex; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
+.sa-head { display: flex; flex-direction: column; gap: 8px; }
+.sa-head__title { margin: 0; font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.sa-head__sub { margin: 0; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
+.sa-row { display: flex; align-items: center; gap: 40px; height: 32px; }
+.sa-row__label { flex: none; width: 114px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.sa-row__box { flex: 1; min-width: 0; height: 32px; display: flex; align-items: center; padding: 0 11px; background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; }
+.sa-row__box input { flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.sa-row--strategy { align-items: flex-start; height: 56px; }
+.sa-row--strategy .sa-row__label { margin-top: -1px; } /* Figma: the label sits in an 18px box, 1px above the first option */
+.sa-radios { display: flex; flex-direction: column; gap: 16px; }
+.sa-radio { display: flex; align-items: center; gap: 8px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; cursor: pointer; }
+.sa-radio input {
+  flex: none; width: 16px; height: 16px; margin: 0; appearance: none; cursor: pointer;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 50%;
+}
+.sa-radio input:checked { border: 0; background: radial-gradient(circle, #fff 3px, #007dc5 3.5px); } /* 6px white dot on blue */
+.sa-actions { display: flex; justify-content: flex-end; }
+.sa-proceed { display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 8px; background: #007dc5; font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #fff; white-space: nowrap; }

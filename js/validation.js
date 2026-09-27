@@ -5,6 +5,14 @@
   document.querySelectorAll('[data-keep-query]').forEach(function (a) { a.href += location.search; });
   if (params.get('title')) document.querySelector('[data-promo-name]').textContent = params.get('title');
 
+  // Initiate Approval opens Submit Promotion for Approval (Figma 128:57162); Proceed to Approval continues to the
+  // Workflow Tracker. The promotion name is the one on this page (Figma sample: Summer Beverage Promotion 2026).
+  var approval = document.getElementById('submit-approval');
+  approval.querySelector('[data-approval-name]').value = document.querySelector('[data-promo-name]').textContent;
+  document.querySelector('[data-initiate-approval]').addEventListener('click', function (e) { e.preventDefault(); approval.showModal(); });
+  approval.querySelector('[data-close-dialog]').addEventListener('click', function () { approval.close(); });
+  approval.addEventListener('click', function (e) { if (e.target === approval) { var r = approval.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) approval.close(); } });
+
   var page = document.querySelector('.page--validation');
   var card = document.querySelector('[data-split]');
   var families = card.querySelector('[data-families]');
