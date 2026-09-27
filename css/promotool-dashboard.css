@@ -1,0 +1,202 @@
+/* Promotool Dashboard — Figma "Promotion level Dashboard" (node 55:49358), 1366 × 2034 */
+
+.page--promodash { min-height: 2034px; }
+.page--promodash .profile { width: 133px; }
+
+/* ---------- Page header ---------- */
+.pd-header {
+  height: 78px; padding: 12px 16px;
+  background: #eff9ff; box-shadow: inset 0 -1px 0 #bfe0f5;
+}
+.pd-breadcrumb { display: flex; align-items: center; gap: 8px; height: 21px; }
+.pd-breadcrumb__sep { font: 400 14px/21px "Poppins", sans-serif; letter-spacing: 0.056px; color: #3c4572; }
+.pd-breadcrumb__current { font: 400 12px/18px "Open Sans", sans-serif; letter-spacing: 0.4px; color: #323436; white-space: nowrap; }
+.pd-header__title { margin: 0; font: 600 24px/33px "Open Sans", sans-serif; letter-spacing: -0.44px; color: #196c9b; white-space: nowrap; }
+
+/* ---------- Body ---------- */
+.pd-body { display: flex; flex-direction: column; gap: 16px; padding: 16px; }
+:where(.pd-body) :where(h2, h3, p, dl, dd, ul, ol) { margin: 0; }
+:where(.pd-body) :where(ul, ol) { padding: 0; list-style: none; }
+
+/* Buttons */
+.pd-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 32px; padding: 6px 12px; border-radius: 6px;
+  font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; white-space: nowrap; cursor: pointer;
+}
+.pd-btn--outline { background: #fff; box-shadow: inset 0 0 0 1px #727476; color: #323436; }
+
+/* Small status tags */
+.pd-tag {
+  display: inline-flex; align-items: center; justify-content: center; height: 20px; padding: 4px; border-radius: 4px;
+  font: 300 10px/12px "Poppins", sans-serif; color: #3f4047; white-space: nowrap;
+}
+.pd-tag--grey { background: rgba(201, 204, 206, 0.08); box-shadow: inset 0 0 0 1px rgba(201, 204, 206, 0.5); }
+.pd-tag--blue { background: rgba(0, 125, 197, 0.08); box-shadow: inset 0 0 0 1px rgba(0, 125, 197, 0.5); }
+.pd-tag--purple { background: rgba(100, 53, 201, 0.08); box-shadow: inset 0 0 0 1px rgba(100, 53, 201, 0.5); }
+.pd-tag--olive { background: rgba(181, 204, 24, 0.08); box-shadow: inset 0 0 0 1px rgba(181, 204, 24, 0.5); }
+.pd-tag--orange { background: rgba(242, 113, 28, 0.08); box-shadow: inset 0 0 0 1px rgba(242, 113, 28, 0.5); }
+.pd-tag--entries {
+  font-style: normal; font-weight: 500; color: #c9ccce;
+  background: rgba(201, 204, 206, 0.08); box-shadow: inset 0 0 0 1px rgba(201, 204, 206, 0.5);
+}
+
+/* ---------- Promotion title bar ---------- */
+.pd-title {
+  display: flex; align-items: center; height: 56px; padding: 0 9px;
+  border: 3px solid transparent; border-radius: 12px;
+  background: linear-gradient(#f6fcff, #f6fcff) padding-box, linear-gradient(180deg, #46b696, #01a0fe) border-box;
+}
+.pd-title__name { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.pd-title__tags { display: flex; gap: 12px; margin-left: auto; }
+.pd-title__download { width: 154px; margin-left: 11px; }
+
+/* ---------- Process steps ---------- */
+.pd-steps { position: relative; display: flex; justify-content: center; gap: 64px; height: 48px; }
+.pd-steps::before {
+  content: ""; position: absolute; left: 513px; top: 9px; width: 246px; height: 2px;
+  background: repeating-linear-gradient(to right, #c9ccce 0 6px, transparent 6px 8px);
+}
+.pd-step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.pd-step__dot { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; }
+.pd-step--done .pd-step__dot { background: #0db134; }
+.pd-step--current .pd-step__dot { background: #fbbd08; }
+.pd-step--todo .pd-step__dot { background: #c9ccce; }
+.pd-step__label { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+
+/* ---------- Live banner ---------- */
+.pd-live {
+  display: flex; align-items: center; gap: 6px; height: 40px; padding: 0 16px;
+  background: #f3fff2; border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #0db134;
+  font: 600 12px/18px "Montserrat", sans-serif; color: #323436;
+}
+
+/* ---------- Action buttons ---------- */
+.pd-actions { display: flex; gap: 16px; }
+.pd-actions__report { height: 32px; }
+
+/* ---------- Rows ---------- */
+.pd-row { display: flex; gap: 16px; }
+
+/* Configuration */
+.pd-config {
+  width: 629px; height: 316px; padding: 8px 16px; border-radius: 10px; background: #fff;
+  box-shadow: inset 0 0 0 1px #bfe0f5, 0 4px 8px rgba(142, 142, 142, 0.16);
+}
+.pd-config__title {
+  height: 32px; padding: 5px 0 3px; box-shadow: inset 0 -1px 0 #bfe0f5;
+  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #0066a1;
+}
+.pd-config__row {
+  display: flex; align-items: center; gap: 8px; height: 30px;
+  background: linear-gradient(to right, rgba(204, 221, 232, 0.5) 4px, transparent 4px) 0 100% / 6px 1px repeat-x;
+}
+.pd-config__row--badge { height: 37px; }
+.pd-config__row--top { align-items: flex-start; padding-top: 6px; }
+.pd-config__row::before { content: ""; flex: none; align-self: center; width: 6px; height: 12px; background: url("../assets/icons/caret-right-blue.svg") no-repeat; }
+.pd-config__row--top::before { margin-top: -6px; }
+.pd-config__row dt { flex: 1; margin-left: 3px; font: 300 12px/18px "Poppins", sans-serif; color: #727476; }
+.pd-config__row dd { margin-right: 3px; font: 600 12px/18px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.pd-value-badge {
+  display: inline-flex; align-items: center; height: 25px; padding: 4px; border-radius: 4px;
+  font: 600 14px/17px "Poppins", sans-serif; white-space: nowrap;
+}
+.pd-value-badge--purple { color: #6435c9; background: rgba(100, 53, 201, 0.08); box-shadow: inset 0 0 0 1px rgba(100, 53, 201, 0.5); }
+.pd-value-badge--blue { color: #007dc5; background: rgba(0, 95, 197, 0.08); box-shadow: inset 0 0 0 1px rgba(0, 125, 197, 0.5); }
+.pd-value-badge--green { color: #0db134; background: rgba(0, 197, 36, 0.08); box-shadow: inset 0 0 0 1px rgba(13, 177, 52, 0.5); }
+
+/* KPI cards */
+.pd-kpis { display: flex; flex-direction: column; gap: 16px; width: 629px; }
+.pd-kpi {
+  display: flex; align-items: center; gap: 10px; height: 67px; padding: 0 12px;
+  background: #fff; border-radius: 8px; box-shadow: inset 0 0 0 1px #bfe0f5;
+}
+.pd-kpi__text, .pd-stat { display: flex; flex-direction: column; }
+.pd-kpi__label, .pd-stat__label { font: 500 12px/18px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.pd-kpi__value, .pd-stat__value { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #007dc5; white-space: nowrap; }
+.pd-kpi__value--neg { color: #d20e0e; }
+.pd-kpi__sub { font: 400 10px/12px "Montserrat", sans-serif; color: #727476; white-space: nowrap; }
+
+/* ---------- Tabs ---------- */
+.pd-tabs { display: flex; gap: 16px; height: 36px; padding: 0 16px; box-shadow: inset 0 -1px 0 #727476; }
+.pd-tab {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 16px 0;
+  font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; cursor: pointer;
+}
+.pd-tab::after { content: ""; align-self: stretch; height: 4px; }
+.pd-tab--active { color: #2c2c30; }
+.pd-tab--active::after { background: #007dc5; }
+
+/* ---------- Pacing / budget ---------- */
+.pd-track {
+  display: flex; align-items: flex-start; gap: 16px; width: 629px; height: 105px; padding: 21px 16px 0;
+  background: #fff; border-radius: 12px;
+  box-shadow: inset 0 0 0 1px #c9ccce;
+}
+.pd-track--budget { padding-top: 8px; }
+.pd-track__main { display: flex; flex-direction: column; width: 520px; flex: none; }
+.pd-track__title { font: 600 12px/18px "Montserrat", sans-serif; color: #323436; }
+.pd-bar { position: relative; height: 12px; margin-top: 6px; border-radius: 15px; background: #c9ccce; }
+.pd-bar span { position: absolute; left: 0; top: 0; height: 12px; border-radius: 15px; background: #d20e0e; }
+.pd-track--budget .pd-bar { margin: 7px 0 1px; }
+.pd-track__foot { display: flex; justify-content: space-between; margin-top: 6px; font: 600 10px/15px "Poppins", sans-serif; color: #727476; white-space: nowrap; }
+.pd-track__used { display: flex; justify-content: space-between; margin-top: 6px; font: 600 12px/18px "Montserrat", sans-serif; color: #323436; white-space: nowrap; }
+.pd-track__burn { margin-top: 6px; font: 400 12px/18px "Montserrat", sans-serif; color: #323436; }
+.pd-critical {
+  flex: none; display: flex; align-items: center; height: 20px; padding: 4px 8px; margin-top: 22px; border-radius: 6px;
+  background: #ffdad6; box-shadow: inset 0 0 0 1px #d20e0e;
+  font: 500 10px/12px "Poppins", sans-serif; color: #d20e0e;
+}
+.pd-track--budget .pd-critical { margin-top: 33px; }
+
+.pd-updated { padding: 0 6px; font: 600 12px/18px "Montserrat", sans-serif; color: #323436; }
+
+/* ---------- Cards ---------- */
+.pd-card { position: relative; padding: 16px; background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 1px #bfe0f5; }
+.pd-card__title { display: flex; align-items: center; gap: 4px; height: 28px; padding-bottom: 8px; box-shadow: inset 0 -1px 0 #bfe0f5; }
+.pd-card__title > span {
+  position: relative; padding: 0 12px;
+  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap;
+}
+.pd-card__title > span::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 20px; background: linear-gradient(180deg, #47b796, #01a1fe); }
+
+.pd-card--trajectory { height: 383px; overflow: hidden; }
+.pd-card--demand { height: 369px; overflow: hidden; }
+.pd-chart { margin-top: 8px; width: 1242px; }
+.pd-chart svg { display: block; overflow: visible; }
+.pd-chart--trajectory svg { margin-left: -5.34px; }
+.pd-axis text { font-family: "Poppins", sans-serif; font-size: 10px; font-weight: 300; letter-spacing: 0.05em; fill: #727476; white-space: pre; }
+.pd-axis .pd-axis__title { fill: #333; }
+.pd-legend-inter text { font-family: "Inter", sans-serif; font-size: 12px; font-weight: 400; fill: #4f4f4f; white-space: pre; }
+
+.pd-stats { position: absolute; left: 18px; top: 279px; display: flex; gap: 11px; }
+.pd-stat { gap: 4px; height: 74px; padding: 12px; border-radius: 8px; box-shadow: inset 0 0 0 1px #bfe0f5; }
+
+/* Financial summary + revenue breakdown */
+.pd-row--finance { align-items: center; height: 229px; }
+.pd-card--finance { display: flex; flex-direction: column; gap: 16px; width: 629px; height: 225px; }
+.pd-fin-wrap { width: 597px; border-radius: 8px; overflow: hidden; box-shadow: 0 0 0 1px #bfe0f5; }
+.pd-fin { width: 597px; border-collapse: separate; border-spacing: 0; table-layout: fixed; }
+.pd-fin th, .pd-fin td {
+  height: 37px; padding: 10px 16px 0; vertical-align: top; text-align: right;
+  border-right: 1px solid #bfe0f5; border-bottom: 1px solid #bfe0f5;
+  font: 300 12px/18px "Poppins", sans-serif; color: #323436; white-space: nowrap;
+}
+.pd-fin th { font-weight: 600; background: #eff9ff; }
+.pd-fin th:first-child, .pd-fin td:first-child { text-align: left; }
+.pd-fin tbody tr:first-child td { height: 38px; padding-top: 11px; }
+.pd-fin td.pd-fin__delta { font: 600 12px/18px "Noto Sans", sans-serif; color: #d20e0e; }
+
+.pd-card--breakdown { display: flex; flex-direction: column; align-items: center; gap: 16px; width: 629px; height: 229px; }
+.pd-card--breakdown .pd-card__title { align-self: stretch; }
+.pd-pie { display: block; flex: none; }
+.pd-pie-legend { display: flex; gap: 17px; }
+.pd-pie-legend li { display: flex; align-items: center; gap: 6px; }
+.pd-pie-legend i { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pd-pie-legend__name { font: 500 11px/16px "Inter", sans-serif; color: #1e1b39; white-space: nowrap; }
+.pd-pie-legend__pct { width: 33px; font: 400 11px/16px "Inter", sans-serif; color: #615e83; }
+
+/* Approval history (collapsed) */
+.pd-card--approvals { height: 60px; }
+.pd-approvals__toggle { position: absolute; right: 16px; top: 16px; width: 24px; height: 24px; cursor: pointer; }
