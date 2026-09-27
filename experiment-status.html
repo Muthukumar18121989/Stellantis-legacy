@@ -158,7 +158,7 @@
                   <span class="es-actions__inner">
                     <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
@@ -170,7 +170,7 @@
                   <span class="es-actions__inner">
                     <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
@@ -182,7 +182,7 @@
                   <span class="es-actions__inner">
                     <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
@@ -194,7 +194,7 @@
                   <span class="es-actions__inner">
                     <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
@@ -206,7 +206,7 @@
                   <span class="es-actions__inner">
                     <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
@@ -260,5 +260,36 @@
   <button class="es-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
 </dialog>
 <script src="js/experiment-status.js"></script>
+<!-- Workflow History dialog (Figma 55:59243), opened from the Action Status edit icon -->
+<dialog class="wh-dialog" id="workflow-history" aria-labelledby="wh-title">
+  <button class="wh-dialog__close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <h2 class="wh-dialog__title" id="wh-title">Workflow History</h2>
+  <dl class="wh-promo">
+    <div class="wh-promo__col" style="width:157px"><dt>Promotion ID</dt><dd>234567</dd></div>
+    <div class="wh-promo__col"><dt>Promotion Name</dt><dd>Spring Promotion</dd></div>
+  </dl>
+  <div class="wh-table-wrap">
+    <table class="wh-table">
+      <colgroup><col style="width:65px"><col style="width:92px"><col style="width:200px"><col style="width:139px"><col style="width:185px"><col style="width:138px"></colgroup>
+      <thead>
+        <tr><th>S. No.</th><th>Iteration</th><th>User action</th><th>Status</th><th>Initiated On</th><th>Remarks</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>1</td><td>Draft created</td><td>-</td><td class="wh-date">Wed, 20 Mar, 2024 10:07 AM</td><td><span class="wh-link">-</span></td></tr>
+        <tr class="wh-row--tall"><td>2</td><td>1</td><td>Execution completed</td><td>-</td><td class="wh-date">Wed, 20 Mar, 2024 10:15 AM</td><td><a class="wh-link" href="#">View Result</a></td></tr>
+        <tr><td>3</td><td>2</td><td>Submitted for local review</td><td>-</td><td class="wh-date">Wed, 20 Mar, 2024 11:05 AM</td><td><span class="wh-link">-</span></td></tr>
+        <tr><td>4</td><td>2</td><td>L1.1 Local marketing</td><td class="wh-st"><span class="wh-badge wh-badge--approved">Approved</span></td><td class="wh-date">Wed, 20 Mar, 2024 12:01 PM</td><td><a class="wh-link" href="#">View Result</a></td></tr>
+        <tr><td>5</td><td>2</td><td>L1.2 Local finance</td><td class="wh-st"><span class="wh-badge wh-badge--approved">Approved</span></td><td class="wh-date">Wed, 20 Mar, 2024 12:45 PM</td><td><a class="wh-link" href="#">View Result</a></td></tr>
+        <tr><td>6</td><td>2</td><td>Submitted for central review</td><td>-</td><td class="wh-date">Wed, 20 Mar, 2024 1:07 PM</td><td><span class="wh-link">-</span></td></tr>
+        <tr><td>7</td><td>1</td><td>L2.3 Central marketing</td><td class="wh-st"><span class="wh-badge wh-badge--rejected">Rejected</span></td><td class="wh-date">Wed, 20 Mar, 2024 2:35 PM</td><td><a class="wh-link" href="#">View Comments</a></td></tr>
+        <tr class="wh-band"><td colspan="6">Returned to promotion pilot - iteration 2 begins below</td></tr>
+        <tr><td>8</td><td>2</td><td>Draft created</td><td>-</td><td class="wh-date">Wed, 20 Mar, 2024 3:16 PM</td><td><a class="wh-link" href="#">View Comments</a></td></tr>
+        <tr><td>9</td><td>2</td><td>Execution Completed</td><td>-</td><td class="wh-date">Wed, 20 Mar, 2024 6:07 PM</td><td><span class="wh-link">-</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="wh-dialog__actions"><button class="wh-dialog__ok" type="button" data-close-dialog>OK</button></div>
+</dialog>
+<script src="js/workflow-history.js"></script>
 </body>
 </html>

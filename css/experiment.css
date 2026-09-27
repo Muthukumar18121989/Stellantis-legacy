@@ -152,3 +152,39 @@ td .promos__id { gap: 8px; }
 .progress__track { flex: 1; min-width: 0; height: 8px; overflow: hidden; background: #c9ccce; border-radius: 1000px; }
 .progress__fill { display: block; width: 0; height: 100%; background: #007dc5; border-radius: 1000px; }
 .progress__value { width: 36px; flex: none; font: 300 14px/20px "Poppins", sans-serif; color: #727476; white-space: nowrap; }
+
+/* ---------- Workflow History dialog (Figma 55:59243, 857 × 513) ---------- */
+.action--edit { cursor: pointer; }
+.wh-dialog {
+  position: fixed; inset: 0; margin: auto; width: 857px; height: 513px; max-width: none; max-height: none;
+  padding: 18px 24px 24px; overflow: visible; color: #323436; /* the 6px top rule sits inside the 24px padding */
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.wh-dialog::backdrop { background: transparent; } /* Figma shows no backdrop */
+.wh-dialog__close { position: absolute; right: 13px; top: 10px; width: 24px; height: 24px; }
+.wh-dialog__title { height: 24px; margin: 0 0 12px; font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.wh-promo { width: 819px; height: 56px; display: flex; margin: 0 0 8px; overflow: hidden; background: #65676d; border-radius: 6px; }
+.wh-promo__col { display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 0 16px; }
+.wh-promo dt, .wh-promo dd { margin: 0; font: 300 12px/20px "Noto Sans", sans-serif; color: #fff; white-space: nowrap; }
+.wh-promo dd { font-weight: 600; }
+.wh-table-wrap { width: 820px; height: 321px; overflow: hidden; border-radius: 6px; box-shadow: inset 0 0 0 1px #e4e5e6; }
+.wh-table { position: relative; z-index: -1; width: 820px; table-layout: fixed; border-collapse: collapse; }
+.wh-table th, .wh-table td {
+  height: 29px; padding: 0 16px; border-top: 1px solid #e4e5e6; vertical-align: middle; text-align: left; white-space: nowrap;
+  font: 300 12px/18px "Noto Sans", sans-serif; color: #323436;
+}
+.wh-table thead th { border-top: 0; background: #f4f9fc; font-weight: 600; color: #4a4d4f; }
+.wh-table .wh-row--tall td { height: 30px; }
+/* Figma sets the cell text 5-6px below the row top; Chrome draws Noto 1px higher, so pin it from the top */
+.wh-table th { padding-top: 7px; vertical-align: top; }
+.wh-table tbody tr:not(.wh-band) td:not(.wh-st) { padding-top: 7px; vertical-align: top; }
+.wh-table td.wh-date { font: 300 10px/15px "Poppins", sans-serif; }
+.wh-table tbody tr:not(.wh-band) td.wh-date { padding-top: 8px; }
+.wh-link { color: #007dc5; }
+.wh-band td { height: 30px; background: #ffece8; font: 500 10px/15px "Noto Sans", sans-serif; color: #9b001c; }
+.wh-badge { display: inline-flex; align-items: center; height: 19px; padding: 0 7px; border: 1px solid; border-radius: 6px; font: 500 10px/15px "Noto Sans", sans-serif; }
+.wh-badge--approved { background: #d6ffe1; border-color: #0db134; color: #005929; }
+.wh-badge--rejected { background: #ffece8; border-color: #d20e0e; color: #9b001c; }
+.wh-dialog__actions { width: 820px; display: flex; justify-content: flex-end; margin-top: 14px; } /* Figma: 820px, 11px into the right padding */
+.wh-dialog__ok { display: flex; align-items: center; justify-content: center; width: 55px; height: 40px; background: #007dc5; border-radius: 8px; font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #fff; }
