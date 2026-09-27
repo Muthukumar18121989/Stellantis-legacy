@@ -5,14 +5,7 @@
 /* Top menu logo (Figma 26:5916) */
 .page--experiment .top-menu__logo { display: flex; align-items: center; }
 .brand { width: 263px; height: 44px; flex: none; display: flex; flex-direction: column; justify-content: center; }
-.brand__row { display: flex; align-items: flex-start; gap: 12px; }
-.brand__mark { width: 130px; height: 28px; }
-.brand__name-box { position: relative; width: 98px; height: 28px; }
-.brand__name {
-  position: absolute; left: 0; top: 13px; transform: translateY(-50%); width: 91px;
-  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-  font: 400 12px/normal "Encode Sans", sans-serif; letter-spacing: 1.32px; color: #243882;
-}
+.brand__logo { display: block; width: 190px; height: 28px; }
 
 .exp-body { display: flex; flex-direction: column; gap: 24px; padding: 24px; }
 

@@ -3,6 +3,7 @@
 .login-body { background: #fff; }
 .login { position: relative; width: 1366px; height: 657px; overflow: hidden; background: #fff; }
 .login__backdrop { position: absolute; left: 533px; top: 0; }
+.login__brand { position: absolute; left: 24px; top: 24px; }
 .login__logo { position: absolute; left: 152px; top: 258px; }
 
 .login__form { position: absolute; left: 950px; top: 164px; width: 244px; display: flex; flex-direction: column; gap: 16px; }

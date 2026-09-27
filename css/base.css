@@ -137,3 +137,4 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
 .pagination__page span { display: block; width: 18px; height: 18px; font: 300 12px/18px "Poppins", sans-serif; letter-spacing: 0.036px; color: #727476; text-align: center; }
 .pagination__page--current { padding: 1px 2px; background: #f4f9fc; border: 1px solid #bfe0f5; border-radius: 6px; }
 .pagination__page--current span { height: 20px; font-weight: 600; color: #007dc5; }
+.top-menu__logo-img { display: block; width: 190px; height: 28px; }
