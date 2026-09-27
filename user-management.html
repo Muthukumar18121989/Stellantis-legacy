@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — User Management</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!-- User Management — Figma node 100:48479, 1366 × 604 -->
+<div class="page page--admin page--users">
+
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="user-management.html" aria-label="User Management" aria-current="page"><img src="assets/icons/user-blue.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="role-management.html" aria-label="Role Management"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <img class="cfg-brand__mark" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <header class="ad-header ad-header--compact">
+      <div class="ad-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current">User Management</span>
+        </nav>
+        <h1 class="ad-header__title">User Management</h1>
+      </div>
+    </header>
+
+    <main class="ad-body">
+      <section class="ad-card um-card" aria-labelledby="um-title">
+        <div class="ad-card__head um-head">
+          <h2 class="ad-card__title" id="um-title">User List</h2>
+          <label class="ad-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by User ID" aria-label="Search by User ID"></label>
+        </div>
+
+        <div class="ad-table-wrap um-table-wrap">
+          <table class="ad-table ad-table--list">
+            <colgroup><col style="width:172px"><col style="width:260px"><col style="width:131px"><col style="width:90px"><col style="width:202.5px"><col style="width:79px"><col style="width:79px"><col style="width:202.5px"></colgroup>
+            <thead>
+              <tr><th><span class="ad-th-sort">User ID<button class="ad-sort" type="button" aria-label="Sort by User ID"><img src="assets/icons/arrows-down-up-thin.svg" width="16" height="16" alt=""></button></span></th><th>Email Address</th><th>Name</th><th>Region</th><th>User Role</th><th>Admin</th><th>Status</th><th class="ad-center">Edit Delegate</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>TD3256D</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>Global</td><td>Guest</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><button class="ad-icon" type="button" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+              <tr><td>CD8282J</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>Europe</td><td>Promotion Pilot</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><button class="ad-icon" type="button" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+              <tr><td>G367383G</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>APAC</td><td>Marketing Manager</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><button class="ad-icon" type="button" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+              <tr><td>TD3256D</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>MEA</td><td>Finance Manager</td><td>Yes</td><td><span class="um-status">Active</span></td><td class="ad-center"><button class="ad-icon" type="button" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+              <tr><td>CD8282J</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>Global</td><td>Tool Administrator</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><button class="ad-icon" type="button" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+              <tr><td>G367383G</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>APAC</td><td>Super Administrator</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><button class="ad-icon" type="button" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer ad-footer">
+          <p class="table-footer__summary">Showing 1 of 10 entries</p>
+          <nav class="pagination ad-pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+            <button class="pagination__page"><span>2</span></button>
+            <button class="pagination__page"><span>3</span></button>
+            <button class="pagination__page"><span>4</span></button>
+            <button class="pagination__page"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</div>
+</body>
+</html>

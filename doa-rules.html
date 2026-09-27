@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Delegation of Authority (DOA) Rules</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!-- Delegation of Authority (DOA) Rules — Figma node 100:42880, 1366 × 600 -->
+<div class="page page--admin page--doa">
+
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules" aria-current="page"><img src="assets/icons/hammer-blue.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="role-management.html" aria-label="Role Management"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <img class="cfg-brand__mark" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">Kristen</span>
+          <span class="profile__role">Promotool Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <header class="ad-header">
+      <div class="ad-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/users-blue.svg" width="16" height="16" alt="">
+          <span class="breadcrumb__sep">/</span>
+          <a class="breadcrumb__link" href="doa-rules.html">Delegation of Authority (DOA) Rules</a>
+          <span class="breadcrumb__sep breadcrumb__sep--dark">/</span>
+          <span class="breadcrumb__page">Promotool Approval</span>
+        </nav>
+        <div>
+          <h1 class="ad-header__title">Delegation of Authority (DOA) Rules</h1>
+          <p class="ad-header__subtitle">Manage promotion approval rights and temporary authorization scopes.</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="ad-body">
+      <section class="ad-card doa-card" aria-labelledby="doa-title">
+        <div class="doa-title">
+          <h2 class="doa-title__text" id="doa-title">Parameter Threshold Matrix</h2>
+          <p class="doa-title__desc">Define approval levels (L0-L5) for various promotion parameters.</p>
+        </div>
+        <button class="btn-primary doa-add" type="button"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Add Parameter</button>
+
+        <div class="ad-table-wrap doa-table-wrap">
+          <table class="ad-table doa-table">
+            <colgroup><col style="width:204px"><col style="width:79px"><col style="width:120px"><col style="width:92px"><col style="width:124px"><col style="width:216px"><col style="width:229px"><col style="width:229px"><col style="width:207px"><col style="width:88px"></colgroup>
+            <thead>
+              <tr><th>Parameter</th><th>Market</th><th>Promo Type</th><th>Eff. Start</th><th>Eff. End</th><th>L1.1</th><th>L2.1</th><th>L1.2</th><th>L2.2</th><th>Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="doa-param"><p class="doa-param__name">Article negative margin</p><p class="doa-param__desc">Minimum allowed margin at<br>article/family level</p></td>
+                <td class="doa-center"><span class="doa-tag doa-tag--market">GLOBAL</span></td>
+                <td class="doa-center"><span class="doa-tag doa-tag--promo">Discount at family<br>level without<br>threshold</span></td>
+                <td class="doa-date">2024-01-01</td>
+                <td class="doa-date doa-date--end">2024-12-31</td>
+                <td class="doa-level"><p class="doa-level__rule">Margin &gt;= 0%</p><p class="doa-level__role">Local Marketing Manager</p></td>
+                <td class="doa-level"><p class="doa-level__rule">Margin &gt;= 0%</p><p class="doa-level__role">Central Marketing Manager</p></td>
+                <td class="doa-level doa-level--raise"><p class="doa-level__rule">Margin &lt; 0%</p><p class="doa-level__role">Local Finance Controller</p></td>
+                <td class="doa-level"><p class="doa-level__rule">Margin &lt; 0%</p><p class="doa-level__role">Central Finance Controller</p></td>
+                <td class="doa-actions"><span class="doa-actions__inner"><button class="doa-approve" type="button" aria-label="Approve"><img src="assets/icons/circle-check-green-24.svg" width="24" height="24" alt=""></button><button class="doa-edit" type="button" aria-label="Edit"><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button></span></td>
+              </tr>
+              <tr>
+                <td class="doa-param"><p class="doa-param__name">Competitiveness class margin</p><p class="doa-param__desc">Minimum margin threshold for<br>specific competitiveness classes</p></td>
+                <td class="doa-center"><span class="doa-tag doa-tag--market">GLOBAL</span></td>
+                <td class="doa-center"><span class="doa-tag doa-tag--promo">Discount at family<br>level without<br>threshold</span></td>
+                <td class="doa-date">2024-01-01</td>
+                <td class="doa-date doa-date--end">2024-12-31</td>
+                <td class="doa-level doa-level--top"><p class="doa-level__rule">Captive &gt;=30%<br>Medium &gt;=18%<br>High &gt;=9%</p><p class="doa-level__role">Local Marketing Manager</p></td>
+                <td class="doa-level doa-level--top"><p class="doa-level__rule">Captive &gt;=30%<br>Medium &gt;=18%<br>High &gt;=9%</p><p class="doa-level__role">Central Marketing Manager</p></td>
+                <td class="doa-level doa-level--top"><p class="doa-level__rule">Captive &lt;30%<br>Medium &lt;18%<br>High &lt;9%</p><p class="doa-level__role">Local Finance Controller</p></td>
+                <td class="doa-level doa-level--top"><p class="doa-level__rule">Captive &lt;30%<br>Medium &lt;18%<br>High &lt;9%</p><p class="doa-level__role">Central Finance Controller</p></td>
+                <td class="doa-actions"><span class="doa-actions__inner"><button class="doa-approve" type="button" aria-label="Approve"><img src="assets/icons/circle-check-green-24.svg" width="24" height="24" alt=""></button><button class="doa-edit" type="button" aria-label="Edit"><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button></span></td>
+              </tr>
+              <tr>
+                <td class="doa-param"><p class="doa-param__name">Financial impact</p><p class="doa-param__desc">Acceptable financial impact<br>threshold for the promotion</p></td>
+                <td class="doa-center"><span class="doa-tag doa-tag--market">GLOBAL</span></td>
+                <td class="doa-center"><span class="doa-tag doa-tag--promo">Discount at family<br>level without<br>threshold</span></td>
+                <td class="doa-date doa-date--left">2024-01-01</td>
+                <td class="doa-date doa-date--end doa-date--left">2024-12-31</td>
+                <td class="doa-level"><p class="doa-level__rule">Impact &gt; €0</p><p class="doa-level__role">Local Marketing Manager</p></td>
+                <td class="doa-level"><p class="doa-level__rule">Impact &gt; €0</p><p class="doa-level__role">Central Marketing Manager</p></td>
+                <td class="doa-level"><p class="doa-level__rule">Impact &lt;= €0</p><p class="doa-level__role">Local Finance Controller</p></td>
+                <td class="doa-level"><p class="doa-level__rule">Impact &lt;= €0</p><p class="doa-level__role">Central Finance Controller</p></td>
+                <td class="doa-actions"><span class="doa-actions__inner"><button class="doa-approve" type="button" aria-label="Approve"><img src="assets/icons/circle-check-green-24.svg" width="24" height="24" alt=""></button><button class="doa-edit" type="button" aria-label="Edit"><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer ad-footer">
+          <p class="table-footer__summary">Showing 1 of 10 entries</p>
+          <nav class="pagination ad-pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+            <button class="pagination__page"><span>2</span></button>
+            <button class="pagination__page"><span>3</span></button>
+            <button class="pagination__page"><span>4</span></button>
+            <button class="pagination__page"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</div>
+</body>
+</html>

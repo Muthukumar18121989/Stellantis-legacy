@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Role Management</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!-- Role Management — Figma node 100:49454, 1366 × 822 -->
+<div class="page page--admin page--roles">
+
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="role-management.html" aria-label="Role Management" aria-current="page"><img src="assets/icons/hierarchy-blue.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <img class="cfg-brand__mark" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <header class="ad-header ad-header--compact">
+      <div class="ad-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current">Role Management</span>
+        </nav>
+        <h1 class="ad-header__title">Role Management</h1>
+      </div>
+    </header>
+
+    <main class="ad-body">
+      <section class="rm-summary" aria-labelledby="rm-summary-title">
+        <div class="rm-summary__main">
+          <h2 class="rm-summary__title" id="rm-summary-title">Role Management</h2>
+          <div class="rm-counts">
+            <div class="rm-count rm-count--total"><p class="rm-count__value">11</p><p class="rm-count__label">Total Roles</p></div>
+            <div class="rm-count-rows">
+              <div class="rm-count-row">
+                <span class="rm-divider"></span>
+                <div class="rm-count"><p class="rm-count__value">340</p><p class="rm-count__label">Promotion Pilot</p></div>
+                <div class="rm-count"><p class="rm-count__value">3</p><p class="rm-count__label">Marketing Manager</p></div>
+                <div class="rm-count"><p class="rm-count__value">1</p><p class="rm-count__label">Finance Manager</p></div>
+                <div class="rm-count"><p class="rm-count__value">19</p><p class="rm-count__label">Guest</p></div>
+                <span class="rm-divider"></span>
+              </div>
+              <div class="rm-count-row">
+                <span class="rm-divider"></span>
+                <div class="rm-count"><p class="rm-count__value">19</p><p class="rm-count__label">Tool Administrator</p></div>
+                <div class="rm-count"><p class="rm-count__value">99</p><p class="rm-count__label">Super Administrator</p></div>
+                <div class="rm-count rm-count--hidden" aria-hidden="true"><p class="rm-count__value">32</p><p class="rm-count__label">Zone Manager</p></div>
+                <div class="rm-count rm-count--hidden" aria-hidden="true"><p class="rm-count__value">14</p><p class="rm-count__label">Warehouse Manager</p></div>
+                <span class="rm-divider"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="icon-btn rm-download" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+      </section>
+
+      <section class="ad-card rm-card" aria-labelledby="rm-title">
+        <div class="ad-card__head rm-head">
+          <div>
+            <h2 class="ad-card__title" id="rm-title">Roles List</h2>
+            <p class="rm-head__desc">Select an user to edit the details</p>
+          </div>
+          <button class="btn-primary rm-create" type="button">Create Role<img src="assets/icons/plus-thin.svg" width="16" height="16" alt=""></button>
+        </div>
+        <ul class="rm-legend">
+          <li><span class="rm-swatch rm-swatch--orange"></span>Approve/Reject</li>
+          <li><span class="rm-swatch rm-swatch--blue"></span>View Only</li>
+          <li><span class="rm-swatch rm-swatch--grey"></span>Create/Modify</li>
+        </ul>
+
+        <div class="ad-table-wrap rm-table-wrap">
+          <table class="ad-table ad-table--list">
+            <colgroup><col style="width:153px"><col style="width:437px"><col style="width:486px"><col style="width:150px"></colgroup>
+            <thead>
+              <tr><th>Role ID</th><th><span class="ad-th-sort">Role Name<button class="ad-sort" type="button" aria-label="Sort by Role Name"><img src="assets/icons/arrows-down-up-thin.svg" width="16" height="16" alt=""></button></span></th><th>Capabilities</th><th class="ad-center">Actions</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>R112</td><td>Promotion Pilot</td><td class="rm-caps"><span class="rm-caps__list"><span class="rm-cap rm-cap--grey rm-cap--dashboard">Dashboard</span><span class="rm-cap rm-cap--grey rm-cap--creation">Creation</span></span></td><td class="ad-center"><span class="rm-actions"><button class="ad-icon" type="button" aria-label="Edit role"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button><button class="ad-icon" type="button" aria-label="Delete role"><img src="assets/icons/trash-grey-24.svg" width="24" height="24" alt=""></button></span></td></tr>
+              <tr><td>R113</td><td>Marketing Manager</td><td class="rm-caps"><span class="rm-caps__list"><span class="rm-cap rm-cap--orange rm-cap--dashboard">Dashboard</span><span class="rm-cap rm-cap--orange rm-cap--creation">Creation</span></span></td><td class="ad-center"><span class="rm-actions"><button class="ad-icon" type="button" aria-label="Edit role"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button><button class="ad-icon" type="button" aria-label="Delete role"><img src="assets/icons/trash-grey-24.svg" width="24" height="24" alt=""></button></span></td></tr>
+              <tr><td>R114</td><td>Finance Manager</td><td class="rm-caps"><span class="rm-caps__list"><span class="rm-cap rm-cap--grey rm-cap--dashboard">Dashboard</span><span class="rm-cap rm-cap--grey rm-cap--creation">Creation</span></span></td><td class="ad-center"><span class="rm-actions"><button class="ad-icon" type="button" aria-label="Edit role"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button><button class="ad-icon" type="button" aria-label="Delete role"><img src="assets/icons/trash-grey-24.svg" width="24" height="24" alt=""></button></span></td></tr>
+              <tr><td>R115</td><td>Guest</td><td class="rm-caps"><span class="rm-caps__list"><span class="rm-cap rm-cap--grey rm-cap--dashboard">Dashboard</span><span class="rm-cap rm-cap--grey rm-cap--creation">Creation</span></span></td><td class="ad-center"><span class="rm-actions"><button class="ad-icon" type="button" aria-label="Edit role"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button><button class="ad-icon" type="button" aria-label="Delete role"><img src="assets/icons/trash-grey-24.svg" width="24" height="24" alt=""></button></span></td></tr>
+              <tr><td>R116</td><td>Tool Administrator</td><td class="rm-caps"><span class="rm-caps__list"><span class="rm-cap rm-cap--grey rm-cap--creation">Creation</span></span></td><td class="ad-center"><span class="rm-actions"><button class="ad-icon" type="button" aria-label="Edit role"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button><button class="ad-icon" type="button" aria-label="Delete role"><img src="assets/icons/trash-grey-24.svg" width="24" height="24" alt=""></button></span></td></tr>
+              <tr><td>R117</td><td>Super Administrator</td><td class="rm-caps"><span class="rm-caps__list"><span class="rm-cap rm-cap--blue rm-cap--creation">Creation</span></span></td><td class="ad-center"><span class="rm-actions"><button class="ad-icon" type="button" aria-label="Edit role"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button><button class="ad-icon" type="button" aria-label="Delete role"><img src="assets/icons/trash-grey-24.svg" width="24" height="24" alt=""></button></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer ad-footer">
+          <p class="table-footer__summary">Showing 1 of 10 entries</p>
+          <nav class="pagination ad-pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+            <button class="pagination__page"><span>2</span></button>
+            <button class="pagination__page"><span>3</span></button>
+            <button class="pagination__page"><span>4</span></button>
+            <button class="pagination__page"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</div>
+</body>
+</html>

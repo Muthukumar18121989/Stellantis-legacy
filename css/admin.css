@@ -1,0 +1,173 @@
+/* Admin pages: Delegation of Authority (DOA) Rules (Figma 100:42880, 1366 × 600),
+   User Management (100:48479, 1366 × 604), Role Management (100:49454, 1366 × 822). */
+
+.page--doa { min-height: 600px; }
+.page--users { min-height: 604px; }
+.page--roles { min-height: 822px; }
+
+.page--admin .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.page--doa .profile { width: 120px; }
+.page--users .profile, .page--roles .profile { width: 126px; }
+
+/* ---------- Page header ---------- */
+.ad-header {
+  height: 101px; display: flex; align-items: center; padding: 12px 16px 11px;
+  background: #fff; border-bottom: 1px solid #bfe0f5;
+}
+.ad-header--compact { height: 82px; background: #eff9ff; }
+.ad-header__inner { display: flex; flex-direction: column; gap: 4px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; height: 21px; }
+.breadcrumb__sep { font: 400 14px/21px "Poppins", sans-serif; letter-spacing: 0.056px; color: #3c4572; }
+.breadcrumb__sep--dark { color: #333; }
+.breadcrumb__link { font: 400 12px/18px "Open Sans", sans-serif; letter-spacing: 0.4px; color: #007dc5; white-space: nowrap; }
+.breadcrumb__current { font: 400 12px/18px "Open Sans", sans-serif; letter-spacing: 0.4px; color: #323436; white-space: nowrap; }
+.breadcrumb__page { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.ad-header__title { font: 600 24px/33px "Open Sans", sans-serif; letter-spacing: -0.44px; color: #196c9b; white-space: nowrap; }
+.ad-header__subtitle { font: 400 14px/19px "Open Sans", sans-serif; letter-spacing: -0.44px; color: #727476; white-space: nowrap; }
+
+/* ---------- Body, cards ---------- */
+.ad-body { display: flex; flex-direction: column; gap: 16px; padding: 24px 24px 0; }
+.ad-card {
+  position: relative; display: flex; flex-direction: column; gap: 16px; padding: 15px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.ad-card__head {
+  display: flex; justify-content: space-between; padding-bottom: 7px; border-bottom: 1px solid #bfe0f5;
+}
+.ad-card__title { font: 600 16px/20px "Noto Sans", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.ad-footer .table-footer__summary { width: 158px; }
+.ad-pagination .pagination__arrow--prev img { transform: none; }
+.ad-pagination .pagination__arrow--next img { transform: rotate(180deg); }
+
+/* ---------- Tables ---------- */
+.ad-table-wrap {
+  overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #bfe0f5; /* Figma: outside stroke */
+}
+.ad-table-wrap::-webkit-scrollbar { display: none; }
+.ad-table { table-layout: fixed; }
+.ad-table th, .ad-table td { padding: 6px 16px 5px; vertical-align: middle; white-space: nowrap; } /* the 1px bottom rule sits inside the Figma cell, so centre on the rest */
+.ad-table .ad-center { text-align: center; }
+.ad-th-sort { display: inline-flex; align-items: center; gap: 10px; }
+.ad-sort { display: flex; }
+.ad-icon { display: inline-flex; vertical-align: middle; }
+
+.ad-table--list { width: 100%; }
+.ad-table--list th {
+  height: 40px; background: #e3f4ff; border-bottom: 1px solid #bfe0f5;
+  font: 600 12px/18px "Noto Sans", sans-serif; color: #323436;
+}
+.ad-table--list td {
+  height: 40px; border-bottom: 1px solid #bfe0f5;
+  font: 300 12px/18px "Noto Sans", sans-serif; color: #323436;
+}
+
+.ad-search {
+  width: 210px; height: 32px; display: flex; align-items: center; gap: 10px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.ad-search input {
+  width: 160px; height: 20px; padding: 0; border: 0; outline: 0; background: none;
+  font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436;
+}
+.ad-search input::placeholder { color: #727476; opacity: 1; }
+
+/* ---------- DOA Rules ---------- */
+.doa-card { width: 1258px; height: 404px; padding-bottom: 0; } /* Figma: the table block runs 12px past the footer and eats the bottom padding */
+.ad-card > * { flex-shrink: 0; }
+.doa-title {
+  position: relative; height: 52px; display: flex; flex-direction: column; gap: 4px; padding: 0 12px 8px;
+  background: linear-gradient(to right, #bfe0f5 4px, transparent 4px) 0 100% / 6px 1px repeat-x; /* dashed 4 / 2 rule */
+}
+.doa-title::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 44px; background: linear-gradient(180deg, #47b796, #01a1fe); }
+.doa-title__text { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.doa-title__desc { font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
+.doa-add { position: absolute; left: 1083px; top: 21px; width: 160px; height: 32px; gap: 8px; }
+
+.doa-table-wrap { width: 1228px; height: 268px; box-shadow: 0 0 0 1px #ccdde8; }
+.doa-table { width: 1588px; }
+.doa-table th {
+  height: 40px; background: #f4f9fc; border-bottom: 1px solid #ccdde8; text-align: center;
+  font: 600 12px/18px "Poppins", sans-serif; color: #323436;
+}
+.doa-table th:first-child { text-align: left; }
+.doa-table td { height: 76px; border-bottom: 1px solid #ccdde8; font-size: 12px; line-height: 18px; color: #323436; }
+.doa-param__name { font: 600 12px/18px "Noto Sans", sans-serif; }
+.doa-param__desc { font: italic 300 10px/15px "Noto Sans", sans-serif; }
+.doa-table .doa-center { padding-left: 0; padding-right: 0; text-align: center; }
+.doa-tag {
+  display: inline-block; vertical-align: middle; padding: 4px; border-radius: 4px;
+  font: 300 10px/12px "Poppins", sans-serif; color: #3f4047; text-align: center;
+}
+.doa-tag--market { width: 45px; height: 20px; background: rgba(0, 125, 197, 0.08); box-shadow: inset 0 0 0 0.5px #007dc5; }
+.doa-tag--promo { width: 98px; height: 44px; background: rgba(0, 181, 173, 0.08); box-shadow: inset 0 0 0 0.5px #00b5ad; }
+.doa-date { font-family: "Poppins", sans-serif; text-align: center; }
+.doa-date--left { text-align: left; }
+.doa-table .doa-level { padding-left: 0; padding-right: 0; text-align: center; }
+.doa-table td.doa-level--top { vertical-align: top; padding-bottom: 0; }
+.doa-level__rule { font: 600 12px/18px "Noto Sans", sans-serif; }
+.doa-level__role { font: 600 10px/14px "Noto Sans", sans-serif; color: #0db134; }
+.doa-table .doa-actions { padding: 12px 16px 11px; }
+.doa-actions__inner { display: flex; gap: 8px; }
+.doa-approve { display: flex; }
+.doa-edit { display: flex; padding: 4px; background: #c9ccce; border-radius: 6px; }
+
+/* ---------- User Management ---------- */
+.um-card { width: 1248px; height: 408px; }
+.um-head { height: 40px; align-items: flex-end; }
+.um-table-wrap { width: 1216px; height: 280px; }
+.um-status {
+  display: inline-block; vertical-align: middle; width: 43px; height: 24px; padding: 3px 7px;
+  background: #e8ffee; border: 1px solid #0db134; border-radius: 6px;
+  font: 300 10px/15px "Noto Sans", sans-serif; color: #005929;
+}
+
+/* ---------- Role Management ---------- */
+.rm-summary { height: 176px; display: flex; align-items: center; gap: 24px; padding-top: 8px; overflow: hidden; }
+.rm-summary__main { width: 1202px; display: flex; flex-direction: column; gap: 11px; }
+.rm-summary__title { font: 600 16px/20px "Noto Sans", sans-serif; letter-spacing: 0.048px; color: #323436; }
+.rm-counts { display: flex; gap: 11px; }
+.rm-count-rows { width: 965px; display: flex; flex-direction: column; gap: 11px; }
+.rm-count-row { height: 63px; display: flex; gap: 12px; }
+.rm-divider { width: 2px; flex: none; background: #bfe0f5; }
+.rm-count {
+  width: 225.3px; height: 63px; flex: none; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; text-align: center; white-space: nowrap;
+}
+.rm-count--total { width: 225px; height: 137px; border: 2px solid #007dc5; }
+.rm-count--hidden { opacity: 0; } /* Figma keeps these two cards at 0 % opacity */
+.rm-count__value { font: 600 16px/20px "Noto Sans", sans-serif; letter-spacing: 0.048px; color: #007dc5; }
+.rm-count__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.rm-download { flex: none; }
+
+.rm-card { width: 1258px; height: 452px; }
+.rm-head { height: 50px; align-items: flex-start; }
+.rm-head__desc { margin-top: 4px; font: 300 12px/18px "Noto Sans", sans-serif; letter-spacing: 0.036px; color: #727476; white-space: nowrap; }
+.rm-create { width: 131px; height: 32px; gap: 8px; }
+.rm-legend { height: 18px; display: flex; justify-content: flex-end; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.rm-legend li { display: flex; align-items: center; gap: 4px; font: 300 12px/18px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.rm-legend li:nth-child(1) { width: 105px; }
+.rm-legend li:nth-child(2) { width: 75px; }
+.rm-legend li:nth-child(3) { width: 99px; }
+.rm-swatch { width: 18px; height: 18px; flex: none; border: 1px solid; border-radius: 4px; }
+.rm-swatch--orange, .rm-cap--orange { background: #fff4ea; border-color: #a5673f; }
+.rm-swatch--blue, .rm-cap--blue { background: #eff8ff; border-color: #004baf; }
+.rm-swatch--grey, .rm-cap--grey { background: #f8f9fb; border-color: #bfe0f5; }
+.rm-table-wrap { width: 1226px; height: 280px; }
+.ad-table td.rm-caps { padding: 0 0 0 16px; }
+.rm-caps__list { display: flex; gap: 10px; }
+.rm-cap {
+  height: 24px; padding: 3px 7px; border-width: 1px; border-style: solid; border-radius: 6px;
+  font: 300 10px/15px "Noto Sans", sans-serif; color: #3f4047;
+}
+.rm-cap--dashboard { width: 67px; }
+.rm-cap--creation { width: 55px; }
+.rm-cap--orange { color: #9b2500; }
+.rm-cap--blue { color: #004baf; }
+.rm-actions { display: inline-flex; gap: 16px; vertical-align: middle; }
+.doa-table td.doa-level--raise { padding-bottom: 15px; } /* Figma: this cell's text frame is 12px taller than its text, lifting it 5px */
+/* Chrome sets Noto Sans 12/18 text 1px higher than Figma (2px for the two-line parameter cells): nudge down */
+.ad-table--list th, .ad-table--list td { padding-top: 7px; padding-bottom: 4px; }
+.doa-table td.doa-param { padding-top: 8px; padding-bottom: 3px; }
+.doa-table td.doa-level--top { padding-top: 7px; }
+.um-status, .ad-table--list .ad-icon { position: relative; top: -1px; } /* keep badges and icons where Figma has them */
