@@ -1,0 +1,51 @@
+/* Experiment status — Figma "Promotion Approval Dashboard" (node 88:17699, 1154 × 815), where Kristen lands after sign-in.
+   Reuses the Products / Network cards and promotion table from css/experiment.css and the top-menu logo from css/configuration.css. */
+
+.page--status { width: 1154px; min-height: 815px; }
+.page--status .top-menu__logo { display: flex; flex-direction: column; justify-content: center; }
+.page--status .exp-body { padding-bottom: 23px; } /* the card below overhangs its row by 1px in Figma; keeps the page at 815 */
+.page--status .filters__actions { left: 863px; } /* Figma: x 864 from the outer edge */
+.page--status .btn-primary { width: 65px; } /* Figma button widths; Chrome sets the labels a fraction narrower */
+
+/* ---------- Promotion Approval Dashboard card (Figma 88:17858): 3px wider than the rows above, as in Figma ---------- */
+.es-card {
+  width: 1049px; height: 446px; display: flex; flex-direction: column; gap: 16px; padding: 15px;
+  background: #fff; border: 1px solid #ccdde8; border-radius: 12px;
+}
+.es-card > * { flex: none; }
+.es-card__title {
+  width: 1018px; height: 28px; padding-bottom: 8px; border-bottom: 1px solid #ccdde8;
+  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap;
+}
+.es-toolbar { width: 1018px; height: 36px; display: flex; align-items: center; justify-content: space-between; }
+.es-toolbar__right { display: flex; align-items: center; gap: 24px; }
+
+/* Status filter pills (Figma "Tabs" Variant2) */
+.es-status { display: flex; align-items: center; gap: 6px; padding: 5px; background: #fff; border: 1px solid #bfe0f5; border-radius: 28px; }
+.es-status__tab {
+  height: 24px; display: flex; align-items: center; gap: 4px; padding: 0 8px; border-radius: 30px; box-shadow: inset 0 0 0 1px #bfe0f5;
+  font: 400 12px/16px "Open Sans", sans-serif; color: #727476; white-space: nowrap;
+}
+.es-status__tab.is-active {
+  background: #007dc5; box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15);
+  font-weight: 600; color: #fff; text-shadow: 0 2px 2px rgba(51, 51, 51, 0.25);
+}
+.es-status__tab:nth-child(1) { width: 165px; } /* Figma pill widths */
+.es-status__tab:nth-child(2) { width: 84px; }
+.es-status__tab:nth-child(3) { width: 78px; }
+.es-status__dot { width: 9px; height: 9px; flex: none; border-radius: 50%; }
+
+.es-search { width: 278px; }
+.es-search input { text-overflow: ellipsis; } /* Figma truncates the placeholder */
+.page--status .es-compare { width: 116px; gap: 8px; }
+
+.es-table-wrap { width: 1018px; border: 0; box-shadow: 0 0 0 1px #ccdde8; } /* Figma draws the table rule outside */
+.promos td.es-actions { padding: 12px 16px 11px; }
+.es-actions__inner { display: flex; align-items: center; gap: 8px; }
+.es-action { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex: none; background: #fff; border: 1px solid #727476; border-radius: 6px; }
+
+.page--status .table-footer__summary { width: 201px; }
+.es-pagination .pagination__arrow--prev img { transform: none; }
+.es-pagination .pagination__arrow--next img { transform: rotate(180deg); }
+.page--status .promos td { height: 47px; } /* rows are 48 including their 1px rule, as in Figma */
+.page--status .profile { width: 134px; } /* Figma profile block width, so the menu starts at x 832 */
