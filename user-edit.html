@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Delegation of Authority (DOA)</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!-- User Creation / Edit Delegate — Figma node 100:50428, 1366 × 727 -->
+<div class="page page--admin page--user-edit">
+
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="user-management.html" aria-label="User Management" aria-current="page"><img src="assets/icons/user-blue.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="role-management.html" aria-label="Role Management"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <img class="cfg-brand__mark" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <header class="ad-header ad-header--tint">
+      <div class="ad-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
+          <span class="breadcrumb__sep">/</span>
+          <a class="breadcrumb__link breadcrumb__link--deep" href="user-management.html">User Management</a>
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current">Delegation of Authority (DOA)</span>
+        </nav>
+        <div>
+          <h1 class="ad-header__title">Delegation of Authority (DOA)</h1>
+          <p class="ad-header__subtitle">Assign authorized delegates to act on behalf of the user for a defined period.</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="ad-body">
+      <section class="ad-card ue-card" aria-label="User details">
+        <div class="ue-rows">
+          <div class="ue-row ue-row--id">
+            <label class="ue-field ue-field--noto ue-field--grey" style="width:292px"><span class="ue-field__label">User ID</span><span class="ue-field__box"><input type="text" value="TG0192" readonly></span></label>
+          </div>
+          <div class="ue-row ue-row--names">
+            <label class="ue-field ue-field--poppins ue-field--grey" style="width:294.5px"><span class="ue-field__label">First Name</span><span class="ue-field__box"><input type="text" placeholder="First Name" readonly></span></label>
+            <label class="ue-field ue-field--poppins ue-field--grey" style="width:294.5px"><span class="ue-field__label">Last Name</span><span class="ue-field__box"><input type="text" placeholder="Last Name" readonly></span></label>
+            <label class="ue-field ue-field--poppins ue-field--grey" style="width:294.5px"><span class="ue-field__label">Email Address</span><span class="ue-field__box"><input type="text" placeholder="Email Address" readonly></span></label>
+          </div>
+          <div class="ue-row">
+            <label class="ue-field ue-field--noto ue-field--grey" style="width:294.5px"><span class="ue-field__label">Department</span><span class="ue-field__box"><input type="text" value="Local Marketing" readonly></span></label>
+            <label class="ue-field ue-field--noto ue-field--grey" style="width:294.5px"><span class="ue-field__label">Region</span><span class="ue-field__box"><input type="text" value="France" readonly></span></label>
+            <label class="ue-field ue-field--noto-small ue-field--grey" style="width:292px"><span class="ue-field__label">Role</span><span class="ue-field__box"><input type="text" value="Promotion Pilot" readonly></span></label>
+            <label class="ue-field ue-field--noto-small ue-field--grey" style="width:292px"><span class="ue-field__label">Admin</span><span class="ue-field__box"><input type="text" value="Yes" readonly></span></label>
+          </div>
+        </div>
+      </section>
+
+      <section class="ad-card ue-delegates" aria-labelledby="ue-delegates-title">
+        <div class="ad-card__head rm-head">
+          <div>
+            <h2 class="ad-card__title" id="ue-delegates-title">Delegate Assignment</h2>
+            <p class="rm-head__desc">You can add upto 3 delegates for this User</p>
+          </div>
+          <button class="btn-primary ue-add" type="button" data-open-dialog="ue-bulk">Add Delegate<img src="assets/icons/plus-thin.svg" width="16" height="16" alt=""></button>
+        </div>
+        <div class="ue-delegate">
+          <div class="ue-row">
+            <label class="ue-field ue-field--poppins" style="width:294.5px"><span class="ue-field__label">Delegate 1</span><span class="ue-field__box"><input type="text" placeholder="User ID"></span></label>
+            <label class="ue-field ue-field--poppins" style="width:294.5px"><span class="ue-field__label">Start Date</span><span class="ue-field__box"><input type="text" placeholder="dd-mm-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label>
+            <label class="ue-field ue-field--poppins" style="width:294.5px"><span class="ue-field__label">End Date</span><span class="ue-field__box"><input type="text" placeholder="dd-mm-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label>
+            <label class="ue-field ue-field--poppins" style="width:294.5px"><span class="ue-field__label">Status</span><span class="ue-field__box"><input type="text" placeholder="Active"></span></label>
+          </div>
+          <label class="ue-comments"><textarea rows="1" placeholder="Comments" aria-label="Comments"></textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></label>
+        </div>
+      </section>
+
+      <div class="ad-actions">
+        <a class="ad-btn" href="user-management.html" style="width:69px">Cancel</a>
+        <button class="ad-btn ad-btn--primary" type="button" data-open-dialog="ue-saved" style="width:56px">Save</button>
+      </div>
+    </main>
+
+  </div>
+</div>
+<dialog class="ad-dialog ad-dialog--bulk" id="ue-bulk" aria-labelledby="ue-bulk-title">
+  <button class="ad-dialog__close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <div class="ad-dialog__head">
+    <h2 class="ad-dialog__title" id="ue-bulk-title">User Upload Details</h2>
+    <p class="ad-dialog__text">Add a csv file with user details</p>
+  </div>
+  <div class="bu-file">
+    <div class="bu-file__labels">
+      <span class="bu-file__label" id="bu-file-label">Choose File</span>
+      <a class="bu-file__template" href="#">Download Template</a>
+    </div>
+    <div class="bu-file__box">
+      <label class="bu-file__button"><img src="assets/icons/upload.svg" width="16" height="16" alt="">Choose File<input type="file" accept=".csv,text/csv" aria-labelledby="bu-file-label"></label>
+      <span class="bu-file__name">dummydata.csv</span>
+    </div>
+  </div>
+  <div class="ad-dialog__actions">
+    <a class="ad-dialog__btn ad-dialog__btn--primary bu-preview" href="user-bulk-preview.html">Preview</a>
+  </div>
+</dialog>
+<dialog class="ad-dialog ad-dialog--saved" id="ue-saved" aria-labelledby="ue-saved-title">
+  <button class="ad-dialog__close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <span class="ad-dialog__mark"></span>
+  <h2 class="ad-dialog__saved-title" id="ue-saved-title">User Saved Successfully</h2>
+</dialog>
+<script src="js/admin.js"></script>
+</body>
+</html>

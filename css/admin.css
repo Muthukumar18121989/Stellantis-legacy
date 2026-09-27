@@ -171,3 +171,100 @@
 .doa-table td.doa-param { padding-top: 8px; padding-bottom: 3px; }
 .doa-table td.doa-level--top { padding-top: 7px; }
 .um-status, .ad-table--list .ad-icon { position: relative; top: -1px; } /* keep badges and icons where Figma has them */
+
+/* ---------- Edit Delegate (Figma 100:50428, 1366 × 727) ---------- */
+.page--user-edit { min-height: 727px; }
+.ad-header--tint { background: #eff9ff; }
+.breadcrumb__link--deep { color: #006bc5; }
+.ue-card { width: 1258px; height: 256px; }
+.ue-rows { height: 224px; overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
+.ue-row { display: flex; gap: 16px; }
+.ue-row--id { height: 64px; flex: none; padding-bottom: 7px; border-bottom: 1px solid #bfe0f5; }
+.ue-row--names { height: 72px; flex: none; padding-bottom: 15px; border-bottom: 1px solid #bfe0f5; }
+.ue-field { flex: none; display: flex; flex-direction: column; gap: 4px; }
+.ue-field__label { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.ue-field--noto .ue-field__label, .ue-field--noto-small .ue-field__label { font: 400 14px/20px "Noto Sans", sans-serif; }
+.ue-field__box {
+  height: 32px; display: flex; align-items: center; gap: 10px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.ue-field--grey .ue-field__box { background: #f8f9fb; }
+.ue-field__box input {
+  flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.ue-field__box input::placeholder { color: #727476; opacity: 1; }
+.ue-field--grey .ue-field__box input { color: #727476; }
+.ue-field--noto .ue-field__box input { font: 400 14px/20px "Noto Sans", sans-serif; }
+.ue-field--noto-small .ue-field__box { align-items: flex-start; padding-top: 6px; } /* Chrome sets Noto 1px higher than Figma */
+.ue-field--noto-small .ue-field__box input { height: 18px; font: 300 12px/18px "Noto Sans", sans-serif; letter-spacing: 0; }
+.ue-delegates { width: 1258px; height: 202px; }
+.ue-add { width: 145px; height: 32px; gap: 8px; }
+.ue-delegate { display: flex; flex-direction: column; gap: 16px; }
+.ue-comments { position: relative; display: block; height: 32px; }
+.ue-comments textarea {
+  display: block; width: 100%; height: 100%; margin: 0; padding: 5px 11px; resize: none; outline: 0; overflow: hidden;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.ue-comments textarea::placeholder { color: #323436; opacity: 1; }
+.ue-comments img { position: absolute; left: 1206px; top: 12px; pointer-events: none; }
+
+.ad-actions { display: flex; justify-content: flex-end; gap: 16px; }
+.ad-btn {
+  height: 32px; display: flex; align-items: center; justify-content: center; padding: 5px 11px;
+  background: #fff; border: 1px solid #727476; border-radius: 6px;
+  font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap;
+}
+.ad-btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }
+
+/* ---------- Bulk Upload Preview (Figma 100:49079, 2239 × 586) ---------- */
+.page--preview { width: 2239px; min-height: 586px; }
+.bp-card { width: 2131px; height: 352px; }
+.bp-table-wrap { width: 2099px; height: 280px; }
+.bp-table th.bp-group, .bp-table th.bp-sub { padding-left: 0; padding-right: 0; text-align: center; }
+.bp-table th.bp-group, .bp-table th.bp-sub--first { border-left: 1px solid #bfe0f5; }
+
+/* ---------- Dialogs: bulk upload (Figma 100:48454), saved (100:50726, 100:50727) ---------- */
+.ad-dialog {
+  position: fixed; inset: 0; margin: auto; max-width: none; max-height: none;
+  padding: 18px 24px 24px; overflow: visible; color: #323436; /* 24px from the outer edge; the 6px top rule sits inside it */
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.ad-dialog[open] { display: flex; flex-direction: column; }
+.ad-dialog::backdrop { background: transparent; } /* Figma shows no backdrop */
+.ad-dialog__close { position: absolute; right: 24px; top: 10px; width: 24px; height: 24px; }
+.ad-dialog__head { display: flex; flex-direction: column; gap: 8px; }
+.ad-dialog__title { font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.ad-dialog__text { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.ad-dialog__actions { display: flex; justify-content: flex-end; gap: 12px; }
+.ad-dialog__btn {
+  height: 40px; display: flex; align-items: center; justify-content: center; padding: 7px 15px;
+  background: #fff; border: 1px solid #727476; border-radius: 8px;
+  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap;
+}
+.ad-dialog__btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }
+
+.ad-dialog--bulk { width: 741px; height: 260px; }
+.ad-dialog--bulk[open] { gap: 32px; }
+.bu-file { display: flex; flex-direction: column; gap: 4px; }
+.bu-file__labels { height: 20px; display: flex; justify-content: space-between; }
+.bu-file__label { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.bu-file__template { font: italic 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #0b7abe; text-decoration: underline; }
+.bu-file__box { height: 32px; display: flex; align-items: center; gap: 16px; background: #fff; border: 1px solid #ccdde8; border-radius: 6px; }
+.bu-file__button {
+  position: relative; width: 114px; height: 32px; flex: none; margin: -1px 0 -1px -1px;
+  display: flex; align-items: center; gap: 8px; padding: 7px 11px;
+  background: #f8f9fb; border: 1px solid #bfe0f5; border-radius: 6px 0 0 6px;
+  font: 500 12px/18px "Noto Sans", sans-serif; color: #727476; white-space: nowrap; cursor: pointer;
+}
+.bu-file__button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.bu-file__name { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #007dc5; white-space: nowrap; }
+.bu-preview { width: 95px; }
+
+.ad-dialog--saved { width: 528px; height: 160px; }
+.ad-dialog--saved[open] { gap: 24px; }
+.ad-dialog--saved .ad-dialog__close { right: 16px; }
+.ad-dialog__mark { width: 64px; height: 64px; border-radius: 50%; background: #0db134; } /* Figma draws a plain green circle */
+.ad-dialog__saved-title { font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
