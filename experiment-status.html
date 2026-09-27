@@ -126,9 +126,9 @@
         <h2 class="es-card__title">Promotion Approval Dashboard</h2>
         <div class="es-toolbar">
           <div class="es-status" role="tablist" aria-label="Request status">
-            <button class="es-status__tab is-active" type="button" role="tab" aria-selected="true"><span class="es-status__dot" style="background:#fbbd08"></span>Submitted for Approval</button>
-            <button class="es-status__tab" type="button" role="tab" aria-selected="false"><span class="es-status__dot" style="background:#52de73"></span>Approved</button>
-            <button class="es-status__tab" type="button" role="tab" aria-selected="false"><span class="es-status__dot" style="background:#e75350"></span>Rejected</button>
+            <button class="es-status__tab is-active" type="button" role="tab" aria-selected="true" data-status="submitted"><span class="es-status__dot" style="background:#fbbd08"></span>Submitted for Approval</button>
+            <button class="es-status__tab" type="button" role="tab" aria-selected="false" data-status="approved"><span class="es-status__dot" style="background:#52de73"></span>Approved</button>
+            <button class="es-status__tab" type="button" role="tab" aria-selected="false" data-status="rejected"><span class="es-status__dot" style="background:#e75350"></span>Rejected</button>
           </div>
           <div class="es-toolbar__right">
             <label class="search es-search"><img src="assets/icons/search-bold.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Promotion Name, Request ID, Status" aria-label="Search by Promotion Name, Request ID, Status"></label>
@@ -143,68 +143,68 @@
             </colgroup>
             <thead>
               <tr>
-                <th><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select all">ID</span></th>
+                <th><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select all" data-select-all>ID</span></th>
                 <th>Promotion Name</th><th>Country</th><th>Start Date</th><th>End Date</th><th>No. of Families</th><th>Iteration</th>
                 <th class="is-center">Actions <br>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2724">2724</span></td>
+              <tr data-status="submitted">
+                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2724 Thanks-giving Promotion">2724</span></td>
                 <td class="is-bold">Thanks-giving Promotion</td><td class="is-bold">AT</td><td>20/03/2025</td><td>20/03/2025</td><td>10</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2705">2705</span></td>
+              <tr data-status="submitted">
+                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2705 Holiday Promotion">2705</span></td>
                 <td class="is-bold">Holiday Promotion</td><td class="is-bold">BE</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2701">2701</span></td>
+              <tr data-status="submitted">
+                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2701 February Promotion">2701</span></td>
                 <td class="is-bold">February Promotion</td><td class="is-bold">DE</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2698">2698</span></td>
+              <tr data-status="submitted">
+                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2698 Demo-shipmentOpt">2698</span></td>
                 <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">ES</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2699">2699</span></td>
+              <tr data-status="submitted">
+                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2699 Demo-shipmentOpt">2699</span></td>
                 <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">FR</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
                     <button class="es-action" type="button" aria-label="Notes"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
@@ -230,6 +230,34 @@
     </main>
   </div>
 </div>
+<dialog class="es-dialog" id="es-approve" aria-labelledby="es-approve-title">
+  <form class="es-dialog__body" method="dialog">
+    <div class="es-dialog__head">
+      <h2 class="es-dialog__title" id="es-approve-title">Approve Request</h2>
+      <p class="es-dialog__text">Please provide your comments for this approval</p>
+    </div>
+    <label class="es-dialog__comments"><textarea name="comments" placeholder="Comments" aria-label="Comments"></textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></label>
+    <div class="es-dialog__actions">
+      <button class="es-dialog__btn" type="button" data-close-dialog>Cancel</button>
+      <button class="es-dialog__btn es-dialog__btn--primary" type="submit" value="submit">Submit</button>
+    </div>
+  </form>
+  <button class="es-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+</dialog>
+<dialog class="es-dialog" id="es-reject" aria-labelledby="es-reject-title">
+  <form class="es-dialog__body" method="dialog">
+    <div class="es-dialog__head">
+      <h2 class="es-dialog__title" id="es-reject-title">Reject Request</h2>
+      <p class="es-dialog__text">Please provide your comments for this rejection</p>
+    </div>
+    <label class="es-dialog__comments"><textarea name="comments" placeholder="Comments" aria-label="Comments"></textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></label>
+    <div class="es-dialog__actions">
+      <button class="es-dialog__btn" type="button" data-close-dialog>Cancel</button>
+      <button class="es-dialog__btn es-dialog__btn--primary" type="submit" value="submit">Submit</button>
+    </div>
+  </form>
+  <button class="es-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+</dialog>
 <script src="js/experiment-status.js"></script>
 </body>
 </html>

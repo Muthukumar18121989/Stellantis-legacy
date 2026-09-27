@@ -49,3 +49,32 @@
 .es-pagination .pagination__arrow--next img { transform: rotate(180deg); }
 .page--status .promos td { height: 47px; } /* rows are 48 including their 1px rule, as in Figma */
 .page--status .profile { width: 134px; } /* Figma profile block width, so the menu starts at x 832 */
+
+/* ---------- Approve Request / Reject Request (Figma 88:18260, 88:18309, 741 × 332), opened by the tick / cross ---------- */
+.es-dialog {
+  position: fixed; inset: 0; margin: auto; width: 741px; height: 332px; max-width: none; max-height: none;
+  padding: 18px 24px 24px; overflow: visible; color: #323436; /* 24px from the outer edge; the 6px top rule sits inside it */
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.es-dialog::backdrop { background: transparent; } /* Figma shows no backdrop */
+.es-dialog__close { position: absolute; left: 693px; top: 10px; width: 24px; height: 24px; }
+.es-dialog__body { display: flex; flex-direction: column; gap: 32px; }
+.es-dialog__head { display: flex; flex-direction: column; gap: 8px; }
+.es-dialog__title { font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.es-dialog__text { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.es-dialog__comments { position: relative; display: block; height: 128px; }
+.es-dialog__comments textarea {
+  display: block; width: 100%; height: 100%; margin: 0; padding: 5px 11px; resize: none; outline: 0;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.es-dialog__comments textarea::placeholder { color: #323436; opacity: 1; }
+.es-dialog__comments img { position: absolute; left: 673px; top: 108px; pointer-events: none; } /* Figma resize mark, 6px in from the corner */
+.es-dialog__actions { display: flex; justify-content: flex-end; gap: 12px; }
+.es-dialog__btn {
+  width: 90px; height: 40px; display: flex; align-items: center; justify-content: center; padding: 7px 15px;
+  background: #fff; border: 1px solid #727476; border-radius: 8px;
+  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap;
+}
+.es-dialog__btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }
