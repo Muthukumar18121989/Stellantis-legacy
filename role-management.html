@@ -3,72 +3,69 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Role Management</title>
+  <meta name="color-scheme" content="light">
+  <script>try{if(localStorage.getItem("pt-sidebar")==="collapsed")document.documentElement.classList.add("is-sidebar-collapsed")}catch(e){}</script>
+  <title>Roles · Stellantis Promotool</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/configuration.css">
   <link rel="stylesheet" href="css/admin.css">
   <link rel="stylesheet" href="css/user-menu.css">
 </head>
 <body>
-<!-- Role Management — Figma node 100:49454, 1366 × 822 -->
+<!-- Role Management -->
 <div class="page page--admin page--roles">
 
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item left-bar__item--active" href="role-management.html" aria-label="Role Management" aria-current="page"><img src="assets/icons/hierarchy-blue.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="referential.html" aria-label="Referential"><img src="assets/icons/database.svg" width="24" height="24" alt=""></a>
+  <aside class="sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="experiment-status.html" aria-label="Stellantis Promotool, home">
+      <span class="sidebar__mark"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 11.5 8 4.5l5 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="sidebar__brand-text"><span class="sidebar__wordmark">STELLANTIS</span><span class="sidebar__product">Promotool</span></span>
+    </a>
+    <nav class="sidebar__nav" aria-label="Main">
+      <p class="sidebar__label">Approvals</p>
+      <a class="nav-item" href="experiment-status.html" data-tooltip="Approval queue"><img class="nav-item__icon" src="assets/icons/home.svg" width="18" height="18" alt=""><span class="nav-item__text">Approval queue</span></a>
+      <p class="sidebar__label">Administration</p>
+      <a class="nav-item" href="doa-rules.html" data-tooltip="DOA rules"><img class="nav-item__icon" src="assets/icons/hammer-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">DOA rules</span></a>
+      <a class="nav-item" href="user-management.html" data-tooltip="Users"><img class="nav-item__icon" src="assets/icons/user-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Users</span></a>
+      <a class="nav-item" href="role-management.html" aria-current="page" data-tooltip="Roles"><img class="nav-item__icon" src="assets/icons/hierarchy-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Roles</span></a>
+      <a class="nav-item" href="referential.html" data-tooltip="Referential"><img class="nav-item__icon" src="assets/icons/database-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Referential</span></a>
+    </nav>
+    <div class="sidebar__foot">
+      <p class="sidebar__meta"><b>Aftermarket · Europe</b>Administration</p>
     </div>
-  </nav>
+  </aside>
 
   <div class="main">
 
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">MARCUS WEBER</span>
-          <span class="profile__role">Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+    <header class="topbar">
+      <button class="topbar__toggle" type="button" data-sidebar-toggle aria-label="Collapse sidebar" data-tooltip="Toggle sidebar" data-tooltip-side="bottom"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 3.5v11" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <span class="crumbs__divider" aria-hidden="true"></span>
+      <nav class="crumbs" aria-label="Breadcrumb"><span class="crumbs__root">Administration</span><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Roles</span></nav>
+      <div class="topbar__right">
+        <button class="topbar__btn lang" type="button" aria-label="Language: English"><img src="assets/icons/world.svg" width="18" height="18" alt="">EN<img class="lang__chevron" src="assets/icons/chevron-down.svg" width="12" height="12" alt=""></button>
+        <button class="topbar__btn notif" type="button" aria-label="Notifications (5)" data-tooltip="Notifications" data-tooltip-side="bottom"><img src="assets/icons/bell.svg" width="18" height="18" alt=""><span class="notif__count">5</span></button>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <button class="profile" type="button" aria-haspopup="dialog">
+          <span class="profile__avatar" aria-hidden="true">KR</span>
+          <span class="profile__text"><span class="profile__name">Kristen</span><span class="profile__role">Promotool Admin</span></span>
+          <img class="profile__chevron" src="assets/icons/chevron-down.svg" width="14" height="14" alt="">
         </button>
       </div>
     </header>
 
-    <header class="ad-header ad-header--compact">
+    <header class="ad-header">
       <div class="ad-header__inner">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current">Role Management</span>
-        </nav>
-        <h1 class="ad-header__title">Role Management</h1>
+        <p class="page-head__eyebrow">Administration</p>
+        <h1 class="ad-header__title">Roles</h1>
+        <p class="ad-header__subtitle">Roles define what each group of users can see and do in Promotool.</p>
       </div>
     </header>
 
     <main class="ad-body">
       <section class="rm-summary" aria-labelledby="rm-summary-title">
         <div class="rm-summary__main">
-          <h2 class="rm-summary__title" id="rm-summary-title">Role Management</h2>
+          <h2 class="rm-summary__title" id="rm-summary-title">Users by role</h2>
           <div class="rm-counts">
-            <div class="rm-count rm-count--total"><p class="rm-count__value">11</p><p class="rm-count__label">Total Roles</p></div>
+            <div class="rm-count rm-count--total"><p class="rm-count__value">11</p><p class="rm-count__label">Total roles</p></div>
             <div class="rm-count-rows">
               <div class="rm-count-row">
                 <span class="rm-divider"></span>
@@ -82,8 +79,6 @@
                 <span class="rm-divider"></span>
                 <div class="rm-count"><p class="rm-count__value">19</p><p class="rm-count__label">Tool Administrator</p></div>
                 <div class="rm-count"><p class="rm-count__value">99</p><p class="rm-count__label">Super Administrator</p></div>
-                <div class="rm-count rm-count--hidden" aria-hidden="true"><p class="rm-count__value">32</p><p class="rm-count__label">Zone Manager</p></div>
-                <div class="rm-count rm-count--hidden" aria-hidden="true"><p class="rm-count__value">14</p><p class="rm-count__label">Warehouse Manager</p></div>
                 <span class="rm-divider"></span>
               </div>
             </div>
@@ -95,10 +90,10 @@
       <section class="ad-card rm-card" aria-labelledby="rm-title">
         <div class="ad-card__head rm-head">
           <div>
-            <h2 class="ad-card__title" id="rm-title">Roles List</h2>
-            <p class="rm-head__desc">Select an user to edit the details</p>
+            <h2 class="ad-card__title" id="rm-title">All roles</h2>
+            <p class="rm-head__desc">Select a role to edit its details</p>
           </div>
-          <a class="btn-primary rm-create" href="role-create.html">Create Role<img src="assets/icons/plus-thin.svg" width="16" height="16" alt=""></a>
+          <a class="btn-primary rm-create" href="role-create.html"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Create role</a>
         </div>
         <ul class="rm-legend">
           <li><span class="rm-swatch rm-swatch--orange"></span>Approve/Reject</li>
@@ -108,7 +103,6 @@
 
         <div class="ad-table-wrap rm-table-wrap">
           <table class="ad-table ad-table--list">
-            <colgroup><col style="width:153px"><col style="width:437px"><col style="width:486px"><col style="width:150px"></colgroup>
             <thead>
               <tr><th>Role ID</th><th><span class="ad-th-sort">Role Name<button class="ad-sort" type="button" aria-label="Sort by Role Name"><img src="assets/icons/arrows-down-up-thin.svg" width="16" height="16" alt=""></button></span></th><th>Capabilities</th><th class="ad-center">Actions</th></tr>
             </thead>
@@ -141,5 +135,6 @@
   </div>
 </div>
   <script src="js/user-menu.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

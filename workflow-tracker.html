@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Workflow Tracker</title>
+  <meta name="color-scheme" content="light">
+  <script>try{if(localStorage.getItem("pt-sidebar")==="collapsed")document.documentElement.classList.add("is-sidebar-collapsed")}catch(e){}</script>
+  <title>Workflow tracker · Stellantis Promotool</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/configuration.css">
   <link rel="stylesheet" href="css/result.css">
@@ -12,149 +14,136 @@
 </head>
 <body>
 <div class="page page--workflow">
-  <!-- Left menu bar (Figma 55:37137) -->
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item" href="promotool-dashboard.html" aria-label="Promotool Dashboard"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item left-bar__item--active" href="experiments.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+  <!-- Left menu bar -->
+  <aside class="sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="experiments.html" aria-label="Stellantis Promotool, home">
+      <span class="sidebar__mark"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 11.5 8 4.5l5 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="sidebar__brand-text"><span class="sidebar__wordmark">STELLANTIS</span><span class="sidebar__product">Promotool</span></span>
+    </a>
+    <nav class="sidebar__nav" aria-label="Main">
+      <p class="sidebar__label">Workspace</p>
+      <a class="nav-item" href="promotool-dashboard.html" data-tooltip="Dashboard"><img class="nav-item__icon" src="assets/icons/grid-dots-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Dashboard</span></a>
+      <a class="nav-item" href="experiments.html" aria-current="page" data-tooltip="Experiments"><img class="nav-item__icon" src="assets/icons/route.svg" width="18" height="18" alt=""><span class="nav-item__text">Experiments</span></a>
+      <a class="nav-item" href="reports.html" data-tooltip="Reports"><img class="nav-item__icon" src="assets/icons/report-analytics-active.svg" width="18" height="18" alt=""><span class="nav-item__text">Reports</span></a>
+    </nav>
+    <div class="sidebar__foot">
+      <p class="sidebar__meta"><b>Aftermarket · Europe</b>Promotion workspace</p>
     </div>
-  </nav>
+  </aside>
+
   <div class="main">
-    <!-- Top menu (Figma 55:37154) -->
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">MARCUS WEBER</span>
-          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+
+    <header class="topbar">
+      <button class="topbar__toggle" type="button" data-sidebar-toggle aria-label="Collapse sidebar" data-tooltip="Toggle sidebar" data-tooltip-side="bottom"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 3.5v11" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <span class="crumbs__divider" aria-hidden="true"></span>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="experiments.html">Experiments</a><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Workflow tracker</span></nav>
+      <div class="topbar__right">
+        <button class="topbar__btn lang" type="button" aria-label="Language: English"><img src="assets/icons/world.svg" width="18" height="18" alt="">EN<img class="lang__chevron" src="assets/icons/chevron-down.svg" width="12" height="12" alt=""></button>
+        <button class="topbar__btn notif" type="button" aria-label="Notifications (5)" data-tooltip="Notifications" data-tooltip-side="bottom"><img src="assets/icons/bell.svg" width="18" height="18" alt=""><span class="notif__count">5</span></button>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <button class="profile" type="button" aria-haspopup="dialog">
+          <span class="profile__avatar" aria-hidden="true">MW</span>
+          <span class="profile__text"><span class="profile__name">Marcus Weber</span><span class="profile__role">Promotion Pilot (EE)</span></span>
+          <img class="profile__chevron" src="assets/icons/chevron-down.svg" width="14" height="14" alt="">
         </button>
       </div>
     </header>
 
-    <!-- Breadcrumb + title (Figma 55:37195) -->
-    <section class="res-header">
-      <div class="cfg-header__inner">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="experiments.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current" aria-current="page">Workflow Tracker</span>
-        </nav>
-        <h1 class="cfg-header__title">Workflow Tracker</h1>
+    <section class="page-head">
+      <div class="page-head__text">
+        <p class="page-head__eyebrow">Approval workflow</p>
+        <h1 class="page-head__title">Workflow tracker</h1>
+        <p class="page-head__desc">Follow the promotion through each approval level. Select a completed step to read the validator’s comments.</p>
+      </div>
+      <div class="page-head__actions">
+        <button class="icon-btn" type="button" aria-label="Download" data-tooltip="Download summary"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
       </div>
     </section>
 
     <main class="wf-body">
-      <!-- Promotion summary (Figma 55:37333) -->
+      <!-- Promotion summary -->
       <section class="wf-summary">
         <dl class="wf-summary__facts">
-          <div class="wf-fact" style="width:145px"><dt>Promo Name:</dt> <dd data-promo-name>Spring Promotion</dd></div>
-          <div class="wf-fact" style="width:316px"><dt>Promo Type:</dt> <dd>Discount on MSRP at family or article level</dd></div>
-          <div class="wf-fact" style="width:76px"><dt>Iteration:</dt> <dd>#3</dd></div>
-          <div class="wf-fact" style="width:91px"><dt>Promo ID:</dt> <dd>#Req-9902</dd></div>
-          <div class="wf-fact" style="width:75px"><dt>Markets:</dt> <dd>...</dd></div>
-          <div class="wf-fact" style="width:114px"><dt>Created By​:</dt> <dd>To be assigned</dd></div>
-          <div class="wf-fact" style="width:119px"><dt>Execution Period:</dt> <dd>To be assigned</dd></div>
+          <div class="wf-fact"><dt>Promotion</dt> <dd data-promo-name>Spring Promotion</dd></div>
+          <div class="wf-fact"><dt>Type</dt> <dd>Discount on MSRP, family or article level</dd></div>
+          <div class="wf-fact"><dt>Iteration</dt> <dd>#3</dd></div>
+          <div class="wf-fact"><dt>Request</dt> <dd>#Req-9902</dd></div>
+          <div class="wf-fact"><dt>Market</dt> <dd class="is-muted">—</dd></div>
+          <div class="wf-fact"><dt>Created by</dt> <dd class="is-muted">To be assigned</dd></div>
+          <div class="wf-fact"><dt>Execution window</dt> <dd class="is-muted">To be assigned</dd></div>
         </dl>
-        <button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
       </section>
 
       <div class="wf-panel">
-        <!-- Promotion Tracking Lifecycle (Figma 55:37633): the stage row is wider than the card and scrolls sideways -->
+        <!-- Promotion Tracking Lifecycle: the stage row is wider than the card and scrolls sideways -->
         <section class="wf-card wf-card--lifecycle">
           <div class="wf-title wf-title--desc">
             <div class="wf-bar">
-              <h2 class="wf-title__text">Promotion Tracking Lifecycle</h2>
-              <p class="wf-title__desc">Click on any lifecycle icon to view validator comments &amp; history <img src="assets/icons/info.svg" width="16" height="16" alt=""></p>
+              <h2 class="wf-title__text">Approval lifecycle</h2>
+              <p class="wf-title__desc">Select a completed step to view validator comments and history.</p>
             </div>
           </div>
           <div class="wf-stages">
             <div class="wf-stages__row">
           <section class="wf-stage">
-            <h3 class="wf-stage__title"><span class="wf-bar">LOCAL REVIEW</span></h3>
+            <h3 class="wf-stage__title"><span class="wf-bar">Local review</span></h3>
             <ol class="wf-steps">
-              <li class="wf-step wf-step--done"><button class="wf-dot wf-dot--done" type="button" aria-label="Validator comments for L1.1 Local Marketing" data-open-dialog="validator-comments"><img src="assets/icons/check-white.svg" width="24" height="24" alt=""></button><span class="wf-step__text"><span class="wf-step__name">L1.1 Local Marketing</span><span class="wf-step__note">Approved</span></span></li>
-              <li class="wf-step wf-step--done"><span class="wf-dot wf-dot--done"><img src="assets/icons/check-white.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.2 Local Finance</span><span class="wf-step__note">Approved</span></span></li>
+              <li class="wf-step wf-step--done"><button class="wf-dot wf-dot--done" type="button" aria-label="Validator comments for L1.1 Local marketing" data-open-dialog="validator-comments"></button><span class="wf-step__text"><span class="wf-step__name">L1.1 Local marketing</span><span class="wf-step__note">Approved</span></span></li>
+              <li class="wf-step wf-step--done"><span class="wf-dot wf-dot--done"></span><span class="wf-step__text"><span class="wf-step__name">L1.2 Local finance</span><span class="wf-step__note">Approved</span></span></li>
             </ol>
           </section>
           <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
           <section class="wf-stage">
-            <h3 class="wf-stage__title"><span class="wf-bar">CENTRAL REVIEW</span></h3>
+            <h3 class="wf-stage__title"><span class="wf-bar">Central review</span></h3>
             <ol class="wf-steps">
-              <li class="wf-step wf-step--active"><span class="wf-dot wf-dot--active"><img src="assets/icons/circle-blue.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.1 Central Marketing</span><span class="wf-step__note">Pending #REQ-9902</span></span></li>
-              <li class="wf-step wf-step--waiting"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.2 Central Finance</span><span class="wf-step__note">Awaiting L2.1</span></span></li>
+              <li class="wf-step wf-step--active"><span class="wf-dot wf-dot--active"></span><span class="wf-step__text"><span class="wf-step__name">L2.1 Central marketing</span><span class="wf-step__note">In review · REQ-9902</span></span></li>
+              <li class="wf-step wf-step--waiting"><span class="wf-dot"></span><span class="wf-step__text"><span class="wf-step__name">L2.2 Central finance</span><span class="wf-step__note">Waiting for L2.1</span></span></li>
             </ol>
           </section>
           <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
           <section class="wf-stage">
-            <h3 class="wf-stage__title"><span class="wf-bar">LOGISTICS</span></h3>
+            <h3 class="wf-stage__title"><span class="wf-bar">Logistics</span></h3>
             <ol class="wf-steps">
-              <li class="wf-step wf-step--todo"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">Logistics Validation</span><span class="wf-step__note">Wait For Central</span></span></li>
+              <li class="wf-step wf-step--todo"><span class="wf-dot"></span><span class="wf-step__text"><span class="wf-step__name">Logistics validation</span><span class="wf-step__note">Waiting for central review</span></span></li>
             </ol>
           </section>
           <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
           <section class="wf-stage">
-            <h3 class="wf-stage__title"><span class="wf-bar">Final Market Confirmation</span></h3>
+            <h3 class="wf-stage__title"><span class="wf-bar">Final market confirmation</span></h3>
             <ol class="wf-steps">
-              <li class="wf-step wf-step--todo"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.1 Local Marketing</span><span class="wf-step__note">Wait For Logistics Validation</span></span></li>
-              <li class="wf-step wf-step--todo"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.2 Local Finance</span><span class="wf-step__note">Wait For Logistics Validation</span></span></li>
+              <li class="wf-step wf-step--todo"><span class="wf-dot"></span><span class="wf-step__text"><span class="wf-step__name">L1.1 Local marketing</span><span class="wf-step__note">Waiting for logistics</span></span></li>
+              <li class="wf-step wf-step--todo"><span class="wf-dot"></span><span class="wf-step__text"><span class="wf-step__name">L1.2 Local finance</span><span class="wf-step__note">Waiting for logistics</span></span></li>
             </ol>
           </section>
           <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
-          <section class="wf-stage">
-            <h3 class="wf-stage__title"><span class="wf-bar">CENTRAL REVIEW</span></h3>
-            <ol class="wf-steps">
-              <li class="wf-step wf-step--active"><span class="wf-dot wf-dot--active"><img src="assets/icons/circle-blue.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.1 Central Marketing</span><span class="wf-step__note">Pending #REQ-9902</span></span></li>
-              <li class="wf-step wf-step--waiting"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.2 Central Finance</span><span class="wf-step__note">Awaiting L2.1</span></span></li>
-            </ol>
-          </section>
-          <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
-          <div class="wf-golive"><p class="wf-golive__card"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-golive__text">PENDING GO-LIVE</span></p></div>
+          <div class="wf-golive"><p class="wf-golive__card"><span class="wf-dot"></span><span class="wf-golive__text">Go-live · pending</span></p></div>
             </div>
           </div>
         </section>
 
-        <!-- Promotion high level targets (Figma 55:38132) -->
+        <!-- Promotion high level targets -->
         <section class="wf-card wf-card--targets">
-          <h2 class="wf-title"><span class="wf-bar wf-title__text">Promotion HIGH LEVEL TARGETS</span></h2>
+          <h2 class="wf-title"><span class="wf-bar wf-title__text">Targets</span></h2>
           <div class="wf-tiles">
-            <div class="wf-tile"><span class="wf-tile__label">TOTAL VOLUME TARGET</span><span class="wf-tile__value">92,152 Un.</span></div>
-            <div class="wf-tile"><span class="wf-tile__label">TOTAL PROMO DISCOUNT</span><span class="wf-tile__value wf-tile__value--green">€11,190k</span></div>
-            <div class="wf-tile"><span class="wf-tile__label">AVG MARGIN %</span><span class="wf-tile__value">13.4%</span></div>
-            <div class="wf-tile" style="width:273px"><span class="wf-tile__label">TOTAL FINANCIAL IMPACT</span><span class="wf-tile__value wf-tile__value--blue">€1,119k</span></div>
+            <div class="wf-tile"><span class="wf-tile__label">Total volume target</span><span class="wf-tile__value">92,152 <small>units</small></span></div>
+            <div class="wf-tile"><span class="wf-tile__label">Total promo discount</span><span class="wf-tile__value wf-tile__value--green">€11,190k</span></div>
+            <div class="wf-tile"><span class="wf-tile__label">Average margin</span><span class="wf-tile__value">13.4%</span></div>
+            <div class="wf-tile"><span class="wf-tile__label">Total financial impact</span><span class="wf-tile__value wf-tile__value--blue">€1,119k</span></div>
           </div>
         </section>
 
-        <!-- Family & Article Level Validation Analysis (Figma 55:38470) -->
+        <!-- Family & Article Level Validation Analysis -->
         <section class="wf-card wf-card--validation">
-          <h2 class="wf-title wf-title--wide"><span class="wf-bar wf-title__text">Family &amp; Article Level Validation Analysis</span></h2>
+          <h2 class="wf-title wf-title--wide"><span class="wf-bar wf-title__text">Validation by family and article</span></h2>
           <div class="wf-table-wrap">
             <table class="wf-table">
-              <colgroup><col style="width:44px"><col style="width:310px"><col style="width:200px"><col style="width:171px"><col style="width:153px"><col style="width:153px"><col style="width:153px"></colgroup>
               <thead>
                 <tr>
                   <th class="wf-c-toggle" rowspan="2" scope="col"><span class="visually-hidden">Expand</span></th>
-                  <th rowspan="2" scope="col">Family / Article Details</th>
+                  <th rowspan="2" scope="col">Family / article</th>
                   <th class="wf-c-margin" rowspan="2" scope="col">Margin %</th>
-                  <th class="wf-c-fin" rowspan="2" scope="col">Fin. Impact</th>
-                  <th class="wf-h-group" colspan="3" scope="colgroup">Target Volume</th>
+                  <th class="wf-c-fin" rowspan="2" scope="col">Financial impact</th>
+                  <th class="wf-h-group" colspan="3" scope="colgroup">Target volume</th>
                 </tr>
                 <tr>
                   <th class="wf-h-month" scope="col">Apr</th>
@@ -165,7 +154,7 @@
               <tbody>
               <tr>
                 <td class="wf-c-toggle"><button class="wf-toggle" type="button" aria-label="Show articles of FAM-001"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td>
-                <td class="wf-c-family"><span class="wf-family"><b>Family ID: FAM-001</b><span>Economy Compact Series</span><span class="wf-family__meta"><span class="wf-badge">CAPTIVE</span>2/2 Active</span></span></td>
+                <td class="wf-c-family"><span class="wf-family"><span class="wf-family__name">Economy Compact Series</span><span class="wf-family__id">FAM-001</span><span class="wf-family__meta"><span class="wf-badge">Captive</span>2/2 Active</span></span></td>
                 <td class="wf-c-margin">11.8%</td>
                 <td class="wf-c-fin">€171.15</td>
                 <td class="wf-c-month">147</td>
@@ -174,7 +163,7 @@
               </tr>
               <tr>
                 <td class="wf-c-toggle"><button class="wf-toggle" type="button" aria-label="Show articles of FAM-002"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td>
-                <td class="wf-c-family"><span class="wf-family"><b>Family ID: FAM-002</b><span>Economy Compact Series</span><span class="wf-family__meta"><span class="wf-badge">CAPTIVE</span>2/2 Active</span></span></td>
+                <td class="wf-c-family"><span class="wf-family"><span class="wf-family__name">Economy Compact Series</span><span class="wf-family__id">FAM-002</span><span class="wf-family__meta"><span class="wf-badge">Captive</span>2/2 Active</span></span></td>
                 <td class="wf-c-margin">14.2%</td>
                 <td class="wf-c-fin">€171.15</td>
                 <td class="wf-c-month">147</td>
@@ -183,7 +172,7 @@
               </tr>
               <tr>
                 <td class="wf-c-toggle"><button class="wf-toggle" type="button" aria-label="Show articles of FAM-003"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td>
-                <td class="wf-c-family"><span class="wf-family"><b>Family ID: FAM-003</b><span>Economy Compact Series</span><span class="wf-family__meta"><span class="wf-badge">CAPTIVE</span>2/2 Active</span></span></td>
+                <td class="wf-c-family"><span class="wf-family"><span class="wf-family__name">Economy Compact Series</span><span class="wf-family__id">FAM-003</span><span class="wf-family__meta"><span class="wf-badge">Captive</span>2/2 Active</span></span></td>
                 <td class="wf-c-margin">9.6%</td>
                 <td class="wf-c-fin">€171.15</td>
                 <td class="wf-c-month">147</td>
@@ -192,7 +181,7 @@
               </tr>
               <tr>
                 <td class="wf-c-toggle"><button class="wf-toggle" type="button" aria-label="Show articles of FAM-004"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td>
-                <td class="wf-c-family"><span class="wf-family"><b>Family ID: FAM-004</b><span>Economy Compact Series</span><span class="wf-family__meta"><span class="wf-badge">CAPTIVE</span>2/2 Active</span></span></td>
+                <td class="wf-c-family"><span class="wf-family"><span class="wf-family__name">Economy Compact Series</span><span class="wf-family__id">FAM-004</span><span class="wf-family__meta"><span class="wf-badge">Captive</span>2/2 Active</span></span></td>
                 <td class="wf-c-margin">16.4%</td>
                 <td class="wf-c-fin">€171.15</td>
                 <td class="wf-c-month">147</td>
@@ -206,27 +195,28 @@
       </div>
 
       <div class="cfg-actions">
-        <button class="btn-outline" type="button">Modify Promotion</button>
-        <button class="btn-next" type="button">Go Live</button>
+        <p class="cfg-actions__note">Go-live unlocks once every approval level and logistics validation are complete.</p>
+        <a class="btn-outline" href="promotion-configuration.html">Modify promotion</a>
+        <button class="btn-next" type="button" disabled>Go live</button>
       </div>
     </main>
   </div>
 </div>
-<!-- Validator Comments (Figma 55:58362): centred overlay on a 30% black backdrop, closes on X or a click outside -->
+<!-- Validator Comments: centred overlay on a 30% black backdrop, closes on X or a click outside -->
 <dialog class="wf-comments" id="validator-comments" aria-labelledby="wf-comments-title">
   <button class="wf-comments__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
   <div class="wf-comments__body">
     <div class="wf-comments__head">
-      <h2 class="wf-comments__title" id="wf-comments-title">VALIDATOR COMMENTS</h2>
-      <p class="wf-comments__stage">STAGE: L1.1</p>
+      <h2 class="wf-comments__title" id="wf-comments-title">Validator comments</h2>
+      <p class="wf-comments__stage">Stage L1.1 · Local marketing</p>
     </div>
     <article class="wf-comment">
       <div class="wf-comment__row">
         <div class="wf-comment__who">
-          <span class="wf-avatar"><img src="assets/icons/letter-j.svg" width="24" height="24" alt=""></span>
-          <span class="wf-comment__person"><span class="wf-comment__name">Jean-Pierre</span><span class="wf-comment__role">LOCAL MARKETING MANAGER</span></span>
+          <span class="wf-avatar" aria-hidden="true">JP</span>
+          <span class="wf-comment__person"><span class="wf-comment__name">Jean-Pierre</span><span class="wf-comment__role">Local marketing manager</span></span>
         </div>
-        <div class="wf-comment__meta"><span class="wf-comment__badge">APPROVED</span><span class="wf-comment__date">22 MAR, 10:15:00</span></div>
+        <div class="wf-comment__meta"><span class="wf-comment__badge">Approved</span><span class="wf-comment__date">22 Mar · 10:15</span></div>
       </div>
       <p class="wf-comment__text">“Volume projections look realistic for the Spring season. Margin is slightly tighter than usual but offset by incremental gains.”</p>
     </article>
@@ -234,5 +224,6 @@
 </dialog>
 <script src="js/workflow.js"></script>
   <script src="js/user-menu.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

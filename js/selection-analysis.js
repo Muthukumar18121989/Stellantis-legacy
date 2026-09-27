@@ -9,14 +9,15 @@
     btn.addEventListener('click', function () { btn.closest('dialog').close(); });
   });
 
-  // Row checkboxes drive the "N Selected" button; the header checkbox selects or clears all rows.
+  // Row checkboxes drive the "Add N families" button; the header checkbox selects or clears all rows.
   var dialog = document.getElementById('select-family');
   var all = dialog.querySelector('[data-check-all]');
   var rows = Array.prototype.slice.call(dialog.querySelectorAll('tbody .fam-check'));
   var count = dialog.querySelector('[data-selected-count]');
   function update() {
     var n = rows.filter(function (c) { return c.checked; }).length;
-    count.textContent = n + ' Selected';
+    count.textContent = n ? 'Add ' + n + (n === 1 ? ' family' : ' families') : 'Select families';
+    count.parentNode.disabled = !n;
     all.checked = n === rows.length;
   }
   rows.forEach(function (c) { c.addEventListener('change', update); });
@@ -25,7 +26,7 @@
     update();
   });
 
-  // "N Selected" closes the dialog and lists the chosen families on the page (Figma 26:9854).
+  // "Add N families" closes the dialog and lists the chosen families on the page.
   var list = document.querySelector('.fam-list');
   var template = document.getElementById('family-panel');
   dialog.querySelector('[data-apply-selection]').addEventListener('click', function () {
@@ -48,8 +49,9 @@
       ? chosen.length + (chosen.length === 1 ? ' Family' : ' Families') + ' | 296 Targeted SKUs'
       : '0 Families | 0 Targeted SKUs';
     dialog.close();
+    if (chosen.length && window.PT) PT.toast(chosen.length + (chosen.length === 1 ? ' family' : ' families') + ' added', 'Review each family, then drill down to set article targets.');
   });
-  // "Drill Down to Article" replaces that family's panel with its article list (Figma 26:10344).
+  // "Drill Down to Article" replaces that family's panel with its article list.
   var articles = document.getElementById('family-articles');
   list.addEventListener('click', function (e) {
     var drill = e.target.closest('[data-drill-down]');
@@ -75,7 +77,7 @@
     else head.checked = checks.every(function (c) { return c.checked; });
   });
 
-  // Article view tabs: Exclusions and Volume Analysis (Figma 26:11097); Price Analysis has no design yet.
+  // Article view tabs: Exclusions and Volume Analysis, Volume analysis and Price analysis.
   list.addEventListener('click', function (e) {
     var tab = e.target.closest('[data-tab-target]');
     if (!tab) return;
@@ -83,7 +85,7 @@
     view.dataset.tab = tab.dataset.tabTarget;
     view.querySelectorAll('.art-tab').forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
     list.dataset.drillTab = view.dataset.tab;
-    // Figma 26:11622: on Price Analysis the page's Next button reads "Simulate".
+    // On Price analysis the page's Next button reads "Simulate".
     document.querySelector('[data-page-next]').textContent = view.dataset.tab === 'price' ? 'Simulate' : 'Next';
   });
   // Price Analysis, Threshold Quantity: the header checkbox ticks every row, and Validate

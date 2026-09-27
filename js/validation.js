@@ -1,16 +1,16 @@
-// Promotion Validation / Logistics Volume Split: a family's chevron opens its article drilldown (Figma 55:44872)
-// and the same chevron, now pointing up, returns to the family list (Figma 55:40381).
+// Logistics volume split: a family's chevron opens its article drilldown
+// and the same chevron, now pointing up, returns to the family list.
 (function () {
   var params = new URLSearchParams(location.search);
   document.querySelectorAll('[data-keep-query]').forEach(function (a) { a.href += location.search; });
   if (params.get('title')) document.querySelector('[data-promo-name]').textContent = params.get('title');
 
-  // Initiate Approval opens Submit Promotion for Approval (Figma 128:57162); Proceed to Approval continues to the
-  // Workflow Tracker. The promotion name is the one on this page (Figma sample: Summer Beverage Promotion 2026).
+  // Submit for approval opens the Submit for approval dialog; its primary action continues to the
+  // Workflow Tracker. The promotion name is the one on this page.
   var approval = document.getElementById('submit-approval');
   approval.querySelector('[data-approval-name]').value = document.querySelector('[data-promo-name]').textContent;
   document.querySelector('[data-initiate-approval]').addEventListener('click', function (e) { e.preventDefault(); approval.showModal(); });
-  approval.querySelector('[data-close-dialog]').addEventListener('click', function () { approval.close(); });
+  approval.querySelectorAll('[data-close-dialog]').forEach(function (b) { b.addEventListener('click', function () { approval.close(); }); });
   approval.addEventListener('click', function (e) { if (e.target === approval) { var r = approval.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) approval.close(); } });
 
   var page = document.querySelector('.page--validation');

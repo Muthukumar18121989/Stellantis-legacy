@@ -3,89 +3,80 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Promotool Dashboard</title>
+  <meta name="color-scheme" content="light">
+  <script>try{if(localStorage.getItem("pt-sidebar")==="collapsed")document.documentElement.classList.add("is-sidebar-collapsed")}catch(e){}</script>
+  <title>Dashboard · Stellantis Promotool</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/promotool-dashboard.css">
   <link rel="stylesheet" href="css/user-menu.css">
 </head>
 <body>
-<!-- Promotool Dashboard — Figma "Promotion level Dashboard" (node 55:49358), 1366 × 2034 -->
+<!-- Promotool Dashboard -->
 <div class="page page--promodash">
 
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item left-bar__item--active" href="promotool-dashboard.html" aria-label="Promotool Dashboard" aria-current="page"><img src="assets/icons/grid-dots-blue.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="experiments.html" aria-label="Experiments"><img src="assets/icons/route-white.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+  <aside class="sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="experiments.html" aria-label="Stellantis Promotool, home">
+      <span class="sidebar__mark"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 11.5 8 4.5l5 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="sidebar__brand-text"><span class="sidebar__wordmark">STELLANTIS</span><span class="sidebar__product">Promotool</span></span>
+    </a>
+    <nav class="sidebar__nav" aria-label="Main">
+      <p class="sidebar__label">Workspace</p>
+      <a class="nav-item" href="promotool-dashboard.html" aria-current="page" data-tooltip="Dashboard"><img class="nav-item__icon" src="assets/icons/grid-dots-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Dashboard</span></a>
+      <a class="nav-item" href="experiments.html" data-tooltip="Experiments"><img class="nav-item__icon" src="assets/icons/route.svg" width="18" height="18" alt=""><span class="nav-item__text">Experiments</span></a>
+      <a class="nav-item" href="reports.html" data-tooltip="Reports"><img class="nav-item__icon" src="assets/icons/report-analytics-active.svg" width="18" height="18" alt=""><span class="nav-item__text">Reports</span></a>
+    </nav>
+    <div class="sidebar__foot">
+      <p class="sidebar__meta"><b>Aftermarket · Europe</b>Promotion workspace</p>
     </div>
-  </nav>
+  </aside>
 
   <div class="main">
 
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">MARCUS WEBER</span>
-          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+    <header class="topbar">
+      <button class="topbar__toggle" type="button" data-sidebar-toggle aria-label="Collapse sidebar" data-tooltip="Toggle sidebar" data-tooltip-side="bottom"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 3.5v11" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <span class="crumbs__divider" aria-hidden="true"></span>
+      <nav class="crumbs" aria-label="Breadcrumb"><span class="crumbs__root">Workspace</span><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Dashboard</span></nav>
+      <div class="topbar__right">
+        <button class="topbar__btn lang" type="button" aria-label="Language: English"><img src="assets/icons/world.svg" width="18" height="18" alt="">EN<img class="lang__chevron" src="assets/icons/chevron-down.svg" width="12" height="12" alt=""></button>
+        <button class="topbar__btn notif" type="button" aria-label="Notifications (5)" data-tooltip="Notifications" data-tooltip-side="bottom"><img src="assets/icons/bell.svg" width="18" height="18" alt=""><span class="notif__count">5</span></button>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <button class="profile" type="button" aria-haspopup="dialog">
+          <span class="profile__avatar" aria-hidden="true">MW</span>
+          <span class="profile__text"><span class="profile__name">Marcus Weber</span><span class="profile__role">Promotion Pilot (EE)</span></span>
+          <img class="profile__chevron" src="assets/icons/chevron-down.svg" width="14" height="14" alt="">
         </button>
       </div>
     </header>
 
-    <section class="pd-header">
-      <nav class="pd-breadcrumb" aria-label="Breadcrumb">
-        <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
-        <span class="pd-breadcrumb__sep">/</span>
-        <span class="pd-breadcrumb__current" aria-current="page">Promotool Dashboard</span>
-      </nav>
-      <h1 class="pd-header__title">Promotool Dashboard</h1>
+    <section class="page-head pd-head">
+      <div class="page-head__text">
+        <p class="page-head__eyebrow">Promotion dashboard <span class="pd-live-dot">Live</span></p>
+        <h1 class="page-head__title">Alfa Romeo Giulia Ignition Bundle</h1>
+        <ul class="pd-title__tags" aria-label="Promotion details">
+          <li class="pd-tag">EU-008</li>
+          <li class="pd-tag">Region · EU</li>
+          <li class="pd-tag">Ignition</li>
+          <li class="pd-tag pd-tag--warning">Underperforming</li>
+        </ul>
+      </div>
+      <div class="page-head__actions">
+        <button class="btn" type="button">Pause</button>
+        <button class="btn" type="button">Close promotion</button>
+        <button class="btn" type="button"><img src="assets/icons/download.svg" width="16" height="16" alt="">Reports</button>
+        <button class="btn btn--primary" type="button">View full report</button>
+      </div>
     </section>
 
     <main class="pd-body">
 
-      <!-- Promotion title bar -->
-      <section class="pd-title">
-        <h2 class="pd-title__name">Alfa Romeo Giulia Ignition Bundle</h2>
-        <ul class="pd-title__tags">
-          <li class="pd-tag pd-tag--grey" style="width:44px">EU-008</li>
-          <li class="pd-tag pd-tag--blue" style="width:20px">EU</li>
-          <li class="pd-tag pd-tag--purple" style="width:45px">Ignition</li>
-          <li class="pd-tag pd-tag--olive" style="width:39px">Active</li>
-          <li class="pd-tag pd-tag--orange" style="width:93px">Underperforming</li>
-        </ul>
-        <button class="pd-btn pd-btn--outline pd-title__download" type="button">Download Reports</button>
-      </section>
-
-      <!-- Process steps -->
-      <ol class="pd-steps" aria-label="Promotion stage">
-        <li class="pd-step pd-step--done" style="width:70px"><span class="pd-step__dot"><img src="assets/icons/check-white-16.svg" width="16" height="16" alt=""></span><span class="pd-step__label">Upcoming</span></li>
-        <li class="pd-step pd-step--current" aria-current="step" style="width:45px"><span class="pd-step__dot"><img src="assets/icons/circle-white-16.svg" width="16" height="16" alt=""></span><span class="pd-step__label">Active</span></li>
-        <li class="pd-step pd-step--todo" style="width:78px"><span class="pd-step__dot"><img src="assets/icons/circle-white-16.svg" width="16" height="16" alt=""></span><span class="pd-step__label">Completed</span></li>
-      </ol>
-
-      <p class="pd-live"><img src="assets/icons/circle-check-green-24.svg" width="24" height="24" alt="">This promotion is currently live. KPIs reflect actual performance data.</p>
-
-      <div class="pd-actions">
-        <button class="btn-primary pd-actions__report" type="button">View Full Report</button>
-        <button class="pd-btn pd-btn--outline" type="button">Pause Promotion</button>
-        <button class="pd-btn pd-btn--outline" type="button">Close Promotion</button>
+      <div class="pd-status">
+        <ol class="stepper" aria-label="Promotion stage">
+          <li class="stepper__item is-done"><span class="stepper__dot">1</span>Upcoming</li>
+          <li class="stepper__item is-current" aria-current="step"><span class="stepper__dot">2</span>Active</li>
+          <li class="stepper__item"><span class="stepper__dot">3</span>Completed</li>
+        </ol>
+        <p class="pd-live">This promotion is live. KPIs reflect actual performance data.</p>
+        <p class="pd-updated">Updated just now</p>
       </div>
 
       <div class="pd-row pd-row--config">
@@ -93,13 +84,13 @@
         <section class="pd-config">
           <h3 class="pd-config__title">Configuration</h3>
           <dl class="pd-config__list">
-            <div class="pd-config__row pd-config__row--badge"><dt>Brand</dt><dd><span class="pd-value-badge pd-value-badge--purple">Alfa Romeo</span></dd></div>
+            <div class="pd-config__row pd-config__row--badge"><dt>Brand</dt><dd>Alfa Romeo</dd></div>
             <div class="pd-config__row"><dt>Model</dt><dd>Giulia, Stelvio</dd></div>
-            <div class="pd-config__row pd-config__row--badge pd-config__row--top"><dt>Category</dt><dd><span class="pd-value-badge pd-value-badge--blue">Ignition</span></dd></div>
-            <div class="pd-config__row pd-config__row--badge"><dt>Discount</dt><dd><span class="pd-value-badge pd-value-badge--green">11%</span></dd></div>
+            <div class="pd-config__row pd-config__row--badge pd-config__row--top"><dt>Category</dt><dd>Ignition</dd></div>
+            <div class="pd-config__row pd-config__row--badge"><dt>Discount</dt><dd><span class="pd-value-badge">11%</span></dd></div>
             <div class="pd-config__row"><dt>Region</dt><dd>EU</dd></div>
-            <div class="pd-config__row"><dt>Start Date</dt><dd>1/2/2026</dd></div>
-            <div class="pd-config__row"><dt>End Date</dt><dd>31/3/2026</dd></div>
+            <div class="pd-config__row"><dt>Start date</dt><dd>1 Feb 2026</dd></div>
+            <div class="pd-config__row"><dt>End date</dt><dd>31 Mar 2026</dd></div>
           </dl>
         </section>
 
@@ -107,84 +98,84 @@
         <div class="pd-kpis">
           <div class="pd-kpi">
             <img src="assets/icons/chart-line.svg" width="24" height="24" alt="">
-            <div class="pd-kpi__text"><span class="pd-kpi__label">Sales Uplift</span><span class="pd-kpi__value pd-kpi__value--neg">-1.5%</span><span class="pd-kpi__sub">vs. baseline</span></div>
+            <div class="pd-kpi__text"><span class="pd-kpi__label">Sales uplift</span><span class="pd-kpi__value pd-kpi__value--neg">-1.5%</span><span class="pd-kpi__sub">vs. baseline</span></div>
           </div>
           <div class="pd-kpi">
             <img src="assets/icons/percentage-24.svg" width="24" height="24" alt="">
-            <div class="pd-kpi__text"><span class="pd-kpi__label">Margin Impact</span><span class="pd-kpi__value pd-kpi__value--neg">-5.8%</span><span class="pd-kpi__sub">Gross margin change</span></div>
+            <div class="pd-kpi__text"><span class="pd-kpi__label">Margin impact</span><span class="pd-kpi__value pd-kpi__value--neg">-5.8%</span><span class="pd-kpi__sub">Gross margin change</span></div>
           </div>
           <div class="pd-kpi">
             <img src="assets/icons/building-store.svg" width="24" height="24" alt="">
-            <div class="pd-kpi__text"><span class="pd-kpi__label">Dealer Adoption</span><span class="pd-kpi__value">32%</span><span class="pd-kpi__sub">Participating dealers</span></div>
+            <div class="pd-kpi__text"><span class="pd-kpi__label">Dealer adoption</span><span class="pd-kpi__value">32%</span><span class="pd-kpi__sub">Participating dealers</span></div>
           </div>
           <div class="pd-kpi">
             <img src="assets/icons/tag.svg" width="24" height="24" alt="">
-            <div class="pd-kpi__text"><span class="pd-kpi__label">Discount Depth</span><span class="pd-kpi__value">11%</span><span class="pd-kpi__sub">Applied discount rate</span></div>
+            <div class="pd-kpi__text"><span class="pd-kpi__label">Discount depth</span><span class="pd-kpi__value">11%</span><span class="pd-kpi__sub">Applied discount rate</span></div>
           </div>
         </div>
       </div>
 
       <!-- Tabs -->
-      <div class="pd-tabs" role="tablist">
-        <button class="pd-tab pd-tab--active" type="button" role="tab" aria-selected="true">Overview</button>
-        <button class="pd-tab" type="button" role="tab" aria-selected="false">Familes &amp; Parts</button>
+      <div class="pd-tabs tabs-line" role="tablist">
+        <button class="pd-tab tab-line is-active" type="button" role="tab" aria-selected="true" aria-controls="pd-overview">Overview</button>
+        <button class="pd-tab tab-line" type="button" role="tab" aria-selected="false" aria-controls="pd-families">Families &amp; parts</button>
       </div>
 
+      <div class="pd-panel" id="pd-overview" role="tabpanel">
       <div class="pd-row">
         <section class="pd-track pd-track--pacing">
           <div class="pd-track__main">
-            <h3 class="pd-track__title">Campaign Pacing</h3>
+            <h3 class="pd-track__title">Campaign pacing</h3>
             <div class="pd-bar"><span style="width:93.46%"></span></div>
             <div class="pd-track__foot"><span>30% of target uplift achieved — below target</span><span>2 days remaining</span></div>
           </div>
-          <span class="pd-critical">CRITICAL</span>
+          <span class="pd-critical">Critical</span>
         </section>
         <section class="pd-track pd-track--budget">
           <div class="pd-track__main">
-            <h3 class="pd-track__title">Budget Tracker</h3>
+            <h3 class="pd-track__title">Budget</h3>
             <div class="pd-bar"><span style="width:83.85%"></span></div>
             <div class="pd-track__used"><span>€20.0K of €22.8K used</span><span>80%</span></div>
             <p class="pd-track__burn">€394/day burn rate</p>
           </div>
-          <span class="pd-critical">CRITICAL</span>
+          <span class="pd-critical">Critical</span>
         </section>
       </div>
 
-      <p class="pd-updated">Last Updated: Just Now</p>
+      
 
       <!-- Revenue Trajectory -->
       <section class="pd-card pd-card--trajectory">
-        <h3 class="pd-card__title"><span>Revenue Trajectory</span></h3>
+        <h3 class="pd-card__title"><span>Revenue trajectory</span></h3>
         <div class="pd-chart pd-chart--trajectory">
-          <svg width="1287" height="315" viewBox="0 0 1287 315" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revenue trajectory chart"><rect x="68.3398" y="260.221" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="201" width="1171" height="0.889597" fill="#D9D9D9"/><rect x="68.3398" y="229" width="1171" height="0.889597" fill="#D9D9D9"/><rect x="68.3398" y="170" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="112" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="141" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="83" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="55" width="1171" height="1.77919" fill="#D9D9D9"/><path d="M66.1484 199C165.592 197.833 392.565 184.096 441.256 182.55C650.745 175.9 713.263 153.85 835.008 104.15C927.604 66.35 1017.08 63.55 1233.15 59" stroke="#727476" stroke-width="4" stroke-dasharray="8 8"/><path d="M66.1484 199C165.592 197.958 392.565 185.693 441.256 184.312C650.745 178.375 713.263 158.688 835.008 114.313C927.604 80.5625 1017.08 78.0625 1233.15 74" stroke="#007DC5" stroke-width="4" stroke-dasharray="2 2"/><path d="M66.1484 199C165.592 198.067 392.565 187.077 441.256 185.84C650.745 180.52 713.263 162.88 835.008 123.12C927.604 92.88 1017.08 90.64 1233.15 87" stroke="#C9CCCE" stroke-width="4"/><path d="M66.1484 199C165.592 198.192 392.565 188.673 441.256 187.603C650.745 182.995 713.263 167.718 835.008 133.283C927.604 107.093 1017.08 105.153 1233.15 102" stroke="#BFE0F5" stroke-width="4"/><g class="pd-axis"><text transform="translate(33.3398 44)"><tspan x="0.160156" y="11">700K</tspan></text><text transform="translate(32.3398 73)"><tspan x="0.203125" y="11">600K</tspan></text><text transform="translate(32.3398 102)"><tspan x="0.320312" y="11">500K</tspan></text><text transform="translate(23.3398 131)"><tspan x="0.693359" y="11">340.0K</tspan></text><text transform="translate(23.3398 160)"><tspan x="0.771484" y="11">255.0K</tspan></text><text transform="translate(27.3398 189)"><tspan x="0.423828" y="11">170.0K</tspan></text><text transform="translate(29.3398 218)"><tspan x="0.925781" y="11">85.0K</tspan></text><text transform="translate(25.3398 247)"><tspan x="26.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 -1.66016 178)"><tspan x="0.0175781" y="11">Revenue (&#x20ac;)</tspan></text><text class="pd-axis__title" transform="translate(647.34 300)"><tspan x="25.7422" y="11">Day</tspan></text><text transform="translate(62.3398 267)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(293.34 267)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(524.34 267)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(755.34 267)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(986.34 267)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1217.34 267)"><tspan x="5.60547" y="11">Mar</tspan></text></g><g class="pd-legend-inter"><rect x="876.34" y="8.5" width="21" height="8" fill="#87E3E0"/><text><tspan x="901.34" y="16.8636">Actual</tspan></text><rect x="949.34" y="8.5" width="21" height="8" fill="#2D9CDB"/><text><tspan x="974.34" y="16.8636">Forecast</tspan></text><rect x="1036.34" y="8.5" width="21" height="8" fill="#2D9CDB"/><text><tspan x="1061.34" y="16.8636">Lower bound</tspan></text><rect x="1148.34" y="8.5" width="21" height="8" fill="#2D9CDB"/><text><tspan x="1173.34" y="16.8636">Upper bound</tspan></text></g></svg>
+          <svg width="1287" height="315" viewBox="0 0 1287 315" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revenue trajectory chart"><rect x="68.3398" y="260.221" width="1171" height="1.77919" fill="#EDEDED"/><rect x="68.3398" y="201" width="1171" height="0.889597" fill="#EDEDED"/><rect x="68.3398" y="229" width="1171" height="0.889597" fill="#EDEDED"/><rect x="68.3398" y="170" width="1171" height="1.77919" fill="#EDEDED"/><rect x="68.3398" y="112" width="1171" height="1.77919" fill="#EDEDED"/><rect x="68.3398" y="141" width="1171" height="1.77919" fill="#EDEDED"/><rect x="68.3398" y="83" width="1171" height="1.77919" fill="#EDEDED"/><rect x="68.3398" y="55" width="1171" height="1.77919" fill="#EDEDED"/><path d="M66.1484 199C165.592 197.833 392.565 184.096 441.256 182.55C650.745 175.9 713.263 153.85 835.008 104.15C927.604 66.35 1017.08 63.55 1233.15 59" stroke="#8A8A8A" stroke-width="4" stroke-dasharray="8 8"/><path d="M66.1484 199C165.592 197.958 392.565 185.693 441.256 184.312C650.745 178.375 713.263 158.688 835.008 114.313C927.604 80.5625 1017.08 78.0625 1233.15 74" stroke="#0A0A0A" stroke-width="4" stroke-dasharray="2 2"/><path d="M66.1484 199C165.592 198.067 392.565 187.077 441.256 185.84C650.745 180.52 713.263 162.88 835.008 123.12C927.604 92.88 1017.08 90.64 1233.15 87" stroke="#D4D4D4" stroke-width="4"/><path d="M66.1484 199C165.592 198.192 392.565 188.673 441.256 187.603C650.745 182.995 713.263 167.718 835.008 133.283C927.604 107.093 1017.08 105.153 1233.15 102" stroke="#E5E5E5" stroke-width="4"/><g class="pd-axis"><text transform="translate(33.3398 44)"><tspan x="0.160156" y="11">700K</tspan></text><text transform="translate(32.3398 73)"><tspan x="0.203125" y="11">600K</tspan></text><text transform="translate(32.3398 102)"><tspan x="0.320312" y="11">500K</tspan></text><text transform="translate(23.3398 131)"><tspan x="0.693359" y="11">340.0K</tspan></text><text transform="translate(23.3398 160)"><tspan x="0.771484" y="11">255.0K</tspan></text><text transform="translate(27.3398 189)"><tspan x="0.423828" y="11">170.0K</tspan></text><text transform="translate(29.3398 218)"><tspan x="0.925781" y="11">85.0K</tspan></text><text transform="translate(25.3398 247)"><tspan x="26.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 -1.66016 178)"><tspan x="0.0175781" y="11">Revenue (&#x20ac;)</tspan></text><text class="pd-axis__title" transform="translate(647.34 300)"><tspan x="25.7422" y="11">Day</tspan></text><text transform="translate(62.3398 267)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(293.34 267)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(524.34 267)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(755.34 267)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(986.34 267)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1217.34 267)"><tspan x="5.60547" y="11">Mar</tspan></text></g><g class="pd-legend-inter"><rect x="876.34" y="8.5" width="21" height="8" fill="#E0E0E0"/><text><tspan x="901.34" y="16.8636">Actual</tspan></text><rect x="949.34" y="8.5" width="21" height="8" fill="#525252"/><text><tspan x="974.34" y="16.8636">Forecast</tspan></text><rect x="1036.34" y="8.5" width="21" height="8" fill="#525252"/><text><tspan x="1061.34" y="16.8636">Lower bound</tspan></text><rect x="1148.34" y="8.5" width="21" height="8" fill="#525252"/><text><tspan x="1173.34" y="16.8636">Upper bound</tspan></text></g></svg>
         </div>
       </section>
 
       <!-- Demand trend -->
       <section class="pd-card pd-card--demand">
-        <h3 class="pd-card__title"><span>Demand trend showing baseline vs. promotional volume</span></h3>
+        <h3 class="pd-card__title"><span>Demand trend</span><small>Baseline versus promotional volume</small></h3>
         <div class="pd-chart pd-chart--demand">
-          <svg width="1245" height="205" viewBox="0 0 1245 205" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Demand trend chart"><rect x="43.3906" y="168" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="101.438" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="132.909" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="66.5947" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="34" width="1198.61" height="0.999878" fill="#D9D9D9"/><g class="pd-axis"><text transform="translate(23 28)"><tspan x="0.195312" y="11">120</tspan></text><text transform="translate(26 61.75)"><tspan x="0.0878906" y="11">90</tspan></text><text transform="translate(26 95.5)"><tspan x="0.0488281" y="11">60</tspan></text><text transform="translate(26 129.25)"><tspan x="0.488281" y="11">30</tspan></text><text transform="translate(20 163)"><tspan x="12.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 2 137)"><tspan x="0.109375" y="11">Volume (Index)</tspan></text><text transform="translate(44 174)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(278 174)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(512 174)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(746 174)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(980 174)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1214 174)"><tspan x="5.60547" y="11">Mar</tspan></text><rect x="970" y="3" width="23" height="9" fill="#007DC5"/><text class="pd-axis__title" transform="translate(1000)"><tspan x="0" y="11">Baseline Demand</tspan></text><rect x="1132" y="3" width="23" height="9" fill="#F2711C"/><text class="pd-axis__title" transform="translate(1163)"><tspan x="0" y="11">Promo Volume</tspan></text></g><path d="M55 59L292.2 47L525.912 59H758.129H993.335H1241" stroke="#F2711C" stroke-width="2"/><path d="M55 58.5L293 46.5L527.5 58.5H760.5L993.5 45H1240.5" stroke="#007DC5" stroke-width="2"/><circle cx="53.5" cy="57.5" r="4.5" fill="#007DC5"/><circle cx="293.5" cy="46.5" r="4.5" fill="#007DC5"/><circle cx="527.5" cy="58.5" r="4.5" fill="#007DC5"/><circle cx="761.5" cy="57.5" r="4.5" fill="#007DC5"/><circle cx="997.5" cy="44.5" r="4.5" fill="#007DC5"/><circle cx="997.5" cy="59.5" r="4.5" fill="#F2711C"/><circle cx="1240.5" cy="43.5" r="4.5" fill="#007DC5"/><circle cx="1240.5" cy="59.5" r="4.5" fill="#F2711C"/></svg>
+          <svg width="1245" height="205" viewBox="0 0 1245 205" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Demand trend chart"><rect x="43.3906" y="168" width="1198.61" height="0.999878" fill="#EDEDED"/><rect x="43.3906" y="101.438" width="1198.61" height="0.999878" fill="#EDEDED"/><rect x="43.3906" y="132.909" width="1198.61" height="0.999878" fill="#EDEDED"/><rect x="43.3906" y="66.5947" width="1198.61" height="0.999878" fill="#EDEDED"/><rect x="43.3906" y="34" width="1198.61" height="0.999878" fill="#EDEDED"/><g class="pd-axis"><text transform="translate(23 28)"><tspan x="0.195312" y="11">120</tspan></text><text transform="translate(26 61.75)"><tspan x="0.0878906" y="11">90</tspan></text><text transform="translate(26 95.5)"><tspan x="0.0488281" y="11">60</tspan></text><text transform="translate(26 129.25)"><tspan x="0.488281" y="11">30</tspan></text><text transform="translate(20 163)"><tspan x="12.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 2 137)"><tspan x="0.109375" y="11">Volume (Index)</tspan></text><text transform="translate(44 174)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(278 174)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(512 174)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(746 174)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(980 174)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1214 174)"><tspan x="5.60547" y="11">Mar</tspan></text><rect x="970" y="3" width="23" height="9" fill="#0A0A0A"/><text class="pd-axis__title" transform="translate(1000)"><tspan x="0" y="11">Baseline Demand</tspan></text><rect x="1132" y="3" width="23" height="9" fill="#A3A3A3"/><text class="pd-axis__title" transform="translate(1163)"><tspan x="0" y="11">Promo Volume</tspan></text></g><path d="M55 59L292.2 47L525.912 59H758.129H993.335H1241" stroke="#A3A3A3" stroke-width="2"/><path d="M55 58.5L293 46.5L527.5 58.5H760.5L993.5 45H1240.5" stroke="#0A0A0A" stroke-width="2"/><circle cx="53.5" cy="57.5" r="4.5" fill="#0A0A0A"/><circle cx="293.5" cy="46.5" r="4.5" fill="#0A0A0A"/><circle cx="527.5" cy="58.5" r="4.5" fill="#0A0A0A"/><circle cx="761.5" cy="57.5" r="4.5" fill="#0A0A0A"/><circle cx="997.5" cy="44.5" r="4.5" fill="#0A0A0A"/><circle cx="997.5" cy="59.5" r="4.5" fill="#A3A3A3"/><circle cx="1240.5" cy="43.5" r="4.5" fill="#0A0A0A"/><circle cx="1240.5" cy="59.5" r="4.5" fill="#A3A3A3"/></svg>
         </div>
         <div class="pd-stats">
-          <div class="pd-stat"><span class="pd-stat__label">Peak Uplift Month</span><span class="pd-stat__value">Feb / Mar</span></div>
-          <div class="pd-stat"><span class="pd-stat__label">Avg Uplift</span><span class="pd-stat__value">+2.0%</span></div>
-          <div class="pd-stat"><span class="pd-stat__label">Elasticity Est.</span><span class="pd-stat__value">-0.55</span></div>
+          <div class="pd-stat"><span class="pd-stat__label">Peak uplift month</span><span class="pd-stat__value">Feb / Mar</span></div>
+          <div class="pd-stat"><span class="pd-stat__label">Average uplift</span><span class="pd-stat__value">+2.0%</span></div>
+          <div class="pd-stat"><span class="pd-stat__label">Elasticity estimate</span><span class="pd-stat__value">-0.55</span></div>
         </div>
       </section>
 
       <div class="pd-row pd-row--finance">
         <!-- Financial Summary -->
         <section class="pd-card pd-card--finance">
-          <h3 class="pd-card__title"><span>Financial Summary</span></h3>
+          <h3 class="pd-card__title"><span>Financial summary</span></h3>
           <div class="pd-fin-wrap">
           <table class="pd-fin">
-            <colgroup><col style="width:27.47%"><col style="width:24.12%"><col style="width:24.29%"><col style="width:24.12%"></colgroup>
-            <thead><tr><th>Metric</th><th>Baseline</th><th>With Promo</th><th>Delta</th></tr></thead>
+            <thead><tr><th>Metric</th><th>Baseline</th><th>With promo</th><th>Delta</th></tr></thead>
             <tbody>
-              <tr><td>Revenue, K€</td><td>180</td><td>163</td><td class="pd-fin__delta">-0.51%</td></tr>
-              <tr><td>Gross Margin, K€</td><td>66</td><td>35</td><td class="pd-fin__delta">-5.8%</td></tr>
-              <tr><td>Net Volume Uplift</td><td>203</td><td>171</td><td class="pd-fin__delta">-1.5%</td></tr>
+              <tr><td>Revenue, k€</td><td>180</td><td>163</td><td class="pd-fin__delta">-0.51%</td></tr>
+              <tr><td>Gross margin, k€</td><td>66</td><td>35</td><td class="pd-fin__delta">-5.8%</td></tr>
+              <tr><td>Net volume uplift</td><td>203</td><td>171</td><td class="pd-fin__delta">-1.5%</td></tr>
             </tbody>
           </table>
           </div>
@@ -192,25 +183,35 @@
 
         <!-- Revenue Breakdown -->
         <section class="pd-card pd-card--breakdown">
-          <h3 class="pd-card__title"><span>Revenue Breakdown</span></h3>
-          <svg class="pd-pie" width="121" height="121" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Base Revenue 65%, Cost of Promo 10%, Cost of Uplift 25%"><path d="M0 60.4814C1.40232e-06 44.4407 6.37213 29.057 17.7146 17.7146C29.057 6.37213 44.4407 -1.91283e-07 60.4814 0L60.4814 27.6269C51.7678 27.6269 43.4112 31.0884 37.2498 37.2498C31.0884 43.4112 27.6269 51.7678 27.6269 60.4814L0 60.4814Z" fill="#FFD863"/><path d="M60.5126 0.0390625C70.8671 0.0390626 81.0481 2.69739 90.0808 7.75947C99.1135 12.8216 106.695 20.1179 112.1 28.9497C117.505 37.7815 120.552 47.8531 120.949 58.1999C121.347 68.5467 119.081 78.8222 114.369 88.0425C109.657 97.2628 102.657 105.119 94.0394 110.859C85.4215 116.599 75.4742 120.03 65.1503 120.824C54.8263 121.618 44.4714 119.748 35.0772 115.393C25.6829 111.039 17.5639 104.345 11.4977 95.9539L33.8869 79.7685C37.1822 84.3268 41.5926 87.9628 46.6957 90.3283C51.7988 92.6937 57.4237 93.7094 63.0319 93.2781C68.64 92.8468 74.0435 90.983 78.7249 87.865C83.4063 84.7471 87.2088 80.4795 89.7684 75.4709C92.3279 70.4623 93.5587 64.8804 93.3429 59.2599C93.1271 53.6393 91.4719 48.1683 88.5358 43.3707C85.5998 38.5731 81.4812 34.6096 76.5745 31.8598C71.6678 29.11 66.1373 27.666 60.5126 27.666V0.0390625Z" fill="#98D1A8"/><path d="M11.2386 95.5928C3.83207 85.1871 -0.0901484 72.7038 0.0341124 59.932L27.6597 60.2008C27.5922 67.1386 29.7228 73.9198 33.7462 79.5723L11.2386 95.5928Z" fill="#FD9A7E"/></svg>
+          <h3 class="pd-card__title"><span>Revenue breakdown</span></h3>
+          <svg class="pd-pie" width="121" height="121" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Base revenue 65%, Cost of promotion 10%, Cost of uplift 25%"><path d="M0 60.4814C1.40232e-06 44.4407 6.37213 29.057 17.7146 17.7146C29.057 6.37213 44.4407 -1.91283e-07 60.4814 0L60.4814 27.6269C51.7678 27.6269 43.4112 31.0884 37.2498 37.2498C31.0884 43.4112 27.6269 51.7678 27.6269 60.4814L0 60.4814Z" fill="#525252"/><path d="M60.5126 0.0390625C70.8671 0.0390626 81.0481 2.69739 90.0808 7.75947C99.1135 12.8216 106.695 20.1179 112.1 28.9497C117.505 37.7815 120.552 47.8531 120.949 58.1999C121.347 68.5467 119.081 78.8222 114.369 88.0425C109.657 97.2628 102.657 105.119 94.0394 110.859C85.4215 116.599 75.4742 120.03 65.1503 120.824C54.8263 121.618 44.4714 119.748 35.0772 115.393C25.6829 111.039 17.5639 104.345 11.4977 95.9539L33.8869 79.7685C37.1822 84.3268 41.5926 87.9628 46.6957 90.3283C51.7988 92.6937 57.4237 93.7094 63.0319 93.2781C68.64 92.8468 74.0435 90.983 78.7249 87.865C83.4063 84.7471 87.2088 80.4795 89.7684 75.4709C92.3279 70.4623 93.5587 64.8804 93.3429 59.2599C93.1271 53.6393 91.4719 48.1683 88.5358 43.3707C85.5998 38.5731 81.4812 34.6096 76.5745 31.8598C71.6678 29.11 66.1373 27.666 60.5126 27.666V0.0390625Z" fill="#0A0A0A"/><path d="M11.2386 95.5928C3.83207 85.1871 -0.0901484 72.7038 0.0341124 59.932L27.6597 60.2008C27.5922 67.1386 29.7228 73.9198 33.7462 79.5723L11.2386 95.5928Z" fill="#A3A3A3"/></svg>
           <ul class="pd-pie-legend">
-            <li style="width:128px"><i style="background:#98d1a8"></i><span class="pd-pie-legend__name">Base Revenue</span><span class="pd-pie-legend__pct">65%</span></li>
-            <li style="width:129px"><i style="background:#fd9a7e"></i><span class="pd-pie-legend__name">Cost of Promo</span><span class="pd-pie-legend__pct">10%</span></li>
-            <li style="width:123px"><i style="background:#ffd863"></i><span class="pd-pie-legend__name">Cost of Uplift</span><span class="pd-pie-legend__pct">25%</span></li>
+            <li><i style="background:#0a0a0a"></i><span class="pd-pie-legend__name">Base revenue</span><span class="pd-pie-legend__pct">65%</span></li>
+            <li><i style="background:#a3a3a3"></i><span class="pd-pie-legend__name">Cost of promotion</span><span class="pd-pie-legend__pct">10%</span></li>
+            <li><i style="background:#525252"></i><span class="pd-pie-legend__name">Cost of uplift</span><span class="pd-pie-legend__pct">25%</span></li>
           </ul>
         </section>
       </div>
 
       <!-- Approval History (collapsed) -->
       <section class="pd-card pd-card--approvals">
-        <h3 class="pd-card__title"><span>Approval History</span><em class="pd-tag pd-tag--entries">3 Entries</em></h3>
+        <h3 class="pd-card__title"><span>Approval history</span><em class="pd-tag">3 entries</em></h3>
         <button class="pd-approvals__toggle" type="button" aria-expanded="false" aria-label="Show approval history"><img src="assets/icons/chevron-down-24.svg" width="24" height="24" alt=""></button>
       </section>
+      </div>
+      <div class="pd-panel" id="pd-families" role="tabpanel" hidden>
+        <section class="pd-card state">
+          <span class="state__icon"><img src="assets/icons/stack.svg" width="20" height="20" alt=""></span>
+          <p class="state__title">Family and part breakdown isn’t ready yet</p>
+          <p class="state__text">Performance by family and part appears once the promotion has 14 days of sales data.</p>
+        </section>
+      </div>
 
     </main>
   </div>
 </div>
-  <script src="js/user-menu.js"></script>
+  <script src="js/promotool-dashboard.js"></script>
+<script src="js/user-menu.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

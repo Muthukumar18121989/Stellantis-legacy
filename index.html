@@ -3,30 +3,81 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Sign In</title>
+  <meta name="color-scheme" content="light">
+  <title>Sign in · Stellantis Promotool</title>
+  <link rel="preload" href="fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/login.css">
 </head>
 <body class="login-body">
-<!-- Sign in (Figma 88:41766, 1366 × 657) -->
 <div class="login">
-  <img class="login__backdrop" src="assets/illustrations/login-backdrop.svg" width="833" height="657" alt="">
-  <img class="login__brand" src="assets/logo-promotool.png" width="272" height="40" alt="Stellantis Promotool">
 
-  <form class="login__form" id="login-form" novalidate>
-    <h1 class="login__title">Welcome</h1>
-    <div class="login__field">
-      <label class="login__label" for="login-user">User Name</label>
-      <span class="login__input"><input id="login-user" name="username" type="text" placeholder="Placeholder" autocomplete="username" required></span>
+  <!-- Brand panel -->
+  <section class="login__brand" aria-hidden="true">
+    <div class="login__grid"></div>
+    <div class="login__brand-top">
+      <span class="login__mark"><svg viewBox="0 0 16 16" fill="none"><path d="M3 11.5 8 4.5l5 7" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#0a0a0a" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="login__wordmark">STELLANTIS</span>
+      <span class="login__product">Promotool</span>
     </div>
-    <div class="login__field">
-      <label class="login__label" for="login-password">Password</label>
-      <span class="login__input"><input id="login-password" name="password" type="password" placeholder="Placeholder" autocomplete="current-password" required><button class="login__eye" type="button" aria-label="Show password" aria-pressed="false"><img src="assets/icons/eye-bold.svg" width="16" height="16" alt=""></button></span>
+
+    <div class="login__statement">
+      <p class="login__eyebrow">Aftermarket promotion platform</p>
+      <h2 class="login__headline">Plan, simulate and approve every parts promotion in one place.</h2>
+      <ol class="login__flow">
+        <li><span>01</span>Configure</li>
+        <li><span>02</span>Simulate</li>
+        <li><span>03</span>Validate logistics</li>
+        <li><span>04</span>Approve</li>
+      </ol>
     </div>
-    <a class="login__forgot" href="#">Forgot Password?</a>
-    <button class="login__submit" type="submit">Sign In</button>
-    <p class="login__signup"><span>Don’t have account</span><a href="#">Sign Up</a></p>
-  </form>
+
+    <p class="login__legal">© 2026 Stellantis N.V. · Internal use only</p>
+  </section>
+
+  <!-- Authentication -->
+  <main class="login__panel">
+    <form class="login__form" id="login-form" novalidate>
+      <div class="login__head">
+        <h1 class="login__title">Sign in</h1>
+        <p class="login__subtitle">Use your Stellantis account to continue.</p>
+      </div>
+
+      <div class="alert alert--danger login__alert" role="alert" data-login-alert hidden>
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.4" stroke="currentColor" stroke-width="1.3"/><path d="M8 4.8v3.6M8 10.9v.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span data-login-alert-text></span>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="login-user">User name</label>
+        <input class="input login__input" id="login-user" name="username" type="text" placeholder="Firstname Lastname" autocomplete="username" autocapitalize="none" spellcheck="false" required aria-describedby="login-user-error">
+        <p class="field__error" id="login-user-error" hidden></p>
+      </div>
+
+      <div class="field">
+        <div class="login__label-row">
+          <label class="field__label" for="login-password">Password</label>
+          <a class="login__link" href="#" data-forgot>Forgot password?</a>
+        </div>
+        <div class="login__password">
+          <input class="input login__input" id="login-password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required aria-describedby="login-password-error">
+          <button class="login__eye" type="button" aria-label="Show password" aria-pressed="false">
+            <svg class="login__eye-on" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M1.6 8s2.4-4.4 6.4-4.4S14.4 8 14.4 8 12 12.4 8 12.4 1.6 8 1.6 8Z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+            <svg class="login__eye-off" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 2.5l11 11M6.6 3.8A6.6 6.6 0 0 1 8 3.6C12 3.6 14.4 8 14.4 8a11 11 0 0 1-1.7 2.2M10.4 12A5.6 5.6 0 0 1 8 12.4C4 12.4 1.6 8 1.6 8a11.3 11.3 0 0 1 2.5-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <p class="field__error" id="login-password-error" hidden></p>
+      </div>
+
+      <label class="login__remember"><input class="checkbox" type="checkbox" name="remember" checked>Keep me signed in on this device</label>
+
+      <button class="btn btn--primary btn--lg btn--block login__submit" type="submit"><span>Sign in</span></button>
+
+      <p class="login__foot">No account yet? <a class="login__link" href="#" data-request-access>Request access</a></p>
+    </form>
+
+    <p class="login__help">Having trouble signing in? Contact the Promotool service desk.</p>
+  </main>
 </div>
 <script src="js/login.js"></script>
 </body>

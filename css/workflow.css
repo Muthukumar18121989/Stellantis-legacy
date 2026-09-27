@@ -1,147 +1,112 @@
-/* Workflow Tracker — Figma "Workflow Tracker_Before Logistics approval" (node 55:37135, 1342 × 1303).
-   Reuses the header from css/result.css and the buttons from css/configuration.css. */
+/* Workflow tracker: approval lifecycle, targets, validation by family and the Validator Comments dialog.
+   Summary facts come from css/result.css, footer actions from css/configuration.css. */
 
-.page--workflow { min-height: max(1303px, 100vh); }
-.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-
-.wf-body { display: flex; flex-direction: column; gap: 24px; padding: 24px 17px 24px 24px; } /* Figma leaves 17px on the right */
-.wf-body > * { flex: none; }
-
-/* ---------- Promotion summary (Figma 55:37333) ---------- */
+/* ---------- Summary ---------- */
 .wf-summary {
-  height: 70px; display: flex; align-items: center; gap: 20px; padding: 14px 15px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+  display: flex; align-items: center; gap: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-xs);
 }
-.wf-summary__facts { flex: 1; min-width: 0; display: flex; align-items: center; gap: clamp(12px, calc(100vw - 1306px), 36px); margin: 0; } /* Figma gap at 1342 and up, tighter below */
-.wf-fact { flex: none; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
-.wf-fact dd { margin: 0; font-weight: 600; white-space: nowrap; }
+.wf-summary__facts { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-8); margin: 0; }
+.wf-fact dd.is-muted { color: var(--text-tertiary); font-weight: 400; }
 
-/* ---------- Body panel holding the three cards (Figma 55:37360) ---------- */
-.wf-panel {
-  display: flex; flex-direction: column; gap: 16px; padding: 15px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
-}
+.wf-panel { display: flex; flex-direction: column; gap: var(--space-6); }
 .wf-card {
-  display: flex; flex-direction: column; gap: 16px; padding: 15px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+  display: flex; flex-direction: column; gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-xs);
 }
-.wf-panel > *, .wf-card > * { flex: none; }
-.wf-card--lifecycle { height: 277px; }
-.wf-card--targets { height: 168px; }
-.wf-card--validation { height: 412px; }
 
-/* Card titles: 4px gradient bar on the left, 1px dashed (4, 2) rule underneath */
-.wf-title {
-  display: flex; padding-bottom: 8px;
-  background: linear-gradient(90deg, #bfe0f5 4px, transparent 0) 0 100% / 6px 1px repeat-x;
-}
-.wf-title--wide { margin: 0 -7px; } /* Figma 55:38741 overhangs the card by 7px on each side */
-.wf-bar { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 0 12px; }
-.wf-bar::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #47b796, #01a1fe); }
-.wf-title__text { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
-.wf-title__desc { display: flex; align-items: center; gap: 4px; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
+/* Card titles */
+.wf-title { display: flex; margin: 0; }
+.wf-bar { display: flex; flex-direction: column; gap: 4px; }
+.wf-title__text { font-size: var(--text-lg); font-weight: 600; letter-spacing: -0.015em; color: var(--text); }
+.wf-title__desc { font-size: var(--text-sm); color: var(--text-tertiary); }
 
-/* ---------- Lifecycle stages (Figma 55:37912) ---------- */
-.wf-stages { height: 178px; overflow-x: auto; }
-.wf-stages__row { width: max-content; height: 178px; display: flex; align-items: center; gap: 20px; }
-.wf-arrow { flex: none; }
+/* ---------- Lifecycle ---------- */
+.wf-stages { overflow-x: auto; padding-bottom: 4px; }
+.wf-stages__row { display: flex; align-items: stretch; gap: 0; min-width: 980px; }
+.wf-arrow { align-self: center; width: 16px; height: 16px; margin: 0 6px; opacity: 0.3; }
 .wf-stage {
-  width: 267px; height: 178px; flex: none; display: flex; flex-direction: column; gap: 16px; padding: 15px;
-  background: #fff; border: 1px solid #ccdde8; border-radius: 12px;
+  flex: 1 1 0; min-width: 168px; display: flex; flex-direction: column; gap: 14px; padding: 16px;
+  background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-lg);
 }
-.wf-stage__title {
-  height: 28px; flex: none; padding-bottom: 8px;
-  background: linear-gradient(90deg, #bfe0f5 4px, transparent 0) 0 100% / 6px 1px repeat-x;
-}
-.wf-stage__title .wf-bar { display: inline-block; height: 20px; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
-.wf-steps { display: flex; flex-direction: column; gap: 16px; margin: 0; padding: 0; list-style: none; }
-.wf-step { height: 40px; display: flex; align-items: center; gap: 10px; }
-.wf-dot { width: 32px; height: 32px; flex: none; display: flex; align-items: center; justify-content: center; background: #c9ccce; border-radius: 16px; }
-.wf-dot--active { background: #007dc5; }
-.wf-dot--done { width: 28px; height: 28px; background: #0db134; }
-.wf-step__text { display: flex; flex-direction: column; white-space: nowrap; }
-.wf-step__name { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
-.wf-step--done .wf-step__name { color: #0db134; }
-.wf-step--active .wf-step__name { color: #007dc5; }
-.wf-step--waiting .wf-step__name { color: #727476; }
-.wf-step__note { font: 500 10px/12px "Montserrat", sans-serif; color: #727476; }
+.wf-stage__title { margin: 0; }
+.wf-stage__title .wf-bar { font-size: var(--text-2xs); font-weight: 600; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-tertiary); }
+.wf-steps { position: relative; display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.wf-steps::before { content: ""; position: absolute; left: 11px; top: 14px; bottom: 14px; width: 1px; background: var(--border-strong); }
+.wf-step { position: relative; display: flex; align-items: center; gap: 12px; }
+.wf-step__text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.wf-step__name { font-size: var(--text-sm); font-weight: 500; color: var(--text); }
+.wf-step__note { font-size: var(--text-xs); color: var(--text-tertiary); }
+.wf-step--todo .wf-step__name, .wf-step--waiting .wf-step__name { color: var(--text-secondary); }
 
-.wf-golive { width: 193px; flex: none; display: flex; align-items: center; }
-.wf-golive__card {
-  width: 201px; height: 56px; flex: none; display: flex; align-items: center; gap: 4px; margin: 0; padding: 11px 15px;
-  background: #fff; border: 1px solid #ccdde8; border-radius: 12px;
+.wf-dot {
+  position: relative; z-index: 1; width: 24px; height: 24px; flex: none; display: grid; place-items: center; padding: 0;
+  border: 1.5px dashed var(--gray-400); border-radius: 50%; background: var(--surface);
 }
-.wf-golive__text { font: 600 15px/28px "Noto Sans", sans-serif; letter-spacing: 0.0225px; color: #323436; white-space: nowrap; }
+.wf-dot--done {
+  border: 0; background: var(--success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6.2 5 8.5 9.5 3.5' stroke='white' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / 12px;
+}
+button.wf-dot { cursor: pointer; transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out); }
+button.wf-dot:hover { transform: scale(1.08); box-shadow: 0 0 0 4px rgba(21, 128, 61, 0.14); }
+.wf-dot--active { border: 1.5px solid var(--gray-950); }
+.wf-dot--active::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--gray-950); animation: pulse 1.8s var(--ease-in-out) infinite; }
+@keyframes pulse { 50% { transform: scale(0.6); opacity: 0.5; } }
+.wf-step--done .wf-step__note { color: var(--success); }
 
-/* ---------- High level targets (Figma 55:38410) ---------- */
-.wf-tiles { display: flex; gap: 16px; }
-.wf-tile {
-  flex: 1 1 285px; min-width: 0; height: 92px; display: flex; flex-direction: column; justify-content: center; padding: 11px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; overflow: hidden;
-}
-.wf-tile__label { height: 28px; display: flex; align-items: flex-end; font: 700 15px/28px "Noto Sans", sans-serif; letter-spacing: 0.0225px; color: #727476; white-space: nowrap; }
-.wf-tile__value { height: 34px; font: 700 28px/34px "Montserrat", sans-serif; color: #323436; white-space: nowrap; }
-.wf-tile__value--green { color: #0db134; }
-.wf-tile__value--blue { color: #007dc5; }
+.wf-golive { flex: 0 0 auto; display: flex; align-items: center; }
+.wf-golive__card { display: flex; flex-direction: column; align-items: center; gap: 8px; margin: 0; padding: 14px 12px; border: 1px dashed var(--border-strong); border-radius: var(--radius-lg); }
+.wf-golive__text { font-size: var(--text-xs); font-weight: 500; color: var(--text-secondary); white-space: nowrap; }
 
-/* ---------- Validation table (Figma 55:38749): cells carry a top and right rule, the table a 1px frame ---------- */
-.wf-table-wrap {
-  position: relative; margin-right: -8px; overflow-x: auto; overflow-y: hidden; border-radius: 6px; /* Figma: 1184 wide, 8px past the card padding */
-  box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
-}
-.wf-table-wrap::after { content: ""; position: absolute; inset: 0; border-radius: 6px; box-shadow: inset 0 0 0 1px #c9ccce; pointer-events: none; }
-.wf-table { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0; }
-.wf-table th, .wf-table td { padding: 6px 16px; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; white-space: nowrap; }
-.wf-table th { height: 32px; background: #eff9ff; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: left; }
-.wf-table th[rowspan] { height: 64px; }
+/* ---------- Targets ---------- */
+.wf-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.wf-tile { display: flex; flex-direction: column; gap: 6px; padding: var(--space-5); }
+.wf-tile + .wf-tile { border-left: 1px solid var(--border); }
+.wf-tile__label { font-size: var(--text-xs); font-weight: 500; color: var(--text-tertiary); }
+.wf-tile__value { font-size: 28px; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; color: var(--text); font-variant-numeric: tabular-nums; }
+.wf-tile__value small { font-size: var(--text-sm); font-weight: 500; letter-spacing: 0; color: var(--text-tertiary); }
+
+/* ---------- Validation table ---------- */
+.wf-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.wf-table { width: 100%; border-collapse: separate; border-spacing: 0; font-variant-numeric: tabular-nums; }
+.wf-table th, .wf-table td { padding: 0 16px; background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: none; white-space: nowrap; }
+.wf-table th { height: 38px; background: var(--surface-subtle); font-size: var(--text-xs); font-weight: 500; color: var(--text-tertiary); text-align: right; }
+.wf-table th[rowspan] { vertical-align: bottom; padding-bottom: 10px; }
+.wf-table th:nth-child(2) { text-align: left; }
 .wf-table th.wf-c-margin { text-align: center; }
-.wf-table th.wf-c-fin { text-align: right; color: #7a7c7e; }
-.wf-table th.wf-h-group { background: #007dc5; color: #fff; text-align: center; border-top-right-radius: 8px; }
-.wf-table th.wf-h-month { background: #007dc5; color: #fff; text-align: right; }
-.wf-table th.wf-h-total { background: #f2f4f6; color: #7a7c7e; text-align: right; }
+.wf-table th.wf-h-group { text-align: center; color: var(--text); font-weight: 600; border-left: 1px solid var(--border); }
+.wf-table th.wf-h-month:first-child { border-left: 1px solid var(--border); }
+.wf-table td { height: 72px; padding-top: 10px; padding-bottom: 10px; font-size: var(--text-sm); color: var(--text-secondary); text-align: right; }
+.wf-table tbody tr:last-child td { border-bottom: 0; }
+.wf-table tbody tr:hover td { background: var(--surface-subtle); }
+.wf-table td.wf-c-toggle, .wf-table th.wf-c-toggle { width: 48px; padding: 0 0 0 12px; }
+.wf-toggle { width: 28px; height: 28px; display: grid; place-items: center; border-radius: var(--radius-sm); transition: background-color var(--dur-fast) var(--ease-out); }
+.wf-toggle:hover { background: var(--surface-active); }
+.wf-toggle img { width: 14px; height: 14px; opacity: 0.55; transform: rotate(-90deg); }
+.wf-table td.wf-c-family { text-align: left; }
+.wf-family { display: flex; flex-direction: column; gap: 3px; }
+.wf-family__name { font-size: var(--text-sm); font-weight: 600; color: var(--text); }
+.wf-family__id { font-size: var(--text-xs); color: var(--text-tertiary); }
+.wf-family__meta { display: flex; align-items: center; gap: 8px; font-size: var(--text-xs); color: var(--text-tertiary); }
+.wf-badge { height: 20px; }
+.wf-table td.wf-c-margin { text-align: center; font-weight: 500; color: var(--text); }
+.wf-table td.wf-c-total { font-weight: 600; color: var(--text); }
 
-.wf-table td { height: 68px; background: #fff; vertical-align: middle; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: right; }
-.wf-toggle { display: flex; width: 16px; height: 16px; }
-.wf-table td.wf-c-family { padding: 0 16px 0 18.9px; text-align: left; } /* the 58.9px block overflows the 6px cell padding in Figma */
-.wf-family { height: 58.9px; display: flex; flex-direction: column; }
-.wf-family b { height: 20px; font: 700 12px/20px "Noto Sans", sans-serif; color: #323436; }
-.wf-family > span { font: 300 12px/18px "Poppins", sans-serif; color: #323436; }
-.wf-family > span.wf-family__meta { height: 18px; display: flex; align-items: center; gap: 8px; font-size: 10px; }
-.wf-badge {
-  height: 14px; display: flex; align-items: center; padding: 1px 4px; border-radius: 4px;
-  background: rgba(210, 14, 14, 0.08); box-shadow: inset 0 0 0 0.5px #d20e0e;
-  font: 300 10px/15px "Poppins", sans-serif; color: #3f4047;
-}
-.wf-table td.wf-c-margin { text-align: center; font: 500 10px/15px "Noto Sans", sans-serif; color: #005929; }
-.wf-table td.wf-c-month { font: 400 12px/18px "Noto Sans Display", sans-serif; }
-.wf-table td.wf-c-total { color: #007dc5; }
-.wf-dot[data-open-dialog] { padding: 0; }
-
-/* ---------- Validator Comments overlay (Figma 55:58362), opened from the L1.1 Local Marketing icon ---------- */
-.wf-comments {
-  position: fixed; inset: 0; margin: auto; width: 558px; height: fit-content; max-width: none; max-height: none;
-  padding: 18px 24px 24px; overflow: visible; color: #323436;
-  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
-  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
-}
-.wf-comments::backdrop { background: rgba(0, 0, 0, 0.3); } /* Figma prototype overlay background */
-.wf-comments__close { position: absolute; left: 526px; top: 10px; width: 24px; height: 24px; }
-.wf-comments__body { width: 522px; display: flex; flex-direction: column; gap: 14px; } /* Figma 55:58363 is 522 wide, 12px short of the right padding */
-.wf-comments__head { display: flex; flex-direction: column; gap: 6px; }
-.wf-comments__title { font: 700 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
-.wf-comments__stage { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; }
-.wf-comment { display: flex; flex-direction: column; gap: 16px; padding: 15px; border: 1px solid #ccdde8; border-radius: 12px; }
-.wf-comment__row { height: 41px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+/* ---------- Validator comments ---------- */
+.wf-comments { width: 560px; padding: var(--space-6); }
+.wf-comments__body { display: flex; flex-direction: column; gap: var(--space-5); }
+.wf-comments__head { display: flex; flex-direction: column; gap: 4px; padding-right: 40px; }
+.wf-comment { display: flex; flex-direction: column; gap: 14px; padding: 16px; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.wf-comment__row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .wf-comment__who { display: flex; align-items: center; gap: 12px; }
-.wf-avatar { position: relative; width: 28px; height: 28px; flex: none; background: #cbeefd; border-radius: 16px; }
-.wf-avatar img { position: absolute; left: 1.3px; top: 2px; }
-.wf-comment__person { display: flex; flex-direction: column; white-space: nowrap; }
-.wf-comment__name { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
-.wf-comment__role, .wf-comment__date { font: 500 11px/13px "Montserrat", sans-serif; color: #323436; white-space: nowrap; }
-.wf-comment__meta { width: 90px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.wf-avatar { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--surface-inverse); color: #fff; font-size: var(--text-2xs); font-weight: 600; }
+.wf-comment__person { display: flex; flex-direction: column; }
+.wf-comment__name { font-size: var(--text-sm); font-weight: 600; }
+.wf-comment__role, .wf-comment__date { font-size: var(--text-xs); color: var(--text-tertiary); }
+.wf-comment__meta { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
 .wf-comment__badge {
-  height: 17px; display: flex; align-items: center; padding: 1px 4px; border-radius: 4px;
-  background: #aefeb6; box-shadow: inset 0 0 0 0.5px #0db134;
-  font: 700 10px/15px "Poppins", sans-serif; color: #0db134;
+  height: 20px; display: inline-flex; align-items: center; padding: 0 8px; border-radius: var(--radius-full);
+  background: var(--success-bg); border: 1px solid var(--success-border); font-size: var(--text-2xs); font-weight: 500; color: var(--success);
 }
-.wf-comment__text { font: italic 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.wf-comment__text { font-size: var(--text-sm); line-height: 1.6; color: var(--text-secondary); }

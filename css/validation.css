@@ -1,157 +1,114 @@
-/* Promotion Validation / Logistics Volume Split — Figma "Split Page Family" (node 55:40381, 1366 × 850) and its
-   article drilldown (node 55:44872, 1366 × 899). Reuses the header and card title from css/result.css. */
+/* Logistics volume split: monthly percentage grid per family (and per article in the drill-down), with row totals
+   that flag over / under allocation, and the Submit for approval dialog. Summary facts come from css/result.css. */
 
-.page--validation { min-height: max(850px, 100vh); }
-.page--validation.is-drilldown { min-height: max(899px, 100vh); }
-.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-
-.vs-body { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
-
-/* ---------- Promotion summary (Figma 55:40581) ---------- */
+/* ---------- Summary ---------- */
 .vs-summary {
-  height: 70px; display: flex; align-items: center; gap: 20px; padding: 11px 15px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+  display: flex; align-items: center; gap: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-xs);
 }
-.vs-summary__facts { flex: 1; min-width: 0; display: flex; align-items: center; gap: clamp(12px, calc(100vw - 1330px), 36px); margin: 0; } /* Figma gap at 1366 and up, tighter below */
-.vs-fact { flex: none; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
-.vs-fact dd { margin: 0; font-weight: 600; white-space: nowrap; }
-.vs-fact dd.is-wrap { white-space: normal; }
+.vs-summary__facts { flex: 1; min-width: 0; display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-8); margin: 0; }
+.vs-fact dd.is-muted { color: var(--text-tertiary); font-weight: 400; }
 
-/* ---------- Volume split card (Figma 55:40608) ---------- */
+/* ---------- Split card ---------- */
 .vs-card {
-  display: flex; flex-direction: column; gap: 16px; padding: 12px;
-  background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 0.924px #bfe0f5;
+  display: flex; flex-direction: column; gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-xs);
 }
-.vs-card__title { height: 28px; }
-.vs-card__title .res-card__title-inner { height: 20px; }
+.vs-legend { display: flex; gap: var(--space-4); }
+.vs-legend__item { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-xs); font-weight: 400; letter-spacing: 0; color: var(--text-tertiary); }
+.vs-legend__item::before { content: ""; width: 8px; height: 8px; border-radius: 2px; }
+.vs-legend__item--ok::before { background: var(--success); }
+.vs-legend__item--over::before { background: var(--danger); }
+.vs-legend__item--under::before { background: var(--warning); }
 
-.vs-filters { display: flex; gap: 12px; }
-.vs-field {
-  height: 32px; flex: none; display: flex; align-items: center; gap: 8px; padding: 5px 11px;
-  background: #fff; border: 1px solid #ccdde8; border-radius: 6px; outline: 0;
-  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
-}
-.vs-field--soft { border-color: #bfe0f5; }
-.vs-filters > .vs-field { flex: 1 1 auto; min-width: 0; } /* inline widths are the Figma sizes; they fill the row exactly at 1366 */
-.vs-field--text::placeholder { color: #323436; opacity: 1; }
-.vs-field__value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+.vs-filters { display: grid; grid-template-columns: 1fr 1fr 1.6fr 1fr 1fr; gap: var(--space-2); }
+.vs-field { width: auto; cursor: pointer; }
+.vs-field--text { cursor: text; }
 
-.vs-split { margin-right: 6px; display: flex; flex-direction: column; padding-bottom: 24px; border-radius: 8px; }
-.vs-band {
-  height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 4px 24px;
-  background: #eff9ff; border-radius: 8px 8px 0 0;
-}
-.vs-band__text { padding-bottom: 8px; }
-.vs-band__title { font: 600 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; }
-.vs-band__meta { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
-.vs-band__actions { display: flex; align-items: center; gap: 8px; }
-.vs-apply {
-  height: 24px; padding: 2px 12px 2px 8px; border-radius: 4px;
-  background: rgba(0, 125, 197, 0.08); box-shadow: inset 0 0 0 0.5px #007dc5;
-  font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap;
-}
-.vs-refresh { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #727476; border-radius: 6px; }
+.vs-split { display: flex; flex-direction: column; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.vs-band { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: 12px 16px; background: var(--surface-subtle); border-bottom: 1px solid var(--border); }
+.vs-band__text { display: flex; align-items: baseline; gap: 12px; }
+.vs-band__title { font-size: var(--text-sm); font-weight: 600; letter-spacing: -0.005em; }
+.vs-band__meta { font-size: var(--text-xs); color: var(--text-tertiary); }
+.vs-band__actions { display: flex; align-items: center; gap: 6px; }
+.vs-refresh { width: var(--control-h-sm); height: var(--control-h-sm); border-radius: var(--radius-sm); }
+.vs-refresh img { width: 14px; height: 14px; }
 
-/* ---------- Split table (Figma 55:40674): first three columns and Row Total stay put, months scroll ---------- */
-.vs-table-wrap { overflow-x: auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
-.vs-table { table-layout: fixed; width: 100%; min-width: 1475px; border-collapse: separate; border-spacing: 0; background: #fff; }
-.vs-table th, .vs-table td { padding: 0; background: #fff; box-shadow: inset 0 1px #c9ccce; white-space: nowrap; }
+/* ---------- Split table: first three columns and Row total stay put, months scroll ---------- */
+.vs-table-wrap { overflow-x: auto; }
+.vs-table { width: 100%; min-width: 1500px; border-collapse: separate; border-spacing: 0; font-variant-numeric: tabular-nums; }
+.vs-table th, .vs-table td { padding: 0; background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: none; white-space: nowrap; }
+.vs-table tbody tr:last-child td { border-bottom: 0; }
 .vs-c1, .vs-c2, .vs-c3, .vs-total { position: sticky; z-index: 1; }
-.vs-c1 { left: 0; }
-.vs-c2 { left: 44px; }
-.vs-c3 { left: 144px; }
-.vs-total { right: 0; }
+.vs-c1 { left: 0; width: 48px; }
+.vs-c2 { left: 48px; min-width: 150px; }
+.vs-c3 { left: 198px; min-width: 110px; box-shadow: 1px 0 0 var(--border) !important; }
+.vs-total { right: 0; min-width: 108px; box-shadow: -1px 0 0 var(--border) !important; }
 
-.vs-table th { height: 54px; background: #f9fbfd; box-shadow: inset 0 1px #dfdee3; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; }
-.vs-table th.vs-c1 { box-shadow: inset 0 1px #dfdee3, inset 1px 0 #dfdee3, inset -1px 0 #dfdee3; }
-.vs-table th.vs-c2, .vs-table th.vs-c3 { padding-left: 16px; text-align: left; }
-.vs-hwrap { display: inline-block; vertical-align: middle; white-space: normal; }
-.vs-table th.vs-mh { text-align: center; }
-.vs-table th.is-next-year { background: #eff9ff; box-shadow: inset 0 1px #c9ccce; }
-.vs-table th.vs-total { text-align: center; background: #fcfeff; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
-.vs-total-head { display: inline-block; vertical-align: middle; font: 400 10px/11px "Noto Sans", sans-serif; color: #727476; }
-.vs-total-head b { font-size: 12px; font-weight: 600; }
-
-.vs-table td { height: 74px; vertical-align: middle; }
-.vs-table td.vs-c1 { padding-left: 16px; box-shadow: inset 0 1px #c9ccce, inset 1px 0 #c9ccce, inset -1px 0 #c9ccce; }
-.vs-table td.vs-total { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
-.vs-table tbody tr:last-child td { box-shadow: inset 0 1px #c9ccce, inset 0 -1px #c9ccce; }
-.vs-table tbody tr:last-child td.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset 1px 0 #c9ccce, inset -1px 0 #c9ccce, inset 0 -1px #c9ccce; }
-.vs-table tbody tr:last-child td.vs-total { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 0 -1px #c9ccce; }
-.vs-toggle { display: flex; width: 16px; height: 16px; }
-.vs-toggle[aria-expanded="true"] img { transform: rotate(180deg); } /* Figma 24/chevron-up */
-.vs-table td.vs-c2 { padding-left: 6px; }
-.vs-name { display: flex; flex-direction: column; }
-.vs-name b { font: 700 12px/20px "Noto Sans", sans-serif; color: #323436; }
-.vs-name span { font: 300 12px/18px "Poppins", sans-serif; color: #323436; }
-.vs-table td.vs-c3 { padding-left: 16px; }
-.vs-volume { font: 400 10px/18px "Noto Sans", sans-serif; color: #727476; }
-.vs-volume b { font-size: 12px; font-weight: 600; }
-.vs-volume small { font-size: 10px; }
-
-.vs-table td.vs-month { vertical-align: top; padding: 8px 0 0 16px; }
-.vs-pct { display: flex; align-items: center; gap: 2px; height: 24px; font: 400 10px/15px "Lato", sans-serif; letter-spacing: 0.4px; color: #323436; }
-.vs-input {
-  width: 41px; height: 24px; flex: none; padding: 0; margin: 0; outline: 0; text-align: center;
-  background: #fff; border: 1px solid #c9ccce; border-radius: 6px;
-  font: 600 12px/18px "Noto Sans", sans-serif; color: #323436;
+.vs-table th {
+  height: 40px; padding: 0 12px; background: var(--surface-subtle);
+  font-size: var(--text-xs); font-weight: 500; color: var(--text-tertiary); text-align: left; vertical-align: middle;
 }
-.vs-input:focus { border-color: #007dc5; }
-.vs-units { display: block; height: 18px; margin-bottom: -2px; font: 500 10px/18px "Noto Sans", sans-serif; color: #727476; }
-.vs-units small { font-size: 8px; font-weight: 400; }
-.vs-rec { display: block; font: 400 10px/18px "Lato", sans-serif; letter-spacing: 0.4px; text-transform: uppercase; color: #a333c8; }
+.vs-table th.vs-mh { min-width: 86px; text-align: left; }
+.vs-table th.is-next-year { color: var(--text-secondary); background: #f4f4f4; }
+.vs-table th.vs-mh.is-next-year:first-of-type, .vs-table th.is-next-year + th:not(.is-next-year) { }
+.vs-table th.vs-total { text-align: center; }
+.vs-total-head { font: inherit; color: inherit; }
 
-.vs-table td.vs-total { vertical-align: top; padding: 6.5px 8px 0; }
-.vs-chip { width: 78px; height: 61px; display: flex; align-items: center; justify-content: center; padding: 8px 5px; border-radius: 8px; }
-.vs-chip--ok { background: linear-gradient(rgba(61, 166, 0, 0.2), rgba(61, 166, 0, 0.2)), #fff; color: #318500; }
-.vs-chip--over { background: linear-gradient(rgba(236, 0, 71, 0.1), rgba(236, 0, 71, 0.1)), #fff; color: #d40040; }
-.vs-chip--under { background: #fff5f2; color: #f15a29; }
-.vs-chip__inner { width: 68px; height: 48px; flex: none; display: flex; flex-direction: column; align-items: center; text-shadow: 0 4px 6px rgba(142, 142, 142, 0.1); font-family: "Noto Sans", sans-serif; }
-.vs-chip__label { font: 400 12px/16px "Noto Sans", sans-serif; letter-spacing: 0.036px; }
-.vs-chip__pct { font: 700 14px/16px "Noto Sans", sans-serif; letter-spacing: 0.042px; }
-.vs-chip__units { font: 400 10px/16px "Noto Sans", sans-serif; letter-spacing: 0.03px; }
+.vs-table td { height: 84px; padding: 0 12px; vertical-align: middle; transition: background-color var(--dur-fast) var(--ease-out); }
+.vs-table tbody tr:hover td { background: var(--surface-subtle); }
+.vs-table td.vs-c1 { padding: 0 0 0 10px; }
+.vs-toggle { width: 28px; height: 28px; display: grid; place-items: center; border-radius: var(--radius-sm); transition: background-color var(--dur-fast) var(--ease-out); }
+.vs-toggle:hover { background: var(--surface-active); }
+.vs-toggle img { width: 14px; height: 14px; opacity: 0.6; transform: rotate(-90deg); transition: transform var(--dur-base) var(--ease-out); }
+.vs-toggle[aria-expanded="true"] img { transform: rotate(0deg); }
+.vs-name { display: flex; flex-direction: column; gap: 2px; }
+.vs-name b { font-size: var(--text-2xs); font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-tertiary); }
+.vs-name span { font-size: var(--text-sm); font-weight: 600; color: var(--text); }
+.vs-volume { display: flex; flex-direction: column; font-size: var(--text-xs); color: var(--text-tertiary); }
+.vs-volume b { font-size: var(--text-sm); font-weight: 600; color: var(--text); }
 
-.vs-footer { height: 32px; display: flex; align-items: center; justify-content: space-between; }
-.vs-pager { display: flex; align-items: center; gap: 6px; padding: 0 16px; }
-.vs-pager__summary { font: 600 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.vs-table td.vs-month { vertical-align: middle; }
+.vs-pct { display: flex; align-items: center; gap: 4px; font-size: var(--text-xs); color: var(--text-tertiary); }
+.vs-input { width: 48px; height: 28px; padding: 0 6px; text-align: right; }
+.vs-units { display: block; margin-top: 5px; font-size: var(--text-2xs); font-weight: 500; color: var(--text-secondary); }
+.vs-units small { font-size: inherit; font-weight: 400; color: var(--text-tertiary); }
+.vs-rec { display: block; margin-top: 1px; font-size: 10px; color: var(--text-tertiary); }
 
-/* ---------- Article drilldown (Figma 55:44872) ---------- */
-.is-drilldown .vs-split { padding-bottom: 0; }
-.is-drilldown .vs-table-wrap { border-radius: 0; }
-.is-drilldown .vs-table th { height: 72px; background: #fdfeff; box-shadow: inset 0 1px #c9ccce; }
-.is-drilldown .vs-table th.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
-.is-drilldown .vs-table th.is-next-year { background: #eff9ff; }
-.is-drilldown .vs-table th.vs-total { background: #fdfeff; }
-.is-drilldown .vs-table td.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; }
-.is-drilldown .vs-table tbody tr:last-child td.vs-c1 { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 0 -1px #c9ccce; }
-.is-drilldown .vs-footer { margin-top: 4px; justify-content: flex-end; }
-.is-drilldown .vs-pager { display: none; }
-
-/* ---------- Submit Promotion for Approval (Figma 128:57162): centred overlay, 30% black backdrop ---------- */
-.sa-dialog {
-  position: fixed; inset: 0; margin: auto; width: 741px; height: 388px; max-width: none; max-height: none;
-  padding: 18px 24px 24px; color: #323436; /* 24px from the outer edge; the 6px top rule sits inside it */
-  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
-  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+.vs-table td.vs-total { padding: 0 10px; text-align: center; }
+.vs-chip {
+  width: 88px; display: inline-flex; flex-direction: column; align-items: center; gap: 1px; padding: 8px 6px;
+  border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface);
 }
-.sa-dialog[open] { display: flex; flex-direction: column; gap: 32px; }
-.sa-dialog::backdrop { background: rgba(0, 0, 0, 0.3); }
-.sa-dialog__close { position: absolute; right: 24px; top: 10px; display: flex; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
-.sa-head { display: flex; flex-direction: column; gap: 8px; }
-.sa-head__title { margin: 0; font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
-.sa-head__sub { margin: 0; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
-.sa-row { display: flex; align-items: center; gap: 40px; height: 32px; }
-.sa-row__label { flex: none; width: 114px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
-.sa-row__box { flex: 1; min-width: 0; height: 32px; display: flex; align-items: center; padding: 0 11px; background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; }
-.sa-row__box input { flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
-.sa-row--strategy { align-items: flex-start; height: 56px; }
-.sa-row--strategy .sa-row__label { margin-top: -1px; } /* Figma: the label sits in an 18px box, 1px above the first option */
-.sa-radios { display: flex; flex-direction: column; gap: 16px; }
-.sa-radio { display: flex; align-items: center; gap: 8px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; cursor: pointer; }
-.sa-radio input {
-  flex: none; width: 16px; height: 16px; margin: 0; appearance: none; cursor: pointer;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 50%;
-}
-.sa-radio input:checked { border: 0; background: radial-gradient(circle, #fff 3px, #007dc5 3.5px); } /* 6px white dot on blue */
-.sa-actions { display: flex; justify-content: flex-end; }
-.sa-proceed { display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 8px; background: #007dc5; font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #fff; white-space: nowrap; }
+.vs-chip__inner { display: contents; }
+.vs-chip__label { font-size: 10px; font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-tertiary); }
+.vs-chip__pct { font-size: var(--text-lg); font-weight: 600; line-height: 1.2; font-variant-numeric: tabular-nums; }
+.vs-chip__units { font-size: 10px; color: var(--text-tertiary); }
+.vs-chip--ok { background: var(--success-bg); border-color: var(--success-border); }
+.vs-chip--ok .vs-chip__pct { color: var(--success); }
+.vs-chip--over { background: var(--danger-bg); border-color: var(--danger-border); }
+.vs-chip--over .vs-chip__pct { color: var(--danger); }
+.vs-chip--under { background: var(--warning-bg); border-color: var(--warning-border); }
+.vs-chip--under .vs-chip__pct { color: var(--warning); }
+
+/* ---------- Footer ---------- */
+.vs-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: 12px 16px; border-top: 1px solid var(--border); background: var(--surface-subtle); }
+.vs-pager { display: flex; align-items: center; gap: var(--space-4); }
+.vs-pager__summary { font-size: var(--text-xs); color: var(--text-tertiary); }
+.vs-footer .cfg-actions { position: static; padding: 0; background: none; border: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* Article drill-down */
+.is-drilldown .vs-pager { visibility: hidden; }
+.vs-table tbody[data-articles] tr[data-family-row] td { background: var(--surface-subtle); }
+
+/* ---------- Submit for approval ---------- */
+.sa-dialog { width: 600px; padding: var(--space-6); }
+.sa-dialog[open] { display: flex; flex-direction: column; gap: var(--space-5); }
+.sa-summary { display: grid; grid-template-columns: 1fr auto; gap: var(--space-6); margin: 0; padding: 14px 16px; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.sa-summary dt { font-size: var(--text-2xs); font-weight: 500; letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--text-tertiary); }
+.sa-summary dd { margin: 3px 0 0; font-size: var(--text-sm); font-weight: 600; color: var(--text); }
+.sa-summary input { width: 100%; padding: 0; border: 0; outline: 0; background: none; font: inherit; color: inherit; }
+.sa-strategy { display: flex; flex-direction: column; gap: 8px; }
+.sa-radios { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }

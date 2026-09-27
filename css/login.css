@@ -1,37 +1,96 @@
-/* Sign in — Figma "Telia_Forgot_Login_Phase-2" (node 88:41766, 1366 × 657): logo on white, form on the blue slanted panel. */
+/* Sign in: black editorial brand panel beside a quiet authentication column */
 
-.login-body { background: #fff; }
-.login { position: relative; min-width: 1280px; height: 100vh; min-height: 657px; overflow: hidden; background: #fff; }
-/* Fills the window: the slanted panel stretches with it; the form keeps its Figma place from the right edge */
-.login__backdrop { position: absolute; left: 39.02%; right: 0; top: 0; width: 60.98%; height: 100%; } /* Figma: starts 533px into the 1366 frame */
-.login__brand { position: absolute; left: 24px; top: 24px; }
+.login-body { background: var(--surface); }
+.login {
+  display: grid; grid-template-columns: minmax(520px, 1.15fr) minmax(460px, 1fr);
+  min-width: 1024px; min-height: 100vh;
+}
 
-.login__form { position: absolute; right: 172px; top: calc(50% - 164.5px); width: 244px; display: flex; flex-direction: column; gap: 16px; }
-.login__title { width: 240px; font: 300 32px/40px "Noto Sans", sans-serif; color: #fff; text-align: center; }
-.login__field { display: flex; flex-direction: column; gap: 4px; }
-.login__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; }
-.login__input {
-  height: 40px; display: flex; align-items: center; gap: 10px; padding: 7px 11px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; overflow: hidden;
+/* ---------- Brand panel ---------- */
+.login__brand {
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 40px 56px;
+  background: var(--gray-950); color: #fff;
 }
-.login__input input {
-  flex: 1; min-width: 0; height: 24px; margin: 0; padding: 4px 0 0; border: 0; outline: 0; background: none; /* Figma sets the 20px line at the bottom of a 24px box */
-  font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436;
+.login__grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 40%, #000 20%, transparent 75%);
+  animation: grid-drift 30s linear infinite;
 }
-.login__input input::placeholder { color: #727476; opacity: 1; }
-.login__input:focus-within { border-color: #007dc5; }
-.login__eye { display: flex; width: 16px; height: 16px; flex: none; }
-.login__forgot {
-  width: 240px; font: 500 14px/21px "Poppins", sans-serif; color: #fff;
-  text-decoration: underline; text-decoration-skip-ink: none;
+@keyframes grid-drift { to { background-position: 63px 63px; } }
+.login__brand > *:not(.login__grid) { position: relative; }
+
+.login__brand-top { display: flex; align-items: center; gap: 12px; }
+.login__mark { width: 30px; height: 30px; display: grid; place-items: center; border-radius: var(--radius-sm); background: #fff; }
+.login__mark svg { width: 16px; height: 16px; }
+.login__wordmark { font-size: 12px; font-weight: 700; letter-spacing: 0.3em; }
+.login__product { padding-left: 12px; border-left: 1px solid rgba(255, 255, 255, 0.2); font-size: 13px; font-weight: 500; color: rgba(255, 255, 255, 0.6); }
+
+.login__statement { max-width: 600px; animation: page-in 700ms var(--ease-out) both; }
+.login__eyebrow { margin-bottom: 20px; font-size: var(--text-2xs); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); }
+.login__headline { font-size: clamp(36px, 3.4vw, 54px); font-weight: 550; line-height: 1.05; letter-spacing: -0.045em; color: #fff; }
+.login__flow { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 40px 0 0; padding: 28px 0 0; list-style: none; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+.login__flow li { display: flex; align-items: baseline; gap: 10px; font-size: var(--text-sm); font-weight: 500; color: rgba(255, 255, 255, 0.86); }
+.login__flow span { font-size: var(--text-2xs); font-variant-numeric: tabular-nums; color: rgba(255, 255, 255, 0.4); }
+.login__legal { font-size: var(--text-xs); color: rgba(255, 255, 255, 0.4); }
+
+/* ---------- Authentication column ---------- */
+.login__panel {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+  padding: 48px 56px;
 }
-.login__submit {
-  height: 40px; display: flex; align-items: center; justify-content: center; padding: 8px 16px; border-radius: 8px;
-  background: #0066a1; font: 500 16px/24px "Noto Sans", sans-serif; letter-spacing: 0.032px; color: #fff; text-align: center;
+.login__form {
+  width: 100%; max-width: 380px; display: flex; flex-direction: column; gap: 20px;
+  animation: page-in 520ms 80ms var(--ease-out) both;
 }
-.login__signup { display: flex; align-items: center; gap: 10px; height: 20px; }
-.login__signup span { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
-.login__signup a {
-  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #fff; white-space: nowrap;
-  text-decoration: underline; text-decoration-skip-ink: none;
+.login__head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+.login__title { font-size: var(--text-3xl); font-weight: 600; line-height: 1.1; letter-spacing: var(--tracking-tighter); }
+.login__subtitle { font-size: var(--text-md); color: var(--text-secondary); }
+
+.login__input { height: 42px; padding: 0 14px; font-size: var(--text-md); }
+.login__label-row { display: flex; align-items: baseline; justify-content: space-between; }
+.login__password { position: relative; }
+.login__password .login__input { width: 100%; padding-right: 44px; }
+.login__eye {
+  position: absolute; top: 5px; right: 5px; width: 32px; height: 32px; display: grid; place-items: center;
+  border-radius: var(--radius-sm); color: var(--text-tertiary);
+  transition: background-color var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.login__eye:hover { background: var(--surface-active); color: var(--text); }
+.login__eye svg { width: 16px; height: 16px; }
+.login__eye-off, .login__eye[aria-pressed="true"] .login__eye-on { display: none; }
+.login__eye[aria-pressed="true"] .login__eye-off { display: block; }
+
+.login__link {
+  font-size: var(--text-xs); font-weight: 500; color: var(--text);
+  text-decoration: underline; text-decoration-color: var(--gray-300); text-underline-offset: 3px;
+  transition: text-decoration-color var(--dur-fast) var(--ease-out);
+}
+.login__link:hover { text-decoration-color: currentColor; }
+.login__remember { display: flex; align-items: center; gap: 10px; font-size: var(--text-sm); color: var(--text-secondary); cursor: pointer; user-select: none; }
+.login__submit { margin-top: 4px; }
+.login__foot { font-size: var(--text-sm); color: var(--text-tertiary); text-align: center; }
+.login__foot .login__link { font-size: inherit; }
+.login__help { font-size: var(--text-xs); color: var(--text-tertiary); }
+
+.login__alert { align-items: flex-start; }
+.login__alert svg { margin-top: 2px; flex: none; }
+.login__form.is-shaking { animation: shake 360ms var(--ease-in-out); }
+@keyframes shake { 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+
+/* Success: the form gives way to a confirmation before the workspace opens */
+.login__done { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; animation: fade-in var(--dur-slow) var(--ease-out); }
+.login__done p { font-size: var(--text-lg); font-weight: 600; letter-spacing: -0.01em; }
+.login__done span { font-size: var(--text-sm); color: var(--text-tertiary); }
+
+@media (max-width: 1200px) {
+  .login { grid-template-columns: minmax(440px, 1fr) minmax(440px, 1fr); }
+  .login__brand { padding: 36px 44px; }
 }

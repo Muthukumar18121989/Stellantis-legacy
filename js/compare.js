@@ -1,5 +1,5 @@
-// Experiment Compare: the experiment page passes the ticked promotions as ?c=ID|Name|Iteration (two or three times).
-// Their ID, name and iteration replace the Figma sample values; a third promotion adds a column to both tables,
+// Compare experiments: the experiment page passes the ticked promotions as ?c=ID|Name|Iteration (two or three times).
+// Their ID, name and iteration replace the sample values; a third promotion adds a column to both tables,
 // copied from the second one.
 (function () {
   var picks = new URLSearchParams(location.search).getAll('c').map(function (value) {
@@ -16,9 +16,8 @@
         row.appendChild(copy);
       });
     });
-    var col = document.createElement('col');
-    col.style.width = '351px';
-    document.querySelector('.cmp-config colgroup').appendChild(col);
+    var colgroup = document.querySelector('.cmp-config colgroup');
+    if (colgroup) colgroup.appendChild(document.createElement('col'));
     document.querySelector('.cmp-config').classList.add('is-three');
     document.querySelector('.cmp-metrics').classList.add('is-three');
   }

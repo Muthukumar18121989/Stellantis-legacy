@@ -17,7 +17,7 @@
   });
 })();
 
-/* Referential: the tabs switch between their panels. "Others" has no panel in Figma. */
+/* Referential: the tabs switch between their panels. "Others" has no panel yet. */
 (function () {
   var tabs = document.querySelectorAll('.rf-tab[data-tab]');
   tabs.forEach(function (tab) {

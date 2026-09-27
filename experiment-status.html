@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Promotion Approval Dashboard</title>
+  <meta name="color-scheme" content="light">
+  <script>try{if(localStorage.getItem("pt-sidebar")==="collapsed")document.documentElement.classList.add("is-sidebar-collapsed")}catch(e){}</script>
+  <title>Approval queue · Stellantis Promotool</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/configuration.css">
   <link rel="stylesheet" href="css/experiment.css">
@@ -13,198 +15,191 @@
 <body>
 <div class="page page--status">
 
-  <!-- Left menu bar (Figma 88:17701) -->
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item left-bar__item--active" href="experiment-status.html" aria-label="Home" aria-current="page"><img src="assets/icons/home.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="role-management.html" aria-label="Role Management"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="referential.html" aria-label="Referential"><img src="assets/icons/database.svg" width="24" height="24" alt=""></a>
+  <!-- Left menu bar -->
+  <aside class="sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="experiment-status.html" aria-label="Stellantis Promotool, home">
+      <span class="sidebar__mark"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 11.5 8 4.5l5 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="sidebar__brand-text"><span class="sidebar__wordmark">STELLANTIS</span><span class="sidebar__product">Promotool</span></span>
+    </a>
+    <nav class="sidebar__nav" aria-label="Main">
+      <p class="sidebar__label">Approvals</p>
+      <a class="nav-item" href="experiment-status.html" aria-current="page" data-tooltip="Approval queue"><img class="nav-item__icon" src="assets/icons/home.svg" width="18" height="18" alt=""><span class="nav-item__text">Approval queue</span></a>
+      <p class="sidebar__label">Administration</p>
+      <a class="nav-item" href="doa-rules.html" data-tooltip="DOA rules"><img class="nav-item__icon" src="assets/icons/hammer-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">DOA rules</span></a>
+      <a class="nav-item" href="user-management.html" data-tooltip="Users"><img class="nav-item__icon" src="assets/icons/user-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Users</span></a>
+      <a class="nav-item" href="role-management.html" data-tooltip="Roles"><img class="nav-item__icon" src="assets/icons/hierarchy-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Roles</span></a>
+      <a class="nav-item" href="referential.html" data-tooltip="Referential"><img class="nav-item__icon" src="assets/icons/database-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Referential</span></a>
+    </nav>
+    <div class="sidebar__foot">
+      <p class="sidebar__meta"><b>Aftermarket · Europe</b>Administration</p>
     </div>
-  </nav>
+  </aside>
 
   <div class="main">
 
-    <!-- Top menu (Figma 88:17719) -->
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">Steve Roger</span>
-          <span class="profile__role">Marketing Manager <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+    <header class="topbar">
+      <button class="topbar__toggle" type="button" data-sidebar-toggle aria-label="Collapse sidebar" data-tooltip="Toggle sidebar" data-tooltip-side="bottom"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 3.5v11" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <span class="crumbs__divider" aria-hidden="true"></span>
+      <nav class="crumbs" aria-label="Breadcrumb"><span class="crumbs__root">Approvals</span><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Approval queue</span></nav>
+      <div class="topbar__right">
+        <button class="topbar__btn lang" type="button" aria-label="Language: English"><img src="assets/icons/world.svg" width="18" height="18" alt="">EN<img class="lang__chevron" src="assets/icons/chevron-down.svg" width="12" height="12" alt=""></button>
+        <button class="topbar__btn notif" type="button" aria-label="Notifications (5)" data-tooltip="Notifications" data-tooltip-side="bottom"><img src="assets/icons/bell.svg" width="18" height="18" alt=""><span class="notif__count">5</span></button>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <button class="profile" type="button" aria-haspopup="dialog">
+          <span class="profile__avatar" aria-hidden="true">KR</span>
+          <span class="profile__text"><span class="profile__name">Kristen</span><span class="profile__role">Promotool Admin</span></span>
+          <img class="profile__chevron" src="assets/icons/chevron-down.svg" width="14" height="14" alt="">
         </button>
       </div>
     </header>
 
+    <section class="page-head">
+      <div class="page-head__text">
+        <p class="page-head__eyebrow">Approvals</p>
+        <h1 class="page-head__title">Approval queue</h1>
+        <p class="page-head__desc">Review promotions submitted for approval in your markets. Approve or reject one request, or tick several and decide on them together.</p>
+      </div>
+      <div class="page-head__actions">
+        <button class="btn" type="button"><img src="assets/icons/download.svg" width="16" height="16" alt="">Export</button>
+      </div>
+    </section>
+
     <main class="exp-body">
 
-      <!-- Products / Network (Figma 88:17746) -->
+      <!-- Scope -->
       <div class="config-cards">
         <section class="config-card">
+          <span class="config-card__icon"><img src="assets/icons/package.svg" width="20" height="20" alt=""></span>
           <div class="config-card__main">
-            <span class="config-card__icon"><img src="assets/shapes/icon-circle.svg" width="42" height="42" alt=""><img src="assets/icons/package.svg" alt=""></span>
-            <h2 class="config-card__label">Products ​</h2>
+            <h2 class="config-card__label">Products</h2>
+            <p class="config-card__meta">3 product types in scope</p>
           </div>
-          <div class="config-card__types">
-            <div class="types">
-              <p class="types__title" style="width:85px">Types</p>
-              <div class="types__list">
-                <span class="types__item"><img src="assets/shapes/dot-sky.svg" width="9" height="9" alt="">OE</span>
-                <span class="types__item"><img src="assets/shapes/dot-sky.svg" width="9" height="9" alt="">EUROREPAR</span>
-                <span class="types__item"><img src="assets/shapes/dot-sky.svg" width="9" height="9" alt="">WSP</span>
-              </div>
-            </div>
-          </div>
-          <img class="config-card__decor config-card__decor--arc" src="assets/illustrations/card-arc.svg" width="85" height="57" alt="">
+          <ul class="types__list" aria-label="Product types"><li class="types__item">OE</li><li class="types__item">EUROREPAR</li><li class="types__item">WSP</li></ul>
         </section>
-
         <section class="config-card">
+          <span class="config-card__icon"><img src="assets/icons/chart-pie-2.svg" width="20" height="20" alt=""></span>
           <div class="config-card__main">
-            <span class="config-card__icon"><img src="assets/shapes/icon-circle.svg" width="42" height="42" alt=""><img src="assets/icons/chart-pie-2.svg" alt=""></span>
             <h2 class="config-card__label">Network</h2>
+            <p class="config-card__meta">2 distribution channels</p>
           </div>
-          <div class="config-card__types config-card__types--grow">
-            <div class="types">
-              <p class="types__title" style="width:76px">Types</p>
-              <div class="types__list">
-                <span class="types__item"><img src="assets/shapes/dot-sky-faded.svg" width="9" height="9" alt="">NSCs</span>
-                <span class="types__item types__item--top"><img src="assets/shapes/dot-sky-faded.svg" width="9" height="9" alt=""><span style="width:171px">Importers</span></span>
-              </div>
-            </div>
-          </div>
-          <img class="config-card__decor config-card__decor--arc" src="assets/illustrations/card-arc.svg" width="85" height="57" alt="">
+          <ul class="types__list" aria-label="Network types"><li class="types__item">NSCs</li><li class="types__item">Importers</li></ul>
         </section>
       </div>
 
-      <!-- Filters (Figma 88:17835) -->
-      <section class="filters">
+      <!-- Filters -->
+      <section class="filters" aria-label="Filters">
         <div class="filters__fields">
-          <button class="field" style="width:267px">
-            <span class="field__label">Promotion Status</span>
-            <span class="field__control"><span class="field__value field__value--noto">Select</span><img src="assets/icons/chevron-down-filled.svg" width="16" height="16" alt=""></span>
+          <button class="field" type="button">
+            <span class="field__label">Promotion status</span>
+            <span class="field__control"><span class="field__value is-placeholder">All statuses</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
           </button>
-          <button class="field" style="width:268px">
-            <span class="field__label">Involved Families</span>
-            <span class="field__control"><span class="field__value field__value--poppins">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+          <button class="field" type="button">
+            <span class="field__label">Involved families</span>
+            <span class="field__control"><span class="field__value is-placeholder">Any family</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
           </button>
-          <button class="field" style="width:267px">
+          <button class="field" type="button">
             <span class="field__label">Period</span>
-            <span class="field__control"><span class="field__value field__value--noto">Choose Date Range</span><img src="assets/icons/eye.svg" width="16" height="16" alt=""></span>
+            <span class="field__control"><span class="field__value is-placeholder">Choose date range</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></span>
           </button>
         </div>
         <div class="filters__actions">
-          <div class="filters__primary">
-            <button class="icon-btn" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
-            <button class="btn-primary">Apply</button>
-          </div>
-          <button class="icon-btn" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+          <button class="icon-btn" type="button" aria-label="Reset filters" data-tooltip="Reset filters"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
+          <button class="btn btn--primary" type="button">Apply</button>
         </div>
       </section>
 
-      <!-- Promotion Approval Dashboard (Figma 88:17858) -->
+      <!-- Requests -->
       <section class="es-card">
-        <h2 class="es-card__title">Promotion Approval Dashboard</h2>
         <div class="es-toolbar">
-          <div class="es-status" role="tablist" aria-label="Request status">
-            <button class="es-status__tab is-active" type="button" role="tab" aria-selected="true" data-status="submitted"><span class="es-status__dot" style="background:#fbbd08"></span>Submitted for Approval</button>
-            <button class="es-status__tab" type="button" role="tab" aria-selected="false" data-status="approved"><span class="es-status__dot" style="background:#52de73"></span>Approved</button>
-            <button class="es-status__tab" type="button" role="tab" aria-selected="false" data-status="rejected"><span class="es-status__dot" style="background:#e75350"></span>Rejected</button>
+          <div class="es-status segmented" role="tablist" aria-label="Request status">
+            <button class="es-status__tab segmented__item is-active" type="button" role="tab" aria-selected="true" data-status="submitted"><span class="es-status__dot es-status__dot--submitted"></span>Awaiting approval<span class="es-status__count" data-count="submitted"></span></button>
+            <button class="es-status__tab segmented__item" type="button" role="tab" aria-selected="false" data-status="approved"><span class="es-status__dot es-status__dot--approved"></span>Approved<span class="es-status__count" data-count="approved"></span></button>
+            <button class="es-status__tab segmented__item" type="button" role="tab" aria-selected="false" data-status="rejected"><span class="es-status__dot es-status__dot--rejected"></span>Rejected<span class="es-status__count" data-count="rejected"></span></button>
           </div>
           <div class="es-toolbar__right">
-            <label class="search es-search"><img src="assets/icons/search-bold.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Promotion Name, Request ID, Status" aria-label="Search by Promotion Name, Request ID, Status"></label>
-            <button class="btn-primary es-compare" type="button">Compare<img src="assets/icons/arrow-right-16.svg" width="16" height="16" alt=""></button>
+            <p class="optimization__selection" data-selection-count hidden></p>
+            <label class="search es-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search name, ID or country" aria-label="Search requests"></label>
+            <button class="btn es-compare" type="button">Compare</button>
           </div>
         </div>
 
         <div class="table-wrap es-table-wrap">
           <table class="promos">
-            <colgroup>
-              <col style="width:86px"><col style="width:262px"><col style="width:110px"><col style="width:92px"><col style="width:92px"><col style="width:171px"><col style="width:86px"><col style="width:120px">
-            </colgroup>
             <thead>
               <tr>
-                <th><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select all" data-select-all>ID</span></th>
-                <th>Promotion Name</th><th>Country</th><th>Start Date</th><th>End Date</th><th>No. of Families</th><th>Iteration</th>
-                <th class="is-center">Actions <br>Status</th>
+                <th><label class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select all" data-select-all>ID</label></th>
+                <th>Promotion name</th><th>Country</th><th>Start date</th><th>End date</th><th class="is-num">Families</th><th>Iteration</th>
+                <th class="es-actions"><span class="visually-hidden">Actions</span></th>
               </tr>
             </thead>
             <tbody>
               <tr data-status="submitted">
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2724 Thanks-giving Promotion">2724</span></td>
-                <td class="is-bold">Thanks-giving Promotion</td><td class="is-bold">AT</td><td>20/03/2025</td><td>20/03/2025</td><td>10</td>
+                <td><label class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2724 Thanks-giving Promotion">2724</label></td>
+                <td class="is-bold">Thanks-giving Promotion</td><td><span class="country">AT</span></td><td>20/03/2025</td><td>20/03/2025</td><td class="is-num">10</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--approve" type="button" aria-label="Approve Thanks-giving Promotion" data-decision="approve" data-tooltip="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--reject" type="button" aria-label="Reject Thanks-giving Promotion" data-decision="reject" data-tooltip="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Workflow history" data-workflow-history data-tooltip="Workflow history"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
               <tr data-status="submitted">
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2705 Holiday Promotion">2705</span></td>
-                <td class="is-bold">Holiday Promotion</td><td class="is-bold">BE</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
+                <td><label class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2705 Holiday Promotion">2705</label></td>
+                <td class="is-bold">Holiday Promotion</td><td><span class="country">BE</span></td><td>20/03/2025</td><td>20/03/2025</td><td class="is-num">15</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--approve" type="button" aria-label="Approve Holiday Promotion" data-decision="approve" data-tooltip="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--reject" type="button" aria-label="Reject Holiday Promotion" data-decision="reject" data-tooltip="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Workflow history" data-workflow-history data-tooltip="Workflow history"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
               <tr data-status="submitted">
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2701 February Promotion">2701</span></td>
-                <td class="is-bold">February Promotion</td><td class="is-bold">DE</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
+                <td><label class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2701 February Promotion">2701</label></td>
+                <td class="is-bold">February Promotion</td><td><span class="country">DE</span></td><td>20/03/2025</td><td>20/03/2025</td><td class="is-num">20</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--approve" type="button" aria-label="Approve February Promotion" data-decision="approve" data-tooltip="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--reject" type="button" aria-label="Reject February Promotion" data-decision="reject" data-tooltip="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Workflow history" data-workflow-history data-tooltip="Workflow history"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
               <tr data-status="submitted">
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2698 Demo-shipmentOpt">2698</span></td>
-                <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">ES</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
+                <td><label class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2698 Demo-shipmentOpt">2698</label></td>
+                <td class="is-bold">Demo-shipmentOpt</td><td><span class="country">ES</span></td><td>20/03/2025</td><td>20/03/2025</td><td class="is-num">15</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--approve" type="button" aria-label="Approve Demo-shipmentOpt" data-decision="approve" data-tooltip="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--reject" type="button" aria-label="Reject Demo-shipmentOpt" data-decision="reject" data-tooltip="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Workflow history" data-workflow-history data-tooltip="Workflow history"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
                 </td>
               </tr>
               <tr data-status="submitted">
-                <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2699 Demo-shipmentOpt">2699</span></td>
-                <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">FR</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
+                <td><label class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2699 Demo-shipmentOpt">2699</label></td>
+                <td class="is-bold">Demo-shipmentOpt</td><td><span class="country">FR</span></td><td>20/03/2025</td><td>20/03/2025</td><td class="is-num">20</td>
                 <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
                 <td class="es-actions">
                   <span class="es-actions__inner">
-                    <button class="es-action" type="button" aria-label="Approve" data-decision="approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Reject" data-decision="reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
-                    <button class="es-action" type="button" aria-label="Notes" data-workflow-history><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--approve" type="button" aria-label="Approve Demo-shipmentOpt" data-decision="approve" data-tooltip="Approve"><img src="assets/icons/check-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action es-action--reject" type="button" aria-label="Reject Demo-shipmentOpt" data-decision="reject" data-tooltip="Reject"><img src="assets/icons/x-grey.svg" width="16" height="16" alt=""></button>
+                    <button class="es-action" type="button" aria-label="Workflow history" data-workflow-history data-tooltip="Workflow history"><img src="assets/icons/notes-grey.svg" width="16" height="16" alt=""></button>
                   </span>
+                </td>
+              </tr>
+              <tr class="state-row" data-status-empty hidden>
+                <td class="state-cell" colspan="8">
+                  <div class="state">
+                    <span class="state__icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3.5" y="4.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M3.5 8.5h13" stroke="currentColor" stroke-width="1.3"/></svg></span>
+                    <p class="state__title" data-empty-title>No requests here yet</p>
+                    <p class="state__text" data-empty-text>Requests you decide on appear in this tab.</p>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -212,15 +207,15 @@
         </div>
 
         <div class="table-footer">
-          <p class="table-footer__summary">Showing 1 to 8 of 600 entries</p>
-          <nav class="pagination es-pagination" aria-label="Pagination">
-            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
-            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
-            <button class="pagination__page"><span>2</span></button>
-            <button class="pagination__page"><span>3</span></button>
-            <button class="pagination__page"><span>4</span></button>
-            <button class="pagination__page"><span>5</span></button>
-            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          <p class="table-footer__summary">Showing 1–5 of 600</p>
+          <nav class="pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+            <button class="pagination__page" type="button"><span>2</span></button>
+            <button class="pagination__page" type="button"><span>3</span></button>
+            <button class="pagination__page" type="button"><span>4</span></button>
+            <button class="pagination__page" type="button"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
           </nav>
         </div>
       </section>
@@ -230,37 +225,43 @@
 </div>
 <dialog class="es-dialog" id="es-approve" aria-labelledby="es-approve-title">
   <form class="es-dialog__body" method="dialog">
-    <div class="es-dialog__head">
-      <h2 class="es-dialog__title" id="es-approve-title">Approve Request</h2>
-      <p class="es-dialog__text">Please provide your comments for this approval</p>
+    <header class="modal-head">
+      <h2 class="es-dialog__title" id="es-approve-title">Approve request</h2>
+      <p class="es-dialog__text">The promotion moves to the next approval level. <span data-decision-count></span></p>
+    </header>
+    <div class="field">
+      <label class="field__label" for="es-approve-comments">Comments <span class="field__optional">Optional</span></label>
+      <span class="es-dialog__comments"><textarea id="es-approve-comments" name="comments" rows="4" placeholder="Add context for the promotion pilot"></textarea></span>
     </div>
-    <label class="es-dialog__comments"><textarea name="comments" placeholder="Comments" aria-label="Comments"></textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></label>
-    <div class="es-dialog__actions">
-      <button class="es-dialog__btn" type="button" data-close-dialog>Cancel</button>
-      <button class="es-dialog__btn es-dialog__btn--primary" type="submit" value="submit">Submit</button>
-    </div>
+    <footer class="modal-foot">
+      <button class="btn" type="button" data-close-dialog>Cancel</button>
+      <button class="btn btn--primary" type="submit" value="submit">Approve</button>
+    </footer>
   </form>
   <button class="es-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
 </dialog>
 <dialog class="es-dialog" id="es-reject" aria-labelledby="es-reject-title">
   <form class="es-dialog__body" method="dialog">
-    <div class="es-dialog__head">
-      <h2 class="es-dialog__title" id="es-reject-title">Reject Request</h2>
-      <p class="es-dialog__text">Please provide your comments for this rejection</p>
+    <header class="modal-head">
+      <h2 class="es-dialog__title" id="es-reject-title">Reject request</h2>
+      <p class="es-dialog__text">The promotion returns to its pilot for a new iteration. <span data-decision-count></span></p>
+    </header>
+    <div class="field">
+      <label class="field__label" for="es-reject-comments">Comments <span class="field__optional">Required</span></label>
+      <span class="es-dialog__comments"><textarea id="es-reject-comments" name="comments" rows="4" placeholder="Explain what needs to change so the pilot can revise it" required></textarea></span>
     </div>
-    <label class="es-dialog__comments"><textarea name="comments" placeholder="Comments" aria-label="Comments"></textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></label>
-    <div class="es-dialog__actions">
-      <button class="es-dialog__btn" type="button" data-close-dialog>Cancel</button>
-      <button class="es-dialog__btn es-dialog__btn--primary" type="submit" value="submit">Submit</button>
-    </div>
+    <footer class="modal-foot">
+      <button class="btn" type="button" data-close-dialog>Cancel</button>
+      <button class="btn btn--danger" type="submit" value="submit">Reject</button>
+    </footer>
   </form>
   <button class="es-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
 </dialog>
 <script src="js/experiment-status.js"></script>
-<!-- Workflow History dialog (Figma 55:59243), opened from the Action Status edit icon -->
+<!-- Workflow History dialog, opened from a row's history action -->
 <dialog class="wh-dialog" id="workflow-history" aria-labelledby="wh-title">
   <button class="wh-dialog__close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
-  <h2 class="wh-dialog__title" id="wh-title">Workflow History</h2>
+  <header class="modal-head"><h2 class="wh-dialog__title" id="wh-title">Workflow history</h2><p class="modal-head__desc">Every action taken on this promotion, across iterations.</p></header>
   <dl class="wh-promo">
     <div class="wh-promo__col" style="width:157px"><dt>Promotion ID</dt><dd>234567</dd></div>
     <div class="wh-promo__col"><dt>Promotion Name</dt><dd>Spring Promotion</dd></div>
@@ -289,5 +290,6 @@
 </dialog>
 <script src="js/workflow-history.js"></script>
   <script src="js/user-menu.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

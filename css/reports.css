@@ -1,224 +1,143 @@
-/* Report Hub — Figma "Reports" (node 55:51173, 1366 × 1128), opened from the report-analytics left-menu icon.
-   Reuses the breadcrumb and title from css/configuration.css and the pagination from css/base.css. */
+/* Reports: pipeline, performance, promotion tracking, price elasticity and the export dialog.
+   The compare page reuses its cards, titles and selects. */
 
-.page--reports { min-height: max(1128px, 100vh); }
-
-/* ---------- Breadcrumb + title + Download (Figma 55:51225) ---------- */
-.rp-header {
-  height: 78px; display: flex; align-items: flex-start; justify-content: space-between; padding: 12px 16px;
-  background: #eff9ff; border-bottom: 1px solid #bfe0f5;
-}
-.rp-header__text { position: relative; height: 54px; }
-.rp-header__title { position: absolute; left: 0; top: 21px; }
-.rp-btn {
-  height: 32px; display: flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 6px;
-  background: #007dc5; font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap;
-}
-.rp-btn--download { margin-top: 11px; }
-
-.rp-body { display: flex; flex-direction: column; gap: 16px; padding: 16px; }
-.rp-body > * { flex: none; }
-
-/* ---------- Tabs (Figma 13313:64989) ---------- */
-.rp-tabs { height: 36px; display: flex; gap: 16px; padding: 0 16px; }
-.rp-tab { height: 36px; padding: 8px 16px; border-radius: 1000px; font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
-.rp-tab.is-active { background: #007dc5; color: #fff; }
-.rp-tab:first-child { width: 112px; } /* Figma tab widths; Chrome sets the labels about a pixel narrower */
-.rp-tab:last-child { width: 166px; }
-
-/* ---------- Filters (Figma 13313:64998) ---------- */
-.rp-filters {
-  height: 104px; display: flex; flex-direction: column; gap: 16px; padding: 11px 11px 11px 12px; /* Figma rows sit 13px in */
-  background: #f6fcff; border: 1px solid #bfe0f5; border-radius: 12px;
-}
-.rp-filters__row { display: flex; gap: 16px; justify-content: space-between; }
-.rp-filters__row:first-child { justify-content: flex-start; }
-.rp-filters:not(.rp-filters--aa) .rp-filters__row:first-child { padding-right: 8px; } /* Figma: the four selects stop 8px short */
-.rp-filters__row > .rp-select { flex: 1 1 auto; min-width: 0; } /* inline widths are the Figma sizes at 1366; they share any extra room */
-.rp-filters__dates, .rp-filters__actions { display: flex; gap: 16px; }
-.rp-select {
-  height: 32px; flex: none; display: flex; align-items: center; gap: 8px; padding: 5px 11px;
-  background: #fff; border: 1px solid #ccdde8; border-radius: 6px;
-}
-.rp-select--soft { border-color: #bfe0f5; }
-.rp-select__value {
-  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left;
-  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
-}
-
-/* ---------- Cards and titles (4px gradient bar, solid rule underneath) ---------- */
-.rp-card { display: flex; flex-direction: column; gap: 16px; padding: 15px; background: #fff; border: 1px solid #bfe0f5; border-radius: 12px; }
-.rp-card > * { flex: none; }
-.rp-card--stages { height: 170px; }
-.rp-card--summary { height: 162px; }
-.rp-card--tracking { height: 426px; gap: 8px; }
-.rp-title { height: 28px; padding-bottom: 8px; border-bottom: 1px solid #bfe0f5; }
-.rp-title:not(.rp-title--tools) {
-  position: relative; display: flex; align-items: flex-start; justify-content: space-between; padding: 0 12px 8px;
-}
-.rp-title:not(.rp-title--tools)::before, .rp-title--tools .rp-title__text::before {
-  content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 20px; background: linear-gradient(180deg, #47b796, #01a1fe);
-}
-.rp-title__text { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
-.rp-title__note { font: 400 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
-.rp-title--tools { height: 40px; display: flex; align-items: flex-start; justify-content: space-between; }
-.rp-title--tools .rp-title__text { position: relative; height: 20px; margin-top: 6px; padding: 0 12px; }
-.rp-aggregate { display: flex; align-items: center; gap: 5px; }
-.rp-aggregate__label { width: 126px; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
-
-/* ---------- Promotion Stage Tracker (Figma 13313:65287) ---------- */
-.rp-stages { height: 94px; display: flex; justify-content: center; }
-.rp-steps { position: relative; width: 788px; display: flex; gap: 64px; margin: 0; padding: 0; list-style: none; }
-.rp-steps::before { /* grey 2px dashed (4, 4) connector behind the circles */
-  content: ""; position: absolute; left: 39.5px; top: 21px; width: 709px; height: 2px;
-  background: linear-gradient(90deg, #c9ccce 4px, transparent 0) 0 0 / 8px 2px repeat-x;
-}
-.rp-step { position: relative; flex: none; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.rp-step__dot { position: relative; width: 46px; height: 46px; border-radius: 50%; }
-.rp-step__dot img { position: absolute; left: 10px; top: 11px; }
-.rp-step--edit .rp-step__dot { background: #f2f4f6; box-shadow: 0 0 0 0.5px #727476, inset 0 0 0 0.5px #727476; }
-.rp-step--clock .rp-step__dot { background: #fce8e0; box-shadow: 0 0 0 0.5px #f2711c, inset 0 0 0 0.5px #f2711c; }
-.rp-step--checkbox .rp-step__dot { background: #e0ecfc; box-shadow: 0 0 0 0.5px #007dc5, inset 0 0 0 0.5px #007dc5; }
-.rp-step--chart-line .rp-step__dot { background: #e8e0fc; box-shadow: 0 0 0 0.5px #6435c9, inset 0 0 0 0.5px #6435c9; }
-.rp-step--circle-check .rp-step__dot { background: #e0fce0; box-shadow: 0 0 0 0.5px #0db134, inset 0 0 0 0.5px #0db134; }
-.rp-step__text { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; text-align: center; white-space: nowrap; }
-
-/* ---------- Promotion Performance Summary (Figma 13313:66283) ---------- */
-.rp-tiles { display: flex; gap: 16px; }
-.rp-tile {
-  flex: 1 1 298.5px; min-width: 0; height: 86px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 11px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; overflow: hidden;
-}
-.rp-tile__label { font: 500 12px/18px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
-.rp-tile__value { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #007dc5; white-space: nowrap; }
-.rp-tile--uplift { flex-shrink: 0; align-items: flex-start; }
-.rp-uplift { position: relative; display: block; width: 274px; height: 40px; }
-.rp-uplift__track, .rp-uplift__range { position: absolute; top: 0; height: 12px; border-radius: 15px; }
-.rp-uplift__track { left: 0; width: 274px; background: #c9ccce; }
-.rp-uplift__range { left: 0.5px; width: 147px; background: #d20e0e; }
-.rp-uplift__marker { /* 1px dashed (2, 2) marker at the current value */
-  position: absolute; left: 77px; top: -3px; width: 1px; height: 17px;
-  background: linear-gradient(#323436 2px, transparent 0) 0 0 / 1px 4px repeat-y;
-}
-.rp-uplift__label { position: absolute; top: 18px; font: 600 10px/15px "Poppins", sans-serif; color: #727476; text-align: center; white-space: nowrap; }
-
-/* ---------- Promotion Tracking table (Figma 13331:65953): cells carry a top and right rule ---------- */
-.rp-tracking { display: flex; flex-direction: column; gap: 16px; }
-.rp-table-wrap {
-  position: relative; height: 306px; overflow-x: auto; overflow-y: hidden; border-radius: 8px; background: #fff;
-  box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
-}
-.rp-table-wrap::after { content: ""; position: absolute; inset: 0; border-radius: 8px; box-shadow: inset 0 0 0 1px #c9ccce; pointer-events: none; }
-.rp-table { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0; }
-.rp-table th, .rp-table td { padding: 6px 16px; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; vertical-align: middle; }
-.rp-table th { height: 65px; background: #eff9ff; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: left; }
-.rp-table td { height: 60px; background: #fff; font: 600 12px/18px "Noto Sans", sans-serif; color: #727476; white-space: nowrap; }
-.rp-table .rp-c-select { box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce, inset 1px 0 #c9ccce; }
-.rp-table .rp-num { text-align: right; }
-.rp-table td.rp-num--light { font-weight: 400; }
-.rp-checkbox { display: block; width: 20px; height: 20px; flex: none; margin: 0; appearance: none; background: #fff; border: 1px solid #c9ccce; border-radius: 4px; cursor: pointer; }
-.rp-checkbox:checked { background: #007dc5 url("../assets/icons/check-white-16.svg") center / 16px no-repeat; border-color: #007dc5; }
-.rp-select-cell { display: flex; align-items: center; gap: 8px; }
-.rp-toggle { display: flex; width: 16px; height: 16px; }
-.rp-badges { display: flex; gap: 10px; }
-.rp-badge {
-  display: inline-flex; align-items: center; height: 24px; padding: 4px 8px; border-radius: 6px;
-  background: #f8f9fb; box-shadow: inset 0 0 0 1px #bfe0f5;
-  font: 500 10px/15px "Noto Sans", sans-serif; color: #3f4047;
-}
-.rp-badge--done { background: #d6ffe1; box-shadow: inset 0 0 0 1px #0db134; color: #005929; }
-.rp-table td.rp-num--bar { padding-top: 12px; padding-bottom: 12px; }
-.rp-value { display: block; height: 18px; }
-.rp-value.is-ahead { color: #0db134; }
-.rp-bar { display: block; height: 8px; margin-top: 10px; border-radius: 1000px; background: #f2f4f6; box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25); }
-.rp-bar__fill { display: block; height: 8px; border-radius: 1000px; background: #c9ccce; box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25); }
-.rp-bar__fill.is-ahead { background: #0db134; }
-
-.rp-pager { height: 24px; display: flex; align-items: center; gap: 6px; padding: 0 16px; }
-.rp-pager__summary { font: 600 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
-
-/* ---------- Customize Your Report overlay (Figma 55:58411, 669 × 604), opened from Download ---------- */
-.rp-download {
-  position: fixed; inset: 0; margin: auto; width: 669px; height: 604px; max-width: none; max-height: none;
-  padding: 18px 18px 16px 24px; overflow: visible; color: #323436; /* content is 627 wide at x 24; buttons end 16px above the bottom */
-  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
-  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
-}
-.rp-download::backdrop { background: rgba(0, 0, 0, 0.3); } /* Figma prototype overlay background */
-.rp-download__close { position: absolute; left: 637px; top: 10px; width: 24px; height: 24px; }
-.rp-download__head { display: flex; flex-direction: column; gap: 8px; }
-.rp-download__title { font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
-.rp-download__text { width: 595px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
-.rp-dl { width: 627px; margin-top: 24px; overflow: hidden; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #ccdde8; }
-.rp-dl__table { table-layout: fixed; width: 627px; border-collapse: separate; border-spacing: 0; font: 300 12px/18px "Poppins", sans-serif; color: #323436; }
-.rp-dl__cell { height: 48px; padding: 6px 16px; box-shadow: inset 0 -1px #ccdde8; vertical-align: middle; text-align: left; white-space: nowrap; }
-.rp-dl thead .rp-dl__cell { height: 40px; background: #f4f9fc; font-weight: 600; }
-.rp-dl__cell--all, .rp-dl__cell:first-child { padding: 6px 5px 6px 6px; }
-.rp-dl__cell--sub { padding-left: 43px; }
-.rp-dl__option { display: flex; align-items: center; gap: 8px; cursor: pointer; }
-.rp-download__actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
-.rp-download__btn {
-  height: 40px; padding: 7px 15px; background: #fff; border: 1px solid #727476; border-radius: 8px;
-  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap;
-}
-.rp-download__btn:first-child { width: 171px; } /* Figma button widths; Chrome sets the labels about half a pixel narrower */
-.rp-download__btn:last-child { width: 175px; }
-
-/* ---------- Tabs switch between the Promotions and Advanced Analytics panels ---------- */
-.rp-panel { display: flex; flex-direction: column; gap: 16px; }
+/* ---------- Tabs ---------- */
+.rp-tabs { margin-bottom: -4px; }
+.rp-panel { display: flex; flex-direction: column; gap: var(--space-6); }
 .rp-panel[hidden] { display: none; }
-.rp-panel > * { flex: none; }
-.page--reports.is-advanced { min-height: max(1061px, 100vh); } /* Figma 55:51852 frame height */
+.rp-panel:not([hidden]) { animation: fade-in var(--dur-slow) var(--ease-out); }
 
-/* ---------- Advanced Analytics (Figma 55:51852) ---------- */
-.rp-filters--aa .rp-btn { width: 65px; }
+/* ---------- Filters ---------- */
+.rp-filters {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)) auto; gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-xs);
+}
+.rp-filters--aa { grid-template-columns: repeat(5, minmax(0, 1fr)) auto; }
+.rp-filters__row, .rp-filters__dates { display: contents; }
+.rp-filters__actions { display: flex; gap: var(--space-2); grid-column: -2; grid-row: 1; }
+.rp-select { width: auto; cursor: pointer; }
+.rp-select__value { color: var(--text-secondary); }
 
-.rp-card--elasticity { height: 407px; gap: 8px; }
-.rp-card--markets { height: 300px; gap: 14px; }
-.rp-title.rp-title--desc { height: 52px; flex-direction: column; justify-content: flex-start; gap: 4px; }
-.rp-title.rp-title--desc::before { height: 44px; }
-.rp-title__desc { display: flex; align-items: center; gap: 4px; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
-.rp-title__desc span { width: 445px; }
-.rp-title.rp-title--badge { height: 32px; margin-bottom: 4px; align-items: center; padding-right: 0; padding-bottom: 7px; } /* Figma draws the rule inside the 8px */
-.rp-title.rp-title--badge::before { top: 2px; }
-.rp-title--badge .rp-badge { width: 125px; }
+/* ---------- Cards ---------- */
+.rp-card {
+  display: flex; flex-direction: column; gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-xs);
+}
+.rp-title { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-4); margin: 0; }
+.rp-title__text { font-size: var(--text-lg); font-weight: 600; letter-spacing: -0.015em; color: var(--text); }
+.rp-title__note { font-size: var(--text-sm); font-weight: 400; color: var(--text-tertiary); }
+.rp-title--tools { align-items: center; }
+.rp-title--desc { flex-direction: column; align-items: flex-start; gap: 4px; }
+.rp-title--badge { align-items: center; }
+.rp-title__desc { font-size: var(--text-sm); color: var(--text-tertiary); }
+.rp-aggregate { display: flex; align-items: center; gap: 10px; }
+.rp-aggregate__label { font-size: var(--text-xs); font-weight: 500; color: var(--text-tertiary); }
+.rp-aggregate .rp-select { width: 220px; }
 
-/* Price Elasticity chart: grid, shaded "response flattens" range and curves drawn as one SVG, labels in HTML */
-.rp-el { position: relative; width: 1242px; height: 315px; }
+/* ---------- Pipeline ---------- */
+.rp-stages { display: block; }
+.rp-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.rp-step { position: relative; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center; padding: var(--space-5); }
+.rp-step + .rp-step { border-left: 1px solid var(--border); }
+.rp-step + .rp-step::before {
+  content: ""; position: absolute; left: -6px; top: 50%; width: 10px; height: 10px; margin-top: -5px;
+  background: var(--surface); border-top: 1px solid var(--border); border-right: 1px solid var(--border); transform: rotate(45deg);
+}
+.rp-step__dot { grid-row: span 2; width: 36px; height: 36px; display: grid; place-items: center; border-radius: var(--radius-md); background: var(--surface-muted); border: 1px solid var(--border); }
+.rp-step__dot img { width: 18px; height: 18px; }
+.rp-step__count { font-size: var(--text-2xl); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.rp-step__text { font-size: var(--text-xs); color: var(--text-tertiary); }
+.rp-step--chart-line .rp-step__dot { background: var(--surface-inverse); border-color: var(--surface-inverse); }
+.rp-step--chart-line .rp-step__dot img { filter: brightness(0) invert(1); }
+
+/* ---------- Performance ---------- */
+.rp-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(300px, 1.3fr); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.rp-tile { display: flex; flex-direction: column; gap: 6px; padding: var(--space-5); }
+.rp-tile + .rp-tile { border-left: 1px solid var(--border); }
+.rp-tile__label { font-size: var(--text-xs); font-weight: 500; color: var(--text-tertiary); }
+.rp-tile__value { font-size: var(--text-2xl); font-weight: 600; letter-spacing: -0.03em; color: var(--text); font-variant-numeric: tabular-nums; }
+.rp-uplift { position: relative; display: block; width: 274px; height: 44px; margin-top: 6px; }
+.rp-uplift__track, .rp-uplift__range { position: absolute; top: 0; height: 8px; border-radius: var(--radius-full); }
+.rp-uplift__track { left: 0; width: 274px; background: var(--gray-150); }
+.rp-uplift__range { left: 0; width: 147px; background: var(--gray-950); transform-origin: left; animation: grow 900ms 200ms var(--ease-out) both; }
+@keyframes grow { from { transform: scaleX(0); } }
+.rp-uplift__marker { position: absolute; left: 77px; top: -4px; width: 2px; height: 16px; border-radius: 1px; background: var(--warning); }
+.rp-uplift__label { position: absolute; top: 16px; font-size: 10px; font-weight: 500; line-height: 1.35; color: var(--text-tertiary); text-align: center; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* ---------- Tracking table ---------- */
+.rp-tracking { display: flex; flex-direction: column; gap: var(--space-2); }
+.rp-table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.rp-table { width: 100%; border-collapse: separate; border-spacing: 0; font-variant-numeric: tabular-nums; }
+.rp-table th, .rp-table td { padding: 0 16px; background: var(--surface); border-bottom: 1px solid var(--border); box-shadow: none; white-space: nowrap; vertical-align: middle; }
+.rp-table th { height: 40px; background: var(--surface-subtle); font-size: var(--text-xs); font-weight: 500; color: var(--text-tertiary); text-align: left; }
+.rp-table td { height: 64px; font-size: var(--text-sm); color: var(--text-secondary); }
+.rp-table tbody tr:last-child td { border-bottom: 0; }
+.rp-table tbody tr:hover td { background: var(--surface-subtle); }
+.rp-table .rp-c-select { width: 72px; padding-right: 0; }
+.rp-table td.rp-c-name { font-weight: 500; color: var(--text); }
+.rp-select-cell { display: flex; align-items: center; gap: 8px; }
+.rp-toggle { width: 26px; height: 26px; display: grid; place-items: center; border-radius: var(--radius-sm); transition: background-color var(--dur-fast) var(--ease-out); }
+.rp-toggle:hover { background: var(--surface-active); }
+.rp-toggle img { width: 14px; height: 14px; opacity: 0.55; transform: rotate(-90deg); }
+.rp-badges { display: flex; gap: 4px; }
+.rp-badge { height: 22px; }
+.rp-badge--done { background: var(--success-bg); border-color: var(--success-border); color: var(--success); }
+.rp-badge--medium { background: var(--warning-bg); border-color: var(--warning-border); color: var(--warning); }
+.rp-value { display: block; font-weight: 500; color: var(--text); }
+.rp-value.is-ahead { color: var(--success); }
+.rp-bar { display: block; width: 100%; max-width: 140px; height: 4px; margin: 6px 0 0 auto; border-radius: var(--radius-full); background: var(--gray-150); overflow: hidden; }
+.rp-bar__fill { display: block; height: 100%; border-radius: var(--radius-full); background: var(--gray-400); transform-origin: left; animation: grow 700ms var(--ease-out) both; }
+.rp-bar__fill.is-ahead { background: var(--success); }
+.rp-pager { display: flex; align-items: center; justify-content: space-between; min-height: 40px; padding: 0 4px; }
+.rp-pager__summary { font-size: var(--text-xs); color: var(--text-tertiary); }
+
+/* ---------- Price elasticity ---------- */
+.rp-card--elasticity { overflow: hidden; }
+.rp-el { position: relative; width: 1242px; height: 320px; }
 .rp-el__lines { position: absolute; left: 0; top: 0; }
-.rp-el__legend { position: absolute; left: 962px; top: 16px; display: flex; gap: 12px; margin: 0; padding: 0; list-style: none; }
-.rp-el__legend li { display: flex; align-items: center; gap: 4px; font: 400 12px/15px "Inter", sans-serif; color: #4f4f4f; white-space: nowrap; }
-.rp-el__legend li:nth-child(1) { width: 70px; } /* Figma item widths; Inter sets about half a pixel narrower here */
-.rp-el__legend li:nth-child(2) { width: 62px; }
-.rp-el__legend li:nth-child(3) { width: 120px; }
-.rp-el__key { width: 21px; height: 2px; }
-.rp-el__key--organic { background: #4d2f9e; }
-.rp-el__key--promo { background: #1acfcf; }
-.rp-el__key--flat { /* 14px swatch, 1px dashed (4, 4) border */
-  width: 14px; height: 14px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14'%3E%3Crect x='.5' y='.5' width='13' height='13' fill='%23F2F2F2' stroke='%23D6D4D4' stroke-dasharray='4 4'/%3E%3C/svg%3E");
-}
-.rp-el__y, .rp-el__x, .rp-el__axis, .rp-el__note { position: absolute; font: 300 10px/15px "Poppins", sans-serif; letter-spacing: 0.5px; white-space: nowrap; }
-.rp-el__y, .rp-el__x, .rp-el__note { color: #727476; }
-.rp-el__y { right: 1188.5px; text-align: right; } /* right-aligned labels sit 0.5px right: Chrome adds letter-spacing after the last glyph */
-.rp-el__x { top: 267px; width: 31px; text-align: center; }
-.rp-el__note { text-align: right; }
-.rp-el__axis { color: #333333; }
-.rp-el__axis--y { /* reads bottom to top */
-  left: -7px; top: 111px; width: 15px; height: 99px; writing-mode: vertical-rl; transform: rotate(180deg); text-align: right;
-}
-.rp-el__axis--x { left: 612px; top: 300px; width: 76.5px; white-space: normal; text-align: right; } /* wraps "%" onto a second line, as in Figma */
+.rp-el__legend { position: absolute; right: 8px; top: 12px; display: flex; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.rp-el__legend li { display: flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--text-secondary); white-space: nowrap; }
+.rp-el__key { width: 20px; height: 2px; }
+.rp-el__key--organic { background: var(--gray-950); }
+.rp-el__key--promo { background: repeating-linear-gradient(90deg, #8a8a8a 0 6px, transparent 6px 11px); }
+.rp-el__key--flat { width: 12px; height: 12px; border: 1px dashed #d6d4d4; background: #f2f2f2; border-radius: 2px; }
+.rp-el__y, .rp-el__x, .rp-el__axis, .rp-el__note { position: absolute; font-size: 10px; line-height: 15px; color: var(--text-tertiary); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.rp-el__y { right: 1188px; text-align: right; }
+.rp-el__x { top: 268px; width: 31px; text-align: center; }
+.rp-el__axis { font-weight: 500; color: var(--text-secondary); }
+.rp-el__axis--y { left: -8px; top: 110px; writing-mode: vertical-rl; transform: rotate(180deg); }
+.rp-el__axis--x { left: 612px; top: 296px; }
+.rp-el__note { font-weight: 500; color: var(--text-secondary); }
 
-/* OF-10492 across markets table (Figma 16382:66405): header and rows only; 1px outer rule */
-.rp-aa-wrap { height: 184px; overflow-x: auto; overflow-y: hidden; border-radius: 8px; background: #fff; box-shadow: 0 0 0 1px #ccdde8; }
-.rp-aa-table { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0; }
-.rp-aa-table th, .rp-aa-table td { padding: 6px 16px; box-shadow: inset 0 -1px #ccdde8; vertical-align: middle; white-space: nowrap; text-align: right; }
-.rp-aa-table th:nth-child(-n+3), .rp-aa-table td:nth-child(-n+3) { box-shadow: inset 0 -1px #ccdde8, inset 1px 0 #ccdde8; }
+/* ---------- Market table ---------- */
+.rp-aa-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.rp-aa-table th, .rp-aa-table td { text-align: right; }
 .rp-aa-table th:first-child, .rp-aa-table td:first-child, .rp-aa-table th:last-child, .rp-aa-table td:last-child { text-align: left; }
-.rp-aa-table td:last-child { box-shadow: inset 0 -1px #c9ccce; }
-.rp-aa-table th { height: 40px; background: #eff9ff; font: 600 12px/18px "Poppins", sans-serif; color: #323436; }
-.rp-aa-table td { height: 48px; background: #fff; font: 400 12px/18px "Poppins", sans-serif; color: #323436; }
-.rp-aa-table td:first-child { font-weight: 300; }
-.rp-aa-th { display: inline-flex; align-items: center; gap: 10px; vertical-align: top; }
-.rp-badge--medium { width: 56px; background: #ffffe7; box-shadow: inset 0 0 0 1px #fbbd08; color: #7d4211; }
-.rp-aa-legend { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.rp-aa-table td:first-child { font-weight: 500; color: var(--text); }
+.rp-aa-th { display: inline-flex; align-items: center; gap: 6px; }
+.rp-aa-th img { width: 13px; height: 13px; opacity: 0.4; transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+.rp-aa-table th.is-sortable { cursor: pointer; user-select: none; transition: color var(--dur-fast) var(--ease-out); }
+.rp-aa-table th.is-sortable:hover { color: var(--text); }
+.rp-aa-table th.is-sortable:hover img { opacity: 0.8; }
+.rp-aa-table th[aria-sort="ascending"], .rp-aa-table th[aria-sort="descending"] { color: var(--text); }
+.rp-aa-table th[aria-sort="ascending"] img, .rp-aa-table th[aria-sort="descending"] img { opacity: 1; }
+.rp-aa-table th[aria-sort="descending"] img { transform: scaleY(-1); }
+.rp-aa-legend { font-size: var(--text-xs); color: var(--text-tertiary); }
+.rp-aa-legend b { font-weight: 600; color: var(--text-secondary); }
+
+/* ---------- Export dialog ---------- */
+.rp-download { width: 640px; padding: var(--space-6); }
+.rp-download[open] { display: flex; flex-direction: column; gap: var(--space-5); }
+.rp-dl { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.rp-dl__table { table-layout: fixed; }
+.rp-dl__cell { height: 42px !important; padding: 0 14px !important; }
+.rp-dl__table th:first-child, .rp-dl__table td:first-child { width: 44px; }
+.rp-dl__cell--sub { padding-left: 38px !important; }
+.rp-dl__option { display: flex; align-items: center; gap: 10px; color: var(--text); cursor: pointer; white-space: normal; }
+
+@media print {
+  .sidebar, .topbar, .page-head__actions, .rp-tabs, .rp-filters, dialog, .toaster { display: none !important; }
+  .page { display: block; }
+}

@@ -3,82 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Delegation of Authority (DOA) Rules</title>
+  <meta name="color-scheme" content="light">
+  <script>try{if(localStorage.getItem("pt-sidebar")==="collapsed")document.documentElement.classList.add("is-sidebar-collapsed")}catch(e){}</script>
+  <title>DOA rules · Stellantis Promotool</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/configuration.css">
   <link rel="stylesheet" href="css/admin.css">
   <link rel="stylesheet" href="css/user-menu.css">
 </head>
 <body>
-<!-- Delegation of Authority (DOA) Rules — Figma node 100:42880, 1366 × 600 -->
+<!-- Delegation of Authority (DOA) Rules -->
 <div class="page page--admin page--doa">
 
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item left-bar__item--active" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules" aria-current="page"><img src="assets/icons/hammer-blue.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="role-management.html" aria-label="Role Management"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="referential.html" aria-label="Referential"><img src="assets/icons/database.svg" width="24" height="24" alt=""></a>
+  <aside class="sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="experiment-status.html" aria-label="Stellantis Promotool, home">
+      <span class="sidebar__mark"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 11.5 8 4.5l5 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="sidebar__brand-text"><span class="sidebar__wordmark">STELLANTIS</span><span class="sidebar__product">Promotool</span></span>
+    </a>
+    <nav class="sidebar__nav" aria-label="Main">
+      <p class="sidebar__label">Approvals</p>
+      <a class="nav-item" href="experiment-status.html" data-tooltip="Approval queue"><img class="nav-item__icon" src="assets/icons/home.svg" width="18" height="18" alt=""><span class="nav-item__text">Approval queue</span></a>
+      <p class="sidebar__label">Administration</p>
+      <a class="nav-item" href="doa-rules.html" aria-current="page" data-tooltip="DOA rules"><img class="nav-item__icon" src="assets/icons/hammer-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">DOA rules</span></a>
+      <a class="nav-item" href="user-management.html" data-tooltip="Users"><img class="nav-item__icon" src="assets/icons/user-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Users</span></a>
+      <a class="nav-item" href="role-management.html" data-tooltip="Roles"><img class="nav-item__icon" src="assets/icons/hierarchy-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Roles</span></a>
+      <a class="nav-item" href="referential.html" data-tooltip="Referential"><img class="nav-item__icon" src="assets/icons/database-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Referential</span></a>
+    </nav>
+    <div class="sidebar__foot">
+      <p class="sidebar__meta"><b>Aftermarket · Europe</b>Administration</p>
     </div>
-  </nav>
+  </aside>
 
   <div class="main">
 
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">Kristen</span>
-          <span class="profile__role">Promotool Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+    <header class="topbar">
+      <button class="topbar__toggle" type="button" data-sidebar-toggle aria-label="Collapse sidebar" data-tooltip="Toggle sidebar" data-tooltip-side="bottom"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 3.5v11" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <span class="crumbs__divider" aria-hidden="true"></span>
+      <nav class="crumbs" aria-label="Breadcrumb"><span class="crumbs__root">Administration</span><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">DOA rules</span></nav>
+      <div class="topbar__right">
+        <button class="topbar__btn lang" type="button" aria-label="Language: English"><img src="assets/icons/world.svg" width="18" height="18" alt="">EN<img class="lang__chevron" src="assets/icons/chevron-down.svg" width="12" height="12" alt=""></button>
+        <button class="topbar__btn notif" type="button" aria-label="Notifications (5)" data-tooltip="Notifications" data-tooltip-side="bottom"><img src="assets/icons/bell.svg" width="18" height="18" alt=""><span class="notif__count">5</span></button>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <button class="profile" type="button" aria-haspopup="dialog">
+          <span class="profile__avatar" aria-hidden="true">KR</span>
+          <span class="profile__text"><span class="profile__name">Kristen</span><span class="profile__role">Promotool Admin</span></span>
+          <img class="profile__chevron" src="assets/icons/chevron-down.svg" width="14" height="14" alt="">
         </button>
       </div>
     </header>
 
     <header class="ad-header">
       <div class="ad-header__inner">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <img src="assets/icons/users-blue.svg" width="16" height="16" alt="">
-          <span class="breadcrumb__sep">/</span>
-          <a class="breadcrumb__link" href="doa-rules.html">Delegation of Authority (DOA) Rules</a>
-          <span class="breadcrumb__sep breadcrumb__sep--dark">/</span>
-          <span class="breadcrumb__page">Promotool Approval</span>
-        </nav>
-        <div>
-          <h1 class="ad-header__title">Delegation of Authority (DOA) Rules</h1>
-          <p class="ad-header__subtitle">Manage promotion approval rights and temporary authorization scopes.</p>
-        </div>
+        <p class="page-head__eyebrow">Delegation of authority</p>
+        <h1 class="ad-header__title">DOA rules</h1>
+        <p class="ad-header__subtitle">Approval levels for every promotion parameter, and who signs off at each level.</p>
       </div>
     </header>
 
     <main class="ad-body">
       <section class="ad-card doa-card" aria-labelledby="doa-title">
         <div class="doa-title">
-          <h2 class="doa-title__text" id="doa-title">Parameter Threshold Matrix</h2>
-          <p class="doa-title__desc">Define approval levels (L0-L5) for various promotion parameters.</p>
+          <h2 class="doa-title__text" id="doa-title">Parameter threshold matrix</h2>
+          <p class="doa-title__desc">Approval levels L0–L5 for each promotion parameter.</p>
         </div>
-        <button class="btn-primary doa-add" type="button" data-open-dialog="doa-param"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Add Parameter</button>
+        <button class="btn-primary doa-add" type="button" data-open-dialog="doa-param"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Add parameter</button>
 
         <div class="ad-table-wrap doa-table-wrap">
           <table class="ad-table doa-table">
-            <colgroup><col style="width:204px"><col style="width:79px"><col style="width:120px"><col style="width:92px"><col style="width:124px"><col style="width:216px"><col style="width:229px"><col style="width:229px"><col style="width:207px"><col style="width:88px"></colgroup>
             <thead>
               <tr><th>Parameter</th><th>Market</th><th>Promo Type</th><th>Eff. Start</th><th>Eff. End</th><th>L1.1</th><th>L2.1</th><th>L1.2</th><th>L2.2</th><th>Actions</th></tr>
             </thead>
@@ -142,15 +133,15 @@
 </div>
 <dialog class="pp-panel" id="doa-param" aria-labelledby="pp-title">
   <button class="pp-close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
-  <h2 class="pp-title" id="pp-title">Edit Parameter</h2>
+  <h2 class="pp-title" id="pp-title">Edit parameter</h2>
   <form class="pp-body" method="dialog">
-    <h3 class="pp-section"><span>Parameter Definition</span></h3>
-    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Parameter Name</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Family Cluster Margin"></span></label><label class="pp-field" style="width:319px"><span class="pp-field__label">Unit</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="%"></span></label></div>
-    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Competitive Class</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label><label class="pp-field" style="width:319px"><span class="pp-field__label">Market</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label></div>
-    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Promotion Type</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label><label class="pp-field" style="width:319px"><span class="pp-field__label">Effective Start date</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="mm-dd-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label></div>
-    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Effective End date</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="mm-dd-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label></div>
+    <h3 class="pp-section"><span>Parameter definition</span></h3>
+    <div class="pp-row"><label class="pp-field"><span class="pp-field__label">Parameter Name</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Family Cluster Margin"></span></label><label class="pp-field"><span class="pp-field__label">Unit</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="%"></span></label></div>
+    <div class="pp-row"><label class="pp-field"><span class="pp-field__label">Competitive Class</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label><label class="pp-field"><span class="pp-field__label">Market</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label></div>
+    <div class="pp-row"><label class="pp-field"><span class="pp-field__label">Promotion Type</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label><label class="pp-field"><span class="pp-field__label">Effective Start date</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="mm-dd-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label></div>
+    <div class="pp-row"><label class="pp-field"><span class="pp-field__label">Effective End date</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="mm-dd-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label></div>
     <label class="pp-desc"><span class="pp-field__label">Description (Optional)</span><span class="pp-desc__box"><textarea>These margins can be at competition class level i,e, Captive, Medium, High)</textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></span></label>
-    <h3 class="pp-section"><span>Approval threshold &amp; routing</span></h3>
+    <h3 class="pp-section"><span>Approval thresholds and routing</span></h3>
     <div class="pp-levels">
           <div class="pp-level pp-level--off" aria-disabled="true">
             <div class="pp-level__head"><span class="pp-badge">Level 0</span><input class="pp-toggle" type="checkbox" role="switch" checked aria-label="Level 0 enabled" disabled></div>
@@ -186,5 +177,6 @@
 </dialog>
 <script src="js/admin.js"></script>
   <script src="js/user-menu.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

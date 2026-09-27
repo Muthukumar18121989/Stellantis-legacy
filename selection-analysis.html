@@ -3,97 +3,79 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Selection &amp; Analysis</title>
+  <meta name="color-scheme" content="light">
+  <script>try{if(localStorage.getItem("pt-sidebar")==="collapsed")document.documentElement.classList.add("is-sidebar-collapsed")}catch(e){}</script>
+  <title>New promotion · Stellantis Promotool</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/configuration.css">
   <link rel="stylesheet" href="css/user-menu.css">
 </head>
 <body>
 <div class="page page--selection">
-  <!-- Left menu bar (Figma 26:10101) -->
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item" href="promotool-dashboard.html" aria-label="Promotool Dashboard"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item left-bar__item--active" href="experiments.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+  <!-- Left menu bar -->
+  <aside class="sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="experiments.html" aria-label="Stellantis Promotool, home">
+      <span class="sidebar__mark"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 11.5 8 4.5l5 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="sidebar__brand-text"><span class="sidebar__wordmark">STELLANTIS</span><span class="sidebar__product">Promotool</span></span>
+    </a>
+    <nav class="sidebar__nav" aria-label="Main">
+      <p class="sidebar__label">Workspace</p>
+      <a class="nav-item" href="promotool-dashboard.html" data-tooltip="Dashboard"><img class="nav-item__icon" src="assets/icons/grid-dots-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Dashboard</span></a>
+      <a class="nav-item" href="experiments.html" aria-current="page" data-tooltip="Experiments"><img class="nav-item__icon" src="assets/icons/route.svg" width="18" height="18" alt=""><span class="nav-item__text">Experiments</span></a>
+      <a class="nav-item" href="reports.html" data-tooltip="Reports"><img class="nav-item__icon" src="assets/icons/report-analytics-active.svg" width="18" height="18" alt=""><span class="nav-item__text">Reports</span></a>
+    </nav>
+    <div class="sidebar__foot">
+      <p class="sidebar__meta"><b>Aftermarket · Europe</b>Promotion workspace</p>
     </div>
-  </nav>
+  </aside>
+
   <div class="main">
-    <!-- Top menu (Figma 26:10118) -->
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">MARCUS WEBER</span>
-          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+
+    <header class="topbar">
+      <button class="topbar__toggle" type="button" data-sidebar-toggle aria-label="Collapse sidebar" data-tooltip="Toggle sidebar" data-tooltip-side="bottom"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 3.5v11" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <span class="crumbs__divider" aria-hidden="true"></span>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="experiments.html">Experiments</a><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">New promotion</span></nav>
+      <div class="topbar__right">
+        <button class="topbar__btn lang" type="button" aria-label="Language: English"><img src="assets/icons/world.svg" width="18" height="18" alt="">EN<img class="lang__chevron" src="assets/icons/chevron-down.svg" width="12" height="12" alt=""></button>
+        <button class="topbar__btn notif" type="button" aria-label="Notifications (5)" data-tooltip="Notifications" data-tooltip-side="bottom"><img src="assets/icons/bell.svg" width="18" height="18" alt=""><span class="notif__count">5</span></button>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <button class="profile" type="button" aria-haspopup="dialog">
+          <span class="profile__avatar" aria-hidden="true">MW</span>
+          <span class="profile__text"><span class="profile__name">Marcus Weber</span><span class="profile__role">Promotion Pilot (EE)</span></span>
+          <img class="profile__chevron" src="assets/icons/chevron-down.svg" width="14" height="14" alt="">
         </button>
       </div>
     </header>
 
-    <!-- Breadcrumb + title (Figma 26:10158) -->
-    <section class="cfg-header">
-      <div class="cfg-header__inner">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="experiments.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
-          <span class="breadcrumb__sep">/</span>
-          <a class="breadcrumb__link" href="experiments.html">Dashboard</a>
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current" aria-current="page">Configuration</span>
-        </nav>
-        <h1 class="cfg-header__title">Promotion Configuration</h1>
+    <section class="page-head">
+      <div class="page-head__text">
+        <p class="page-head__eyebrow">New promotion</p>
+        <h1 class="page-head__title">Select articles</h1>
+        <p class="page-head__desc">Choose the families in scope, review their history and set volume and price targets before you simulate.</p>
       </div>
+      <div class="page-head__actions"><ol class="stepper" aria-label="Progress"><li class="stepper__item is-done"><span class="stepper__dot">1</span>Configure parameters</li><li class="stepper__item is-current" aria-current="step"><span class="stepper__dot">2</span>Selection &amp; analysis</li></ol></div>
     </section>
 
     <main class="cfg-body">
-      <!-- Process steps (Figma 26:10295) -->
-      <ol class="steps" aria-label="Progress">
-        <li class="steps__inner">
-          <img class="steps__dash" src="assets/shapes/step-dash.svg" width="208" height="2" alt="">
-          <span class="steps__blue"></span>
-          <div class="step">
-            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
-            <span class="step__label">Configure Parameters</span>
-          </div>
-          <div class="step" aria-current="step">
-            <img src="assets/shapes/step-current.svg" width="20" height="20" alt="">
-            <span class="step__label">Selection &amp; Analysis</span>
-          </div>
-        </li>
-      </ol>
 
-      <!-- Article selection summary (Figma 26:10321) -->
+      <!-- Article selection summary -->
       <section class="sel-summary">
         <div class="sel-summary__text">
-          <h2 class="sel-summary__title">Article Selection Core</h2>
+          <h2 class="sel-summary__title">Article selection</h2>
           <p class="sel-summary__meta" data-selection-meta>0 Families | 0 Targeted SKUs</p>
         </div>
-        <button class="btn-icon-primary" type="button" data-open-dialog="select-family"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Manage Families</button>
+        <button class="btn" type="button" data-open-dialog="select-family"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Manage families</button>
       </section>
 
-      <!-- Empty state (Figma 26:10328) -->
-      <section class="sel-empty" data-empty-state>
-        <img src="assets/illustrations/empty-families.svg" width="80" height="80" alt="">
-        <p class="sel-empty__text">NO FAMILIES SELECTED. MANAGE FAMILIES TO PROCEES</p>
+      <!-- Empty state -->
+      <section class="sel-empty state" data-empty-state>
+        <span class="state__icon"><img src="assets/icons/stack.svg" width="20" height="20" alt=""></span>
+        <p class="state__title">No families selected yet</p>
+        <p class="state__text">Add the product families this promotion covers. You can pick them from the catalogue or upload a list.</p>
+        <div class="state__actions"><button class="btn btn--primary" type="button" data-open-dialog="select-family"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Add families</button></div>
       </section>
 
-      <!-- Selected families (Figma 26:9854), filled from the Select Family dialog -->
+      <!-- Selected families, filled from the Select Family dialog -->
       <section class="fam-list" aria-label="Selected families" hidden></section>
       <template id="family-panel">
         <article class="fam-panel">
@@ -104,59 +86,53 @@
           <div class="fam-panel__body">
             <div class="fam-panel__cards"><div class="fam-panel__track">
               <section class="an-card">
-                <img class="an-card__wave" src="assets/shapes/card-wave.svg" alt="">
                 <div class="an-card__content">
                   <div class="an-card__head"><h4 class="an-card__title">Overview</h4></div>
-                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">No of Articles</span><span class="an-row__value">32 Active, 3 Excluded</span></div></div>
+                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Articles</span><span class="an-row__value">32 Active, 3 Excluded</span></div></div>
                 </div>
-                <img class="an-card__icon" src="assets/icons/file-info-large.svg" width="76" height="76" alt="">
               </section>
               <section class="an-card">
-                <img class="an-card__wave" src="assets/shapes/card-wave.svg" alt="">
                 <div class="an-card__content">
-                  <div class="an-card__head"><h4 class="an-card__title">Volume Analysis (12Months)</h4><span class="an-badge">12 Months</span></div>
-                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Total Historical<br>Quantity</span><span class="an-row__value">54,000</span></div></div>
-                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Historical Monthly<br>Quantity without Promotion</span><span class="an-row__value">1,870</span></div></div>
-                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Historical Monthly<br>Quantity with Promotion</span><span class="an-row__value">2,380</span></div></div>
-                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Historical Monthly<br>Demand</span><span class="an-row__value">2,380</span></div></div>
+                  <div class="an-card__head"><h4 class="an-card__title">Volume analysis</h4><span class="an-badge">Last 12 months</span></div>
+                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Total historical quantity</span><span class="an-row__value">54,000</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Avg. monthly quantity without promotion</span><span class="an-row__value">1,870</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Avg. monthly quantity with promotion</span><span class="an-row__value">2,380</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Avg. monthly demand</span><span class="an-row__value">2,380</span></div></div>
                 </div>
-                <img class="an-card__icon" src="assets/icons/stack-3-large.svg" width="76" height="76" alt="">
               </section>
               <section class="an-card">
-                <img class="an-card__wave" src="assets/shapes/card-wave.svg" alt="">
                 <div class="an-card__content">
-                  <div class="an-card__head"><h4 class="an-card__title">Price Analysis</h4><span class="an-badge">Current</span></div>
-                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Commercial<br>Margin, €</span><span class="an-row__value">8.25</span></div></div>
-                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Average Commercial Margin %</span><span class="an-row__value">87.65</span></div></div>
-                  <div class="an-row an-row--elasticity"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Promo Elasticity</span><span class="an-row__value">-1.04</span></div></div>
+                  <div class="an-card__head"><h4 class="an-card__title">Price analysis</h4><span class="an-badge">Current</span></div>
+                  <div class="an-row an-row--top"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Avg. commercial margin (€)</span><span class="an-row__value">8.25</span></div></div>
+                  <div class="an-row"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Avg. commercial margin (%)</span><span class="an-row__value">87.65</span></div></div>
+                  <div class="an-row an-row--elasticity"><span class="an-row__dot"></span><div class="an-row__body"><span class="an-row__label">Promo elasticity</span><span class="an-row__value">-1.04</span></div></div>
                 </div>
-                <img class="an-card__icon an-card__icon--tag" src="assets/icons/tag-large.svg" width="77" height="76" alt="">
               </section>
             </div></div>
             <div class="fam-panel__actions">
-              <button class="btn-outline" type="button">Remove Family</button>
-              <button class="btn-next" type="button" data-drill-down>Drill Down to Article</button>
+              <button class="btn btn--ghost" type="button">Remove family</button>
+              <button class="btn" type="button" data-drill-down>View articles<img src="assets/icons/arrow-right-16.svg" width="16" height="16" alt=""></button>
             </div>
           </div>
         </article>
       </template>
 
-      <!-- Article drill-down of one family (Figma 26:10344), opened by "Drill Down to Article" -->
+      <!-- Article drill-down of one family, opened by "Drill Down to Article" -->
       <template id="family-articles">
         <section class="art-view" data-tab="exclusions">
           <div class="art-view__inner">
             <div class="art-view__top">
               <h3 class="art-view__title" data-family-title></h3>
-              <label class="art-apply" data-tab-only="volume price"><input class="fam-check" type="checkbox" checked>Apply Same Configuration to all markets</label>
+              <label class="art-apply" data-tab-only="volume price"><input class="fam-check" type="checkbox" checked>Apply the same configuration to all markets</label>
             </div>
             <div class="art-view__filter" data-tab-only="exclusions">
               <label class="fam-search fam-search--soft"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Filter articles ..." aria-label="Filter articles"></label>
             </div>
             <div class="art-view__tabs-row">
-              <div class="art-tabs" role="tablist">
-                <button class="art-tab" type="button" role="tab" aria-selected="true" data-tab-target="exclusions">0: EXCLUSIONS</button>
-                <button class="art-tab" type="button" role="tab" aria-selected="false" data-tab-target="volume">1: VOLUME ANALYSIS</button>
-                <button class="art-tab" type="button" role="tab" aria-selected="false" data-tab-target="price">2: PRICE ANALYSIS</button>
+              <div class="art-tabs tabs-line" role="tablist">
+                <button class="art-tab tab-line" type="button" role="tab" aria-selected="true" data-tab-target="exclusions"><span class="art-tab__n">1</span>Exclusions</button>
+                <button class="art-tab tab-line" type="button" role="tab" aria-selected="false" data-tab-target="volume"><span class="art-tab__n">2</span>Volume analysis</button>
+                <button class="art-tab tab-line" type="button" role="tab" aria-selected="false" data-tab-target="price"><span class="art-tab__n">3</span>Price analysis</button>
               </div>
               <div class="art-tools" data-tab-only="volume price">
                 <button class="art-select" type="button">Select Region<img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
@@ -167,7 +143,6 @@
             <div class="art-panel" data-tab-panel="exclusions">
               <div class="art-table-wrap">
                 <table class="fam-table art-table">
-                  <colgroup><col style="width:176px"><col style="width:219px"><col style="width:125px"><col style="width:335px"><col style="width:126px"><col style="width:197px"><col style="width:181px"></colgroup>
                   <thead>
                     <tr>
                       <th><label class="fam-id"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all>Article ID</label></th>
@@ -210,7 +185,6 @@
             <div class="art-panel" data-tab-panel="volume">
               <div class="vol-table-wrap">
                 <div class="vol-scroll"><table class="vol-table">
-                  <colgroup><col style="width:132px"><col style="width:256px"><col style="width:86px"><col style="width:113px"><col style="width:111px"><col style="width:110px"><col style="width:129px"><col style="width:129px"><col style="width:87px"><col style="width:94px"><col style="width:101px"><col style="width:175px"><col style="width:130px"><col style="width:157px"></colgroup>
                   <thead>
                     <tr>
                       <th class="is-first"><label class="fam-id"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all>Article ID</label></th>
@@ -321,7 +295,6 @@
             <div class="art-panel" data-tab-panel="price">
               <div class="vol-table-wrap pr-table-wrap">
                 <div class="vol-scroll"><table class="vol-table pr-table">
-                  <colgroup><col style="width:109px"><col style="width:223px"><col style="width:124px"><col style="width:216px"><col style="width:157px"><col style="width:157px"><col style="width:126px"><col style="width:214px"><col style="width:86px"><col style="width:114px"><col style="width:122px"><col style="width:41px"><col style="width:90px"><col style="width:68px"></colgroup>
                   <thead>
                     <tr>
                       <th class="is-first" rowspan="2">Article ID</th>
@@ -441,16 +414,16 @@
     </main>
   </div>
 </div>
-<!-- Select Family dialog (Figma 26:13500) -->
+<!-- Select Family dialog -->
 <dialog class="fam-dialog" id="select-family" aria-labelledby="select-family-title">
   <form class="fam-dialog__body" method="dialog" onsubmit="return false">
-    <h2 class="fam-dialog__title" id="select-family-title">Select Family</h2>
-    <!-- Upload state (Figma 26:13985) -->
+    <header class="modal-head"><h2 class="fam-dialog__title" id="select-family-title">Select families</h2><p class="modal-head__desc">Tick the families this promotion covers, or upload a file with family or article IDs.</p></header>
+    <!-- Upload state -->
     <div class="fam-upload">
       <div class="fam-upload__field">
         <div class="fam-upload__head">
-          <span class="fam-upload__label" id="fam-file-label">Choose File</span>
-          <a class="fam-upload__template" href="#">Download Template</a>
+          <span class="fam-upload__label" id="fam-file-label">File</span>
+          <a class="fam-upload__template" href="#">Download template</a>
         </div>
         <label class="file-input">
           <input type="file" id="fam-file" aria-labelledby="fam-file-label" accept=".xlsx,.xls,.csv">
@@ -460,60 +433,58 @@
       </div>
       <button class="btn-validate" type="button" data-validate>Validate<img src="assets/icons/refresh-white.svg" width="20" height="20" alt=""></button>
     </div>
-    <!-- Validated state (Figma 26:14014): upload row + result banners above the family table -->
+    <!-- Validated state: upload row + result banners above the family table -->
     <p class="fam-alert fam-alert--success"><img src="assets/icons/check-green.svg" width="16" height="16" alt="">promo_selection.xlsx - 1 family, 102 articles matched</p>
     <p class="fam-alert fam-alert--error"><img src="assets/icons/alert-triangle.svg" width="16" height="16" alt="">3 article IDs not found</p>
     <div class="fam-dialog__main">
       <div class="fam-toolbar">
         <div class="fam-toolbar__search">
-          <label class="fam-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Family ID" aria-label="Search by Family ID"></label>
-          <label class="fam-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Family Name" aria-label="Search by Family Name"></label>
+          <label class="fam-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search families" aria-label="Search families"></label>
         </div>
         <button class="btn-outline-icon" type="button" data-show-upload><img src="assets/icons/upload.svg" width="16" height="16" alt="">Upload</button>
       </div>
       <div class="fam-table-wrap">
         <table class="fam-table">
-          <colgroup><col style="width:105px"><col style="width:116px"><col style="width:113px"><col style="width:144px"><col style="width:139px"><col style="width:179px"><col style="width:78px"><col style="width:78px"></colgroup>
           <thead>
             <tr>
               <th><label class="fam-id"><input class="fam-check" type="checkbox" data-check-all aria-label="Select all families">ID</label></th>
-              <th>Family Name</th><th># Articles</th><th>Business Line</th><th>Product Category</th><th>Competitiveness Class</th><th>DFS Flag</th><th>Supplier Ranges</th>
+              <th>Family name</th><th class="is-num">Articles</th><th>Business line</th><th>Product category</th><th>Competitiveness</th><th>DFS</th><th>Supplier range</th>
             </tr>
           </thead>
           <tbody>
           <tr>
             <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109Z5" checked>1109Z5</label></td>
-            <td class="is-light">Filter</td><td>653</td><td>Body</td><td>OEM</td>
+            <td class="is-bold">Filter</td><td class="is-num">653</td><td>Body</td><td>OEM</td>
             <td class="is-soft-line"><span class="badge badge--level badge--high"><span class="badge__text">High</span></span></td>
             <td>Yes</td><td>PRO</td>
           </tr>
           <tr>
             <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109T0" checked>1109T0</label></td>
-            <td class="is-light">A/C</td><td>1235</td><td>Body</td><td>OEM</td>
+            <td class="is-bold">A/C</td><td class="is-num">1235</td><td>Body</td><td>OEM</td>
             <td class="is-soft-line"><span class="badge badge--level badge--high"><span class="badge__text">High</span></span></td>
             <td>No</td><td>PRO</td>
           </tr>
           <tr>
             <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109Z1">1109Z1</label></td>
-            <td class="is-light">Engine</td><td>127</td><td>Body</td><td>OEM</td>
+            <td class="is-bold">Engine</td><td class="is-num">127</td><td>Body</td><td>OEM</td>
             <td class="is-soft-line"><span class="badge badge--level badge--medium"><span class="badge__text">Medium</span></span></td>
             <td>Yes</td><td>IAM</td>
           </tr>
           <tr>
             <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109R6">1109R6</label></td>
-            <td class="is-light">Wiper</td><td>80</td><td>Electrical</td><td>Retainera</td>
+            <td class="is-bold">Wiper</td><td class="is-num">80</td><td>Electrical</td><td>Retainera</td>
             <td class="is-soft-line"><span class="badge badge--level badge--medium"><span class="badge__text">Medium</span></span></td>
             <td>No</td><td>PRO</td>
           </tr>
           <tr>
             <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109N2" checked>1109N2</label></td>
-            <td class="is-light">A/C</td><td>426</td><td>Mechanical</td><td>Retainera</td>
+            <td class="is-bold">A/C</td><td class="is-num">426</td><td>Mechanical</td><td>Retainera</td>
             <td class="is-soft-line"><span class="badge badge--level badge--captive"><span class="badge__text">Captive</span></span></td>
             <td>No</td><td>LOC</td>
           </tr>
           <tr>
             <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109AZ">1109AZ</label></td>
-            <td class="is-light">Filter</td><td>28</td><td>Body</td><td>OEM</td>
+            <td class="is-bold">Filter</td><td class="is-num">28</td><td>Body</td><td>OEM</td>
             <td class="is-soft-line"><span class="badge badge--level badge--high"><span class="badge__text">High</span></span></td>
             <td>No</td><td>LOC</td>
           </tr>
@@ -534,12 +505,13 @@
           <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
         </nav>
       </div>
-      <button class="btn-selected" type="button" data-apply-selection><span data-selected-count>3 Selected</span><img src="assets/icons/arrow-right.svg" width="20" height="20" alt=""></button>
+      <button class="btn-selected" type="button" data-apply-selection><span data-selected-count>Add 3 families</span></button>
     </div>
   </form>
   <button class="fam-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
 </dialog>
 <script src="js/selection-analysis.js"></script>
   <script src="js/user-menu.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

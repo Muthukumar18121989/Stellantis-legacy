@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Promotool — Promotion Validation / Logistics Volume Split</title>
+  <meta name="color-scheme" content="light">
+  <script>try{if(localStorage.getItem("pt-sidebar")==="collapsed")document.documentElement.classList.add("is-sidebar-collapsed")}catch(e){}</script>
+  <title>Logistics volume split · Stellantis Promotool</title>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/configuration.css">
   <link rel="stylesheet" href="css/result.css">
@@ -12,143 +14,136 @@
 </head>
 <body>
 <div class="page page--validation">
-  <!-- Left menu bar (Figma 55:40383) -->
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item" href="promotool-dashboard.html" aria-label="Promotool Dashboard"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item left-bar__item--active" href="experiments.html" aria-label="Experiments"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+  <!-- Left menu bar -->
+  <aside class="sidebar" aria-label="Primary">
+    <a class="sidebar__brand" href="experiments.html" aria-label="Stellantis Promotool, home">
+      <span class="sidebar__mark"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 11.5 8 4.5l5 7" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.6 11.5h4.8" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+      <span class="sidebar__brand-text"><span class="sidebar__wordmark">STELLANTIS</span><span class="sidebar__product">Promotool</span></span>
+    </a>
+    <nav class="sidebar__nav" aria-label="Main">
+      <p class="sidebar__label">Workspace</p>
+      <a class="nav-item" href="promotool-dashboard.html" data-tooltip="Dashboard"><img class="nav-item__icon" src="assets/icons/grid-dots-blue.svg" width="18" height="18" alt=""><span class="nav-item__text">Dashboard</span></a>
+      <a class="nav-item" href="experiments.html" aria-current="page" data-tooltip="Experiments"><img class="nav-item__icon" src="assets/icons/route.svg" width="18" height="18" alt=""><span class="nav-item__text">Experiments</span></a>
+      <a class="nav-item" href="reports.html" data-tooltip="Reports"><img class="nav-item__icon" src="assets/icons/report-analytics-active.svg" width="18" height="18" alt=""><span class="nav-item__text">Reports</span></a>
+    </nav>
+    <div class="sidebar__foot">
+      <p class="sidebar__meta"><b>Aftermarket · Europe</b>Promotion workspace</p>
     </div>
-  </nav>
+  </aside>
+
   <div class="main">
-    <!-- Top menu (Figma 55:40400) -->
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">MARCUS WEBER</span>
-          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+
+    <header class="topbar">
+      <button class="topbar__toggle" type="button" data-sidebar-toggle aria-label="Collapse sidebar" data-tooltip="Toggle sidebar" data-tooltip-side="bottom"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M7 3.5v11" stroke="currentColor" stroke-width="1.3"/></svg></button>
+      <span class="crumbs__divider" aria-hidden="true"></span>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="experiments.html">Experiments</a><span class="crumbs__sep" aria-hidden="true">/</span><a href="simulation-result.html">Simulation results</a><span class="crumbs__sep" aria-hidden="true">/</span><span aria-current="page">Logistics volume split</span></nav>
+      <div class="topbar__right">
+        <button class="topbar__btn lang" type="button" aria-label="Language: English"><img src="assets/icons/world.svg" width="18" height="18" alt="">EN<img class="lang__chevron" src="assets/icons/chevron-down.svg" width="12" height="12" alt=""></button>
+        <button class="topbar__btn notif" type="button" aria-label="Notifications (5)" data-tooltip="Notifications" data-tooltip-side="bottom"><img src="assets/icons/bell.svg" width="18" height="18" alt=""><span class="notif__count">5</span></button>
+        <span class="topbar__divider" aria-hidden="true"></span>
+        <button class="profile" type="button" aria-haspopup="dialog">
+          <span class="profile__avatar" aria-hidden="true">MW</span>
+          <span class="profile__text"><span class="profile__name">Marcus Weber</span><span class="profile__role">Promotion Pilot (EE)</span></span>
+          <img class="profile__chevron" src="assets/icons/chevron-down.svg" width="14" height="14" alt="">
         </button>
       </div>
     </header>
 
-    <!-- Breadcrumb + title (Figma 55:40441) -->
-    <section class="res-header">
-      <div class="cfg-header__inner">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="experiments.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
-          <span class="breadcrumb__sep">/</span>
-          <a class="breadcrumb__link" href="experiments.html">Dashboard</a>
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current" aria-current="page">Configuration</span>
-        </nav>
-        <h1 class="cfg-header__title">Promotion Validation / Logistics Volume Split</h1>
+    <section class="page-head">
+      <div class="page-head__text">
+        <p class="page-head__eyebrow">Promotion validation</p>
+        <h1 class="page-head__title">Logistics volume split</h1>
+        <p class="page-head__desc">Spread the promoted volume across order months for each family and article. Every row should add up to 100% before you submit for approval.</p>
+      </div>
+      <div class="page-head__actions">
+        <button class="icon-btn" type="button" aria-label="Download split" data-tooltip="Download split"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
       </div>
     </section>
 
     <main class="vs-body">
-      <!-- Promotion summary (Figma 55:40581) -->
+      <!-- Promotion summary -->
       <section class="vs-summary">
         <dl class="vs-summary__facts">
-          <div class="vs-fact" style="width:126px"><dt>Promo Name:</dt> <dd data-promo-name>Spring Promotion</dd></div>
-          <div class="vs-fact" style="width:217px"><dt>Promo Type:</dt> <dd class="is-wrap">Discount on MSRP at family or article level</dd></div>
-          <div class="vs-fact" style="width:76px"><dt>Iteration:</dt> <dd>#3</dd></div>
-          <div class="vs-fact" style="width:91px"><dt>Promo ID:</dt> <dd>#Req-9902</dd></div>
-          <div class="vs-fact" style="width:75px"><dt>Markets:</dt> <dd>France</dd></div>
-          <div class="vs-fact" style="width:114px"><dt>Created By​:</dt> <dd>To be assigned</dd></div>
-          <div class="vs-fact" style="width:310px"><dt>Execution Period:</dt> <dd>2026-04-20 → 2026-04-29 (10 days)</dd></div>
+          <div class="vs-fact"><dt>Promotion</dt> <dd data-promo-name>Spring Promotion</dd></div>
+          <div class="vs-fact"><dt>Type</dt> <dd>Discount on MSRP, family or article level</dd></div>
+          <div class="vs-fact"><dt>Iteration</dt> <dd>#3</dd></div>
+          <div class="vs-fact"><dt>Request</dt> <dd>#Req-9902</dd></div>
+          <div class="vs-fact"><dt>Market</dt> <dd>France</dd></div>
+          <div class="vs-fact"><dt>Created by</dt> <dd class="is-muted">To be assigned</dd></div>
+          <div class="vs-fact"><dt>Execution window</dt> <dd>20 – 29 Apr 2026 <span class="res-fact__sub">10 days</span></dd></div>
         </dl>
-        <button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
       </section>
 
-      <!-- Define Pre-Order Volume Split (Figma 55:40608); .is-drilldown shows one family's articles (Figma 55:44872) -->
+      <!-- Define Pre-Order Volume Split; .is-drilldown shows one family's articles -->
       <section class="vs-card" data-split>
-        <h2 class="res-card__title vs-card__title"><span class="res-card__title-inner">Define Pre-Order Volume Split (Family &amp; Article Level)</span></h2>
+        <h2 class="res-card__title vs-card__title"><span class="res-card__title-inner">Pre-order volume split</span><span class="vs-legend"><span class="vs-legend__item vs-legend__item--ok">100% · balanced</span><span class="vs-legend__item vs-legend__item--over">Over 100%</span><span class="vs-legend__item vs-legend__item--under">Under 100%</span></span></h2>
 
         <div class="vs-filters">
-          <button class="vs-field" type="button" style="width:221.6px"><span class="vs-field__value">Choose Start Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
-          <button class="vs-field" type="button" style="width:221.6px"><span class="vs-field__value">Choose End Date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
-          <input class="vs-field vs-field--text" type="text" placeholder="Enter Your Comments" aria-label="Comments" style="width:299.5px">
-          <button class="vs-field vs-field--soft" type="button" style="width:221.6px"><span class="vs-field__value">Cycle Type​</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
-          <button class="vs-field vs-field--soft" type="button" style="width:221.6px"><span class="vs-field__value">Order Type​</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="vs-field" type="button"><span class="vs-field__value">Start date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+          <button class="vs-field" type="button"><span class="vs-field__value">End date</span><img src="assets/icons/calendar.svg" width="16" height="16" alt=""></button>
+          <input class="vs-field vs-field--text" type="text" placeholder="Add a comment for logistics" aria-label="Comments">
+          <button class="vs-field vs-field--soft" type="button"><span class="vs-field__value">Cycle type</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="vs-field vs-field--soft" type="button"><span class="vs-field__value">Order type</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
         </div>
 
         <div class="vs-split">
           <div class="vs-band">
             <div class="vs-band__text">
-              <h3 class="vs-band__title">Define % Split Per Family and Article</h3>
-              <p class="vs-band__meta">3 Families | 296 Targeted SKUs</p>
+              <h3 class="vs-band__title">Monthly split per family and article</h3>
+              <p class="vs-band__meta">3 families · 296 targeted SKUs</p>
             </div>
             <div class="vs-band__actions">
-              <button class="vs-apply" type="button">Apply Recommended Split</button>
-              <button class="vs-refresh" type="button" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
+              <button class="btn btn--sm vs-apply" type="button">Apply recommended split</button>
+              <button class="vs-refresh" type="button" aria-label="Reset split" data-tooltip="Reset to saved split"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
             </div>
           </div>
 
           <div class="vs-table-wrap">
             <table class="vs-table">
-              <colgroup><col style="width:44px"><col style="width:100px"><col style="width:99px"><col style="width:88px"><col style="width:87px"><col style="width:88px"><col style="width:87px"><col style="width:88px"><col style="width:87px"><col style="width:88px"><col style="width:87px"><col style="width:88px"><col style="width:87px"><col style="width:88px"><col style="width:87px"><col style="width:88px"><col style="width:94px"></colgroup>
               <thead>
                 <tr>
                   <th class="vs-c1" scope="col"><span class="visually-hidden">Expand</span></th>
-                  <th class="vs-c2" scope="col"><span class="vs-hwrap" style="width:86px">Family / Article Details</span></th>
-                  <th class="vs-c3" scope="col"><span class="vs-hwrap" style="width:67px">Total Volume</span></th>
+                  <th class="vs-c2" scope="col">Family / article</th>
+                  <th class="vs-c3" scope="col">Total volume</th>
                   <th class="vs-mh" scope="col">April ‘26</th><th class="vs-mh" scope="col">May ‘26</th><th class="vs-mh" scope="col">Jun ‘26</th><th class="vs-mh" scope="col">Jul ‘26</th><th class="vs-mh" scope="col">Aug ‘26</th><th class="vs-mh" scope="col">Sep ‘26</th><th class="vs-mh" scope="col">April ‘26</th><th class="vs-mh" scope="col">Oct ‘26</th><th class="vs-mh" scope="col">Nov ‘26</th><th class="vs-mh" scope="col">Dec ‘26</th><th class="vs-mh is-next-year" scope="col">Jan ‘27</th><th class="vs-mh is-next-year" scope="col">Feb ‘27</th><th class="vs-mh is-next-year" scope="col">Mar ‘27</th>
-                  <th class="vs-total" scope="col"><span class="vs-total-head"><b>Row Total</b><br>&amp;-units</span></th>
+                  <th class="vs-total" scope="col"><span class="vs-total-head">Row total</span></th>
                 </tr>
               </thead>
               <tbody data-families>
                 <tr>
-                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of SUV Series" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>SUV Series</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>Units</small></span></td>
+                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of SUV Series" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>SUV Series</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>units</small></span></td>
                   <td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="25" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="30" aria-label="May ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="15" aria-label="Jun ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="12" aria-label="Jul ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="30" aria-label="Aug ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="8" aria-label="Sep ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="5" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="8" aria-label="Oct ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="2" aria-label="Nov ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Dec ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Jan ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Feb ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Mar ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td>
                   <td class="vs-total"><span class="vs-chip vs-chip--ok"><span class="vs-chip__inner"><span class="vs-chip__label">Total</span><span class="vs-chip__pct">100%</span><span class="vs-chip__units">45,000 units</span></span></span></td>
                 </tr>
                 <tr>
-                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of SEDAN PACK" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>SEDAN PACK</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>Units</small></span></td>
+                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of SEDAN PACK" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>SEDAN PACK</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>units</small></span></td>
                   <td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="32" aria-label="April ‘26 %">%</span><span class="vs-units">14,000 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="23" aria-label="May ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="17" aria-label="Jun ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="Jul ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="12" aria-label="Aug ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="9" aria-label="Sep ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="7" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="Oct ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Nov ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Dec ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Jan ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Feb ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Mar ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td>
                   <td class="vs-total"><span class="vs-chip vs-chip--over"><span class="vs-chip__inner"><span class="vs-chip__label">Total</span><span class="vs-chip__pct">118%</span><span class="vs-chip__units">45,000 units</span></span></span></td>
                 </tr>
                 <tr>
-                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of XUV" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>XUV</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>Units</small></span></td>
+                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of XUV" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>XUV</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>units</small></span></td>
                   <td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="18" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="May ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="10" aria-label="Jun ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="8" aria-label="Jul ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="Aug ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="Sep ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="5" aria-label="Oct ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Nov ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Dec ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Jan ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Feb ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Mar ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td>
                   <td class="vs-total"><span class="vs-chip vs-chip--under"><span class="vs-chip__inner"><span class="vs-chip__label">Total</span><span class="vs-chip__pct">71%</span><span class="vs-chip__units">45,000 units</span></span></span></td>
                 </tr>
                 <tr>
-                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of Sub XUV" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>Sub XUV</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>Units</small></span></td>
+                  <td class="vs-c1"><button class="vs-toggle" type="button" aria-expanded="false" aria-label="Show articles of Sub XUV" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button></td><td class="vs-c2"><span class="vs-name"><b>Family</b><span>Sub XUV</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>units</small></span></td>
                   <td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="15" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="May ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="15" aria-label="Jun ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="13" aria-label="Jul ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="7" aria-label="Aug ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="7" aria-label="Sep ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="Oct ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Nov ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Dec ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Jan ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Feb ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Mar ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td>
                   <td class="vs-total"><span class="vs-chip vs-chip--under"><span class="vs-chip__inner"><span class="vs-chip__label">Total</span><span class="vs-chip__pct">71%</span><span class="vs-chip__units">45,000 units</span></span></span></td>
                 </tr>
               </tbody>
               <tbody data-articles hidden>
                 <tr>
-                  <td class="vs-c1"></td><td class="vs-c2"><span class="vs-name"><b>Article</b><span>Model X-1</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>Units</small></span></td>
+                  <td class="vs-c1"></td><td class="vs-c2"><span class="vs-name"><b>Article</b><span>Model X-1</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>units</small></span></td>
                   <td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="32" aria-label="April ‘26 %">%</span><span class="vs-units">14,000 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="23" aria-label="May ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="17" aria-label="Jun ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="Jul ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="12" aria-label="Aug ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="9" aria-label="Sep ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="7" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="Oct ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Nov ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Dec ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Jan ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Feb ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Mar ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td>
                   <td class="vs-total"><span class="vs-chip vs-chip--over"><span class="vs-chip__inner"><span class="vs-chip__label">Total</span><span class="vs-chip__pct">118%</span><span class="vs-chip__units">45,000 units</span></span></span></td>
                 </tr>
                 <tr>
-                  <td class="vs-c1"></td><td class="vs-c2"><span class="vs-name"><b>Article</b><span>Model X-1</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>Units</small></span></td>
+                  <td class="vs-c1"></td><td class="vs-c2"><span class="vs-name"><b>Article</b><span>Model X-1</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>units</small></span></td>
                   <td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="18" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="May ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="10" aria-label="Jun ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="8" aria-label="Jul ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="Aug ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="Sep ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="5" aria-label="Oct ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Nov ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Dec ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Jan ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Feb ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Mar ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td>
                   <td class="vs-total"><span class="vs-chip vs-chip--under"><span class="vs-chip__inner"><span class="vs-chip__label">Total</span><span class="vs-chip__pct">71%</span><span class="vs-chip__units">45,000 units</span></span></span></td>
                 </tr>
                 <tr>
-                  <td class="vs-c1"></td><td class="vs-c2"><span class="vs-name"><b>Article</b><span>Model X-1</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>Units</small></span></td>
+                  <td class="vs-c1"></td><td class="vs-c2"><span class="vs-name"><b>Article</b><span>Model X-1</span></span></td><td class="vs-c3"><span class="vs-volume"><b>45,000</b> <small>units</small></span></td>
                   <td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="15" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="14" aria-label="May ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="15" aria-label="Jun ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="13" aria-label="Jul ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="7" aria-label="Aug ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="7" aria-label="Sep ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="April ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="6" aria-label="Oct ‘26 %">%</span><span class="vs-units">11,2590 <small>units</small></span><span class="vs-rec">Rec: 25%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Nov ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Dec ‘26 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Jan ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Feb ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td><td class="vs-month"><span class="vs-pct"><input class="vs-input" type="text" inputmode="numeric" value="1" aria-label="Mar ‘27 %">%</span><span class="vs-units">450 <small>units</small></span><span class="vs-rec">Rec: 5%</span></td>
                   <td class="vs-total"><span class="vs-chip vs-chip--under"><span class="vs-chip__inner"><span class="vs-chip__label">Total</span><span class="vs-chip__pct">71%</span><span class="vs-chip__units">45,000 units</span></span></span></td>
                 </tr>
@@ -158,7 +153,7 @@
 
           <div class="vs-footer">
             <div class="vs-pager">
-              <p class="vs-pager__summary">showing 1-4 of 10 families</p>
+              <p class="vs-pager__summary">Showing 1–4 of 10 families</p>
               <nav class="pagination" aria-label="Pagination">
                 <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
                 <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
@@ -170,34 +165,40 @@
               </nav>
             </div>
             <div class="cfg-actions">
-              <a class="btn-outline" href="simulation-result.html" data-keep-query>Cancel</a>
-              <a class="btn-next" href="workflow-tracker.html" data-keep-query data-initiate-approval>Initiate Approval</a>
+              <a class="btn-outline" href="simulation-result.html" data-keep-query>Back to results</a>
+              <a class="btn-next" href="workflow-tracker.html" data-keep-query data-initiate-approval>Submit for approval</a>
             </div>
           </div>
         </div>
       </section>
-      <!-- Submit Promotion for Approval (Figma 128:57162), opened by Initiate Approval -->
+      <!-- Submit Promotion for Approval, opened by Initiate Approval -->
       <dialog class="sa-dialog" id="submit-approval" aria-labelledby="sa-title">
         <button class="sa-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
-        <div class="sa-head">
-          <h2 class="sa-head__title" id="sa-title">Submit Promotion for Approval</h2>
-          <p class="sa-head__sub">Please review the details before proceeding.</p>
-        </div>
-        <label class="sa-row"><span class="sa-row__label">Promotion Name</span><span class="sa-row__box"><input type="text" value="Summer Beverage Promotion 2026" data-approval-name></span></label>
-        <label class="sa-row"><span class="sa-row__label">Iteration</span><span class="sa-row__box"><input type="text" value="Iteration 3"></span></label>
-        <div class="sa-row sa-row--strategy" role="radiogroup" aria-labelledby="sa-strategy">
-          <span class="sa-row__label" id="sa-strategy">Select Strategy</span>
+        <header class="modal-head">
+          <h2 class="sa-head__title" id="sa-title">Submit for approval</h2>
+          <p class="sa-head__sub">Choose which discount values go to the approval workflow. Approvers see the strategy you pick.</p>
+        </header>
+        <dl class="sa-summary">
+          <div><dt>Promotion</dt><dd><input type="text" value="Summer Beverage Promotion 2026" data-approval-name readonly aria-label="Promotion name"></dd></div>
+          <div><dt>Iteration</dt><dd>Iteration 3</dd></div>
+        </dl>
+        <div class="sa-strategy" role="radiogroup" aria-labelledby="sa-strategy">
+          <span class="sa-row__label" id="sa-strategy">Strategy</span>
           <div class="sa-radios">
-            <label class="sa-radio"><input type="radio" name="sa-strategy" value="user" checked>User Input (Discount values entered by user)</label>
-            <label class="sa-radio"><input type="radio" name="sa-strategy" value="twinx">TwinX Recommended (Discount Values generated by TwinX optimization)</label>
+            <label class="choice"><input type="radio" name="sa-strategy" value="user" checked><span class="choice__body"><span class="choice__title">Your input</span><span class="choice__text">Discount values you entered during analysis.</span></span></label>
+            <label class="choice"><input type="radio" name="sa-strategy" value="twinx"><span class="choice__body"><span class="choice__title">Twin X recommendation</span><span class="choice__text">Discount values generated by Twin X optimisation.</span></span></label>
           </div>
         </div>
-        <div class="sa-actions"><a class="sa-proceed" href="workflow-tracker.html" data-keep-query>Proceed to Approval</a></div>
+        <footer class="modal-foot">
+          <button class="btn" type="button" data-close-dialog>Cancel</button>
+          <a class="sa-proceed" href="workflow-tracker.html" data-keep-query>Submit for approval</a>
+        </footer>
       </dialog>
     </main>
   </div>
 </div>
 <script src="js/validation.js"></script>
   <script src="js/user-menu.js"></script>
+<script src="js/ui.js"></script>
 </body>
 </html>

@@ -1,81 +1,41 @@
-/* Experiment status — Figma "Promotion Approval Dashboard" (node 88:17699, 1154 × 815), where Kristen lands after sign-in.
-   Reuses the Products / Network cards and promotion table from css/experiment.css and the top-menu logo from css/configuration.css. */
+/* Approval queue: reuses scope cards, filters, the promotion table and Workflow History from css/experiment.css. */
 
-.page--status { min-height: max(815px, 100vh); }
-.page--status .exp-body { padding-bottom: 23px; } /* the card below overhangs its row by 1px in Figma; keeps the page at 815 */
-.page--status .filters__actions { right: 20px; } /* Figma: 21px in from the right edge */
-.page--status .filters__fields { margin-right: 187px; }
-.page--status .btn-primary { width: 65px; } /* Figma button widths; Chrome sets the labels a fraction narrower */
-
-/* ---------- Promotion Approval Dashboard card (Figma 88:17858): 3px wider than the rows above, as in Figma ---------- */
 .es-card {
-  height: 446px; display: flex; flex-direction: column; gap: 16px; padding: 15px;
-  background: #fff; border: 1px solid #ccdde8; border-radius: 12px;
+  display: flex; flex-direction: column; gap: var(--space-4); padding: var(--space-5) var(--space-5) var(--space-2);
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); box-shadow: var(--shadow-xs);
 }
-.es-card > * { flex: none; }
-.es-card__title {
-  height: 28px; padding-bottom: 8px; border-bottom: 1px solid #ccdde8;
-  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap;
-}
-.es-toolbar { height: 36px; display: flex; align-items: center; justify-content: space-between; }
-.es-toolbar__right { display: flex; align-items: center; gap: 24px; }
+.es-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.es-toolbar__right { display: flex; align-items: center; gap: var(--space-3); }
+.es-search { width: 280px; }
 
-/* Status filter pills (Figma "Tabs" Variant2) */
-.es-status { display: flex; align-items: center; gap: 6px; padding: 5px; background: #fff; border: 1px solid #bfe0f5; border-radius: 28px; }
-.es-status__tab {
-  height: 24px; display: flex; align-items: center; gap: 4px; padding: 0 8px; border-radius: 30px; box-shadow: inset 0 0 0 1px #bfe0f5;
-  font: 400 12px/16px "Open Sans", sans-serif; color: #727476; white-space: nowrap;
+.es-status__dot { width: 7px; height: 7px; flex: none; border-radius: 50%; }
+.es-status__dot--submitted { background: var(--warning); }
+.es-status__dot--approved { background: var(--success); }
+.es-status__dot--rejected { background: var(--danger); }
+.es-status__count {
+  min-width: 18px; height: 18px; display: inline-grid; place-items: center; margin-left: 2px; padding: 0 5px;
+  border-radius: var(--radius-full); background: rgba(10, 10, 10, 0.06);
+  font-size: 10px; font-weight: 600; color: var(--text-secondary); font-variant-numeric: tabular-nums;
 }
-.es-status__tab.is-active {
-  background: #007dc5; box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15);
-  font-weight: 600; color: #fff; text-shadow: 0 2px 2px rgba(51, 51, 51, 0.25);
-}
-.es-status__tab:nth-child(1) { width: 165px; } /* Figma pill widths */
-.es-status__tab:nth-child(2) { width: 84px; }
-.es-status__tab:nth-child(3) { width: 78px; }
-.es-status__dot { width: 9px; height: 9px; flex: none; border-radius: 50%; }
+.es-status__tab.is-active .es-status__count { background: var(--surface-inverse); color: #fff; }
 
-.es-search { width: 278px; }
-.es-search input { text-overflow: ellipsis; } /* Figma truncates the placeholder */
-.page--status .es-compare { width: 116px; gap: 8px; }
-
-.es-table-wrap { border: 0; box-shadow: 0 0 0 1px #ccdde8; } /* Figma draws the table rule outside */
-.promos td.es-actions { padding: 12px 16px 11px; }
-.es-actions__inner { display: flex; align-items: center; gap: 8px; }
-.es-action { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex: none; background: #fff; border: 1px solid #727476; border-radius: 6px; }
-
-.page--status .table-footer__summary { width: 201px; }
-.es-pagination .pagination__arrow--prev img { transform: none; }
-.es-pagination .pagination__arrow--next img { transform: rotate(180deg); }
-.page--status .promos td { height: 47px; } /* rows are 48 including their 1px rule, as in Figma */
-.page--status .profile { width: 134px; } /* Figma profile block width, so the menu starts at x 832 */
-
-/* ---------- Approve Request / Reject Request (Figma 88:18260, 88:18309, 741 × 332), opened by the tick / cross ---------- */
-.es-dialog {
-  position: fixed; inset: 0; margin: auto; width: 741px; height: 332px; max-width: none; max-height: none;
-  padding: 18px 24px 24px; overflow: visible; color: #323436; /* 24px from the outer edge; the 6px top rule sits inside it */
-  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
-  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+.country {
+  display: inline-grid; place-items: center; min-width: 30px; height: 22px; padding: 0 6px;
+  border: 1px solid var(--border); border-radius: var(--radius-xs); background: var(--surface-subtle);
+  font-size: var(--text-2xs); font-weight: 600; letter-spacing: 0.04em; color: var(--text-secondary);
 }
-.es-dialog::backdrop { background: transparent; } /* Figma shows no backdrop */
-.es-dialog__close { position: absolute; left: 693px; top: 10px; width: 24px; height: 24px; }
-.es-dialog__body { display: flex; flex-direction: column; gap: 32px; }
-.es-dialog__head { display: flex; flex-direction: column; gap: 8px; }
-.es-dialog__title { font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
-.es-dialog__text { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
-.es-dialog__comments { position: relative; display: block; height: 128px; }
-.es-dialog__comments textarea {
-  display: block; width: 100%; height: 100%; margin: 0; padding: 5px 11px; resize: none; outline: 0;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
-  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
-}
-.es-dialog__comments textarea::placeholder { color: #323436; opacity: 1; }
-.es-dialog__comments img { position: absolute; left: 673px; top: 108px; pointer-events: none; } /* Figma resize mark, 6px in from the corner */
-.es-dialog__actions { display: flex; justify-content: flex-end; gap: 12px; }
-.es-dialog__btn {
-  width: 90px; height: 40px; display: flex; align-items: center; justify-content: center; padding: 7px 15px;
-  background: #fff; border: 1px solid #727476; border-radius: 8px;
-  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap;
-}
-.es-dialog__btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }
-.page--status .promos { width: calc(100% + 1px); } /* Figma: 1019 wide in the 1018 box */
+
+.promos .es-actions { width: 1%; padding-right: 10px; }
+.es-actions__inner { display: flex; align-items: center; justify-content: flex-end; gap: 2px; }
+.es-action--approve:hover { background: var(--success-bg); }
+.es-action--reject:hover { background: var(--danger-bg); }
+
+/* Approve / Reject dialogs */
+.es-dialog { width: 560px; }
+.es-dialog__body { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-6); }
+.es-dialog__comments { display: block; }
+.es-dialog__comments textarea { min-height: 112px; }
+.field__optional { margin-left: 6px; font-weight: 400; color: var(--text-tertiary); }
+
+/* Decided requests keep only their history action */
+.promos tr[data-status]:not([data-status="submitted"]) [data-decision] { display: none; }
