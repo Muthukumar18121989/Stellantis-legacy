@@ -289,3 +289,61 @@
 .cr-check:disabled { cursor: default; }
 .cr-check:disabled:checked { border: 1px solid #c9ccce; background: #f2f4f6 url("../assets/icons/check-light.svg") no-repeat 1px 1px / 16px 16px; }
 .ad-table td.cr-cap-cell { padding: 2px 16px 0; } /* two-line capability names still fit the 40px row */
+
+/* ---------- Referential (Figma 100:48853, 1366 × 702; tab panels from 100:50729) ---------- */
+.page--referential { min-height: 702px; }
+.page--referential .profile { width: 126px; }
+.rf-filters {
+  width: 1258px; height: 56px; display: flex; align-items: center; gap: 16px; padding: 11px;
+  background: #f6fcff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.rf-select {
+  height: 32px; flex: none; display: flex; align-items: center; gap: 8px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.rf-select__value {
+  flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-align: left;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.rf-select--noto .rf-select__value { font: 400 14px/20px "Noto Sans", sans-serif; }
+.rf-apply { width: 65px; height: 32px; flex: none; }
+.rf-filters .icon-btn, .rf-panel__filters .icon-btn { flex: none; }
+
+.rf-tabs { height: 36px; display: flex; gap: 16px; margin-top: 24px; padding: 0 16px; } /* Figma: 40px below the filters */
+.rf-tab { height: 36px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 16px 0; }
+.rf-tab__label { font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
+.rf-tab__bar { width: 46px; height: 4px; border-radius: 2px 2px 0 0; }
+.rf-tab--active .rf-tab__label { color: #2c2c30; }
+.rf-tab--active .rf-tab__bar { align-self: stretch; width: auto; background: #007dc5; }
+
+.rf-panel { display: flex; flex-direction: column; gap: 16px; }
+.rf-panel[hidden] { display: none; }
+.rf-panel__filters { width: 905px; height: 32px; display: flex; align-items: center; gap: 16px; }
+.rf-panel__filters--end { justify-content: flex-end; }
+.rf-g10 { width: 216px; margin: 0; font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #0b7abe; white-space: nowrap; }
+
+.rf-card {
+  height: 344px; display: flex; flex-direction: column; gap: 16px; padding: 11.076px; overflow: hidden;
+  background: #fff; border: 0.924px solid #bfe0f5; border-radius: 12px; /* Figma: 0.92px stroke */
+}
+.rf-card > * { flex-shrink: 0; }
+.rf-card--wide { width: 1258px; }
+.rf-card--narrow { width: 905px; }
+.rf-scroll { margin: -1px; padding: 1px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; }
+.rf-scroll::-webkit-scrollbar { display: none; }
+.rf-scroll--bleed { margin-right: -12px; } /* Figma: the Price Ladder table runs under the card's right edge */
+.rf-table-box { width: max-content; overflow: hidden; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; }
+.rf-table { table-layout: fixed; }
+.rf-table th, .rf-table td {
+  padding: 6px 16px; overflow: hidden; border-bottom: 1px solid #ccdde8; vertical-align: middle; white-space: nowrap;
+  font: 400 12px/18px "Poppins", sans-serif; color: #323436; text-align: left;
+}
+.rf-table th { height: 40px; background: #f4f9fc; font-weight: 600; }
+.rf-table td { height: 48px; background: #fff; }
+.rf-scroll--tall td { height: 50px; }
+.rf-table td.is-light { font-weight: 300; }
+.rf-table .rf-rule { border-left: 1px solid #ccdde8; }
+.rf-table .rf-center { text-align: center; }
+.rf-table .rf-right { text-align: right; }
+.rf-table td.rf-edit { padding: 0; text-align: center; border-bottom-color: #bfe0f5; }
+.rf-table .ad-icon { vertical-align: middle; }

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Referential</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!-- Referential — Figma node 100:48853, 1366 × 702; tab panels from 100:50729 -->
+<div class="page page--admin page--referential">
+
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="role-management.html" aria-label="Role Management"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="referential.html" aria-label="Referential" aria-current="page"><img src="assets/icons/database-blue.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <img class="cfg-brand__mark" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <header class="ad-header ad-header--compact">
+      <div class="ad-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
+          <span class="breadcrumb__sep">/</span>
+          <span class="breadcrumb__current">Referential</span>
+        </nav>
+        <h1 class="ad-header__title">Referential</h1>
+      </div>
+    </header>
+
+    <main class="ad-body rf-body">
+      <section class="rf-filters" aria-label="Filters">
+        <button class="rf-select rf-select--noto" type="button" style="width:340px"><span class="rf-select__value">Select Market</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+        <button class="rf-select" type="button" style="width:340px"><span class="rf-select__value">All Product Family</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+        <button class="rf-select" type="button" style="width:340px"><span class="rf-select__value">All Parts</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+        <button class="icon-btn" type="button" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button><button class="btn-primary rf-apply" type="button">Apply</button><button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+      </section>
+
+      <div class="rf-tabs" role="tablist" aria-label="Referential data">
+        <button class="rf-tab rf-tab--active" type="button" role="tab" aria-selected="true" aria-controls="rf-price" data-tab="rf-price" style="width:118px"><span class="rf-tab__label">Price Ladder</span><span class="rf-tab__bar"></span></button><button class="rf-tab" type="button" role="tab" aria-selected="false" aria-controls="rf-margin" data-tab="rf-margin" style="width:123px"><span class="rf-tab__label">Margin Rules</span><span class="rf-tab__bar"></span></button><button class="rf-tab" type="button" role="tab" aria-selected="false" aria-controls="rf-caps" data-tab="rf-caps" style="width:200px"><span class="rf-tab__label">Commercial Means Caps</span><span class="rf-tab__bar"></span></button><button class="rf-tab" type="button" role="tab" aria-selected="false" aria-controls="rf-log" data-tab="rf-log" style="width:114px"><span class="rf-tab__label">Change Log</span><span class="rf-tab__bar"></span></button><button class="rf-tab" type="button" role="tab" aria-selected="false" style="width:80px"><span class="rf-tab__label">Others</span><span class="rf-tab__bar"></span></button>
+      </div>
+
+      <div class="rf-panel" id="rf-price" role="tabpanel">
+        <section class="rf-card rf-card--wide">
+          <div class="rf-scroll rf-scroll--bleed">
+            <div class="rf-table-box">
+              <table class="rf-table" style="width:2146px">
+                <colgroup><col style="width:301px"><col style="width:121px"><col style="width:120px"><col style="width:92px"><col style="width:124px"><col style="width:209px"><col style="width:116px"><col style="width:110px"><col style="width:98px"><col style="width:114px"><col style="width:115px"><col style="width:114px"><col style="width:115px"><col style="width:114px"><col style="width:114px"><col style="width:114px"><col style="width:55px"></colgroup>
+                <thead>
+                  <tr><th>Segment</th><th>Business Line</th><th>Family Name</th><th>Family ID</th><th>Article ID</th><th>Description</th><th>Market</th><th>MSRP</th><th>DNP</th><th>PNE</th><th>COS</th><th>SMC</th><th>AMC</th><th>Log. Cost</th><th>Source</th><th>Last Updated</th><th></th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="is-light">COMFORT - PERSONALIZATION - PERFORMANCE</td><td>ACCESSORIES</td><td>Filters</td><td>FAM001</td><td>8845H3</td><td>Family cluster margin</td><td>France</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>Snowflake</td><td>dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">ENTERTAINMENT - TECHNOLOGY</td><td>BODY</td><td>Brakes</td><td>FAM002</td><td>8845H3</td><td>Article negative margin</td><td>Italy</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>Snowflake</td><td>dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">MOPAR CONNECTIVITY</td><td>CIRCULAR ECONOMY</td><td>AC Component</td><td>FAM003</td><td>8845H3</td><td>Promotion budget</td><td>Denmark</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>Snowflake</td><td>dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">CUSTOM SHOP</td><td>LEISURE</td><td>Accesories</td><td>FAM004</td><td>8845H3</td><td>Family cluster margin</td><td>UK</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>Snowflake</td><td>dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">TRAVEL - TRANSPORT - SECURITY - PROTECTION</td><td>MAINTENANCE</td><td>Gear Box</td><td>FAM005</td><td>8845H3</td><td>Article negative margin</td><td>France</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>€171.15</td><td>Snowflake</td><td>dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        <div class="table-footer ad-footer">
+          <p class="table-footer__summary">Showing 1 of 10 entries</p>
+          <nav class="pagination ad-pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+            <button class="pagination__page"><span>2</span></button>
+            <button class="pagination__page"><span>3</span></button>
+            <button class="pagination__page"><span>4</span></button>
+            <button class="pagination__page"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          </nav>
+        </div>
+        </section>
+      </div>
+
+      <div class="rf-panel" id="rf-margin" role="tabpanel" hidden>
+        <section class="rf-card rf-card--narrow">
+          <div class="rf-scroll rf-scroll--tall">
+            <div class="rf-table-box">
+              <table class="rf-table" style="width:874px">
+                <colgroup><col style="width:195px"><col style="width:199px"><col style="width:120px"><col style="width:120px"><col style="width:192px"><col style="width:48px"></colgroup>
+                <thead>
+                  <tr><th rowspan="2">Logical Data Owner</th><th class="rf-rule" rowspan="2">Competitiveness Class</th><th class="rf-rule rf-center" colspan="4">Business Line</th></tr>
+                  <tr><th class="rf-rule">NSC</th><th class="rf-rule">Importer</th><th class="rf-rule">Supplier Ranges</th><th></th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="is-light">xP</td><td>‘5’ = Competitive Part --</td><td>Filters</td><td>FAM001</td><td>8845H3</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">xP</td><td>‘6’ = Competitive Part -</td><td>Brakes</td><td>FAM002</td><td>8845H3</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">xP</td><td>‘7’ = Competitive Part +</td><td>AC Component</td><td>FAM003</td><td>8845H3</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">xP</td><td>‘8’ = Competitive Part ++</td><td>Accesories</td><td>FAM004</td><td>8845H3</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        <div class="table-footer ad-footer">
+          <p class="table-footer__summary">Showing 1 of 10 entries</p>
+          <nav class="pagination ad-pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+            <button class="pagination__page"><span>2</span></button>
+            <button class="pagination__page"><span>3</span></button>
+            <button class="pagination__page"><span>4</span></button>
+            <button class="pagination__page"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          </nav>
+        </div>
+        </section>
+      </div>
+
+      <div class="rf-panel" id="rf-caps" role="tabpanel" hidden>
+        <div class="rf-panel__filters rf-panel__filters--end">
+          <button class="rf-select rf-select--noto" type="button" style="width:230px"><span class="rf-select__value">Region : EE</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <p class="rf-g10">G10 List Updated on 21/05/2026</p>
+        </div>
+        <section class="rf-card rf-card--narrow">
+          <div class="rf-scroll">
+            <div class="rf-table-box">
+              <table class="rf-table" style="width:874px">
+                <colgroup><col style="width:271px"><col style="width:296px"><col style="width:258px"><col style="width:49px"></colgroup>
+                <thead>
+                  <tr><th>G-10 Country</th><th class="rf-rule rf-right">Per Promotion Cap (€)</th><th class="rf-rule">Last Updated</th><th></th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="is-light">UK</td><td class="rf-right">10,000</td><td>hh:mm:ss | dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">Germany</td><td class="rf-right">1,000</td><td>hh:mm:ss | dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">France</td><td class="rf-right">500</td><td>hh:mm:ss | dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">Italy</td><td class="rf-right">500</td><td>hh:mm:ss | dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                  <tr><td class="is-light">Spain</td><td class="rf-right">500</td><td>hh:mm:ss | dd-mm-yyyy</td><td class="rf-edit"><button class="ad-icon" type="button" aria-label="Edit"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        <div class="table-footer ad-footer">
+          <p class="table-footer__summary">Showing 1 of 10 entries</p>
+          <nav class="pagination ad-pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+            <button class="pagination__page"><span>2</span></button>
+            <button class="pagination__page"><span>3</span></button>
+            <button class="pagination__page"><span>4</span></button>
+            <button class="pagination__page"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          </nav>
+        </div>
+        </section>
+      </div>
+
+      <div class="rf-panel" id="rf-log" role="tabpanel" hidden>
+        <div class="rf-panel__filters">
+          <button class="rf-select rf-select--noto" type="button" style="width:232px"><span class="rf-select__value">Select Market</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+          <button class="rf-select" type="button" style="width:232px"><span class="rf-select__value">Choose Start Date</span><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></button>
+          <button class="rf-select" type="button" style="width:232px"><span class="rf-select__value">Choose End Date</span><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></button>
+          <button class="icon-btn" type="button" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button><button class="btn-primary rf-apply" type="button">Apply</button><button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+        </div>
+        <section class="rf-card rf-card--narrow">
+          <div class="rf-scroll">
+            <div class="rf-table-box">
+              <table class="rf-table" style="width:874px">
+                <colgroup><col style="width:186px"><col style="width:146px"><col style="width:153px"><col style="width:389px"></colgroup>
+                <thead>
+                  <tr><th>Date</th><th class="rf-rule">User</th><th class="rf-rule">Role</th><th class="rf-rule">Change</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="is-light">03-02-2026</td><td>Sophie Marlin</td><td>Sophie Marlin</td><td>Braking System Class 1 min margin: 18% → 20%</td></tr>
+                  <tr><td class="is-light">03-02-2026</td><td>Lucas Bauer</td><td>Lucas Bauer</td><td>France Annual Spending Cap Increased: €7M → €8.5M</td></tr>
+                  <tr><td class="is-light">03-02-2026</td><td>Sophie Marlin</td><td>Sophie Marlin</td><td>Added EV Electrical &amp; EV Margin rules (new family)</td></tr>
+                  <tr><td class="is-light">03-02-2026</td><td>Sophie Marlin</td><td>Sophie Marlin</td><td>France Annual Spending Cap Increased: €7M → €8.5M</td></tr>
+                  <tr><td class="is-light">03-02-2026</td><td>Sophie Marlin</td><td>Sophie Marlin</td><td>Braking System Class 1 min margin: 18% → 20%</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        <div class="table-footer ad-footer">
+          <p class="table-footer__summary">Showing 1 of 10 entries</p>
+          <nav class="pagination ad-pagination" aria-label="Pagination">
+            <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+            <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+            <button class="pagination__page"><span>2</span></button>
+            <button class="pagination__page"><span>3</span></button>
+            <button class="pagination__page"><span>4</span></button>
+            <button class="pagination__page"><span>5</span></button>
+            <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          </nav>
+        </div>
+        </section>
+      </div>
+    </main>
+
+  </div>
+</div>
+<script src="js/admin.js"></script>
+</body>
+</html>
