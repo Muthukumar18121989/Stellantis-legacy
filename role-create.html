@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1366">
+  <title>Promotool — Create Role</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<!-- Create Role Management — Figma node 100:49929, 1366 × 638 -->
+<div class="page page--admin page--create-role">
+
+  <nav class="left-bar" aria-label="Primary">
+    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+    <div class="left-bar__menus">
+      <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules"><img src="assets/icons/hammer.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
+      <a class="left-bar__item left-bar__item--active" href="role-management.html" aria-label="Role Management" aria-current="page"><img src="assets/icons/hierarchy-blue.svg" width="24" height="24" alt=""></a>
+    </div>
+  </nav>
+
+  <div class="main">
+
+    <header class="top-menu">
+      <div class="top-menu__logo">
+        <div class="cfg-brand">
+          <img class="cfg-brand__mark" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
+          <div class="cfg-brand__powered">
+            <span class="cfg-brand__powered-text">Powered by</span>
+            <img src="assets/illustrations/tcs-twinx.svg" width="47" height="9" alt="TCS TwinX">
+          </div>
+        </div>
+      </div>
+      <div class="top-menu__right">
+        <button class="notif" aria-label="Notifications (5)">
+          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+          <span class="notif__count">5</span>
+        </button>
+        <button class="lang">
+          <span class="lang__label">English</span>
+          <span class="lang__icons">
+            <img src="assets/icons/world.svg" width="24" height="24" alt="">
+            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+          </span>
+        </button>
+        <button class="profile">
+          <span class="profile__name">MARCUS WEBER</span>
+          <span class="profile__role">Admin <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+        </button>
+      </div>
+    </header>
+
+    <header class="ad-header ad-header--compact">
+      <div class="ad-header__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
+          <span class="breadcrumb__sep">/</span>
+          <a class="breadcrumb__link" href="role-management.html">Role Management</a>
+          <span class="breadcrumb__sep breadcrumb__sep--dark">/</span>
+          <span class="breadcrumb__page">Create Role</span>
+        </nav>
+        <h1 class="ad-header__title">Create Role</h1>
+      </div>
+    </header>
+
+    <main class="ad-body">
+      <section class="ad-card cr-card" aria-labelledby="cr-title">
+        <div class="ad-card__head rm-head">
+          <div>
+            <h2 class="ad-card__title" id="cr-title">Create Role</h2>
+            <p class="rm-head__desc">Create a role and assign capabilities and permission</p>
+          </div>
+        </div>
+        <label class="ue-field cr-name ue-field--poppins" style="width:398px"><span class="ue-field__label">Role Name</span><span class="ue-field__box"><input type="text" value="Promotion Pilot"></span></label>
+
+        <div class="ad-table-wrap cr-table-wrap">
+          <table class="ad-table ad-table--list cr-table">
+            <colgroup><col style="width:179px"><col style="width:260px"><col style="width:342px"><col style="width:295px"><col style="width:150px"></colgroup>
+            <thead>
+              <tr><th>Capability IDs</th><th class="cr-th-cap"><span class="ad-th-sort">Capabilities<button class="ad-sort" type="button" aria-label="Sort by Capabilities"><img src="assets/icons/arrows-down-up-thin.svg" width="16" height="16" alt=""></button></span></th><th>Description</th><th>Access Level</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>CAP123</td><td class="cr-cap-cell"><label class="cr-cap"><input class="cr-check" type="checkbox" checked disabled><span>Promotion Dashboard</span></label></td><td>Monitor promotion performance against KPIs</td><td class="cr-levels" colspan="2"><div class="cr-levels__list" role="group" aria-label="Access level for CAP123"><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>Create/Modify</span></label><label class="cr-level"><input class="cr-check" type="checkbox"><span>View Only</span></label><label class="cr-level"><input class="cr-check" type="checkbox"><span>Approve/Reject</span></label></div></td></tr>
+              <tr><td>CAP124</td><td class="cr-cap-cell"><label class="cr-cap"><input class="cr-check" type="checkbox" checked disabled><span>Promotion Creation, Results, Iterations &amp; Comparisons</span></label></td><td>Design and compare promotion scenarios</td><td class="cr-levels" colspan="2"><div class="cr-levels__list" role="group" aria-label="Access level for CAP124"><label class="cr-level"><input class="cr-check" type="checkbox"><span>Create/Modify</span></label><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>View Only</span></label><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>Approve/Reject</span></label></div></td></tr>
+              <tr><td>CAP113</td><td class="cr-cap-cell"><label class="cr-cap"><input class="cr-check" type="checkbox"><span>Promotion Workflow<br>Tracker</span></label></td><td>Manage validation and approval progress</td><td class="cr-levels" colspan="2"><div class="cr-levels__list" role="group" aria-label="Access level for CAP113"><label class="cr-level"><input class="cr-check" type="checkbox"><span>Create/Modify</span></label><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>View Only</span></label><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>Approve/Reject</span></label></div></td></tr>
+              <tr><td>CAP133</td><td class="cr-cap-cell"><label class="cr-cap"><input class="cr-check" type="checkbox"><span>Report Hub</span></label></td><td>Analyze promotion outcomes and trends</td><td class="cr-levels" colspan="2"><div class="cr-levels__list" role="group" aria-label="Access level for CAP133"><label class="cr-level"><input class="cr-check" type="checkbox"><span>Create/Modify</span></label><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>View Only</span></label><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>Approve/Reject</span></label></div></td></tr>
+              <tr><td>CAP223</td><td class="cr-cap-cell"><label class="cr-cap"><input class="cr-check" type="checkbox"><span>Referential</span></label></td><td>Configure business rules and master data</td><td class="cr-levels" colspan="2"><div class="cr-levels__list" role="group" aria-label="Access level for CAP223"><label class="cr-level"><input class="cr-check" type="checkbox" checked><span>Create/Modify</span></label><label class="cr-level"><input class="cr-check" type="checkbox"><span>View Only</span></label><label class="cr-level"><input class="cr-check" type="checkbox"><span>Approve/Reject</span></label></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="ad-actions">
+        <a class="ad-btn" href="role-management.html" style="width:69px">Cancel</a>
+        <button class="ad-btn ad-btn--primary" type="button" data-open-dialog="cr-saved" style="width:89px">Save Role</button>
+      </div>
+    </main>
+
+  </div>
+</div>
+<dialog class="ad-dialog ad-dialog--saved" id="cr-saved" aria-labelledby="cr-saved-title">
+  <button class="ad-dialog__close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <span class="ad-dialog__mark"></span>
+  <h2 class="ad-dialog__saved-title" id="cr-saved-title">Role Saved Successfully</h2>
+</dialog>
+<script src="js/admin.js"></script>
+</body>
+</html>

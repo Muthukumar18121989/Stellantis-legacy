@@ -268,3 +268,24 @@
 .ad-dialog--saved .ad-dialog__close { right: 16px; }
 .ad-dialog__mark { width: 64px; height: 64px; border-radius: 50%; background: #0db134; } /* Figma draws a plain green circle */
 .ad-dialog__saved-title { font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+
+/* ---------- Create Role (Figma 100:49929, 1366 × 638) ---------- */
+.page--create-role { min-height: 638px; }
+.page--create-role .profile { width: 126px; }
+.cr-card { width: 1258px; height: 410px; border-radius: 0 8px 8px 0; } /* Figma: this card's left corners are square */
+.ue-field.cr-name .ue-field__label { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; }
+.cr-table-wrap { width: 1226px; height: 240px; }
+.ad-table th.cr-th-cap { padding-left: 46px; } /* Figma keeps an invisible 20px checkbox + 10px gap before the label */
+.ad-table td.cr-levels { padding: 2px 0 0 16px; }
+.cr-levels__list { display: grid; grid-template-columns: 105px 81px 111px; column-gap: 48px; }
+.cr-cap, .cr-level { display: flex; align-items: center; gap: 8px; white-space: normal; cursor: pointer; }
+.cr-cap span { width: 200px; }
+.cr-cap span, .cr-level span { position: relative; top: 1px; } /* Chrome sets Noto 1px higher than Figma */
+.cr-check {
+  position: relative; top: -1px; width: 20px; height: 20px; flex: none; margin: 0; appearance: none; cursor: pointer;
+  background: #fff; border: 1px solid #c9ccce; border-radius: 4px;
+}
+.cr-check:checked { border: 0; background: #007dc5 url("../assets/icons/check.svg") no-repeat 2px 2px / 16px 16px; }
+.cr-check:disabled { cursor: default; }
+.cr-check:disabled:checked { border: 1px solid #c9ccce; background: #f2f4f6 url("../assets/icons/check-light.svg") no-repeat 1px 1px / 16px 16px; }
+.ad-table td.cr-cap-cell { padding: 2px 16px 0; } /* two-line capability names still fit the 40px row */
