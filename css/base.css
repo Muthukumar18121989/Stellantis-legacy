@@ -116,12 +116,11 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
 
 /* Tables */
 .table-wrap {
-  height: 280px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  height: 280px; overflow-x: auto; overflow-y: hidden;
   background: #fff; border: 1px solid #ccdde8; border-radius: 8px;
 }
-.table-wrap::-webkit-scrollbar { display: none; }
-/* Wide tables scroll sideways inside their frame on narrower windows (scrollbar hidden, as in Figma) */
-.rp-table-wrap::-webkit-scrollbar, .rp-aa-wrap::-webkit-scrollbar, .wf-table-wrap::-webkit-scrollbar, .mc-wrap::-webkit-scrollbar { display: none; }
+/* Anything that overflows its frame scrolls with a thin visible scrollbar (shown only when needed) */
+* { scrollbar-width: thin; scrollbar-color: #b3c3cf transparent; }
 
 .badge { display: inline-flex; align-items: center; gap: 4px; padding: 4px; border-radius: 4px; vertical-align: middle; }  /* 0.5px inside stroke drawn as inset shadow: CSS rounds a 0.5px border up to 1px */
 .badge__text { font: 300 10px/1.2 "Poppins", sans-serif; color: #3f4047; text-align: center; white-space: nowrap; }

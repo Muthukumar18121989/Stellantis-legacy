@@ -86,7 +86,7 @@
 .kpi__before b { font-family: "Noto Sans Display", sans-serif; font-weight: 700; }
 
 /* ---------- Metric comparison (Figma 26:15253) ---------- */
-.mc-wrap { overflow-x: auto; overflow-y: hidden; scrollbar-width: none; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; } /* Figma: 1px outside stroke, content clipped */
+.mc-wrap { overflow-x: auto; overflow-y: hidden; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; } /* Figma: 1px outside stroke, content clipped */
 .mc { table-layout: fixed; width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; }
 .mc th, .mc td { padding: 0; font: 400 12px/18px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
 .mc thead th { background: #eff9ff; }
@@ -109,8 +109,7 @@
 .mc tbody td.is-bold { font-weight: 700; }
 
 /* ---------- Promotion drilldown (Figma 26:16842): 2289px table in a 1226 × 247 clipped box ---------- */
-.dd-wrap { position: relative; height: 247px; overflow: auto; scrollbar-width: none; border-radius: 8px; }
-.dd-wrap::-webkit-scrollbar { display: none; }
+.dd-wrap { position: relative; height: 247px; overflow: auto; border-radius: 8px; }
 .res-card--drilldown { position: relative; }
 .res-card--drilldown::after { /* the box's 1px inside stroke, drawn over the scrolling table */
   content: ""; position: absolute; left: 15px; right: 15px; top: 63px; height: 247px;
@@ -135,8 +134,7 @@
 
 /* ---------- Top performing / low response articles (Figma 26:17812, 26:18135) ---------- */
 .res-pair { display: flex; gap: 16px; }
-.art-wrap { height: 184px; overflow: auto; scrollbar-width: none; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; } /* Figma: 1px outside stroke, content clipped */
-.art-wrap::-webkit-scrollbar { display: none; }
+.art-wrap { height: 184px; overflow: auto; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; } /* Figma: 1px outside stroke, content clipped */
 .art-list { table-layout: fixed; width: 100%; min-width: 1270px; border-collapse: separate; border-spacing: 0; background: #fff; }
 .art-list th, .art-list td { padding: 6px 16px; font: 400 12px/18px "Poppins", sans-serif; color: #323436; white-space: nowrap; text-align: left; box-shadow: inset 1px -1px 0 #ccdde8; }
 .art-list th { height: 40px; background: #eff9ff; font-weight: 600; }

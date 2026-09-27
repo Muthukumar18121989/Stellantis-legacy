@@ -42,8 +42,7 @@
 .wf-title__desc { display: flex; align-items: center; gap: 4px; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
 
 /* ---------- Lifecycle stages (Figma 55:37912) ---------- */
-.wf-stages { height: 178px; overflow-x: auto; scrollbar-width: none; }
-.wf-stages::-webkit-scrollbar { display: none; }
+.wf-stages { height: 178px; overflow-x: auto; }
 .wf-stages__row { width: max-content; height: 178px; display: flex; align-items: center; gap: 20px; }
 .wf-arrow { flex: none; }
 .wf-stage {
@@ -87,7 +86,7 @@
 
 /* ---------- Validation table (Figma 55:38749): cells carry a top and right rule, the table a 1px frame ---------- */
 .wf-table-wrap {
-  position: relative; margin-right: -8px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; border-radius: 6px; /* Figma: 1184 wide, 8px past the card padding */
+  position: relative; margin-right: -8px; overflow-x: auto; overflow-y: hidden; border-radius: 6px; /* Figma: 1184 wide, 8px past the card padding */
   box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
 }
 .wf-table-wrap::after { content: ""; position: absolute; inset: 0; border-radius: 6px; box-shadow: inset 0 0 0 1px #c9ccce; pointer-events: none; }

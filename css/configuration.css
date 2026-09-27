@@ -111,7 +111,7 @@
 
 /* ---------- Selected families (Figma 26:9854): one expandable panel per family ---------- */
 .fam-list {
-  height: 392px; display: flex; flex-direction: column; gap: 12px; padding: 12px; overflow-y: auto; scrollbar-width: none; /* Figma: vertical scroll, no scrollbar drawn */
+  height: 392px; display: flex; flex-direction: column; gap: 12px; padding: 12px; overflow-y: auto; /* Figma: vertical scroll */
   background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 0.924px #bfe0f5;
 }
 .fam-list[hidden], .sel-empty[hidden] { display: none; }
@@ -124,18 +124,18 @@
 .fam-panel__toggle[aria-expanded="true"] img { transform: rotate(180deg); }
 .fam-panel__body { display: flex; flex-direction: column; gap: 10px; }
 .fam-panel.is-collapsed .fam-panel__body { display: none; }
-.fam-panel__cards { height: 276px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; } /* Figma: horizontal scroll, no scrollbar drawn */
-.fam-panel__track { display: flex; gap: 12px; width: max-content; height: 276px; filter: drop-shadow(0 4px 3px rgba(142, 142, 142, 0.1)); }
+.fam-panel__cards { height: 276px; overflow-x: auto; overflow-y: hidden; } /* Figma: horizontal scroll */
+.fam-panel__track { display: flex; gap: 12px; width: max-content; min-width: 100%; height: 276px; filter: drop-shadow(0 4px 3px rgba(142, 142, 142, 0.1)); }
 .fam-panel__actions { display: flex; justify-content: flex-end; gap: 16px; }
 
-.an-card { position: relative; flex: none; width: 405px; height: 276px; background: #fff; border: 1px solid #bfe0f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
+.an-card { position: relative; flex: 1 1 405px; min-width: 340px; height: 276px; background: #fff; border: 1px solid #bfe0f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
 .an-card__wave { position: absolute; left: -1px; bottom: -1px; width: calc(100% + 2px); height: 101px; }
-.an-card__content { position: absolute; top: -1px; left: -1px; width: 405px; display: flex; flex-direction: column; padding: 8px 16px; }
+.an-card__content { position: absolute; top: -1px; left: -1px; width: calc(100% + 2px); display: flex; flex-direction: column; padding: 8px 16px; }
 .an-card__head { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 3px; border-bottom: 1px solid #bfe0f5; }
 .an-card__title { font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #0066a1; white-space: nowrap; }
 .an-badge { display: flex; align-items: center; height: 14px; padding: 0 4px; background: rgba(0, 125, 197, 0.08); border-radius: 4px; box-shadow: inset 0 0 0 0.5px #007dc5; font: 300 10px/15px "Poppins", sans-serif; color: #3f4047; white-space: nowrap; }
 .an-card__icon { position: absolute; right: 5px; bottom: 6px; }
-.an-card__icon--tag { right: auto; bottom: auto; left: calc(50% + 146px); top: calc(50% + 89px); transform: translate(-50%, -50%); }
+.an-card__icon--tag { right: 56.5px; bottom: auto; top: calc(50% + 89px); transform: translate(50%, -50%); } /* Figma: centre 146px right of the 405px card's centre */
 .an-row { position: relative; display: flex; align-items: center; gap: 8px; }
 .an-row::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; border-top: 0.5px dashed #ccdde8; } /* Figma: 0.5px dashed inside stroke */
 .an-row__dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: #007dc5; }
@@ -144,16 +144,14 @@
 .an-row__label { margin-right: -2px; font: 300 12px/18px "Poppins", sans-serif; color: #727476; }
 .an-row__value { font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
 .an-row--elasticity .an-row__dot { background: #a333c8; }
-.an-row--elasticity .an-row__body { justify-content: flex-start; gap: 215px; }
+.an-row--elasticity .an-row__body { justify-content: flex-start; gap: min(215px, calc(100% - 136px)); } /* Figma 215px; narrower cards close it up */
 .an-row--elasticity .an-row__label, .an-row--elasticity .an-row__value { margin: 0; font: 600 12px/18px "Noto Sans", sans-serif; letter-spacing: 0; color: #a333c8; }
 
 /* Article drill-down of one family (Figma 26:10344): replaces that family's panel */
 .fam-list.has-drilldown { height: 474px; }
 .art-view { flex: none; }
-.art-view[data-tab="volume"], .art-view[data-tab="price"] { overflow-x: auto; } /* Figma: these views scroll sideways when narrower than their table */
 .art-view__inner { display: flex; flex-direction: column; gap: 16px; }
-.art-view[data-tab="volume"] .art-view__inner { width: 1810px; }
-.art-view[data-tab="price"] .art-view__inner { width: 1847px; height: 495px; justify-content: space-between; } /* Figma 26:11622: fixed 495, space-between */
+.art-view[data-tab="price"] .art-view__inner { height: 495px; justify-content: space-between; } /* Figma 26:11622: fixed 495, space-between */
 .art-view [data-tab-only], .art-view [data-tab-panel] { display: none; }
 .art-view[data-tab="exclusions"] [data-tab-only~="exclusions"],
 .art-view[data-tab="volume"] [data-tab-only~="volume"],
@@ -162,21 +160,22 @@
 .art-view[data-tab="volume"] [data-tab-panel="volume"],
 .art-view[data-tab="price"] [data-tab-panel="price"] { display: contents; }
 .fam-list.has-drilldown[data-drill-tab="price"] { height: 486px; } /* Figma 26:11622 */
-.art-view__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 20px; }
+.art-view__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 20px; min-width: 0; }
 .art-view__title { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
 .art-view__filter { display: flex; justify-content: flex-end; }
 .fam-search--soft { border-color: #bfe0f5; }
-.art-view__tabs-row { display: flex; align-items: center; justify-content: space-between; height: 36px; padding-left: 16px; }
+.art-view__tabs-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 36px; padding-left: 16px; }
 .art-tabs { display: flex; align-items: flex-end; gap: 16px; height: 36px; }
 .art-tab { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 16px 0; font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
 .art-tab::after { content: ""; width: 46px; height: 4px; border-radius: 2px 2px 0 0; }
 .art-tab[aria-selected="true"] { color: #2c2c30; }
 .art-tab[aria-selected="true"]::after { width: 100%; background: #007dc5; }
-.art-table-wrap { height: 280px; overflow-x: hidden; overflow-y: auto; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #bfe0f5; } /* Figma: 1px outside stroke */
-.art-table { width: 1359px; }
+.art-table-wrap { height: 280px; overflow: auto; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #bfe0f5; } /* Figma: 1px outside stroke */
+.fam-table.art-table { width: 100%; min-width: 1359px; }
 /* Volume Analysis tab (Figma 26:11097) */
 .art-apply { display: flex; align-items: center; gap: 8px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; cursor: pointer; }
-.art-tools { display: flex; gap: 14px; }
+.art-tools { display: flex; gap: 14px; min-width: 0; }
+.art-tools > * { flex: 0 1 278px; min-width: 0; } /* Figma 278px each; they shrink on narrow windows */
 .art-select {
   width: 278px; height: 32px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 11px;
   background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #727476; white-space: nowrap;
@@ -184,7 +183,9 @@
 .art-select--disabled { background: #f8f9fb; font-size: 14px; letter-spacing: 0.042px; cursor: default; }
 .vol-table-wrap { position: relative; }
 .vol-table-wrap::after { content: ""; position: absolute; inset: 0; border: 1px solid #c9ccce; border-radius: 6px; pointer-events: none; } /* Figma: 1px inside stroke over the cells */
-.vol-table { table-layout: fixed; width: 1810px; border-collapse: separate; border-spacing: 0; }
+.vol-scroll { overflow-x: auto; border-radius: 6px; } /* wide table scrolls sideways inside its frame */
+.pr-table-wrap .vol-scroll { height: 100%; overflow: auto; }
+.vol-table { table-layout: fixed; width: 100%; min-width: 1810px; border-collapse: separate; border-spacing: 0; }
 .vol-table th, .vol-table td {
   padding: 6px 16px; background: #fff; box-shadow: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; /* Figma: top + right inside strokes */
   font: 400 12px/18px "Noto Sans", sans-serif; color: #727476; text-align: left; white-space: nowrap; vertical-align: middle;
@@ -228,7 +229,7 @@
 .vol-table .vol-detail td { height: auto; padding: 0; background: none; box-shadow: none; }
 .trend { display: flex; flex-direction: column; gap: 16px; height: 244px; padding: 15px; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
 .trend__title { height: 28px; padding-bottom: 7px; border-bottom: 1px solid #ccdde8; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; }
-.trend__cards { display: flex; gap: 79px; height: 168px; }
+.trend__cards { display: flex; justify-content: space-between; gap: 79px; height: 168px; } /* Figma 79px gaps at 1810; wider tables spread the cards */
 .trend-card { flex: none; display: flex; flex-direction: column; gap: 6px; width: 231px; height: 158px; padding: 11px; overflow: hidden; background: #fff; border: 1px solid #c9ccce; border-radius: 8px; }
 .trend-card__block { display: flex; flex-direction: column; gap: 4px; }
 .trend-card__month { font: 600 12px/18px "Noto Sans", sans-serif; color: #323436; }
@@ -240,7 +241,7 @@
 .trend-card__line { width: 188px; height: 0; margin: 0 0 -1px; border: 0; border-top: 1px solid #f2f4f6; }
 /* Price Analysis tab (Figma 26:11622) */
 .pr-table-wrap { height: 305px; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
-.vol-table.pr-table { width: 1847px; }
+.vol-table.pr-table { min-width: 1847px; }
 .pr-table thead tr:first-child { height: 32px; }
 .pr-table thead tr:last-child { height: 31px; }
 .vol-table.pr-table th { height: auto; }

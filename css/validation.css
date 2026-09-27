@@ -53,8 +53,7 @@
 .vs-refresh { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: #fff; border: 1px solid #727476; border-radius: 6px; }
 
 /* ---------- Split table (Figma 55:40674): first three columns and Row Total stay put, months scroll ---------- */
-.vs-table-wrap { overflow-x: auto; scrollbar-width: none; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
-.vs-table-wrap::-webkit-scrollbar { display: none; }
+.vs-table-wrap { overflow-x: auto; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
 .vs-table { table-layout: fixed; width: 100%; min-width: 1475px; border-collapse: separate; border-spacing: 0; background: #fff; }
 .vs-table th, .vs-table td { padding: 0; background: #fff; box-shadow: inset 0 1px #c9ccce; white-space: nowrap; }
 .vs-c1, .vs-c2, .vs-c3, .vs-total { position: sticky; z-index: 1; }
