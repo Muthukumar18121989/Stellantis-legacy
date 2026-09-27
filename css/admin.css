@@ -347,3 +347,66 @@
 .rf-table .rf-right { text-align: right; }
 .rf-table td.rf-edit { padding: 0; text-align: center; border-bottom-color: #bfe0f5; }
 .rf-table .ad-icon { vertical-align: middle; }
+
+/* ---------- DOA "Edit Parameter" panel (Figma 3:30763, 721 × 1171), opened by Add Parameter from the right ---------- */
+.pp-panel {
+  position: fixed; inset: 0 0 0 auto; width: 721px; height: 100%; max-width: none; max-height: none; margin: 0;
+  padding: 18px 24px 24px; overflow-y: auto; scrollbar-width: none; color: #323436;
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.pp-panel::-webkit-scrollbar { display: none; }
+.pp-panel::backdrop { background: transparent; } /* Figma shows no backdrop */
+.pp-panel[open] { animation: pp-slide-in 0.25s ease-out; }
+@keyframes pp-slide-in { from { transform: translateX(100%); } to { transform: none; } }
+.pp-close { position: absolute; right: 8px; top: 10px; width: 24px; height: 24px; }
+.pp-title { margin-bottom: 24px; font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.pp-body { width: 686px; display: flex; flex-direction: column; gap: 17px; padding: 15px; background: #fff; border: 1px solid #bfe0f5; border-radius: 12px; } /* Figma: 686px, 11px into the right padding */
+.pp-section {
+  position: relative; height: 28px; margin: 0; padding: 0 12px 8px;
+  background: linear-gradient(to right, #bfe0f5 4px, transparent 4px) 0 100% / 6px 1px repeat-x; /* dashed 4 / 2 rule */
+  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap;
+}
+.pp-section::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 20px; background: linear-gradient(180deg, #47b796, #01a1fe); }
+.pp-row { display: flex; gap: 16px; margin-left: -1px; } /* Figma: these rows start 1px left of the body padding */
+.pp-field { display: flex; flex-direction: column; gap: 4px; }
+.pp-field__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.pp-field__box {
+  height: 32px; display: flex; align-items: center; gap: 10px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.pp-field__input {
+  flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.pp-field__input--noto { font: 400 14px/20px "Noto Sans", sans-serif; }
+.pp-desc { display: flex; flex-direction: column; gap: 4px; }
+.pp-desc__box { position: relative; display: block; height: 60px; }
+.pp-desc textarea {
+  display: block; width: 100%; height: 100%; margin: 0; padding: 7px 11px; resize: none; outline: 0; overflow: hidden;
+  background: #fff; border: 1px solid #a99fc0; border-radius: 8px;
+  font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476;
+}
+.pp-desc__box img { position: absolute; left: 634px; top: 40px; pointer-events: none; }
+.pp-levels { display: grid; grid-template-columns: 320px 320px; gap: 17px 12px; }
+.pp-level { height: 161px; display: flex; flex-direction: column; gap: 8px; padding: 7px 15px; overflow: hidden; background: #fff; border: 1px solid #c9ccce; border-radius: 12px; }
+.pp-level--off { opacity: 0.24; }
+.pp-level__head { height: 17px; display: flex; justify-content: space-between; align-items: flex-start; }
+.pp-badge {
+  height: 17px; padding: 1px 4px; border-radius: 4px; background: rgba(0, 181, 173, 0.08); box-shadow: inset 0 0 0 0.5px #00b5ad;
+  font: 300 10px/15px "Poppins", sans-serif; color: #3f4047; white-space: nowrap;
+}
+.pp-level--off .pp-badge { margin-left: 1px; }
+.pp-toggle {
+  width: 26px; height: 16px; flex: none; margin: 0; appearance: none; cursor: pointer; border-radius: 100px;
+  background: #c9ccce radial-gradient(circle at 8px 8px, #fff 5.5px, transparent 6px);
+}
+.pp-toggle:checked { background: #007dc5 radial-gradient(circle at 18px 8px, #fff 5.5px, transparent 6px); }
+.pp-toggle:disabled { cursor: default; }
+.pp-level__note { width: 262px; margin: 0 auto; font: 400 12px/18px "Montserrat", sans-serif; letter-spacing: 0.036px; color: #323436; text-align: center; }
+.pp-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.pp-btn {
+  height: 32px; padding: 5px 11px; background: #fff; border: 1px solid #727476; border-radius: 6px;
+  font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap;
+}
+.pp-btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }

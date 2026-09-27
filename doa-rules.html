@@ -77,7 +77,7 @@
           <h2 class="doa-title__text" id="doa-title">Parameter Threshold Matrix</h2>
           <p class="doa-title__desc">Define approval levels (L0-L5) for various promotion parameters.</p>
         </div>
-        <button class="btn-primary doa-add" type="button"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Add Parameter</button>
+        <button class="btn-primary doa-add" type="button" data-open-dialog="doa-param"><img src="assets/icons/plus-thin.svg" width="16" height="16" alt="">Add Parameter</button>
 
         <div class="ad-table-wrap doa-table-wrap">
           <table class="ad-table doa-table">
@@ -143,5 +143,50 @@
 
   </div>
 </div>
+<dialog class="pp-panel" id="doa-param" aria-labelledby="pp-title">
+  <button class="pp-close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <h2 class="pp-title" id="pp-title">Edit Parameter</h2>
+  <form class="pp-body" method="dialog">
+    <h3 class="pp-section"><span>Parameter Definition</span></h3>
+    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Parameter Name</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Family Cluster Margin"></span></label><label class="pp-field" style="width:319px"><span class="pp-field__label">Unit</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="%"></span></label></div>
+    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Competitive Class</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label><label class="pp-field" style="width:319px"><span class="pp-field__label">Market</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label></div>
+    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Promotion Type</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Select"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label><label class="pp-field" style="width:319px"><span class="pp-field__label">Effective Start date</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="mm-dd-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label></div>
+    <div class="pp-row"><label class="pp-field" style="width:320px"><span class="pp-field__label">Effective End date</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--noto" type="text" value="mm-dd-yyyy"><img src="assets/icons/calendar-thin.svg" width="16" height="16" alt=""></span></label></div>
+    <label class="pp-desc"><span class="pp-field__label">Description (Optional)</span><span class="pp-desc__box"><textarea>These margins can be at competition class level i,e, Captive, Medium, High)</textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></span></label>
+    <h3 class="pp-section"><span>Approval threshold &amp; routing</span></h3>
+    <div class="pp-levels">
+          <div class="pp-level pp-level--off" aria-disabled="true">
+            <div class="pp-level__head"><span class="pp-badge">Level 0</span><input class="pp-toggle" type="checkbox" role="switch" checked aria-label="Level 0 enabled" disabled></div>
+            <label class="pp-field"><span class="pp-field__label">Trigger threshold</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" disabled value="22"><img src="assets/icons/percentage.svg" width="16" height="16" alt=""></span></label>
+            <p class="pp-level__note">Promotions meeting this threshold are automatically approved without manual intervention.</p>
+          </div>
+          <div class="pp-level">
+            <div class="pp-level__head"><span class="pp-badge">Level 1.1</span><input class="pp-toggle" type="checkbox" role="switch" checked aria-label="Level 1.1 enabled"></div>
+            <label class="pp-field"><span class="pp-field__label">Trigger threshold</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="20"><img src="assets/icons/percentage.svg" width="16" height="16" alt=""></span></label>
+            <label class="pp-field"><span class="pp-field__label">Approver role</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Local Marketing Manager"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label>
+          </div>
+          <div class="pp-level">
+            <div class="pp-level__head"><span class="pp-badge">Level 2.1</span><input class="pp-toggle" type="checkbox" role="switch" checked aria-label="Level 2.1 enabled"></div>
+            <label class="pp-field"><span class="pp-field__label">Trigger threshold</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="22"><img src="assets/icons/percentage.svg" width="16" height="16" alt=""></span></label>
+            <label class="pp-field"><span class="pp-field__label">Approver role</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Central Marketing Manager"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label>
+          </div>
+          <div class="pp-level">
+            <div class="pp-level__head"><span class="pp-badge">Level 1.2</span><input class="pp-toggle" type="checkbox" role="switch" checked aria-label="Level 1.2 enabled"></div>
+            <label class="pp-field"><span class="pp-field__label">Trigger threshold</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="15"><img src="assets/icons/percentage.svg" width="16" height="16" alt=""></span></label>
+            <label class="pp-field"><span class="pp-field__label">Approver role</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Local Finance Controller"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label>
+          </div>
+          <div class="pp-level">
+            <div class="pp-level__head"><span class="pp-badge">Level 2.2</span><input class="pp-toggle" type="checkbox" role="switch" checked aria-label="Level 2.2 enabled"></div>
+            <label class="pp-field"><span class="pp-field__label">Trigger threshold</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="10"><img src="assets/icons/percentage.svg" width="16" height="16" alt=""></span></label>
+            <label class="pp-field"><span class="pp-field__label">Approver role</span><span class="pp-field__box"><input class="pp-field__input pp-field__input--poppins" type="text" value="Central Finance Controller"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span></label>
+          </div>
+    </div>
+    <div class="pp-actions">
+      <button class="pp-btn" type="button" data-close-dialog>Cancel</button>
+      <button class="pp-btn pp-btn--primary" type="button" data-close-dialog>Update Parameter</button>
+    </div>
+  </form>
+</dialog>
+<script src="js/admin.js"></script>
 </body>
 </html>
