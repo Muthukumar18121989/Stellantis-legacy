@@ -3,10 +3,40 @@
 .login-body { background: #fff; }
 .login { position: relative; min-width: 1280px; height: 100vh; min-height: 657px; overflow: hidden; background: #fff; }
 /* Fills the window: the slanted panel stretches with it; the form keeps its Figma place from the right edge */
-.login__backdrop { position: absolute; left: 39.02%; right: 0; top: 0; width: 60.98%; height: 100%; } /* Figma: starts 533px into the 1366 frame */
-.login__brand { position: absolute; left: 24px; top: 24px; }
+.login__backdrop { position: absolute; z-index: 3; left: 39.02%; right: 0; top: 0; width: 60.98%; height: 100%; } /* Figma: starts 533px into the 1366 frame */
 
-.login__form { position: absolute; right: 172px; top: calc(50% - 164.5px); width: 244px; display: flex; flex-direction: column; gap: 16px; }
+/* ---------- Left panel brand showcase (no Figma design; kept in the app's colours) ---------- */
+.login__showcase {
+  position: absolute; inset: 0; overflow: hidden;
+  background:
+    radial-gradient(circle, rgba(0, 125, 197, 0.14) 1px, transparent 1.6px) 0 0 / 22px 22px,
+    linear-gradient(160deg, #ffffff 0%, #f4f9fc 45%, #e6f3fc 100%);
+}
+.login__showcase::after { /* fades the dot grid towards the edges */
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 34% 60% at 25% 50%, transparent 0%, rgba(255, 255, 255, 0.85) 100%);
+}
+.login__glow { position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none; z-index: 1; }
+.login__glow--teal { left: -8%; top: -14%; width: 38vw; height: 38vw; max-width: 560px; max-height: 560px; background: rgba(71, 183, 150, 0.22); }
+.login__glow--blue { left: 12%; bottom: -22%; width: 34vw; height: 34vw; max-width: 520px; max-height: 520px; background: rgba(1, 161, 254, 0.16); }
+.login__chart { position: absolute; left: 0; bottom: 0; z-index: 1; width: 42%; height: auto; }
+
+.login__brand-card {
+  position: absolute; left: 25%; top: 50%; z-index: 2; transform: translate(-50%, -50%); /* centre of the white area left of the slanted panel */
+  width: 400px; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 44px 40px 36px;
+  background: #fff;
+  border: 1px solid #d9ecf8; border-radius: 20px; box-shadow: 0 24px 48px rgba(0, 79, 104, 0.12), 0 2px 6px rgba(0, 79, 104, 0.06);
+}
+.login__brand { display: block; width: 272px; height: 40px; } /* the logo artwork is 272 x 40; shown at its own size to stay sharp */
+.login__rule { width: 56px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #47b796, #01a1fe); }
+.login__tagline { margin: 0; font: 400 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #3f4047; text-align: center; }
+.login__steps { display: flex; gap: 8px; margin: 4px 0 0; padding: 0; list-style: none; }
+.login__steps li {
+  display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: 14px;
+  background: #eff9ff; box-shadow: inset 0 0 0 1px #bfe0f5; font: 500 12px/18px "Poppins", sans-serif; color: #0066a1; white-space: nowrap;
+}
+
+.login__form { position: absolute; z-index: 4; right: 172px; top: calc(50% - 164.5px); width: 244px; display: flex; flex-direction: column; gap: 16px; }
 .login__title { width: 240px; font: 300 32px/40px "Noto Sans", sans-serif; color: #fff; text-align: center; }
 .login__field { display: flex; flex-direction: column; gap: 4px; }
 .login__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; }
