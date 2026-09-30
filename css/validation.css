@@ -156,7 +156,7 @@
 .sa-actions { display: flex; justify-content: flex-end; }
 .sa-proceed { display: inline-flex; align-items: center; padding: 8px 16px; border-radius: 8px; background: #007dc5; font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #fff; white-space: nowrap; }
 
-/* ---------- Volume Split Needed: opened by Initiate Approval before Submit Promotion for Approval.
+/* ---------- Volume Split Needed: opened by Modify Promotion on the Workflow Tracker (which loads this file for it).
    Built from existing pieces: the sa-dialog shell, the fam-alert banner, the vs-table cells and vs-input,
    the Experiment Status dialog's comments textarea (es-dialog__comments) and the ub buttons. ---------- */
 .fam-alert--info { background: #eff9ff; font-weight: 400; color: #0066a1; }
