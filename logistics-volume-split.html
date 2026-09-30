@@ -177,6 +177,28 @@
         </div>
       </section>
       <!-- Submit Promotion for Approval (Figma 128:57162), opened by Initiate Approval -->
+      <dialog class="sa-dialog vsn-dialog" id="volume-split" aria-labelledby="vsn-title">
+        <button class="sa-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+        <div class="sa-head">
+          <h2 class="sa-head__title" id="vsn-title">Volume Split Needed</h2>
+          <p class="sa-head__sub vsn-meta"><span>Family ID: FAM-002</span><span aria-hidden="true">&middot;</span><span>Execution Window: 2026-10-30 &rarr; 2026-11-07 (9 days)</span></p>
+        </div>
+        <p class="fam-alert fam-alert--info vsn-alert"><img src="assets/icons/info.svg" width="16" height="16" alt="">150 available, you requested 200; 1 other promotion requested 100.</p>
+        <div class="vs-table-wrap vsn-table-wrap">
+          <table class="vs-table vsn-table" data-split-table data-available="150">
+            <thead><tr><th>Article ID</th><th>Article Name</th><th>Requestor</th><th>Role</th><th>Market</th><th>Promo ID</th><th class="vsn-num">Requested Qty</th><th class="vsn-num">Final Allocation</th></tr></thead>
+            <tbody>
+              <tr><td>A10234</td><td>Brake Pad Set</td><td>Sophie</td><td>Pilot Manager</td><td>FR</td><td>C4</td><td class="vsn-num">180</td><td class="vsn-num"><input class="vs-input vsn-input" type="text" inputmode="numeric" value="90" aria-label="Final Allocation A10234" data-allocation></td></tr>
+              <tr><td>A10567</td><td>Clutch Disc</td><td>Marc</td><td>Pilot Manager</td><td>FR</td><td>C7</td><td class="vsn-num">100</td><td class="vsn-num"><input class="vs-input vsn-input" type="text" inputmode="numeric" value="60" aria-label="Final Allocation A10567" data-allocation></td></tr>
+            </tbody>
+            <tfoot><tr><td>Total</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="vsn-num">280</td><td class="vsn-num"><span class="vsn-total" data-allocation-total>150 / 150</span></td></tr></tfoot>
+          </table>
+        </div>
+        <label class="vsn-reason"><span class="vsn-reason__label">Reason for split (required)</span>
+          <span class="vsn-reason__box"><textarea required placeholder="Enter reason for the volume split..." data-split-reason></textarea><img src="assets/icons/textarea-resize.svg" width="14" height="14" alt=""></span>
+        </label>
+        <div class="vsn-actions"><button class="ub" type="button" data-close-dialog>Cancel</button><button class="ub ub--primary" type="button" data-confirm-split>Confirm Split</button></div>
+      </dialog>
       <dialog class="sa-dialog" id="submit-approval" aria-labelledby="sa-title">
         <button class="sa-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
         <div class="sa-head">
