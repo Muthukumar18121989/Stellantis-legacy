@@ -3,7 +3,7 @@
 
 .page--configuration { min-height: max(805px, 100vh); }
 .page--selection { min-height: max(854px, 100vh); }
-.page--selection.has-families { min-height: max(798px, 100vh); } /* Figma 26:9854 is 1366 × 798 */
+.page--selection.has-families { min-height: max(867px, 100vh); } /* Figma 26:9854 (798) + the taller analysis cards */
 
 /* Top menu logo (Figma 26:12331): 130 × 28 logo image slot + "Powered by" TCS TwinX */
 
@@ -111,41 +111,62 @@
 
 /* ---------- Selected families (Figma 26:9854): one expandable panel per family ---------- */
 .fam-list {
-  height: 392px; display: flex; flex-direction: column; gap: 12px; padding: 12px; overflow-y: auto; /* Figma: vertical scroll */
+  height: 461px; display: flex; flex-direction: column; gap: 12px; padding: 12px; overflow-y: auto; /* Figma: vertical scroll */
   background: #fff; border-radius: 12px; box-shadow: inset 0 0 0 0.924px #bfe0f5;
 }
 .fam-list[hidden], .sel-empty[hidden] { display: none; }
-.fam-panel { flex: none; height: 366px; display: flex; flex-direction: column; gap: 10px; padding: 5px 11px; background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; }
-.fam-panel.is-collapsed { height: 31px; }
+.fam-panel { flex: none; display: flex; flex-direction: column; gap: 10px; padding: 5px 11px 11px; background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; }
+.fam-panel.is-collapsed { height: 31px; padding-bottom: 5px; }
 .fam-panel__head { display: flex; align-items: flex-start; gap: 10px; height: 19px; }
 .fam-panel.is-collapsed .fam-panel__head { align-items: center; }
 .fam-panel__title { flex: 1; min-width: 0; height: 19px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
 .fam-panel__toggle { display: flex; flex: none; width: 16px; height: 16px; padding: 0; background: none; border: 0; cursor: pointer; }
 .fam-panel__toggle[aria-expanded="true"] img { transform: rotate(180deg); }
-.fam-panel__body { display: flex; flex-direction: column; gap: 10px; }
+.fam-panel__body { display: flex; flex-direction: column; gap: 12px; }
 .fam-panel.is-collapsed .fam-panel__body { display: none; }
-.fam-panel__cards { height: 276px; overflow-x: auto; overflow-y: hidden; } /* Figma: horizontal scroll */
-.fam-panel__track { display: flex; gap: 12px; width: max-content; min-width: 100%; height: 276px; filter: drop-shadow(0 4px 3px rgba(142, 142, 142, 0.1)); }
 .fam-panel__actions { display: flex; justify-content: flex-end; gap: 16px; }
 
-.an-card { position: relative; flex: 1 1 405px; min-width: 340px; height: 276px; background: #fff; border: 1px solid #bfe0f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
-.an-card__wave { position: absolute; left: -1px; bottom: -1px; width: calc(100% + 2px); height: 101px; }
-.an-card__content { position: absolute; top: -1px; left: -1px; width: calc(100% + 2px); display: flex; flex-direction: column; padding: 8px 16px; }
-.an-card__head { display: flex; align-items: center; justify-content: space-between; padding: 4px 0 3px; border-bottom: 1px solid #bfe0f5; }
-.an-card__title { font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #0066a1; white-space: nowrap; }
-.an-badge { display: flex; align-items: center; height: 14px; padding: 0 4px; background: rgba(0, 125, 197, 0.08); border-radius: 4px; box-shadow: inset 0 0 0 0.5px #007dc5; font: 300 10px/15px "Poppins", sans-serif; color: #3f4047; white-space: nowrap; }
-.an-card__icon { position: absolute; right: 5px; bottom: 6px; }
-.an-card__icon--tag { right: 56.5px; bottom: auto; top: calc(50% + 89px); transform: translate(50%, -50%); } /* Figma: centre 146px right of the 405px card's centre */
-.an-row { position: relative; display: flex; align-items: center; gap: 8px; }
-.an-row::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; border-top: 0.5px dashed #ccdde8; } /* Figma: 0.5px dashed inside stroke */
-.an-row__dot { flex: none; width: 8px; height: 8px; border-radius: 50%; background: #007dc5; }
-.an-row__body { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: space-between; padding: 6px 3px; white-space: nowrap; }
-.an-row--top .an-row__body { align-items: flex-start; }
-.an-row__label { margin-right: -2px; font: 300 12px/18px "Poppins", sans-serif; color: #727476; }
-.an-row__value { font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
-.an-row--elasticity .an-row__dot { background: #a333c8; }
-.an-row--elasticity .an-row__body { justify-content: flex-start; gap: min(215px, calc(100% - 136px)); } /* Figma 215px; narrower cards close it up */
-.an-row--elasticity .an-row__label, .an-row--elasticity .an-row__value { margin: 0; font: 600 12px/18px "Noto Sans", sans-serif; letter-spacing: 0; color: #a333c8; }
+/* Family analysis cards (layout from Muthu's 2026-10-08 reference, app styling):
+   Overview + Price Analysis stacked on the left, Volume Analysis on the right */
+.fam-panel__cards { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.an-col { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.an-card { display: flex; flex-direction: column; gap: 12px; min-width: 0; padding: 12px 16px 16px; background: #fff; border: 1px solid #bfe0f5; border-radius: 10px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
+.an-col .an-card:last-child { flex: 1; }
+.an-card__head { display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid #bfe0f5; }
+.an-card__chip { display: flex; flex: none; align-items: center; justify-content: center; width: 28px; height: 28px; background: #007dc5; border-radius: 6px; }
+.an-card__title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #0066a1; white-space: nowrap; }
+.an-badge { display: inline-flex; flex: none; align-items: center; gap: 6px; height: 22px; padding: 0 8px; background: rgba(0, 125, 197, 0.08); border-radius: 11px; box-shadow: inset 0 0 0 0.5px #007dc5; font: 300 11px/16px "Poppins", sans-serif; color: #3f4047; white-space: nowrap; }
+.an-badge em { font-style: italic; }
+.an-badge__dot { width: 6px; height: 6px; border-radius: 50%; background: #727476; }
+.an-badge--teal { background: rgba(0, 181, 173, 0.08); box-shadow: inset 0 0 0 0.5px #00b5ad; font-weight: 500; color: #0066a1; }
+.an-badge--teal .an-badge__dot { background: #007dc5; }
+.an-section { margin: 0; display: flex; align-items: center; gap: 8px; font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #0066a1; white-space: nowrap; }
+.an-section::before { content: ""; width: 3px; height: 14px; border-radius: 2px; background: #007dc5; }
+.an-section-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.an-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.an-tiles--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.an-tile { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 10px 14px; background: #f6fcff; border: 1px solid #bfe0f5; border-radius: 8px; }
+.an-tile__label { display: flex; align-items: center; gap: 6px; overflow: hidden; text-overflow: ellipsis; font: 400 12px/18px "Poppins", sans-serif; color: #727476; white-space: nowrap; }
+.an-tile__dot { flex: none; width: 6px; height: 6px; border-radius: 50%; background: #007dc5; }
+.an-tile__value { font: 500 20px/28px "Poppins", sans-serif; letter-spacing: 0.02px; color: #0066a1; white-space: nowrap; }
+.an-tile--active { background: #f2fbf4; border-color: #b6e3c0; }
+.an-tile--active .an-tile__dot { background: #318500; }
+.an-tile--active .an-tile__value { color: #318500; }
+.an-tile--muted { background: #f8f9fb; border-color: #dcdcdc; }
+.an-tile--muted .an-tile__dot { background: #c9ccce; }
+.an-tile--muted .an-tile__value { color: #323436; }
+.an-tile--elasticity { background: #f9edfd; border-color: #e3c2ef; }
+.an-tile--elasticity .an-tile__label { font-weight: 500; color: #a333c8; }
+.an-tile--elasticity .an-tile__value { color: #a333c8; }
+.an-divider { border-top: 1px dashed #ccdde8; }
+.an-split { display: flex; height: 28px; overflow: hidden; border-radius: 6px; font: 500 12px/28px "Poppins", sans-serif; color: #fff; white-space: nowrap; }
+.an-split__promo { flex: 0 0 max(var(--share), 52px); overflow: hidden; padding-left: 10px; background: #007dc5; } /* reference keeps a stub for a 0 share */
+.an-split__rest { flex: 1; text-align: center; background: #00b5ad; }
+.an-split__legend { display: flex; justify-content: space-between; gap: 12px; margin-top: -4px; font: 400 12px/18px "Poppins", sans-serif; color: #727476; }
+.an-split__legend > span { display: flex; align-items: center; gap: 6px; }
+.an-split__legend-rest .an-tile__dot { background: #00b5ad; }
+.an-note { margin: 0; padding: 5px 12px; background: #f8f9fb; border-radius: 14px; font: 300 12px/18px "Poppins", sans-serif; color: #727476; text-align: center; }
+.an-note b { font-weight: 500; color: #323436; }
 
 /* Article drill-down of one family (Figma 26:10344): replaces that family's panel */
 .fam-list.has-drilldown { height: 474px; }
