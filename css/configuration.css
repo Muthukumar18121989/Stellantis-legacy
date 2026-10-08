@@ -248,18 +248,52 @@
 .vol-toggle { display: flex; flex: none; width: 16px; height: 16px; }
 .vol-toggle[aria-expanded="true"] img { transform: rotate(180deg); }
 .vol-table .vol-detail td { height: auto; padding: 0; background: none; box-shadow: none; }
-.trend { display: flex; flex-direction: column; gap: 16px; height: 244px; padding: 15px; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
-.trend__title { height: 28px; padding-bottom: 7px; border-bottom: 1px solid #ccdde8; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; }
-.trend__cards { display: flex; justify-content: space-between; gap: 79px; height: 168px; } /* Figma 79px gaps at 1810; wider tables spread the cards */
-.trend-card { flex: none; display: flex; flex-direction: column; gap: 6px; width: 231px; height: 158px; padding: 11px; overflow: hidden; background: #fff; border: 1px solid #c9ccce; border-radius: 8px; }
-.trend-card__block { display: flex; flex-direction: column; gap: 4px; }
-.trend-card__month { font: 600 12px/18px "Noto Sans", sans-serif; color: #323436; }
-.trend-card__label { font: 300 12px/18px "Noto Sans", sans-serif; letter-spacing: 0.036px; color: #323436; }
-.trend-card__promo { font: 600 12px/18px "Noto Sans", sans-serif; }
-.trend-card__value { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #007dc5; }
-.trend-card__block:last-child, .trend-card__block:last-child .trend-card__value { color: #c9ccce; }
-.trend-card__block.is-promo, .trend-card__block.is-promo .trend-card__value { color: #f2711c; }
-.trend-card__line { width: 188px; height: 0; margin: 0 0 -1px; border: 0; border-top: 1px solid #f2f4f6; }
+/* Monthly Trend Analysis (layout from Muthu's 2026-10-08 references, app styling): Tiles / Graph views.
+   It stays pinned to the visible width of the table frame while the table scrolls sideways. */
+.vol-scroll { container-type: inline-size; }
+.trend { position: sticky; left: 0; width: calc(100cqw - 10px); /* 100cqw includes the thin vertical scrollbar */ display: flex; flex-direction: column; gap: 12px; padding: 14px 16px 16px; background: #fff; border-top: 1px solid #c9ccce; white-space: normal; }
+.trend__head { display: flex; align-items: center; gap: 10px; padding-bottom: 10px; border-bottom: 1px solid #bfe0f5; }
+.trend__heading { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.trend__title { margin: 0; font: 500 16px/22px "Poppins", sans-serif; letter-spacing: 0.032px; color: #0066a1; }
+.trend__sub { font: 300 12px/16px "Poppins", sans-serif; color: #727476; }
+.trend-switch { display: flex; flex: none; gap: 2px; padding: 2px; background: #f8f9fb; border: 1px solid #bfe0f5; border-radius: 6px; }
+.trend-switch__btn { display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: 4px; font: 500 12px/18px "Poppins", sans-serif; color: #727476; }
+.trend-switch__btn[aria-selected="true"] { background: #fff; color: #007dc5; box-shadow: 0 1px 3px rgba(142, 142, 142, 0.3); }
+.trend__summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.trend__caption { font: 500 13px/20px "Poppins", sans-serif; color: #727476; white-space: nowrap; }
+.trend__totals { display: flex; gap: 10px; }
+.trend__totals .an-badge { height: 26px; padding: 0 12px; border-radius: 13px; font-size: 12px; }
+.trend__totals .an-badge b { font-weight: 600; color: #007dc5; }
+.trend__totals .an-badge--teal b { color: #00968f; }
+.an-badge--blue .an-badge__dot { background: #007dc5; }
+.an-badge--teal .an-badge__dot { background: #00b5ad; }
+.trend [data-trend-panel] { display: none; }
+.trend[data-view="tiles"] [data-trend-panel="tiles"], .trend[data-view="graph"] [data-trend-panel="graph"] { display: grid; }
+.trend__tiles { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.trend-tile { min-width: 0; overflow: hidden; background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; }
+.trend-tile.is-current { border-color: #007dc5; box-shadow: inset 0 0 0 1px #007dc5; }
+.trend-tile__month { display: block; padding: 6px 12px; background: #eff9ff; border-bottom: 1px solid #bfe0f5; font: 500 13px/20px "Poppins", sans-serif; color: #323436; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.trend-tile__body { display: flex; flex-direction: column; padding: 8px 12px 10px; }
+.trend-tile__label { font: 300 12px/18px "Poppins", sans-serif; color: #727476; white-space: nowrap; }
+.trend-tile__value { font: 600 16px/22px "Poppins", sans-serif; color: #007dc5; }
+.trend-tile__value--non { color: #00968f; }
+.trend-tile__line { width: 100%; height: 0; margin: 6px 0; border: 0; border-top: 1px dashed #ccdde8; }
+.trend-graph { grid-template-rows: auto auto; gap: 10px; }
+.trend-graph__legend { display: flex; gap: 24px; font: 500 12px/18px "Poppins", sans-serif; color: #323436; }
+.trend-graph__legend span { display: flex; align-items: center; gap: 8px; }
+.trend-graph__key { width: 12px; height: 12px; border-radius: 3px; background: #007dc5; }
+.trend-graph__key--non { background: #00b5ad; }
+.trend-graph__plot { position: relative; display: grid; grid-template-columns: 18px auto 1fr; height: 236px; }
+.trend-graph__axis-title { align-self: center; justify-self: center; transform: rotate(-90deg); font: 500 11px/16px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.trend-graph__y { display: flex; flex-direction: column; justify-content: space-between; height: 200px; padding-right: 8px; font: 400 11px/0 "Noto Sans", sans-serif; color: #727476; text-align: right; }
+.trend-graph__y span { height: 0; line-height: 0; }
+.trend-graph__bars { position: relative; display: flex; height: 200px; border-bottom: 1px solid #c9ccce;
+  background: repeating-linear-gradient(to bottom, #f2f4f6 0 1px, transparent 1px 40px); } /* gridline every 2,000 */
+.trend-graph__group { position: relative; flex: 1; display: flex; justify-content: center; }
+.trend-graph__pair { display: flex; align-items: flex-end; gap: 6px; height: 100%; }
+.trend-graph__bar { width: clamp(12px, 1.6vw, 28px); background: #007dc5; border-radius: 4px 4px 0 0; }
+.trend-graph__bar--non { background: #00b5ad; }
+.trend-graph__x { position: absolute; top: calc(100% + 8px); font: 500 11px/16px "Poppins", sans-serif; color: #727476; white-space: nowrap; }
 /* Price Analysis tab (Figma 26:11622) */
 .pr-table-wrap { height: 305px; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16); }
 .vol-table.pr-table { min-width: 1847px; }

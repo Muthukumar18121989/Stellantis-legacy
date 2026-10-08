@@ -110,11 +110,24 @@
     if (!detail || !detail.classList.contains('vol-detail')) {
       detail = row.parentNode.querySelector('.vol-detail').cloneNode(true);
       detail.hidden = true;
+      setTrendView(detail.querySelector('.trend'), 'tiles');
       row.after(detail);
     }
     var expanded = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!expanded));
     detail.hidden = expanded;
+  });
+
+  // Monthly Trend Analysis switches between its Tiles and Graph views.
+  function setTrendView(trend, view) {
+    trend.dataset.view = view;
+    trend.querySelectorAll('[data-trend-view]').forEach(function (btn) {
+      btn.setAttribute('aria-selected', String(btn.dataset.trendView === view));
+    });
+  }
+  list.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-trend-view]');
+    if (btn) setTrendView(btn.closest('.trend'), btn.dataset.trendView);
   });
 
   // Each family panel expands and collapses from its chevron.
