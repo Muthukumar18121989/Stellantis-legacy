@@ -385,3 +385,11 @@ th .fam-id { gap: 10px; }
 .fam-alert img { flex: none; }
 .fam-alert--success { background: #d7f6de; font-weight: 400; color: #318500; }
 .fam-alert--error { background: #f6d7d7; font-weight: 300; color: #ec0047; }
+
+/* Volume / Price tables (Muthu, 2026-10-08): the table frame scrolls both ways with
+   thin visible scrollbars, and the column headers stay frozen while scrolling */
+.art-view[data-tab="volume"] .art-view__inner { height: 450px; } /* .fam-list.has-drilldown 474 minus its 12px padding */
+.art-view[data-tab="volume"] .vol-table-wrap { flex: 1; min-height: 0; }
+.art-view[data-tab="volume"] .vol-scroll { height: 100%; overflow: auto; }
+.vol-table thead th { position: sticky; top: 0; z-index: 2; }
+.pr-table thead tr:last-child th { top: 32px; } /* second header row sits under the 32px first row */
