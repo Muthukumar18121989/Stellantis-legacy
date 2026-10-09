@@ -109,45 +109,39 @@
         <section class="res-card res-card--summary">
           <h2 class="res-card__title"><span class="res-card__title-inner"><img src="assets/icons/report-money.svg" width="24" height="24" alt="">Promotion Financial Outcome Summary</span></h2>
           <div class="kpis">
-            <article class="kpi">
+            <article class="kpi kpi--margin">
+              <h3 class="kpi__head">Overall Margin (% vs. D3NP) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
               <div class="kpi__body">
-                <p class="kpi__label">Unit Margin (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
-                <div class="kpi__row">
-                  <p class="kpi__value">48.5M</p>
-                  <span class="kpi__change kpi__change--up"><img src="assets/icons/arrow-up-green.svg" width="12" height="12" alt="">€1.4M</span>
+                <div class="kpi__compare">
+                  <div class="kpi__side"><span class="kpi__cap">Before</span><span class="kpi__num">62.7%</span></div>
+                  <div class="kpi__side"><span class="kpi__cap">After</span><span class="kpi__num">60.5%</span></div>
                 </div>
-                <p class="kpi__before">Before 50M</p>
+                <span class="kpi__delta kpi__delta--down">▼ 2.2 pp</span>
               </div>
             </article>
             <article class="kpi">
-              <div class="kpi__body">
-                <p class="kpi__label">Margin % (vs. D3NP) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
-                <div class="kpi__row">
-                  <p class="kpi__value">60.5%</p>
-                  <span class="kpi__change kpi__change--up"><img src="assets/icons/arrow-up-green.svg" width="12" height="12" alt="">+5.5 pp</span>
-                </div>
-                <p class="kpi__before">Before <b>62.7%</b></p>
-              </div>
+              <h3 class="kpi__head">Total Promo Discount (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+              <div class="kpi__body"><p class="kpi__value">126.05</p></div>
             </article>
             <article class="kpi">
-              <div class="kpi__body">
-                <p class="kpi__label">Total Promo Discount (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
-                <div class="kpi__row">
-                  <p class="kpi__value">126.05</p>
-                  <span class="kpi__change kpi__change--down"><img src="assets/icons/arrow-up-red.svg" width="12" height="12" alt="">100%</span>
-                </div>
-                <p class="kpi__before">Before 0</p>
-              </div>
+              <h3 class="kpi__head">Sales Quantity <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+              <div class="kpi__body"><p class="kpi__value">2,655</p></div>
             </article>
-            <article class="kpi">
-              <div class="kpi__body">
-                <p class="kpi__label">Sales Quantity <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></p>
-                <div class="kpi__row">
-                  <p class="kpi__value">2,655</p>
-                  <span class="kpi__change kpi__change--up"><img src="assets/icons/arrow-up-green.svg" width="12" height="12" alt="">+33.5%</span>
-                </div>
-                <p class="kpi__before">Before <b>2,000</b></p>
+            <article class="kpi kpi--family">
+              <h3 class="kpi__head">Margin by Family <span class="kpi__alert"><img src="assets/icons/alert-triangle-red.svg" width="14" height="14" alt="">1 alert</span> <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+              <div class="fm-wrap">
+                <table class="fm">
+                  <thead>
+                    <tr><th>Family</th><th class="is-num">Unit Margin (€)</th><th class="is-num">Simulated Margin</th><th class="is-center">Alert</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="is-breach"><td>Wiper Blades</td><td class="is-num">2.11</td><td class="is-num fm__low">82.40%</td><td class="is-center"><span class="fm__badge fm__badge--alert"><img src="assets/icons/alert-triangle-red.svg" width="14" height="14" alt="">2.6 pp below min</span></td></tr>
+                    <tr><td>Brake Pads</td><td class="is-num">3.42</td><td class="is-num">91.20%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                    <tr><td>Oil Filters</td><td class="is-num">3.05</td><td class="is-num">88.10%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  </tbody>
+                </table>
               </div>
+              <p class="fm__foot"><span>1 of 4 families below minimum margin · breached families listed first</span><span>Margin = total margin ÷ total volume</span></p>
             </article>
           </div>
           <div class="mc-wrap">
