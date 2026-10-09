@@ -136,14 +136,14 @@
 .mc tbody td.is-twin { font-weight: 600; color: #a333c8; }
 .mc tbody td.is-bold { font-weight: 700; }
 
-/* ---------- Promotion drilldown (Figma 26:16842): 2289px table in a 1226 × 247 clipped box ---------- */
+/* ---------- Promotion drilldown (Figma 26:16842; 2026-10-09 Overall Margin (%) columns added from Muthu's reference): 2613px table in a 1226 × 247 clipped box ---------- */
 .dd-wrap { position: relative; height: 247px; overflow: auto; border-radius: 8px; }
 .res-card--drilldown { position: relative; }
 .res-card--drilldown::after { /* the box's 1px inside stroke, drawn over the scrolling table */
   content: ""; position: absolute; left: 15px; right: 15px; top: 63px; height: 247px;
   border: 1px solid #ccdde8; border-radius: 8px; pointer-events: none;
 }
-.dd { table-layout: fixed; width: 2289px; border-collapse: separate; border-spacing: 0; background: #fff; }
+.dd { table-layout: fixed; width: 2613px; border-collapse: separate; border-spacing: 0; background: #fff; }
 .dd th, .dd td { padding: 6px 16px; font: 400 12px/18px "Poppins", sans-serif; color: #323436; white-space: nowrap; box-shadow: inset -1px -1px 0 #ccdde8; }
 .dd thead th { background: #eff9ff; font-weight: 600; }
 .dd thead th.is-rec { background: #f9edfd; color: #a333c8; }
@@ -159,6 +159,10 @@
 .dd tbody td { text-align: right; }
 .dd tbody td.is-alert { color: #ec0047; box-shadow: inset 0 0 0 1px #ec0047; }
 .dd tbody td.is-rec { font-weight: 600; color: #a333c8; }
+.dd thead th.is-om { box-shadow: inset -1px -1px 0 #ccdde8, inset 0 -2px 0 #007dc5; }
+.dd thead th.is-rec.is-om { box-shadow: inset -1px -1px 0 #ccdde8, inset 0 -2px 0 #a333c8; }
+.dd tbody td.is-om { background: #f5fbff; }
+.dd tbody td.is-rec.is-om { background: #fdf7fe; }
 
 /* ---------- Top performing / low response articles (Figma 26:17812, 26:18135) ---------- */
 .res-pair { display: flex; gap: 16px; }
