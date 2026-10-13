@@ -113,7 +113,7 @@
       </div>
 
       <div class="res-panels" data-tab="summary">
-        <section class="res-card res-panel" id="res-panel-summary" data-res-panel="summary" role="tabpanel" aria-labelledby="res-tab-summary">
+        <section class="res-card res-panel res-panel--fill" id="res-panel-summary" data-res-panel="summary" role="tabpanel" aria-labelledby="res-tab-summary">
           <div class="kpis">
             <article class="kpi kpi--margin">
               <h3 class="kpi__head">Overall Margin (% vs. D3NP) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
@@ -124,33 +124,38 @@
                 </div>
               </div>
             </article>
-            <div class="kpi-stack">
-              <article class="kpi">
-                <h3 class="kpi__head">Total Promo Discount (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
-                <div class="kpi__body"><p class="kpi__value">126.05</p></div>
-              </article>
-              <article class="kpi">
-                <h3 class="kpi__head">Sales Quantity <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
-                <div class="kpi__body"><p class="kpi__value">2,655</p></div>
-              </article>
-            </div>
-            <article class="kpi kpi--family">
-              <h3 class="kpi__head">Margin by Family <span class="kpi__alert"><img src="assets/icons/alert-triangle-red.svg" width="14" height="14" alt="">1 alert</span> <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
-              <div class="fm-wrap">
-                <table class="fm">
-                  <thead>
-                    <tr><th>Family</th><th class="is-num">Min Margin by Class</th><th class="is-num">Simulated Margin</th><th class="is-center">Alert</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr class="is-breach"><td>Wiper Blades</td><td class="is-num">2.11</td><td class="is-num fm__low">82.40%</td><td class="is-center"><span class="fm__badge fm__badge--alert"><img src="assets/icons/alert-triangle-red.svg" width="14" height="14" alt="">Margin Not Met</span></td></tr>
-                    <tr><td>Brake Pads</td><td class="is-num">3.42</td><td class="is-num">91.20%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
-                    <tr><td>Oil Filters</td><td class="is-num">3.05</td><td class="is-num">88.10%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="fm__foot"><span>1 of 4 families below minimum margin · breached families listed first</span><span>Margin = total margin ÷ total volume</span></p>
+            <article class="kpi">
+              <h3 class="kpi__head">Total Promo Discount (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+              <div class="kpi__body"><p class="kpi__value">126.05</p></div>
+            </article>
+            <article class="kpi">
+              <h3 class="kpi__head">Sales Quantity <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+              <div class="kpi__body"><p class="kpi__value">2,655</p></div>
             </article>
           </div>
+          <article class="kpi kpi--family">
+            <h3 class="kpi__head">Margin by Family <span class="kpi__alert"><img src="assets/icons/alert-triangle-red.svg" width="14" height="14" alt="">2 alerts</span> <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+            <div class="fm-wrap">
+              <table class="fm">
+                <thead>
+                  <tr><th>Family</th><th class="is-num">Min Margin by Class</th><th class="is-num">Simulated Margin</th><th class="is-center">Alert</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="is-breach"><td>Wiper Blades</td><td class="is-num">2.11</td><td class="is-num fm__low">82.40%</td><td class="is-center"><span class="fm__badge fm__badge--alert"><img src="assets/icons/alert-triangle-red.svg" width="14" height="14" alt="">Margin Not Met</span></td></tr>
+                  <tr class="is-breach"><td>Batteries</td><td class="is-num">2.48</td><td class="is-num fm__low">84.60%</td><td class="is-center"><span class="fm__badge fm__badge--alert"><img src="assets/icons/alert-triangle-red.svg" width="14" height="14" alt="">Margin Not Met</span></td></tr>
+                  <tr><td>Brake Pads</td><td class="is-num">3.42</td><td class="is-num">91.20%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  <tr><td>Oil Filters</td><td class="is-num">3.05</td><td class="is-num">88.10%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  <tr><td>Spark Plugs</td><td class="is-num">2.95</td><td class="is-num">90.35%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  <tr><td>Air Filters</td><td class="is-num">3.18</td><td class="is-num">89.60%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  <tr><td>A/C Components</td><td class="is-num">2.76</td><td class="is-num">87.40%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  <tr><td>Shock Absorbers</td><td class="is-num">3.60</td><td class="is-num">92.15%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  <tr><td>Clutch Kits</td><td class="is-num">2.88</td><td class="is-num">86.90%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                  <tr><td>Headlamps</td><td class="is-num">3.12</td><td class="is-num">90.80%</td><td class="is-center"><span class="fm__badge fm__badge--ok"><img src="assets/icons/check-green.svg" width="14" height="14" alt="">OK</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="fm__foot"><span>2 of 10 families below minimum margin · breached families listed first</span><span>Margin = total margin ÷ total volume</span></p>
+          </article>
         </section>
         <section class="res-card res-panel" id="res-panel-metrics" data-res-panel="metrics" role="tabpanel" aria-labelledby="res-tab-metrics">
           <div class="mc-wrap">
@@ -204,7 +209,7 @@
             </table>
           </div>
         </section>
-        <section class="res-card res-card--drilldown res-panel" id="res-panel-drilldown" data-res-panel="drilldown" role="tabpanel" aria-labelledby="res-tab-drilldown">
+        <section class="res-card res-card--drilldown res-panel res-panel--fill" id="res-panel-drilldown" data-res-panel="drilldown" role="tabpanel" aria-labelledby="res-tab-drilldown">
           <div class="dd-wrap">
             <table class="dd">
               <colgroup><col style="width:183px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"><col style="width:162px"></colgroup>

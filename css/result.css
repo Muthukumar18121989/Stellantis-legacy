@@ -51,7 +51,7 @@
 .res-panels { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 .res-panels .res-panel { display: none; flex: 0 0 auto; min-height: 0; max-height: 100%; overflow: auto; } /* a panel hugs its content and scrolls inside when the window is short */
 .res-panel > * { flex-shrink: 0; }
-.res-panels .res-card--drilldown { flex: 1 1 auto; overflow: hidden; } /* the drilldown fills the space; its table scrolls inside */
+.res-panels .res-panel--fill { flex: 1 1 auto; overflow: auto; } /* summary and drilldown fill the space; their tables scroll inside */
 .res-panels .dd-wrap { flex: 1 1 0; }
 .res-panels[data-tab="summary"] [data-res-panel="summary"],
 .res-panels[data-tab="metrics"] [data-res-panel="metrics"],
@@ -86,12 +86,9 @@
 .res-card__title-inner::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, #47b796, #01a1fe); }
 
 /* ---------- KPI cards (redesigned 2026-10-09 from Muthu's reference image, app styling kept) ---------- */
-.kpis { display: flex; gap: 16px; min-height: 210px; }
+.kpis { display: flex; gap: 16px; } /* Overall Margin, Promo Discount, Sales Quantity in one row (Muthu, 2026-10-13) */
 .kpi { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; border: 1px solid #bfe0f5; border-radius: 8px; overflow: hidden; background: #fff; }
-.kpi--family { flex: 3 1 0; }
-.kpi-stack { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 16px; } /* Promo Discount over Sales Quantity (Muthu, 2026-10-13) */
-.kpi-stack .kpi { flex: 1 1 0; }
-.kpi-stack .kpi__value { font-size: 22px; line-height: 30px; }
+.res-panels .kpi--family { flex: 1 1 0; min-height: 150px; } /* Margin by Family under the KPI row, fills the tab; rows scroll inside */
 .kpi__head {
   flex: none; height: 32px; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 12px;
   background: #e8f4fc; border-bottom: 1px solid #bfe0f5;
@@ -115,7 +112,7 @@
 /* Margin by Family table */
 .fm-wrap { flex: 1; overflow: auto; }
 .fm { width: 100%; border-collapse: collapse; font: 400 12px/18px "Noto Sans", sans-serif; color: #323436; }
-.fm th { position: sticky; top: 0; height: 30px; padding: 0 12px; background: #f6fafd; border-bottom: 1px solid #bfe0f5; text-align: left; font-weight: 500; color: #6b6d70; white-space: nowrap; }
+.fm th { position: sticky; top: 0; z-index: 1; height: 30px; padding: 0 12px; background: #f6fafd; border-bottom: 1px solid #bfe0f5; text-align: left; font-weight: 500; color: #6b6d70; white-space: nowrap; }
 .fm td { height: 38px; padding: 0 12px; border-bottom: 1px solid #e6eef4; white-space: nowrap; }
 .fm td:first-child { font-weight: 600; }
 .fm .is-num { text-align: right; }
