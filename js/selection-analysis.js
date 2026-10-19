@@ -51,6 +51,8 @@
   });
   // "Drill Down to Article" replaces that family's panel with its article list (Figma 26:10344).
   var articles = document.getElementById('family-articles');
+  // "Discount on MSRP at family level" promotions use their own Volume and Price Analysis tables (Figma 152:35568, 152:35837).
+  var familyLevel = /MSRP at family level/i.test(new URLSearchParams(location.search).get('type') || '');
   list.addEventListener('click', function (e) {
     var drill = e.target.closest('[data-drill-down]');
     if (!drill) return;
@@ -59,6 +61,13 @@
     var title = panel.querySelector('[data-family-title]').textContent;
     view.querySelector('[data-family-title]').textContent = title;
     view.setAttribute('aria-label', title + ' articles');
+    if (familyLevel) {
+      ['volume', 'price'].forEach(function (tab) {
+        var panel = document.getElementById('family-' + tab + '-msrp').content.firstElementChild.cloneNode(true);
+        view.querySelector('[data-tab-panel="' + tab + '"]').replaceWith(panel);
+      });
+      view.classList.add('art-view--msrp');
+    }
     panel.replaceWith(view);
     list.classList.add('has-drilldown');
     list.dataset.drillTab = 'exclusions';
@@ -75,7 +84,7 @@
     else head.checked = checks.every(function (c) { return c.checked; });
   });
 
-  // Article view tabs: Exclusions and Volume Analysis (Figma 26:11097); Price Analysis has no design yet.
+  // Article view tabs: Exclusions, Volume Analysis (Figma 26:11097) and Price Analysis (Figma 26:11622).
   list.addEventListener('click', function (e) {
     var tab = e.target.closest('[data-tab-target]');
     if (!tab) return;
@@ -108,8 +117,9 @@
     var row = toggle.closest('tr');
     var detail = row.nextElementSibling;
     if (!detail || !detail.classList.contains('vol-detail')) {
-      detail = row.parentNode.querySelector('.vol-detail').cloneNode(true);
+      detail = articles.content.querySelector('.vol-detail').cloneNode(true);
       detail.hidden = true;
+      detail.firstElementChild.colSpan = row.cells.length;
       setTrendView(detail.querySelector('.trend'), 'tiles');
       row.after(detail);
     }

@@ -468,6 +468,230 @@
         </section>
       </template>
 
+      <!-- "Discount on MSRP at family level" promotion type: Volume Analysis (Figma 152:35568) and
+           Price Analysis (Figma 152:35837) replace the default article tables of the drill-down. -->
+      <template id="family-volume-msrp">
+            <div class="art-panel" data-tab-panel="volume">
+              <div class="vol-table-wrap">
+                <div class="vol-scroll"><table class="vol-table msrp-table">
+                  <colgroup><col style="width:50px"><col style="width:132px"><col style="width:171px"><col style="width:135px"><col style="width:65px"><col style="width:87px"><col style="width:109px"><col style="width:129px"><col style="width:104px"><col style="width:124px"><col style="width:111px"><col style="width:83px"><col style="width:124px"><col style="width:124px"><col style="width:175px"><col style="width:124px"><col style="width:215px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first msrp-check"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
+                      <th>Article ID</th>
+                      <th>Article Name</th>
+                      <th>Competitiveness class</th>
+                      <th>DSF Flag</th>
+                      <th>Supplier Ranges</th>
+                      <th class="is-num"><span class="vol-th"><span>Total Ordered Qty.</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. Qty without Promo</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. Qty with Promo</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. Qty. During Promo</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. monthly demand</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Demand Forecast</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num is-twin">TwinX Demand forecast</th>
+                      <th class="is-num is-twin">Confidence Score</th>
+                      <th class="is-odmma"><span class="vol-th__top msrp-center">ODMMA (Objective, %)</span><input class="vol-input" type="text" value="50" aria-label="ODMMA for all articles"></th>
+                      <th class="is-num is-target msrp-target">Promo Volume Target (in units)</th>
+                      <th class="is-rec msrp-rec"><span class="vol-rec__title">Recommended Target Volumes</span><label class="msrp-rec__copy"><input type="checkbox" checked>Copy to Volume Targets</label></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="vol-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>Yes</td>
+                      <td>PRO</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">10</td>
+                      <td class="is-num w6">50</td>
+                      <td class="is-num target">10</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num twin">15</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="50" aria-label="ODMMA for 8845H3"></td>
+                      <td class="is-num target">10</td>
+                      <td class="is-num rec"></td>
+                    </tr>
+                    <tr class="vol-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>No</td>
+                      <td>PRO</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">10</td>
+                      <td class="is-num w6">50</td>
+                      <td class="is-num target">10</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num twin">15</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="50" aria-label="ODMMA for 8845H3"></td>
+                      <td class="is-num target">12</td>
+                      <td class="is-num rec"></td>
+                    </tr>
+                    <tr class="vol-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>Yes</td>
+                      <td>IAM</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">10</td>
+                      <td class="is-num w6">50</td>
+                      <td class="is-num target">10</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num twin">15</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="50" aria-label="ODMMA for 8845H3"></td>
+                      <td class="is-num target">15</td>
+                      <td class="is-num rec"></td>
+                    </tr>
+                    <tr class="vol-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>Yes</td>
+                      <td>PRO</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">3.2</td>
+                      <td class="is-num w6">10</td>
+                      <td class="is-num w6">50</td>
+                      <td class="is-num target">10</td>
+                      <td class="is-num twin">15</td>
+                      <td class="is-num twin">15</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="50" aria-label="ODMMA for 8845H3"></td>
+                      <td class="is-num target">15</td>
+                      <td class="is-num rec"></td>
+                    </tr>
+                  </tbody>
+                </table></div>
+              </div>
+              <div class="table-footer">
+                <p class="table-footer__summary">Showing article 1 of 10 entries</p>
+                <nav class="pagination" aria-label="Pagination">
+                  <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                  <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+                  <button class="pagination__page" type="button"><span>2</span></button>
+                  <button class="pagination__page" type="button"><span>3</span></button>
+                  <button class="pagination__page" type="button"><span>4</span></button>
+                  <button class="pagination__page" type="button"><span>5</span></button>
+                  <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                </nav>
+              </div>
+            </div>
+      </template>
+      <template id="family-price-msrp">
+            <div class="art-panel" data-tab-panel="price">
+              <div class="vol-table-wrap pr-table-wrap">
+                <div class="vol-scroll"><table class="vol-table pr-table msrp-price">
+                  <colgroup><col style="width:51px"><col style="width:109px"><col style="width:223px"><col style="width:131px"><col style="width:72px"><col style="width:90px"><col style="width:124px"><col style="width:177px"><col style="width:157px"><col style="width:86px"><col style="width:157px"><col style="width:126px"><col style="width:177px"><col style="width:41px"><col style="width:160px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first msrp-check" rowspan="2"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
+                      <th rowspan="2">Article ID</th>
+                      <th rowspan="2">Article Name</th>
+                      <th rowspan="2">Competitiveness class</th>
+                      <th rowspan="2">DSF Flag</th>
+                      <th rowspan="2">Supplier Ranges</th>
+                      <th class="pr-group" colspan="2">Before Promo</th>
+                      <th class="pr-discount" rowspan="2"><span class="pr-discount__title">Discount % (RPA)</span><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for all articles"></th>
+                      <th class="is-twin is-center" rowspan="2">Elasticity</th>
+                      <th class="is-rec" rowspan="2"><span class="vol-rec__title">Twin X Recommended</span><label class="vol-rec__copy"><input class="vol-check" type="checkbox"><span>Copy to Discount % (RPA)</span></label></th>
+                      <th class="pr-group is-after" colspan="2">After Promo</th>
+                      <th class="pr-threshold msrp-threshold" colspan="2" rowspan="2"><span class="pr-threshold__title">Threshold Quantity</span><input class="vol-input" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for all articles"></th>
+                    </tr>
+                    <tr>
+                      <th class="pr-sub is-num">Selling Price (&euro;)</th>
+                      <th class="pr-sub is-num">Commercial margin in %</th>
+                      <th class="pr-sub is-after">Promo Price (&euro;)</th>
+                      <th class="pr-sub is-after">Commercial margin in %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="pr-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>Yes</td>
+                      <td>PRO</td>
+                      <td class="is-num">8.71</td>
+                      <td class="is-num">87.68</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845G7"></td>
+                      <td class="is-num rec">1.03</td>
+                      <td class="is-num rec">10</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">85.55</td>
+                      <td class="pr-th-check"><input class="fam-check" type="checkbox" aria-label="Select threshold for 8845G7"></td>
+                      <td class="pr-th-value"><input class="vol-input" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845G7"></td>
+                    </tr>
+                    <tr class="pr-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>No</td>
+                      <td>PRO</td>
+                      <td class="is-num">8.71</td>
+                      <td class="is-num">87.68</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845G7"></td>
+                      <td class="is-num rec">1.03</td>
+                      <td class="is-num rec">10</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">85.55</td>
+                      <td class="pr-th-check"><input class="fam-check" type="checkbox" aria-label="Select threshold for 8845G7"></td>
+                      <td class="pr-th-value"><input class="vol-input" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845G7"></td>
+                    </tr>
+                    <tr class="pr-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>Yes</td>
+                      <td>PRO</td>
+                      <td class="is-num">8.71</td>
+                      <td class="is-num">87.68</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845G7"></td>
+                      <td class="is-num rec">1.03</td>
+                      <td class="is-num rec">10</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">85.55</td>
+                      <td class="pr-th-check"><input class="fam-check" type="checkbox" aria-label="Select threshold for 8845G7"></td>
+                      <td class="pr-th-value"><input class="vol-input" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845G7"></td>
+                    </tr>
+                    <tr class="pr-row">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
+                      <td><span class="pr-badge pr-badge--red">High</span></td>
+                      <td>Yes</td>
+                      <td>PRO</td>
+                      <td class="is-num">8.71</td>
+                      <td class="is-num">87.68</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for 8845G7"></td>
+                      <td class="is-num rec">1.03</td>
+                      <td class="is-num rec">10</td>
+                      <td class="is-num blue6">15</td>
+                      <td class="is-num blue6">85.55</td>
+                      <td class="pr-th-check"><input class="fam-check" type="checkbox" aria-label="Select threshold for 8845G7"></td>
+                      <td class="pr-th-value"><input class="vol-input" type="text" inputmode="numeric" value="15" aria-label="Threshold quantity for 8845G7"></td>
+                    </tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </div>
+      </template>
+
       <div class="cfg-actions">
         <a class="btn-outline" href="promotion-configuration.html" data-keep-query>Back</a>
         <button class="btn-next" type="button" data-page-next>Next</button>
