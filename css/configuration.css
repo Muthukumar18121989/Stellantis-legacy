@@ -537,3 +537,9 @@ th .fam-id { gap: 10px; }
 .vol-table th.tt-last { border-top-right-radius: 8px; }
 .tt-table td.is-odmma .vol-input, .tt-price td.is-odmma .vol-input { width: 100%; }
 .art-view--tt[data-tab="price"] .art-view__inner { justify-content: flex-start; }
+/* "Discount on MSRP at article level" promotion type: Volume and Price Analysis tables (Muthu's 2026-10-20 screenshots), default table styles */
+.vol-table.ma-table { min-width: 1719px; }
+.vol-table.ma-price { min-width: 1796px; }
+.ma-table .msrp-id { font-weight: 300; color: #323436; }
+.ma-price td.is-odmma .vol-input { width: 100%; }
+.art-view--ma[data-tab="price"] .art-view__inner { justify-content: flex-start; }
