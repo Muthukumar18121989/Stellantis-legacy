@@ -59,24 +59,14 @@
         </nav>
         <h1 class="cfg-header__title">Promotion Configuration</h1>
       </div>
+      <!-- Process steps: compact stepper (css/base.css) -->
+      <ol class="stepper" aria-label="Progress">
+        <li class="stepper__step stepper__step--current" aria-current="step"><span class="stepper__item"><span class="stepper__dot">1</span><span class="stepper__label">Configure Parameters</span></span></li>
+        <li class="stepper__step stepper__step--todo"><span class="stepper__item"><span class="stepper__dot">2</span><span class="stepper__label">Selection &amp; Analysis</span></span></li>
+      </ol>
     </section>
 
     <main class="cfg-body">
-      <!-- Process steps (Figma 26:12507) -->
-      <ol class="steps" aria-label="Progress">
-        <li class="steps__inner">
-          <img class="steps__dash" src="assets/shapes/step-dash.svg" width="208" height="2" alt="">
-          <span class="steps__blue"></span>
-          <div class="step" aria-current="step">
-            <img src="assets/shapes/step-current.svg" width="20" height="20" alt="">
-            <span class="step__label">Configure Parameters</span>
-          </div>
-          <div class="step">
-            <img src="assets/shapes/step-disabled.svg" width="20" height="20" alt="">
-            <span class="step__label">Selection &amp; Analysis</span>
-          </div>
-        </li>
-      </ol>
 
       <!-- Configuration table (Figma 26:12534) -->
       <form class="cfg-card" onsubmit="return false">

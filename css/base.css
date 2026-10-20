@@ -144,3 +144,22 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
 .pagination__page span { display: block; width: 18px; height: 18px; font: 300 12px/18px "Poppins", sans-serif; letter-spacing: 0.036px; color: #727476; text-align: center; }
 .pagination__page--current { padding: 1px 2px; background: #f4f9fc; border: 1px solid #bfe0f5; border-radius: 6px; }
 .pagination__page--current span { height: 20px; font-weight: 600; color: #007dc5; }
+
+/* ---------- Compact stepper (Muthu, 2026-10-20): one 32px row, shared by every page with a process flow ----------
+   <ol class="stepper"><li class="stepper__step stepper__step--done|--current|--todo"><span class="stepper__dot">1</span><span class="stepper__label">…</span></li></ol>
+   Done dots show a check, current is a blue pill, upcoming is grey; connectors turn green after a done step. */
+.stepper { display: flex; align-items: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.stepper__step { display: flex; align-items: center; gap: 8px; flex: none; }
+.stepper__step + .stepper__step::before { content: ""; width: 28px; height: 2px; border-radius: 1px; background: #c9ccce; }
+.stepper__step--done + .stepper__step::before { background: #0db134; }
+.stepper__item { display: flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px 0 4px; border-radius: 14px; }
+.stepper__dot {
+  display: flex; flex: none; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%;
+  background: #c9ccce; font: 600 11px/1 "Noto Sans", sans-serif; color: #fff;
+}
+.stepper__step--done .stepper__dot { background: #0db134 url("../assets/icons/check-white-16.svg") center / 14px no-repeat; color: transparent; }
+.stepper__label { font: 500 13px/20px "Noto Sans", sans-serif; letter-spacing: 0.04px; color: #727476; white-space: nowrap; }
+.stepper__step--done .stepper__label { color: #323436; }
+.stepper__step--current .stepper__item { background: #eaf5fc; box-shadow: inset 0 0 0 1px #bfe0f5; }
+.stepper__step--current .stepper__dot { background: #007dc5; }
+.stepper__step--current .stepper__label { font-weight: 600; color: #196c9b; }

@@ -48,21 +48,10 @@
   background: linear-gradient(#f6fcff, #f6fcff) padding-box, linear-gradient(180deg, #46b696, #01a0fe) border-box;
 }
 .pd-title__name { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.pd-title__stepper { margin-left: 24px; }
 .pd-title__tags { display: flex; gap: 12px; margin-left: auto; }
 .pd-title__download { width: 154px; margin-left: 11px; }
 
-/* ---------- Process steps ---------- */
-.pd-steps { position: relative; display: flex; justify-content: center; gap: 64px; height: 48px; }
-.pd-steps::before {
-  content: ""; position: absolute; left: calc(50% - 124px); top: 9px; width: 246px; height: 2px;
-  background: repeating-linear-gradient(to right, #c9ccce 0 6px, transparent 6px 8px);
-}
-.pd-step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.pd-step__dot { display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; }
-.pd-step--done .pd-step__dot { background: #0db134; }
-.pd-step--current .pd-step__dot { background: #fbbd08; }
-.pd-step--todo .pd-step__dot { background: #c9ccce; }
-.pd-step__label { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
 
 /* ---------- Live banner ---------- */
 .pd-live {

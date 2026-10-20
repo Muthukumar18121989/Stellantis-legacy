@@ -20,15 +20,10 @@
 .breadcrumb__current { color: #323436; }
 .cfg-header__title { font: 600 24px/normal "Open Sans", sans-serif; letter-spacing: -0.44px; color: #196c9b; white-space: nowrap; }
 
+.cfg-header .stepper { margin-left: 24px; }
+
 .cfg-body { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
 
-/* ---------- Process steps (Figma 26:12507) ---------- */
-.steps { margin: 0; padding: 0; list-style: none; display: flex; justify-content: center; height: 48px; }
-.steps__inner { position: relative; display: flex; align-items: flex-start; gap: 64px; }
-.steps__dash { position: absolute; left: 73.5px; top: 9px; }
-.steps__blue { position: absolute; left: 79px; top: 11px; width: 2px; height: 2px; background: #007dc5; }
-.step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.step__label { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; text-align: center; white-space: nowrap; }
 
 /* ---------- Configuration card (Figma 26:12534) ---------- */
 .cfg-card { padding: 15px; background: #fff; border: 1px solid #bfe0f5; border-radius: 12px; }
@@ -102,6 +97,17 @@
 .sel-summary__text { display: flex; flex-direction: column; gap: 8px; white-space: nowrap; }
 .sel-summary__title { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
 .sel-summary__meta { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
+.sel-summary__title { display: flex; align-items: center; gap: 8px; }
+.sel-summary__toggle { display: flex; flex: none; width: 24px; height: 24px; align-items: center; justify-content: center; padding: 0; background: #f4f9fc; border: 1px solid #bfe0f5; border-radius: 6px; cursor: pointer; }
+.sel-summary__toggle[hidden] { display: none; }
+.sel-summary__toggle[aria-expanded="true"] img { transform: rotate(180deg); }
+/* Collapsed while an article view is open: title and counts on one 48px line */
+.sel-summary { transition: height 0.15s ease; }
+.sel-summary.is-collapsed { height: 48px; }
+.sel-summary.is-collapsed .sel-summary__text { flex-direction: row; align-items: center; gap: 12px; }
+.sel-summary.is-collapsed .sel-summary__title { font-size: 16px; line-height: 24px; }
+.sel-summary.is-collapsed .sel-summary__meta { padding-left: 12px; border-left: 1px solid #c9ccce; font-size: 13px; }
+.sel-summary.is-collapsed .btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
 .btn-icon-primary { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 6px 12px; background: #007dc5; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
 .sel-empty {
   height: 448px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 3px 11px;

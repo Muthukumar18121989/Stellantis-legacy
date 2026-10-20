@@ -10,6 +10,7 @@
   height: 82px; display: flex; align-items: center; padding: 12px 16px 11px;
   background: #fff; border-bottom: 1px solid #bfe0f5;
 }
+.res-header .stepper { margin: 0 24px; }
 .res-header__actions { display: flex; align-items: center; gap: 10px; }
 .iteration {
   width: 240px; height: 32px; display: flex; align-items: center; gap: 8px; padding: 5px 11px;

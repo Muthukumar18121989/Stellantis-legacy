@@ -60,6 +60,12 @@
         </nav>
         <h1 class="cfg-header__title">Promotion Configuration</h1>
       </div>
+      <!-- Process steps: compact stepper (css/base.css) -->
+      <ol class="stepper" aria-label="Progress">
+        <li class="stepper__step stepper__step--done"><span class="stepper__item"><span class="stepper__dot">1</span><span class="stepper__label">Configure Parameters</span></span></li>
+        <li class="stepper__step stepper__step--done"><span class="stepper__item"><span class="stepper__dot">2</span><span class="stepper__label">Selection &amp; Analysis</span></span></li>
+        <li class="stepper__step stepper__step--done"><span class="stepper__item"><span class="stepper__dot">3</span><span class="stepper__label">Simulation Results</span></span></li>
+      </ol>
       <div class="res-header__actions">
         <button class="iteration" type="button"><span class="iteration__value">Iteration 1</span><img src="assets/icons/chevron-down-white.svg" width="16" height="16" alt=""></button>
         <button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
@@ -67,25 +73,6 @@
     </section>
 
     <main class="res-body">
-      <!-- Process steps (Figma 26:14703): all three steps done -->
-      <ol class="steps" aria-label="Progress">
-        <li class="steps__inner">
-          <img class="steps__dash" src="assets/shapes/step-dash-long.svg" width="397" height="2" alt="">
-          <span class="steps__blue"></span>
-          <div class="step">
-            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
-            <span class="step__label">Configure Parameters</span>
-          </div>
-          <div class="step">
-            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
-            <span class="step__label">Selection &amp; Analysis</span>
-          </div>
-          <div class="step" aria-current="step">
-            <img src="assets/shapes/step-done.svg" width="20" height="20" alt="Done">
-            <span class="step__label">Simulation Results</span>
-          </div>
-        </li>
-      </ol>
 
       <!-- Promotion summary (Figma 26:14729) -->
       <section class="res-summary">
