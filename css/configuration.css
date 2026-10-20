@@ -483,3 +483,34 @@ th .fam-id { gap: 10px; }
 .fq-article img { flex: none; }
 .fq-table .msrp-id { font-weight: 300; color: #323436; }
 .art-view--fq[data-tab="price"] .art-view__inner { justify-content: flex-start; } /* like the MSRP family type: table sits under the tabs, no pagination */
+/* Free quantity of another article: Free Article Selector dialog (Muthu's 2026-10-20 screenshots), Select Family dialog styles */
+.vol-table td .fq-article.is-set { color: #323436; }
+.fa-dialog .fam-dialog__body { gap: 16px; }
+.fa-head { display: flex; flex-direction: column; gap: 4px; }
+.fa-head__sub { margin: 0; font: 400 14px/20px "Noto Sans", sans-serif; color: #727476; }
+.fa-head__sub b { font-weight: 600; color: #323436; }
+.fa-combo { position: relative; }
+.fa-combo__field input { cursor: text; }
+.fa-combo__field img { flex: none; }
+.fa-combo__list {
+  position: absolute; z-index: 3; left: 0; right: 0; top: 31px; max-height: 192px; margin: 0; padding: 0; list-style: none; overflow-y: auto;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
+}
+.fa-combo__list[hidden] { display: none; }
+.fa-combo__option {
+  height: 32px; padding: 6px 11px; border-top: 1px solid #bfe0f5; background: #fff; cursor: pointer;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436;
+}
+.fa-combo__option:first-child { border-top: 0; }
+.fa-combo__option[hidden] { display: none; }
+.fa-combo__option.is-active { background: #f4f9fc; }
+.fa-combo__option[aria-selected="true"] { background: #e3f4ff; color: #007dc5; }
+.fa-dialog .art-tab[disabled] { color: #c9ccce; cursor: default; }
+.fa-dialog .art-tab:not([disabled]) { cursor: pointer; }
+.fa-table-wrap { height: auto; }
+.fa-dialog .fam-table { width: 100%; }
+.fa-dialog .fam-table td.is-bold { font-weight: 600; }
+.fa-dialog .fam-table td.fa-action { padding-top: 6px; text-align: center; }
+.fa-select { display: inline-flex; height: 32px; padding: 6px 16px; }
+.fa-empty td { text-align: center; color: #727476; }
+.fa-footer { justify-content: flex-end; }

@@ -101,6 +101,105 @@
     });
   });
 
+  // Free quantity of another article: the Free Article edit icon opens the Free Article Selector, and
+  // "Select as Free Article" puts that Article ID in the row's Free Article cell (both tabs).
+  var freeArticle = document.getElementById('free-article');
+  var freeTarget = null;
+  list.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-open-free-article]');
+    if (!btn) return;
+    var row = btn.closest('tr[data-article]');
+    freeTarget = { view: btn.closest('.art-view'), article: row.dataset.article };
+    var name = row.querySelector('.msrp-name, .pr-name');
+    freeArticle.querySelector('[data-free-article-for]').textContent = (name ? name.textContent.trim() + ' ' : '') + '(' + row.dataset.article + ')';
+    freeArticle.showModal();
+  });
+  freeArticle.addEventListener('click', function (e) {
+    var pick = e.target.closest('[data-select-free-article]');
+    if (pick && freeTarget) {
+      freeTarget.view.querySelectorAll('tr[data-article="' + freeTarget.article + '"] [data-open-free-article]').forEach(function (btn) {
+        btn.querySelector('[data-fq-article-value]').textContent = pick.dataset.selectFreeArticle;
+        btn.classList.add('is-set');
+      });
+      freeArticle.close();
+      return;
+    }
+    var tab = e.target.closest('[data-fa-tab]');
+    if (tab) freeArticle.querySelectorAll('[data-fa-tab]').forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
+  });
+
+  // Free Article Selector filters: the family dropdown can be typed in to search its list, and the
+  // search box narrows the rows by Article ID or name.
+  var famInput = freeArticle.querySelector('[data-fa-family]');
+  var famList = freeArticle.querySelector('.fa-combo__list');
+  var famOptions = Array.prototype.slice.call(famList.querySelectorAll('[role="option"]'));
+  var famValue = famInput.value;
+  var faSearch = freeArticle.querySelector('[data-fa-search]');
+  var faRows = Array.prototype.slice.call(freeArticle.querySelectorAll('tbody tr[data-family]'));
+  function filterFreeArticles() {
+    var q = faSearch.value.trim().toLowerCase();
+    var shown = 0;
+    faRows.forEach(function (row) {
+      var match = row.dataset.family === famValue && (!q || row.cells[0].textContent.toLowerCase().indexOf(q) > -1 || row.cells[1].textContent.toLowerCase().indexOf(q) > -1);
+      row.hidden = !match;
+      if (match) shown++;
+    });
+    freeArticle.querySelector('.fa-empty').hidden = shown > 0;
+    freeArticle.querySelector('[data-fa-summary]').textContent = shown ? 'Showing article 1 to ' + shown + ' of ' + (q ? shown : 88) + ' entries' : 'Showing 0 entries';
+  }
+  function visibleOptions() { return famOptions.filter(function (o) { return !o.hidden; }); }
+  function setActive(option) {
+    famOptions.forEach(function (o) { o.classList.toggle('is-active', o === option); });
+    if (option) { famInput.setAttribute('aria-activedescendant', option.id); option.scrollIntoView({ block: 'nearest' }); }
+    else famInput.removeAttribute('aria-activedescendant');
+  }
+  function openFamilies(query) {
+    var q = (query || '').trim().toLowerCase();
+    famOptions.forEach(function (o) { o.hidden = !!q && o.textContent.toLowerCase().indexOf(q) === -1; });
+    famList.hidden = false;
+    famInput.setAttribute('aria-expanded', 'true');
+    setActive(visibleOptions().filter(function (o) { return o.getAttribute('aria-selected') === 'true'; })[0] || visibleOptions()[0]);
+  }
+  function closeFamilies() {
+    famList.hidden = true;
+    famInput.setAttribute('aria-expanded', 'false');
+    setActive(null);
+  }
+  function chooseFamily(option) {
+    famValue = option.textContent;
+    famOptions.forEach(function (o) { o.setAttribute('aria-selected', String(o === option)); });
+    famInput.value = famValue;
+    closeFamilies();
+    filterFreeArticles();
+  }
+  famInput.addEventListener('focus', function () { famInput.select(); openFamilies(); });
+  famInput.addEventListener('click', function () { if (famList.hidden) openFamilies(); });
+  famInput.addEventListener('input', function () { openFamilies(famInput.value); });
+  famInput.addEventListener('blur', function () { closeFamilies(); famInput.value = famValue; });
+  famInput.addEventListener('keydown', function (e) {
+    var opts = visibleOptions();
+    var i = opts.indexOf(famList.querySelector('.is-active'));
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      if (famList.hidden) openFamilies();
+      else setActive(opts[e.key === 'ArrowDown' ? Math.min(i + 1, opts.length - 1) : Math.max(i - 1, 0)]);
+      e.preventDefault();
+    } else if (e.key === 'Enter' && !famList.hidden && opts[i]) {
+      chooseFamily(opts[i]);
+      e.preventDefault();
+    } else if (e.key === 'Escape' && !famList.hidden) {
+      closeFamilies();
+      famInput.value = famValue;
+      e.preventDefault(); // keep the dialog open
+    }
+  });
+  famList.addEventListener('mousedown', function (e) { e.preventDefault(); }); // keep focus in the input
+  famList.addEventListener('click', function (e) {
+    var option = e.target.closest('[role="option"]');
+    if (option) chooseFamily(option);
+  });
+  faSearch.addEventListener('input', filterFreeArticles);
+  freeArticle.addEventListener('close', function () { faSearch.value = ''; filterFreeArticles(); });
+
   // Article view tabs: Exclusions, Volume Analysis (Figma 26:11097) and Price Analysis (Figma 26:11622).
   list.addEventListener('click', function (e) {
     var tab = e.target.closest('[data-tab-target]');
