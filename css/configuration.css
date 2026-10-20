@@ -513,4 +513,6 @@ th .fam-id { gap: 10px; }
 .fa-dialog .fam-table td.fa-action { padding-top: 6px; text-align: center; }
 .fa-select { display: inline-flex; height: 32px; padding: 6px 16px; }
 .fa-empty td { text-align: center; color: #727476; }
-.fa-footer { justify-content: flex-end; }
+.fa-footer { justify-content: flex-start; padding: 0; }
+.fa-footer .pagination__arrow--prev img { transform: none; } /* arrow-up.svg is a left chevron */
+.fa-footer .pagination__arrow--next img { transform: rotate(180deg); }
