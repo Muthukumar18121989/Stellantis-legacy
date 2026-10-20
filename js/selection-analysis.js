@@ -140,7 +140,7 @@
     var q = faSearch.value.trim().toLowerCase();
     var shown = 0;
     faRows.forEach(function (row) {
-      var match = row.dataset.family === famValue && (!q || row.cells[0].textContent.toLowerCase().indexOf(q) > -1 || row.cells[1].textContent.toLowerCase().indexOf(q) > -1);
+      var match = (!famValue || row.dataset.family === famValue) && (!q || row.cells[0].textContent.toLowerCase().indexOf(q) > -1 || row.cells[1].textContent.toLowerCase().indexOf(q) > -1);
       row.hidden = !match;
       if (match) shown++;
     });
@@ -165,6 +165,11 @@
     famInput.setAttribute('aria-expanded', 'false');
     setActive(null);
   }
+  function clearFamily() {
+    famValue = '';
+    famOptions.forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
+    filterFreeArticles();
+  }
   function chooseFamily(option) {
     famValue = option.textContent;
     famOptions.forEach(function (o) { o.setAttribute('aria-selected', String(o === option)); });
@@ -173,9 +178,15 @@
     filterFreeArticles();
   }
   famInput.addEventListener('focus', function () { famInput.select(); openFamilies(); });
-  famInput.addEventListener('click', function () { if (famList.hidden) openFamilies(); });
+  famInput.addEventListener('search', function () { if (!famInput.value) { clearFamily(); openFamilies(); } }); // the box's clear (x)
+  famInput.addEventListener('click', function () { if (famList.hidden) { famInput.select(); openFamilies(); } });
   famInput.addEventListener('input', function () { openFamilies(famInput.value); });
-  famInput.addEventListener('blur', function () { closeFamilies(); famInput.value = famValue; });
+  // Leaving the box empty clears the family filter; otherwise it shows the chosen family again.
+  famInput.addEventListener('blur', function () {
+    closeFamilies();
+    if (!famInput.value.trim() && famValue) clearFamily();
+    famInput.value = famValue;
+  });
   famInput.addEventListener('keydown', function (e) {
     var opts = visibleOptions();
     var i = opts.indexOf(famList.querySelector('.is-active'));
