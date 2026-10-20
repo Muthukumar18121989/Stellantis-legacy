@@ -189,7 +189,7 @@
 .fam-list.has-drilldown[data-drill-tab="price"] { height: 486px; } /* Figma 26:11622 */
 .art-view__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 20px; min-width: 0; }
 .art-view__title { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
-.art-view__filter { display: flex; justify-content: flex-end; }
+.art-view__filter { display: flex; justify-content: flex-end; margin: -6px 0; } /* 32px box on the 20px title line */
 .fam-search--soft { border-color: #bfe0f5; }
 .art-view__tabs-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 36px; padding-left: 16px; }
 .art-tabs { display: flex; align-items: flex-end; gap: 16px; height: 36px; }
