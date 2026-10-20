@@ -90,24 +90,16 @@
 .btn-next { padding: 6px 12px; background: #007dc5; color: #fff; }
 
 /* ---------- Selection & Analysis step (Figma 26:10321, 26:10328) ---------- */
+/* Article Selection Core: one 48px line with title, counts and Manage Families on every state (Muthu, 2026-10-20) */
 .sel-summary {
-  height: 92px; display: flex; align-items: center; justify-content: space-between; padding: 3px 11px;
+  height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 3px 11px;
   background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
 }
-.sel-summary__text { display: flex; flex-direction: column; gap: 8px; white-space: nowrap; }
-.sel-summary__title { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
-.sel-summary__meta { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
-.sel-summary__title { display: flex; align-items: center; gap: 8px; }
-.sel-summary__toggle { display: flex; flex: none; width: 24px; height: 24px; align-items: center; justify-content: center; padding: 0; background: #f4f9fc; border: 1px solid #bfe0f5; border-radius: 6px; cursor: pointer; }
-.sel-summary__toggle[hidden] { display: none; }
-.sel-summary__toggle[aria-expanded="true"] img { transform: rotate(180deg); }
-/* Collapsed while an article view is open: title and counts on one 48px line */
-.sel-summary { transition: height 0.15s ease; }
-.sel-summary.is-collapsed { height: 48px; }
-.sel-summary.is-collapsed .sel-summary__text { flex-direction: row; align-items: center; gap: 12px; }
-.sel-summary.is-collapsed .sel-summary__title { font-size: 16px; line-height: 24px; }
-.sel-summary.is-collapsed .sel-summary__meta { padding-left: 12px; border-left: 1px solid #c9ccce; font-size: 13px; }
-.sel-summary.is-collapsed .btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
+.sel-summary__text { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+.sel-summary__title { font: 600 16px/24px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
+.sel-summary__meta { padding-left: 12px; border-left: 1px solid #c9ccce; font: 400 13px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
+.sel-summary .btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
+.btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
 .btn-icon-primary { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 6px 12px; background: #007dc5; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
 .sel-empty {
   height: 448px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 3px 11px;

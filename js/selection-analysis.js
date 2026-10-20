@@ -44,25 +44,12 @@
     document.querySelector('[data-empty-state]').hidden = !!chosen.length;
     document.querySelector('.page--selection').classList.toggle('has-families', !!chosen.length);
     list.classList.remove('has-drilldown');
-    setCoreCollapsible(false);
     document.querySelector('[data-page-next]').textContent = 'Next';
     document.querySelector('[data-selection-meta]').textContent = chosen.length
       ? chosen.length + (chosen.length === 1 ? ' Family' : ' Families') + ' | 296 Targeted SKUs'
       : '0 Families | 0 Targeted SKUs';
     dialog.close();
   });
-  // Article Selection Core folds to one line while an article view is open, so the tables get the room (Muthu, 2026-10-20).
-  var core = document.querySelector('.sel-summary');
-  var coreToggle = core.querySelector('[data-toggle-core]');
-  function setCoreCollapsed(collapsed) {
-    core.classList.toggle('is-collapsed', collapsed);
-    coreToggle.setAttribute('aria-expanded', String(!collapsed));
-  }
-  function setCoreCollapsible(on) {
-    coreToggle.hidden = !on;
-    setCoreCollapsed(on);
-  }
-  coreToggle.addEventListener('click', function () { setCoreCollapsed(!core.classList.contains('is-collapsed')); });
   // "Drill Down to Article" replaces that family's panel with its article list (Figma 26:10344).
   var articles = document.getElementById('family-articles');
   // "Discount on MSRP at family level" promotions use their own Volume and Price Analysis tables (Figma 152:35568, 152:35837).
@@ -98,7 +85,6 @@
     panel.replaceWith(view);
     list.classList.add('has-drilldown');
     list.dataset.drillTab = 'exclusions';
-    setCoreCollapsible(true);
     list.scrollTop = 0;
   });
   // Article checkboxes: the header checkbox selects or clears all rows.
