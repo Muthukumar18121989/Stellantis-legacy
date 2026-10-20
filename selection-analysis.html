@@ -935,6 +935,255 @@
               </div>
             </div>
       </template>
+      <!-- "Free Quantity of Same Article" promotion type: Volume Analysis and Price Analysis tables from Muthu's
+           2026-10-20 screenshots, same layout as the other-article type; the free article is always the same article. They replace the default article tables of the drill-down. -->
+      <template id="family-volume-fs">
+            <div class="art-panel" data-tab-panel="volume">
+              <div class="vol-table-wrap">
+                <div class="vol-scroll"><table class="vol-table fq-table">
+                  <colgroup><col style="width:50px"><col style="width:150px"><col style="width:200px"><col style="width:109px"><col style="width:129px"><col style="width:110px"><col style="width:120px"><col style="width:129px"><col style="width:124px"><col style="width:124px"><col style="width:175px"><col style="width:124px"><col style="width:140px"><col style="width:140px"><col style="width:200px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first msrp-check"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
+                      <th>Article ID</th>
+                      <th>Article Name</th>
+                      <th class="is-num"><span class="vol-th"><span>Total Ordered Qty.</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. per month of historical volume</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. per month (promo)</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. per month (non-promo)</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Non-promo Demand Projection</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num is-twin">TwinX Demand Forecast</th>
+                      <th class="is-num is-twin">Confidence Score</th>
+                      <th class="is-odmma"><span class="vol-th__top msrp-center">Objective (in %)</span><input class="vol-input" type="text" value="0" aria-label="Objective for all articles"></th>
+                      <th class="is-num is-target msrp-target">Promo Volume Target (in units)</th>
+                      <th class="fq-th"><span class="fq-th__title">Buy Quantity (X)</span><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for all articles"></th>
+                      <th class="fq-th"><span class="fq-th__title">Free Quantity (Y)</span><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for all articles"></th>
+                      <th class="fq-th is-last"><span class="fq-th__title">Free Article</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="vol-row" data-article="13454506">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13454506" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 13454506" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="13454506, DSF Flag: Yes">13454506<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="msrp-name" title="TAIL-LIGHT LENS">TAIL-LIGHT LENS</td>
+                      <td class="is-num">4</td>
+                      <td class="is-num">1</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">1</td>
+                      <td class="is-num w6">1</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="0%" aria-label="Objective for 13454506"></td>
+                      <td class="is-num target">0</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13454506" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13454506" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13454506: same article">Same Article</button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="13454507">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13454507" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 13454507" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="13454507, DSF Flag: No">13454507<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="msrp-name" title="TAIL-LIGHT LENS">TAIL-LIGHT LENS</td>
+                      <td class="is-num">2</td>
+                      <td class="is-num">1</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">1</td>
+                      <td class="is-num w6">1</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="0%" aria-label="Objective for 13454507"></td>
+                      <td class="is-num target">0</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13454507" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13454507" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13454507: same article">Same Article</button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="13279623">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13279623" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 13279623" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="13279623, DSF Flag: No">13279623<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="msrp-name" title="TAIL-LIGHT LENS">TAIL-LIGHT LENS</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num w6">0</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-center">N/A</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" inputmode="numeric" value="0" aria-label="Promo volume target for 13279623"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13279623" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13279623" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13279623: same article">Same Article</button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="13360788">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13360788" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 13360788" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="13360788, DSF Flag: Yes">13360788<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="msrp-name" title="TAIL-LIGHT LENS">TAIL-LIGHT LENS</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num w6">0</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-center">N/A</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" inputmode="numeric" value="0" aria-label="Promo volume target for 13360788"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13360788" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13360788" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13360788: same article">Same Article</button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="13360789">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13360789" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 13360789" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="13360789, DSF Flag: No">13360789<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="msrp-name" title="TAIL-LIGHT LENS">TAIL-LIGHT LENS</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num w6">0</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-center">N/A</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" inputmode="numeric" value="0" aria-label="Promo volume target for 13360789"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13360789" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13360789" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13360789: same article">Same Article</button></td>
+                    </tr>
+                  </tbody>
+                </table></div>
+              </div>
+              <div class="table-footer">
+                <p class="table-footer__summary">Showing article 1 of 14 entries</p>
+                <nav class="pagination" aria-label="Pagination">
+                  <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                  <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+                  <button class="pagination__page" type="button"><span>2</span></button>
+                  <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                </nav>
+              </div>
+            </div>
+      </template>
+      <template id="family-price-fs">
+            <div class="art-panel" data-tab-panel="price">
+              <div class="vol-table-wrap pr-table-wrap">
+                <div class="vol-scroll"><table class="vol-table pr-table fq-price">
+                  <colgroup><col style="width:51px"><col style="width:130px"><col style="width:200px"><col style="width:120px"><col style="width:120px"><col style="width:170px"><col style="width:140px"><col style="width:140px"><col style="width:130px"><col style="width:140px"><col style="width:86px"><col style="width:120px"><col style="width:120px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first msrp-check" rowspan="2"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
+                      <th rowspan="2">Article ID</th>
+                      <th rowspan="2">Article Name</th>
+                      <th class="pr-group" colspan="3">From Volume Analysis</th>
+                      <th class="pr-group" colspan="2">Before Promo</th>
+                      <th class="pr-group is-after" colspan="2">After Promo</th>
+                      <th class="is-twin is-center" rowspan="2">Elasticity</th>
+                      <th class="is-twin is-bottom is-center" rowspan="2">Confidence</th>
+                      <th class="is-twin is-bottom is-center fq-last" rowspan="2">Price Sensitivity</th>
+                    </tr>
+                    <tr>
+                      <th class="pr-sub">Buy Quantity (X)</th>
+                      <th class="pr-sub">Free Quantity (Y)</th>
+                      <th class="pr-sub">Free Article</th>
+                      <th class="pr-sub is-num">Selling Price/D3NP (&euro;)</th>
+                      <th class="pr-sub is-num">Commercial margin in %</th>
+                      <th class="pr-sub is-after">Free-Article (Y) Cost</th>
+                      <th class="pr-sub is-after">Commercial margin in %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="pr-row" data-article="13454506">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13454506" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="13454506, DSF Flag: Yes">13454506<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="pr-name">TAIL-LIGHT LENS</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13454506" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13454506" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13454506: same article">Same Article</button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center w6">0.00</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="13454507">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13454507" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="13454507, DSF Flag: No">13454507<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="pr-name">TAIL-LIGHT LENS</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13454507" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13454507" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13454507: same article">Same Article</button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center w6">0.00</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="13279623">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13279623"></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="13279623, DSF Flag: No">13279623<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="pr-name">TAIL-LIGHT LENS</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13279623" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13279623" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13279623: same article">Same Article</button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center w6">0.00</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="13360788">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13360788"></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="13360788, DSF Flag: Yes">13360788<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="pr-name">TAIL-LIGHT LENS</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13360788" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13360788" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13360788: same article">Same Article</button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center w6">0.00</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="13360789">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13360789"></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="13360789, DSF Flag: No">13360789<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="pr-name">TAIL-LIGHT LENS</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13360789" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13360789" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13360789: same article">Same Article</button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center w6">0.00</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="13360792">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="13360792"></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="13360792, DSF Flag: Yes">13360792<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="pr-name">TAIL-LIGHT LENS</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 13360792" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 13360792" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article fq-article--same" type="button" disabled aria-label="Free article for 13360792: same article">Same Article</button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center w6">0.00</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </div>
+      </template>
 
       <div class="cfg-actions">
         <a class="btn-outline" href="promotion-configuration.html" data-keep-query>Back</a>

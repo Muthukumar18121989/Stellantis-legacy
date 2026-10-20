@@ -516,3 +516,7 @@ th .fam-id { gap: 10px; }
 .fa-footer { justify-content: flex-start; padding: 0; }
 .fa-footer .pagination__arrow--prev img { transform: none; } /* arrow-up.svg is a left chevron */
 .fa-footer .pagination__arrow--next img { transform: rotate(180deg); }
+/* "Free Quantity of Same Article" promotion type: same tables as the other-article type, free article fixed to "Same Article" */
+.vol-table td .fq-article--same { justify-content: center; background: #f8f9fb; color: #727476; cursor: default; }
+.art-view--fs[data-tab="price"] .art-view__inner { justify-content: flex-start; }
+.art-view--fs .vol-table td.is-odmma .vol-input { width: 100%; } /* Promo Volume Target input fits its 124px column */

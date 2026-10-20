@@ -53,9 +53,11 @@
   // "Drill Down to Article" replaces that family's panel with its article list (Figma 26:10344).
   var articles = document.getElementById('family-articles');
   // "Discount on MSRP at family level" promotions use their own Volume and Price Analysis tables (Figma 152:35568, 152:35837).
-  // "Free quantity of another article" promotions do the same with Muthu's 2026-10-20 screenshots.
+  // "Free quantity of another article" (fq) and "Free Quantity of Same Article" (fs) promotions do the same with Muthu's 2026-10-20 screenshots.
   var promoType = new URLSearchParams(location.search).get('type') || '';
-  var variant = /MSRP at family level/i.test(promoType) ? 'msrp' : /Free quantity of another article/i.test(promoType) ? 'fq' : '';
+  var variant = /MSRP at family level/i.test(promoType) ? 'msrp'
+    : /Free quantity of another article/i.test(promoType) ? 'fq'
+    : /Free quantity of same article/i.test(promoType) ? 'fs' : '';
   list.addEventListener('click', function (e) {
     var drill = e.target.closest('[data-drill-down]');
     if (!drill) return;
