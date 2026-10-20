@@ -520,3 +520,11 @@ th .fam-id { gap: 10px; }
 .vol-table td .fq-article--same { justify-content: center; background: #f8f9fb; color: #727476; cursor: default; }
 .art-view--fs[data-tab="price"] .art-view__inner { justify-content: flex-start; }
 .art-view--fs .vol-table td.is-odmma .vol-input { width: 100%; } /* Promo Volume Target input fits its 124px column */
+/* "Net Special Price (PNS)" promotion type: Volume and Price Analysis tables (Muthu's 2026-10-20 screenshots), default table styles */
+.vol-table.nsp-table { min-width: 1719px; }
+.vol-table.nsp-price { min-width: 1796px; }
+.nsp-table .msrp-id { font-weight: 300; color: #323436; }
+.vol-table th.nsp-discount { padding: 0 16px; vertical-align: middle; color: #fff; text-align: center; }
+.vol-table td.nsp-rec { background: #f9edfd; }
+.nsp-price td.is-odmma .vol-input { width: 100%; }
+.art-view--nsp[data-tab="price"] .art-view__inner { justify-content: flex-start; }
