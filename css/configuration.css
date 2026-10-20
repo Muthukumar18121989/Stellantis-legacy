@@ -528,3 +528,12 @@ th .fam-id { gap: 10px; }
 .vol-table td.nsp-rec { background: #f9edfd; }
 .nsp-price td.is-odmma .vol-input { width: 100%; }
 .art-view--nsp[data-tab="price"] .art-view__inner { justify-content: flex-start; }
+/* "Turnover Target of Same Part" promotion type: Volume and Price Analysis tables (Muthu's 2026-10-20 screenshots), default table styles */
+.vol-table.tt-table { min-width: 1719px; }
+.vol-table.tt-price { min-width: 1837px; }
+.tt-table .msrp-id { font-weight: 300; color: #323436; }
+.vol-table th.tt-objective { border-top-right-radius: 0; text-align: center; }
+.tt-objective__note { display: block; font-size: 10px; line-height: 14px; font-weight: 400; }
+.vol-table th.tt-last { border-top-right-radius: 8px; }
+.tt-table td.is-odmma .vol-input, .tt-price td.is-odmma .vol-input { width: 100%; }
+.art-view--tt[data-tab="price"] .art-view__inner { justify-content: flex-start; }
