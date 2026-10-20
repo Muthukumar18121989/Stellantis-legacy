@@ -455,3 +455,20 @@ th .fam-id { gap: 10px; }
 .msrp-price td.pr-th-value { padding: 4px 16px 4px 4px; }
 .msrp-price td.pr-th-value .vol-input { width: 100%; }
 .art-view--msrp[data-tab="price"] .art-view__inner { justify-content: flex-start; } /* Figma 152:35837: table sits under the tabs, no pagination */
+/* MSRP at family level: Competitiveness class next to the family title, DSF Flag shown on the Article ID (dot + hover tooltip) */
+.art-view__title { display: flex; align-items: baseline; gap: 16px; }
+.art-view__comp { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #d20e0e; }
+.art-view__comp[hidden] { display: none; }
+.vol-table.msrp-table { min-width: 1862px; }
+.vol-table.msrp-price { min-width: 1678px; }
+.dsf-id { position: relative; display: inline-flex; align-items: center; gap: 6px; cursor: default; outline: 0; }
+.dsf-id__dot { width: 8px; height: 8px; flex: none; border-radius: 50%; background: #00b5ad; }
+.dsf-id[data-dsf="no"] .dsf-id__dot { background: #fff; box-shadow: inset 0 0 0 1px #9ea0a2; }
+.dsf-id__tip {
+  position: absolute; left: calc(100% + 8px); top: 50%; z-index: 3; transform: translateY(-50%); display: none;
+  padding: 4px 8px; background: #323436; border-radius: 4px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
+  font: 400 12px/18px "Noto Sans", sans-serif; color: #fff; white-space: nowrap; pointer-events: none;
+}
+.dsf-id__tip b { font-weight: 600; }
+.dsf-id:hover .dsf-id__tip, .dsf-id:focus-visible .dsf-id__tip { display: block; }
+.vol-table td:has(.dsf-id:hover), .vol-table td:has(.dsf-id:focus-visible) { position: relative; z-index: 2; }

@@ -37,6 +37,7 @@
       var title = c.value + ' - ' + cells[1].textContent.trim();
       panel.querySelector('[data-family-title]').textContent = title;
       panel.querySelector('[data-toggle-family]').setAttribute('aria-label', title);
+      panel.dataset.compClass = cells[5].textContent.trim();
       list.appendChild(panel);
     });
     list.hidden = !chosen.length;
@@ -67,6 +68,10 @@
         view.querySelector('[data-tab-panel="' + tab + '"]').replaceWith(panel);
       });
       view.classList.add('art-view--msrp');
+      // Competitiveness class sits next to the family title instead of a table column.
+      var comp = view.querySelector('[data-comp-class]');
+      comp.textContent = 'Comp Class: ' + (panel.dataset.compClass || '').toUpperCase();
+      comp.hidden = !panel.dataset.compClass;
     }
     panel.replaceWith(view);
     list.classList.add('has-drilldown');

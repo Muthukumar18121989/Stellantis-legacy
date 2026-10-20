@@ -151,7 +151,7 @@
         <section class="art-view" data-tab="exclusions">
           <div class="art-view__inner">
             <div class="art-view__top">
-              <h3 class="art-view__title" data-family-title></h3>
+              <h3 class="art-view__title"><span data-family-title></span><span class="art-view__comp" data-comp-class hidden></span></h3>
               <label class="art-apply" data-tab-only="volume price"><input class="fam-check" type="checkbox" checked>Apply Same Configuration to all markets</label>
             </div>
             <div class="art-view__filter" data-tab-only="exclusions">
@@ -474,14 +474,12 @@
             <div class="art-panel" data-tab-panel="volume">
               <div class="vol-table-wrap">
                 <div class="vol-scroll"><table class="vol-table msrp-table">
-                  <colgroup><col style="width:50px"><col style="width:132px"><col style="width:171px"><col style="width:135px"><col style="width:65px"><col style="width:87px"><col style="width:109px"><col style="width:129px"><col style="width:104px"><col style="width:124px"><col style="width:111px"><col style="width:83px"><col style="width:124px"><col style="width:124px"><col style="width:175px"><col style="width:124px"><col style="width:215px"></colgroup>
+                  <colgroup><col style="width:50px"><col style="width:132px"><col style="width:171px"><col style="width:87px"><col style="width:109px"><col style="width:129px"><col style="width:104px"><col style="width:124px"><col style="width:111px"><col style="width:83px"><col style="width:124px"><col style="width:124px"><col style="width:175px"><col style="width:124px"><col style="width:215px"></colgroup>
                   <thead>
                     <tr>
                       <th class="is-first msrp-check"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
                       <th>Article ID</th>
                       <th>Article Name</th>
-                      <th>Competitiveness class</th>
-                      <th>DSF Flag</th>
                       <th>Supplier Ranges</th>
                       <th class="is-num"><span class="vol-th"><span>Total Ordered Qty.</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
                       <th class="is-num"><span class="vol-th"><span>Avg. Qty without Promo</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
@@ -499,10 +497,8 @@
                   <tbody>
                     <tr class="vol-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
-                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="8845H3, DSF Flag: Yes">8845H3<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
                       <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>Yes</td>
                       <td>PRO</td>
                       <td class="is-num w6">3.2</td>
                       <td class="is-num w6">3.2</td>
@@ -518,10 +514,8 @@
                     </tr>
                     <tr class="vol-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
-                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="8845H3, DSF Flag: No">8845H3<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
                       <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>No</td>
                       <td>PRO</td>
                       <td class="is-num w6">3.2</td>
                       <td class="is-num w6">3.2</td>
@@ -537,10 +531,8 @@
                     </tr>
                     <tr class="vol-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
-                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="8845H3, DSF Flag: Yes">8845H3<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
                       <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>Yes</td>
                       <td>IAM</td>
                       <td class="is-num w6">3.2</td>
                       <td class="is-num w6">3.2</td>
@@ -556,10 +548,8 @@
                     </tr>
                     <tr class="vol-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845H3" checked></label></td>
-                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>8845H3</div></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 8845H3" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="8845H3, DSF Flag: Yes">8845H3<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
                       <td class="w6 msrp-name">Fiat Coolant G12+ - Gen 1</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>Yes</td>
                       <td>PRO</td>
                       <td class="is-num w6">3.2</td>
                       <td class="is-num w6">3.2</td>
@@ -594,14 +584,12 @@
             <div class="art-panel" data-tab-panel="price">
               <div class="vol-table-wrap pr-table-wrap">
                 <div class="vol-scroll"><table class="vol-table pr-table msrp-price">
-                  <colgroup><col style="width:51px"><col style="width:109px"><col style="width:223px"><col style="width:131px"><col style="width:72px"><col style="width:90px"><col style="width:124px"><col style="width:177px"><col style="width:157px"><col style="width:86px"><col style="width:157px"><col style="width:126px"><col style="width:177px"><col style="width:41px"><col style="width:160px"></colgroup>
+                  <colgroup><col style="width:51px"><col style="width:109px"><col style="width:223px"><col style="width:90px"><col style="width:124px"><col style="width:177px"><col style="width:157px"><col style="width:86px"><col style="width:157px"><col style="width:126px"><col style="width:177px"><col style="width:41px"><col style="width:160px"></colgroup>
                   <thead>
                     <tr>
                       <th class="is-first msrp-check" rowspan="2"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
                       <th rowspan="2">Article ID</th>
                       <th rowspan="2">Article Name</th>
-                      <th rowspan="2">Competitiveness class</th>
-                      <th rowspan="2">DSF Flag</th>
                       <th rowspan="2">Supplier Ranges</th>
                       <th class="pr-group" colspan="2">Before Promo</th>
                       <th class="pr-discount" rowspan="2"><span class="pr-discount__title">Discount % (RPA)</span><input class="vol-input" type="text" value="15" aria-label="Discount % (RPA) for all articles"></th>
@@ -620,10 +608,8 @@
                   <tbody>
                     <tr class="pr-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
-                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="8845G7, DSF Flag: Yes">8845G7<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
                       <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>Yes</td>
                       <td>PRO</td>
                       <td class="is-num">8.71</td>
                       <td class="is-num">87.68</td>
@@ -637,10 +623,8 @@
                     </tr>
                     <tr class="pr-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
-                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="8845G7, DSF Flag: No">8845G7<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
                       <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>No</td>
                       <td>PRO</td>
                       <td class="is-num">8.71</td>
                       <td class="is-num">87.68</td>
@@ -654,10 +638,8 @@
                     </tr>
                     <tr class="pr-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
-                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="8845G7, DSF Flag: Yes">8845G7<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
                       <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>Yes</td>
                       <td>PRO</td>
                       <td class="is-num">8.71</td>
                       <td class="is-num">87.68</td>
@@ -671,10 +653,8 @@
                     </tr>
                     <tr class="pr-row">
                       <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="8845G7" checked></label></td>
-                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">8845G7</div></td>
+                      <td class="pr-name"><div class="msrp-id"><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="8845G7, DSF Flag: Yes">8845G7<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
                       <td class="pr-name">Fiat Spark Plug Platinum - Gen 2</td>
-                      <td><span class="pr-badge pr-badge--red">High</span></td>
-                      <td>Yes</td>
                       <td>PRO</td>
                       <td class="is-num">8.71</td>
                       <td class="is-num">87.68</td>
