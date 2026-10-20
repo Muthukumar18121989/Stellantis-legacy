@@ -472,3 +472,14 @@ th .fam-id { gap: 10px; }
 .dsf-id__tip b { font-weight: 600; }
 .dsf-id:hover .dsf-id__tip, .dsf-id:focus-visible .dsf-id__tip { display: block; }
 .vol-table td:has(.dsf-id:hover), .vol-table td:has(.dsf-id:focus-visible) { position: relative; z-index: 2; }
+/* "Free quantity of another article" promotion type: Volume and Price Analysis tables (Muthu's 2026-10-20 screenshots), default table styles */
+.vol-table.fq-table { min-width: 2024px; }
+.vol-table.fq-price { min-width: 1767px; }
+.vol-table th.fq-th { padding: 0 16px; vertical-align: top; }
+.fq-th__title { display: block; height: 19px; padding-top: 0.5px; text-align: center; white-space: nowrap; }
+.vol-table th.fq-th.is-last, .vol-table th.fq-last { border-top-right-radius: 8px; }
+.vol-table .vol-input.fq-qty { width: 100%; }
+.vol-table td .fq-article { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; font-weight: 400; color: #727476; text-align: left; }
+.fq-article img { flex: none; }
+.fq-table .msrp-id { font-weight: 300; color: #323436; }
+.art-view--fq[data-tab="price"] .art-view__inner { justify-content: flex-start; } /* like the MSRP family type: table sits under the tabs, no pagination */

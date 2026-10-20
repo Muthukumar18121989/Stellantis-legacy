@@ -53,7 +53,9 @@
   // "Drill Down to Article" replaces that family's panel with its article list (Figma 26:10344).
   var articles = document.getElementById('family-articles');
   // "Discount on MSRP at family level" promotions use their own Volume and Price Analysis tables (Figma 152:35568, 152:35837).
-  var familyLevel = /MSRP at family level/i.test(new URLSearchParams(location.search).get('type') || '');
+  // "Free quantity of another article" promotions do the same with Muthu's 2026-10-20 screenshots.
+  var promoType = new URLSearchParams(location.search).get('type') || '';
+  var variant = /MSRP at family level/i.test(promoType) ? 'msrp' : /Free quantity of another article/i.test(promoType) ? 'fq' : '';
   list.addEventListener('click', function (e) {
     var drill = e.target.closest('[data-drill-down]');
     if (!drill) return;
@@ -62,12 +64,12 @@
     var title = panel.querySelector('[data-family-title]').textContent;
     view.querySelector('[data-family-title]').textContent = title;
     view.setAttribute('aria-label', title + ' articles');
-    if (familyLevel) {
+    if (variant) {
       ['volume', 'price'].forEach(function (tab) {
-        var panel = document.getElementById('family-' + tab + '-msrp').content.firstElementChild.cloneNode(true);
+        var panel = document.getElementById('family-' + tab + '-' + variant).content.firstElementChild.cloneNode(true);
         view.querySelector('[data-tab-panel="' + tab + '"]').replaceWith(panel);
       });
-      view.classList.add('art-view--msrp');
+      view.classList.add('art-view--' + variant);
       // Competitiveness class sits next to the family title instead of a table column.
       var comp = view.querySelector('[data-comp-class]');
       comp.textContent = 'Comp Class: ' + (panel.dataset.compClass || '').toUpperCase();
@@ -87,6 +89,16 @@
     if (!head) return;
     if (e.target === head) checks.forEach(function (c) { c.checked = head.checked; });
     else head.checked = checks.every(function (c) { return c.checked; });
+  });
+
+  // Free quantity of another article: Buy and Free Quantity typed in either tab show in the other tab's row for that article.
+  list.addEventListener('input', function (e) {
+    var field = e.target.dataset.fq;
+    var row = e.target.closest('tr[data-article]');
+    if (!field || !row) return;
+    e.target.closest('.art-view').querySelectorAll('tr[data-article="' + row.dataset.article + '"] [data-fq="' + field + '"]').forEach(function (input) {
+      if (input !== e.target) input.value = e.target.value;
+    });
   });
 
   // Article view tabs: Exclusions, Volume Analysis (Figma 26:11097) and Price Analysis (Figma 26:11622).

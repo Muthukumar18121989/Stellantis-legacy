@@ -671,6 +671,270 @@
               </div>
             </div>
       </template>
+      <!-- "Free quantity of another article" promotion type: Volume Analysis and Price Analysis tables from Muthu's
+           2026-10-20 screenshots, built from the default table styles; they replace the default article tables of the drill-down. -->
+      <template id="family-volume-fq">
+            <div class="art-panel" data-tab-panel="volume">
+              <div class="vol-table-wrap">
+                <div class="vol-scroll"><table class="vol-table fq-table">
+                  <colgroup><col style="width:50px"><col style="width:150px"><col style="width:200px"><col style="width:109px"><col style="width:129px"><col style="width:110px"><col style="width:120px"><col style="width:129px"><col style="width:124px"><col style="width:124px"><col style="width:175px"><col style="width:124px"><col style="width:140px"><col style="width:140px"><col style="width:200px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first msrp-check"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
+                      <th>Article ID</th>
+                      <th>Article Name</th>
+                      <th class="is-num"><span class="vol-th"><span>Total Ordered Qty.</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. per month of historical volume</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. per month (promo)</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Avg. per month (non-promo)</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num"><span class="vol-th"><span>Non-promo Demand Projection</span><img src="assets/icons/info.svg" width="16" height="16" alt=""></span></th>
+                      <th class="is-num is-twin">TwinX Demand Forecast</th>
+                      <th class="is-num is-twin">Confidence Score</th>
+                      <th class="is-odmma"><span class="vol-th__top msrp-center">Objective (in %)</span><input class="vol-input" type="text" value="0" aria-label="Objective for all articles"></th>
+                      <th class="is-num is-target msrp-target">Promo Volume Target (in units)</th>
+                      <th class="fq-th"><span class="fq-th__title">Buy Quantity (X)</span><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for all articles"></th>
+                      <th class="fq-th"><span class="fq-th__title">Free Quantity (Y)</span><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for all articles"></th>
+                      <th class="fq-th is-last"><span class="fq-th__title">Free Article</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="vol-row" data-article="1699686880">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="1699686880" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 1699686880" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="1699686880, DSF Flag: No">1699686880<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="msrp-name" title="SOUND PROOFING">SOUND PROOFING</td>
+                      <td class="is-num">277</td>
+                      <td class="is-num">24</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">24</td>
+                      <td class="is-num w6">33</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="0%" aria-label="Objective for 1699686880"></td>
+                      <td class="is-num target">0</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 1699686880" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 1699686880" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 1699686880">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="972613">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="972613" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 972613" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="972613, DSF Flag: Yes">972613<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="msrp-name" title="SOUND PROOFING">SOUND PROOFING</td>
+                      <td class="is-num">215</td>
+                      <td class="is-num">18</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">18</td>
+                      <td class="is-num w6">26</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="0%" aria-label="Objective for 972613"></td>
+                      <td class="is-num target">0</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 972613" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 972613" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 972613">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="998444">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="998444" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 998444" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="998444, DSF Flag: No">998444<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="msrp-name" title="SOUND PROOFING">SOUND PROOFING</td>
+                      <td class="is-num">110</td>
+                      <td class="is-num">10</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">10</td>
+                      <td class="is-num w6">13</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="0%" aria-label="Objective for 998444"></td>
+                      <td class="is-num target">0</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 998444" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 998444" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 998444">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="972797">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="972797" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 972797" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="972797, DSF Flag: Yes">972797<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="msrp-name" title="SOUND PROOFING">SOUND PROOFING</td>
+                      <td class="is-num">85</td>
+                      <td class="is-num">8</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">8</td>
+                      <td class="is-num w6">10</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="0%" aria-label="Objective for 972797"></td>
+                      <td class="is-num target">0</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 972797" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 972797" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 972797">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                    </tr>
+                    <tr class="vol-row" data-article="998445">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="998445" checked></label></td>
+                      <td><div class="msrp-id"><button class="vol-toggle" type="button" aria-expanded="false" aria-label="Monthly trend for 998445" data-toggle-article><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="998445, DSF Flag: No">998445<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="msrp-name" title="SOUND PROOFING">SOUND PROOFING</td>
+                      <td class="is-num">25</td>
+                      <td class="is-num">3</td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">3</td>
+                      <td class="is-num w6">3</td>
+                      <td>Not Available</td>
+                      <td>Not Available</td>
+                      <td class="is-odmma"><input class="vol-input" type="text" value="0%" aria-label="Objective for 998445"></td>
+                      <td class="is-num target">0</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 998445" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 998445" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 998445">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                    </tr>
+                  </tbody>
+                </table></div>
+              </div>
+              <div class="table-footer">
+                <p class="table-footer__summary">Showing article 1 of 11 entries</p>
+                <nav class="pagination" aria-label="Pagination">
+                  <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                  <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+                  <button class="pagination__page" type="button"><span>2</span></button>
+                  <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+                </nav>
+              </div>
+            </div>
+      </template>
+      <template id="family-price-fq">
+            <div class="art-panel" data-tab-panel="price">
+              <div class="vol-table-wrap pr-table-wrap">
+                <div class="vol-scroll"><table class="vol-table pr-table fq-price">
+                  <colgroup><col style="width:51px"><col style="width:130px"><col style="width:200px"><col style="width:120px"><col style="width:120px"><col style="width:170px"><col style="width:140px"><col style="width:140px"><col style="width:130px"><col style="width:140px"><col style="width:86px"><col style="width:120px"><col style="width:120px"></colgroup>
+                  <thead>
+                    <tr>
+                      <th class="is-first msrp-check" rowspan="2"><input class="fam-check" type="checkbox" aria-label="Select all articles" data-check-all></th>
+                      <th rowspan="2">Article ID</th>
+                      <th rowspan="2">Article Name</th>
+                      <th class="pr-group" colspan="3">From Volume Analysis</th>
+                      <th class="pr-group" colspan="2">Before Promo</th>
+                      <th class="pr-group is-after" colspan="2">After Promo</th>
+                      <th class="is-twin is-center" rowspan="2">Elasticity</th>
+                      <th class="is-twin is-bottom is-center" rowspan="2">Confidence</th>
+                      <th class="is-twin is-bottom is-center fq-last" rowspan="2">Price Sensitivity</th>
+                    </tr>
+                    <tr>
+                      <th class="pr-sub">Buy Quantity (X)</th>
+                      <th class="pr-sub">Free Quantity (Y)</th>
+                      <th class="pr-sub">Free Article</th>
+                      <th class="pr-sub is-num">Selling Price/D3NP (&euro;)</th>
+                      <th class="pr-sub is-num">Commercial margin in %</th>
+                      <th class="pr-sub is-after">Free-Article (Y) Cost</th>
+                      <th class="pr-sub is-after">Commercial margin in %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="pr-row" data-article="1699686880">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="1699686880" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="1699686880, DSF Flag: No">1699686880<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="pr-name">SOUND PROOFING</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 1699686880" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 1699686880" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 1699686880">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="972613">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="972613" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="972613, DSF Flag: Yes">972613<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="pr-name">SOUND PROOFING</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 972613" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 972613" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 972613">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-7,16</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--red">Very Low (46.2)</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Suppressed</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="998444">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="998444" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="998444, DSF Flag: No">998444<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="pr-name">SOUND PROOFING</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 998444" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 998444" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 998444">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="972797">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="972797" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="972797, DSF Flag: Yes">972797<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="pr-name">SOUND PROOFING</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 972797" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 972797" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 972797">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="998445">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="998445" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="998445, DSF Flag: No">998445<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="pr-name">SOUND PROOFING</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 998445" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 998445" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 998445">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="55217639">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="55217639" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="no" aria-label="55217639, DSF Flag: No">55217639<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>No</b></span></span></div></td>
+                      <td class="pr-name">SOUND PROOFING</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 55217639" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 55217639" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 55217639">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                    <tr class="pr-row" data-article="974069">
+                      <td class="is-id msrp-check"><label class="fam-id"><input class="fam-check" type="checkbox" name="article" value="974069" checked></label></td>
+                      <td><div class="msrp-id"><span class="dsf-id" tabindex="0" data-dsf="yes" aria-label="974069, DSF Flag: Yes">974069<span class="dsf-id__dot" aria-hidden="true"></span><span class="dsf-id__tip" role="tooltip">DSF Flag: <b>Yes</b></span></span></div></td>
+                      <td class="pr-name">ANTI-ABRASION</td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Buy quantity (X) for 974069" data-fq="buy"></td>
+                      <td class="is-odmma"><input class="vol-input fq-qty" type="text" inputmode="numeric" aria-label="Free quantity (Y) for 974069" data-fq="free"></td>
+                      <td class="is-odmma"><button class="vol-input fq-article" type="button" aria-label="Select free article for 974069">Select Article<img src="assets/icons/pencil-grey-24.svg" width="16" height="16" alt=""></button></td>
+                      <td class="is-num">0</td>
+                      <td class="is-num">0</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">-</td>
+                      <td class="is-center">0</td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                      <td class="pr-badge-cell"><span class="pr-badge pr-badge--yellow">Not Available</span></td>
+                    </tr>
+                  </tbody>
+                </table></div>
+              </div>
+            </div>
+      </template>
 
       <div class="cfg-actions">
         <a class="btn-outline" href="promotion-configuration.html" data-keep-query>Back</a>
