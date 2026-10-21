@@ -115,6 +115,15 @@ th, td { padding: 0; font-weight: inherit; text-align: left; }
 .icon-btn { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 7px; background: #fff; border: 1px solid #727476; border-radius: 6px; }
 .btn-primary { display: flex; align-items: center; justify-content: center; padding: 6px 12px; background: #007dc5; border-radius: 6px; font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #fff; }
 
+/* Hover tooltip: add data-tooltip="Text" to a button; the dark label appears under it */
+[data-tooltip] { position: relative; }
+[data-tooltip]::after {
+  content: attr(data-tooltip); position: absolute; left: 50%; top: calc(100% + 6px); z-index: 20; transform: translateX(-50%);
+  display: none; padding: 4px 8px; background: #323436; border-radius: 4px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
+  font: 400 12px/18px "Noto Sans", sans-serif; letter-spacing: 0; color: #fff; white-space: nowrap; pointer-events: none;
+}
+[data-tooltip]:hover::after, [data-tooltip]:focus-visible::after { display: block; }
+
 /* Tables */
 .table-wrap {
   height: 280px; overflow-x: auto; overflow-y: hidden;
