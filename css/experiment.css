@@ -1,14 +1,14 @@
 /* Experiment page — Figma "Experiment Page" (node 26:5896), 1366 × 778 */
 
 .page--experiment { min-height: max(778px, 100vh); }
+.page--experiment .main { min-height: inherit; }
 
 /* Top menu logo (Figma 26:5916) */
 
-.exp-body { display: flex; flex-direction: column; gap: 24px; padding: 24px; }
+.exp-body { flex: 1; display: flex; flex-direction: column; gap: 16px; padding: 24px; } /* the projects card takes the height left */
 
 /* ---------- Products / Network cards (Figma 26:5940, 26:5996) ---------- */
 .config-cards { display: flex; gap: 16px; }
-.config-cards[hidden] { display: none; } /* hidden until Products / Network have functionality */
 .config-card {
   position: relative; flex: 1; min-width: 0; height: 138px;
   display: flex; align-items: center; gap: 8px; padding: 16px; overflow: hidden;
@@ -34,14 +34,27 @@
 .config-card__decor--arc { left: 0; top: 0; }
 .config-card__decor--box { right: 0; top: 24px; } /* Figma: flush with the card's right edge */
 .config-card__decor--pie { right: -0.19px; top: 45.19px; } /* Figma: flush with the card's right edge */
+/* Compact strip (experiments.html): one 56px line per card, icon + label | Types: item · item, same gradient */
+.config-cards--compact .config-card { height: 56px; padding: 0 16px; gap: 16px; }
+.config-cards--compact .config-card__main { width: auto; flex-direction: row; gap: 10px; padding: 0 16px 0 0; }
+.config-cards--compact .config-card__icon { transform: scale(0.762); margin: -5px; } /* 42px circle shown at 32px */
+.config-cards--compact .config-card__types { align-self: center; }
+.config-cards--compact .types__item--top { align-items: center; }
+.config-cards--compact .types,
+.config-cards--compact .types__list { flex-direction: row; align-items: center; gap: 16px; }
+.config-cards--compact .config-card__decor--box,
+.config-cards--compact .config-card__decor--pie { display: none; }
 
 /* ---------- Filters (Figma 26:6028), inside the Promotion Optimization panel ---------- */
 .page--experiment .field { width: 252px; } /* Figma width at 1366; the fields grow to fill the bar on wider screens */
 .optimization .filters { flex: none; }
+/* The table frame takes the rest of the card height and scrolls its rows under a sticky header */
+.optimization .table-wrap { flex: 1 1 280px; height: auto; min-height: 280px; overflow-y: auto; }
+.promos thead th { position: sticky; top: 0; z-index: 1; }
 
 /* ---------- Projects + promotion table (Figma 26:6052) ---------- */
-.projects-card { height: 504px; padding: 15px; overflow: hidden; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
-.projects-card__inner { display: flex; gap: 16px; height: 472px; } /* Figma 376 + the 96px filter bar */
+.projects-card { flex: 1 1 0; min-height: 504px; display: flex; flex-direction: column; padding: 15px; overflow: hidden; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
+.projects-card__inner { flex: 1 1 0; min-height: 472px; display: flex; gap: 16px; } /* Figma 376 + the 96px filter bar; grows with the window */
 
 .projects { width: 228px; flex: none; display: flex; flex-direction: column; gap: 8px; padding-right: 16px; border-right: 1px solid #ccdde8; }
 .projects__head { display: flex; align-items: center; justify-content: space-between; }
