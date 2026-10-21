@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Tabs (result)</title>
+<!--
+  TwinX UI component: tabs-pill
+  Name:     Tabs (result)
+  Category: Navigation
+  CSS:      css/base.css, css/configuration.css, css/result.css, css/user-menu.css
+  JS:       none
+  Source:   kit/simulation-result.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Tab row with filters on the right, used on the results page (.art-tabs / .art-tab).
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--result">
+<!-- snippet:start -->
+<div class="res-tabs-row">
+  <div class="art-tabs res-tabs" role="tablist" aria-label="Simulation results">
+    <button class="art-tab" type="button" role="tab" id="res-tab-summary" data-res-tab="summary" aria-controls="res-panel-summary" aria-selected="true">Financial Outcome Summary</button>
+    <button class="art-tab" type="button" role="tab" id="res-tab-metrics" data-res-tab="metrics" aria-controls="res-panel-metrics" aria-selected="false">Metric Comparison</button>
+    <button class="art-tab" type="button" role="tab" id="res-tab-drilldown" data-res-tab="drilldown" aria-controls="res-panel-drilldown" aria-selected="false">Promotion Drilldown</button>
+    <button class="art-tab" type="button" role="tab" id="res-tab-articles" data-res-tab="articles" aria-controls="res-panel-articles" aria-selected="false">Top &amp; Low Articles</button>
+  </div>
+  <div class="res-filters">
+    <button class="res-select" type="button"><span class="res-select__value">1109Z5 - Filters</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+    <button class="res-select" type="button"><span class="res-select__value">All Articles</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+  </div>
+</div>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

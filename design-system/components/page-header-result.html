@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Page header with stepper and actions</title>
+<!--
+  TwinX UI component: page-header-result
+  Name:     Page header with stepper and actions
+  Category: Page headers
+  CSS:      css/base.css, css/configuration.css, css/result.css, css/user-menu.css
+  JS:       none
+  Source:   kit/simulation-result.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Results variant: breadcrumb, title, stepper and right-side actions (iteration switch).
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--result">
+<!-- snippet:start -->
+<section class="res-header">
+  <div class="cfg-header__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="experiments.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
+      <span class="breadcrumb__sep">/</span>
+      <a class="breadcrumb__link" href="experiments.html">Dashboard</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__current" aria-current="page">Configuration</span>
+    </nav>
+    <h1 class="cfg-header__title">Promotion Configuration</h1>
+  </div>
+  <!-- Process steps: compact stepper (css/base.css) -->
+  <ol class="stepper" aria-label="Progress">
+    <li class="stepper__step stepper__step--done"><span class="stepper__item"><span class="stepper__dot">1</span><span class="stepper__label">Configure Parameters</span></span></li>
+    <li class="stepper__step stepper__step--done"><span class="stepper__item"><span class="stepper__dot">2</span><span class="stepper__label">Selection &amp; Analysis</span></span></li>
+    <li class="stepper__step stepper__step--done"><span class="stepper__item"><span class="stepper__dot">3</span><span class="stepper__label">Simulation Results</span></span></li>
+  </ol>
+  <div class="res-header__actions">
+    <button class="iteration" type="button"><span class="iteration__value">Iteration 1</span><img src="assets/icons/chevron-down-white.svg" width="16" height="16" alt=""></button>
+    <button class="icon-btn" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+  </div>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

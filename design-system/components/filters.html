@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Filter bar</title>
+<!--
+  TwinX UI component: filters
+  Name:     Filter bar
+  Category: Buttons & inputs
+  CSS:      css/base.css, css/experiment.css, css/user-menu.css
+  JS:       none
+  Source:   kit/experiments.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Label-over-select fields that stretch to the action buttons (Refresh, Apply, Download). Change labels/values; keep the structure.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/experiment.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--experiment">
+<!-- snippet:start -->
+<section class="filters">
+  <div class="filters__fields">
+    <button class="field">
+      <span class="field__label">Promotion Status</span>
+      <span class="field__control"><span class="field__value field__value--noto">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+    </button>
+    <button class="field">
+      <span class="field__label">Region</span>
+      <span class="field__control"><span class="field__value field__value--noto">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+    </button>
+    <button class="field">
+      <span class="field__label">Involved Families</span>
+      <span class="field__control"><span class="field__value field__value--poppins">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+    </button>
+    <button class="field">
+      <span class="field__label">Period</span>
+      <span class="field__control"><span class="field__value field__value--noto">Choose Date Range</span><img src="assets/icons/eye.svg" width="16" height="16" alt=""></span>
+    </button>
+  </div>
+  <div class="filters__actions">
+    <div class="filters__primary">
+      <button class="icon-btn" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
+      <button class="btn-primary">Apply</button>
+    </div>
+    <button class="icon-btn" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+  </div>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

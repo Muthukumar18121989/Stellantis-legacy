@@ -1,0 +1,414 @@
+/* Admin pages: Delegation of Authority (DOA) Rules (Figma 100:42880, 1366 × 600),
+   User Management (100:48479, 1366 × 604), Role Management (100:49454, 1366 × 822). */
+
+.page--doa { min-height: max(600px, 100vh); }
+.page--users { min-height: max(604px, 100vh); }
+.page--roles { min-height: max(822px, 100vh); }
+
+.page--doa .profile { width: 120px; }
+.page--users .profile, .page--roles .profile { width: 126px; }
+
+/* ---------- Page header ---------- */
+.ad-header {
+  height: 101px; display: flex; align-items: center; padding: 12px 16px 11px;
+  background: #fff; border-bottom: 1px solid #bfe0f5;
+}
+.ad-header--compact { height: 82px; background: #eff9ff; }
+.ad-header__inner { display: flex; flex-direction: column; gap: 4px; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; height: 21px; }
+.breadcrumb__sep { font: 400 14px/21px "Poppins", sans-serif; letter-spacing: 0.056px; color: #3c4572; }
+.breadcrumb__sep--dark { color: #333; }
+.breadcrumb__link { font: 400 12px/18px "Open Sans", sans-serif; letter-spacing: 0.4px; color: #007dc5; white-space: nowrap; }
+.breadcrumb__current { font: 400 12px/18px "Open Sans", sans-serif; letter-spacing: 0.4px; color: #323436; white-space: nowrap; }
+.breadcrumb__page { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.ad-header__title { font: 600 24px/33px "Open Sans", sans-serif; letter-spacing: -0.44px; color: #196c9b; white-space: nowrap; }
+.ad-header__subtitle { font: 400 14px/19px "Open Sans", sans-serif; letter-spacing: -0.44px; color: #727476; white-space: nowrap; }
+
+/* ---------- Body, cards ---------- */
+.ad-body { display: flex; flex-direction: column; gap: 16px; padding: 24px 24px 0; }
+.ad-card {
+  position: relative; display: flex; flex-direction: column; gap: 16px; padding: 15px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.ad-card__head {
+  display: flex; justify-content: space-between; padding-bottom: 7px; border-bottom: 1px solid #bfe0f5;
+}
+.ad-card__title { font: 600 16px/20px "Noto Sans", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.ad-footer .table-footer__summary { width: 158px; }
+.ad-pagination .pagination__arrow--prev img { transform: none; }
+.ad-pagination .pagination__arrow--next img { transform: rotate(180deg); }
+
+/* ---------- Tables ---------- */
+.ad-table-wrap {
+  overflow-x: auto; overflow-y: hidden;
+  background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #bfe0f5; /* Figma: outside stroke */
+}
+.ad-table { table-layout: fixed; }
+.ad-table th, .ad-table td { padding: 6px 16px 5px; vertical-align: middle; white-space: nowrap; } /* the 1px bottom rule sits inside the Figma cell, so centre on the rest */
+.ad-table .ad-center { text-align: center; }
+.ad-th-sort { display: inline-flex; align-items: center; gap: 10px; }
+.ad-sort { display: flex; }
+.ad-icon { display: inline-flex; vertical-align: middle; }
+
+.ad-table--list { width: 100%; }
+.ad-table--list th {
+  height: 40px; background: #e3f4ff; border-bottom: 1px solid #bfe0f5;
+  font: 600 12px/18px "Noto Sans", sans-serif; color: #323436;
+}
+.ad-table--list td {
+  height: 40px; border-bottom: 1px solid #bfe0f5;
+  font: 300 12px/18px "Noto Sans", sans-serif; color: #323436;
+}
+
+.ad-search {
+  width: 210px; height: 32px; display: flex; align-items: center; gap: 10px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.ad-search input {
+  width: 160px; height: 20px; padding: 0; border: 0; outline: 0; background: none;
+  font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436;
+}
+.ad-search input::placeholder { color: #727476; opacity: 1; }
+
+/* ---------- DOA Rules ---------- */
+.doa-card { height: 404px; padding-bottom: 0; } /* Figma: the table block runs 12px past the footer and eats the bottom padding */
+.ad-card > * { flex-shrink: 0; }
+.doa-title {
+  position: relative; height: 52px; display: flex; flex-direction: column; gap: 4px; padding: 0 12px 8px;
+  background: linear-gradient(to right, #bfe0f5 4px, transparent 4px) 0 100% / 6px 1px repeat-x; /* dashed 4 / 2 rule */
+}
+.doa-title::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 44px; background: linear-gradient(180deg, #47b796, #01a1fe); }
+.doa-title__text { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
+.doa-title__desc { font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; white-space: nowrap; }
+.doa-add { position: absolute; right: 13px; top: 21px; width: 160px; height: 32px; gap: 8px; }
+
+.doa-table-wrap { height: 268px; margin-right: -2px; box-shadow: 0 0 0 1px #ccdde8; }
+.doa-table { width: 100%; min-width: 1588px; }
+.doa-table th {
+  height: 40px; background: #f4f9fc; border-bottom: 1px solid #ccdde8; text-align: center;
+  font: 600 12px/18px "Poppins", sans-serif; color: #323436;
+}
+.doa-table th:first-child { text-align: left; }
+.doa-table td { height: 76px; border-bottom: 1px solid #ccdde8; font-size: 12px; line-height: 18px; color: #323436; }
+.doa-param__name { font: 600 12px/18px "Noto Sans", sans-serif; }
+.doa-param__desc { font: italic 300 10px/15px "Noto Sans", sans-serif; }
+.doa-table .doa-center { padding-left: 0; padding-right: 0; text-align: center; }
+.doa-tag {
+  display: inline-block; vertical-align: middle; padding: 4px; border-radius: 4px;
+  font: 300 10px/12px "Poppins", sans-serif; color: #3f4047; text-align: center;
+}
+.doa-tag--market { width: 45px; height: 20px; background: rgba(0, 125, 197, 0.08); box-shadow: inset 0 0 0 0.5px #007dc5; }
+.doa-tag--promo { width: 98px; height: 44px; background: rgba(0, 181, 173, 0.08); box-shadow: inset 0 0 0 0.5px #00b5ad; }
+.doa-date { font-family: "Poppins", sans-serif; text-align: center; }
+.doa-date--left { text-align: left; }
+.doa-table .doa-level { padding-left: 0; padding-right: 0; text-align: center; }
+.doa-table td.doa-level--top { vertical-align: top; padding-bottom: 0; }
+.doa-level__rule { font: 600 12px/18px "Noto Sans", sans-serif; }
+.doa-level__role { font: 600 10px/14px "Noto Sans", sans-serif; color: #0db134; }
+.doa-table .doa-actions { padding: 12px 16px 11px; }
+.doa-actions__inner { display: flex; gap: 8px; }
+.doa-approve { display: flex; }
+.doa-edit { display: flex; padding: 4px; background: #c9ccce; border-radius: 6px; }
+
+/* ---------- User Management ---------- */
+.um-card { height: 408px; margin-right: 10px; } /* Figma: this card stops 10px short of the others */
+.um-head { height: 40px; align-items: flex-end; }
+.um-table-wrap { height: 280px; }
+.um-status {
+  display: inline-block; vertical-align: middle; width: 43px; height: 24px; padding: 3px 7px;
+  background: #e8ffee; border: 1px solid #0db134; border-radius: 6px;
+  font: 300 10px/15px "Noto Sans", sans-serif; color: #005929;
+}
+
+/* ---------- Role Management ---------- */
+.rm-summary { height: 176px; display: flex; align-items: center; gap: 24px; padding-top: 8px; overflow: hidden; }
+.rm-summary__main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 11px; }
+.rm-summary__title { font: 600 16px/20px "Noto Sans", sans-serif; letter-spacing: 0.048px; color: #323436; }
+.rm-counts { display: flex; gap: 11px; }
+.rm-count-rows { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 11px; }
+.rm-count-row { height: 63px; display: flex; gap: 12px; }
+.rm-divider { width: 2px; flex: none; background: #bfe0f5; }
+.rm-count {
+  flex: 1 1 225.3px; min-width: 0; height: 63px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 8px; text-align: center; white-space: nowrap;
+}
+.rm-count--total { flex: none; width: 225px; height: 137px; border: 2px solid #007dc5; }
+.rm-count--hidden { opacity: 0; } /* Figma keeps these two cards at 0 % opacity */
+.rm-count__value { font: 600 16px/20px "Noto Sans", sans-serif; letter-spacing: 0.048px; color: #007dc5; }
+.rm-count__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.rm-download { flex: none; }
+
+.rm-card { height: 452px; }
+.rm-head { height: 50px; align-items: flex-start; }
+.rm-head__desc { margin-top: 4px; font: 300 12px/18px "Noto Sans", sans-serif; letter-spacing: 0.036px; color: #727476; white-space: nowrap; }
+.rm-create { width: 131px; height: 32px; gap: 8px; }
+.rm-legend { height: 18px; display: flex; justify-content: flex-end; gap: 16px; margin: 0; padding: 0; list-style: none; }
+.rm-legend li { display: flex; align-items: center; gap: 4px; font: 300 12px/18px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.rm-legend li:nth-child(1) { width: 105px; }
+.rm-legend li:nth-child(2) { width: 75px; }
+.rm-legend li:nth-child(3) { width: 99px; }
+.rm-swatch { width: 18px; height: 18px; flex: none; border: 1px solid; border-radius: 4px; }
+.rm-swatch--orange, .rm-cap--orange { background: #fff4ea; border-color: #a5673f; }
+.rm-swatch--blue, .rm-cap--blue { background: #eff8ff; border-color: #004baf; }
+.rm-swatch--grey, .rm-cap--grey { background: #f8f9fb; border-color: #bfe0f5; }
+.rm-table-wrap { height: 280px; }
+.ad-table td.rm-caps { padding: 0 0 0 16px; }
+.rm-caps__list { display: flex; gap: 10px; }
+.rm-cap {
+  height: 24px; padding: 3px 7px; border-width: 1px; border-style: solid; border-radius: 6px;
+  font: 300 10px/15px "Noto Sans", sans-serif; color: #3f4047;
+}
+.rm-cap--dashboard { width: 67px; }
+.rm-cap--creation { width: 55px; }
+.rm-cap--orange { color: #9b2500; }
+.rm-cap--blue { color: #004baf; }
+.rm-actions { display: inline-flex; gap: 16px; vertical-align: middle; }
+.doa-table td.doa-level--raise { padding-bottom: 15px; } /* Figma: this cell's text frame is 12px taller than its text, lifting it 5px */
+/* Chrome sets Noto Sans 12/18 text 1px higher than Figma (2px for the two-line parameter cells): nudge down */
+.ad-table--list th, .ad-table--list td { padding-top: 7px; padding-bottom: 4px; }
+.doa-table td.doa-param { padding-top: 8px; padding-bottom: 3px; }
+.doa-table td.doa-level--top { padding-top: 7px; }
+.um-status, .ad-table--list .ad-icon { position: relative; top: -1px; } /* keep badges and icons where Figma has them */
+
+/* ---------- Edit Delegate (Figma 100:50428, 1366 × 727) ---------- */
+.page--user-edit { min-height: max(727px, 100vh); }
+.ad-header--tint { background: #eff9ff; }
+.breadcrumb__link--deep { color: #006bc5; }
+.ue-card { height: 256px; }
+.ue-rows { height: 224px; overflow: hidden; display: flex; flex-direction: column; gap: 16px; }
+.ue-row { display: flex; gap: 16px; }
+.ue-row--id { height: 64px; flex: none; padding-bottom: 7px; border-bottom: 1px solid #bfe0f5; }
+.ue-rows .ue-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); } /* the user fields share four equal columns that fill the card */
+.ue-rows .ue-field { width: auto !important; } /* overrides the inline Figma widths (292-294.5px at 1366) */
+.ue-row--names { height: 72px; flex: none; padding-bottom: 15px; border-bottom: 1px solid #bfe0f5; }
+.ue-field { flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.ue-field__label { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.ue-field--noto .ue-field__label, .ue-field--noto-small .ue-field__label { font: 400 14px/20px "Noto Sans", sans-serif; }
+.ue-field__box {
+  height: 32px; display: flex; align-items: center; gap: 10px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.ue-field--grey .ue-field__box { background: #f8f9fb; }
+.ue-field__box input {
+  flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.ue-field__box input::placeholder { color: #727476; opacity: 1; }
+.ue-field--grey .ue-field__box input { color: #727476; }
+.ue-field--noto .ue-field__box input { font: 400 14px/20px "Noto Sans", sans-serif; }
+.ue-field--noto-small .ue-field__box { align-items: flex-start; padding-top: 6px; } /* Chrome sets Noto 1px higher than Figma */
+.ue-field--noto-small .ue-field__box input { height: 18px; font: 300 12px/18px "Noto Sans", sans-serif; letter-spacing: 0; }
+.ue-delegates { height: 202px; }
+.ue-add { width: 145px; height: 32px; gap: 8px; }
+.ue-delegate { display: flex; flex-direction: column; gap: 16px; }
+.ue-delegate .ue-row > .ue-field { flex-grow: 1; } /* the four delegate fields fill the row exactly at 1366 */
+.ue-comments { position: relative; display: block; height: 32px; }
+.ue-comments textarea {
+  display: block; width: 100%; height: 100%; margin: 0; padding: 5px 11px; resize: none; outline: 0; overflow: hidden;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.ue-comments textarea::placeholder { color: #323436; opacity: 1; }
+.ue-comments img { position: absolute; right: 6px; top: 12px; pointer-events: none; }
+
+.ad-actions { display: flex; justify-content: flex-end; gap: 16px; }
+.ad-btn {
+  height: 32px; display: flex; align-items: center; justify-content: center; padding: 5px 11px;
+  background: #fff; border: 1px solid #727476; border-radius: 6px;
+  font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap;
+}
+.ad-btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }
+
+/* ---------- Bulk Upload Preview (Figma 100:49079, 2239 × 586) ---------- */
+.page--preview { min-height: max(586px, 100vh); }
+.bp-card { height: 352px; }
+.bp-table-wrap { height: 280px; }
+.bp-table th.bp-group, .bp-table th.bp-sub { padding-left: 0; padding-right: 0; text-align: center; }
+.bp-table th.bp-group, .bp-table th.bp-sub--first { border-left: 1px solid #bfe0f5; }
+
+/* ---------- Dialogs: bulk upload (Figma 100:48454), saved (100:50726, 100:50727) ---------- */
+.ad-dialog {
+  position: fixed; inset: 0; margin: auto; max-width: none; max-height: none;
+  padding: 18px 24px 24px; overflow: visible; color: #323436; /* 24px from the outer edge; the 6px top rule sits inside it */
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.ad-dialog[open] { display: flex; flex-direction: column; }
+.ad-dialog::backdrop { background: transparent; } /* Figma shows no backdrop */
+.ad-dialog__close { position: absolute; right: 24px; top: 10px; width: 24px; height: 24px; }
+.ad-dialog__head { display: flex; flex-direction: column; gap: 8px; }
+.ad-dialog__title { font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
+.ad-dialog__text { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.ad-dialog__actions { display: flex; justify-content: flex-end; gap: 12px; }
+.ad-dialog__btn {
+  height: 40px; display: flex; align-items: center; justify-content: center; padding: 7px 15px;
+  background: #fff; border: 1px solid #727476; border-radius: 8px;
+  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap;
+}
+.ad-dialog__btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }
+
+.ad-dialog--bulk { width: 741px; height: 260px; }
+.ad-dialog--bulk[open] { gap: 32px; }
+.bu-file { display: flex; flex-direction: column; gap: 4px; }
+.bu-file__labels { height: 20px; display: flex; justify-content: space-between; }
+.bu-file__label { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.bu-file__template { font: italic 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #0b7abe; text-decoration: underline; }
+.bu-file__box { height: 32px; display: flex; align-items: center; gap: 16px; background: #fff; border: 1px solid #ccdde8; border-radius: 6px; }
+.bu-file__button {
+  position: relative; width: 114px; height: 32px; flex: none; margin: -1px 0 -1px -1px;
+  display: flex; align-items: center; gap: 8px; padding: 7px 11px;
+  background: #f8f9fb; border: 1px solid #bfe0f5; border-radius: 6px 0 0 6px;
+  font: 500 12px/18px "Noto Sans", sans-serif; color: #727476; white-space: nowrap; cursor: pointer;
+}
+.bu-file__button input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.bu-file__name { font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #007dc5; white-space: nowrap; }
+.bu-preview { width: 95px; }
+
+.ad-dialog--saved { width: 528px; height: 160px; }
+.ad-dialog--saved[open] { gap: 24px; }
+.ad-dialog--saved .ad-dialog__close { right: 16px; }
+.ad-dialog__mark { width: 64px; height: 64px; border-radius: 50%; background: #0db134; } /* Figma draws a plain green circle */
+.ad-dialog__saved-title { font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+
+/* ---------- Create Role (Figma 100:49929, 1366 × 638) ---------- */
+.page--create-role { min-height: max(638px, 100vh); }
+.page--create-role .profile { width: 126px; }
+.cr-card { height: 410px; border-radius: 0 8px 8px 0; } /* Figma: this card's left corners are square */
+.ue-field.cr-name .ue-field__label { font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; }
+.cr-table-wrap { height: 240px; }
+.ad-table th.cr-th-cap { padding-left: 46px; } /* Figma keeps an invisible 20px checkbox + 10px gap before the label */
+.ad-table td.cr-levels { padding: 2px 0 0 16px; }
+.cr-levels__list { display: grid; grid-template-columns: 105px 81px 111px; column-gap: 48px; }
+.cr-cap, .cr-level { display: flex; align-items: center; gap: 8px; white-space: normal; cursor: pointer; }
+.cr-cap span { width: 200px; }
+.cr-cap span, .cr-level span { position: relative; top: 1px; } /* Chrome sets Noto 1px higher than Figma */
+.cr-check {
+  position: relative; top: -1px; width: 20px; height: 20px; flex: none; margin: 0; appearance: none; cursor: pointer;
+  background: #fff; border: 1px solid #c9ccce; border-radius: 4px;
+}
+.cr-check:checked { border: 0; background: #007dc5 url("../assets/icons/check.svg") no-repeat 2px 2px / 16px 16px; }
+.cr-check:disabled { cursor: default; }
+.cr-check:disabled:checked { border: 1px solid #c9ccce; background: #f2f4f6 url("../assets/icons/check-light.svg") no-repeat 1px 1px / 16px 16px; }
+.ad-table td.cr-cap-cell { padding: 2px 16px 0; } /* two-line capability names still fit the 40px row */
+
+/* ---------- Referential (Figma 100:48853, 1366 × 702; tab panels from 100:50729) ---------- */
+.page--referential { min-height: max(702px, 100vh); }
+.page--referential .profile { width: 126px; }
+.rf-filters {
+  height: 56px; display: flex; align-items: center; gap: 16px; padding: 11px;
+  background: #f6fcff; border: 1px solid #bfe0f5; border-radius: 12px;
+}
+.rf-select {
+  height: 32px; flex: none; display: flex; align-items: center; gap: 8px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.rf-select__value {
+  flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-align: left;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.rf-select--noto .rf-select__value { font: 400 14px/20px "Noto Sans", sans-serif; }
+.rf-apply { width: 65px; height: 32px; flex: none; }
+.rf-filters .icon-btn, .rf-panel__filters .icon-btn { flex: none; }
+.rf-filters > .rf-select { flex: 1 1 auto; min-width: 0; } /* the three selects share the bar's width (Figma widths are the basis) */
+
+.rf-tabs { height: 36px; display: flex; gap: 16px; margin-top: 24px; padding: 0 16px; } /* Figma: 40px below the filters */
+.rf-tab { height: 36px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 16px 0; }
+.rf-tab__label { font: 600 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; white-space: nowrap; }
+.rf-tab__bar { width: 46px; height: 4px; border-radius: 2px 2px 0 0; }
+.rf-tab--active .rf-tab__label { color: #2c2c30; }
+.rf-tab--active .rf-tab__bar { align-self: stretch; width: auto; background: #007dc5; }
+
+.rf-panel { display: flex; flex-direction: column; gap: 16px; }
+.rf-panel[hidden] { display: none; }
+.rf-panel__filters { width: 905px; height: 32px; display: flex; align-items: center; gap: 16px; }
+.rf-panel__filters--end { justify-content: flex-end; }
+.rf-g10 { width: 216px; margin: 0; font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #0b7abe; white-space: nowrap; }
+
+.rf-card {
+  height: 344px; display: flex; flex-direction: column; gap: 16px; padding: 11.076px; overflow: hidden;
+  background: #fff; border: 0.924px solid #bfe0f5; border-radius: 12px; /* Figma: 0.92px stroke */
+}
+.rf-card > * { flex-shrink: 0; }
+.rf-card--wide { align-self: stretch; }
+.rf-card--narrow { width: 905px; }
+.rf-scroll { margin: -1px; padding: 1px; overflow-x: auto; overflow-y: hidden; }
+.rf-scroll--bleed { margin-right: -12px; } /* Figma: the Price Ladder table runs under the card's right edge */
+.rf-table-box { width: max-content; overflow: hidden; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #ccdde8; }
+.rf-table { table-layout: fixed; }
+.rf-card--wide .rf-table-box { min-width: 100%; } /* wide screens: the table fills the card */
+.rf-card--wide .rf-table { min-width: 100%; } /* keeps the Figma 2146px, grows only when the card is wider */
+.rf-table th, .rf-table td {
+  padding: 6px 16px; overflow: hidden; border-bottom: 1px solid #ccdde8; vertical-align: middle; white-space: nowrap;
+  font: 400 12px/18px "Poppins", sans-serif; color: #323436; text-align: left;
+}
+.rf-table th { height: 40px; background: #f4f9fc; font-weight: 600; }
+.rf-table td { height: 48px; background: #fff; }
+.rf-scroll--tall td { height: 50px; }
+.rf-table td.is-light { font-weight: 300; }
+.rf-table .rf-rule { border-left: 1px solid #ccdde8; }
+.rf-table .rf-center { text-align: center; }
+.rf-table .rf-right { text-align: right; }
+.rf-table td.rf-edit { padding: 0; text-align: center; border-bottom-color: #bfe0f5; }
+.rf-table .ad-icon { vertical-align: middle; }
+
+/* ---------- DOA "Edit Parameter" panel (Figma 3:30763, 721 × 1171), opened by Add Parameter from the right ---------- */
+.pp-panel {
+  position: fixed; inset: 0 0 0 auto; width: 721px; height: 100%; max-width: none; max-height: none; margin: 0;
+  padding: 18px 24px 24px; overflow-y: auto; color: #323436;
+  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
+  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+}
+.pp-panel::backdrop { background: transparent; } /* Figma shows no backdrop */
+.pp-panel[open] { animation: pp-slide-in 0.25s ease-out; }
+@keyframes pp-slide-in { from { transform: translateX(100%); } to { transform: none; } }
+.pp-close { position: absolute; right: 8px; top: 10px; width: 24px; height: 24px; }
+.pp-title { margin-bottom: 24px; font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; white-space: nowrap; }
+.pp-body { width: 686px; display: flex; flex-direction: column; gap: 17px; padding: 15px; background: #fff; border: 1px solid #bfe0f5; border-radius: 12px; } /* Figma: 686px, 11px into the right padding */
+.pp-section {
+  position: relative; height: 28px; margin: 0; padding: 0 12px 8px;
+  background: linear-gradient(to right, #bfe0f5 4px, transparent 4px) 0 100% / 6px 1px repeat-x; /* dashed 4 / 2 rule */
+  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap;
+}
+.pp-section::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 20px; background: linear-gradient(180deg, #47b796, #01a1fe); }
+.pp-row { display: flex; gap: 16px; margin-left: -1px; } /* Figma: these rows start 1px left of the body padding */
+.pp-field { display: flex; flex-direction: column; gap: 4px; }
+.pp-field__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.pp-field__box {
+  height: 32px; display: flex; align-items: center; gap: 10px; padding: 5px 11px;
+  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+}
+.pp-field__input {
+  flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none;
+  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+}
+.pp-field__input--noto { font: 400 14px/20px "Noto Sans", sans-serif; }
+.pp-desc { display: flex; flex-direction: column; gap: 4px; }
+.pp-desc__box { position: relative; display: block; height: 60px; }
+.pp-desc textarea {
+  display: block; width: 100%; height: 100%; margin: 0; padding: 7px 11px; resize: none; outline: 0; overflow: hidden;
+  background: #fff; border: 1px solid #a99fc0; border-radius: 8px;
+  font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476;
+}
+.pp-desc__box img { position: absolute; left: 634px; top: 40px; pointer-events: none; }
+.pp-levels { display: grid; grid-template-columns: 320px 320px; gap: 17px 12px; }
+.pp-level { height: 161px; display: flex; flex-direction: column; gap: 8px; padding: 7px 15px; overflow: hidden; background: #fff; border: 1px solid #c9ccce; border-radius: 12px; }
+.pp-level--off { opacity: 0.24; }
+.pp-level__head { height: 17px; display: flex; justify-content: space-between; align-items: flex-start; }
+.pp-badge {
+  height: 17px; padding: 1px 4px; border-radius: 4px; background: rgba(0, 181, 173, 0.08); box-shadow: inset 0 0 0 0.5px #00b5ad;
+  font: 300 10px/15px "Poppins", sans-serif; color: #3f4047; white-space: nowrap;
+}
+.pp-level--off .pp-badge { margin-left: 1px; }
+.pp-toggle {
+  width: 26px; height: 16px; flex: none; margin: 0; appearance: none; cursor: pointer; border-radius: 100px;
+  background: #c9ccce radial-gradient(circle at 8px 8px, #fff 5.5px, transparent 6px);
+}
+.pp-toggle:checked { background: #007dc5 radial-gradient(circle at 18px 8px, #fff 5.5px, transparent 6px); }
+.pp-toggle:disabled { cursor: default; }
+.pp-level__note { width: 262px; margin: 0 auto; font: 400 12px/18px "Montserrat", sans-serif; letter-spacing: 0.036px; color: #323436; text-align: center; }
+.pp-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.pp-btn {
+  height: 32px; padding: 5px 11px; background: #fff; border: 1px solid #727476; border-radius: 6px;
+  font: 500 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap;
+}
+.pp-btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }

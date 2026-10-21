@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Table footer & pagination</title>
+<!--
+  TwinX UI component: pagination
+  Name:     Table footer & pagination
+  Category: Navigation
+  CSS:      css/base.css, css/experiment.css, css/user-menu.css
+  JS:       none
+  Source:   kit/experiments.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    'Showing x to y of z entries' + page buttons. Current page: .pagination__page&#45;&#45;current + aria-current.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/experiment.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--experiment">
+<!-- snippet:start -->
+<div class="table-footer">
+  <p class="table-footer__summary">Showing 1 to 8 of 600 entries</p>
+  <nav class="pagination" aria-label="Pagination">
+    <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+    <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+    <button class="pagination__page"><span>2</span></button>
+    <button class="pagination__page"><span>3</span></button>
+    <button class="pagination__page"><span>4</span></button>
+    <button class="pagination__page"><span>5</span></button>
+    <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+  </nav>
+</div>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

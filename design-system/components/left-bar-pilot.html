@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Left menu bar (Promotion Pilot)</title>
+<!--
+  TwinX UI component: left-bar-pilot
+  Name:     Left menu bar (Promotion Pilot)
+  Category: App shell
+  CSS:      css/base.css, css/experiment.css, css/user-menu.css
+  JS:       none
+  Source:   kit/experiments.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    60px gradient bar. Items: Promotool Dashboard (grid-dots), Experiments (route), Reports (report-analytics). Mark the current page with .left-bar__item&#45;&#45;active + aria-current and the -blue icon variant where one exists.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/experiment.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--experiment">
+<!-- snippet:start -->
+<nav class="left-bar" aria-label="Primary">
+  <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+  <div class="left-bar__menus">
+    <a class="left-bar__item" href="promotool-dashboard.html" aria-label="Promotool Dashboard"><img src="assets/icons/grid-dots.svg" width="24" height="24" alt=""></a>
+    <a class="left-bar__item left-bar__item--active" href="experiments.html" aria-label="Experiments" aria-current="page"><img src="assets/icons/route.svg" width="24" height="24" alt=""></a>
+    <a class="left-bar__item" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+  </div>
+</nav>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

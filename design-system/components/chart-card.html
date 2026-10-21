@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Chart card</title>
+<!--
+  TwinX UI component: chart-card
+  Name:     Chart card
+  Category: Data display
+  CSS:      css/base.css, css/dashboard.css, css/user-menu.css
+  JS:       none
+  Source:   kit/dashboard.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Card with title and a pie chart + legend.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--dashboard">
+<!-- snippet:start -->
+<section class="card">
+  <div class="card__head"><h2 class="card__title">Pending by Market</h2></div>
+  <div class="chart">
+    <div class="chart__pie"><img src="assets/charts/pending-by-market.svg" width="229" height="229" alt="Pending by Market donut chart"></div>
+    <div class="legend">
+      <div class="legend__col">
+        <div class="legend__item"><span class="legend__dot" style="background:#4ec6de"></span><span class="legend__name">Austria</span><span class="legend__value">32%</span></div>
+        <div class="legend__item"><span class="legend__dot" style="background:#69ad6c"></span><span class="legend__name">Italy</span><span class="legend__value">32%</span></div>
+      </div>
+      <div class="legend__col">
+        <div class="legend__item"><span class="legend__dot" style="background:#d57eb2"></span><span class="legend__name">Belgium</span><span class="legend__value">32%</span></div>
+        <div class="legend__item"><span class="legend__dot" style="background:#a99e67"></span><span class="legend__name">Netherlands</span><span class="legend__value">32%</span></div>
+      </div>
+      <div class="legend__col">
+        <div class="legend__item"><span class="legend__dot" style="background:#8069ad"></span><span class="legend__name">France</span><span class="legend__value">32%</span></div>
+        <div class="legend__item"><span class="legend__dot" style="background:#698ead"></span><span class="legend__name">Portugal</span><span class="legend__value">32%</span></div>
+      </div>
+      <div class="legend__col">
+        <div class="legend__item"><span class="legend__dot" style="background:#d98086"></span><span class="legend__name">Germany</span><span class="legend__value">32%</span></div>
+        <div class="legend__item"><span class="legend__dot" style="background:#7ca5d6"></span><span class="legend__name">Spain</span><span class="legend__value">32%</span></div>
+      </div>
+      <div class="legend__col">
+        <div class="legend__item"><span class="legend__dot" style="background:#7ed5af"></span><span class="legend__name">UK</span><span class="legend__value">32%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

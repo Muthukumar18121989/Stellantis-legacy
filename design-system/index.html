@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TwinX UI — Design System</title>
+  <link rel="stylesheet" href="tokens/tokens.css">
+  <link rel="stylesheet" href="catalogue/catalogue.css">
+</head>
+<body>
+  <header class="cat-top">
+    <a class="cat-top__brand" href="#/start"><img src="kit/assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool"><span class="cat-top__name">TwinX UI <em>design system</em></span></a>
+    <label class="cat-search"><img src="kit/assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search components, templates, icons" aria-label="Search" data-search></label>
+  </header>
+  <div class="cat-layout">
+    <nav class="cat-nav" aria-label="Catalogue" data-nav></nav>
+    <main class="cat-main" data-view tabindex="-1"></main>
+  </div>
+  <script src="catalogue/manifest.js"></script>
+  <script src="catalogue/catalogue.js"></script>
+</body>
+</html>

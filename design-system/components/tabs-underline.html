@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Tabs (underline)</title>
+<!--
+  TwinX UI component: tabs-underline
+  Name:     Tabs (underline)
+  Category: Navigation
+  CSS:      css/base.css, css/dashboard.css, css/user-menu.css
+  JS:       none
+  Source:   kit/dashboard.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Region tabs with an underline bar on the active tab.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--dashboard">
+<!-- snippet:start -->
+<div class="tabs">
+  <div class="tabs__list" role="tablist">
+    <button class="tab tab--active" role="tab" aria-selected="true"><span class="tab__inner"><span class="tab__label">EE</span><span class="tab__bar"></span></span></button>
+    <button class="tab" role="tab" aria-selected="false"><span class="tab__inner"><span class="tab__label">MEA</span><span class="tab__bar"></span></span></button>
+    <button class="tab" role="tab" aria-selected="false"><span class="tab__inner"><span class="tab__label">IAP</span><span class="tab__bar"></span></span></button>
+    <button class="tab" role="tab" aria-selected="false"><span class="tab__inner"><span class="tab__label">SA</span><span class="tab__bar"></span></span></button>
+  </div>
+</div>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

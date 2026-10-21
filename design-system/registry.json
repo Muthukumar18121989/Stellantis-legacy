@@ -1,0 +1,2005 @@
+{
+  "name": "TwinX UI (Stellantis Promotool legacy design system)",
+  "howToUse": "See design-system/AGENTS.md. Pages: copy kit/<template>.html. Components: copy the snippet from components/<id>.html.",
+  "runtime": {
+    "css": "kit/css",
+    "js": "kit/js",
+    "fonts": "kit/fonts",
+    "assets": "kit/assets",
+    "note": "A consuming project copies these four folders to its web root unchanged, so every path in templates and snippets works as-is."
+  },
+  "tokens": {
+    "json": "tokens/tokens.json",
+    "css": "tokens/tokens.css"
+  },
+  "templates": [
+    {
+      "id": "index",
+      "name": "Login",
+      "file": "kit/index.html",
+      "role": "all",
+      "group": "Entry",
+      "purpose": "Sign-in screen: brand showcase on the left, form on the blue slanted panel. Demo users: Marcus Weber / user123 (Promotion Pilot, lands on experiments.html), Kristen / admin123 (Admin, lands on experiment-status.html).",
+      "title": "Promotool — Sign In",
+      "css": [
+        "css/base.css",
+        "css/login.css"
+      ],
+      "js": [
+        "js/login.js"
+      ],
+      "pageClass": "",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Sign in (Figma 88:41766, 1366 × 657)",
+          "element": "div.login"
+        },
+        {
+          "label": "Left panel: brand showcase (no Figma; Muthu asked for a richer panel with the logo centred)",
+          "element": "div.login__showcase"
+        }
+      ]
+    },
+    {
+      "id": "experiments",
+      "name": "Experiments list",
+      "file": "kit/experiments.html",
+      "role": "pilot",
+      "group": "Promotion Pilot",
+      "purpose": "Main landing page of the Promotion Pilot: Products / Network cards, filter bar, My Projects list and the Promotion Optimization table with pagination. Holds the New Promotion and Workflow History dialogs.",
+      "title": "Promotool — Experiments",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/new-promotion.js",
+        "js/experiment.js",
+        "js/workflow-history.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--experiment",
+      "dialogs": [
+        "new-promo",
+        "workflow-history"
+      ],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 26:5898)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 26:5915)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Products / Network (Figma 26:5939)",
+          "element": "div.config-cards"
+        },
+        {
+          "label": "Filters (Figma 26:6028)",
+          "element": "section.filters"
+        },
+        {
+          "label": "My Projects + Promotion Optimization (Figma 26:6052)",
+          "element": "section.projects-card"
+        },
+        {
+          "label": "New Promotion dialog (Figma 26:19996)",
+          "element": "dialog.new-promo#new-promo"
+        },
+        {
+          "label": "Workflow History dialog (Figma 55:59243), opened from the Action Status edit icon",
+          "element": "dialog.wh-dialog#workflow-history"
+        }
+      ]
+    },
+    {
+      "id": "promotool-dashboard",
+      "name": "Promotool dashboard",
+      "file": "kit/promotool-dashboard.html",
+      "role": "pilot",
+      "group": "Promotion Pilot",
+      "purpose": "Promotion-level dashboard: title bar with stepper and tags, configuration, KPIs, pacing/budget trackers, revenue and demand charts, financial summary, approval history.",
+      "title": "Promotool — Promotool Dashboard",
+      "css": [
+        "css/base.css",
+        "css/promotool-dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--promodash",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Promotool Dashboard — Figma \"Promotion level Dashboard\" (node 55:49358), 1366 × 2034",
+          "element": "div.page"
+        },
+        {
+          "label": "Promotion title bar",
+          "element": "section.pd-title"
+        },
+        {
+          "label": "Configuration",
+          "element": "section.pd-config"
+        },
+        {
+          "label": "KPIs",
+          "element": "div.pd-kpis"
+        },
+        {
+          "label": "Tabs",
+          "element": "div.pd-tabs"
+        },
+        {
+          "label": "Revenue Trajectory",
+          "element": "section.pd-card"
+        },
+        {
+          "label": "Demand trend",
+          "element": "section.pd-card"
+        },
+        {
+          "label": "Financial Summary",
+          "element": "section.pd-card"
+        },
+        {
+          "label": "Revenue Breakdown",
+          "element": "section.pd-card"
+        },
+        {
+          "label": "Approval History (collapsed)",
+          "element": "section.pd-card"
+        }
+      ]
+    },
+    {
+      "id": "promotion-configuration",
+      "name": "Promotion configuration",
+      "file": "kit/promotion-configuration.html",
+      "role": "pilot",
+      "group": "Promotion flow",
+      "purpose": "Step 1 of the promotion flow: configuration form (name, ID, type, market, applicability, brand, execution window) with Back / Next.",
+      "title": "Promotool — Promotion Configuration",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/configuration.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--configuration",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 26:12313)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 26:12330)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Breadcrumb + title (Figma 26:12370)",
+          "element": "section.cfg-header"
+        },
+        {
+          "label": "Process steps: compact stepper (css/base.css)",
+          "element": "ol.stepper"
+        },
+        {
+          "label": "Configuration table (Figma 26:12534)",
+          "element": "form.cfg-card"
+        }
+      ]
+    },
+    {
+      "id": "selection-analysis",
+      "name": "Selection & analysis",
+      "file": "kit/selection-analysis.html",
+      "role": "pilot",
+      "group": "Promotion flow",
+      "purpose": "Step 2: Article Selection Core bar, empty state, family panels, article drill-down with Exclusions / Volume Analysis / Price Analysis tabs for all six promotion types, and the Select Family dialog.",
+      "title": "Promotool — Selection &amp; Analysis",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/selection-analysis.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--selection",
+      "dialogs": [
+        "select-family",
+        "free-article"
+      ],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 26:10101)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 26:10118)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Breadcrumb + title (Figma 26:10158)",
+          "element": "section.cfg-header"
+        },
+        {
+          "label": "Process steps: compact stepper (css/base.css)",
+          "element": "ol.stepper"
+        },
+        {
+          "label": "Article selection summary (Figma 26:10321)",
+          "element": "section.sel-summary"
+        },
+        {
+          "label": "Empty state (Figma 26:10328)",
+          "element": "section.sel-empty"
+        },
+        {
+          "label": "Selected families (Figma 26:9854), filled from the Select Family dialog",
+          "element": "section.fam-list"
+        },
+        {
+          "label": "Article drill-down of one family (Figma 26:10344), opened by \"Drill Down to Article\"",
+          "element": "template#family-articles"
+        },
+        {
+          "label": "Exclusions filter sits on the family title line, right-aligned (Muthu, 2026-10-20)",
+          "element": "div.art-view__filter"
+        },
+        {
+          "label": "\"Discount on MSRP at family level\" promotion type: Volume Analysis (Figma 152:35568) and Price Analysis (Figma 152:35837) replace the default article tables of the drill-down.",
+          "element": "template#family-volume-msrp"
+        },
+        {
+          "label": "\"Free quantity of another article\" promotion type: Volume Analysis and Price Analysis tables from Muthu's 2026-10-20 screenshots, built from the default table styles; they replace the default article tables of the drill-down.",
+          "element": "template#family-volume-fq"
+        },
+        {
+          "label": "\"Free Quantity of Same Article\" promotion type: Volume Analysis and Price Analysis tables from Muthu's 2026-10-20 screenshots, same layout as the other-article type; the free article is always the same article. They replace the default article tables of the drill-down.",
+          "element": "template#family-volume-fs"
+        },
+        {
+          "label": "\"Net Special Price (PNS)\" promotion type: Volume Analysis and Price Analysis tables from Muthu's 2026-10-20 screenshots (the two price screenshots are halves of one table), built from the default table styles.",
+          "element": "template#family-volume-nsp"
+        },
+        {
+          "label": "\"Turnover Target of Same Part\" promotion type: Volume Analysis and Price Analysis tables from Muthu's 2026-10-20 screenshots (the two price screenshots are halves of one table), built from the default table styles.",
+          "element": "template#family-volume-tt"
+        },
+        {
+          "label": "\"Discount on MSRP at article level\" promotion type: Volume Analysis and Price Analysis tables from Muthu's 2026-10-20 screenshots (each pair of screenshots is the left and right of one table), built from the default table styles.",
+          "element": "template#family-volume-ma"
+        },
+        {
+          "label": "Select Family dialog (Figma 26:13500)",
+          "element": "dialog.fam-dialog#select-family"
+        },
+        {
+          "label": "Upload state (Figma 26:13985)",
+          "element": "div.fam-upload"
+        },
+        {
+          "label": "Validated state (Figma 26:14014): upload row + result banners above the family table",
+          "element": "p.fam-alert"
+        },
+        {
+          "label": "\"Free quantity of another article\": Free Article Selector, opened from the Free Article edit icon (Muthu's 2026-10-20 screenshots, family dropdown first, then the search box). Rows are static as in the screenshots.",
+          "element": "dialog.fam-dialog#free-article"
+        }
+      ]
+    },
+    {
+      "id": "simulation-result",
+      "name": "Simulation results",
+      "file": "kit/simulation-result.html",
+      "role": "pilot",
+      "group": "Promotion flow",
+      "purpose": "Step 3: promotion summary, tabbed results (Financial Outcome Summary KPIs, Metric Comparison, Promotion Drilldown, Top & Low Articles) and page actions.",
+      "title": "Promotool — Simulation Results",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/result.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--result",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 26:14505)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 26:14522)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Breadcrumb + title + iteration (Figma 26:14563)",
+          "element": "section.res-header"
+        },
+        {
+          "label": "Process steps: compact stepper (css/base.css)",
+          "element": "ol.stepper"
+        },
+        {
+          "label": "Promotion summary (Figma 26:14729)",
+          "element": "section.res-summary"
+        },
+        {
+          "label": "Results split into tabs so each part fits one screen (2026-10-13, Muthu's request); filters sit on the tab row",
+          "element": "div.res-tabs-row"
+        }
+      ]
+    },
+    {
+      "id": "logistics-volume-split",
+      "name": "Logistics volume split",
+      "file": "kit/logistics-volume-split.html",
+      "role": "pilot",
+      "group": "Promotion flow",
+      "purpose": "Pre-order volume split by family and month with article drill-down; Submit for Approval dialog.",
+      "title": "Promotool — Promotion Validation / Logistics Volume Split",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/validation.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/validation.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--validation",
+      "dialogs": [
+        "submit-approval"
+      ],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 55:40383)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 55:40400)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Breadcrumb + title (Figma 55:40441)",
+          "element": "section.res-header"
+        },
+        {
+          "label": "Promotion summary (Figma 55:40581)",
+          "element": "section.vs-summary"
+        },
+        {
+          "label": "Define Pre-Order Volume Split (Figma 55:40608); .is-drilldown shows one family's articles (Figma 55:44872)",
+          "element": "section.vs-card"
+        },
+        {
+          "label": "Submit Promotion for Approval (Figma 128:57162), opened by Initiate Approval",
+          "element": "dialog.sa-dialog#submit-approval"
+        }
+      ]
+    },
+    {
+      "id": "workflow-tracker",
+      "name": "Workflow tracker",
+      "file": "kit/workflow-tracker.html",
+      "role": "pilot",
+      "group": "Promotion flow",
+      "purpose": "Promotion tracking lifecycle (stages and steps), high level targets, family & article validation table; Volume Split Needed and Validator Comments dialogs.",
+      "title": "Promotool — Workflow Tracker",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/validation.css",
+        "css/workflow.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/workflow.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--workflow",
+      "dialogs": [
+        "volume-split",
+        "validator-comments"
+      ],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 55:37137)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 55:37154)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Breadcrumb + title (Figma 55:37195)",
+          "element": "section.res-header"
+        },
+        {
+          "label": "Promotion summary (Figma 55:37333)",
+          "element": "section.wf-summary"
+        },
+        {
+          "label": "Promotion Tracking Lifecycle (Figma 55:37633): the stage row is wider than the card and scrolls sideways",
+          "element": "section.wf-card"
+        },
+        {
+          "label": "Promotion high level targets (Figma 55:38132)",
+          "element": "section.wf-card"
+        },
+        {
+          "label": "Family & Article Level Validation Analysis (Figma 55:38470)",
+          "element": "section.wf-card"
+        },
+        {
+          "label": "Volume Split Needed: opened by Modify Promotion; Cancel, X, a click outside or a valid Confirm Split close it",
+          "element": "dialog.sa-dialog#volume-split"
+        },
+        {
+          "label": "Validator Comments (Figma 55:58362): centred overlay on a 30% black backdrop, closes on X or a click outside",
+          "element": "dialog.wf-comments#validator-comments"
+        }
+      ]
+    },
+    {
+      "id": "compare",
+      "name": "Experiment compare",
+      "file": "kit/compare.html",
+      "role": "pilot",
+      "group": "Reports",
+      "purpose": "Side-by-side compare of 2-3 experiments: configuration summary, product & pricing, output metrics.",
+      "title": "Promotool — Experiment Compare",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/reports.css",
+        "css/compare.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/compare.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--compare",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 55:52532)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 55:52549)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Breadcrumb + title + Download (Figma 55:52583)",
+          "element": "section.rp-header"
+        },
+        {
+          "label": "Configuration Summary (Figma 55:53211)",
+          "element": "section.rp-card"
+        },
+        {
+          "label": "Configure Product and Pricing (Figma 55:55306)",
+          "element": "section.rp-card"
+        },
+        {
+          "label": "Output Summary (Figma 55:56536)",
+          "element": "section.rp-card"
+        }
+      ]
+    },
+    {
+      "id": "reports",
+      "name": "Report hub",
+      "file": "kit/reports.html",
+      "role": "pilot",
+      "group": "Reports",
+      "purpose": "Report hub with tabs: stage tracker, performance summary tiles, tracking table; Advanced Analytics tab with elasticity chart and markets table; Customize Your Report dialog.",
+      "title": "Promotool — Report Hub",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/reports.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/reports.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--reports",
+      "dialogs": [
+        "report-download"
+      ],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 55:51174)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 55:51191)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Breadcrumb + title + Download (Figma 55:51225)",
+          "element": "section.rp-header"
+        },
+        {
+          "label": "Tabs (Figma 13313:64989)",
+          "element": "div.rp-tabs"
+        },
+        {
+          "label": "Filters (Figma 13313:64998)",
+          "element": "section.rp-filters"
+        },
+        {
+          "label": "Promotion Stage Tracker (Figma 13313:65011)",
+          "element": "section.rp-card"
+        },
+        {
+          "label": "Promotion Performance Summary (Figma 13313:66007)",
+          "element": "section.rp-card"
+        },
+        {
+          "label": "Promotion Tracking (Figma 13297:95390)",
+          "element": "section.rp-card"
+        },
+        {
+          "label": "Filters (Figma 13336:70526)",
+          "element": "section.rp-filters"
+        },
+        {
+          "label": "Price Elasticity (Figma 13283:140463)",
+          "element": "section.rp-card"
+        },
+        {
+          "label": "Part elasticity across markets (Figma 16382:65995)",
+          "element": "section.rp-card"
+        }
+      ]
+    },
+    {
+      "id": "experiment-status",
+      "name": "Approval dashboard",
+      "file": "kit/experiment-status.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "Admin landing page (Kristen): Products / Network cards, filters, promotion approval table with status tabs; approve / reject and Workflow History dialogs.",
+      "title": "Promotool — Promotion Approval Dashboard",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/experiment.css",
+        "css/experiment-status.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/experiment-status.js",
+        "js/workflow-history.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--status",
+      "dialogs": [
+        "es-approve",
+        "es-reject",
+        "workflow-history"
+      ],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 88:17701)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 88:17719)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Products / Network (Figma 88:17746)",
+          "element": "div.config-cards"
+        },
+        {
+          "label": "Filters (Figma 88:17835)",
+          "element": "section.filters"
+        },
+        {
+          "label": "Promotion Approval Dashboard (Figma 88:17858)",
+          "element": "section.es-card"
+        },
+        {
+          "label": "Workflow History dialog (Figma 55:59243), opened from the Action Status edit icon",
+          "element": "dialog.wh-dialog#workflow-history"
+        }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "name": "Admin dashboard",
+      "file": "kit/dashboard.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "Promotion admin dashboard: page header, filters, region tabs, NSC / Importers segments, pie charts, stat cards, requests table.",
+      "title": "Promotion Admin Dashboard",
+      "css": [
+        "css/base.css",
+        "css/dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--dashboard",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Left menu bar (Figma 3:12254)",
+          "element": "nav.left-bar"
+        },
+        {
+          "label": "Top menu (Figma 3:12272)",
+          "element": "header.top-menu"
+        },
+        {
+          "label": "Page header (Figma 3:12307)",
+          "element": "section.page-header"
+        },
+        {
+          "label": "Filters (Figma 3:12446)",
+          "element": "section.filters"
+        },
+        {
+          "label": "Region tabs (Figma 3:12470)",
+          "element": "div.tabs"
+        },
+        {
+          "label": "NSC / Importers (Figma 3:12480)",
+          "element": "div.segments"
+        },
+        {
+          "label": "Charts (Figma 3:12488)",
+          "element": "div.charts"
+        },
+        {
+          "label": "Stat cards (Figma 3:13555)",
+          "element": "div.stats"
+        },
+        {
+          "label": "Requests table (Figma 3:13666)",
+          "element": "section.table-card"
+        }
+      ]
+    },
+    {
+      "id": "doa-rules",
+      "name": "DOA rules",
+      "file": "kit/doa-rules.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "Delegation of Authority rules table with the parameter side panel dialog.",
+      "title": "Promotool — Delegation of Authority (DOA) Rules",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/admin.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--admin page--doa",
+      "dialogs": [
+        "doa-param"
+      ],
+      "sections": [
+        {
+          "label": "Delegation of Authority (DOA) Rules — Figma node 100:42880, 1366 × 600",
+          "element": "div.page"
+        }
+      ]
+    },
+    {
+      "id": "user-management",
+      "name": "User management",
+      "file": "kit/user-management.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "User list table with search, sort and status.",
+      "title": "Promotool — User Management",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--admin page--users",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "User Management — Figma node 100:48479, 1366 × 604",
+          "element": "div.page"
+        }
+      ]
+    },
+    {
+      "id": "user-edit",
+      "name": "User create / edit",
+      "file": "kit/user-edit.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "User details form, delegates, bulk upload and saved dialogs.",
+      "title": "Promotool — Delegation of Authority (DOA)",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/admin.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--admin page--user-edit",
+      "dialogs": [
+        "ue-bulk",
+        "ue-saved"
+      ],
+      "sections": [
+        {
+          "label": "User Creation / Edit Delegate — Figma node 100:50428, 1366 × 727",
+          "element": "div.page"
+        }
+      ]
+    },
+    {
+      "id": "user-bulk-preview",
+      "name": "User bulk preview",
+      "file": "kit/user-bulk-preview.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "Preview table of bulk-uploaded users with saved dialog.",
+      "title": "Promotool — Bulk Upload Preview",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/admin.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--admin page--preview",
+      "dialogs": [
+        "bp-saved"
+      ],
+      "sections": [
+        {
+          "label": "Bulk Upload Preview — Figma node 100:49079, 2239 × 586",
+          "element": "div.page"
+        }
+      ]
+    },
+    {
+      "id": "role-management",
+      "name": "Role management",
+      "file": "kit/role-management.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "Role summary counts and capability legend, roles table.",
+      "title": "Promotool — Role Management",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--admin page--roles",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Role Management — Figma node 100:49454, 1366 × 822",
+          "element": "div.page"
+        }
+      ]
+    },
+    {
+      "id": "role-create",
+      "name": "Role create",
+      "file": "kit/role-create.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "Create role form with capability checkboxes and saved dialog.",
+      "title": "Promotool — Create Role",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/admin.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--admin page--create-role",
+      "dialogs": [
+        "cr-saved"
+      ],
+      "sections": [
+        {
+          "label": "Create Role Management — Figma node 100:49929, 1366 × 638",
+          "element": "div.page"
+        }
+      ]
+    },
+    {
+      "id": "referential",
+      "name": "Referential",
+      "file": "kit/referential.html",
+      "role": "admin",
+      "group": "Admin",
+      "purpose": "Referential data: filters, tabs and several data table cards.",
+      "title": "Promotool — Referential",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/admin.js",
+        "js/user-menu.js"
+      ],
+      "pageClass": "page--admin page--referential",
+      "dialogs": [],
+      "sections": [
+        {
+          "label": "Referential — Figma node 100:48853, 1366 × 702; tab panels from 100:50729",
+          "element": "div.page"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "app-shell",
+      "name": "App shell",
+      "category": "App shell",
+      "description": "Page frame used by every signed-in page: .page > .left-bar + .main > .top-menu + page body. Fluid from 1280px; the left bar runs full height. Start every new page from this (or from a template).",
+      "file": "components/app-shell.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1366,
+      "height": 420
+    },
+    {
+      "id": "left-bar-pilot",
+      "name": "Left menu bar (Promotion Pilot)",
+      "category": "App shell",
+      "description": "60px gradient bar. Items: Promotool Dashboard (grid-dots), Experiments (route), Reports (report-analytics). Mark the current page with .left-bar__item--active + aria-current and the -blue icon variant where one exists.",
+      "file": "components/left-bar-pilot.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 120,
+      "height": 300
+    },
+    {
+      "id": "left-bar-admin",
+      "name": "Left menu bar (Admin)",
+      "category": "App shell",
+      "description": "Admin variant: Home, DOA Rules, User Management, Role Management, Referential.",
+      "file": "components/left-bar-admin.html",
+      "source": "kit/doa-rules.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 120,
+      "height": 380
+    },
+    {
+      "id": "top-menu",
+      "name": "Top menu",
+      "category": "App shell",
+      "description": "56px white bar: the single Stellantis Promotool logo, notifications, language, profile (name + role). Clicking the profile opens the user menu (js/user-menu.js).",
+      "file": "components/top-menu.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1306,
+      "height": 110
+    },
+    {
+      "id": "user-menu",
+      "name": "User menu & settings",
+      "category": "App shell",
+      "description": "Built by js/user-menu.js from the profile name/role in the top menu: a menu with Settings and Log Out; Settings opens the User Settings dialog. Include css/user-menu.css and js/user-menu.js on every signed-in page.",
+      "file": "components/user-menu.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/user-menu.js"
+      ],
+      "width": 1306,
+      "height": 520
+    },
+    {
+      "id": "page-header-flow",
+      "name": "Page header with stepper",
+      "category": "Page headers",
+      "description": "Breadcrumb + 24px page title + compact stepper on one bar. Used by the promotion flow pages.",
+      "file": "components/page-header-flow.html",
+      "source": "kit/promotion-configuration.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1306,
+      "height": 120
+    },
+    {
+      "id": "page-header-result",
+      "name": "Page header with stepper and actions",
+      "category": "Page headers",
+      "description": "Results variant: breadcrumb, title, stepper and right-side actions (iteration switch).",
+      "file": "components/page-header-result.html",
+      "source": "kit/simulation-result.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1306,
+      "height": 120
+    },
+    {
+      "id": "page-header-report",
+      "name": "Page header with download",
+      "category": "Page headers",
+      "description": "Report hub header: breadcrumb, title and Download button.",
+      "file": "components/page-header-report.html",
+      "source": "kit/reports.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/reports.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1306,
+      "height": 120
+    },
+    {
+      "id": "page-header-admin",
+      "name": "Admin page header",
+      "category": "Page headers",
+      "description": "Admin header with breadcrumb, title and subtitle.",
+      "file": "components/page-header-admin.html",
+      "source": "kit/doa-rules.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1306,
+      "height": 140
+    },
+    {
+      "id": "page-header-dashboard",
+      "name": "Dashboard page header",
+      "category": "Page headers",
+      "description": "Admin dashboard header: breadcrumb and title.",
+      "file": "components/page-header-dashboard.html",
+      "source": "kit/dashboard.html",
+      "css": [
+        "css/base.css",
+        "css/dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1306,
+      "height": 120
+    },
+    {
+      "id": "breadcrumb",
+      "name": "Breadcrumb",
+      "category": "Navigation",
+      "description": "Home icon / links / current page. Separators are .breadcrumb__sep.",
+      "file": "components/breadcrumb.html",
+      "source": "kit/promotion-configuration.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 600,
+      "height": 80
+    },
+    {
+      "id": "stepper",
+      "name": "Stepper",
+      "category": "Navigation",
+      "description": "Shared one-line stepper (css/base.css). States: .stepper__step--done (green check), --current (blue pill), --todo (grey). Every process flow uses it.",
+      "file": "components/stepper.html",
+      "source": "kit/promotion-configuration.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 700,
+      "height": 80
+    },
+    {
+      "id": "tabs-underline",
+      "name": "Tabs (underline)",
+      "category": "Navigation",
+      "description": "Region tabs with an underline bar on the active tab.",
+      "file": "components/tabs-underline.html",
+      "source": "kit/dashboard.html",
+      "css": [
+        "css/base.css",
+        "css/dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 700,
+      "height": 90
+    },
+    {
+      "id": "segments",
+      "name": "Segmented control",
+      "category": "Navigation",
+      "description": "Two-option segmented switch (NSC / Importers).",
+      "file": "components/segments.html",
+      "source": "kit/dashboard.html",
+      "css": [
+        "css/base.css",
+        "css/dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 500,
+      "height": 90
+    },
+    {
+      "id": "tabs-pill",
+      "name": "Tabs (result)",
+      "category": "Navigation",
+      "description": "Tab row with filters on the right, used on the results page (.art-tabs / .art-tab).",
+      "file": "components/tabs-pill.html",
+      "source": "kit/simulation-result.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 90
+    },
+    {
+      "id": "pagination",
+      "name": "Table footer & pagination",
+      "category": "Navigation",
+      "description": "'Showing x to y of z entries' + page buttons. Current page: .pagination__page--current + aria-current.",
+      "file": "components/pagination.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 700,
+      "height": 80
+    },
+    {
+      "id": "buttons-core",
+      "name": "Buttons (core)",
+      "category": "Buttons & inputs",
+      "description": "Primary button, icon button, square add button and the dialog Create button.",
+      "file": "components/buttons-core.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 700,
+      "height": 110
+    },
+    {
+      "id": "buttons-flow",
+      "name": "Buttons (flow)",
+      "category": "Buttons & inputs",
+      "description": "Outline (Back / Cancel), Next, Validate, outline-with-icon, 'N Selected' and primary icon buttons used on the flow pages (css/configuration.css).",
+      "file": "components/buttons-flow.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 900,
+      "height": 110
+    },
+    {
+      "id": "buttons-admin",
+      "name": "Buttons (admin)",
+      "category": "Buttons & inputs",
+      "description": "Admin form buttons: secondary (link) and primary.",
+      "file": "components/buttons-admin.html",
+      "source": "kit/role-create.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 500,
+      "height": 110
+    },
+    {
+      "id": "filters",
+      "name": "Filter bar",
+      "category": "Buttons & inputs",
+      "description": "Label-over-select fields that stretch to the action buttons (Refresh, Apply, Download). Change labels/values; keep the structure.",
+      "file": "components/filters.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 130
+    },
+    {
+      "id": "filters-report",
+      "name": "Filter bar (reports)",
+      "category": "Buttons & inputs",
+      "description": "Report hub filter row with date range and Apply.",
+      "file": "components/filters-report.html",
+      "source": "kit/reports.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/reports.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 130
+    },
+    {
+      "id": "search",
+      "name": "Search field",
+      "category": "Buttons & inputs",
+      "description": "Search input with leading icon.",
+      "file": "components/search.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 400,
+      "height": 80
+    },
+    {
+      "id": "select",
+      "name": "Select dropdown",
+      "category": "Buttons & inputs",
+      "description": "Custom listbox select (from the New Promotion dialog); js/new-promotion.js opens it and picks options.",
+      "file": "components/select.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 700,
+      "height": 90
+    },
+    {
+      "id": "form-config",
+      "name": "Configuration form",
+      "category": "Buttons & inputs",
+      "description": "Label column + details column rows: text input with badge, disabled input, select + info badge, select + checkbox, radios, date window. Row heights: .cfg-row (default), --short, --tall.",
+      "file": "components/form-config.html",
+      "source": "kit/promotion-configuration.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 560
+    },
+    {
+      "id": "page-actions",
+      "name": "Page actions",
+      "category": "Buttons & inputs",
+      "description": "Back / Next pair at the bottom of a flow page.",
+      "file": "components/page-actions.html",
+      "source": "kit/promotion-configuration.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 90
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "category": "Buttons & inputs",
+      "description": "Table checkbox (.checkbox).",
+      "file": "components/checkbox.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 200,
+      "height": 70
+    },
+    {
+      "id": "status-badges",
+      "name": "Status badges",
+      "category": "Data display",
+      "description": "Status badge with dot (progress = teal: Draft / Active / Analysis Completed; pending = yellow: Planned / Submitted), and the iteration badge.",
+      "file": "components/status-badges.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 700,
+      "height": 80
+    },
+    {
+      "id": "analysis-badges",
+      "name": "Analysis badges",
+      "category": "Data display",
+      "description": "Level badge and elasticity chips used in the analysis tables (green / yellow / red).",
+      "file": "components/analysis-badges.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 600,
+      "height": 80
+    },
+    {
+      "id": "config-cards",
+      "name": "Products / Network cards",
+      "category": "Data display",
+      "description": "Two summary cards with icon, label, type list and decorative illustrations pinned to the right edge.",
+      "file": "components/config-cards.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 180
+    },
+    {
+      "id": "promotion-table-card",
+      "name": "Projects + promotion table card",
+      "category": "Data display",
+      "description": "My Projects list (left) and the Promotion Optimization table with search, actions, status badges, row actions and pagination (right). The core of the experiments list.",
+      "file": "components/promotion-table-card.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 460
+    },
+    {
+      "id": "data-table",
+      "name": "Data table",
+      "category": "Data display",
+      "description": "Table in a bordered scroll frame (.table-wrap > table.promos). Column widths via <colgroup>. Row cells: .is-light (ID), .is-bold (name). Add/remove <tr> rows freely.",
+      "file": "components/data-table.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1000,
+      "height": 320
+    },
+    {
+      "id": "stat-cards",
+      "name": "Stat cards",
+      "category": "Data display",
+      "description": "Icon + label + big number tiles.",
+      "file": "components/stat-cards.html",
+      "source": "kit/dashboard.html",
+      "css": [
+        "css/base.css",
+        "css/dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 130
+    },
+    {
+      "id": "chart-card",
+      "name": "Chart card",
+      "category": "Data display",
+      "description": "Card with title and a pie chart + legend.",
+      "file": "components/chart-card.html",
+      "source": "kit/dashboard.html",
+      "css": [
+        "css/base.css",
+        "css/dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 640,
+      "height": 360
+    },
+    {
+      "id": "requests-table",
+      "name": "Table card (admin dashboard)",
+      "category": "Data display",
+      "description": "Titled table card with pagination.",
+      "file": "components/requests-table.html",
+      "source": "kit/dashboard.html",
+      "css": [
+        "css/base.css",
+        "css/dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 460
+    },
+    {
+      "id": "kpi-cards",
+      "name": "KPI cards",
+      "category": "Data display",
+      "description": "Result KPI cards: value, comparison, uplift arrow, alert line.",
+      "file": "components/kpi-cards.html",
+      "source": "kit/simulation-result.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 330
+    },
+    {
+      "id": "result-summary",
+      "name": "Promotion summary bar",
+      "category": "Data display",
+      "description": "Promotion name and key facts (window, countries, brands, logic) on one bar.",
+      "file": "components/result-summary.html",
+      "source": "kit/simulation-result.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 120
+    },
+    {
+      "id": "selection-core",
+      "name": "Article Selection Core bar",
+      "category": "Data display",
+      "description": "One 48px line: title | counts | Manage Families.",
+      "file": "components/selection-core.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 90
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "category": "Data display",
+      "description": "Illustration + message when nothing is selected yet.",
+      "file": "components/empty-state.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 320
+    },
+    {
+      "id": "family-panel",
+      "name": "Family panel",
+      "category": "Data display",
+      "description": "Collapsible family panel with analysis cards and actions (Remove Family, Drill Down to Article). Filled from a <template> in the page.",
+      "file": "components/family-panel.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 520
+    },
+    {
+      "id": "trend-panel",
+      "name": "Monthly trend panel",
+      "category": "Data display",
+      "description": "Monthly trend tiles with a tiles / graph switch (expanded under a volume row).",
+      "file": "components/trend-panel.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 300
+    },
+    {
+      "id": "article-view",
+      "name": "Article analysis view",
+      "category": "Data display",
+      "description": "Family drill-down: title, filter, Exclusions / Volume Analysis / Price Analysis tabs and the exclusions table with pagination.",
+      "file": "components/article-view.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/selection-analysis.js"
+      ],
+      "width": 1260,
+      "height": 520
+    },
+    {
+      "id": "lifecycle",
+      "name": "Lifecycle tracker",
+      "category": "Data display",
+      "description": "Promotion tracking lifecycle: stages with done / active / waiting steps; scrolls sideways.",
+      "file": "components/lifecycle.html",
+      "source": "kit/workflow-tracker.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/validation.css",
+        "css/workflow.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 340
+    },
+    {
+      "id": "volume-split",
+      "name": "Volume split table card",
+      "category": "Data display",
+      "description": "Family x month volume split with sticky columns, chips and pagination.",
+      "file": "components/volume-split.html",
+      "source": "kit/logistics-volume-split.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/validation.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/validation.js"
+      ],
+      "width": 1260,
+      "height": 560
+    },
+    {
+      "id": "stage-tracker",
+      "name": "Stage tracker",
+      "category": "Data display",
+      "description": "Horizontal stage tracker with icons.",
+      "file": "components/stage-tracker.html",
+      "source": "kit/reports.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/reports.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 180
+    },
+    {
+      "id": "summary-tiles",
+      "name": "Summary tiles",
+      "category": "Data display",
+      "description": "Performance summary tiles with uplift range.",
+      "file": "components/summary-tiles.html",
+      "source": "kit/reports.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/reports.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 220
+    },
+    {
+      "id": "promo-title-bar",
+      "name": "Promotion title bar",
+      "category": "Data display",
+      "description": "Promotion name, tags, stepper and Download on the Promotool Dashboard.",
+      "file": "components/promo-title-bar.html",
+      "source": "kit/promotool-dashboard.html",
+      "css": [
+        "css/base.css",
+        "css/promotool-dashboard.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1300,
+      "height": 140
+    },
+    {
+      "id": "admin-table-card",
+      "name": "Admin table card",
+      "category": "Data display",
+      "description": "Admin card: title, search, sortable table, status, pagination.",
+      "file": "components/admin-table-card.html",
+      "source": "kit/user-management.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 460
+    },
+    {
+      "id": "role-summary",
+      "name": "Role summary",
+      "category": "Data display",
+      "description": "Role counts and capability legend.",
+      "file": "components/role-summary.html",
+      "source": "kit/role-management.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1260,
+      "height": 220
+    },
+    {
+      "id": "alerts",
+      "name": "Alert banners",
+      "category": "Feedback",
+      "description": "Success / error banners (Montserrat) shown after validation.",
+      "file": "components/alerts.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 900,
+      "height": 120
+    },
+    {
+      "id": "dialog-new-promotion",
+      "name": "New Promotion dialog",
+      "category": "Dialogs",
+      "description": "Modal form: radios, select, text input, Create Promotion. Open with dialog.showModal(); [data-close-dialog] closes.",
+      "file": "components/dialog-new-promotion.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/new-promotion.js"
+      ],
+      "width": 1100,
+      "height": 520
+    },
+    {
+      "id": "dialog-workflow-history",
+      "name": "Workflow History dialog",
+      "category": "Dialogs",
+      "description": "Promotion ID / name and an iteration history table with approved / rejected badges.",
+      "file": "components/dialog-workflow-history.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1100,
+      "height": 640
+    },
+    {
+      "id": "dialog-approve",
+      "name": "Approve with comments dialog",
+      "category": "Dialogs",
+      "description": "Confirmation dialog with comments box (approve / reject).",
+      "file": "components/dialog-approve.html",
+      "source": "kit/experiment-status.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/experiment.css",
+        "css/experiment-status.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 900,
+      "height": 460
+    },
+    {
+      "id": "dialog-select-family",
+      "name": "Select Family dialog",
+      "category": "Dialogs",
+      "description": "Search / upload families, validate, table with checkboxes and 'N Selected'. States via data-state: list, upload, validated.",
+      "file": "components/dialog-select-family.html",
+      "source": "kit/selection-analysis.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1200,
+      "height": 720
+    },
+    {
+      "id": "dialog-submit-approval",
+      "name": "Submit for Approval dialog",
+      "category": "Dialogs",
+      "description": "Radio choices and Proceed.",
+      "file": "components/dialog-submit-approval.html",
+      "source": "kit/logistics-volume-split.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/validation.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 900,
+      "height": 520
+    },
+    {
+      "id": "dialog-volume-split",
+      "name": "Volume Split Needed dialog",
+      "category": "Dialogs",
+      "description": "Split inputs with totals check, reason box, Cancel / Confirm Split.",
+      "file": "components/dialog-volume-split.html",
+      "source": "kit/workflow-tracker.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/validation.css",
+        "css/workflow.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1000,
+      "height": 620
+    },
+    {
+      "id": "dialog-validator-comments",
+      "name": "Validator Comments dialog",
+      "category": "Dialogs",
+      "description": "Comments thread per validator.",
+      "file": "components/dialog-validator-comments.html",
+      "source": "kit/workflow-tracker.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/result.css",
+        "css/validation.css",
+        "css/workflow.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 900,
+      "height": 560
+    },
+    {
+      "id": "dialog-report-download",
+      "name": "Customize Your Report dialog",
+      "category": "Dialogs",
+      "description": "Checkbox table of report sections with PDF / CSV buttons.",
+      "file": "components/dialog-report-download.html",
+      "source": "kit/reports.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/reports.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1000,
+      "height": 640
+    },
+    {
+      "id": "dialog-side-panel",
+      "name": "Side panel dialog",
+      "category": "Dialogs",
+      "description": "Right-hand side panel with fields, levels and toggles (DOA parameter).",
+      "file": "components/dialog-side-panel.html",
+      "source": "kit/doa-rules.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 1300,
+      "height": 700
+    },
+    {
+      "id": "dialog-saved",
+      "name": "Saved confirmation dialog",
+      "category": "Dialogs",
+      "description": "Small success confirmation.",
+      "file": "components/dialog-saved.html",
+      "source": "kit/user-edit.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 800,
+      "height": 400
+    },
+    {
+      "id": "dialog-bulk-upload",
+      "name": "Bulk upload dialog",
+      "category": "Dialogs",
+      "description": "File picker with template link.",
+      "file": "components/dialog-bulk-upload.html",
+      "source": "kit/user-edit.html",
+      "css": [
+        "css/base.css",
+        "css/configuration.css",
+        "css/admin.css",
+        "css/user-menu.css"
+      ],
+      "js": [],
+      "width": 900,
+      "height": 480
+    }
+  ],
+  "icons": [
+    "assets/icons/alert-circle-red.svg",
+    "assets/icons/alert-circle-yellow.svg",
+    "assets/icons/alert-circle.svg",
+    "assets/icons/alert-triangle-large-red.svg",
+    "assets/icons/alert-triangle-large.svg",
+    "assets/icons/alert-triangle-red.svg",
+    "assets/icons/alert-triangle.svg",
+    "assets/icons/arrow-right-16.svg",
+    "assets/icons/arrow-right.svg",
+    "assets/icons/arrow-up-green.svg",
+    "assets/icons/arrow-up-red.svg",
+    "assets/icons/arrow-up.svg",
+    "assets/icons/arrows-down-up-thin.svg",
+    "assets/icons/arrows-down-up.svg",
+    "assets/icons/bell.svg",
+    "assets/icons/breadcrumb-home.svg",
+    "assets/icons/building-store.svg",
+    "assets/icons/calendar-thin.svg",
+    "assets/icons/calendar.svg",
+    "assets/icons/caret-right-blue.svg",
+    "assets/icons/chart-bar-white.svg",
+    "assets/icons/chart-line.svg",
+    "assets/icons/chart-pie-2.svg",
+    "assets/icons/check-dark-24.svg",
+    "assets/icons/check-green.svg",
+    "assets/icons/check-grey.svg",
+    "assets/icons/check-light.svg",
+    "assets/icons/check-white-16.svg",
+    "assets/icons/check-white.svg",
+    "assets/icons/check.svg",
+    "assets/icons/chevron-down-24.svg",
+    "assets/icons/chevron-down-filled.svg",
+    "assets/icons/chevron-down-light.svg",
+    "assets/icons/chevron-down-white.svg",
+    "assets/icons/chevron-down.svg",
+    "assets/icons/chevron-right.svg",
+    "assets/icons/circle-blue.svg",
+    "assets/icons/circle-check-green-24.svg",
+    "assets/icons/circle-check.svg",
+    "assets/icons/circle-grey.svg",
+    "assets/icons/circle-white-16.svg",
+    "assets/icons/clock.svg",
+    "assets/icons/database-blue.svg",
+    "assets/icons/database.svg",
+    "assets/icons/download-white.svg",
+    "assets/icons/download.svg",
+    "assets/icons/eye-bold.svg",
+    "assets/icons/eye.svg",
+    "assets/icons/file-info-large.svg",
+    "assets/icons/file-x.svg",
+    "assets/icons/grid-dots-blue.svg",
+    "assets/icons/grid-dots.svg",
+    "assets/icons/hammer-blue.svg",
+    "assets/icons/hammer.svg",
+    "assets/icons/hierarchy-blue.svg",
+    "assets/icons/hierarchy.svg",
+    "assets/icons/home-white.svg",
+    "assets/icons/home.svg",
+    "assets/icons/info.svg",
+    "assets/icons/layout-grid-white.svg",
+    "assets/icons/letter-a.svg",
+    "assets/icons/letter-j.svg",
+    "assets/icons/lock-open.svg",
+    "assets/icons/lock.svg",
+    "assets/icons/menu.svg",
+    "assets/icons/notes-grey.svg",
+    "assets/icons/notes-small.svg",
+    "assets/icons/notes.svg",
+    "assets/icons/package.svg",
+    "assets/icons/pencil-grey-24.svg",
+    "assets/icons/pencil.svg",
+    "assets/icons/percentage-24.svg",
+    "assets/icons/percentage.svg",
+    "assets/icons/plus-thin.svg",
+    "assets/icons/plus.svg",
+    "assets/icons/product-recommendation.svg",
+    "assets/icons/refresh-dark.svg",
+    "assets/icons/refresh-white.svg",
+    "assets/icons/refresh.svg",
+    "assets/icons/report-analytics-active.svg",
+    "assets/icons/report-analytics.svg",
+    "assets/icons/report-money.svg",
+    "assets/icons/report-search.svg",
+    "assets/icons/route-white.svg",
+    "assets/icons/route.svg",
+    "assets/icons/search-bold.svg",
+    "assets/icons/search.svg",
+    "assets/icons/send.svg",
+    "assets/icons/stack-3-large.svg",
+    "assets/icons/stack.svg",
+    "assets/icons/step-chart-line.svg",
+    "assets/icons/step-checkbox.svg",
+    "assets/icons/step-circle-check.svg",
+    "assets/icons/step-clock.svg",
+    "assets/icons/step-edit.svg",
+    "assets/icons/table-options.svg",
+    "assets/icons/tag-large.svg",
+    "assets/icons/tag-white.svg",
+    "assets/icons/tag.svg",
+    "assets/icons/textarea-resize.svg",
+    "assets/icons/trash-grey-24.svg",
+    "assets/icons/trending-up-white.svg",
+    "assets/icons/trophy-green.svg",
+    "assets/icons/trophy.svg",
+    "assets/icons/upload.svg",
+    "assets/icons/user-blue.svg",
+    "assets/icons/user-grey.svg",
+    "assets/icons/user.svg",
+    "assets/icons/users-blue.svg",
+    "assets/icons/world.svg",
+    "assets/icons/x-dark.svg",
+    "assets/icons/x-grey.svg",
+    "assets/icons/x.svg"
+  ]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · User menu & settings</title>
+<!--
+  TwinX UI component: user-menu
+  Name:     User menu & settings
+  Category: App shell
+  CSS:      css/base.css, css/experiment.css, css/user-menu.css
+  JS:       js/user-menu.js
+  Source:   kit/experiments.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Built by js/user-menu.js from the profile name/role in the top menu: a menu with Settings and Log Out; Settings opens the User Settings dialog. Include css/user-menu.css and js/user-menu.js on every signed-in page.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/experiment.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--experiment">
+<!-- snippet:start -->
+<header class="top-menu">
+  <div class="top-menu__logo">
+    <div class="brand">
+      <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
+    </div>
+  </div>
+  <div class="top-menu__right">
+    <button class="notif" aria-label="Notifications (5)">
+      <img src="assets/icons/bell.svg" width="24" height="24" alt="">
+      <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
+      <span class="notif__count">5</span>
+    </button>
+    <button class="lang">
+      <span class="lang__label">English</span>
+      <span class="lang__icons">
+        <img src="assets/icons/world.svg" width="24" height="24" alt="">
+        <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+      </span>
+    </button>
+    <button class="profile">
+      <span class="profile__name">MARCUS WEBER</span>
+      <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
+    </button>
+  </div>
+</header>
+<!-- snippet:end -->
+</div>
+<script src="js/user-menu.js"></script>
+<script>setTimeout(function(){var p=document.querySelector('.profile');p&&p.click();},50)</script>
+</body>
+</html>

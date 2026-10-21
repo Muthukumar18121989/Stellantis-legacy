@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Page header with download</title>
+<!--
+  TwinX UI component: page-header-report
+  Name:     Page header with download
+  Category: Page headers
+  CSS:      css/base.css, css/configuration.css, css/reports.css, css/user-menu.css
+  JS:       none
+  Source:   kit/reports.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Report hub header: breadcrumb, title and Download button.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/reports.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--reports">
+<!-- snippet:start -->
+<section class="rp-header">
+  <div class="rp-header__text">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <img src="assets/icons/report-search.svg" width="24" height="24" alt="">
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__current" aria-current="page">Reports</span>
+    </nav>
+    <h1 class="cfg-header__title rp-header__title">Report Hub</h1>
+  </div>
+  <button class="rp-btn rp-btn--download" type="button" data-open-dialog="report-download"><img src="assets/icons/download-white.svg" width="16" height="16" alt="">Download</button>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

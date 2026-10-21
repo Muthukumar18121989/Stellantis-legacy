@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Breadcrumb</title>
+<!--
+  TwinX UI component: breadcrumb
+  Name:     Breadcrumb
+  Category: Navigation
+  CSS:      css/base.css, css/configuration.css, css/user-menu.css
+  JS:       none
+  Source:   kit/promotion-configuration.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Home icon / links / current page. Separators are .breadcrumb__sep.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--configuration">
+<!-- snippet:start -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="experiments.html" aria-label="Home"><img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt=""></a>
+  <span class="breadcrumb__sep">/</span>
+  <a class="breadcrumb__link" href="experiments.html">Dashboard</a>
+  <span class="breadcrumb__sep">/</span>
+  <span class="breadcrumb__current" aria-current="page">Configuration</span>
+</nav>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

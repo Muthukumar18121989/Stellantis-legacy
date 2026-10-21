@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Select dropdown</title>
+<!--
+  TwinX UI component: select
+  Name:     Select dropdown
+  Category: Buttons & inputs
+  CSS:      css/base.css, css/experiment.css, css/user-menu.css
+  JS:       none
+  Source:   kit/experiments.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Custom listbox select (from the New Promotion dialog); js/new-promotion.js opens it and picks options.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/experiment.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--experiment">
+<!-- snippet:start -->
+<div class="select" data-select>
+  <button class="select__trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="promo-type-label promo-type-value">
+    <span class="select__value" id="promo-type-value">Discount on MSRP at article level, for the NSC/ importer’s, with/without threshold</span>
+    <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
+  </button>
+  <ul class="select__list" role="listbox" aria-labelledby="promo-type-label" tabindex="-1" hidden>
+        <li class="select__option" id="promo-type-1" role="option" aria-selected="true" title="Discount on MSRP at article level, for the NSC/ importer’s, with/without threshold">Discount on MSRP at article level, for the NSC/ importer’s, with/without threshold</li>
+        <li class="select__option" id="promo-type-2" role="option" aria-selected="false" title="Discount on MSRP at family level, for the NSC/ importer’s, with/without threshold">Discount on MSRP at family level, for the NSC/ importer’s, with/without threshold</li>
+        <li class="select__option" id="promo-type-3" role="option" aria-selected="false" title="Net Special Price (PNS), with/without thresholds">Net Special Price (PNS), with/without thresholds</li>
+        <li class="select__option" id="promo-type-4" role="option" aria-selected="false" title="Free Quantity of Same Article, with/without thresholds">Free Quantity of Same Article, with/without thresholds</li>
+        <li class="select__option" id="promo-type-5" role="option" aria-selected="false" title="Free quantity of another article, with/without thresholds">Free quantity of another article, with/without thresholds</li>
+        <li class="select__option" id="promo-type-6" role="option" aria-selected="false" title="Turnover Target of Same Part">Turnover Target of Same Part</li>
+  </ul>
+</div>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* TwinX UI design tokens. Generated from tokens.json by scripts/build.py; do not edit by hand.
+   The legacy CSS (css/*.css) hard-codes these values; use the variables for anything new. */
+:root {
+  /* color */
+  --tx-color-brand-primary: #007dc5; /* Primary buttons, links, active page in pagination, current stepper dot, iteration badge outline */
+  --tx-color-brand-primary-strong: #196c9b; /* Page titles (h1), current stepper label */
+  --tx-color-brand-primary-deep: #0066a1; /* Pressed / dark-blue text accents */
+  --tx-color-brand-sky: #00a0ff; /* Left bar gradient end, chart blue */
+  --tx-color-brand-teal: #47b695; /* Left bar gradient start */
+  --tx-color-text-primary: #323436; /* Body text, table cells, labels, profile name */
+  --tx-color-text-secondary: #727476; /* Muted text, placeholders, inactive stepper, language label */
+  --tx-color-text-badge: #3f4047; /* Text inside status badges */
+  --tx-color-text-on-brand: #ffffff; /* Text on primary buttons and on the left bar */
+  --tx-color-surface-app: #d4edfd; /* Page background behind every card */
+  --tx-color-surface-card: #ffffff; /* Cards, tables, top menu, inputs */
+  --tx-color-surface-filter: #f6fcff; /* Filter bar background */
+  --tx-color-surface-tint: #eff9ff; /* Table header rows, tinted panels */
+  --tx-color-surface-selected: #f4f9fc; /* Selected pagination page, selected list item */
+  --tx-color-surface-current: #eaf5fc; /* Current stepper pill */
+  --tx-color-surface-muted: #f8f9fb; /* Disabled inputs, muted rows */
+  --tx-color-surface-subtle: #f2f4f6; /* Neutral chips, grey fills */
+  --tx-color-border-neutral: #c9ccce; /* Table cell grid, dividers, inactive stepper connector */
+  --tx-color-border-brand: #bfe0f5; /* Inputs, selects, filter bar, cards on configuration pages */
+  --tx-color-border-table: #ccdde8; /* Table wraps and table cards */
+  --tx-color-border-strong: #727476; /* Icon button outline */
+  --tx-color-status-success: #0db134; /* Done steps, positive numbers, approved */
+  --tx-color-status-success-strong: #318500; /* Success text on light green */
+  --tx-color-status-danger: #d20e0e; /* Errors, negative numbers, rejected */
+  --tx-color-status-danger-alt: #d40040; /* Critical / alert accents */
+  --tx-color-status-warning: #fbbd08; /* Pending / planned badge outline and dot */
+  --tx-color-status-progress: #00b5ad; /* Draft / active / in-progress badge outline and dot */
+  --tx-color-status-orange: #f2711c; /* Orange tags and capability chips */
+  --tx-color-status-purple: #a333c8; /* Purple tags and value badges */
+  --tx-color-status-violet: #6435c9; /* Violet chart series */
+  --tx-color-status-olive: #b5cc18; /* Olive tags */
+  --tx-color-badge-fill-progress: rgba(0, 181, 173, 0.08); /* Fill of .badge--progress */
+  --tx-color-badge-fill-pending: rgba(251, 189, 8, 0.08); /* Fill of .badge--pending */
+  --tx-color-badge-fill-iteration: rgba(0, 125, 197, 0.08); /* Fill of .badge--iteration */
+  /* gradient */
+  --tx-gradient-left-bar: linear-gradient(to bottom, #47b695, #00a0ff); /* Left menu bar */
+  --tx-gradient-menu-item: linear-gradient(142.1deg, rgba(255,255,255,0.32) 37.358%, rgba(255,255,255,0.048) 78.897%); /* Left bar item (glass) */
+  --tx-gradient-menu-active: linear-gradient(to bottom, #fff, #dcdcdc); /* Active left bar item */
+  --tx-font-ui: "Noto Sans", sans-serif; /* Labels, form text, card titles, profile, stepper */
+  --tx-font-display: "Poppins", sans-serif; /* Buttons, table text, badges, section titles, pagination */
+  --tx-font-title: "Open Sans", sans-serif; /* Page titles (24px / 600) */
+  --tx-font-alert: "Montserrat", sans-serif; /* Alert banners, workflow tracker */
+  --tx-font-chart: "Inter", sans-serif; /* Chart axis labels */
+  /* type */
+  --tx-type-page-title: 600 24px/normal "Open Sans", sans-serif; /* h1 page title (.cfg-header__title, .ad-header__title) */
+  --tx-type-page-title-tracking: -0.44px;
+  --tx-type-page-title-color: #196c9b;
+  --tx-type-section-title: 600 16px/20px "Poppins", sans-serif; /* Card / table titles (.optimization__title) */
+  --tx-type-section-title-tracking: 0.048px;
+  --tx-type-section-title-color: #323436;
+  --tx-type-card-title: 600 16px/20px "Noto Sans", sans-serif; /* Admin card titles, profile name */
+  --tx-type-card-title-tracking: 0.048px;
+  --tx-type-card-title-color: #323436;
+  --tx-type-subtitle: 600 18px/28px "Noto Sans", sans-serif; /* Dialog titles, large labels */
+  --tx-type-subtitle-color: #323436;
+  --tx-type-body: 400 14px/20px "Noto Sans", sans-serif; /* Field labels, form values, body copy */
+  --tx-type-body-tracking: 0.042px;
+  --tx-type-body-color: #323436;
+  --tx-type-body-strong: 600 14px/20px "Noto Sans", sans-serif; /* Emphasis in body */
+  --tx-type-body-strong-tracking: 0.042px;
+  --tx-type-body-strong-color: #323436;
+  --tx-type-table: 300 14px/20px "Poppins", sans-serif; /* Table cells */
+  --tx-type-table-tracking: 0.042px;
+  --tx-type-table-color: #323436;
+  --tx-type-table-strong: 400 14px/20px "Poppins", sans-serif; /* Bold-ish table cells (.is-bold) */
+  --tx-type-table-strong-color: #323436;
+  --tx-type-button: 500 14px/20px "Poppins", sans-serif; /* Primary buttons */
+  --tx-type-button-tracking: 0.042px;
+  --tx-type-button-color: #ffffff;
+  --tx-type-caption: 600 12px/18px "Noto Sans", sans-serif; /* Profile role, small headers */
+  --tx-type-caption-tracking: 0.036px;
+  --tx-type-caption-color: #323436;
+  --tx-type-small: 300 12px/18px "Poppins", sans-serif; /* Pagination numbers, meta text */
+  --tx-type-small-tracking: 0.036px;
+  --tx-type-small-color: #727476;
+  --tx-type-badge: 300 10px/1.2 "Poppins", sans-serif; /* Status badge text */
+  --tx-type-badge-color: #3f4047;
+  /* radius */
+  --tx-radius-xs: 4px; /* Badges, small chips */
+  --tx-radius-sm: 6px; /* Buttons, inputs, selects, icon buttons, pagination page */
+  --tx-radius-md: 8px; /* Table wraps, left bar items */
+  --tx-radius-lg: 12px; /* Cards, filter bar */
+  --tx-radius-pill: 1000px; /* Pills, toggles */
+  /* shadow */
+  --tx-shadow-card: 0 8px 12px rgba(142, 142, 142, 0.18); /* Raised cards, dropdown lists */
+  --tx-shadow-menu: 0 4px 8px rgba(142, 142, 142, 0.16); /* Menus, popovers */
+  --tx-shadow-top-menu: drop-shadow(0 4px 4px rgba(142, 142, 142, 0.16)); /* filter: on .top-menu */
+  --tx-shadow-left-bar: drop-shadow(4px 0 4px rgba(142, 142, 142, 0.18)); /* filter: on .left-bar */
+  --tx-shadow-outline-brand: inset 0 0 0 1px #bfe0f5; /* Selected / current outline */
+  --tx-shadow-grid: inset 0 1px #c9ccce, inset -1px 0 #c9ccce; /* Table cell grid lines */
+  /* space */
+  --tx-space-4: 4px;
+  --tx-space-8: 8px;
+  --tx-space-12: 12px;
+  --tx-space-16: 16px; /* Gap between cards / filter fields */
+  --tx-space-24: 24px; /* Page body padding */
+  /* layout */
+  --tx-layout-page-min-width: 1280px; /* Fluid from 1280px up; narrower windows scroll sideways (no mobile layout) */
+  --tx-layout-left-bar-width: 60px;
+  --tx-layout-top-menu-height: 56px;
+  --tx-layout-control-height: 32px; /* Inputs, selects, buttons, icon buttons */
+  --tx-layout-filter-bar-height: 80px;
+  --tx-layout-brand-logo: 190px x 28px; /* assets/logo-promotool.png, the one and only logo */
+}
+
+/* Type helpers for new markup: <p class="tx-type-body">…</p> */
+.tx-type-page-title { font: var(--tx-type-page-title); color: var(--tx-type-page-title-color); letter-spacing: var(--tx-type-page-title-tracking); }
+.tx-type-section-title { font: var(--tx-type-section-title); color: var(--tx-type-section-title-color); letter-spacing: var(--tx-type-section-title-tracking); }
+.tx-type-card-title { font: var(--tx-type-card-title); color: var(--tx-type-card-title-color); letter-spacing: var(--tx-type-card-title-tracking); }
+.tx-type-subtitle { font: var(--tx-type-subtitle); color: var(--tx-type-subtitle-color); }
+.tx-type-body { font: var(--tx-type-body); color: var(--tx-type-body-color); letter-spacing: var(--tx-type-body-tracking); }
+.tx-type-body-strong { font: var(--tx-type-body-strong); color: var(--tx-type-body-strong-color); letter-spacing: var(--tx-type-body-strong-tracking); }
+.tx-type-table { font: var(--tx-type-table); color: var(--tx-type-table-color); letter-spacing: var(--tx-type-table-tracking); }
+.tx-type-table-strong { font: var(--tx-type-table-strong); color: var(--tx-type-table-strong-color); }
+.tx-type-button { font: var(--tx-type-button); color: var(--tx-type-button-color); letter-spacing: var(--tx-type-button-tracking); }
+.tx-type-caption { font: var(--tx-type-caption); color: var(--tx-type-caption-color); letter-spacing: var(--tx-type-caption-tracking); }
+.tx-type-small { font: var(--tx-type-small); color: var(--tx-type-small-color); letter-spacing: var(--tx-type-small-tracking); }
+.tx-type-badge { font: var(--tx-type-badge); color: var(--tx-type-badge-color); }

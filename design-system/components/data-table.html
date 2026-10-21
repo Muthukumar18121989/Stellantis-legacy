@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Data table</title>
+<!--
+  TwinX UI component: data-table
+  Name:     Data table
+  Category: Data display
+  CSS:      css/base.css, css/experiment.css, css/user-menu.css
+  JS:       none
+  Source:   kit/experiments.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Table in a bordered scroll frame (.table-wrap > table.promos). Column widths via <colgroup>. Row cells: .is-light (ID), .is-bold (name). Add/remove <tr> rows freely.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/experiment.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--experiment optimization">
+<!-- snippet:start -->
+<div class="table-wrap">
+  <table class="promos">
+    <colgroup>
+      <col style="width:86px"><col style="width:183px"><col style="width:77px"><col style="width:92px"><col style="width:92px"><col style="width:120px"><col style="width:162px"><col style="width:86px"><col style="width:1px"><col style="width:120px">
+    </colgroup>
+    <thead>
+      <tr>
+        <th><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select all">ID</span></th>
+        <th>Promotion Name</th><th>Region</th><th>Start Date</th><th>End Date</th><th>No. of Families</th><th>Experiment Status</th><th>Iteration</th>
+        <th class="is-center">xperim</th>
+        <th class="is-center">Actions <br>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2724">2724</span></td>
+          <td class="is-bold">Thanks-giving Promotion</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>10</td>
+          <td><span class="badge badge--progress" style="width:47px"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">Draft</span></span></td>
+          <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+          <td class="promos__actions" colspan="2">
+            <span class="promos__actions-inner">
+              <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+              <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+              <button class="action action--edit" type="button" aria-label="Edit experiment" data-workflow-history><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2705">2705</span></td>
+          <td class="is-bold">Holiday Promotion</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
+          <td><span class="badge badge--pending"><img src="assets/shapes/dot-yellow.svg" width="8" height="8" alt=""><span class="badge__text">Planned</span></span></td>
+          <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+          <td class="promos__actions" colspan="2">
+            <span class="promos__actions-inner">
+              <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+              <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+              <button class="action action--edit" type="button" aria-label="Edit experiment" data-workflow-history><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2701">2701</span></td>
+          <td class="is-bold">February Promotion</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
+          <td><span class="badge badge--pending"><img src="assets/shapes/dot-yellow.svg" width="8" height="8" alt=""><span class="badge__text">Submitted for Logistics Review​</span></span></td>
+          <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+          <td class="promos__actions" colspan="2">
+            <span class="promos__actions-inner">
+              <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+              <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+              <button class="action action--edit" type="button" aria-label="Edit experiment" data-workflow-history><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2698">2698</span></td>
+          <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>15</td>
+          <td><span class="badge badge--progress"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">Active</span></span></td>
+          <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+          <td class="promos__actions" colspan="2">
+            <span class="promos__actions-inner">
+              <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+              <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+              <button class="action action--edit" type="button" aria-label="Edit experiment" data-workflow-history><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td class="is-light"><span class="promos__id"><input class="checkbox" type="checkbox" aria-label="Select 2699">2699</span></td>
+          <td class="is-bold">Demo-shipmentOpt</td><td class="is-bold">Europe</td><td>20/03/2025</td><td>20/03/2025</td><td>20</td>
+          <td><span class="badge badge--progress" style="width:135px"><img src="assets/shapes/dot-teal.svg" width="8" height="8" alt=""><span class="badge__text">Analysis Completed​</span></span></td>
+          <td><span class="badge badge--iteration"><span class="badge__text">Iteration 1</span></span></td>
+          <td class="promos__actions" colspan="2">
+            <span class="promos__actions-inner">
+              <button class="action action--notes" aria-label="Notes"><img src="assets/icons/notes-small.svg" width="16" height="16" alt=""></button>
+              <button class="action action--send" aria-label="Send for approval"><img src="assets/icons/send.svg" width="16" height="16" alt=""></button>
+              <button class="action action--edit" type="button" aria-label="Edit experiment" data-workflow-history><img src="assets/icons/pencil.svg" width="16" height="16" alt=""></button>
+            </span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

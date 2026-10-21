@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Promotion summary bar</title>
+<!--
+  TwinX UI component: result-summary
+  Name:     Promotion summary bar
+  Category: Data display
+  CSS:      css/base.css, css/configuration.css, css/result.css, css/user-menu.css
+  JS:       none
+  Source:   kit/simulation-result.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Promotion name and key facts (window, countries, brands, logic) on one bar.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--result">
+<!-- snippet:start -->
+<section class="res-summary">
+  <dl class="res-summary__facts">
+    <div class="res-fact res-fact--countries"><dt>Selected Countries:</dt> <dd>France</dd></div>
+    <div class="res-fact res-fact--brands"><dt>Target Brands:</dt> <dd>Fiat</dd></div>
+    <div class="res-fact res-fact--window"><dt>Execution window:</dt> <dd>2026-04-20 → 2026-04-29 (10 days)</dd></div>
+    <div class="res-fact res-fact--logic"><dt>Promotion Logic:</dt> <dd>Discount on MSRP at family or article level</dd></div>
+  </dl>
+  <span class="res-chip"><img src="assets/icons/stack.svg" width="24" height="24" alt="">Without Threshold</span>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Admin page header</title>
+<!--
+  TwinX UI component: page-header-admin
+  Name:     Admin page header
+  Category: Page headers
+  CSS:      css/base.css, css/configuration.css, css/admin.css, css/user-menu.css
+  JS:       none
+  Source:   kit/doa-rules.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Admin header with breadcrumb, title and subtitle.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--admin page--doa">
+<!-- snippet:start -->
+<header class="ad-header">
+  <div class="ad-header__inner">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <img src="assets/icons/users-blue.svg" width="16" height="16" alt="">
+      <span class="breadcrumb__sep">/</span>
+      <a class="breadcrumb__link" href="doa-rules.html">Delegation of Authority (DOA) Rules</a>
+      <span class="breadcrumb__sep breadcrumb__sep--dark">/</span>
+      <span class="breadcrumb__page">Promotool Approval</span>
+    </nav>
+    <div>
+      <h1 class="ad-header__title">Delegation of Authority (DOA) Rules</h1>
+      <p class="ad-header__subtitle">Manage promotion approval rights and temporary authorization scopes.</p>
+    </div>
+  </div>
+</header>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

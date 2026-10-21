@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Family panel</title>
+<!--
+  TwinX UI component: family-panel
+  Name:     Family panel
+  Category: Data display
+  CSS:      css/base.css, css/configuration.css, css/user-menu.css
+  JS:       none
+  Source:   kit/selection-analysis.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Collapsible family panel with analysis cards and actions (Remove Family, Drill Down to Article). Filled from a <template> in the page.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--selection">
+<!-- snippet:start -->
+<article class="fam-panel">
+  <div class="fam-panel__head">
+    <h3 class="fam-panel__title" data-family-title>1109Z5 - Brake Pads</h3>
+    <button class="fam-panel__toggle" type="button" aria-expanded="true" data-toggle-family><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+  </div>
+  <div class="fam-panel__body">
+    <div class="fam-panel__cards">
+      <div class="an-col">
+        <section class="an-card">
+          <div class="an-card__head"><span class="an-card__chip"><img src="assets/icons/layout-grid-white.svg" width="18" height="18" alt=""></span><h4 class="an-card__title">Overview</h4></div>
+          <h5 class="an-section">Number of Articles</h5>
+          <div class="an-tiles">
+            <div class="an-tile an-tile--active"><span class="an-tile__label"><span class="an-tile__dot"></span>Active</span><span class="an-tile__value">32</span></div>
+            <div class="an-tile an-tile--muted"><span class="an-tile__label"><span class="an-tile__dot"></span>Excluded</span><span class="an-tile__value">3</span></div>
+          </div>
+        </section>
+        <section class="an-card">
+          <div class="an-card__head"><span class="an-card__chip"><img src="assets/icons/tag-white.svg" width="18" height="18" alt=""></span><h4 class="an-card__title">Price Analysis</h4></div>
+          <div class="an-tiles an-tiles--3">
+            <div class="an-tile"><span class="an-tile__label">Average Margin (€)</span><span class="an-tile__value">€8.25</span></div>
+            <div class="an-tile"><span class="an-tile__label">Average Margin (%)</span><span class="an-tile__value">87.65%</span></div>
+            <div class="an-tile an-tile--elasticity"><span class="an-tile__label">Promotion Elasticity</span><span class="an-tile__value">-1.04</span></div>
+          </div>
+        </section>
+      </div>
+      <section class="an-card an-card--volume">
+        <div class="an-card__head"><span class="an-card__chip"><img src="assets/icons/chart-bar-white.svg" width="18" height="18" alt=""></span><h4 class="an-card__title">Volume Analysis (Last 12 Months)</h4><span class="an-badge"><span class="an-badge__dot"></span>Unit:&nbsp;<em>Not provided</em></span></div>
+        <h5 class="an-section">Order Intake (past 12 months)</h5>
+        <div class="an-tiles">
+          <div class="an-tile"><span class="an-tile__label">Total Ordered Quantity</span><span class="an-tile__value">54,000</span></div>
+          <div class="an-tile"><span class="an-tile__label">Average Monthly Demand</span><span class="an-tile__value">2,380</span></div>
+        </div>
+        <div class="an-divider"></div>
+        <div class="an-section-row"><h5 class="an-section">Sales – Sell In (past 12 months)</h5><span class="an-badge an-badge--teal"><span class="an-badge__dot"></span>Total: 26</span></div>
+        <div class="an-split" role="img" aria-label="Promotion 0, Non-Promotion 26">
+          <span class="an-split__promo" style="--share: 0%">Promotion</span>
+          <span class="an-split__rest">26</span>
+        </div>
+        <div class="an-split__legend"><span><span class="an-tile__dot"></span>Promotion: 0</span><span class="an-split__legend-rest"><span class="an-tile__dot"></span>Non-Promotion: 26</span></div>
+        <p class="an-note">Average Quantity: <b>2,380</b> with promotion · <b>1,870</b> without promotion</p>
+      </section>
+    </div>
+    <div class="fam-panel__actions">
+      <button class="btn-outline" type="button">Remove Family</button>
+      <button class="btn-next" type="button" data-drill-down>Drill Down to Article</button>
+    </div>
+  </div>
+</article>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

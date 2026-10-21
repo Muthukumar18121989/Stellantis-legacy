@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Left menu bar (Admin)</title>
+<!--
+  TwinX UI component: left-bar-admin
+  Name:     Left menu bar (Admin)
+  Category: App shell
+  CSS:      css/base.css, css/configuration.css, css/admin.css, css/user-menu.css
+  JS:       none
+  Source:   kit/doa-rules.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Admin variant: Home, DOA Rules, User Management, Role Management, Referential.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--admin page--doa">
+<!-- snippet:start -->
+<nav class="left-bar" aria-label="Primary">
+  <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
+  <div class="left-bar__menus">
+    <a class="left-bar__item" href="experiment-status.html" aria-label="Home"><img src="assets/icons/home-white.svg" width="24" height="24" alt=""></a>
+    <a class="left-bar__item left-bar__item--active" href="doa-rules.html" aria-label="Delegation of Authority (DOA) Rules" aria-current="page"><img src="assets/icons/hammer-blue.svg" width="24" height="24" alt=""></a>
+    <a class="left-bar__item" href="user-management.html" aria-label="User Management"><img src="assets/icons/user.svg" width="24" height="24" alt=""></a>
+    <a class="left-bar__item" href="role-management.html" aria-label="Role Management"><img src="assets/icons/hierarchy.svg" width="24" height="24" alt=""></a>
+    <a class="left-bar__item" href="referential.html" aria-label="Referential"><img src="assets/icons/database.svg" width="24" height="24" alt=""></a>
+  </div>
+</nav>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

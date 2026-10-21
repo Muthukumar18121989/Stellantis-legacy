@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Dashboard page header</title>
+<!--
+  TwinX UI component: page-header-dashboard
+  Name:     Dashboard page header
+  Category: Page headers
+  CSS:      css/base.css, css/dashboard.css, css/user-menu.css
+  JS:       none
+  Source:   kit/dashboard.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Admin dashboard header: breadcrumb and title.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--dashboard">
+<!-- snippet:start -->
+<section class="page-header">
+  <div class="page-header__inner">
+    <div class="breadcrumb">
+      <img src="assets/icons/breadcrumb-home.svg" width="16" height="16" alt="Home">
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__current">Promotool Admin Dashboard</span>
+    </div>
+    <div>
+      <h1 class="page-header__title">Promotion Admin Dashboard</h1>
+      <p class="page-header__subtitle">Real-time metrics and activity across all promotion pipelines.</p>
+    </div>
+  </div>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

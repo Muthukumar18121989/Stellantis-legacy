@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Role summary</title>
+<!--
+  TwinX UI component: role-summary
+  Name:     Role summary
+  Category: Data display
+  CSS:      css/base.css, css/configuration.css, css/admin.css, css/user-menu.css
+  JS:       none
+  Source:   kit/role-management.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Role counts and capability legend.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--admin page--roles">
+<!-- snippet:start -->
+<section class="rm-summary" aria-labelledby="rm-summary-title">
+  <div class="rm-summary__main">
+    <h2 class="rm-summary__title" id="rm-summary-title">Role Management</h2>
+    <div class="rm-counts">
+      <div class="rm-count rm-count--total"><p class="rm-count__value">11</p><p class="rm-count__label">Total Roles</p></div>
+      <div class="rm-count-rows">
+        <div class="rm-count-row">
+          <span class="rm-divider"></span>
+          <div class="rm-count"><p class="rm-count__value">340</p><p class="rm-count__label">Promotion Pilot</p></div>
+          <div class="rm-count"><p class="rm-count__value">3</p><p class="rm-count__label">Marketing Manager</p></div>
+          <div class="rm-count"><p class="rm-count__value">1</p><p class="rm-count__label">Finance Manager</p></div>
+          <div class="rm-count"><p class="rm-count__value">19</p><p class="rm-count__label">Guest</p></div>
+          <span class="rm-divider"></span>
+        </div>
+        <div class="rm-count-row">
+          <span class="rm-divider"></span>
+          <div class="rm-count"><p class="rm-count__value">19</p><p class="rm-count__label">Tool Administrator</p></div>
+          <div class="rm-count"><p class="rm-count__value">99</p><p class="rm-count__label">Super Administrator</p></div>
+          <div class="rm-count rm-count--hidden" aria-hidden="true"><p class="rm-count__value">32</p><p class="rm-count__label">Zone Manager</p></div>
+          <div class="rm-count rm-count--hidden" aria-hidden="true"><p class="rm-count__value">14</p><p class="rm-count__label">Warehouse Manager</p></div>
+          <span class="rm-divider"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="icon-btn rm-download" type="button" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

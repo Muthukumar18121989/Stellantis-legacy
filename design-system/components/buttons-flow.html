@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Buttons (flow)</title>
+<!--
+  TwinX UI component: buttons-flow
+  Name:     Buttons (flow)
+  Category: Buttons & inputs
+  CSS:      css/base.css, css/configuration.css, css/user-menu.css
+  JS:       none
+  Source:   kit/selection-analysis.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Outline (Back / Cancel), Next, Validate, outline-with-icon, 'N Selected' and primary icon buttons used on the flow pages (css/configuration.css).
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--selection"><div class="ds-gallery">
+<!-- snippet:start -->
+<a class="btn-outline" href="promotion-configuration.html" data-keep-query>Back</a>
+<button class="btn-next" type="button" data-page-next>Next</button>
+<button class="btn-validate" type="button" data-validate>Validate<img src="assets/icons/refresh-white.svg" width="20" height="20" alt=""></button>
+<button class="btn-outline-icon" type="button" data-show-upload><img src="assets/icons/upload.svg" width="16" height="16" alt="">Upload</button>
+<button class="btn-selected" type="button" data-apply-selection><span data-selected-count>3 Selected</span><img src="assets/icons/arrow-right.svg" width="20" height="20" alt=""></button>
+<button class="btn-icon-primary" type="button" data-open-dialog="select-family"><img src="assets/icons/plus.svg" width="16" height="16" alt="">Manage Families</button>
+<!-- snippet:end -->
+</div></div>
+
+</body>
+</html>

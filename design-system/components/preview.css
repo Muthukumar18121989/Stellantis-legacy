@@ -1,0 +1,6 @@
+/* Preview frame for component files only (not part of the library). */
+html, body.ds-preview { background: #d4edfd; }
+body.ds-preview { padding: 24px; min-height: 100vh; }
+body.ds-preview--shell { padding: 0; }
+.ds-scope { display: block !important; min-width: 0 !important; min-height: 0 !important; width: auto !important; background: transparent !important; }
+.ds-gallery { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }

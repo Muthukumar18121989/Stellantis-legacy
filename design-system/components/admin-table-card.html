@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Admin table card</title>
+<!--
+  TwinX UI component: admin-table-card
+  Name:     Admin table card
+  Category: Data display
+  CSS:      css/base.css, css/configuration.css, css/admin.css, css/user-menu.css
+  JS:       none
+  Source:   kit/user-management.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Admin card: title, search, sortable table, status, pagination.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--admin page--users">
+<!-- snippet:start -->
+<section class="ad-card um-card" aria-labelledby="um-title">
+  <div class="ad-card__head um-head">
+    <h2 class="ad-card__title" id="um-title">User List</h2>
+    <label class="ad-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by User ID" aria-label="Search by User ID"></label>
+  </div>
+
+  <div class="ad-table-wrap um-table-wrap">
+    <table class="ad-table ad-table--list">
+      <colgroup><col style="width:172px"><col style="width:260px"><col style="width:131px"><col style="width:90px"><col style="width:202.5px"><col style="width:79px"><col style="width:79px"><col style="width:202.5px"></colgroup>
+      <thead>
+        <tr><th><span class="ad-th-sort">User ID<button class="ad-sort" type="button" aria-label="Sort by User ID"><img src="assets/icons/arrows-down-up-thin.svg" width="16" height="16" alt=""></button></span></th><th>Email Address</th><th>Name</th><th>Region</th><th>User Role</th><th>Admin</th><th>Status</th><th class="ad-center">Edit Delegate</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>TD3256D</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>Global</td><td>Guest</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><a class="ad-icon" href="user-edit.html" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></a></td></tr>
+        <tr><td>CD8282J</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>Europe</td><td>Promotion Pilot</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><a class="ad-icon" href="user-edit.html" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></a></td></tr>
+        <tr><td>G367383G</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>APAC</td><td>Marketing Manager</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><a class="ad-icon" href="user-edit.html" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></a></td></tr>
+        <tr><td>TD3256D</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>MEA</td><td>Finance Manager</td><td>Yes</td><td><span class="um-status">Active</span></td><td class="ad-center"><a class="ad-icon" href="user-edit.html" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></a></td></tr>
+        <tr><td>CD8282J</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>Global</td><td>Tool Administrator</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><a class="ad-icon" href="user-edit.html" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></a></td></tr>
+        <tr><td>G367383G</td><td>firstname.lastname@stellantis.com</td><td>Amand Beaulen</td><td>APAC</td><td>Super Administrator</td><td>No</td><td><span class="um-status">Active</span></td><td class="ad-center"><a class="ad-icon" href="user-edit.html" aria-label="Edit delegate"><img src="assets/icons/pencil-grey-24.svg" width="24" height="24" alt=""></a></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-footer ad-footer">
+    <p class="table-footer__summary">Showing 1 of 10 entries</p>
+    <nav class="pagination ad-pagination" aria-label="Pagination">
+      <button class="pagination__arrow pagination__arrow--prev" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+      <button class="pagination__page pagination__page--current" aria-current="page"><span>1</span></button>
+      <button class="pagination__page"><span>2</span></button>
+      <button class="pagination__page"><span>3</span></button>
+      <button class="pagination__page"><span>4</span></button>
+      <button class="pagination__page"><span>5</span></button>
+      <button class="pagination__arrow pagination__arrow--next" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+    </nav>
+  </div>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>
