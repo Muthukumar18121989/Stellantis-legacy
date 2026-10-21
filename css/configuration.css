@@ -488,13 +488,22 @@ th .fam-id { gap: 10px; }
 .fa-head__sub { margin: 0; font: 400 14px/20px "Noto Sans", sans-serif; color: #727476; }
 .fa-head__sub b { font-weight: 600; color: #323436; }
 .fa-combo { position: relative; }
-.fa-combo__field input { cursor: text; }
+.fa-combo__field { justify-content: space-between; text-align: left; cursor: pointer; }
+.fa-combo__field[aria-expanded="true"] { border-color: #007dc5; }
 .fa-combo__field img { flex: none; }
-.fa-combo__list {
-  position: absolute; z-index: 3; left: 0; right: 0; top: 31px; max-height: 192px; margin: 0; padding: 0; list-style: none; overflow-y: auto;
+.fa-combo__value { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; }
+.fa-combo__value.is-placeholder { color: #727476; }
+.fa-combo__popup {
+  position: absolute; z-index: 3; left: 0; right: 0; top: 35px; overflow: hidden;
   background: #fff; border: 1px solid #bfe0f5; border-radius: 6px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
 }
-.fa-combo__list[hidden] { display: none; }
+.fa-combo__popup[hidden] { display: none; }
+.fa-combo__search { display: flex; align-items: center; gap: 8px; margin: 6px; height: 32px; padding: 5px 11px; background: #fff; border: 1px solid #c9ccce; border-radius: 6px; }
+.fa-combo__search:focus-within { border-color: #007dc5; }
+.fa-combo__search input { flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none; appearance: none; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436; }
+.fa-combo__search input::-webkit-search-decoration, .fa-combo__search input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.fa-combo__search img { flex: none; }
+.fa-combo__list { max-height: 224px; margin: 0; padding: 0; list-style: none; overflow-y: auto; border-top: 1px solid #bfe0f5; }
 .fa-combo__option {
   height: 32px; padding: 6px 11px; border-top: 1px solid #bfe0f5; background: #fff; cursor: pointer;
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 300 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #323436;
