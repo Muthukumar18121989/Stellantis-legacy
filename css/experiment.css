@@ -8,6 +8,7 @@
 
 /* ---------- Products / Network cards (Figma 26:5940, 26:5996) ---------- */
 .config-cards { display: flex; gap: 16px; }
+.config-cards[hidden] { display: none; } /* hidden until Products / Network have functionality */
 .config-card {
   position: relative; flex: 1; min-width: 0; height: 138px;
   display: flex; align-items: center; gap: 8px; padding: 16px; overflow: hidden;
@@ -34,17 +35,35 @@
 .config-card__decor--box { right: 0; top: 24px; } /* Figma: flush with the card's right edge */
 .config-card__decor--pie { right: -0.19px; top: 45.19px; } /* Figma: flush with the card's right edge */
 
-/* ---------- Filters (Figma 26:6028) ---------- */
+/* ---------- Filters (Figma 26:6028), inside the Promotion Optimization panel ---------- */
 .page--experiment .field { width: 252px; } /* Figma width at 1366; the fields grow to fill the bar on wider screens */
+.optimization .filters { flex: none; }
 
 /* ---------- Projects + promotion table (Figma 26:6052) ---------- */
-.projects-card { height: 408px; padding: 15px; overflow: hidden; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
-.projects-card__inner { display: flex; gap: 16px; height: 376px; }
+.projects-card { height: 504px; padding: 15px; overflow: hidden; background: #fff; border: 1px solid #ccdde8; border-radius: 12px; }
+.projects-card__inner { display: flex; gap: 16px; height: 472px; } /* Figma 376 + the 96px filter bar */
 
 .projects { width: 228px; flex: none; display: flex; flex-direction: column; gap: 8px; padding-right: 16px; border-right: 1px solid #ccdde8; }
 .projects__head { display: flex; align-items: center; justify-content: space-between; }
 .projects__title { font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap; }
 .projects__count { color: #727476; }
+.projects__head .projects__title { flex: 1; min-width: 0; }
+.projects__head { gap: 8px; }
+.projects__toggle {
+  display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; flex: none;
+  background: #fff; border: 1px solid #ccdde8; border-radius: 6px;
+}
+.projects__toggle img { transform: rotate(180deg); } /* expanded: points left (collapse) */
+/* My Projects collapsed (default): a 32px rail with the expand button and the title running vertically,
+   so the promotion table takes the whole card */
+.projects-card[data-projects="collapsed"] .projects { width: 49px; }
+.projects-card[data-projects="collapsed"] .projects__head { flex-direction: column; align-items: center; gap: 16px; }
+.projects-card[data-projects="collapsed"] .projects__toggle { order: -1; }
+.projects-card[data-projects="collapsed"] .projects__toggle img { transform: none; }
+.projects-card[data-projects="collapsed"] .projects__title { writing-mode: vertical-rl; transform: rotate(180deg); }
+.projects-card[data-projects="collapsed"] .projects__toggle::after { left: calc(100% + 6px); top: 50%; transform: translateY(-50%); } /* the card clips a tooltip centred under the rail */
+.projects-card[data-projects="collapsed"] .btn-square,
+.projects-card[data-projects="collapsed"] .projects__list { display: none; }
 .btn-square { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; padding: 8px; background: #007dc5; border-radius: 6px; }
 .projects__list { display: flex; flex-direction: column; gap: 16px; }
 .project {

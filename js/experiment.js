@@ -64,3 +64,27 @@
     location.href = 'compare.html?' + query;
   });
 })();
+
+// My Projects starts collapsed so the promotion table fills the card; the chevron shows or hides the list. Picking a
+// project marks it active and names it in the table header ("<project> - Promotion Optimization").
+(function () {
+  var card = document.querySelector('.projects-card');
+  var toggle = card.querySelector('[data-projects-toggle]');
+  toggle.addEventListener('click', function () {
+    var open = card.dataset.projects === 'collapsed';
+    card.dataset.projects = open ? 'expanded' : 'collapsed';
+    var label = open ? 'Hide My Projects' : 'Show My Projects';
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', label);
+    toggle.dataset.tooltip = label;
+  });
+
+  var title = document.querySelector('[data-project-title]');
+  card.querySelectorAll('.project').forEach(function (project) {
+    project.addEventListener('click', function () {
+      card.querySelector('.project--active').classList.remove('project--active');
+      project.classList.add('project--active');
+      title.textContent = project.querySelector('.project__name').textContent.replace(/​/g, '').trim();
+    });
+  });
+})();
