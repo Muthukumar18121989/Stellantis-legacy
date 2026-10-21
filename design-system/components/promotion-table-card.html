@@ -10,9 +10,9 @@
   Name:     Projects + promotion table card
   Category: Data display
   CSS:      css/base.css, css/experiment.css, css/user-menu.css
-  JS:       none
+  JS:       js/experiment.js
   Source:   kit/experiments.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
-  Usage:    My Projects list (left) and the Promotion Optimization table with search, actions, status badges, row actions and pagination (right). The core of the experiments list.
+  Usage:    My Projects list (left, collapsible: data-projects=collapsed|expanded on the card, toggled by [data-projects-toggle] in js/experiment.js) and the Promotion Optimization panel (right): '<project> - Promotion Optimization' header with search and actions, the filter bar, the table with status badges, row actions and pagination. Picking a project renames the header. The core of the experiments list.
   Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
   Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
 -->
@@ -24,15 +24,16 @@
 <body class="ds-preview">
 <div class="ds-scope page--experiment">
 <!-- snippet:start -->
-<section class="projects-card">
+<section class="projects-card" data-projects="collapsed">
   <div class="projects-card__inner">
 
-    <aside class="projects">
+    <aside class="projects" id="my-projects">
       <div class="projects__head">
         <h2 class="projects__title">My Projects / <span class="projects__count">02</span></h2>
-        <button class="btn-square" aria-label="New project"><img src="assets/icons/plus.svg" width="16" height="16" alt=""></button>
+        <button class="btn-square" type="button" aria-label="Create New Project" data-tooltip="Create New Project"><img src="assets/icons/plus.svg" width="16" height="16" alt=""></button>
+        <button class="projects__toggle" type="button" aria-expanded="false" aria-controls="my-projects-list" data-tooltip="Show My Projects" aria-label="Show My Projects" data-projects-toggle><img src="assets/icons/chevron-right.svg" width="16" height="16" alt=""></button>
       </div>
-      <div class="projects__list">
+      <div class="projects__list" id="my-projects-list">
         <button class="project project--active">
           <span class="project__text"><span class="project__name">Nov 2025_Promo</span><span class="project__date">Sat, 23 Nov, 2025 11:03 AM</span></span>
           <img class="project__lock" src="assets/icons/lock.svg" width="16" height="16" alt="Locked">
@@ -46,13 +47,42 @@
 
     <div class="optimization">
       <div class="optimization__head">
-        <h2 class="optimization__title">Promotion Optimization</h2>
+        <h2 class="optimization__title"><span data-project-title>Nov 2025_Promo</span> - Promotion Optimization</h2>
         <div class="optimization__actions">
           <label class="search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Request, Status" aria-label="Search by Request, Status"></label>
           <button class="btn-primary" type="button" data-open-dialog="new-promo">Create New Promo​</button>
           <button class="btn-primary" type="button" data-compare>Compare</button>
         </div>
       </div>
+
+      <!-- Filters (Figma 26:6028), inside the Promotion Optimization panel since 2026-10-21 -->
+      <section class="filters">
+        <div class="filters__fields">
+          <button class="field">
+            <span class="field__label">Promotion Status</span>
+            <span class="field__control"><span class="field__value field__value--noto">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+          </button>
+          <button class="field">
+            <span class="field__label">Region</span>
+            <span class="field__control"><span class="field__value field__value--noto">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+          </button>
+          <button class="field">
+            <span class="field__label">Involved Families</span>
+            <span class="field__control"><span class="field__value field__value--poppins">Select</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></span>
+          </button>
+          <button class="field">
+            <span class="field__label">Period</span>
+            <span class="field__control"><span class="field__value field__value--noto">Choose Date Range</span><img src="assets/icons/eye.svg" width="16" height="16" alt=""></span>
+          </button>
+        </div>
+        <div class="filters__actions">
+          <div class="filters__primary">
+            <button class="icon-btn" aria-label="Refresh"><img src="assets/icons/refresh.svg" width="16" height="16" alt=""></button>
+            <button class="btn-primary">Apply</button>
+          </div>
+          <button class="icon-btn" aria-label="Download"><img src="assets/icons/download.svg" width="16" height="16" alt=""></button>
+        </div>
+      </section>
 
       <div class="table-wrap">
         <table class="promos">
@@ -155,6 +185,7 @@
 </section>
 <!-- snippet:end -->
 </div>
+<script src="js/experiment.js"></script>
 
 </body>
 </html>

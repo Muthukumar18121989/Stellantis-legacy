@@ -132,6 +132,7 @@ Only when nothing in the catalogue fits:
 - **Top menu:** keep notifications, language and profile. Include `css/user-menu.css` and
   `js/user-menu.js` on every signed-in page (it builds the user menu and settings dialog).
 - **Process flows** use the shared `.stepper` (done = green check, current = blue pill, todo = grey).
+- **Tooltips:** add `data-tooltip="Text"` to a button (style in base.css); icon-only buttons also keep an `aria-label`.
 - **Dialogs:** native `<dialog>`, opened with `showModal()`, closed by `[data-close-dialog]` buttons.
 - Keep the accessibility attributes the legacy markup has (`aria-label`, `aria-current`, `role`).
 
