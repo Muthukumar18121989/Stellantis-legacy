@@ -135,12 +135,15 @@
     if (tab) freeArticle.querySelectorAll('[data-fa-tab]').forEach(function (t) { t.setAttribute('aria-selected', String(t === tab)); });
   });
 
-  // Free Article Selector filters: the family dropdown can be typed in to search its list, and the
-  // search box narrows the rows by Article ID or name.
-  var famInput = freeArticle.querySelector('[data-fa-family]');
+  // Free Article Selector filters: the family dropdown opens with a search box at the top of its list
+  // (Muthu's 2026-10-21 reference), and the second search box narrows the rows by Article ID or name.
+  var famButton = freeArticle.querySelector('[data-fa-family]');
+  var famLabel = freeArticle.querySelector('[data-fa-family-value]');
+  var famPopup = freeArticle.querySelector('.fa-combo__popup');
+  var famInput = freeArticle.querySelector('[data-fa-family-search]');
   var famList = freeArticle.querySelector('.fa-combo__list');
   var famOptions = Array.prototype.slice.call(famList.querySelectorAll('[role="option"]'));
-  var famValue = famInput.value;
+  var famValue = '';
   var faSearch = freeArticle.querySelector('[data-fa-search]');
   var faRows = Array.prototype.slice.call(freeArticle.querySelectorAll('tbody tr[data-family]'));
   function filterFreeArticles() {
@@ -160,63 +163,60 @@
     if (option) { famInput.setAttribute('aria-activedescendant', option.id); option.scrollIntoView({ block: 'nearest' }); }
     else famInput.removeAttribute('aria-activedescendant');
   }
-  function openFamilies(query) {
-    var q = (query || '').trim().toLowerCase();
+  function searchFamilies() {
+    var q = famInput.value.trim().toLowerCase();
     famOptions.forEach(function (o) { o.hidden = !!q && o.textContent.toLowerCase().indexOf(q) === -1; });
-    famList.hidden = false;
-    famInput.setAttribute('aria-expanded', 'true');
-    setActive(visibleOptions().filter(function (o) { return o.getAttribute('aria-selected') === 'true'; })[0] || visibleOptions()[0]);
+    setActive(visibleOptions()[0]);
   }
-  function closeFamilies() {
-    famList.hidden = true;
-    famInput.setAttribute('aria-expanded', 'false');
+  function openFamilies() {
+    famInput.value = '';
+    searchFamilies();
+    famPopup.hidden = false;
+    famButton.setAttribute('aria-expanded', 'true');
+    setActive(famList.querySelector('[aria-selected="true"]'));
+    famInput.focus();
+  }
+  function closeFamilies(refocus) {
+    if (famPopup.hidden) return;
+    famPopup.hidden = true;
+    famButton.setAttribute('aria-expanded', 'false');
     setActive(null);
-  }
-  function clearFamily() {
-    famValue = '';
-    famOptions.forEach(function (o) { o.setAttribute('aria-selected', 'false'); });
-    filterFreeArticles();
+    if (refocus) famButton.focus();
   }
   function chooseFamily(option) {
-    famValue = option.textContent;
+    famValue = option.dataset.value;
     famOptions.forEach(function (o) { o.setAttribute('aria-selected', String(o === option)); });
-    famInput.value = famValue;
-    closeFamilies();
+    famLabel.textContent = famValue || 'Search by Family';
+    famLabel.classList.toggle('is-placeholder', !famValue);
+    closeFamilies(true);
     filterFreeArticles();
   }
-  famInput.addEventListener('focus', function () { famInput.select(); openFamilies(); });
-  famInput.addEventListener('search', function () { if (!famInput.value) { clearFamily(); openFamilies(); } }); // the box's clear (x)
-  famInput.addEventListener('click', function () { if (famList.hidden) { famInput.select(); openFamilies(); } });
-  famInput.addEventListener('input', function () { openFamilies(famInput.value); });
-  // Leaving the box empty clears the family filter; otherwise it shows the chosen family again.
-  famInput.addEventListener('blur', function () {
-    closeFamilies();
-    if (!famInput.value.trim() && famValue) clearFamily();
-    famInput.value = famValue;
-  });
+  famButton.addEventListener('click', function () { if (famPopup.hidden) openFamilies(); else closeFamilies(true); });
+  famInput.addEventListener('input', searchFamilies);
   famInput.addEventListener('keydown', function (e) {
     var opts = visibleOptions();
     var i = opts.indexOf(famList.querySelector('.is-active'));
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-      if (famList.hidden) openFamilies();
-      else setActive(opts[e.key === 'ArrowDown' ? Math.min(i + 1, opts.length - 1) : Math.max(i - 1, 0)]);
+      setActive(opts[e.key === 'ArrowDown' ? Math.min(i + 1, opts.length - 1) : Math.max(i - 1, 0)]);
       e.preventDefault();
-    } else if (e.key === 'Enter' && !famList.hidden && opts[i]) {
-      chooseFamily(opts[i]);
+    } else if (e.key === 'Enter') {
+      if (opts[i]) chooseFamily(opts[i]);
       e.preventDefault();
-    } else if (e.key === 'Escape' && !famList.hidden) {
-      closeFamilies();
-      famInput.value = famValue;
+    } else if (e.key === 'Escape') {
+      closeFamilies(true);
       e.preventDefault(); // keep the dialog open
     }
   });
-  famList.addEventListener('mousedown', function (e) { e.preventDefault(); }); // keep focus in the input
+  famList.addEventListener('mousedown', function (e) { e.preventDefault(); }); // keep focus in the search box
   famList.addEventListener('click', function (e) {
     var option = e.target.closest('[role="option"]');
     if (option) chooseFamily(option);
   });
+  // Clicking or tabbing anywhere outside the dropdown closes it.
+  freeArticle.addEventListener('mousedown', function (e) { if (!e.target.closest('.fa-combo')) closeFamilies(); });
+  freeArticle.addEventListener('focusin', function (e) { if (!e.target.closest('.fa-combo')) closeFamilies(); });
   faSearch.addEventListener('input', filterFreeArticles);
-  freeArticle.addEventListener('close', function () { faSearch.value = ''; filterFreeArticles(); });
+  freeArticle.addEventListener('close', function () { closeFamilies(); faSearch.value = ''; filterFreeArticles(); });
 
   // Article view tabs: Exclusions, Volume Analysis (Figma 26:11097) and Price Analysis (Figma 26:11622).
   list.addEventListener('click', function (e) {

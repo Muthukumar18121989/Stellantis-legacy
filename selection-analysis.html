@@ -2540,15 +2540,19 @@
       <div class="fam-toolbar">
         <div class="fam-toolbar__search">
           <div class="fa-combo">
-            <label class="fam-search fa-combo__field"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" role="combobox" placeholder="Search by Family" aria-label="Search by Family" aria-autocomplete="list" aria-expanded="false" aria-controls="fa-family-list" autocomplete="off" data-fa-family></label>
-            <ul class="fa-combo__list" id="fa-family-list" role="listbox" aria-label="Families" hidden>
-            <li class="fa-combo__option" id="fa-family-1" role="option" aria-selected="false">ERP - BRAKE PAD ACCESSORIES</li>
-            <li class="fa-combo__option" id="fa-family-2" role="option" aria-selected="false">ERP - BRAKE PADS OTHM</li>
-            <li class="fa-combo__option" id="fa-family-3" role="option" aria-selected="false">ERP - BRAKE PADS STLA</li>
-            <li class="fa-combo__option" id="fa-family-4" role="option" aria-selected="false">ERP - BRAKE SHOE OTHM</li>
-            <li class="fa-combo__option" id="fa-family-5" role="option" aria-selected="false">ERP - BRAKE SHOE STLA</li>
-            <li class="fa-combo__option" id="fa-family-6" role="option" aria-selected="false">ERP - BUMPER MISC. STLA</li>
-            </ul>
+              <button class="fam-search fa-combo__field" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="fa-family-popup" aria-label="Family" data-fa-family><span class="fa-combo__value is-placeholder" data-fa-family-value>Search by Family</span><img src="assets/icons/chevron-down.svg" width="16" height="16" alt=""></button>
+              <div class="fa-combo__popup" id="fa-family-popup" hidden>
+                <label class="fa-combo__search"><input type="search" role="combobox" aria-label="Search families" aria-autocomplete="list" aria-expanded="true" aria-controls="fa-family-list" autocomplete="off" data-fa-family-search><img src="assets/icons/search.svg" width="16" height="16" alt=""></label>
+                <ul class="fa-combo__list" id="fa-family-list" role="listbox" aria-label="Families">
+                <li class="fa-combo__option" id="fa-family-0" role="option" aria-selected="true" data-value="">All Families</li>
+                <li class="fa-combo__option" id="fa-family-1" role="option" aria-selected="false" data-value="ERP - BRAKE PAD ACCESSORIES">ERP - BRAKE PAD ACCESSORIES</li>
+                <li class="fa-combo__option" id="fa-family-2" role="option" aria-selected="false" data-value="ERP - BRAKE PADS OTHM">ERP - BRAKE PADS OTHM</li>
+                <li class="fa-combo__option" id="fa-family-3" role="option" aria-selected="false" data-value="ERP - BRAKE PADS STLA">ERP - BRAKE PADS STLA</li>
+                <li class="fa-combo__option" id="fa-family-4" role="option" aria-selected="false" data-value="ERP - BRAKE SHOE OTHM">ERP - BRAKE SHOE OTHM</li>
+                <li class="fa-combo__option" id="fa-family-5" role="option" aria-selected="false" data-value="ERP - BRAKE SHOE STLA">ERP - BRAKE SHOE STLA</li>
+                <li class="fa-combo__option" id="fa-family-6" role="option" aria-selected="false" data-value="ERP - BUMPER MISC. STLA">ERP - BUMPER MISC. STLA</li>
+                </ul>
+              </div>
           </div>
           <label class="fam-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Article ID/Name" aria-label="Search by Article ID/Name" data-fa-search autofocus></label>
         </div>
