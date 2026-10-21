@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · KPI cards</title>
+<!--
+  TwinX UI component: kpi-cards
+  Name:     KPI cards
+  Category: Data display
+  CSS:      css/base.css, css/configuration.css, css/result.css, css/user-menu.css
+  JS:       none
+  Source:   kit/simulation-result.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Result KPI cards: value, comparison, uplift arrow, alert line.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--result">
+<!-- snippet:start -->
+<div class="kpis">
+  <article class="kpi kpi--margin">
+    <h3 class="kpi__head">Overall Margin (% vs. D3NP) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+    <div class="kpi__body">
+      <div class="kpi__compare">
+        <div class="kpi__side"><span class="kpi__cap">Before</span><span class="kpi__num">62.7%</span></div>
+        <div class="kpi__side"><span class="kpi__cap">After</span><span class="kpi__num">60.5%</span></div>
+      </div>
+    </div>
+  </article>
+  <article class="kpi">
+    <h3 class="kpi__head">Total Promo Discount (€) <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+    <div class="kpi__body"><p class="kpi__value">126.05</p></div>
+  </article>
+  <article class="kpi">
+    <h3 class="kpi__head">Sales Quantity <img class="info" src="assets/icons/info.svg" width="16" height="16" alt=""></h3>
+    <div class="kpi__body"><p class="kpi__value">2,655</p></div>
+  </article>
+</div>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

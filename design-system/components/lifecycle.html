@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Lifecycle tracker</title>
+<!--
+  TwinX UI component: lifecycle
+  Name:     Lifecycle tracker
+  Category: Data display
+  CSS:      css/base.css, css/configuration.css, css/result.css, css/validation.css, css/workflow.css, css/user-menu.css
+  JS:       none
+  Source:   kit/workflow-tracker.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Promotion tracking lifecycle: stages with done / active / waiting steps; scrolls sideways.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/result.css">
+  <link rel="stylesheet" href="css/validation.css">
+  <link rel="stylesheet" href="css/workflow.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--workflow">
+<!-- snippet:start -->
+<section class="wf-card wf-card--lifecycle">
+  <div class="wf-title wf-title--desc">
+    <div class="wf-bar">
+      <h2 class="wf-title__text">Promotion Tracking Lifecycle</h2>
+      <p class="wf-title__desc">Click on any lifecycle icon to view validator comments &amp; history <img src="assets/icons/info.svg" width="16" height="16" alt=""></p>
+    </div>
+  </div>
+  <div class="wf-stages">
+    <div class="wf-stages__row">
+  <section class="wf-stage">
+    <h3 class="wf-stage__title"><span class="wf-bar">LOCAL REVIEW</span></h3>
+    <ol class="wf-steps">
+      <li class="wf-step wf-step--done"><button class="wf-dot wf-dot--done" type="button" aria-label="Validator comments for L1.1 Local Marketing" data-open-dialog="validator-comments"><img src="assets/icons/check-white.svg" width="24" height="24" alt=""></button><span class="wf-step__text"><span class="wf-step__name">L1.1 Local Marketing</span><span class="wf-step__note">Approved</span></span></li>
+      <li class="wf-step wf-step--done"><span class="wf-dot wf-dot--done"><img src="assets/icons/check-white.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.2 Local Finance</span><span class="wf-step__note">Approved</span></span></li>
+    </ol>
+  </section>
+  <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
+  <section class="wf-stage">
+    <h3 class="wf-stage__title"><span class="wf-bar">CENTRAL REVIEW</span></h3>
+    <ol class="wf-steps">
+      <li class="wf-step wf-step--active"><span class="wf-dot wf-dot--active"><img src="assets/icons/circle-blue.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.1 Central Marketing</span><span class="wf-step__note">Pending #REQ-9902</span></span></li>
+      <li class="wf-step wf-step--waiting"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.2 Central Finance</span><span class="wf-step__note">Awaiting L2.1</span></span></li>
+    </ol>
+  </section>
+  <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
+  <section class="wf-stage">
+    <h3 class="wf-stage__title"><span class="wf-bar">LOGISTICS</span></h3>
+    <ol class="wf-steps">
+      <li class="wf-step wf-step--todo"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">Logistics Validation</span><span class="wf-step__note">Wait For Central</span></span></li>
+    </ol>
+  </section>
+  <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
+  <section class="wf-stage">
+    <h3 class="wf-stage__title"><span class="wf-bar">Final Market Confirmation</span></h3>
+    <ol class="wf-steps">
+      <li class="wf-step wf-step--todo"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.1 Local Marketing</span><span class="wf-step__note">Wait For Logistics Validation</span></span></li>
+      <li class="wf-step wf-step--todo"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L1.2 Local Finance</span><span class="wf-step__note">Wait For Logistics Validation</span></span></li>
+    </ol>
+  </section>
+  <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
+  <section class="wf-stage">
+    <h3 class="wf-stage__title"><span class="wf-bar">CENTRAL REVIEW</span></h3>
+    <ol class="wf-steps">
+      <li class="wf-step wf-step--active"><span class="wf-dot wf-dot--active"><img src="assets/icons/circle-blue.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.1 Central Marketing</span><span class="wf-step__note">Pending #REQ-9902</span></span></li>
+      <li class="wf-step wf-step--waiting"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-step__text"><span class="wf-step__name">L2.2 Central Finance</span><span class="wf-step__note">Awaiting L2.1</span></span></li>
+    </ol>
+  </section>
+  <img class="wf-arrow" src="assets/icons/chevron-right.svg" width="24" height="24" alt="">
+  <div class="wf-golive"><p class="wf-golive__card"><span class="wf-dot"><img src="assets/icons/circle-grey.svg" width="24" height="24" alt=""></span><span class="wf-golive__text">PENDING GO-LIVE</span></p></div>
+    </div>
+  </div>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

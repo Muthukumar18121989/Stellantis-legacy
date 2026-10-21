@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Bulk upload dialog</title>
+<!--
+  TwinX UI component: dialog-bulk-upload
+  Name:     Bulk upload dialog
+  Category: Dialogs
+  CSS:      css/base.css, css/configuration.css, css/admin.css, css/user-menu.css
+  JS:       none
+  Source:   kit/user-edit.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    File picker with template link.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--admin page--user-edit">
+<!-- snippet:start -->
+<dialog class="ad-dialog ad-dialog--bulk" id="ue-bulk" aria-labelledby="ue-bulk-title">
+  <button class="ad-dialog__close" type="button" data-close-dialog aria-label="Close"><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+  <div class="ad-dialog__head">
+    <h2 class="ad-dialog__title" id="ue-bulk-title">User Upload Details</h2>
+    <p class="ad-dialog__text">Add a csv file with user details</p>
+  </div>
+  <div class="bu-file">
+    <div class="bu-file__labels">
+      <span class="bu-file__label" id="bu-file-label">Choose File</span>
+      <a class="bu-file__template" href="#">Download Template</a>
+    </div>
+    <div class="bu-file__box">
+      <label class="bu-file__button"><img src="assets/icons/upload.svg" width="16" height="16" alt="">Choose File<input type="file" accept=".csv,text/csv" aria-labelledby="bu-file-label"></label>
+      <span class="bu-file__name">dummydata.csv</span>
+    </div>
+  </div>
+  <div class="ad-dialog__actions">
+    <a class="ad-dialog__btn ad-dialog__btn--primary bu-preview" href="user-bulk-preview.html">Preview</a>
+  </div>
+</dialog>
+<!-- snippet:end -->
+</div>
+<script>(function(){var d=document.querySelector("#ue-bulk");if(d){d.removeAttribute('hidden');try{d.showModal()}catch(e){d.setAttribute('open','')}}})();</script>
+
+</body>
+</html>

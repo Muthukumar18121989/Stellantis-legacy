@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Promotion title bar</title>
+<!--
+  TwinX UI component: promo-title-bar
+  Name:     Promotion title bar
+  Category: Data display
+  CSS:      css/base.css, css/promotool-dashboard.css, css/user-menu.css
+  JS:       none
+  Source:   kit/promotool-dashboard.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Promotion name, tags, stepper and Download on the Promotool Dashboard.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/promotool-dashboard.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--promodash">
+<!-- snippet:start -->
+<section class="pd-title">
+  <h2 class="pd-title__name">Alfa Romeo Giulia Ignition Bundle</h2>
+  <ol class="stepper pd-title__stepper" aria-label="Promotion stage">
+    <li class="stepper__step stepper__step--done"><span class="stepper__item"><span class="stepper__dot">1</span><span class="stepper__label">Upcoming</span></span></li>
+    <li class="stepper__step stepper__step--current" aria-current="step"><span class="stepper__item"><span class="stepper__dot">2</span><span class="stepper__label">Active</span></span></li>
+    <li class="stepper__step stepper__step--todo"><span class="stepper__item"><span class="stepper__dot">3</span><span class="stepper__label">Completed</span></span></li>
+  </ol>
+  <ul class="pd-title__tags">
+    <li class="pd-tag pd-tag--grey" style="width:44px">EU-008</li>
+    <li class="pd-tag pd-tag--blue" style="width:20px">EU</li>
+    <li class="pd-tag pd-tag--purple" style="width:45px">Ignition</li>
+    <li class="pd-tag pd-tag--olive" style="width:39px">Active</li>
+    <li class="pd-tag pd-tag--orange" style="width:93px">Underperforming</li>
+  </ul>
+  <button class="pd-btn pd-btn--outline pd-title__download" type="button">Download Reports</button>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>

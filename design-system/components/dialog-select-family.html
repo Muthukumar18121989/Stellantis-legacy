@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Select Family dialog</title>
+<!--
+  TwinX UI component: dialog-select-family
+  Name:     Select Family dialog
+  Category: Dialogs
+  CSS:      css/base.css, css/configuration.css, css/user-menu.css
+  JS:       none
+  Source:   kit/selection-analysis.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Search / upload families, validate, table with checkboxes and 'N Selected'. States via data-state: list, upload, validated.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--selection">
+<!-- snippet:start -->
+<dialog class="fam-dialog" id="select-family" aria-labelledby="select-family-title">
+  <form class="fam-dialog__body" method="dialog" onsubmit="return false">
+    <h2 class="fam-dialog__title" id="select-family-title">Select Family</h2>
+    <!-- Upload state (Figma 26:13985) -->
+    <div class="fam-upload">
+      <div class="fam-upload__field">
+        <div class="fam-upload__head">
+          <span class="fam-upload__label" id="fam-file-label">Choose File</span>
+          <a class="fam-upload__template" href="#">Download Template</a>
+        </div>
+        <label class="file-input">
+          <input type="file" id="fam-file" aria-labelledby="fam-file-label" accept=".xlsx,.xls,.csv">
+          <span class="file-input__button"><img src="assets/icons/upload.svg" width="16" height="16" alt="">Choose File</span>
+          <span class="file-input__name" data-file-name>promo_selection.xlxx</span>
+        </label>
+      </div>
+      <button class="btn-validate" type="button" data-validate>Validate<img src="assets/icons/refresh-white.svg" width="20" height="20" alt=""></button>
+    </div>
+    <!-- Validated state (Figma 26:14014): upload row + result banners above the family table -->
+    <p class="fam-alert fam-alert--success"><img src="assets/icons/check-green.svg" width="16" height="16" alt="">promo_selection.xlsx - 1 family, 102 articles matched</p>
+    <p class="fam-alert fam-alert--error"><img src="assets/icons/alert-triangle.svg" width="16" height="16" alt="">3 article IDs not found</p>
+    <div class="fam-dialog__main">
+      <div class="fam-toolbar">
+        <div class="fam-toolbar__search">
+          <label class="fam-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Family ID" aria-label="Search by Family ID"></label>
+          <label class="fam-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search by Family Name" aria-label="Search by Family Name"></label>
+        </div>
+        <button class="btn-outline-icon" type="button" data-show-upload><img src="assets/icons/upload.svg" width="16" height="16" alt="">Upload</button>
+      </div>
+      <div class="fam-table-wrap">
+        <table class="fam-table">
+          <colgroup><col style="width:105px"><col style="width:116px"><col style="width:113px"><col style="width:144px"><col style="width:139px"><col style="width:179px"><col style="width:78px"><col style="width:78px"></colgroup>
+          <thead>
+            <tr>
+              <th><label class="fam-id"><input class="fam-check" type="checkbox" data-check-all aria-label="Select all families">ID</label></th>
+              <th>Family Name</th><th># Articles</th><th>Business Line</th><th>Product Category</th><th>Competitiveness Class</th><th>DFS Flag</th><th>Supplier Ranges</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109Z5" checked>1109Z5</label></td>
+            <td class="is-light">Filter</td><td>653</td><td>Body</td><td>OEM</td>
+            <td class="is-soft-line"><span class="badge badge--level badge--high"><span class="badge__text">High</span></span></td>
+            <td>Yes</td><td>PRO</td>
+          </tr>
+          <tr>
+            <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109T0" checked>1109T0</label></td>
+            <td class="is-light">A/C</td><td>1235</td><td>Body</td><td>OEM</td>
+            <td class="is-soft-line"><span class="badge badge--level badge--high"><span class="badge__text">High</span></span></td>
+            <td>No</td><td>PRO</td>
+          </tr>
+          <tr>
+            <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109Z1">1109Z1</label></td>
+            <td class="is-light">Engine</td><td>127</td><td>Body</td><td>OEM</td>
+            <td class="is-soft-line"><span class="badge badge--level badge--medium"><span class="badge__text">Medium</span></span></td>
+            <td>Yes</td><td>IAM</td>
+          </tr>
+          <tr>
+            <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109R6">1109R6</label></td>
+            <td class="is-light">Wiper</td><td>80</td><td>Electrical</td><td>Retainera</td>
+            <td class="is-soft-line"><span class="badge badge--level badge--medium"><span class="badge__text">Medium</span></span></td>
+            <td>No</td><td>PRO</td>
+          </tr>
+          <tr>
+            <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109N2" checked>1109N2</label></td>
+            <td class="is-light">A/C</td><td>426</td><td>Mechanical</td><td>Retainera</td>
+            <td class="is-soft-line"><span class="badge badge--level badge--captive"><span class="badge__text">Captive</span></span></td>
+            <td>No</td><td>LOC</td>
+          </tr>
+          <tr>
+            <td class="is-light"><label class="fam-id"><input class="fam-check" type="checkbox" name="family" value="1109AZ">1109AZ</label></td>
+            <td class="is-light">Filter</td><td>28</td><td>Body</td><td>OEM</td>
+            <td class="is-soft-line"><span class="badge badge--level badge--high"><span class="badge__text">High</span></span></td>
+            <td>No</td><td>LOC</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="fam-footer">
+      <div class="table-footer">
+        <p class="table-footer__summary">Showing 1 to 6 of 15</p>
+        <nav class="pagination" aria-label="Pagination">
+          <button class="pagination__arrow pagination__arrow--prev" type="button" aria-label="Previous page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+          <button class="pagination__page pagination__page--current" type="button" aria-current="page"><span>1</span></button>
+          <button class="pagination__page" type="button"><span>2</span></button>
+          <button class="pagination__page" type="button"><span>3</span></button>
+          <button class="pagination__page" type="button"><span>4</span></button>
+          <button class="pagination__page" type="button"><span>5</span></button>
+          <button class="pagination__arrow pagination__arrow--next" type="button" aria-label="Next page"><img src="assets/icons/arrow-up.svg" width="16" height="16" alt=""></button>
+        </nav>
+      </div>
+      <button class="btn-selected" type="button" data-apply-selection><span data-selected-count>3 Selected</span><img src="assets/icons/arrow-right.svg" width="20" height="20" alt=""></button>
+    </div>
+  </form>
+  <button class="fam-dialog__close" type="button" aria-label="Close" data-close-dialog><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>
+</dialog>
+<!-- snippet:end -->
+</div>
+<script>(function(){var d=document.querySelector("#select-family");if(d){d.removeAttribute('hidden');try{d.showModal()}catch(e){d.setAttribute('open','')}}})();</script>
+
+</body>
+</html>

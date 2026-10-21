@@ -47,7 +47,7 @@
       "file": "kit/experiments.html",
       "role": "pilot",
       "group": "Promotion Pilot",
-      "purpose": "Main landing page of the Promotion Pilot: the Promotion Optimization card fills the page (Products / Network cards are in the markup but hidden). My Projects is a collapsible rail on its left (collapsed by default); the filter bar sits inside the panel above the table; the header reads '<project> - Promotion Optimization'. Holds the New Promotion and Workflow History dialogs.",
+      "purpose": "Main landing page of the Promotion Pilot: compact one-line Products / Network strip, then the Promotion Optimization card filling the rest of the window height (the table frame grows and scrolls under a sticky header). My Projects is a collapsible rail on its left (collapsed by default); the filter bar sits inside the panel above the table; the header reads '<project> - Promotion Optimization'. Holds the New Promotion and Workflow History dialogs.",
       "title": "Promotool — Experiments",
       "css": [
         "css/base.css",
@@ -75,7 +75,7 @@
           "element": "header.top-menu"
         },
         {
-          "label": "Products / Network (Figma 26:5939): hidden until they have functionality (Muthu, 2026-10-21)",
+          "label": "Products / Network (Figma 26:5939) as a compact one-line strip so the table gets the page (Muthu, 2026-10-21)",
           "element": "div.config-cards"
         },
         {
@@ -1347,7 +1347,7 @@
       "id": "config-cards",
       "name": "Products / Network cards",
       "category": "Data display",
-      "description": "Two summary cards with icon, label, type list and decorative illustrations pinned to the right edge. Hidden on experiments.html (hidden attribute) until they have functionality; drop the attribute to show them.",
+      "description": "Two summary cards with icon, label, type list and decorative illustrations pinned to the right edge. Add .config-cards--compact for the 56px one-line strip used on experiments.html; without it you get the full 138px Figma cards.",
       "file": "components/config-cards.html",
       "source": "kit/experiments.html",
       "css": [

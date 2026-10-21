@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="../kit/">
+  <title>TwinX UI · Summary tiles</title>
+<!--
+  TwinX UI component: summary-tiles
+  Name:     Summary tiles
+  Category: Data display
+  CSS:      css/base.css, css/configuration.css, css/reports.css, css/user-menu.css
+  JS:       none
+  Source:   kit/reports.html (cut verbatim by scripts/build.py; do not edit by hand, edit the legacy page and rebuild)
+  Usage:    Performance summary tiles with uplift range.
+  Copy the markup between snippet:start and snippet:end into a page that loads the CSS above.
+  Paths (assets/..., css/...) are relative to the site root, exactly as in the legacy pages.
+-->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/configuration.css">
+  <link rel="stylesheet" href="css/reports.css">
+  <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="../components/preview.css">
+</head>
+<body class="ds-preview">
+<div class="ds-scope page--reports">
+<!-- snippet:start -->
+<section class="rp-card rp-card--summary">
+  <h2 class="rp-title"><span class="rp-title__text">Promotion Performance Summary</span><span class="rp-title__note">Across 20 active/completed</span></h2>
+  <div class="rp-tiles">
+    <div class="rp-tile"><span class="rp-tile__label">Planned Revenue</span><span class="rp-tile__value">€6,060,000.00</span></div>
+    <div class="rp-tile"><span class="rp-tile__label">Registered Revenue</span><span class="rp-tile__value">€2,305.27</span></div>
+    <div class="rp-tile"><span class="rp-tile__label">Total Estimated Cost</span><span class="rp-tile__value">€1,134,000.00</span></div>
+    <div class="rp-tile rp-tile--uplift">
+      <span class="rp-tile__label">Sales Uplift</span>
+      <span class="rp-uplift" role="img" aria-label="Sales uplift: break-even 18,000, current 25,000, planned 52,500">
+        <span class="rp-uplift__track"></span><span class="rp-uplift__range"></span><span class="rp-uplift__marker"></span>
+        <span class="rp-uplift__label" style="left:46.5px;width:61px">18,000<br>Break-even</span>
+        <span class="rp-uplift__label" style="left:116.5px;width:61px">25,000<br>Current</span>
+        <span class="rp-uplift__label" style="left:232.5px;width:42px">52,500<br>Planned</span>
+      </span>
+    </div>
+  </div>
+</section>
+<!-- snippet:end -->
+</div>
+
+</body>
+</html>
