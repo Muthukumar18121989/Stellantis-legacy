@@ -95,26 +95,12 @@
   height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 3px 11px;
   background: #fff; border: 1px solid #bfe0f5; border-radius: 12px;
 }
-.sel-summary__text { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
-.sel-summary__title { font: 600 16px/24px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
-.sel-summary__meta { padding-left: 12px; border-left: 1px solid #c9ccce; font: 400 13px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
 .sel-summary .btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
-/* Promotion facts on the Article Selection Core line (Muthu, 2026-10-28): name + ID, type, time period; never taller than the bar */
-.sel-promo { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: flex-end; margin: 0 12px 0 16px; white-space: nowrap; }
-.sel-promo__item { display: flex; align-items: center; gap: 6px; min-width: 0; padding: 0 12px; border-left: 1px solid #e5e7e9; }
-.sel-promo__item:first-child { border-left: 0; }
-.sel-promo__item:last-child { padding-right: 0; }
-.sel-promo dt { flex: none; display: flex; font: 400 12px/18px "Poppins", sans-serif; letter-spacing: 0.036px; color: #727476; }
-.sel-promo dd { min-width: 0; margin: 0; overflow: hidden; text-overflow: ellipsis; font: 500 13px/20px "Noto Sans", sans-serif; letter-spacing: 0.03px; color: #323436; }
-.sel-promo__item--name { flex: 0 3 auto; } /* optional facts: the name gives way first */
-.sel-promo__item--name dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } /* "Promo" label for screen readers only */
-.sel-promo__item--name dd { display: flex; align-items: center; gap: 6px; }
-.sel-promo__name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-.sel-promo__id { flex: none; padding: 0 6px; border-radius: 4px; background: #f2f4f5; font: 500 11px/18px "Noto Sans", sans-serif; color: #727476; }
-.sel-promo__item--type { flex: none; } /* short type name (text before the first comma) always shows in full */
-.sel-promo__item--period { flex: none; }
-.sel-promo__days { color: #727476; font-weight: 400; }
-@media (max-width: 1439px) { .sel-promo__days, .sel-promo__id { display: none; } } /* laptops keep name, type and dates */
+/* Strip content (Muthu, 2026-10-28): promo name, type, period, families/SKUs from the left, no "Article Selection Core" title */
+.sel-promo { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 24px; margin-right: 16px; white-space: nowrap; }
+.sel-promo__name { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; font: 600 16px/24px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
+.sel-promo__type, .sel-promo__meta { flex: none; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; }
+.sel-promo__period { flex: none; display: flex; align-items: center; gap: 6px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; }
 .btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
 .btn-icon-primary { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 6px 12px; background: #007dc5; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
 .sel-empty {
