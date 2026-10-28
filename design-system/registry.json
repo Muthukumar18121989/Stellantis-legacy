@@ -239,12 +239,8 @@
           "element": "ol.stepper"
         },
         {
-          "label": "Article selection summary (Figma 26:10321)",
+          "label": "Article selection summary (Figma 26:10321) --> <!-- One line, from the left: promo name, type, time period, families and SKUs (Muthu's reference, 2026-10-28); values from the query string, js/selection-analysis.js",
           "element": "section.sel-summary"
-        },
-        {
-          "label": "Promotion being configured: name + ID, type and time period on the same line (Muthu, 2026-10-28); values from the query string, js/selection-analysis.js",
-          "element": "dl.sel-promo"
         },
         {
           "label": "Empty state (Figma 26:10328)",

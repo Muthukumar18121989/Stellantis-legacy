@@ -2,27 +2,29 @@
 (function () {
   document.querySelectorAll('[data-keep-query]').forEach(function (a) { a.href += location.search; });
 
-  // Promotion facts on the Article Selection Core line: ?title, ?id, ?type and ?start/?end (YYYY-MM-DD) override the sample values.
+  // Promotion strip (name, type, period): ?title, ?type and ?start/?end (YYYY-MM-DD) override the sample values.
   (function () {
     var q = new URLSearchParams(location.search);
     if (q.get('title')) {
       var nameEl = document.querySelector('[data-promo-name]');
       nameEl.textContent = nameEl.title = q.get('title');
     }
-    if (q.get('id')) document.querySelector('[data-promo-id]').textContent = '#' + q.get('id').replace(/^#/, '');
     var type = q.get('type');
     if (type) {
       var typeEl = document.querySelector('[data-promo-type]');
-      typeEl.textContent = type.split(',')[0]; // full name stays in the hover title
+      // Short name before the first comma, "Discount on MSRP at family level" reads "Discount on MSRP · Family level"; full name on hover.
+      typeEl.textContent = type.split(',')[0].replace(/ at (\w+) level$/i, function (m, lvl) { return ' · ' + lvl.charAt(0).toUpperCase() + lvl.slice(1) + ' level'; });
       typeEl.title = type;
     }
     var start = new Date(q.get('start') + 'T00:00:00'), end = new Date(q.get('end') + 'T00:00:00');
     if (!isNaN(start) && !isNaN(end) && end >= start) {
-      var fmt = function (d, year) { return d.toLocaleDateString('en-GB', year ? { day: 'numeric', month: 'short', year: 'numeric' } : { day: 'numeric', month: 'short' }); };
-      var days = Math.round((end - start) / 864e5) + 1;
-      var period = document.querySelector('[data-promo-period]');
-      period.firstChild.textContent = (start.getFullYear() === end.getFullYear() ? fmt(start) : fmt(start, true)) + ' – ' + fmt(end, true) + ' ';
-      period.querySelector('.sel-promo__days').textContent = '(' + days + (days === 1 ? ' day)' : ' days)');
+      var day = function (d) { return d.getDate(); };
+      var mon = function (d) { return d.toLocaleDateString('en-GB', { month: 'short' }); };
+      var y1 = start.getFullYear(), y2 = end.getFullYear();
+      document.querySelector('[data-promo-period]').textContent =
+        y1 === y2 && start.getMonth() === end.getMonth() ? day(start) + '–' + day(end) + ' ' + mon(end) + ' ' + y2
+        : y1 === y2 ? day(start) + ' ' + mon(start) + ' – ' + day(end) + ' ' + mon(end) + ' ' + y2
+        : day(start) + ' ' + mon(start) + ' ' + y1 + ' – ' + day(end) + ' ' + mon(end) + ' ' + y2;
     }
   })();
 
@@ -70,8 +72,8 @@
     list.classList.remove('has-drilldown');
     document.querySelector('[data-page-next]').textContent = 'Next';
     document.querySelector('[data-selection-meta]').textContent = chosen.length
-      ? chosen.length + (chosen.length === 1 ? ' Family' : ' Families') + ' | 296 Targeted SKUs'
-      : '0 Families | 0 Targeted SKUs';
+      ? chosen.length + (chosen.length === 1 ? ' Family' : ' Families') + ' · 296 SKUs'
+      : '0 Families · 0 SKUs';
     dialog.close();
   });
   // "Drill Down to Article" replaces that family's panel with its article list (Figma 26:10344).
