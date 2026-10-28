@@ -243,6 +243,10 @@
           "element": "section.sel-summary"
         },
         {
+          "label": "Promotion being configured: name + ID, type and time period on the same line (Muthu, 2026-10-28); values from the query string, js/selection-analysis.js",
+          "element": "dl.sel-promo"
+        },
+        {
           "label": "Empty state (Figma 26:10328)",
           "element": "section.sel-empty"
         },
