@@ -476,14 +476,14 @@ th .fam-id { gap: 10px; }
 .msrp-price td.pr-th-value { padding: 4px 16px 4px 4px; }
 .msrp-price td.pr-th-value .vol-input { width: 100%; }
 .art-view--msrp[data-tab="price"] .art-view__inner { justify-content: flex-start; } /* Figma 152:35837: table sits under the tabs, no pagination */
-/* MSRP at family level: Competitiveness class next to the family title, DSF Flag shown on the Article ID (badge + hover tooltip) */
+/* MSRP at family level: Competitiveness class next to the family title, DFS Flag shown on the Article ID (badge + hover tooltip) */
 .art-view__title { display: flex; align-items: baseline; gap: 16px; }
 .art-view__comp { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #d20e0e; }
 .art-view__comp[hidden] { display: none; }
 .vol-table.msrp-table { min-width: 1862px; }
 .vol-table.msrp-price { min-width: 1678px; }
 .dsf-id { position: relative; display: inline-flex; align-items: center; gap: 6px; cursor: default; outline: 0; }
-/* DSF badge next to the Article ID (Muthu's reference, 2026-10-28): blue pill = Yes, muted outlined pill = No */
+/* DFS badge next to the Article ID (Muthu's reference, 2026-10-28): blue pill = Yes, muted outlined pill = No */
 .dsf-id__badge {
   flex: none; padding: 0 5px; border: 1px solid #8fc6e8; border-radius: 4px; background: #e5f2fa;
   font: 600 10px/16px "Noto Sans", sans-serif; letter-spacing: 0.3px; color: #007dc5;
