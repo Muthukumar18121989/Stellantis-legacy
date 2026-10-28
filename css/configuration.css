@@ -478,7 +478,7 @@ th .fam-id { gap: 10px; }
 .art-view--msrp[data-tab="price"] .art-view__inner { justify-content: flex-start; } /* Figma 152:35837: table sits under the tabs, no pagination */
 /* MSRP at family level: Competitiveness class next to the family title, DFS Flag shown on the Article ID (badge + hover tooltip) */
 .art-view__title { display: flex; align-items: baseline; gap: 16px; }
-.art-view__comp { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #d20e0e; }
+.art-view__comp { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; } /* normal text colour, not red (Muthu, 2026-10-28) */
 .art-view__comp[hidden] { display: none; }
 .vol-table.msrp-table { min-width: 1862px; }
 .vol-table.msrp-price { min-width: 1678px; }
