@@ -2,6 +2,30 @@
 (function () {
   document.querySelectorAll('[data-keep-query]').forEach(function (a) { a.href += location.search; });
 
+  // Promotion facts on the Article Selection Core line: ?title, ?id, ?type and ?start/?end (YYYY-MM-DD) override the sample values.
+  (function () {
+    var q = new URLSearchParams(location.search);
+    if (q.get('title')) {
+      var nameEl = document.querySelector('[data-promo-name]');
+      nameEl.textContent = nameEl.title = q.get('title');
+    }
+    if (q.get('id')) document.querySelector('[data-promo-id]').textContent = '#' + q.get('id').replace(/^#/, '');
+    var type = q.get('type');
+    if (type) {
+      var typeEl = document.querySelector('[data-promo-type]');
+      typeEl.textContent = type.split(',')[0]; // full name stays in the hover title
+      typeEl.title = type;
+    }
+    var start = new Date(q.get('start') + 'T00:00:00'), end = new Date(q.get('end') + 'T00:00:00');
+    if (!isNaN(start) && !isNaN(end) && end >= start) {
+      var fmt = function (d, year) { return d.toLocaleDateString('en-GB', year ? { day: 'numeric', month: 'short', year: 'numeric' } : { day: 'numeric', month: 'short' }); };
+      var days = Math.round((end - start) / 864e5) + 1;
+      var period = document.querySelector('[data-promo-period]');
+      period.firstChild.textContent = (start.getFullYear() === end.getFullYear() ? fmt(start) : fmt(start, true)) + ' – ' + fmt(end, true) + ' ';
+      period.querySelector('.sel-promo__days').textContent = '(' + days + (days === 1 ? ' day)' : ' days)');
+    }
+  })();
+
   document.querySelectorAll('[data-open-dialog]').forEach(function (btn) {
     btn.addEventListener('click', function () { document.getElementById(btn.dataset.openDialog).showModal(); });
   });

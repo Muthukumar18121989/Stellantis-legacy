@@ -99,6 +99,22 @@
 .sel-summary__title { font: 600 16px/24px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; }
 .sel-summary__meta { padding-left: 12px; border-left: 1px solid #c9ccce; font: 400 13px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #727476; }
 .sel-summary .btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
+/* Promotion facts on the Article Selection Core line (Muthu, 2026-10-28): name + ID, type, time period; never taller than the bar */
+.sel-promo { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: flex-end; margin: 0 12px 0 16px; white-space: nowrap; }
+.sel-promo__item { display: flex; align-items: center; gap: 6px; min-width: 0; padding: 0 12px; border-left: 1px solid #e5e7e9; }
+.sel-promo__item:first-child { border-left: 0; }
+.sel-promo__item:last-child { padding-right: 0; }
+.sel-promo dt { flex: none; display: flex; font: 400 12px/18px "Poppins", sans-serif; letter-spacing: 0.036px; color: #727476; }
+.sel-promo dd { min-width: 0; margin: 0; overflow: hidden; text-overflow: ellipsis; font: 500 13px/20px "Noto Sans", sans-serif; letter-spacing: 0.03px; color: #323436; }
+.sel-promo__item--name { flex: 0 3 auto; } /* optional facts: the name gives way first */
+.sel-promo__item--name dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } /* "Promo" label for screen readers only */
+.sel-promo__item--name dd { display: flex; align-items: center; gap: 6px; }
+.sel-promo__name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.sel-promo__id { flex: none; padding: 0 6px; border-radius: 4px; background: #f2f4f5; font: 500 11px/18px "Noto Sans", sans-serif; color: #727476; }
+.sel-promo__item--type { flex: none; } /* short type name (text before the first comma) always shows in full */
+.sel-promo__item--period { flex: none; }
+.sel-promo__days { color: #727476; font-weight: 400; }
+@media (max-width: 1439px) { .sel-promo__days, .sel-promo__id { display: none; } } /* laptops keep name, type and dates */
 .btn-icon-primary { height: 28px; padding: 4px 10px; font-size: 13px; }
 .btn-icon-primary { display: flex; align-items: center; justify-content: center; gap: 8px; height: 32px; padding: 6px 12px; background: #007dc5; border-radius: 6px; font: 500 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #fff; white-space: nowrap; }
 .sel-empty {
@@ -189,6 +205,13 @@
 .art-tab::after { content: ""; width: 46px; height: 4px; border-radius: 2px 2px 0 0; }
 .art-tab[aria-selected="true"] { color: #2c2c30; }
 .art-tab[aria-selected="true"]::after { width: 100%; background: #007dc5; }
+/* Article view tabs are pills (Muthu's reference, 2026-10-28): active = filled blue pill */
+.art-view__tabs-row .art-tabs { align-items: center; gap: 8px; }
+.art-view__tabs-row .art-tab { height: 32px; padding: 6px 16px; border-radius: 16px; color: #323436; cursor: pointer; transition: background-color .15s, color .15s; }
+.art-view__tabs-row .art-tab::after { content: none; }
+.art-view__tabs-row .art-tab:hover { background: #e5f2fa; }
+.art-view__tabs-row .art-tab[aria-selected="true"] { background: #007dc5; color: #fff; }
+.art-view__tabs-row .art-tab:focus-visible { outline: 2px solid #8fc6e8; outline-offset: 2px; }
 .art-table-wrap { height: 280px; overflow: auto; background: #fff; border-radius: 8px; box-shadow: 0 0 0 1px #bfe0f5; } /* Figma: 1px outside stroke */
 .fam-table.art-table { width: 100%; min-width: 1359px; }
 /* Volume Analysis tab (Figma 26:11097) */
@@ -453,15 +476,19 @@ th .fam-id { gap: 10px; }
 .msrp-price td.pr-th-value { padding: 4px 16px 4px 4px; }
 .msrp-price td.pr-th-value .vol-input { width: 100%; }
 .art-view--msrp[data-tab="price"] .art-view__inner { justify-content: flex-start; } /* Figma 152:35837: table sits under the tabs, no pagination */
-/* MSRP at family level: Competitiveness class next to the family title, DSF Flag shown on the Article ID (dot + hover tooltip) */
+/* MSRP at family level: Competitiveness class next to the family title, DSF Flag shown on the Article ID (badge + hover tooltip) */
 .art-view__title { display: flex; align-items: baseline; gap: 16px; }
 .art-view__comp { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #d20e0e; }
 .art-view__comp[hidden] { display: none; }
 .vol-table.msrp-table { min-width: 1862px; }
 .vol-table.msrp-price { min-width: 1678px; }
 .dsf-id { position: relative; display: inline-flex; align-items: center; gap: 6px; cursor: default; outline: 0; }
-.dsf-id__dot { width: 8px; height: 8px; flex: none; border-radius: 50%; background: #00b5ad; }
-.dsf-id[data-dsf="no"] .dsf-id__dot { background: #fff; box-shadow: inset 0 0 0 1px #9ea0a2; }
+/* DSF badge next to the Article ID (Muthu's reference, 2026-10-28): blue pill = Yes, muted outlined pill = No */
+.dsf-id__badge {
+  flex: none; padding: 0 5px; border: 1px solid #8fc6e8; border-radius: 4px; background: #e5f2fa;
+  font: 600 10px/16px "Noto Sans", sans-serif; letter-spacing: 0.3px; color: #007dc5;
+}
+.dsf-id[data-dsf="no"] .dsf-id__badge { border-color: #dcdee0; background: #fff; color: #b0b2b4; }
 .dsf-id__tip {
   position: absolute; left: calc(100% + 8px); top: 50%; z-index: 3; transform: translateY(-50%); display: none;
   padding: 4px 8px; background: #323436; border-radius: 4px; box-shadow: 0 4px 8px rgba(142, 142, 142, 0.16);
