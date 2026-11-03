@@ -1,53 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-cxo-theme="wallStreet" data-cxo-font="editorial">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Promotool — Promotool Dashboard</title>
+  <link rel="stylesheet" href="cxo/fonts.css">
+  <link rel="stylesheet" href="cxo/tokens.css">
+  <script>try{if(localStorage.getItem("promotool-nav")==="collapsed")document.documentElement.classList.add("is-nav-collapsed")}catch(e){}</script>
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/promotool-dashboard.css">
   <link rel="stylesheet" href="css/user-menu.css">
+  <link rel="stylesheet" href="css/cxo-app.css">
 </head>
 <body>
 <!-- Promotool Dashboard — Figma "Promotion level Dashboard" (node 55:49358), 1366 × 2034 -->
 <div class="page page--promodash">
 
-  <nav class="left-bar" aria-label="Primary">
-    <button class="left-bar__toggle" aria-label="Menu"><img src="assets/icons/menu.svg" width="24" height="24" alt=""></button>
-    <div class="left-bar__menus">
-      <a class="left-bar__item left-bar__item--active" href="promotool-dashboard.html" aria-label="Promotool Dashboard" aria-current="page"><img src="assets/icons/grid-dots-blue.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="experiments.html" aria-label="Experiments"><img src="assets/icons/route-white.svg" width="24" height="24" alt=""></a>
-      <a class="left-bar__item" href="reports.html" aria-label="Reports"><img src="assets/icons/report-analytics.svg" width="24" height="24" alt=""></a>
+  <!-- App menu bar (CXO SidebarShell + NavItem). Collapse state is kept per browser by js/cxo-shell.js. -->
+  <aside class="sidebar" id="app-sidebar" aria-label="Main menu">
+    <div class="sidebar__brand">
+      <span class="sidebar__badge" aria-hidden="true">PT</span>
+      <span class="sidebar__name"><span class="sidebar__title">Promotool</span><span class="sidebar__sub">Stellantis</span></span>
+      <button class="sidebar__toggle" type="button" data-nav-toggle aria-label="Collapse menu" aria-controls="app-sidebar" aria-expanded="true"><svg class="i-close" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m16 15-3-3 3-3"/></svg><svg class="i-open" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="m14 9 3 3-3 3"/></svg></button>
     </div>
-  </nav>
+    <div class="sidebar__scroll">
+      <nav class="sidebar__nav" aria-label="Primary">
+        <div class="sidebar__section">Promotions</div>
+        <a class="nav-item is-active" href="promotool-dashboard.html" aria-current="page" title="Promotool Dashboard"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg><span class="nav-item__label">Promotool Dashboard</span></a>
+        <a class="nav-item" href="experiments.html" title="Experiments"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg><span class="nav-item__label">Experiments</span></a>
+        <a class="nav-item" href="reports.html" title="Reports"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg><span class="nav-item__label">Reports</span></a>
+      </nav>
+    </div>
+    <div class="sidebar__footer">
+      <div class="sidebar__utils">
+        <button class="notif sidebar__icon-btn" type="button" aria-label="Notifications (5)" title="Notifications"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="notif__count">5</span></button>
+        <button class="lang" type="button" title="Language"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span class="lang__label">English</span></button>
+      </div>
+      <button class="profile" type="button" title="Marcus Weber, Promotion Pilot (EE)">
+        <span class="profile__avatar" aria-hidden="true">MW</span>
+        <span class="profile__text"><span class="profile__name">MARCUS WEBER</span><span class="profile__role">Promotion Pilot (EE)</span></span>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/></svg>
+      </button>
+    </div>
+  </aside>
+  <div class="sidebar-scrim" data-nav-close hidden></div>
 
   <div class="main">
 
-    <header class="top-menu">
-      <div class="top-menu__logo">
-        <div class="brand">
-          <img class="brand__logo" src="assets/logo-promotool.png" width="190" height="28" alt="Stellantis Promotool">
-        </div>
-      </div>
-      <div class="top-menu__right">
-        <button class="notif" aria-label="Notifications (5)">
-          <img src="assets/icons/bell.svg" width="24" height="24" alt="">
-          <span class="notif__badge"><img src="assets/shapes/notification-oval.svg" width="16" height="16" alt=""></span>
-          <span class="notif__count">5</span>
-        </button>
-        <button class="lang">
-          <span class="lang__label">English</span>
-          <span class="lang__icons">
-            <img src="assets/icons/world.svg" width="24" height="24" alt="">
-            <img src="assets/icons/chevron-down.svg" width="16" height="16" alt="">
-          </span>
-        </button>
-        <button class="profile">
-          <span class="profile__name">MARCUS WEBER</span>
-          <span class="profile__role">Promotion Pilot (EE) <img src="assets/shapes/caret-down.svg" width="8" height="5" alt=""></span>
-        </button>
-      </div>
-    </header>
+    <!-- Phone / small tablet: the menu bar becomes a drawer opened from here -->
+    <div class="mobile-bar">
+      <button class="icon-btn" type="button" data-nav-open aria-label="Open menu" aria-controls="app-sidebar"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
+      <span class="sidebar__badge" aria-hidden="true">PT</span><span class="mobile-bar__title">Promotool</span>
+    </div>
 
     <section class="pd-header">
       <nav class="pd-breadcrumb" aria-label="Breadcrumb">
@@ -155,7 +159,7 @@
       <section class="pd-card pd-card--trajectory">
         <h3 class="pd-card__title"><span>Revenue Trajectory</span></h3>
         <div class="pd-chart pd-chart--trajectory">
-          <svg width="1287" height="315" viewBox="0 0 1287 315" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revenue trajectory chart"><rect x="68.3398" y="260.221" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="201" width="1171" height="0.889597" fill="#D9D9D9"/><rect x="68.3398" y="229" width="1171" height="0.889597" fill="#D9D9D9"/><rect x="68.3398" y="170" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="112" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="141" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="83" width="1171" height="1.77919" fill="#D9D9D9"/><rect x="68.3398" y="55" width="1171" height="1.77919" fill="#D9D9D9"/><path d="M66.1484 199C165.592 197.833 392.565 184.096 441.256 182.55C650.745 175.9 713.263 153.85 835.008 104.15C927.604 66.35 1017.08 63.55 1233.15 59" stroke="#727476" stroke-width="4" stroke-dasharray="8 8"/><path d="M66.1484 199C165.592 197.958 392.565 185.693 441.256 184.312C650.745 178.375 713.263 158.688 835.008 114.313C927.604 80.5625 1017.08 78.0625 1233.15 74" stroke="#007DC5" stroke-width="4" stroke-dasharray="2 2"/><path d="M66.1484 199C165.592 198.067 392.565 187.077 441.256 185.84C650.745 180.52 713.263 162.88 835.008 123.12C927.604 92.88 1017.08 90.64 1233.15 87" stroke="#C9CCCE" stroke-width="4"/><path d="M66.1484 199C165.592 198.192 392.565 188.673 441.256 187.603C650.745 182.995 713.263 167.718 835.008 133.283C927.604 107.093 1017.08 105.153 1233.15 102" stroke="#BFE0F5" stroke-width="4"/><g class="pd-axis"><text transform="translate(33.3398 44)"><tspan x="0.160156" y="11">700K</tspan></text><text transform="translate(32.3398 73)"><tspan x="0.203125" y="11">600K</tspan></text><text transform="translate(32.3398 102)"><tspan x="0.320312" y="11">500K</tspan></text><text transform="translate(23.3398 131)"><tspan x="0.693359" y="11">340.0K</tspan></text><text transform="translate(23.3398 160)"><tspan x="0.771484" y="11">255.0K</tspan></text><text transform="translate(27.3398 189)"><tspan x="0.423828" y="11">170.0K</tspan></text><text transform="translate(29.3398 218)"><tspan x="0.925781" y="11">85.0K</tspan></text><text transform="translate(25.3398 247)"><tspan x="26.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 -1.66016 178)"><tspan x="0.0175781" y="11">Revenue (&#x20ac;)</tspan></text><text class="pd-axis__title" transform="translate(647.34 300)"><tspan x="25.7422" y="11">Day</tspan></text><text transform="translate(62.3398 267)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(293.34 267)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(524.34 267)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(755.34 267)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(986.34 267)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1217.34 267)"><tspan x="5.60547" y="11">Mar</tspan></text></g><g class="pd-legend-inter"><rect x="876.34" y="8.5" width="21" height="8" fill="#87E3E0"/><text><tspan x="901.34" y="16.8636">Actual</tspan></text><rect x="949.34" y="8.5" width="21" height="8" fill="#2D9CDB"/><text><tspan x="974.34" y="16.8636">Forecast</tspan></text><rect x="1036.34" y="8.5" width="21" height="8" fill="#2D9CDB"/><text><tspan x="1061.34" y="16.8636">Lower bound</tspan></text><rect x="1148.34" y="8.5" width="21" height="8" fill="#2D9CDB"/><text><tspan x="1173.34" y="16.8636">Upper bound</tspan></text></g></svg>
+          <svg width="1287" height="315" viewBox="0 0 1287 315" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Revenue trajectory chart"><rect x="68.3398" y="260.221" width="1171" height="1.77919" fill="#D9D2C4"/><rect x="68.3398" y="201" width="1171" height="0.889597" fill="#D9D2C4"/><rect x="68.3398" y="229" width="1171" height="0.889597" fill="#D9D2C4"/><rect x="68.3398" y="170" width="1171" height="1.77919" fill="#D9D2C4"/><rect x="68.3398" y="112" width="1171" height="1.77919" fill="#D9D2C4"/><rect x="68.3398" y="141" width="1171" height="1.77919" fill="#D9D2C4"/><rect x="68.3398" y="83" width="1171" height="1.77919" fill="#D9D2C4"/><rect x="68.3398" y="55" width="1171" height="1.77919" fill="#D9D2C4"/><path d="M66.1484 199C165.592 197.833 392.565 184.096 441.256 182.55C650.745 175.9 713.263 153.85 835.008 104.15C927.604 66.35 1017.08 63.55 1233.15 59" stroke="#6A7480" stroke-width="4" stroke-dasharray="8 8"/><path d="M66.1484 199C165.592 197.958 392.565 185.693 441.256 184.312C650.745 178.375 713.263 158.688 835.008 114.313C927.604 80.5625 1017.08 78.0625 1233.15 74" stroke="#1B3A6B" stroke-width="4" stroke-dasharray="2 2"/><path d="M66.1484 199C165.592 198.067 392.565 187.077 441.256 185.84C650.745 180.52 713.263 162.88 835.008 123.12C927.604 92.88 1017.08 90.64 1233.15 87" stroke="#9DA6B0" stroke-width="4"/><path d="M66.1484 199C165.592 198.192 392.565 188.673 441.256 187.603C650.745 182.995 713.263 167.718 835.008 133.283C927.604 107.093 1017.08 105.153 1233.15 102" stroke="#D9D2C4" stroke-width="4"/><g class="pd-axis"><text transform="translate(33.3398 44)"><tspan x="0.160156" y="11">700K</tspan></text><text transform="translate(32.3398 73)"><tspan x="0.203125" y="11">600K</tspan></text><text transform="translate(32.3398 102)"><tspan x="0.320312" y="11">500K</tspan></text><text transform="translate(23.3398 131)"><tspan x="0.693359" y="11">340.0K</tspan></text><text transform="translate(23.3398 160)"><tspan x="0.771484" y="11">255.0K</tspan></text><text transform="translate(27.3398 189)"><tspan x="0.423828" y="11">170.0K</tspan></text><text transform="translate(29.3398 218)"><tspan x="0.925781" y="11">85.0K</tspan></text><text transform="translate(25.3398 247)"><tspan x="26.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 -1.66016 178)"><tspan x="0.0175781" y="11">Revenue (&#x20ac;)</tspan></text><text class="pd-axis__title" transform="translate(647.34 300)"><tspan x="25.7422" y="11">Day</tspan></text><text transform="translate(62.3398 267)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(293.34 267)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(524.34 267)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(755.34 267)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(986.34 267)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1217.34 267)"><tspan x="5.60547" y="11">Mar</tspan></text></g><g class="pd-legend-inter"><rect x="876.34" y="8.5" width="21" height="8" fill="#B89B5E"/><text><tspan x="901.34" y="16.8636">Actual</tspan></text><rect x="949.34" y="8.5" width="21" height="8" fill="#34568A"/><text><tspan x="974.34" y="16.8636">Forecast</tspan></text><rect x="1036.34" y="8.5" width="21" height="8" fill="#34568A"/><text><tspan x="1061.34" y="16.8636">Lower bound</tspan></text><rect x="1148.34" y="8.5" width="21" height="8" fill="#34568A"/><text><tspan x="1173.34" y="16.8636">Upper bound</tspan></text></g></svg>
         </div>
       </section>
 
@@ -163,7 +167,7 @@
       <section class="pd-card pd-card--demand">
         <h3 class="pd-card__title"><span>Demand trend showing baseline vs. promotional volume</span></h3>
         <div class="pd-chart pd-chart--demand">
-          <svg width="1245" height="205" viewBox="0 0 1245 205" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Demand trend chart"><rect x="43.3906" y="168" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="101.438" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="132.909" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="66.5947" width="1198.61" height="0.999878" fill="#D9D9D9"/><rect x="43.3906" y="34" width="1198.61" height="0.999878" fill="#D9D9D9"/><g class="pd-axis"><text transform="translate(23 28)"><tspan x="0.195312" y="11">120</tspan></text><text transform="translate(26 61.75)"><tspan x="0.0878906" y="11">90</tspan></text><text transform="translate(26 95.5)"><tspan x="0.0488281" y="11">60</tspan></text><text transform="translate(26 129.25)"><tspan x="0.488281" y="11">30</tspan></text><text transform="translate(20 163)"><tspan x="12.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 2 137)"><tspan x="0.109375" y="11">Volume (Index)</tspan></text><text transform="translate(44 174)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(278 174)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(512 174)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(746 174)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(980 174)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1214 174)"><tspan x="5.60547" y="11">Mar</tspan></text><rect x="970" y="3" width="23" height="9" fill="#007DC5"/><text class="pd-axis__title" transform="translate(1000)"><tspan x="0" y="11">Baseline Demand</tspan></text><rect x="1132" y="3" width="23" height="9" fill="#F2711C"/><text class="pd-axis__title" transform="translate(1163)"><tspan x="0" y="11">Promo Volume</tspan></text></g><path d="M55 59L292.2 47L525.912 59H758.129H993.335H1241" stroke="#F2711C" stroke-width="2"/><path d="M55 58.5L293 46.5L527.5 58.5H760.5L993.5 45H1240.5" stroke="#007DC5" stroke-width="2"/><circle cx="53.5" cy="57.5" r="4.5" fill="#007DC5"/><circle cx="293.5" cy="46.5" r="4.5" fill="#007DC5"/><circle cx="527.5" cy="58.5" r="4.5" fill="#007DC5"/><circle cx="761.5" cy="57.5" r="4.5" fill="#007DC5"/><circle cx="997.5" cy="44.5" r="4.5" fill="#007DC5"/><circle cx="997.5" cy="59.5" r="4.5" fill="#F2711C"/><circle cx="1240.5" cy="43.5" r="4.5" fill="#007DC5"/><circle cx="1240.5" cy="59.5" r="4.5" fill="#F2711C"/></svg>
+          <svg width="1245" height="205" viewBox="0 0 1245 205" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Demand trend chart"><rect x="43.3906" y="168" width="1198.61" height="0.999878" fill="#D9D2C4"/><rect x="43.3906" y="101.438" width="1198.61" height="0.999878" fill="#D9D2C4"/><rect x="43.3906" y="132.909" width="1198.61" height="0.999878" fill="#D9D2C4"/><rect x="43.3906" y="66.5947" width="1198.61" height="0.999878" fill="#D9D2C4"/><rect x="43.3906" y="34" width="1198.61" height="0.999878" fill="#D9D2C4"/><g class="pd-axis"><text transform="translate(23 28)"><tspan x="0.195312" y="11">120</tspan></text><text transform="translate(26 61.75)"><tspan x="0.0878906" y="11">90</tspan></text><text transform="translate(26 95.5)"><tspan x="0.0488281" y="11">60</tspan></text><text transform="translate(26 129.25)"><tspan x="0.488281" y="11">30</tspan></text><text transform="translate(20 163)"><tspan x="12.8379" y="11">0</tspan></text><text class="pd-axis__title" transform="matrix(0 -1 1 0 2 137)"><tspan x="0.109375" y="11">Volume (Index)</tspan></text><text transform="translate(44 174)"><tspan x="6.21094" y="11">Oct</tspan></text><text transform="translate(278 174)"><tspan x="5.62988" y="11">Nov</tspan></text><text transform="translate(512 174)"><tspan x="5.29297" y="11">Dec</tspan></text><text transform="translate(746 174)"><tspan x="5.9668" y="11">Jan</tspan></text><text transform="translate(980 174)"><tspan x="6.0498" y="11">Feb</tspan></text><text transform="translate(1214 174)"><tspan x="5.60547" y="11">Mar</tspan></text><rect x="970" y="3" width="23" height="9" fill="#1B3A6B"/><text class="pd-axis__title" transform="translate(1000)"><tspan x="0" y="11">Baseline Demand</tspan></text><rect x="1132" y="3" width="23" height="9" fill="#B5862C"/><text class="pd-axis__title" transform="translate(1163)"><tspan x="0" y="11">Promo Volume</tspan></text></g><path d="M55 59L292.2 47L525.912 59H758.129H993.335H1241" stroke="#B5862C" stroke-width="2"/><path d="M55 58.5L293 46.5L527.5 58.5H760.5L993.5 45H1240.5" stroke="#1B3A6B" stroke-width="2"/><circle cx="53.5" cy="57.5" r="4.5" fill="#1B3A6B"/><circle cx="293.5" cy="46.5" r="4.5" fill="#1B3A6B"/><circle cx="527.5" cy="58.5" r="4.5" fill="#1B3A6B"/><circle cx="761.5" cy="57.5" r="4.5" fill="#1B3A6B"/><circle cx="997.5" cy="44.5" r="4.5" fill="#1B3A6B"/><circle cx="997.5" cy="59.5" r="4.5" fill="#B5862C"/><circle cx="1240.5" cy="43.5" r="4.5" fill="#1B3A6B"/><circle cx="1240.5" cy="59.5" r="4.5" fill="#B5862C"/></svg>
         </div>
         <div class="pd-stats">
           <div class="pd-stat"><span class="pd-stat__label">Peak Uplift Month</span><span class="pd-stat__value">Feb / Mar</span></div>
@@ -192,11 +196,11 @@
         <!-- Revenue Breakdown -->
         <section class="pd-card pd-card--breakdown">
           <h3 class="pd-card__title"><span>Revenue Breakdown</span></h3>
-          <svg class="pd-pie" width="121" height="121" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Base Revenue 65%, Cost of Promo 10%, Cost of Uplift 25%"><path d="M0 60.4814C1.40232e-06 44.4407 6.37213 29.057 17.7146 17.7146C29.057 6.37213 44.4407 -1.91283e-07 60.4814 0L60.4814 27.6269C51.7678 27.6269 43.4112 31.0884 37.2498 37.2498C31.0884 43.4112 27.6269 51.7678 27.6269 60.4814L0 60.4814Z" fill="#FFD863"/><path d="M60.5126 0.0390625C70.8671 0.0390626 81.0481 2.69739 90.0808 7.75947C99.1135 12.8216 106.695 20.1179 112.1 28.9497C117.505 37.7815 120.552 47.8531 120.949 58.1999C121.347 68.5467 119.081 78.8222 114.369 88.0425C109.657 97.2628 102.657 105.119 94.0394 110.859C85.4215 116.599 75.4742 120.03 65.1503 120.824C54.8263 121.618 44.4714 119.748 35.0772 115.393C25.6829 111.039 17.5639 104.345 11.4977 95.9539L33.8869 79.7685C37.1822 84.3268 41.5926 87.9628 46.6957 90.3283C51.7988 92.6937 57.4237 93.7094 63.0319 93.2781C68.64 92.8468 74.0435 90.983 78.7249 87.865C83.4063 84.7471 87.2088 80.4795 89.7684 75.4709C92.3279 70.4623 93.5587 64.8804 93.3429 59.2599C93.1271 53.6393 91.4719 48.1683 88.5358 43.3707C85.5998 38.5731 81.4812 34.6096 76.5745 31.8598C71.6678 29.11 66.1373 27.666 60.5126 27.666V0.0390625Z" fill="#98D1A8"/><path d="M11.2386 95.5928C3.83207 85.1871 -0.0901484 72.7038 0.0341124 59.932L27.6597 60.2008C27.5922 67.1386 29.7228 73.9198 33.7462 79.5723L11.2386 95.5928Z" fill="#FD9A7E"/></svg>
+          <svg class="pd-pie" width="121" height="121" viewBox="0 0 121 121" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Base Revenue 65%, Cost of Promo 10%, Cost of Uplift 25%"><path d="M0 60.4814C1.40232e-06 44.4407 6.37213 29.057 17.7146 17.7146C29.057 6.37213 44.4407 -1.91283e-07 60.4814 0L60.4814 27.6269C51.7678 27.6269 43.4112 31.0884 37.2498 37.2498C31.0884 43.4112 27.6269 51.7678 27.6269 60.4814L0 60.4814Z" fill="#2D6B4A"/><path d="M60.5126 0.0390625C70.8671 0.0390626 81.0481 2.69739 90.0808 7.75947C99.1135 12.8216 106.695 20.1179 112.1 28.9497C117.505 37.7815 120.552 47.8531 120.949 58.1999C121.347 68.5467 119.081 78.8222 114.369 88.0425C109.657 97.2628 102.657 105.119 94.0394 110.859C85.4215 116.599 75.4742 120.03 65.1503 120.824C54.8263 121.618 44.4714 119.748 35.0772 115.393C25.6829 111.039 17.5639 104.345 11.4977 95.9539L33.8869 79.7685C37.1822 84.3268 41.5926 87.9628 46.6957 90.3283C51.7988 92.6937 57.4237 93.7094 63.0319 93.2781C68.64 92.8468 74.0435 90.983 78.7249 87.865C83.4063 84.7471 87.2088 80.4795 89.7684 75.4709C92.3279 70.4623 93.5587 64.8804 93.3429 59.2599C93.1271 53.6393 91.4719 48.1683 88.5358 43.3707C85.5998 38.5731 81.4812 34.6096 76.5745 31.8598C71.6678 29.11 66.1373 27.666 60.5126 27.666V0.0390625Z" fill="#1B3A6B"/><path d="M11.2386 95.5928C3.83207 85.1871 -0.0901484 72.7038 0.0341124 59.932L27.6597 60.2008C27.5922 67.1386 29.7228 73.9198 33.7462 79.5723L11.2386 95.5928Z" fill="#B89B5E"/></svg>
           <ul class="pd-pie-legend">
-            <li style="width:128px"><i style="background:#98d1a8"></i><span class="pd-pie-legend__name">Base Revenue</span><span class="pd-pie-legend__pct">65%</span></li>
-            <li style="width:129px"><i style="background:#fd9a7e"></i><span class="pd-pie-legend__name">Cost of Promo</span><span class="pd-pie-legend__pct">10%</span></li>
-            <li style="width:123px"><i style="background:#ffd863"></i><span class="pd-pie-legend__name">Cost of Uplift</span><span class="pd-pie-legend__pct">25%</span></li>
+            <li style="width:128px"><i style="background:#1B3A6B"></i><span class="pd-pie-legend__name">Base Revenue</span><span class="pd-pie-legend__pct">65%</span></li>
+            <li style="width:129px"><i style="background:#B89B5E"></i><span class="pd-pie-legend__name">Cost of Promo</span><span class="pd-pie-legend__pct">10%</span></li>
+            <li style="width:123px"><i style="background:#2D6B4A"></i><span class="pd-pie-legend__name">Cost of Uplift</span><span class="pd-pie-legend__pct">25%</span></li>
           </ul>
         </section>
       </div>
@@ -210,6 +214,7 @@
     </main>
   </div>
 </div>
+  <script src="js/cxo-shell.js"></script>
   <script src="js/user-menu.js"></script>
 </body>
 </html>

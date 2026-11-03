@@ -2,33 +2,33 @@
    on every page. Figma overlays: 30% black backdrop, close on click outside. */
 
 .umn-dialog, .us-dialog {
-  max-width: none; max-height: none; margin: 0; color: #323436;
-  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
-  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+  max-width: none; max-height: none; margin: 0; color: var(--c-ink);
+  background: var(--c-card); border: 0; border-top: 6px solid var(--c-brand); border-radius: var(--rad-lg);
+  box-shadow: 0 8px 12px rgba(12, 17, 22, 0.072);
 }
 .umn-dialog::backdrop, .us-dialog::backdrop { background: rgba(0, 0, 0, 0.3); }
 .umn-dialog :where(h2, h3, p), .us-dialog :where(h2, h3, p) { margin: 0; }
 
 /* Shared field: label, 4px, 32px box (Figma "Inputs") */
 .uf { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.uf__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.uf__label { font: 400 14px/20px var(--font); letter-spacing: 0.042px; color: var(--c-ink); white-space: nowrap; }
 .uf__box {
   height: 32px; display: flex; align-items: center; gap: 10px; padding: 0 11px;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
+  background: var(--c-card); border: 1px solid var(--c-line2); border-radius: var(--rad-sm);
 }
-.uf__box--grey { background: #f8f9fb; }
+.uf__box--grey { background: var(--c-ink-tint); }
 .uf__box input {
   flex: 1; min-width: 0; height: 20px; padding: 0; border: 0; outline: 0; background: none;
-  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+  font: 400 14px/20px var(--font); letter-spacing: 0.042px; color: var(--c-ink);
 }
-.uf__box input::placeholder { color: #323436; opacity: 1; }
-.uf__box--grey input, .uf__box--grey input::placeholder { color: #727476; }
-.uf__box input.is-noto { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; }
+.uf__box input::placeholder { color: var(--c-ink); opacity: 1; }
+.uf__box--grey input, .uf__box--grey input::placeholder { color: var(--c-muted); }
+.uf__box input.is-noto { font: 400 14px/20px var(--font); letter-spacing: 0.042px; }
 .uf__box img { flex: none; }
 
-.ub { display: inline-flex; align-items: center; justify-content: center; padding: 7px 15px; border: 1px solid #727476; border-radius: 8px; background: #fff; font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap; cursor: pointer; }
-.ub--primary { border-color: #007dc5; background: #007dc5; color: #fff; }
-.ub--small { padding: 5px 11px; border-radius: 6px; font-size: 14px; line-height: 20px; letter-spacing: 0.042px; }
+.ub { display: inline-flex; align-items: center; justify-content: center; padding: 7px 15px; border: 1px solid var(--c-line2); border-radius: var(--rad-md); background: var(--c-card); font: 500 16px/24px var(--font); letter-spacing: 0.032px; color: var(--c-ink); white-space: nowrap; cursor: pointer; }
+.ub--primary { border-color: var(--c-brand); background: var(--c-brand); color: #fff; }
+.ub--small { padding: 5px 11px; border-radius: var(--rad-sm); font-size: 14px; line-height: 20px; letter-spacing: 0.042px; }
 
 /* ---------- User menu (584 x 436) ---------- */
 .umn-dialog {
@@ -37,8 +37,8 @@
 }
 .umn-dialog[open] { display: flex; flex-direction: column; gap: 32px; }
 .umn-head { display: flex; flex-direction: column; gap: 8px; }
-.umn-head__name { font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
-.umn-head__email { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; }
+.umn-head__name { font: 500 20px/24px var(--font); color: var(--c-ink); white-space: nowrap; }
+.umn-head__email { font: 400 14px/20px var(--font); letter-spacing: 0.042px; color: var(--c-ink); }
 .umn-row { display: flex; gap: 32px; }
 .umn-row > .uf { width: 253px; }
 .umn-actions { display: flex; justify-content: flex-end; gap: 12px; }
@@ -51,18 +51,18 @@
 .us-dialog[open] { display: flex; flex-direction: column; gap: 24px; }
 .us-close { position: absolute; right: 8px; top: 10px; display: flex; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
 .us-head { display: flex; flex-direction: column; gap: 8px; }
-.us-head__title { font: 500 20px/24px "Noto Sans", sans-serif; color: #323436; }
-.us-head__sub { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #727476; }
-.us-body { display: flex; flex-direction: column; gap: 17px; padding: 15px; border: 1px solid #bfe0f5; border-radius: 12px; }
+.us-head__title { font: 500 20px/24px var(--font); color: var(--c-ink); }
+.us-head__sub { font: 400 14px/20px var(--font); letter-spacing: 0.042px; color: var(--c-muted); }
+.us-body { display: flex; flex-direction: column; gap: 17px; padding: 15px; border: 1px solid var(--c-line2); border-radius: var(--rad-lg); }
 .us-section { display: flex; flex-direction: column; gap: 17px; }
 .us-title {
   height: 28px; display: flex; align-items: flex-start; justify-content: space-between; padding-bottom: 8px;
-  background: linear-gradient(to right, #bfe0f5 4px, transparent 4px) 0 100% / 6px 1px repeat-x; /* dashed 4 / 2 rule */
+  background: linear-gradient(var(--c-line), var(--c-line)) left bottom / 100% 1px no-repeat; /* dashed 4 / 2 rule */
 }
 .us-title h3 {
-  position: relative; padding: 0 12px; font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap;
+  position: relative; padding: 0 12px; font: 600 16px/20px var(--font); letter-spacing: 0.048px; color: var(--c-ink); white-space: nowrap;
 }
-.us-title h3::before { content: ""; position: absolute; left: 0; top: 0; width: 4px; height: 20px; background: linear-gradient(180deg, #47b796, #01a1fe); }
+.us-title h3::before { content: ""; position: absolute; left: 0; top: 0; width: 3px; height: 20px; background: var(--gold-foil); }
 .us-title .us-badge { margin-top: 1.5px; }
 .us-row { display: flex; gap: 16px; }
 .us-row > .uf { flex: 1 1 0; }
@@ -72,51 +72,51 @@
 
 .us-badge {
   display: inline-flex; align-items: center; height: 17px; padding: 1px 4px; border-radius: 4px; white-space: nowrap;
-  background: rgba(0, 125, 197, 0.08); box-shadow: inset 0 0 0 1px rgba(0, 125, 197, 0.5); /* Figma 0.5px stroke */
-  font: 300 10px/15px "Poppins", sans-serif; color: #007dc5;
+  background: rgba(27, 58, 107, 0.08); box-shadow: inset 0 0 0 1px rgba(27, 58, 107, 0.5); /* Figma 0.5px stroke */
+  font: 400 10px/15px var(--font); color: var(--c-brand);
 }
-.us-badge--dark { color: #3f4047; }
-.us-badge--green { background: rgba(174, 254, 182, 0.31); box-shadow: inset 0 0 0 1px rgba(13, 177, 52, 0.5); color: #0db134; }
-.us-badge--grey { background: rgba(201, 204, 206, 0.08); box-shadow: inset 0 0 0 1px rgba(201, 204, 206, 0.5); color: #323436; }
+.us-badge--dark { color: var(--c-ink2); }
+.us-badge--green { background: rgba(45, 107, 74, 0.108); box-shadow: inset 0 0 0 1px rgba(45, 107, 74, 0.5); color: var(--c-green); }
+.us-badge--grey { background: rgba(217, 210, 196, 0.08); box-shadow: inset 0 0 0 1px rgba(217, 210, 196, 0.5); color: var(--c-ink); }
 
-.us-deleg { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 7px 15px; border: 1px solid #c9ccce; border-radius: 12px; }
+.us-deleg { position: relative; display: flex; flex-direction: column; gap: 8px; padding: 7px 15px; border: 1px solid var(--c-line2); border-radius: var(--rad-lg); }
 .us-deleg__head { height: 17px; }
 .us-deleg__remove { position: absolute; right: 17px; top: 7px; display: flex; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
 .us-deleg .us-row > .uf:first-child { flex: none; width: 303px; }
 
 .us-batch { display: flex; align-items: center; justify-content: space-between; height: 32px; }
-.us-batch__info { display: flex; align-items: center; gap: 17px; font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; }
+.us-batch__info { display: flex; align-items: center; gap: 17px; font: 400 14px/20px var(--font); letter-spacing: 0.042px; }
 .us-batch__actions { display: flex; gap: 17px; }
 .us-requests { display: flex; gap: 17px; }
 .us-col { display: flex; flex-direction: column; gap: 8px; }
-.us-col__label { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; white-space: nowrap; }
+.us-col__label { font: 400 14px/20px var(--font); letter-spacing: 0.042px; white-space: nowrap; }
 .us-col--delegator { width: 208px; flex: none; }
 .us-col--requested { flex: 1; min-width: 0; }
-.us-person { display: flex; flex-direction: column; gap: 16px; padding: 15px; border: 1px solid #ccdde8; border-radius: 12px; }
+.us-person { display: flex; flex-direction: column; gap: 16px; padding: 15px; border: 1px solid var(--c-line); border-radius: var(--rad-lg); }
 .us-person__main { display: flex; align-items: center; gap: 12px; }
-.us-avatar { flex: none; width: 28px; height: 28px; padding: 2px 0 0 1.3px; border-radius: 16px; background: #cbeefd; }
+.us-avatar { flex: none; width: 28px; height: 28px; padding: 2px 0 0 1.3px; border-radius: var(--rad-xl); background: var(--c-brand-tint2); }
 .us-avatar img { display: block; }
-.us-avatar--green { background: #dafdcb; }
+.us-avatar--green { background: var(--c-green-bg); }
 .us-person__id { display: flex; flex-direction: column; gap: 0; }
-.us-person__name { font: 600 18px/28px "Noto Sans", sans-serif; letter-spacing: 0.027px; color: #323436; white-space: nowrap; }
+.us-person__name { font: 600 18px/28px var(--font); letter-spacing: 0.027px; color: var(--c-ink); white-space: nowrap; }
 .us-person__id .us-badge { align-self: flex-start; }
-.us-person__role { font: 400 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; }
-.us-request { display: flex; align-items: center; gap: 14px; padding: 15px; border: 1px solid #ccdde8; border-radius: 12px; }
+.us-person__role { font: 400 16px/20px var(--font); letter-spacing: 0.048px; }
+.us-request { display: flex; align-items: center; gap: 14px; padding: 15px; border: 1px solid var(--c-line); border-radius: var(--rad-lg); }
 .us-request__who { flex: none; width: 205px; display: flex; align-items: flex-start; gap: 12px; }
 .us-request__info { width: 106px; display: flex; flex-direction: column; gap: 3px; }
 .us-request__info .us-badge { align-self: flex-start; }
-.us-request__role { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; white-space: nowrap; }
-.us-request__period { flex: none; width: 115px; font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; text-align: right; }
+.us-request__role { font: 400 14px/20px var(--font); letter-spacing: 0.042px; white-space: nowrap; }
+.us-request__period { flex: none; width: 115px; font: 400 14px/20px var(--font); letter-spacing: 0.042px; text-align: right; }
 .us-request__period b { font-weight: 600; white-space: nowrap; }
 .us-request button { flex: none; display: flex; width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; }
 .us-request > :last-child { margin-right: -13px; } /* Figma: the tick runs 13px past the card padding */
 .us-requests .us-col--requested > .us-request + .us-request { margin-top: 0; }
-.us-granted { display: flex; align-items: center; justify-content: space-between; padding: 15px; border: 1px solid #ccdde8; border-radius: 12px; }
+.us-granted { display: flex; align-items: center; justify-content: space-between; padding: 15px; border: 1px solid var(--c-line); border-radius: var(--rad-lg); }
 .us-granted__who { display: flex; align-items: flex-start; gap: 12px; }
 .us-granted__info { width: 231px; display: flex; flex-direction: column; gap: 3px; }
 .us-granted__top { display: flex; align-items: center; gap: 4px; }
 .us-granted__top .us-badge { width: 61px; height: 32px; justify-content: center; text-align: center; }
 .us-granted__top .us-badge span { width: 32px; } /* Figma wraps "TID2345" after "TID2" in its 32px text box */
-.us-granted__role { font: 500 12px/20px "Poppins", sans-serif; letter-spacing: 0.036px; color: #0db134; }
-.us-granted__dates { font: 400 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; white-space: nowrap; }
+.us-granted__role { font: 500 12px/20px var(--font); letter-spacing: 0.036px; color: var(--c-green); }
+.us-granted__dates { font: 400 14px/20px var(--font); letter-spacing: 0.042px; white-space: nowrap; }
 .us-actions { display: flex; justify-content: flex-end; gap: 12px; }

@@ -1,0 +1,131 @@
+/* CXO design system tokens as CSS custom properties.
+
+   Source: cxo-design-system/tokens (colors.js, themes.js, typography.js, layout.js, chart.js), theme "wallStreet"
+   (Wall Street Executive, the design system default). Promotool is a static HTML app, so the JS token objects
+   (C, T, SPACE, TEXT, SIZE, Z, MOTION) are expressed here as variables. This is the "CSS custom properties"
+   migration the design system's own RULES.md names as the long-term theme fix: switching theme is one
+   attribute on <html> (data-cxo-theme), with no reload.
+
+   Rule (README "Tokens, never literals"): screens read these variables, never a hex, font name, radius or shadow. */
+
+:root,
+[data-cxo-theme="wallStreet"] {
+  /* ── colour (C) ─────────────────────────────────────────── */
+  --c-paper: #FAF8F3;
+  --c-card: #FFFFFF;
+  --c-ink: #0C1116;
+  --c-ink2: #2C3540;
+  --c-muted: #6A7480;
+  --c-faint: #9DA6B0;
+  --c-line: #EAE6DC;
+  --c-line2: #D9D2C4;
+  --c-brand: #1B3A6B;
+  --c-brand-lt: #34568A;
+  --c-gold: #B89B5E;
+  --c-gold-dk: #7F6938;
+  --c-nav-bg: #0A1628;
+  --c-nav-bg2: #0F1F36;
+  --c-green: #2D6B4A;
+  --c-green-bg: #EAF3EE;
+  --c-red: #A8453B;
+  --c-red-bg: #FBECEA;
+  --c-amber: #B5862C;
+  --c-amber-bg: #FAF1DD;
+  --c-slate: #475569;
+  --c-on-dark: #F4F1EA;          /* text on the navy sidebar (NavItem) */
+
+  /* tints (the design system writes these as colour + 2-digit alpha, e.g. `${C.gold}18`) */
+  --c-gold-tint: rgba(184, 155, 94, .09);    /* gold 18 : selected row, active chip */
+  --c-gold-hover: rgba(184, 155, 94, .06);   /* gold 0f : row hover */
+  --c-gold-ring: rgba(184, 155, 94, .35);    /* focus ring */
+  /* opaque washes (brand / ink over the card surface), so sticky table headers and frozen columns stay solid */
+  --c-brand-tint: #F2F4F7;                   /* brand 06 on card */
+  --c-brand-tint2: #E4E9F0;                  /* brand 12 on card */
+  --c-ink-tint: #FBFAF7;                     /* ink 05 : zebra rows */
+  --c-ink-tint2: #F4F2ED;                    /* tab track, subtle fills */
+
+  /* ── shape, depth, gradients (T) ─────────────────────────── */
+  --rad-sm: 6px;
+  --rad-md: 10px;
+  --rad-lg: 14px;
+  --rad-xl: 18px;
+  --rad-pill: 999px;
+  --shadow-1: 0 1px 2px rgba(12, 17, 22, .04), 0 1px 1px rgba(12, 17, 22, .03);
+  --shadow-2: 0 4px 16px rgba(12, 17, 22, .06), 0 2px 4px rgba(12, 17, 22, .04);
+  --shadow-3: 0 18px 48px rgba(12, 17, 22, .10), 0 6px 16px rgba(12, 17, 22, .06);
+  --shadow-gold-glow: 0 0 0 1px rgba(184, 155, 94, .22), 0 8px 28px rgba(184, 155, 94, .18);
+  --gold-foil: linear-gradient(135deg, #E6C98C 0%, #B89B5E 50%, #7F6938 100%);
+  --nav-grad: linear-gradient(180deg, #0A1628 0%, #0F1F36 60%, #0A1628 100%);
+  --paper-grad: linear-gradient(180deg, #FAF8F3 0%, #EDEBE6 100%);
+  --card-elevated: linear-gradient(180deg, #FFFFFF 0%, #F7F7F7 100%);
+  --rule: 1px solid var(--c-line);
+  --rule-strong: 1px solid var(--c-line2);
+  --hairline-gold: 1px solid rgba(184, 155, 94, .30);
+
+  /* ── chart (chart.js: chartColors(), brand first) ────────── */
+  --chart-1: var(--c-brand);
+  --chart-2: var(--c-gold);
+  --chart-3: var(--c-green);
+  --chart-4: var(--c-red);
+  --chart-5: var(--c-amber);
+  --chart-6: var(--c-slate);
+  --chart-7: var(--c-brand-lt);
+  --chart-8: var(--c-gold-dk);
+}
+
+:root {
+  /* ── typography (typography.js; families come from fonts.css presets) ── */
+  --font: var(--cxo-font-body);
+  --disp: var(--cxo-font-display);
+  --title: var(--cxo-font-title);
+  --brand-font: var(--cxo-font-brand);
+
+  /* type scale (TEXT, px) */
+  --t-micro: 9px;
+  --t-caption: 10.5px;
+  --t-small: 11.5px;
+  --t-body: 12.5px;
+  --t-base: 13px;
+  --t-lead: 15px;
+  --t-h3: 18px;
+  --t-h2: 22px;
+  --t-h1: 28px;
+
+  /* ── spacing (SPACE) ──────────────────────────────────────── */
+  --s-xs: 4px;
+  --s-sm: 8px;
+  --s-md: 12px;
+  --s-lg: 16px;
+  --s-xl: 24px;
+  --s-xxl: 32px;
+  --s-xxxl: 44px;
+
+  /* ── sizes (SIZE) ─────────────────────────────────────────── */
+  --sidebar-collapsed: 72px;
+  --sidebar-expanded: 240px;
+  --nav-btn: 32px;
+  --shell-inset: 14px;
+  --page-pad-top: 32px;
+  --page-pad-x: 44px;
+  --page-pad-bottom: 40px;
+  --page-max: 1240px;
+  --control-h: 36px;
+  --control-h-sm: 28px;
+  --modal-sm: 420px;
+  --modal-md: 560px;
+  --modal-lg: 760px;
+
+  /* ── layers (Z) and motion (MOTION) ───────────────────────── */
+  --z-base: 1;
+  --z-sticky: 20;
+  --z-dropdown: 50;
+  --z-overlay: 1000;
+  --z-overlay-content: 1001;
+  --z-panel: 1200;
+  --z-modal: 9000;
+  --z-toast: 10000;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+  --m-fast: 120ms;
+  --m-base: 200ms;
+  --m-slow: 300ms;
+}

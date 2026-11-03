@@ -10,24 +10,24 @@
 /* ---------- Promotion Approval Dashboard card (Figma 88:17858): 3px wider than the rows above, as in Figma ---------- */
 .es-card {
   height: 446px; display: flex; flex-direction: column; gap: 16px; padding: 15px;
-  background: #fff; border: 1px solid #ccdde8; border-radius: 12px;
+  background: var(--c-card); border: 1px solid var(--c-line); border-radius: var(--rad-lg);
 }
 .es-card > * { flex: none; }
 .es-card__title {
-  height: 28px; padding-bottom: 8px; border-bottom: 1px solid #ccdde8;
-  font: 600 16px/20px "Poppins", sans-serif; letter-spacing: 0.048px; color: #323436; white-space: nowrap;
+  height: 28px; padding-bottom: 8px; border-bottom: 1px solid var(--c-line);
+  font: 600 16px/20px var(--font); letter-spacing: 0.048px; color: var(--c-ink); white-space: nowrap;
 }
 .es-toolbar { height: 36px; display: flex; align-items: center; justify-content: space-between; }
 .es-toolbar__right { display: flex; align-items: center; gap: 24px; }
 
 /* Status filter pills (Figma "Tabs" Variant2) */
-.es-status { display: flex; align-items: center; gap: 6px; padding: 5px; background: #fff; border: 1px solid #bfe0f5; border-radius: 28px; }
+.es-status { display: flex; align-items: center; gap: 6px; padding: 5px; background: var(--c-card); border: 1px solid var(--c-line2); border-radius: var(--rad-xl); }
 .es-status__tab {
-  height: 24px; display: flex; align-items: center; gap: 4px; padding: 0 8px; border-radius: 30px; box-shadow: inset 0 0 0 1px #bfe0f5;
-  font: 400 12px/16px "Open Sans", sans-serif; color: #727476; white-space: nowrap;
+  height: 24px; display: flex; align-items: center; gap: 4px; padding: 0 8px; border-radius: var(--rad-xl); box-shadow: inset 0 0 0 1px var(--c-line2);
+  font: 400 12px/16px var(--font); color: var(--c-muted); white-space: nowrap;
 }
 .es-status__tab.is-active {
-  background: #007dc5; box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15);
+  background: var(--c-brand); box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.15);
   font-weight: 600; color: #fff; text-shadow: 0 2px 2px rgba(51, 51, 51, 0.25);
 }
 .es-status__tab:nth-child(1) { width: 165px; } /* Figma pill widths */
@@ -39,43 +39,66 @@
 .es-search input { text-overflow: ellipsis; } /* Figma truncates the placeholder */
 .page--status .es-compare { width: 116px; gap: 8px; }
 
-.es-table-wrap { border: 0; box-shadow: 0 0 0 1px #ccdde8; } /* Figma draws the table rule outside */
+.es-table-wrap { border: 0; box-shadow: 0 0 0 1px var(--c-line); } /* Figma draws the table rule outside */
 .promos td.es-actions { padding: 12px 16px 11px; }
 .es-actions__inner { display: flex; align-items: center; gap: 8px; }
-.es-action { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex: none; background: #fff; border: 1px solid #727476; border-radius: 6px; }
+.es-action { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; flex: none; background: var(--c-card); border: 1px solid var(--c-line2); border-radius: var(--rad-sm); }
 
 .page--status .table-footer__summary { width: 201px; }
 .es-pagination .pagination__arrow--prev img { transform: none; }
 .es-pagination .pagination__arrow--next img { transform: rotate(180deg); }
 .page--status .promos td { height: 47px; } /* rows are 48 including their 1px rule, as in Figma */
-.page--status .profile { width: 134px; } /* Figma profile block width, so the menu starts at x 832 */
 
 /* ---------- Approve Request / Reject Request (Figma 88:18260, 88:18309, 741 × 332), opened by the tick / cross ---------- */
 .es-dialog {
   position: fixed; inset: 0; margin: auto; width: 741px; height: 332px; max-width: none; max-height: none;
-  padding: 18px 24px 24px; overflow: visible; color: #323436; /* 24px from the outer edge; the 6px top rule sits inside it */
-  background: #fff; border: 0; border-top: 6px solid #007dc5; border-radius: 12px;
-  box-shadow: 0 8px 12px rgba(142, 142, 142, 0.18);
+  padding: 18px 24px 24px; overflow: visible; color: var(--c-ink); /* 24px from the outer edge; the 6px top rule sits inside it */
+  background: var(--c-card); border: 0; border-top: 6px solid var(--c-brand); border-radius: var(--rad-lg);
+  box-shadow: 0 8px 12px rgba(12, 17, 22, 0.072);
 }
 .es-dialog::backdrop { background: transparent; } /* Figma shows no backdrop */
 .es-dialog__close { position: absolute; left: 693px; top: 10px; width: 24px; height: 24px; }
 .es-dialog__body { display: flex; flex-direction: column; gap: 32px; }
 .es-dialog__head { display: flex; flex-direction: column; gap: 8px; }
-.es-dialog__title { font: 500 20px/24px "Poppins", sans-serif; color: #323436; white-space: nowrap; }
-.es-dialog__text { font: 400 14px/20px "Noto Sans", sans-serif; letter-spacing: 0.042px; color: #323436; white-space: nowrap; }
+.es-dialog__title { font: 500 20px/24px var(--font); color: var(--c-ink); white-space: nowrap; }
+.es-dialog__text { font: 400 14px/20px var(--font); letter-spacing: 0.042px; color: var(--c-ink); white-space: nowrap; }
 .es-dialog__comments { position: relative; display: block; height: 128px; }
 .es-dialog__comments textarea {
   display: block; width: 100%; height: 100%; margin: 0; padding: 5px 11px; resize: none; outline: 0;
-  background: #fff; border: 1px solid #bfe0f5; border-radius: 6px;
-  font: 300 14px/20px "Poppins", sans-serif; letter-spacing: 0.042px; color: #323436;
+  background: var(--c-card); border: 1px solid var(--c-line2); border-radius: var(--rad-sm);
+  font: 400 14px/20px var(--font); letter-spacing: 0.042px; color: var(--c-ink);
 }
-.es-dialog__comments textarea::placeholder { color: #323436; opacity: 1; }
+.es-dialog__comments textarea::placeholder { color: var(--c-ink); opacity: 1; }
 .es-dialog__comments img { position: absolute; left: 673px; top: 108px; pointer-events: none; } /* Figma resize mark, 6px in from the corner */
 .es-dialog__actions { display: flex; justify-content: flex-end; gap: 12px; }
 .es-dialog__btn {
   width: 90px; height: 40px; display: flex; align-items: center; justify-content: center; padding: 7px 15px;
-  background: #fff; border: 1px solid #727476; border-radius: 8px;
-  font: 500 16px/24px "Poppins", sans-serif; letter-spacing: 0.032px; color: #323436; white-space: nowrap;
+  background: var(--c-card); border: 1px solid var(--c-line2); border-radius: var(--rad-md);
+  font: 500 16px/24px var(--font); letter-spacing: 0.032px; color: var(--c-ink); white-space: nowrap;
 }
-.es-dialog__btn--primary { background: #007dc5; border-color: #007dc5; color: #fff; }
+.es-dialog__btn--primary { background: var(--c-brand); border-color: var(--c-brand); color: #fff; }
 .page--status .promos { width: calc(100% + 1px); } /* Figma: 1019 wide in the 1018 box */
+
+/* ═══ CXO design system: OpsCard, status segmented control, DataTable actions ═══ */
+.page--status .filters__fields { margin-right: 0; }
+.page--status .btn-primary { width: auto; }
+.page--status .es-compare { width: auto; }
+.page--status .table-footer__summary { width: auto; }
+.page--status .promos td { height: 52px; }
+.page--status .promos { width: 100%; }
+.config-cards:not(.config-cards--compact) .config-card { height: auto; min-height: 120px; }
+.es-card { padding: 18px; gap: 14px; border-color: var(--c-line); background: var(--card-elevated); box-shadow: var(--shadow-1); }
+.es-card__title { font: 600 15px/1.3 var(--disp); }
+.es-toolbar { height: auto; flex-wrap: wrap; gap: 12px; }
+.es-toolbar__right { flex-wrap: wrap; gap: 10px; }
+.es-status__tab:nth-child(n) { width: auto !important; }
+.es-status__dot { width: 6px; height: 6px; }
+.es-search { width: 280px; max-width: 100%; }
+.es-action { width: 28px; height: 28px; transition: border-color var(--m-fast) var(--ease), background var(--m-fast) var(--ease); }
+.es-action:hover { border-color: var(--c-gold); background: var(--c-gold-hover); }
+.es-action img { width: 14px; height: 14px; }
+.es-dialog { width: min(741px, calc(100vw - 32px)); padding: 24px 28px 28px; }
+.es-dialog__close { left: auto; right: 14px; top: 14px; }
+.es-dialog__text { white-space: normal; font-size: 13px; color: var(--c-ink2); }
+.es-dialog__comments textarea { border-radius: var(--rad-md) !important; border-color: var(--c-line2) !important; font: 400 13px/1.5 var(--font) !important; }
+.es-dialog__comments img { left: auto; right: 6px; top: auto; bottom: 6px; }

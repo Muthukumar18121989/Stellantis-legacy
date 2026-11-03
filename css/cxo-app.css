@@ -1,0 +1,237 @@
+/* CXO application layer: loaded last on every page.
+   Brings each screen's own blocks (headers, cards, tables, buttons, badges, tabs) onto the CXO patterns
+   (PageHeader, OpsCard, DataTable, Btn, OpsPill, OpsTabs, Segmented) and makes the frame responsive.
+   Only tokens from cxo/tokens.css are used here. */
+
+/* ═══════════════════════════════════════════════════════════════════════
+   1. PAGE HEADER: every screen's title block reads as layout/PageHeader
+   ═══════════════════════════════════════════════════════════════════════ */
+.page-header, .cfg-header, .res-header, .rp-header, .ad-header, .pd-header {
+  height: auto !important; min-height: 0 !important; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: var(--s-lg) var(--s-xl);
+  padding: 0 !important; margin-bottom: var(--s-xl); background: none !important; border: 0 !important; box-shadow: none !important; filter: none !important;
+}
+.page-header__inner, .cfg-header__inner, .ad-header__inner, .rp-header__text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.page-header__title, .cfg-header__title, .rp-header__title, .ad-header__title, .pd-header__title {
+  margin: 0; font-family: var(--title) !important; font-weight: var(--cxo-title-weight) !important; font-size: calc(30px * var(--cxo-title-scale)) !important;
+  letter-spacing: var(--cxo-title-tracking) !important; line-height: 1.15 !important; color: var(--c-ink) !important; white-space: normal !important;
+}
+.page-header__subtitle, .ad-header__subtitle, .rp-header__subtitle {
+  font: 400 13.5px/1.55 var(--font) !important; letter-spacing: 0 !important; color: var(--c-muted) !important; max-width: 760px;
+}
+.cfg-header .stepper { margin-left: 0 !important; }
+
+/* Bodies: page spacing belongs to the shell (RULES "Page spacing is owned by the shell") */
+.content, .ad-body, .exp-body, .cfg-body, .vs-body, .res-body, .wf-body, .rp-body, .cmp-body, .pd-body {
+  padding: 0 !important; gap: var(--s-lg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   2. RESPONSIVE FRAME (BREAKPOINT md 900 / sm 640)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1279px) {
+  .main { padding: 24px 28px 32px; }
+}
+@media (max-width: 899px) {
+  .page { padding: 0; gap: 0; }
+  .main { padding: 0 16px 28px; }
+  .mobile-bar {
+    position: sticky; top: 0; z-index: var(--z-sticky); display: flex; align-items: center; gap: 10px;
+    margin: 0 -16px 20px; padding: 10px 16px; width: auto; max-width: none;
+    background: var(--c-paper); border-bottom: 1px solid var(--c-line);
+  }
+  .mobile-bar .icon-btn svg { width: 16px; height: 16px; fill: none; stroke: var(--c-ink); stroke-width: 2; stroke-linecap: round; }
+  .mobile-bar__title { font: 700 14px/1 var(--disp); color: var(--c-ink); letter-spacing: -.01em; }
+  .sidebar {
+    position: fixed; left: 0; top: 0; bottom: 0; z-index: var(--z-modal); width: min(280px, 86vw) !important; padding: 26px 16px !important;
+    border-radius: 0 var(--rad-lg) var(--rad-lg) 0; transform: translateX(-104%); transition: transform var(--m-slow) var(--ease);
+  }
+  .is-nav-open .sidebar { transform: none; }
+  .sidebar-scrim { position: fixed; inset: 0; z-index: calc(var(--z-modal) - 1); background: rgba(10, 22, 40, .45); backdrop-filter: blur(2px); }
+  .sidebar-scrim[hidden] { display: none; }
+  .is-nav-open .sidebar-scrim:not([hidden]) { display: block; }
+  /* the drawer is always the expanded layout */
+  .is-nav-collapsed .sidebar__brand { flex-direction: row; padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(255, 255, 255, .06); }
+  .is-nav-collapsed .sidebar__name, .is-nav-collapsed .sidebar__section { display: block; }
+  .is-nav-collapsed .nav-item__label, .is-nav-collapsed .lang__label { display: inline; }
+  .is-nav-collapsed .profile__text { display: flex; }
+  .is-nav-collapsed .profile > svg { display: block; }
+  .is-nav-collapsed .sidebar__nav { align-items: stretch; gap: 4px; }
+  .is-nav-collapsed .nav-item { width: 100%; height: auto; padding: 11px 14px; justify-content: flex-start; background: transparent; box-shadow: none; }
+  .is-nav-collapsed .nav-item.is-active { background: rgba(255, 255, 255, .05); box-shadow: none; }
+  .is-nav-collapsed .nav-item.is-active::before { left: 0; }
+  .is-nav-collapsed .nav-item.is-active::after { display: block; }
+  .is-nav-collapsed .sidebar__utils { flex-direction: row; }
+  .is-nav-collapsed .lang { flex: 1; width: auto; height: 28px; padding: 0 10px; justify-content: flex-start; }
+  .is-nav-collapsed .profile { padding: 8px; background: rgba(255, 255, 255, .03); border: 1px solid rgba(255, 255, 255, .05); }
+  .sidebar__toggle .i-open { display: none !important; }
+  .sidebar__toggle .i-close { display: block !important; }
+  .page-header__title, .cfg-header__title, .rp-header__title, .ad-header__title, .pd-header__title { font-size: calc(24px * var(--cxo-title-scale)) !important; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   3. TABLES (tables/DataTable): solid card header with uppercase micro labels, hairline rows, gold hover
+   ═══════════════════════════════════════════════════════════════════════ */
+.main table thead th {
+  background-color: var(--c-card);
+  font-family: var(--font) !important; font-size: 9.5px !important; font-weight: 800 !important; line-height: 1.35 !important;
+  letter-spacing: .12em !important; text-transform: uppercase; color: var(--c-muted);
+  border-bottom-color: var(--c-line);
+}
+.main table thead th :is(span, div, b, strong, small) { font-family: inherit; letter-spacing: inherit; }
+.main table tbody tr { transition: background var(--m-fast) var(--ease); }
+.main table tbody tr:hover > td { background-color: var(--c-gold-hover); }
+.main table tbody td { color: var(--c-ink); }
+/* frozen header cells keep a solid surface */
+.main table thead th[style*="sticky"], .main table thead th { background-clip: padding-box; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   4. CARD AND SECTION TITLES (OpsSectionHeading / card heads): display face, ink
+   ═══════════════════════════════════════════════════════════════════════ */
+.card__title, .es-card__title, .ad-card__title, .res-card__title, .pd-card__title, .rp-title__text, .wf-title__text,
+.doa-title__text, .optimization__title, .vs-card__title, .an-card__title, .sa-head__title, .trend__title, .pd-config__title,
+.us-title h3, .rm-summary__title, .projects__title, .fam-panel__title, .vs-band__title, .wf-comments__title, .pd-track__title {
+  font-family: var(--disp) !important; font-weight: 600 !important; letter-spacing: -.005em !important; color: var(--c-ink) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   5. PRODUCTS / NETWORK STRIP (dark surface, SidebarShell palette)
+   ═══════════════════════════════════════════════════════════════════════ */
+.config-card { color: var(--c-on-dark); }
+.config-card__label { font-family: var(--disp) !important; color: var(--c-on-dark) !important; letter-spacing: -.005em !important; }
+.config-card__main { border-right-color: rgba(255, 255, 255, .08) !important; }
+.config-card__decor { opacity: .18; filter: grayscale(1) brightness(2); }
+.types__title { font: 700 9px/1.4 var(--font) !important; letter-spacing: .18em !important; text-transform: uppercase; color: rgba(244, 241, 234, .45) !important; }
+.types__item { font: 500 12px/1.4 var(--font) !important; letter-spacing: .01em !important; color: rgba(244, 241, 234, .82) !important; }
+.types__item img { filter: none; }
+.types__item img, .types__item svg { opacity: .9; }
+.config-card__icon > img:first-child { opacity: .25; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   6. TABS AND SEGMENTED CONTROLS (OpsTabs): track of ink tint, active segment on card with shadow
+   ═══════════════════════════════════════════════════════════════════════ */
+.tabs__list, .segments__list, .rp-tabs, .pd-tabs, .res-tabs, .art-tabs, .rf-tabs, .es-status {
+  display: inline-flex !important; align-items: center !important; gap: 2px !important; padding: 4px !important; height: auto !important;
+  background: var(--c-ink-tint2) !important; border: 1px solid var(--c-line) !important; border-radius: var(--rad-md) !important; box-shadow: none !important;
+}
+.tabs, .segments { height: auto !important; padding: 0 !important; }
+.rp-tabs, .pd-tabs, .res-tabs, .art-tabs, .rf-tabs, .es-status, .tabs__list, .segments__list { align-self: flex-start; width: auto !important; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+.tab, .segment, .rp-tab, .pd-tab, .res-tab, .art-tab, .rf-tab, .es-status__tab {
+  display: inline-flex !important; align-items: center !important; gap: 7px; height: auto !important; padding: 7px 14px !important; margin: 0 !important;
+  border: 0 !important; border-radius: var(--rad-sm) !important; background: transparent !important; box-shadow: none !important;
+  font: 600 12.5px/1.3 var(--font) !important; letter-spacing: .01em !important; color: var(--c-muted) !important; white-space: nowrap;
+  transition: background var(--m-fast) var(--ease), color var(--m-fast) var(--ease);
+}
+.tab:hover, .segment:hover, .rp-tab:hover, .pd-tab:hover, .res-tab:hover, .art-tab:hover, .rf-tab:hover, .es-status__tab:hover { color: var(--c-ink) !important; }
+.tab--active, .segment--active, .rp-tab[aria-selected="true"], .rp-tab.is-active, .pd-tab--active, .res-tab[aria-selected="true"], .res-tab.is-active,
+.art-tab[aria-selected="true"], .art-tab.is-active, .rf-tab--active, .es-status__tab.is-active {
+  background: var(--c-card) !important; color: var(--c-ink) !important; font-weight: 700 !important; box-shadow: var(--shadow-1), 0 0 0 1px var(--c-line) !important;
+}
+.tab__inner { display: contents !important; }
+.tab__label, .rf-tab__label { font: inherit !important; color: inherit !important; letter-spacing: inherit !important; }
+.tab__bar, .rf-tab__bar { display: none !important; }
+.tab--active .tab__label { color: var(--c-ink) !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   7. BUTTONS (primitives/Btn): brand primary, ghost secondary, navy on hover
+   ═══════════════════════════════════════════════════════════════════════ */
+.ad-btn--primary, .ad-dialog__btn--primary, .es-dialog__btn--primary, .pp-btn--primary, .ub--primary, .btn-next, .btn-validate, .btn-create,
+.btn-icon-primary, .rf-apply, .vs-apply, .art-apply, .rp-btn, .pd-btn:not(.pd-btn--outline), .login__submit, .rp-download__btn {
+  border-radius: var(--rad-md) !important; font-family: var(--font) !important; font-weight: 600 !important; letter-spacing: .02em !important;
+  box-shadow: var(--shadow-1); transition: transform .15s var(--ease), box-shadow .2s var(--ease), background .15s var(--ease) !important;
+}
+.ad-btn--primary:hover, .ad-dialog__btn--primary:hover, .es-dialog__btn--primary:hover, .pp-btn--primary:hover, .ub--primary:hover, .btn-next:hover,
+.btn-validate:hover, .btn-create:hover, .btn-icon-primary:hover, .rf-apply:hover, .vs-apply:hover, .art-apply:hover, .rp-btn:hover,
+.pd-btn:not(.pd-btn--outline):hover, .login__submit:hover, .rp-download__btn:hover {
+  background: var(--c-nav-bg) !important; border-color: var(--c-nav-bg) !important; box-shadow: var(--shadow-2); transform: translateY(-1px);
+}
+.ad-btn:not(.ad-btn--primary), .ad-dialog__btn:not(.ad-dialog__btn--primary), .es-dialog__btn:not(.es-dialog__btn--primary), .pp-btn:not(.pp-btn--primary),
+.ub:not(.ub--primary), .btn-outline, .btn-outline-icon, .pd-btn--outline, .btn-square, .file-input__button, .bu-file__button {
+  border-radius: var(--rad-md) !important; border-color: var(--c-line2) !important; background-color: var(--c-card) !important; color: var(--c-ink) !important;
+  font-family: var(--font) !important; font-weight: 600 !important; letter-spacing: .02em !important; box-shadow: var(--shadow-1);
+  transition: transform .15s var(--ease), border-color .15s var(--ease), background .15s var(--ease) !important;
+}
+.ad-btn:not(.ad-btn--primary):hover, .ad-dialog__btn:not(.ad-dialog__btn--primary):hover, .es-dialog__btn:not(.es-dialog__btn--primary):hover,
+.pp-btn:not(.pp-btn--primary):hover, .ub:not(.ub--primary):hover, .btn-outline:hover, .btn-outline-icon:hover, .pd-btn--outline:hover,
+.btn-square:hover, .file-input__button:hover, .bu-file__button:hover {
+  border-color: var(--c-gold) !important; background-color: var(--c-gold-hover) !important; transform: translateY(-1px);
+}
+.btn-selected { border-radius: var(--rad-md) !important; font-weight: 600 !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   8. DIALOGS (ops/Modal): centred card, dim + blur over the whole viewport, floating shadow, gold accent edge
+   ═══════════════════════════════════════════════════════════════════════ */
+dialog.ad-dialog, dialog.es-dialog, dialog.fam-dialog, dialog.new-promo, dialog.pp-panel, dialog.rp-download, dialog.sa-dialog,
+dialog.umn-dialog, dialog.us-dialog, dialog.wf-comments, dialog.wh-dialog {
+  max-width: calc(100vw - 32px) !important; max-height: calc(100vh - 32px) !important; overflow: auto;
+  background: var(--c-card) !important; color: var(--c-ink);
+  border: 1px solid var(--c-line) !important; border-top: 1px solid var(--c-line) !important; border-radius: var(--rad-lg) !important;
+  box-shadow: var(--shadow-3) !important; z-index: var(--z-modal);
+  background-image: var(--gold-foil) !important; background-size: 100% 3px !important; background-repeat: no-repeat !important;
+  background-color: var(--c-card) !important;
+}
+dialog.ad-dialog[open], dialog.es-dialog[open], dialog.fam-dialog[open], dialog.new-promo[open], dialog.pp-panel[open], dialog.rp-download[open],
+dialog.sa-dialog[open], dialog.umn-dialog[open], dialog.us-dialog[open], dialog.wf-comments[open], dialog.wh-dialog[open] { animation: fadeIn var(--m-base) var(--ease); }
+dialog::backdrop { background: rgba(10, 22, 40, .42) !important; backdrop-filter: blur(3px); }
+.ad-dialog__title, .es-dialog__title, .fam-dialog__title, .new-promo__title, .wh-dialog__title, .pp-title, .us-head__title, .umn-head__name, .rp-download__title {
+  font-family: var(--title) !important; font-weight: var(--cxo-title-weight) !important; letter-spacing: var(--cxo-title-tracking) !important;
+  font-size: calc(22px * var(--cxo-title-scale)) !important; line-height: 1.2 !important; color: var(--c-ink) !important; height: auto !important; white-space: normal !important;
+}
+
+/* Inputs and selects across screens (OPS_INPUT_STYLE): 36px, radius sm, gold focus */
+.main :is(input[type="text"], input[type="search"], input[type="email"], input[type="password"], input[type="number"], input:not([type]), textarea):focus,
+dialog :is(input[type="text"], input[type="search"], input[type="email"], input[type="password"], input:not([type]), textarea):focus {
+  outline: none; border-color: var(--c-gold) !important; box-shadow: 0 0 0 3px var(--c-gold-ring);
+}
+.main :is(input, textarea)::placeholder, dialog :is(input, textarea)::placeholder { color: var(--c-faint); }
+input[type="checkbox"]:not(.pp-toggle) { accent-color: var(--c-brand); }
+.checkbox { border-radius: 4px !important; border-color: var(--c-line2) !important; cursor: pointer; }
+.checkbox:checked { background: var(--c-brand) url("../assets/icons/check-white-16.svg") center / 12px no-repeat !important; border-color: var(--c-brand) !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   9. PROMOTION CONTEXT BAR (result, workflow, logistics): one dark band of facts, like the menu bar palette
+   ═══════════════════════════════════════════════════════════════════════ */
+.res-summary, .wf-summary, .vs-summary {
+  height: auto !important; min-height: 64px; flex-wrap: wrap; gap: 12px 20px !important; padding: 14px 18px !important;
+  background: var(--nav-grad) !important; border: 1px solid rgba(255, 255, 255, .06) !important; border-radius: var(--rad-lg) !important; box-shadow: var(--shadow-2) !important;
+}
+.res-summary__facts, .wf-summary__facts, .vs-summary__facts { flex-wrap: wrap; gap: 10px 28px !important; }
+.res-fact, .wf-fact, .vs-fact { width: auto !important; flex: 0 1 auto !important; min-width: 0; font: 500 13px/1.4 var(--font) !important; color: var(--c-on-dark) !important; }
+.res-fact dt, .wf-fact dt, .vs-fact dt { margin-bottom: 3px; font: 700 9px/1.3 var(--font) !important; letter-spacing: .16em; text-transform: uppercase; color: rgba(244, 241, 234, .5) !important; }
+.res-fact dd, .wf-fact dd, .vs-fact dd { font-weight: 600 !important; white-space: normal !important; }
+.res-summary .icon-btn, .wf-summary .icon-btn, .vs-summary .icon-btn,
+.res-summary button:not(.res-chip), .wf-summary > button, .vs-summary > button { background: rgba(255, 255, 255, .06); border-color: rgba(255, 255, 255, .12); box-shadow: none; }
+.res-summary img, .wf-summary > button img, .vs-summary > button img { filter: invert(1) brightness(1.6); }
+.res-chip { width: auto !important; height: 36px !important; margin-left: auto; padding: 0 14px !important; border-radius: var(--rad-md) !important; box-shadow: none !important; background: var(--gold-foil) !important; color: var(--c-nav-bg) !important; font: 700 12.5px/1 var(--font) !important; }
+.res-chip img { filter: none !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   10. FORM LABELS (OPS_LABEL_STYLE) and KPI tiles (OpsKpi) shared by several screens
+   ═══════════════════════════════════════════════════════════════════════ */
+.ue-field__label, .pp-field__label, .uf__label, .cfg-date__label, .login__label, .sa-row__label, .vsn-reason__label, .fam-upload__label, .us-col__label {
+  font: 800 9px/1.3 var(--font) !important; letter-spacing: .14em !important; text-transform: uppercase; color: var(--c-muted) !important;
+}
+.rp-tile__label, .an-tile__label, .trend-tile__label, .rm-count__label, .rp-uplift__label {
+  font: 800 9px/1.4 var(--font) !important; letter-spacing: .14em !important; text-transform: uppercase; color: var(--c-muted) !important;
+}
+/* inputs of the admin, configuration and dialog forms: 36px, card surface, line2 border (OPS_INPUT_STYLE) */
+.ue-field input, .ue-field textarea, .ue-field select, .pp-field input, .uf__box, .cfg-input, .cfg-select, .text-input, .sa-input {
+  border-radius: var(--rad-sm) !important; border-color: var(--c-line2) !important;
+}
+
+/* 11. Pagination and table footers wrap on phones */
+@media (max-width: 767px) {
+  .pagination { flex-wrap: wrap; }
+  .table-footer, .rp-footer, .ad-footer { flex-wrap: wrap; gap: 8px; height: auto; }
+}
+@media (max-width: 767px) { .cfg-actions { flex-wrap: wrap; } }
+
+/* 12. Phones and tablets: fixed desktop heights give way to content height; wide tables scroll inside their card */
+@media (max-width: 899px) {
+  .rp-filters, .rp-card--stages, .rp-card--summary, .rp-card--tracking, .rp-card--elasticity, .rp-card--markets { height: auto; }
+  .ad-header, .ad-header--compact { height: auto; }
+  .ad-header__title, .ad-header__subtitle { white-space: normal; }
+  .cmp-scroll { overflow-x: auto; }
+  .cmp-config { min-width: 720px; }
+  .vs-card__title, .vs-card__title .res-card__title-inner { height: auto; }
+  .vs-band { height: auto; flex-wrap: wrap; gap: 8px; }
+}
