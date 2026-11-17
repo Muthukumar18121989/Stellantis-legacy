@@ -50,7 +50,7 @@
       '<div class="umn-row">' + field('User Name', name) + field('User ID', 'TID35672') + '</div>' +
       '<div class="umn-row">' + field('Current Role', role || 'Promotion Pilot') + field('Market', 'Italy') + '</div>' +
       '<div class="umn-row">' + field('Department', 'Marketing') + '</div>' +
-      '<div class="umn-actions"><button class="ub" type="button" data-open-settings>Settings</button><button class="ub ub--primary" type="button" data-log-out>Log Out</button></div>' +
+      '<div class="umn-actions"><button class="ub umn-manual" type="button" data-open-manual><img src="assets/icons/book-blue.svg" width="20" height="20" alt="">User Manual</button><button class="ub" type="button" data-open-settings>Settings</button><button class="ub ub--primary" type="button" data-log-out>Log Out</button></div>' +
     '</dialog>' +
     '<dialog class="us-dialog" id="user-settings" aria-label="User Settings">' +
       '<button class="us-close" type="button" aria-label="Close" data-close-settings><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>' +
@@ -82,12 +82,66 @@
       '<div class="us-actions"><button class="ub" type="button" data-close-settings>Cancel Changes</button><button class="ub ub--primary" type="button" data-close-settings>Save Configuration</button></div>' +
     '</dialog>';
 
+  // User Manual side pane (Muthu, 2026-11-17): opened from the book button in the top bar and from the
+  // user menu. Each topic opens its PDF in a new tab. The PDFs in docs/user-manual are sample placeholders.
+  var topics = [
+    ['01-getting-started', 'Getting Started', 'Sign in, the top bar, the left menu and your Experiments page.', 2],
+    ['02-experiments-projects', 'Experiments and Projects', 'Find, filter and open promotions in My Projects.', 2],
+    ['03-create-promotion', 'Creating a Promotion', 'Create a new promotion and set its type and configuration.', 2],
+    ['04-article-selection', 'Article Selection and Analysis', 'Choose families, review exclusions, volume and price analysis.', 2],
+    ['05-simulation-results', 'Simulation and Results', 'Run a simulation and read the KPI summary and drilldown.', 2],
+    ['06-logistics-approval', 'Logistics and Approval', 'Split volumes, submit for approval and follow the workflow.', 2],
+    ['07-reports', 'Reports', 'Find and download reports from the Report Hub.', 2],
+    ['08-settings-delegation', 'User Settings and Delegation', 'Change your password and manage delegations.', 2],
+    ['09-administration', 'Administration', 'DOA rules, user management and role management for admins.', 2]
+  ];
+  html +=
+    '<dialog class="umm-pane" id="user-manual" aria-label="User Manual">' +
+      '<button class="us-close" type="button" aria-label="Close" data-close-manual><img src="assets/icons/x.svg" width="24" height="24" alt=""></button>' +
+      '<div class="us-head"><h2 class="us-head__title">User Manual</h2><p class="us-head__sub">Pick a topic to open its guide as a PDF in a new tab.</p></div>' +
+      '<label class="uf__box umm-search"><img src="assets/icons/search.svg" width="16" height="16" alt=""><input type="search" placeholder="Search topics" aria-label="Search topics" data-manual-search></label>' +
+      '<ul class="umm-list">' + topics.map(function (t, i) {
+        return '<li><a class="umm-item" href="docs/user-manual/' + t[0] + '.pdf" target="_blank" rel="noopener" data-search="' + esc((t[1] + ' ' + t[2]).toLowerCase()) + '">' +
+          '<span class="umm-item__icon"><img src="assets/icons/file-pdf.svg" width="24" height="24" alt=""></span>' +
+          '<span class="umm-item__text"><span class="umm-item__title">' + (i + 1) + '. ' + esc(t[1]) + '</span><span class="umm-item__desc">' + esc(t[2]) + '</span>' +
+          '<span class="umm-item__meta">PDF · ' + t[3] + ' pages</span></span>' +
+          '<img class="umm-item__open" src="assets/icons/external-link.svg" width="16" height="16" alt="">' +
+        '</a></li>';
+      }).join('') + '</ul>' +
+      '<p class="umm-empty" hidden>No topics match your search.</p>' +
+      '<p class="umm-note">Sample placeholder PDFs. The final manual will replace them.</p>' +
+    '</dialog>';
+
   document.body.insertAdjacentHTML('beforeend', html);
   var menu = document.getElementById('user-menu');
   var settings = document.getElementById('user-settings');
+  var manual = document.getElementById('user-manual');
+
+  // Top-bar entry point: a book icon button left of the notifications bell
+  var right = profile.closest('.top-menu__right');
+  if (right) {
+    right.insertAdjacentHTML('afterbegin', '<button class="manual-btn" type="button" aria-label="User Manual" data-tooltip="User Manual"><img src="assets/icons/book.svg" width="24" height="24" alt=""></button>');
+    right.querySelector('.manual-btn').addEventListener('click', openManual);
+  }
+  function openManual() {
+    if (menu.open) menu.close();
+    manual.showModal();
+    manual.scrollTop = 0;
+  }
+  var search = manual.querySelector('[data-manual-search]');
+  search.addEventListener('input', function () {
+    var q = search.value.trim().toLowerCase(), shown = 0;
+    manual.querySelectorAll('.umm-item').forEach(function (a) {
+      var hit = !q || a.getAttribute('data-search').indexOf(q) !== -1;
+      a.parentNode.hidden = !hit; if (hit) shown++;
+    });
+    manual.querySelector('.umm-empty').hidden = shown > 0;
+  });
+  manual.querySelector('[data-close-manual]').addEventListener('click', function () { manual.close(); });
+  menu.querySelector('[data-open-manual]').addEventListener('click', openManual);
 
   // A click on the backdrop lands on the dialog element itself, outside its box
-  [menu, settings].forEach(function (d) {
+  [menu, settings, manual].forEach(function (d) {
     d.addEventListener('click', function (e) {
       if (e.target !== d) return;
       var r = d.getBoundingClientRect();
