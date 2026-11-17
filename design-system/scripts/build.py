@@ -65,7 +65,8 @@ comp("app-shell", "App shell", "App shell", "experiments.html", desc="Page frame
 comp("left-bar-pilot", "Left menu bar (Promotion Pilot)", "App shell", "experiments.html", '<nav class="left-bar"', desc="60px gradient bar. Items: Promotool Dashboard (grid-dots), Experiments (route), Reports (report-analytics). Mark the current page with .left-bar__item--active + aria-current and the -blue icon variant where one exists.", width=120, height=300)
 comp("left-bar-admin", "Left menu bar (Admin)", "App shell", "doa-rules.html", '<nav class="left-bar"', desc="Admin variant: Home, DOA Rules, User Management, Role Management, Referential.", width=120, height=380)
 comp("top-menu", "Top menu", "App shell", "experiments.html", '<header class="top-menu"', desc="56px white bar: the single Stellantis Promotool logo, notifications, language, profile (name + role). Clicking the profile opens the user menu (js/user-menu.js).", width=1306, height=110)
-comp("user-menu", "User menu & settings", "App shell", "experiments.html", '<header class="top-menu"', js=["user-menu.js"], desc="Built by js/user-menu.js from the profile name/role in the top menu: a menu with Settings and Log Out; Settings opens the User Settings dialog. Include css/user-menu.css and js/user-menu.js on every signed-in page.", width=1306, height=520, after="<script>setTimeout(function(){var p=document.querySelector('.profile');p&&p.click();},50)</script>")
+comp("user-menu", "User menu & settings", "App shell", "experiments.html", '<header class="top-menu"', js=["user-menu.js"], desc="Built by js/user-menu.js from the profile name/role in the top menu: a menu with User Manual, Settings and Log Out; Settings opens the User Settings dialog. Include css/user-menu.css and js/user-menu.js on every signed-in page.", width=1306, height=520, after="<script>setTimeout(function(){var p=document.querySelector('.profile');p&&p.click();},50)</script>")
+comp("user-manual", "User Manual pane", "App shell", "experiments.html", '<header class="top-menu"', js=["user-menu.js"], desc="Also built by js/user-menu.js: a book icon button (.manual-btn) at the left of .top-menu__right and a User Manual button in the user menu both open the right side pane (dialog.umm-pane): search box plus topic cards; each card opens docs/user-manual/<topic>.pdf in a new tab. Edit the topics array in user-menu.js to change the list.", width=1306, height=768, after="<script>setTimeout(function(){var b=document.querySelector('.manual-btn');b&&b.click();},50)</script>")
 comp("page-header-flow", "Page header with stepper", "Page headers", "promotion-configuration.html", '<section class="cfg-header"', desc="Breadcrumb + 24px page title + compact stepper on one bar. Used by the promotion flow pages.", width=1306, height=120)
 comp("page-header-result", "Page header with stepper and actions", "Page headers", "simulation-result.html", '<section class="res-header"', desc="Results variant: breadcrumb, title, stepper and right-side actions (iteration switch).", width=1306, height=120)
 comp("page-header-report", "Page header with download", "Page headers", "reports.html", '<section class="rp-header"', desc="Report hub header: breadcrumb, title and Download button.", width=1306, height=120)
@@ -286,7 +287,7 @@ def main():
     if KIT.exists():
         shutil.rmtree(KIT)
     KIT.mkdir()
-    for d in ("css", "js", "fonts", "assets"):
+    for d in ("css", "js", "fonts", "assets", "docs"):
         shutil.copytree(LEGACY / d, KIT / d)
     for f in sorted(LEGACY.glob("*.html")):
         shutil.copy2(f, KIT / f.name)

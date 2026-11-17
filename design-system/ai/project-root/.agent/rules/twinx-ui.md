@@ -16,7 +16,7 @@ Read this whole file before writing any UI. When in doubt, copy more of the lega
 | Path | What it is |
 |---|---|
 | `design-system/kit/*.html` | The 19 legacy pages: the **page templates**. |
-| `design-system/kit/css/` `js/` `fonts/` `assets/` | The **runtime** (library CSS, behaviour JS, self-hosted fonts, icons, illustrations, logo). |
+| `design-system/kit/css/` `js/` `fonts/` `assets/` `docs/` | The **runtime** (library CSS, behaviour JS, self-hosted fonts, icons, illustrations, logo, User Manual PDFs). |
 | `design-system/components/<id>.html` | One file per **component**, cut verbatim from a page. Copy only what is between `<!-- snippet:start -->` and `<!-- snippet:end -->`. The comment at the top lists the CSS/JS it needs. |
 | `design-system/registry.json` | Machine-readable index: every template (CSS, JS, dialogs, regions) and component (file, CSS, JS). Look things up here first. |
 | `design-system/tokens/tokens.css` / `tokens.json` | Colour, type, radius, shadow, spacing and layout tokens (`--tx-*`) for anything new. |
@@ -26,14 +26,14 @@ Read this whole file before writing any UI. When in doubt, copy more of the lega
 project root, so the project root looks like the legacy site:
 
 ```
-css/  js/  fonts/  assets/      <- copied unchanged from design-system/kit/
+css/  js/  fonts/  assets/  docs/  <- copied unchanged from design-system/kit/
 css/app.css                      <- the ONLY project stylesheet you may write (loaded last)
 index.html, experiments.html …   <- pages, at the project root
 design-system/                   <- read-only reference, never edited
 ```
 
 If `css/base.css` does not exist at the project root yet, run setup first:
-`bash design-system/scripts/install.sh` (or copy `design-system/kit/{css,js,fonts,assets}` to the root).
+`bash design-system/scripts/install.sh` (or copy `design-system/kit/{css,js,fonts,assets,docs}` to the root).
 Never rewrite paths inside templates or snippets: `css/…`, `js/…`, `assets/…` are relative to the
 project root exactly as in the legacy app.
 

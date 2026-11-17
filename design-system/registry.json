@@ -955,7 +955,7 @@
       "id": "user-menu",
       "name": "User menu & settings",
       "category": "App shell",
-      "description": "Built by js/user-menu.js from the profile name/role in the top menu: a menu with Settings and Log Out; Settings opens the User Settings dialog. Include css/user-menu.css and js/user-menu.js on every signed-in page.",
+      "description": "Built by js/user-menu.js from the profile name/role in the top menu: a menu with User Manual, Settings and Log Out; Settings opens the User Settings dialog. Include css/user-menu.css and js/user-menu.js on every signed-in page.",
       "file": "components/user-menu.html",
       "source": "kit/experiments.html",
       "css": [
@@ -968,6 +968,24 @@
       ],
       "width": 1306,
       "height": 520
+    },
+    {
+      "id": "user-manual",
+      "name": "User Manual pane",
+      "category": "App shell",
+      "description": "Also built by js/user-menu.js: a book icon button (.manual-btn) at the left of .top-menu__right and a User Manual button in the user menu both open the right side pane (dialog.umm-pane): search box plus topic cards; each card opens docs/user-manual/<topic>.pdf in a new tab. Edit the topics array in user-menu.js to change the list.",
+      "file": "components/user-manual.html",
+      "source": "kit/experiments.html",
+      "css": [
+        "css/base.css",
+        "css/experiment.css",
+        "css/user-menu.css"
+      ],
+      "js": [
+        "js/user-menu.js"
+      ],
+      "width": 1306,
+      "height": 768
     },
     {
       "id": "page-header-flow",
@@ -1905,6 +1923,8 @@
     "assets/icons/arrows-down-up-thin.svg",
     "assets/icons/arrows-down-up.svg",
     "assets/icons/bell.svg",
+    "assets/icons/book-blue.svg",
+    "assets/icons/book.svg",
     "assets/icons/breadcrumb-home.svg",
     "assets/icons/building-store.svg",
     "assets/icons/calendar-thin.svg",
@@ -1936,9 +1956,11 @@
     "assets/icons/database.svg",
     "assets/icons/download-white.svg",
     "assets/icons/download.svg",
+    "assets/icons/external-link.svg",
     "assets/icons/eye-bold.svg",
     "assets/icons/eye.svg",
     "assets/icons/file-info-large.svg",
+    "assets/icons/file-pdf.svg",
     "assets/icons/file-x.svg",
     "assets/icons/grid-dots-blue.svg",
     "assets/icons/grid-dots.svg",
